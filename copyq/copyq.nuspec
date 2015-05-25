@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>copyq</id>
-    <title>Copyq</title>
+    <title>CopyQ</title>
     <version>2.4.6</version>
     <authors>Lukas Holocek</authors>
     <owners>Miodrag Milić</owners>
@@ -22,8 +22,7 @@ Items can be:
 * moved to other tabs,
 * drag'n'dropped to applications,
 * marked with tag or a note,
-* passed to or changed by custom commands,
-* or simply removed.
+* passed to or changed by custom commands, or simply removed.
 
 Features
 --------
