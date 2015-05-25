@@ -11,6 +11,10 @@ https://chocolatey.org/profiles/majkinetor
 
 In package directory run `cpack`.
 
+**Test**
+
+`cinst [PackageName] -source $pwd
+
 **Push**
 
 In package directory run ``..\push.ps1 [API_KEY]`` Once specified `API_KEY` parameter can be omitted.
