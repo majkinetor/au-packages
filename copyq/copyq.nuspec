@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>copyq</id>
+    <title>Copyq</title>
+    <version>2.4.6</version>
+    <authors>Lukas Holocek</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>Cross-platform clipboard manager with advanced features</summary>
+    <description>
+Overview
+--------
+
+CopyQ monitors system clipboard and saves its content in customized tabs.
+Saved clipboard can be later copied and pasted directly into any application.
+
+Items can be:
+
+* edited with internal editor or with preferred text editor,
+* moved to other tabs,
+* drag'n'dropped to applications,
+* marked with tag or a note,
+* passed to or changed by custom commands,
+* or simply removed.
+
+Features
+--------
+
+* Support for Linux, Windows and OS X 10.9+
+* Store text, HTML, images or any other custom formats
+* Quickly browse and filter items in clipboard history
+* Sort, create, edit, remove, copy/paste, drag'n'drop items in tabs
+* Add notes or tags to items
+* System-wide shortcuts with customizable commands
+* Paste items with shortcut or from tray or main window
+* Fully customizable appearance
+* Advanced command-line interface and scripting
+* Ignore clipboard copied from some windows or containing some text
+* Support for simple Vim-like editor and shortcuts
+* Many more features
+</description>
+    <projectUrl>https://github.com/hluk/CopyQ</projectUrl>
+    <tags>clipboard</tags>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/hluk/CopyQ/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/hluk/CopyQ/master/src/images/icon.ico</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
