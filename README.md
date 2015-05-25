@@ -13,7 +13,7 @@ In package directory run `cpack`.
 
 **Test**
 
-`cinst [PackageName] -source $pwd
+`cinst [PackageName] -source $pwd`
 
 **Push**
 
