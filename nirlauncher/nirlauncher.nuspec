@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>nirlauncher</id>
+    <title>NirLauncher</title>
+    <version>0.0</version>
+    <authors>Nir Sofer</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed for NirSoft Web site.</summary>
+    <description>
+NirLauncher Features
+--------------------
+
+- NirLauncher can be used from USB flash drive without need of any installation.
+- NirLauncher and all the utilities in the package are completely freeware, without any Spyware/Adware/Malware. This package doesn't contain any 3-party software, toolbars, Web browser plugins, or other unwanted surprises. It will not install any software on your system and it will not change your Web browser homepage or other settings on your system.
+- NirLauncher package includes variety of tools that you may need for your daily computer use, including utilities to recover lost passwords, to monitor your network, to view and extract cookies, cache, and other information stored by your Web browser, to search files in your system, and more...
+- For every utility in the package, you can easily run it, view the help file, or jump to the Web page of the utility.
+- When using it from USB flash drive, the configuration of every utility is saved into .cfg file on the flash drive.
+- On x64 systems, NirLauncher automatically run the x64 version of the utility, when there is a separated x64 version.
+- NirLauncher also allows to add more software packages in additional to the main NirSoft package.
+- NirLauncher allows you generate plugin files for BartPE (Launcher -> Generate BartPE Plugin Files), so you can easily use the utilities of NirSoft from a bootable live windows CD.
+</description>
+    <projectUrl>http://launcher.nirsoft.net</projectUrl>
+    <tags>utility tools admin nirsoft</tags>
+    <copyright></copyright>
+    <licenseUrl>http://launcher.nirsoft.net</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/nirlauncher/icon.ico</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
