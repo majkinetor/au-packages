@@ -1,7 +1,7 @@
 ﻿$packageName    = 'copyq'
 $programName    = 'copyq'
 $installerType  = 'exe'
-$url            = 'https://github.com/hluk/CopyQ/releases/download/v2.4.6/copyq-2.4.6-setup.exe' # download url
+$url            = 'https://github.com/hluk/CopyQ/releases/download/v2.4.7/copyq-2.4.7-setup.exe' # download url
 $silentArgs     = '/VERYSILENT'
 $validExitCodes = @(0)
 
