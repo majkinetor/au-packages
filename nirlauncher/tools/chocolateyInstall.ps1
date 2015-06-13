@@ -27,6 +27,6 @@ $params.Uri = $url
 $params.OutFile = $zipPath
 Invoke-WebRequest @params
 
-Write-Host "Installing $packageName $version and adding it to the PATH"
+Write-Host "Installing $packageName $version and creating shims"
 Write-Host "Local path: $installDir"
 Install-ChocolateyZipPackage $packageName $zipPath $installDir
