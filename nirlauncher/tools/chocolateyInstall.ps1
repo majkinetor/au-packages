@@ -20,7 +20,7 @@ $download_page = Invoke-WebRequest @params
 $url           = $download_page.links | ? href -match "nirsoft_package_.*.zip" | select -First 1 -expand href
 $version       = $url -split '_|.zip' | select -Last 1 -Skip 1
 $installDir    = Split-Path -parent $MyInvocation.MyCommand.Definition
-$zipPath       = "$installDir\$packageName_$version.zip"
+$zipPath       = "$installDir\$($packageName)_$version.zip"
 
 Write-Host "Downloading $packageName $version ..."
 $params.Uri = $url
@@ -30,3 +30,4 @@ Invoke-WebRequest @params
 Write-Host "Installing $packageName $version and creating shims"
 Write-Host "Local path: $installDir"
 Install-ChocolateyZipPackage $packageName $zipPath $installDir
+rm $zipPath
