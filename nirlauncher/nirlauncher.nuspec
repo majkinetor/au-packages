@@ -10,6 +10,9 @@
     <owners>Miodrag Milić</owners>
     <summary>NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed for NirSoft Web site.</summary>
     <description>
+
+*This package always installs the latest version of NirLauncher. To update it, use install with the `force` option.*
+
 NirLauncher Features
 --------------------
 
@@ -27,7 +30,7 @@ NirLauncher Features
     <copyright></copyright>
     <licenseUrl>http://launcher.nirsoft.net</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/nirlauncher/icon.ico</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/nirlauncher/icon.png</iconUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->
