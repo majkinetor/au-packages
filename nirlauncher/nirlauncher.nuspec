@@ -5,14 +5,12 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>nirlauncher.portable</id>
     <title>NirLauncher</title>
-    <version>0.0</version>
+    <version>1.19.37</version>
     <authors>Nir Sofer</authors>
     <owners>Miodrag Milić</owners>
-    <summary>NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed for NirSoft Web site.</summary>
+    <summary>NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed by NirSoft</summary>
     <description>
 NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed by NirSoft.
-
-*This package always installs the latest version of NirLauncher. To update it, use install with the `force` option.*
 
 NirLauncher Features
 --------------------
@@ -22,7 +20,7 @@ NirLauncher Features
 - NirLauncher package includes variety of tools that you may need for your daily computer use, including utilities to recover lost passwords, to monitor your network, to view and extract cookies, cache, and other information stored by your Web browser, to search files in your system, and more...
 - For every utility in the package, you can easily run it, view the help file, or jump to the Web page of the utility.
 - When using it from USB flash drive, the configuration of every utility is saved into .cfg file on the flash drive.
-- On x64 systems, NirLauncher automatically run the x64 version of the utility, when there is a separated x64 version.
+- On x64 systems, NirLauncher automatically run the x64 version of the utility, when there is a separated x64 version
 - NirLauncher also allows to add more software packages in additional to the main NirSoft package.
 - NirLauncher allows you generate plugin files for BartPE (Launcher -> Generate BartPE Plugin Files), so you can easily use the utilities of NirSoft from a bootable live windows CD.
 </description>
