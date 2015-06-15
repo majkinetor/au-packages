@@ -29,7 +29,7 @@ NirLauncher Features
     <copyright></copyright>
     <licenseUrl>http://launcher.nirsoft.net</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/nirlauncher/icon.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/nirlauncher/icon128.png</iconUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->

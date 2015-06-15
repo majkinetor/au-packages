@@ -41,7 +41,7 @@ Features
 * Many more features
 </description>
     <projectUrl>https://github.com/hluk/CopyQ</projectUrl>
-    <tags>clipboard</tags>
+    <tags>clipboard copyq</tags>
     <copyright></copyright>
     <licenseUrl>https://github.com/hluk/CopyQ/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
