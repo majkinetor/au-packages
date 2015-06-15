@@ -13,6 +13,6 @@ Write-Host "Local path: $installDir"
 Install-ChocolateyZipPackage $packageName $downloadPath $installDir
 rm $downloadPath
 
-Write-Host "Adding NirLuancher utilities to the PATH"
-"$installDir","$installDir\Nirsoft" | % Install-ChocolateyPath $_ "Machine"
+Write-Host "Adding NirLuancher utilities to the PATH if needed"
+"$installDir","$installDir\Nirsoft" | % { Install-ChocolateyPath $_ "Machine" }
 
