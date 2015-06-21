@@ -50,6 +50,15 @@ if ($remote_version -ne $nu.package.metadata.version)
     $c = (gc $f) -replace "([$]url\s*=\s*)('.+')", "`$1'$url'"
     $c | out-file -Encoding utf8 $f
 
-    "Package updated"
+    "Package updated, running git diff"
+    git diff
+
+    $a = Read-Host "Push to chocolatey (y/n)?"
+    if ($a -ne 'y') { return }
+    rm *.nupkg
+    cpack
+    ..\push.ps1
+
+
 } else { "No new version found" }
 
