@@ -46,7 +46,7 @@ if ($remote_version -ne $nu.package.metadata.version)
     $nu.Save($nuspecFile)
 
     "Updating chocolateyInstall URL"
-    $f = .\tools\chocolateyInstall.ps1
+    $f = ".\tools\chocolateyInstall.ps1"
     $c = (gc $f) -replace "([$]url\s*=\s*)('.+')", "`$1'$url'"
     $c | out-file $f
 
