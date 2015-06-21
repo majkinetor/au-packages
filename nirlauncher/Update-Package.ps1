@@ -48,7 +48,7 @@ if ($remote_version -ne $nu.package.metadata.version)
     "Updating chocolateyInstall URL"
     $f = ".\tools\chocolateyInstall.ps1"
     $c = (gc $f) -replace "([$]url\s*=\s*)('.+')", "`$1'$url'"
-    $c | out-file $f
+    $c | out-file -Encoding utf8 $f
 
     "Package updated"
 } else { "No new version found" }
