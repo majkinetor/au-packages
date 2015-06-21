@@ -1,5 +1,5 @@
 ﻿$packageName   = 'nirlauncher.portable'
-$url           = 'http://download.nirsoft.net/nirsoft_package_1.19.37.zip'
+$url           = 'http://download.nirsoft.net/nirsoft_package_1.19.38.zip'
 $version       = $url -split '_|.zip' | select -Last 1 -Skip 1
 $installDir    = "$env:ChocolateyBinRoot\NirLauncher"
 $downloadPath  = "$env:TEMP\$($packageName)_$version.zip"
