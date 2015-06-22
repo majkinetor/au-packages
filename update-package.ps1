@@ -1,3 +1,5 @@
+param([switch] $Push )
+
 function Load-NuspecFile() {
     $nu = New-Object xml
     $nu.psbase.PreserveWhitespace = $true
@@ -53,8 +55,9 @@ Get-FileReplace | % {
 "Package updated"
 #git --no-pager diff -U0
 
-$a = Read-Host "Push to chocolatey (y/n)?"
-if ($a -ne 'y') { return }
+if (!$Push) { return }
+
+"Pushing package to chocolatey"
 rm *.nupkg
 cpack
 ..\push.ps1
