@@ -19,7 +19,7 @@ In package directory run `cpack`.
 
 In package directory run ``..\push.ps1 [API_KEY]`` Once specified `API_KEY` parameter can be omitted.
 
-** Automatic package update**
+**Automatic package update**
 
 Instead of using [official method](https://github.com/chocolatey/choco/wiki/AutomaticPackages) this repository uses custom auto updater that works as follows:
 
