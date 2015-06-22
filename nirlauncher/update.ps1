@@ -1,3 +1,5 @@
+param([switch] $Push)
+
 $releases = "http://launcher.nirsoft.net/download.html"
 
 function Get-Latest() {
@@ -15,4 +17,4 @@ function Get-FileReplace() {
     $FileReplace.GetEnumerator()
 }
 
-. ../update-package.ps1
+. ../update-package.ps1 $Push

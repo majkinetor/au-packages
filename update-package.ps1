@@ -1,4 +1,5 @@
 param([switch] $Push )
+"Push $Push"
 
 function Load-NuspecFile() {
     $nu = New-Object xml
@@ -53,7 +54,6 @@ Get-FileReplace | % {
 }
 
 "Package updated"
-#git --no-pager diff -U0
 
 if (!$Push) { return }
 
