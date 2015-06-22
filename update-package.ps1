@@ -1,5 +1,4 @@
 param([switch] $Push )
-"Push $Push"
 
 function Load-NuspecFile() {
     $nu = New-Object xml
