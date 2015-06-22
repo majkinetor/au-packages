@@ -27,3 +27,6 @@ Instead of using [official method](https://github.com/chocolatey/choco/wiki/Auto
 - Implement `Get-Latest` function that returns latest version of the software.
 - Implement `Get-FileReplace` function that returns hashtable containg paths to files as key names and array containing replacement data as value.
 - Call `..\update-package.ps1`` to update packages and optionally push them to chocolatey repository (-Push option).
+
+
+See [example](https://github.com/majkinetor/chocolatey/blob/master/copyq/update.ps1) for details.
