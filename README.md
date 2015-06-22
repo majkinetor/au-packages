@@ -1,5 +1,4 @@
 My chocolatey packages:
-
 https://chocolatey.org/profiles/majkinetor
 
 
@@ -25,7 +24,7 @@ Instead of using [official method](https://github.com/chocolatey/choco/wiki/Auto
 
 - Create script `update.ps1`
 - Implement `Get-Latest` function that returns latest version of the software.
-- Implement `Get-FileReplace` function that returns hashtable containg paths to files as key names and array containing replacement data as value.
+- Implement `Get-FileReplace` function that returns hashtable enumerator containing paths to files as key names and array containing replacement data as value.
 - Call `..\update-package.ps1` to update packages and optionally push them to chocolatey repository (-Push option).
 
 
