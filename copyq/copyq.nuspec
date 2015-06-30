@@ -45,7 +45,7 @@ Features
     <copyright></copyright>
     <licenseUrl>https://github.com/hluk/CopyQ/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/hluk/CopyQ/master/src/images/icon.ico</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon96.png</iconUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->
