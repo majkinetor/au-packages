@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'copyq'
-$url         = 'https://github.com/hluk/CopyQ/releases/download/v2.4.7/copyq-2.4.7-setup.exe'
+$url         = 'https://github.com/hluk/CopyQ/releases/download/v2.4.8/copyq-2.4.8-setup.exe'
 
 $packageArgs = @{
   packageName            = $packageName
