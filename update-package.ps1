@@ -1,5 +1,3 @@
-param([switch] $Push )
-
 function Load-NuspecFile() {
     $nu = New-Object xml
     $nu.psbase.PreserveWhitespace = $true
@@ -53,10 +51,3 @@ Get-FileReplace | % {
 }
 
 "Package updated"
-
-if (!$Push) { return }
-
-"Pushing package to chocolatey"
-rm *.nupkg
-cpack
-..\push.ps1

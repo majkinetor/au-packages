@@ -12,7 +12,13 @@ In package directory run `cpack`.
 
 **Test**
 
-`cinst [PackageName] -source $pwd`
+If package is not installed:
+
+    choco install [PackageName] -source $pwd
+
+If already installed
+
+    choco upgrade [PackageName] -source $pwd
 
 **Push**
 

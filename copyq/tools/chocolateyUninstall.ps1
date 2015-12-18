@@ -4,12 +4,11 @@ $packageName = 'copyq'
 $fileType    = 'exe'
 $silentArgs  = '/VERYSILENT'
 
-$is64bit = Get-ProcessorBits -eq 64
-if ($is64bit) { $key = 'HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall' }
-else          { $key = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall' }
-
-$reg = ls $key | ? { (gp $_.PSPath DisplayName -ea ig) -match $packageName }
-if (!$reg) { return }
-
-$uninstallString = $reg.GetValue("UninstallString")
-Uninstall-ChocolateyPackage $packageName $fileType $silentArgs $UninstallString
+$local_key     = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
+$machine_key   = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
+$machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
+$key = Get-ItemProperty -Path @($machine_key6432, $machine_key, $local_key) -ErrorAction SilentlyContinue | ? { $_.DisplayName -like "$packageName*" }
+if ($key) {
+    $uninstallString = $key.GetValue("UninstallString")
+    Uninstall-ChocolateyPackage $packageName $fileType $silentArgs $UninstallString
+}

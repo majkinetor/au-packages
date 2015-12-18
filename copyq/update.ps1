@@ -1,5 +1,3 @@
-param([switch] $Push)
-
 $releases = 'https://github.com/hluk/CopyQ/releases'
 
 function Get-Latest() {
@@ -18,4 +16,4 @@ function Get-FileReplace() {
     $FileReplace.GetEnumerator()
 }
 
-. ../update-package.ps1 -Push $Push
+. ../update-package.ps1
