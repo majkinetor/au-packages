@@ -1,28 +1,27 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'pandoc'
-$url         = 'https://github.com/jgm/pandoc/releases/download/1.15.0.6/pandoc-1.15.0.6-windows.msi'
+$url         = 'https://github.com/jgm/pandoc/releases/download/1.15.2/pandoc-1.15.2-windows.msi'
 
 $packageArgs = @{
   packageName            = $packageName
   fileType               = 'msi'
   url                    = $url
   silentArgs             = '/quiet'
+  registryUninstallerKey = $packageName
 }
 Install-ChocolateyPackage @packageArgs
 
-
-$is64bit = Get-ProcessorBits -eq 64
-
-$key = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall'
-$reg = ls $key | ? { (gp $_.PSPath DisplayName -ea ig) -match $packageName}
-if (!$reg) { return }
-
-$installLocation = $reg.GetValue("InstallLocation")
-"Installed location: $installLocation"
-
-#if (Test-Path $installLocation)  {
-    #Write-Host "$packageName installed to $installLocation"
-    #Install-ChocolateyPath $installLocation
-#}
+$local_key     = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
+$machine_key   = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
+$machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
+$key = Get-ItemProperty -Path @($machine_key6432, $machine_key, $local_key) -ErrorAction SilentlyContinue | ? { $_.DisplayName -like "$packageName*" }
+if ($key) {
+    $installLocation = $key.InstallLocation
+    if (Test-Path $installLocation)  {
+        Write-Host "$packageName installed to '$installLocation'"
+    }
+    Write-Host "Adding $packageName to the PATH if needed"
+    Install-ChocolateyPath $installLocation "Machine"
+}
 

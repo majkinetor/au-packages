@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>pandoc</id>
     <title>Pandoc</title>
-    <version>1.15.0.6</version>
+    <version>1.15.2</version>
     <authors>John MacFarlane</authors>
     <owners>Miodrag Milić</owners>
     <summary>A universal document converter</summary>
@@ -17,7 +17,6 @@ If you need to convert files from one markup format into another, pandoc is your
     <copyright>© 2006-2015 John MacFarlane</copyright>
     <licenseUrl>https://github.com/jgm/pandoc/blob/master/COPYRIGHT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/hluk/CopyQ/master/src/images/icon.ico</iconUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->
