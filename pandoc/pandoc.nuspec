@@ -10,13 +10,18 @@
     <owners>Miodrag Milić</owners>
     <summary>A universal document converter</summary>
     <description>
-If you need to convert files from one markup format into another, pandoc is your swiss-army knife. Pandoc can convert documents in markdown, reStructuredText, textile, HTML, DocBook, or LaTeX.
+If you need to convert files from one markup format into another, pandoc is your swiss-army knife. Pandoc can convert documents in markdown, reStructuredText, textile, HTML, DocBook, LaTeX and many others.
 </description>
     <projectUrl>http://pandoc.org/</projectUrl>
-    <tags>text markdown latex pdf docx restructuredText textil html docbook slides</tags>
+    <tags>admin text markdown latex pdf docx restructuredText textile html docbook slides opendocument</tags>
     <copyright>© 2006-2015 John MacFarlane</copyright>
     <licenseUrl>https://github.com/jgm/pandoc/blob/master/COPYRIGHT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+    <docsUrl>http://pandoc.org/README.html</docsUrl>
+    <bugTrackerUrl>https://github.com/jgm/pandoc/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/jgm/pandoc</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/pandoc</packageSourceUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->

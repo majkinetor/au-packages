@@ -41,7 +41,7 @@ Features
 * Many more features
 </description>
     <projectUrl>https://github.com/hluk/CopyQ</projectUrl>
-    <tags>clipboard copyq</tags>
+    <tags>admin clipboard copyq</tags>
     <copyright></copyright>
     <licenseUrl>https://github.com/hluk/CopyQ/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -50,6 +50,10 @@ Features
       <dependency id="" version="" />
     </dependencies>-->
     <releaseNotes></releaseNotes>
+    <docsUrl>https://github.com/hluk/CopyQ/wiki</docsUrl>
+    <bugTrackerUrl>https://github.com/hluk/CopyQ/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/hluk/CopyQ</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/copyq</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
