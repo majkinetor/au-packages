@@ -24,8 +24,7 @@ function Update() {
 
     if (!$latest_version) { throw "Invalid latest version: '$latest_version'" }
     if ($latest_version -eq $nuspec_version) {
-        'No new version found.'
-        return
+        return 'No new version found.'
     } else { 'New version is available, updating' }
 
     'Updating files: '
