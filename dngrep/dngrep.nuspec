@@ -6,7 +6,7 @@
     <id>dngrep</id>
     <title>dnGrep</title>
     <version>2.5.0</version>
-    <authors>Denis Stankovski</authors>
+    <authors>Denis Stankovski, John Burak</authors>
     <owners>Miodrag Milić</owners>
     <summary>Powerful search for Windows</summary>
     <description>
@@ -31,7 +31,7 @@ Features
 * Much more
 </description>
     <projectUrl>http://dngrep.github.io</projectUrl>
-    <tags>search regex</tags>
+    <tags>admin search regex</tags>
     <copyright></copyright>
     <licenseUrl>https://github.com/dnGrep/dnGrep/blob/master/license.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
