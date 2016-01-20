@@ -20,18 +20,15 @@ If already installed
 
     choco upgrade [PackageName] -source $pwd
 
-**Push**
-
-In package directory run `..\push.ps1 [API_KEY]` Once specified `API_KEY` parameter can be omitted.
-
 **Automatic package update**
 
 Instead of using [official method](https://github.com/chocolatey/choco/wiki/AutomaticPackages) this repository uses custom auto updater that works as follows:
 
 - Create script `update.ps1`
-- Implement `Get-Latest` function that returns latest version of the software.
-- Implement `Get-FileReplace` function that returns hashtable enumerator containing paths to files as key names and array containing replacement data as value.
-- Call `..\update-package.ps1` to update packages and optionally push them to chocolatey repository (-Push option).
+- Import the update script: `. au.ps1`
+- Implement `au_GetLatest` function that returns HashTable with the latest version specified along with other arbitrary user data.
+- Implement `au_SearchReplace` function that returns HashTable containing search and replace data for any file.
+- Call `update` to update package.
 
 
-See [example](https://github.com/majkinetor/chocolatey/blob/master/copyq/update.ps1) for details.
+See the [example](https://github.com/majkinetor/chocolatey/blob/master/dngrep/update.ps1) for details.
