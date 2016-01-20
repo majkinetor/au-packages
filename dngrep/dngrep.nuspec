@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>dngrep</id>
+    <title>dnGrep</title>
+    <version>2.5.0</version>
+    <authors>John Burak</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>Powerful search for Windows</summary>
+    <description>
+Overview
+--------
+
+dnGrep allows you to search across files with easy-to-read results. Search through text files, Word documents, PDFs, and archives using text, regular expression, XPath, and phonetic queries. dnGrep includes search-and-replace, whole-file preview, right-click search in File Explorer, and much more.
+
+Features
+--------
+
+* Search across text files, Word documents, PDFs, and archives
+* Search using text, regular expressions (regex), XPath, and phonetics
+* Search-and-replace, including undo
+* Whole-file preview
+* Right-click to search in File Explorer
+* Move/copy/delete result files
+* Open line results in a custom editor, like Notepad++
+* Bookmark search patterns for later use
+* Try out complex searches in the Test window
+* Run from USB drive using the stand-alone distribution
+* Much more
+</description>
+    <projectUrl>http://dngrep.github.io</projectUrl>
+    <tags>search regex</tags>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/dnGrep/dnGrep/blob/master/license.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dngrep/icon100.png</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+    <docsUrl>https://github.com/hluk/CopyQ/wiki</docsUrl>
+    <bugTrackerUrl>https://github.com/hluk/CopyQ/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/dnGrep/dnGrep</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/dngrep</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
