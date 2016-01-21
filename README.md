@@ -15,13 +15,9 @@ In package directory run `cpack`.
 
 **Test**
 
-If package is not installed:
 
-    choco install (gi *.nupkg).Name -source $pwd
+    choco install (gi *.nupkg).Name --source $pwd --force
 
-If already installed
-
-    choco upgrade (gi *.nupkg).Name) -source $pwd
 
 Automatic package update
 ------------------------
@@ -34,7 +30,16 @@ Instead of using [official method](https://github.com/chocolatey/choco/wiki/Auto
   - `au_GetLatest`   
   Function returns HashTable with the latest remote version along with other arbitrary user data which you can use elsewhere (for instance in search and replace). The returned version is then compared to the one in nuspec and if they are different, the files will be updated. This hashtable is available via global variable `$Latest`.
   - `au_SearchReplace`  
-  Function returns HashTable containing search and replace data for any file in the form: `@{ file_path1 = @{ search1 = replace1; ... searchN = replaceN }; file_path2 = ...}`
+  Function returns HashTable containing search and replace data for any file in the form: 
+
+    @{ 
+        file_path1 = @{ 
+            search1 = replace1
+            ...
+            searchN = replaceN 
+        }; 
+        file_path2 = ...
+     }
 - Call the `update` function from the `au.ps1` script to update the package.
 
 
