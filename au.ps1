@@ -28,8 +28,8 @@ function Update() {
     } else { 'New version is available, updating' }
 
     'Updating files: '
-    "  $nuspecFile"
-    "    updating version"
+    "  $(Split-Path $nuspecFile -Leaf)"
+    "    updating version:  $nuspec_version -> $remote_version"
     $nu.package.metadata.version = "$latest_version"
     $nu.Save($nuspecFile)
 
