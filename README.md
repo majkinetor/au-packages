@@ -37,6 +37,7 @@ Instead of using [official method](https://github.com/chocolatey/choco/wiki/Auto
             search1 = replace1
             searchN = replaceN 
         }
+
         file_path2 = @{
             search1 = replace1
         }
