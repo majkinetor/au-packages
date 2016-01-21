@@ -4,7 +4,7 @@ $packages = ls *\update.ps1 -Exclude _*
 pushd
 
 "Updating all packages`n"
-if (!Test-Path api_key) { $api_key = (gc ..\api_key) } else { "File api_key not found, updated packages will not be pushed" }
+if (Test-Path api_key) { $api_key = (gc ..\api_key) } else { "File api_key not found, updated packages will not be pushed" }
 $packages | % {
     cd (Split-Path $_ -Parent)
     "-"*80
