@@ -40,6 +40,7 @@ Instead of using [official method](https://github.com/chocolatey/choco/wiki/Auto
         }; 
         file_path2 = ...
      }
+
 - Call the `update` function from the `au.ps1` script to update the package.
 
 
