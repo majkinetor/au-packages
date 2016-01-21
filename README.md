@@ -35,12 +35,10 @@ Instead of using [official method](https://github.com/chocolatey/choco/wiki/Auto
     @{ 
         file_path1 = @{ 
             search1 = replace1
+            ...
             searchN = replaceN 
         }
-
-        file_path2 = @{
-            search1 = replace1
-        }
+        file_path2 = @{ ... }
     }
   ~~~
 
