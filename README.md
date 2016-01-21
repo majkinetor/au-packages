@@ -1,10 +1,13 @@
-My chocolatey packages:
-https://chocolatey.org/profiles/majkinetor
+My chocolatey packages: https://chocolatey.org/profiles/majkinetor
 
+Prerequisites
+-------------
 
-**Prerequisites**
+- Powershell 3+
+- `cinst nuget.commandline`
 
-`cinst nuget.commandline`
+Manual Testing
+--------------
 
 **Build**
 
@@ -20,15 +23,19 @@ If already installed
 
     choco upgrade (gi *.nupkg).Name) -source $pwd
 
-**Automatic package update**
+Automatic package update
+------------------------
 
-Instead of using [official method](https://github.com/chocolatey/choco/wiki/AutomaticPackages) this repository uses custom auto updater that works as follows:
+Instead of using [official method](https://github.com/chocolatey/choco/wiki/AutomaticPackages) this repository uses the custom auto updater developed in Powershell that works as follows:
 
-- Create script `update.ps1` in the root of the package.
-- Import the update script: `. au.ps1`.
-- Implement `au_GetLatest` function that returns HashTable with the latest remote version along with other arbitrary user data. The returned version is then compared to the one in nuspec file and if they do not differ update will stop.
-- Implement `au_SearchReplace` function that returns HashTable containing search and replace data for any file.
-- Call `update` to update at the end of the script to update the package.
+- In the package directory, create the script `update.ps1`.
+- Source the helper update script: `. au.ps1`.
+- Implement two functions:
+  - `au_GetLatest`   
+  Function returns HashTable with the latest remote version along with other arbitrary user data which you can use elsewhere (for instance in search and replace). The returned version is then compared to the one in nuspec and if they are different, the files will be updated. This hashtable is available via global variable `$Latest`.
+  - `au_SearchReplace`  
+  Function returns HashTable containing search and replace data for any file in the form: `@{ file_path1 = @{ search1 = replace1; ... searchN = replaceN }; file_path2 = ...}`
+- Call the `update` function from the `au.ps` script to update the package .
 
 
-See the [example](https://github.com/majkinetor/chocolatey/blob/master/dngrep/update.ps1) for details.
+This is best understood via the [example](https://github.com/majkinetor/chocolatey/blob/master/dngrep/update.ps1).

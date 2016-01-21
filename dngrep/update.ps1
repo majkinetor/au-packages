@@ -12,7 +12,7 @@ function au_SearchReplace {
 }
 
 function au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases
+    $download_page = Invoke-WebRequest -Uri $releases #could use: 'https://api.github.com/repos/dnGrep/dnGrep/releases/latest' | select -expand Content | ConvertFrom-Json | select name, assets_url
     $url      = $download_page.links | ? href -match 'dnGREP.*.msi' | select -First 2 -expand href
     $version  = ($url[0] -split '\/' | select -Index 5).Substring(1)
 
