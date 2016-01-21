@@ -32,17 +32,15 @@ Instead of using [official method](https://github.com/chocolatey/choco/wiki/Auto
   - `au_SearchReplace`  
   Function returns HashTable containing search and replace data for any file in the form: 
 
-    @{ 
-        file_path1 = @{ 
-            search1 = replace1
-            ...
-            searchN = replaceN 
-        }; 
-        file_path2 = ...
-     }
-
+        @{ 
+            file_path1 = @{ 
+                search1 = replace1
+                ...
+                searchN = replaceN 
+            }; 
+            file_path2 = ...
+        }
 - Call the `update` function from the `au.ps1` script to update the package.
-
 
 This is best understood via the [example](https://github.com/majkinetor/chocolatey/blob/master/dngrep/update.ps1).
 
