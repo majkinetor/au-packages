@@ -39,3 +39,9 @@ Instead of using [official method](https://github.com/chocolatey/choco/wiki/Auto
 
 
 This is best understood via the [example](https://github.com/majkinetor/chocolatey/blob/master/dngrep/update.ps1).
+
+With this set, you can:
+
+- Call individual `update.ps1` to update specific package.
+- Update all packages using `update_all.ps1` - the script will call each `update.ps1` it finds and pack/push the package if there are changes. You can see its cummulative transcript in the `update_all.log`.
+- Schedule `update_all.ps1` using `install_ts.ps1` to install scheduled task that runs daily. Edit this script to configure scheduled task.
