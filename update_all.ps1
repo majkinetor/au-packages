@@ -1,10 +1,12 @@
 Start-Transcript -Append $PSScriptRoot\update_all.log
 
-$packages = ls *\update.ps1 -Exclude _*
-pushd
+if (Test-Path api_key) { $api_key = gc api_key } else { "File api_key not found, updated packages will not be pushed" }
 
 "Updating all packages`n"
-if (Test-Path api_key) { $api_key = (gc ..\api_key) } else { "File api_key not found, updated packages will not be pushed" }
+pushd
+cd $PSScriptRoot
+
+$packages = ls *\update.ps1 -Exclude _*
 $packages | % {
     cd (Split-Path $_ -Parent)
     "-"*80

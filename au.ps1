@@ -49,3 +49,9 @@ function Update() {
 
     'Package updated'
 }
+
+function Push() {
+    if (Test-Path ../api_key) { $api_key = gc ../api_key } else { "File ./api_key not found, aborting push"; return }
+    $package = (gi *.nupkg).Name
+    cpush $package --api-key $api_key
+}
