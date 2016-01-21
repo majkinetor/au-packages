@@ -4,6 +4,7 @@ $packages = ls *\update.ps1 -Exclude _*
 pushd
 
 "Updating all packages`n"
+if (!Test-Path api_key) { $api_key = (gc ..\api_key) } else { "File api_key not found, updated packages will not be pushed" }
 $packages | % {
     cd (Split-Path $_ -Parent)
     "-"*80
@@ -17,7 +18,7 @@ $packages | % {
         cpack
 
         $package = (gi *.nupkg).Name
-        cpush $package --api-key (gc ..\api_key)
+        if ($api_key) { cpush $package --api-key $api_key }
     }
 }
 
