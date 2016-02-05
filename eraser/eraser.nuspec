@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>eraser</id>
+    <title>Eraser</title>
+    <version>6.2.0.2971</version>
+    <authors>Dennis van Lith, Joel Low, Garrett Trant</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>Eraser is an advanced security tool for Windows which allows you to completely remove sensitive data from your hard drive by overwriting it several times with carefully selected patterns.</summary>
+    <description>
+Features
+========
+
+- Erases residue from deleted files
+- Erases MFT and MFT-resident files (for NTFS volumes) and Directory Indices (for FAT)
+- Powerful and flexible scheduler
+    </description>
+    <projectUrl>http://eraser.heidi.ie</projectUrl>
+    <tags>admin file delete erase forensic</tags>
+    <copyright>GPL</copyright>
+    <licenseUrl>http://www.fsf.org/licensing/licenses/gpl.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/eraser/icon.png</iconUrl>
+    <!--<dependencies>-->
+        <!--<dependency id="uniextract" version="1.6.1" />-->
+        <!--<dependency id="dotnet4.0" version="4.0.30319" />-->
+        <!--<dependency id="7zip.commandline" version="15.14" />-->
+    <!--</dependencies>-->
+    <releaseNotes>See http://www.exactaudiocopy.de/en/index.php/resources/whats-new/whats-new</releaseNotes>
+    <mailingListUrl>http://eraser.heidi.ie/forum</mailingListUrl>
+    <docsUrl>http://eraser.heidi.ie/help</docsUrl>
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <projectSourceUrl>http://sourceforge.net/p/eraser/code/HEAD/tree</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/eraser</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
