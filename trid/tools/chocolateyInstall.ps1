@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'trid'
-$url_trid    = 'http://goo.gl/aJVb'
-$url_trid_db = 'http://goo.gl/Bnw1'
+$url_trid    = 'http://mark0.net/download/trid_w32.zip'
+$url_trid_db = 'http://mark0.net/download/triddefs.zip'
 
 $packageArgs = @{
   packageName   = $packageName
