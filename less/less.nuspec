@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>less</id>
-    <version>4.8.1</version>
+    <version>4.81</version>
     <title>Less for Windows</title>
     <authors>Mark Nudelman</authors>
     <owners>Miodrag Milić</owners>
@@ -15,7 +15,7 @@
     <tags>pager viewer</tags>
     <releaseNotes>See http://www.greenwoodsoftware.com/less/news.481.html</releaseNotes>
     <mailingListUrl>http://www.greenwoodsoftware.com/less/less-announce.html</mailingListUrl>
-    <docsUrl></docsUrl>
+    <docsUrl>http://man7.org/linux/man-pages/man1/less.1.html</docsUrl>
     <projectSourceUrl>http://www.greenwoodsoftware.com/less/download.html#source</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/less</packageSourceUrl>
   </metadata>
