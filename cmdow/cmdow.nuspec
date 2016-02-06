@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>cmdow</id>
+    <title>CMDOW Commandline Window Utility</title>
+    <version>1.4.8</version>
+    <authors>Ritchie Lawrence</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>Cmdow is a Win32 commandline utility for NT4/2000/XP/2003/2008/7 that allows windows to be listed, moved, resized, renamed, hidden/unhidden, disabled/enabled, minimized, maximized, restored, activated/inactivated, closed, killed and more</summary>
+    <description>
+Cmdow is a Win32 commandline utility for NT4/2000/XP/2003/2008/7 that allows windows to be listed, moved, resized, renamed, hidden/unhidden, disabled/enabled, minimized, maximized, restored, activated/inactivated, closed, killed and more.
+
+It is a small standalone executable. It does not create any temporary files, nor does it write to the registry. There is no installation procedure, just run it. To completely remove all traces of it from your system, delete it.
+
+Cmdow was written with batch file programmers in mind. Particular attention has been paid to Cmdows output making it easy to process with the 'FOR /F' command found in NT4/2000/XP/2003/2008/7.    
+</description>
+    <projectUrl>http://www.commandline.co.uk/cmdow</projectUrl>
+    <tags>admin cd dvd grabber</tags>
+    <copyright>MIT</copyright>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<iconUrl></iconUrl>-->
+    <!--<dependencies>-->
+    <!--</dependencies>-->
+    <releaseNotes>See http://www.commandline.co.uk/cmdow/#revision</releaseNotes>
+    <mailingListUrl>http://www.digital-inn.de/forums/exact-audio-copy-english.14</mailingListUrl>
+    <docsUrl>http://www.commandline.co.uk/cmdow/#params</docsUrl>
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <projectSourceUrl>http://sourceforge.net/projects/cmdow/files/1.4.8</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/cmdow</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
