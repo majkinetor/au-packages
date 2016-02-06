@@ -8,8 +8,10 @@
     <version>1.1</version>
     <authors>Andre Wiethoff</authors>
     <owners>Miodrag Milić</owners>
-    <summary>Exact Audio Copy is a audio grabber for audio CDs using standard CD and DVD-ROM drives. It works with a technology which reads audio CDs almost perfectly. If there are any errors that can’t be corrected, it will tell you on which time position the (possible) distortion occurred, so you could easily control it with e.g. the media player</summary>
+    <summary>Exact Audio Copy is a audio grabber for audio CDs using standard CD and DVD-ROM drives</summary>
     <description>
+Exact Audio Copy is a audio grabber for audio CDs using standard CD and DVD-ROM drives. It works with a technology which reads audio CDs almost perfectly. If there are any errors that can’t be corrected, it will tell you on which time position the (possible) distortion occurred, so you could easily control it with e.g. the media player.
+
 Features
 ========
 

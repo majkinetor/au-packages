@@ -10,11 +10,7 @@
     <owners>Miodrag Milić</owners>
     <summary>Cross-platform clipboard manager with advanced features</summary>
     <description>
-Overview
---------
-
-CopyQ monitors system clipboard and saves its content in customized tabs.
-Saved clipboard can be later copied and pasted directly into any application.
+CopyQ monitors system clipboard and saves its content in customized tabs. Saved clipboard can be later copied and pasted directly into any application.
 
 Items can be:
 
