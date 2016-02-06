@@ -19,7 +19,7 @@ Cmdow was written with batch file programmers in mind. Particular attention has 
 
 </description>
     <projectUrl>http://www.commandline.co.uk/cmdow</projectUrl>
-    <tags>admin cd dvd grabber</tags>
+    <tags>cli window</tags>
     <copyright>MIT</copyright>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
