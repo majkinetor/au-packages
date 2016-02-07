@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>shadowspawn</id>
+    <title>Shadowspawn</title>
+    <version>0.2.2</version>
+    <authors>Craig Andera</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>A Windows utility that mounts a shadow copy of the disk at a drive letter and then spawns an arbitrary command</summary>
+    <description>
+ShadowSpawn is a tool for working with shadow copies. Shadow copies are read-only snapshots of your disk. Working with shadow copies instead of the actual files allows you to do things like work with in-use (locked) files.
+
+ShadowSpawn works by making a shadow copy of your disk, making it available at a drive letter, then launching (spawning) another program that you specify.
+
+Probably the most common way to use ShadowSpawn is to use Robocopy make a copy of files that are currently in use.
+</description>
+    <projectUrl>https://github.com/candera/shadowspawn</projectUrl>
+    <tags>cli file file-system</tags>
+    <copyright>MIT</copyright>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+      <dependency id="vcredist2010" version="10.0.40219.1" />
+    </dependencies>
+    <!--<iconUrl></iconUrl>-->
+    <!--<releaseNotes></releaseNotes>-->
+    <docsUrl>https://github.com/candera/shadowspawn/blob/master/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/candera/shadowspawn/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/candera/shadowspawn</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/shadowspawn</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
