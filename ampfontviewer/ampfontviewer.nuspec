@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>ampfontviewer</id>
+    <title>AMP Font Viewer</title>
+    <version>3.8.6</version>
+    <authors>Alberto Martinez Perez</authors>
+    <owners>Miodrag Milić</owners>
+    <summary> Easy to use but powerful font manager, which allows you getting a quick overview of both installed and non installed fonts. It can install and uninstall fonts, and organize them in categories
+    </summary>
+    <description>
+This program is an easy to use but powerful font manager, which allows you getting a quick overview of both installed and non installed fonts. It can install and uninstall fonts, and organize them in categories.
+
+Features
+--------
+
+- Supports TrueType and OpenType fonts.
+- Supports Type1 fonts.
+- Installation of fonts from a folder (one by one or from a list).
+- Installation of fonts temporally (until the program is closed).
+- Deletion of installed fonts.
+- List of all installed fonts with several display options.
+- List of the fonts from a folder with several display options.
+- Several options for organizing fonts in categories and managing them.
+- It can print a list of all or some of the installed fonts with an example of each font.
+- Scratchpad area for testing the look of any font (installed or from a folder).
+- Dual English/Spanish version.
+
+</description>
+    <projectUrl>https://github.com/hluk/CopyQ</projectUrl>
+    <tags>admin font</tags>
+    <copyright>Freeware (non-commerical)</copyright>
+    <!--<licenseUrl></licenseUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/ampfontviewer/icon.png</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+    <!--<docsUrl></docsUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <!--<projectSourceUrl></projectSourceUrl>-->
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/ampfontviewer</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
