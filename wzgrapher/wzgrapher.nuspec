@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>wzgrapher</id>
+    <title>WZGrapher</title>
+    <version>0.95</version>
+    <authors>Walter Zorn</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>WZGrapher is an easy-to-use and small-footprinted Function Graphing and Calculation Program</summary>
+    <description>
+WZGrapher is an easy-to-use and small-footprinted Function Graphing and Calculation Program written in C language, with capabilities to plot both cartesian and polar functions. WZGrapher can also be used to graph numerical solution curves of integrals, to solve numerically and to graph ordinary differential equations up to the fifth order, and to calculate value tables (also of ODEs) including the first derivative values. 
+
+You can simply enter expressions like `x^3 - 2 x^2`,  `ln(sin(x-Pi/2))` or `pi*sin(2t + sin(t))`, the latter being designated as polarfunction by 't' used as independent variable. Differential equations (ODE) may look like `y'' = -xy' + 3y`, for example.
+
+[!http://www.walterzorn.de/en/images/grapher/wz_grapher.png]
+</description>
+    <projectUrl>http://www.walterzorn.de/en/grapher/grapher_app.htm</projectUrl>
+    <tags>math graph chart</tags>
+    <copyright>Freeware (non-commerical)</copyright>
+    <!--<licenseUrl></licenseUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/wzgrapher/icon.png</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+    <!--<docsUrl></docsUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <!--<projectSourceUrl></projectSourceUrl>-->
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/wzgrapher</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
