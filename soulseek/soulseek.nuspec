@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>soulseek</id>
+    <title>Soulseek</title>
+    <version>2016.1.24</version>
+    <authors>Nir Arbel</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>File sharing network</summary>
+    <description>
+Soulseek is an ad-free, spyware free, just plain free file sharing network for Windows, Mac and Linux. Our rooms, search engine and search correlation system make it easy for you to find people with similar interests, and make new discoveries!
+</description>
+    <projectUrl>http://www.soulseekqt.net</projectUrl>
+    <tags>admin share multimedia music audio video music mp3 x-platform</tags>
+    <copyright>Freeware</copyright>
+    <!--<licenseUrl></licenseUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/soulseek/icon.jpg</iconUrl>
+    <dependencies>
+    </dependencies>
+    <releaseNotes>See http://www.soulseekqt.net/news/changelog</releaseNotes>
+    <mailingListUrl>http://www.slsknet.org/news/forum/2</mailingListUrl>
+    <!--<docsUrl></docsUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <!--<projectSourceUrl></projectSourceUrl>-->
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/soulseek</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

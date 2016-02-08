@@ -10,9 +10,6 @@
     <owners>Miodrag Milić</owners>
     <summary>Powerful search for Windows</summary>
     <description>
-Overview
---------
-
 dnGrep allows you to search across files with easy-to-read results. Search through text files, Word documents, PDFs, and archives using text, regular expression, XPath, and phonetic queries. dnGrep includes search-and-replace, whole-file preview, right-click search in File Explorer, and much more.
 
 Features

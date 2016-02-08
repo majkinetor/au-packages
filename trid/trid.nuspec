@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>trid</id>
+    <title>TrID - File Identifier</title>
+    <version>2.20</version>
+    <authors>Marco Pontello</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>TrID is an utility designed to identify file types from their binary signatures</summary>
+    <description>
+TrID is an utility designed to identify file types from their binary signatures. While there are similar utilities with hard coded logic, TrID has no fixed rules. Instead, it's extensible and can be trained to recognize new formats in a fast and automatic way.
+
+TrID has many uses: identify what kind of file was sent to you via e-mail, aid in forensic analysis, support in file recovery, etc.
+
+TrID uses a database of definitions which describe recurring patterns for supported file types. As this is subject to very frequent update, it's made available as a separate package. Just download both TrID and this archive and unpack in the same folder.
+The database of definitions is constantly expanding; the more that are available, the more accurate an analysis of an unknown file can be. You can help! Use the program to both recognize unknown file types and develop new definitions that can be added to the library. See the TrIDScan page for information about how you can help. Just run the TrIDScan module against a number of files of a given type. The program will do the rest.
+
+Because TrID uses an expandable database it will never be out of date. As new file types become available you can run the scan module against them and help keep the program up to date. Other people around the world will be doing the same thing making the database a dynamic and living thing. If you have special file formats that only you use, you can also add them to your local database, making their identification easier.
+
+**NOTE**: This package automatically downloads the TrID database
+</description>
+    <projectUrl>http://mark0.net/soft-trid-e.html</projectUrl>
+    <tags>file binary identity mime x-platform</tags>
+    <copyright>Freeware (non-commerical)</copyright>
+    <!--<licenseUrl></licenseUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/trid/icon.jpg</iconUrl>
+    <!--<dependencies>-->
+    <!--</dependencies>-->
+    <!--<releaseNotes></releaseNotes>-->
+    <mailingListUrl>http://mark0.net/forum/index.php?board=6.0</mailingListUrl>
+    <!--<docsUrl></docsUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <!--<projectSourceUrl></projectSourceUrl>-->
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/trid</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
