@@ -1,4 +1,4 @@
-function Update() {
+function Update-Package() {
 
     function Load-NuspecFile() {
         $nu = New-Object xml
@@ -50,8 +50,23 @@ function Update() {
     'Package updated'
 }
 
-function Push() {
-    if (Test-Path ../api_key) { $api_key = gc ../api_key } else { "File ./api_key not found, aborting push"; return }
+function Push-Package() {
+    $ak = gi api_key -ea 0
+    if (!$ak) { $ak = gi ../api_key -ea 0}
+    if (!$ak) { throw "File api_key not found in this or parent directory, aborting push" }
+
+    $api_key = gc $ak
     $package = (gi *.nupkg).Name
     cpush $package --api-key $api_key
 }
+
+function Show-AUPackages($name) {
+    ls .\*\update.ps1 | % {
+        $packageDir = gi (Split-Path $_)
+        if ($packageDir -like "*$name*") { $packageDir }
+    }
+}
+
+sal update Update-Package
+sal push Push-Package
+sal aup Show-AuPackages

@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'ampfontviewer'
+$packageName = 'wzgapher'
 $url32       = 'http://www.walterzorn.de/en/app/wzgrapher_e.zip'
 
 $packageArgs = @{
