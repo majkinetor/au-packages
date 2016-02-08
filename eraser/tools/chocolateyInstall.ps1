@@ -27,7 +27,7 @@ $packageArgs = @{
   url64bit               = $url64
   silentArgs             = '/quiet'
   validExitCodes         = @(0)
-  registryUninstallerKey = "Exact Audio Copy"
+  registryUninstallerKey = "Eraser"
 }
 Install-ChocolateyPackage @packageArgs
 rm -force -r $setupDir -ea 0
