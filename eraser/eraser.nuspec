@@ -19,7 +19,7 @@ Features
     </description>
     <projectUrl>http://eraser.heidi.ie</projectUrl>
     <tags>admin file delete erase forensic</tags>
-    <copyright>GPL</copyright>
+    <copyright>Eraser</copyright>
     <licenseUrl>http://www.fsf.org/licensing/licenses/gpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/eraser/icon.png</iconUrl>

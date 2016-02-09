@@ -52,9 +52,10 @@ function Update-Package() {
 
 function Push-Package() {
     $ak = gi api_key -ea 0
-    if (!$ak) { gc ../api_key }
+    if (!$ak) { $ak = gi ../api_key -ea 0}
+    if (!$ak) { throw "File api_key not found in this or parent directory, aborting push" }
 
-    if (Test-Path $ak) { $api_key = gc $ak } else { "File api_key not found in this or parent directory, aborting push"; return }
+    $api_key = gc $ak
     $package = (gi *.nupkg).Name
     cpush $package --api-key $api_key
 }
