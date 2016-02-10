@@ -10,7 +10,9 @@
     <owners>Miodrag Milić</owners>
     <summary>TaskInfo is a poweful utility that combines and improves features of Task Manager and System Information tools</summary>
     <description>
-TaskInfo is a poweful utility that combines and improves features of Task Manager and System Information tools. It visually monitors (in text and graphical forms) different types of system information in any Windows system (NT 4.0, 2000, WinXP 32 and 64 bit, Server 2003 32 and 64 bit, Vista 32 and 64 bit., Server 2008 32 and 64 bit), Windows 7 and Server 2008 r2 (32 and 64 bit) in real time.
+TaskInfo is a poweful utility that combines and improves features of Task Manager and System Information tools. It visually monitors (in text and graphical forms) different types of system information in any Windows system in real time.
+
+**NOTE**: Taskinfo is free for non-commercial use. To activate it, in registration menu click the "Free for personal non-commercial use or use parameter /Register: `choco install taskinfo /packageParameters /Register`
 
 ![taskinfo screenshot](http://www.iarsn.com/images/taskinfo.gif)
     </description>

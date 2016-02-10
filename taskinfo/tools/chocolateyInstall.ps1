@@ -15,6 +15,11 @@ $packageArgs = @{
 }
 Install-ChocolateyPackage @packageArgs
 
+if ($Env:ChocolateyPackageParameters -eq '/Register') {
+    Write-Host "Registering for private non-commerical use."
+    sp HKCU:\SOFTWARE\Iarsn\TaskInfo_10_0\Registration\Current PersonalUse 1
+}
+
 $local_key     = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
 $machine_key   = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
 $machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
