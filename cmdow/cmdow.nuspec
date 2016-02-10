@@ -27,7 +27,7 @@ Cmdow was written with batch file programmers in mind. Particular attention has 
     <!--<dependencies>-->
     <!--</dependencies>-->
     <releaseNotes>See http://www.commandline.co.uk/cmdow/#revision</releaseNotes>
-    <mailingListUrl>http://www.digital-inn.de/forums/exact-audio-copy-english.14</mailingListUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
     <docsUrl>http://www.commandline.co.uk/cmdow/#params</docsUrl>
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <projectSourceUrl>http://sourceforge.net/projects/cmdow/files/1.4.8</projectSourceUrl>
