@@ -24,7 +24,7 @@
     <docsUrl></docsUrl>
     <bugTrackerUrl></bugTrackerUrl>
     <projectSourceUrl></projectSourceUrl>
-    <packageSourceUrl></packageSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
