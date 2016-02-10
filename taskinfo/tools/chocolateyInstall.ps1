@@ -1,15 +1,15 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = ''
-$url32       = ''
-$url64       = ''
+$packageName = 'taskinfo'
+$url32       = 'http://www.iarsn.com/taskinfo/tskinf10_0.exe'
+$url64       = 'http://www.iarsn.com/taskinfo/tskinf10_0.exe'
 
 $packageArgs = @{
   packageName            = $packageName
   fileType               = 'EXE'
   url                    = $url32
   url64bit               = $url64
-  silentArgs             = '/VERYSILENT'
+  silentArgs             = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
   validExitCodes         = @(0)
   registryUninstallerKey = $packageName
 }

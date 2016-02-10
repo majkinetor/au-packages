@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>taskinfo</id>
+    <title>Taskinfo</title>
+    <version>10.0.0.336</version>
+    <authors>Igor Arsenin</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>TaskInfo is a poweful utility that combines and improves features of Task Manager and System Information tools</summary>
+    <description>
+TaskInfo is a poweful utility that combines and improves features of Task Manager and System Information tools. It visually monitors (in text and graphical forms) different types of system information in any Windows system (NT 4.0, 2000, WinXP 32 and 64 bit, Server 2003 32 and 64 bit, Vista 32 and 64 bit., Server 2008 32 and 64 bit), Windows 7 and Server 2008 r2 (32 and 64 bit) in real time.
+
+![taskinfo screenshot](http://www.iarsn.com/images/taskinfo.gif)
+    </description>
+    <projectUrl>http://www.iarsn.com/taskinfo.html</projectUrl>
+    <tags>admin process system tasks tools</tags>
+    <copyright>Igor Arsenin</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon.gif</iconUrl>
+    <releaseNotes>http://www.iarsn.com/tihistory.html</releaseNotes>
+    <docsUrl>http://www.iarsn.com/taskinfo/help/taskinfo_help.htm</docsUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/taskinfo</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
