@@ -21,7 +21,7 @@
     ![yed screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/screenshot.png)
     </description>
     <projectUrl>http://www.yworks.com/en/products/yfiles/yed</projectUrl>
-    <tags>admin graph chart uml bpmn</tags>
+    <tags>graph chart uml bpmn x-platform office</tags>
     <copyright>http://www.yworks.com</copyright>
     <licenseUrl>https://www.yworks.com/products/yed/license.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
