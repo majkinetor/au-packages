@@ -63,8 +63,13 @@ function Push-Package() {
 function Show-AUPackages($name) {
     ls .\*\update.ps1 | % {
         $packageDir = gi (Split-Path $_)
+        if ($packageDir.Name -like "_*") { return }
         if ($packageDir -like "*$name*") { $packageDir }
     }
+}
+
+function Update-AllPackages($name) {
+    Show-AUPackages $name | % { "-"*40; $_.Name ; pushd $_; .\update.ps1; popd }
 }
 
 sal update Update-Package
