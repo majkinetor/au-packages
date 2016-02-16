@@ -22,6 +22,7 @@
     </dependencies>-->
     <releaseNotes></releaseNotes>
     <docsUrl></docsUrl>
+    <mailingListUrl></mailingListUrl>
     <bugTrackerUrl></bugTrackerUrl>
     <projectSourceUrl></projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/</packageSourceUrl>

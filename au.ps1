@@ -29,7 +29,7 @@ function Update-Package() {
 
     'Updating files: '
     "  $(Split-Path $nuspecFile -Leaf)"
-    "    updating version:  $nuspec_version -> $remote_version"
+    "    updating version:  $nuspec_version -> $latest_version"
     $nu.package.metadata.version = "$latest_version"
     $nu.Save($nuspecFile)
 
