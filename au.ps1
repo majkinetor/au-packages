@@ -87,7 +87,13 @@ function Update-AUPackages($name) {
     "Total errors: $err"
 }
 
+function Test-Package() {
+    cpack
+    cinst (gi *.nupkg).Name --source $pwd --force
+}
+
 sal updateall   Update-AuPackages
 sal update      Update-Package
 sal pp          Push-Package
 sal gup         Get-AuPackages
+sal test        Test-Package
