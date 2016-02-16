@@ -13,8 +13,14 @@ function au_SearchReplace {
 
 function au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases #could use: 'https://api.github.com/repos/dnGrep/dnGrep/releases/latest' | select -expand Content | ConvertFrom-Json | select name, assets_url
-    $url      = $download_page.links | ? href -match 'dnGREP.*.msi' | select -First 2 -expand href
+
+    $re = 'dnGREP.*.msi'
+    $url      = $download_page.links | ? href -match $re | select -First 2 -expand href
+    if (!$url) { throw "Can't match any url using '$re'" }
+
+    $re      = '^[\d.]+$'
     $version  = ($url[0] -split '\/' | select -Index 5).Substring(1)
+    if ($version -notmatch $re) { throw "Can't match version using '$re': $version" }
 
     $url64    = 'https://github.com' + $url[0]
     $url32    = 'https://github.com' + $url[1]

@@ -69,9 +69,25 @@ function Get-AUPackages($name) {
 }
 
 function Update-AUPackages($name) {
-    Get-AUPackages $name | % { "-"*40; $_.Name ; pushd $_; .\update.ps1; popd }
+    $cd = $pwd
+    $err = 0
+    $pkg = 0
+    Get-AUPackages $name | % {
+        "-"*40; $_.Name
+        $pkg += 1
+
+        cd $_
+        try { .\update.ps1 } catch { $err+=1; Write-Error $_ }
+    }
+    cd $cd
+
+    ""
+    "="*40
+    "Automatic packages: $pkg"
+    "Total errors: $err"
 }
 
-sal update Update-Package
-sal push Push-Package
-sal aup Show-AuPackages
+sal updateall   Update-AuPackages
+sal update      Update-Package
+sal pp          Push-Package
+sal gup         Get-AuPackages

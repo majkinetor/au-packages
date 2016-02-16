@@ -8,8 +8,14 @@ function au_SearchReplace {
 
 function au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
-    $url      = $download_page.links | ? href -match "copyq-.*-setup.exe" | select -First 1 -expand href
-    $version  = $url -split '-|.exe' | select -Last 1 -Skip 2
+
+    $re  = "copyq-.*-setup.exe"
+    $url = $download_page.links | ? href -match $re | select -First 1 -expand href
+    if (!$url) { throw "Can't match any url using '$re'" }
+
+    $re      = "^[\d.]+$"
+    $version = $url -split '-|.exe' | select -Last 1 -Skip 2
+    if ($version -notmatch $re) { throw "Can't match version using '$re': $version" }
 
     $url    = 'https://github.com' + $url
 

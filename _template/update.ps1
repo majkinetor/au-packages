@@ -7,11 +7,15 @@ function au_SearchReplace {
 }
 
 function au_GetLatest {
-    $reExe    = ''
     $download_page = Invoke-WebRequest -Uri $releases
-    $url      = $download_page.links | ? href -match $reExe | select -First 1 -expand href
-    #$version  = $url -split '[._-]|.exe' | select -Last 1 -Skip 2
 
+    $re    = ''
+    $url   = $download_page.links | ? href -match $reExe | select -First 1 -expand href
+    if (!$url) { throw "Can't match any url using '$re'" }
+
+    $re      = "^[\d.]+$"
+    $version  = $url -split '[._-]|.exe' | select -Last 1 -Skip 2
+    if ($version -notmatch $re) { throw "Can't match version using '$re': $version" }
 
     $Latest = @{ URL = $url; Version = $version }
     return $Latest
