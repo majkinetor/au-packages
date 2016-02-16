@@ -60,7 +60,7 @@ function Push-Package() {
     cpush $package --api-key $api_key
 }
 
-function Show-AUPackages($name) {
+function Get-AUPackages($name) {
     ls .\*\update.ps1 | % {
         $packageDir = gi (Split-Path $_)
         if ($packageDir.Name -like "_*") { return }
@@ -68,8 +68,8 @@ function Show-AUPackages($name) {
     }
 }
 
-function Update-AllPackages($name) {
-    Show-AUPackages $name | % { "-"*40; $_.Name ; pushd $_; .\update.ps1; popd }
+function Update-AUPackages($name) {
+    Get-AUPackages $name | % { "-"*40; $_.Name ; pushd $_; .\update.ps1; popd }
 }
 
 sal update Update-Package
