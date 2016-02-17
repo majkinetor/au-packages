@@ -1,4 +1,9 @@
-function Update-Package() {
+
+function Update-Package {
+    [CmdletBinding()]
+    param(
+        [switch]$AllowTextualUrl
+    )
 
     function Load-NuspecFile() {
         $nu = New-Object xml
@@ -7,25 +12,52 @@ function Update-Package() {
         $nu
     }
 
-    $nuspecFile = gi *.nuspec
+    function check_uri($uri) {
+        try
+        {
+            $HttpWebRequest = [System.Net.HttpWebRequest]::Create($uri)
+            $HttpWebResponse = $HttpWebRequest.GetResponse()
+            if (!$AllowTextualUrl -and $HttpWebResponse.ContentType -eq 'text/html') { $res = $false; $err='Invalid content type: text/html' }
+            $res = $true
+        }
+        catch {
+            $res = $false
+            $err = $_
+        }
+
+        if (!$res) { throw "Can't validate uri '$uri': $err" }
+    }
+
+    function check_version($Version) {
+        $re = '^[\d.]+$'
+        if ($Version -notmatch $re) { throw "Version doesn't match the pattern '$re': '$Version'" }
+    }
+
+    function check() { check_uri $Latest.uri; check_version $Latest.version }
+
+    $packageName = Split-Path $PSScriptRoot
+    $nuspecFile = gi $packageName.nuspec -ea ig
     if (!$nuspecFile) {throw 'No nuspec file' }
-    if ($nuspecFile -is [array]) { throw 'There is more then one .nuspec file' }
     $nu = Load-NuspecFile
+    $global:nuspec_version = $nu.package.metadata.version
 
-    "Checking package updates.`n"
-    $nuspec_version  = $nu.package.metadata.version
-    $global:Latest   = au_GetLatest
-    $latest_version  = $Latest.version
+    Write-Verbose "Checking package updates"
+    try {
+        $global:Latest  = au_GetLatest
+    } catch {
+        throw "au_GetLatest failed\n $_"
+    }
+    $latest_version        = $Latest.version
 
-    'Versions:'
-    "  nuspec: $nuspec_version"
-    "  remote: $latest_version"
-    ''
+    check
 
-    if (!$latest_version) { throw "Invalid latest version: '$latest_version'" }
+    Write-Verbose "nuspec version: $nuspec_version"
+    Write-Verbose "remote version: $latest_version"
+
     if ($latest_version -eq $nuspec_version) {
-        return 'No new version found.'
-    } else { 'New version is available, updating' }
+        Write-Verbose 'No new version found'
+        return $true
+    } else { Write-Verbose 'New version is available, updating' }
 
     'Updating files: '
     "  $(Split-Path $nuspecFile -Leaf)"
