@@ -156,7 +156,7 @@ function Install-AUScheduledTask($At="03:00")
     $limit = New-TimeSpan -Hours 1
     $user = "$env:USERDOMAIN\$env:USERNAME"
 
-    $script   = "{ cd $PSScriptRoot; . .\au.ps1; `$r = updateall; `$r | Export-CliXML update_results.xml }"
+    $script   = "{cd '$PSScrptRoot';. .\au.ps1; `$r = updateall; `$r | Export-CliXML update_results.xml }"
     $poshArgs = "-NoProfile -Command $script"
     $poshArgs
 
