@@ -11,12 +11,8 @@ function au_GetLatest {
 
     $re  = "eac.*\.exe"
     $url = $download_page.links | ? href -match $re | select -First 1 -expand href
-    if (!$url) { throw "Can't match any url using '$re'" }
 
-
-    $re      = "^[\d.]+$"
     $version  = $url -split '-|/|.exe' | select -Last 1 -Skip 1
-    if ($version -notmatch $re) { throw "Can't match version using '$re': $version" }
 
     $Latest = @{ URL = $url; Version = $version }
     return $Latest

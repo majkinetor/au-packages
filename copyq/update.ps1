@@ -11,10 +11,9 @@ function au_GetLatest {
 
     $re  = "copyq-.*-setup.exe"
     $url = $download_page.links | ? href -match $re | select -First 1 -expand href
-    if (!$url) { throw "Can't match any url using '$re'" }
+    $url = 'https://github.com' + $url
 
     $version = $url -split '-|.exe' | select -Last 1 -Skip 2
-    $url     = 'https://github.com' + $url
 
     $Latest = @{ URL = $url; Version = $version }
     return $Latest

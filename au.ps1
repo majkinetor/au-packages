@@ -3,7 +3,6 @@
 function Update-Package {
     [CmdletBinding()]
     param(
-        [switch]$AllowTextualUrl
     )
 
     function Load-NuspecFile() {
@@ -13,32 +12,35 @@ function Update-Package {
         $nu
     }
 
-    function check_url($url) {
-        if ([string]::IsNullOrWhiteSpace($url)) {throw "URL is empty"}
-        try
-        {
-            $HttpWebRequest = [System.Net.HttpWebRequest]::Create($url)
-            $HttpWebResponse = $HttpWebRequest.GetResponse()
-            if (!$AllowTextualUrl -and $HttpWebResponse.ContentType -eq 'text/html') { $res = $false; $err='Invalid content type: text/html' }
-            $res = $true
-        }
-        catch {
-            $res = $false
-            $err = $_
-        }
+    function check_url() {
+        $Latest.Keys | ? {$_ -like 'url*' } | % {
+            $url = $Latest[ $_ ]
+            if ([string]::IsNullOrWhiteSpace($url)) {throw 'URL is empty'}
+            try
+            {
+                $HttpWebRequest = [System.Net.HttpWebRequest]::Create($url)
+                $HttpWebResponse = $HttpWebRequest.GetResponse()
+                if ($HttpWebResponse.ContentType -like '*text/html*') { $res = $false; $err='Invalid content type: text/html' }
+                else { $res = $true }
+            }
+            catch {
+                $res = $false
+                $err = $_
+            }
 
-        if (!$res) { throw "Can't validate URL '$url'`n$err" }
+            if (!$res) { throw "Can't validate URL '$url'`n$err" }
+        }
     }
 
-    function check_version($Version) {
+    function check_version() {
         $re = '^[\d.]+$'
-        if ($Version -notmatch $re) { throw "Version doesn't match the pattern '$re': '$Version'" }
+        if ($Latest.Version -notmatch $re) { throw "Version doesn't match the pattern '$re': '$Version'" }
     }
 
-    function check() { check_url $Latest.url; check_version $Latest.version }
+    function check() { check_url; check_version}
 
     $packageName = Split-Path $pwd -Leaf
-    $nuspecFile = Get-Item "$packageName.nuspec" -ea ig
+    $nuspecFile = gi "$packageName.nuspec" -ea ig
     if (!$nuspecFile) {throw 'No nuspec file' }
     $nu = Load-NuspecFile
     $global:nuspec_version = $nu.package.metadata.version
@@ -71,7 +73,7 @@ function Update-Package {
         $fileName = $_
         "  $fileName"
 
-        $fileContent = Get-Content $fileName
+        $fileContent = gc $fileName
         $sr[ $fileName ].GetEnumerator() | % {
             ('    {0} = {1} ' -f $_.name, $_.value)
             $fileContent = $fileContent -replace $_.name, $_.value
@@ -85,69 +87,70 @@ function Update-Package {
 }
 
 function Push-Package() {
-    $ak = Get-Item api_key -ea 0
-    if (!$ak) { $ak = Get-Item ../api_key -ea 0}
-    if (!$ak) { throw "File api_key not found in this or parent directory, aborting push" }
+    $ak = gi api_key -ea 0
+    if (!$ak) { $ak = gi ../api_key -ea 0}
+    if (!$ak) { throw 'File api_key not found in this or parent directory, aborting push' }
 
-    $api_key = Get-Content $ak
-    $package = Get-Item *.nupkg | Sort-Object -Property CreationTime -Descending | Select-Object -First 1
-    if (!$package) { throw "There is no nupkg file in the directory"}
+    $api_key = gc $ak
+    $package = ls *.nupkg | sort -Property CreationTime -Descending | select -First 1
+    if (!$package) { throw 'There is no nupkg file in the directory'}
     cpush $package.Name --api-key $api_key
 }
 
 function Get-AUPackages($name) {
-    Get-ChildItem .\*\update.ps1 | % {
-        $packageDir = Get-Item (Split-Path $_)
-        if ($packageDir.Name -like "_*") { return }
+    ls .\*\update.ps1 | % {
+        $packageDir = gi (Split-Path $_)
+        if ($packageDir.Name -like '_*') { return }
         if ($packageDir -like "*$name*") { $packageDir }
     }
 }
 
 function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
     $cd = $pwd
-    $err = $pkg = 0
-    "Started updating procedure for all automatic update packages"
+    Write-Host 'Updating all automatic packages'
 
-    Get-AUPackages $name | % {
-        $pkg += 1; $msg = ''; $update_err = $null
+    $result = @()
+    $a = Get-AUPackages $name
+    $a | % {
+        $i = [ordered]@{PackageName=''; Updated=''; RemoteVersion=''; NuspecVersion=''; Message=''; Result=''; PushResult=''}
+
         Set-Location $_
-        $packageName = Split-Path $_ -Leaf
+        $i.PackageName = Split-Path $_ -Leaf
         try {
-            $r = .\update.ps1
-            $packageUpdated = $r[-1] -eq 'Package updated'
-            $remote_version = ($r -match '^remote version: .+$').Substring(16)
+            $i.Result        = .\update.ps1
+            $i.Updated       = $i.Result[-1] -eq 'Package updated'
+            $i.RemoteVersion = ($i.Result -match '^remote version: .+$').Substring(16)
+            $i.NuspecVersion = ($i.Result -match '^nuspec version: .+$').Substring(16)
 
-            if ($packageUpdated -and $Push) { push-package }
+            if ($i.Updated -and $Push) { i.PushResult = push-package }
 
-            if ($packageUpdated) {
-                $msg = "{0} is updated to {1}" -f $packageName, $remote_version
-                if ($Push) { $msg += " and pushed" }
+            if ($i.Updated) {
+                $i.Message = '{0} is updated to {1}' -f $i.PackageName, $i.RemoteVersion
+                if ($Push) { $i.Message += ' and pushed' }
             }
-            else { $msg = "$packageName has no updates" }
+            else { $i.Message = $i.PackageName + ' has no updates' }
 
         } catch {
-            $err+=1
-            $update_err = $_
+            $i.Error = $_
+            $i.Message = $i.PackageName + " had errors during update"
+            $i.Error -split '\n' | % { $i.Message += "`n    $_" }
         }
+        Write-Host "  $($i.Message)"
+        $result += [pscustomobject]$i
 
-        if ($update_err) { 
-            $errmsg = $update_err -split '\n' | % { "  $_" }
-            $msg = "$packageName had errors during update"
-        }
-        $msg
-        if ($update_err) {$errmsg}
     }
     Set-Location $cd
 
-    ""
-    "="*40
-    "Automatic packages: $pkg"
-    "Total errors: $err"
+    Write-Host ""
+    Write-Host "Automatic packages processed: $($result.Length)"
+    Write-Host "Total errors: $( ($result | ? Error -ne $null).Length )"
+
+    $result
 }
 
 function Test-Package() {
     cpack
-    cinst (Get-Item *.nupkg).Name --source $pwd --force
+    cinst (gi *.nupkg).Name --source $pwd --force
 }
 
 
@@ -157,4 +160,5 @@ Set-Alias pp          Push-Package
 Set-Alias gup         Get-AuPackages
 Set-Alias test        Test-Package
 
-Update-AUPackages
+
+#if ($MyInvocation.CommandOrigin -eq 'Runspace') { Update-AUPackages }
