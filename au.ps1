@@ -3,6 +3,7 @@
 function Update-Package {
     [CmdletBinding()]
     param(
+        [switch] $NoCheck
     )
 
     function Load-NuspecFile() {
@@ -53,7 +54,7 @@ function Update-Package {
     }
     $latest_version = $Latest.version
 
-    check
+    if (!$NoCheck) { check }
 
     "nuspec version: $nuspec_version"
     "remote version: $latest_version"
