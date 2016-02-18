@@ -19,9 +19,10 @@ function Update-Package {
             if ([string]::IsNullOrWhiteSpace($url)) {throw 'URL is empty'}
             try
             {
-                $HttpWebRequest = [System.Net.HttpWebRequest]::Create($url)
-                $HttpWebResponse = $HttpWebRequest.GetResponse()
-                if ($HttpWebResponse.ContentType -like '*text/html*') { $res = $false; $err='Invalid content type: text/html' }
+                $request  = [System.Net.HttpWebRequest]::Create($url)
+                $request.Timeout = 5000
+                $response = $request.GetResponse()
+                if ($response.ContentType -like '*text/html*') { $res = $false; $err='Invalid content type: text/html' }
                 else { $res = $true }
             }
             catch {
@@ -98,23 +99,24 @@ function Push-Package() {
     cpush $package.Name --api-key $api_key
 }
 
-function Get-AUPackages($name) {
+function Get-AUPackages($Name=$null) {
     ls .\*\update.ps1 | % {
         $packageDir = gi (Split-Path $_)
         if ($packageDir.Name -like '_*') { return }
-        if ($packageDir.Name -like "$name") { $packageDir }
+        if ($Name) {
+            if ( $packageDir.Name -like "$Name" ) { $packageDir }
+        } else { $packageDir }
     }
 }
 
-function Update-AUPackages($name, [switch]$Push, [hashtable]$Options, [int] $Wait = $null) {
+function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
     $cd = $pwd
     Write-Host 'Updating all automatic packages'
 
     $result = @()
     $a = Get-AUPackages $name
     $a | % {
-        if ($Wait -and $result)  { Write-Host "Sleeping $Wait seconds"; sleep $Wait }
-        $i = [ordered]@{PackageName=''; Updated=''; RemoteVersion=''; NuspecVersion=''; Message=''; Result=''; PushResult=''; Error=''}
+        $i = [ordered]@{PackageName=''; Updated=''; RemoteVersion=''; NuspecVersion=''; Message=''; Result=''; PushResult=''; Error=$null}
 
         Set-Location $_
         $i.PackageName = Split-Path $_ -Leaf
@@ -144,7 +146,8 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options, [int] $Wai
 
     Write-Host ""
     Write-Host "Automatic packages processed: $($result.Length)"
-    $total_errors = ($result | ? Error -ne $null).Length
+    $total_errors = ($result | ? {$_.Error -ne $null} | measure).Count
+
     Write-Host "Total errors: $total_errors"
 
     if ($total_errors -gt 0) {

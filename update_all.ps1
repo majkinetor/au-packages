@@ -7,6 +7,5 @@ $options = @{
     SmtpServer = '10.35.1.36'
 }
 
-$r = updateall p* -Wait 0 -Options $options
+$r = updateall dn* -Options $options
 $r | Export-CliXML update_results.xml
-
