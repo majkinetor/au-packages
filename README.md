@@ -74,7 +74,7 @@ This function is designed for scheduling. You can use `Install-AUScheduledTask` 
         }
     }
 
-    Update-AUPackage -Options $options | Export-CliXML update_results.xml
+    Update-AUPackages -Options $options | Export-CliXML update_results.xml
 
 Specify function parameter `Name` to specify package names via glob, for instance "d*" would update only packages which names start with the letter 'd'. Add `Push` among options to push sucesifully built packages to the chocolatey repository. The result may look like this:
 
