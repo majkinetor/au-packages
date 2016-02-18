@@ -43,4 +43,7 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml/be
     <mailingListUrl>http://plantuml.sourceforge.net/qa</mailingListUrl>
     <docsUrl>http://plantuml.com/PlantUML_Language_Reference_Guide.pdf</docsUrl>
   </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
 </package>
