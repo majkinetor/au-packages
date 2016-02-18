@@ -152,7 +152,7 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
             $result | Export-CliXML $Env:TEMP\au_result.xml
             Send-MailMessage `
                 -To $Options.Email
-                -From "Chocolatey Autoupdate Script"
+                -From ("Update-AUPackages@{0}{1}" -f $Env:UserName, $Env:ComputerName)
                 -Subject "$total_errors errors during update"
                 -Body ($result | fl *)
                 -Attachments $Env:TEMP\au_result.xml
