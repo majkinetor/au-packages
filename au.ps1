@@ -3,7 +3,7 @@
 function Update-Package {
     [CmdletBinding()]
     param(
-        [switch] $NoCheck
+        [switch]   $NoCheck
     )
 
     function Load-NuspecFile() {
@@ -102,17 +102,18 @@ function Get-AUPackages($name) {
     ls .\*\update.ps1 | % {
         $packageDir = gi (Split-Path $_)
         if ($packageDir.Name -like '_*') { return }
-        if ($packageDir -like "*$name*") { $packageDir }
+        if ($packageDir.Name -like "$name") { $packageDir }
     }
 }
 
-function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
+function Update-AUPackages($name, [switch]$Push, [hashtable]$Options, [int] $Wait = $null) {
     $cd = $pwd
     Write-Host 'Updating all automatic packages'
 
     $result = @()
     $a = Get-AUPackages $name
     $a | % {
+        if ($Wait -and $result)  { Write-Host "Sleeping $Wait seconds"; sleep $Wait }
         $i = [ordered]@{PackageName=''; Updated=''; RemoteVersion=''; NuspecVersion=''; Message=''; Result=''; PushResult=''; Error=''}
 
         Set-Location $_
@@ -138,7 +139,6 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
         }
         Write-Host "  $($i.Message)"
         $result += [pscustomobject]$i
-
     }
     Set-Location $cd
 
@@ -150,13 +150,16 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
     if ($total_errors -gt 0) {
         if ($Options.Email){
             $result | Export-CliXML $Env:TEMP\au_result.xml
-            Send-MailMessage `
-                -To $Options.Email
-                -From ("Update-AUPackages@{0}{1}" -f $Env:UserName, $Env:ComputerName)
-                -Subject "$total_errors errors during update"
-                -Body ($result | fl *)
-                -Attachments $Env:TEMP\au_result.xml
-                -SmtpServer $Options.SmtpServer
+            $params = @{
+                To          = $Options.Email
+                From        = "Update-AUPackages@{0}.{1}" -f $Env:UserName, $Env:ComputerName
+                Subject     = "$total_errors errors during update"
+                Body        = "<body><pre>" + ($result | fl * | out-string) + "</pre></body>"
+                Attachments = "$Env:TEMP\au_result.xml"
+                SmtpServer  = $Options.SmtpServer
+            }
+            $params
+            Send-MailMessage @params
         }
     }
     $result
@@ -200,9 +203,3 @@ Set-Alias update      Update-Package
 Set-Alias pp          Push-Package
 Set-Alias gup         Get-AuPackages
 Set-Alias test        Test-Package
-
-
-if ($MyInvocation.CommandOrigin -eq 'Runspace') {
-    Install-AUScheduledTask
-    #Update-AUPackages
-}
