@@ -149,17 +149,18 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options, [int] $Wai
 
     if ($total_errors -gt 0) {
         if ($Options.Email){
+
+            $from = "Update-AUPackages@{0}.{1}" -f $Env:UserName, $Env:ComputerName
+            $msg  = New-Object System.Net.Mail.MailMessage $from, $Options.Email
+            $msg.Subject    = "$total_errors errors during update"
+            $msg.IsBodyHTML = $true
+            $msg.Body       = "<body><pre>" + ($result | fl * | out-string) + "</pre></body>"
+
             $result | Export-CliXML $Env:TEMP\au_result.xml
-            $params = @{
-                To          = $Options.Email
-                From        = "Update-AUPackages@{0}.{1}" -f $Env:UserName, $Env:ComputerName
-                Subject     = "$total_errors errors during update"
-                Body        = "<body><pre>" + ($result | fl * | out-string) + "</pre></body>"
-                Attachments = "$Env:TEMP\au_result.xml"
-                SmtpServer  = $Options.SmtpServer
-            }
-            $params
-            Send-MailMessage @params
+            $msg.Attachments.Add( new-object Net.Mail.Attachment( "$Env:TEMP\au_result.xml" ) )
+
+            $smtp = new-object Net.Mail.SmtpClient($Options.SmtpServer)
+            $smtp.Send($msg)
         }
     }
     $result
