@@ -3,6 +3,7 @@
 function Update-Package {
     [CmdletBinding()]
     param(
+        [switch]   $NoCheck
     )
 
     function Load-NuspecFile() {
@@ -53,7 +54,7 @@ function Update-Package {
     }
     $latest_version = $Latest.version
 
-    check
+    if (!$NoCheck) { check }
 
     "nuspec version: $nuspec_version"
     "remote version: $latest_version"
@@ -101,18 +102,19 @@ function Get-AUPackages($name) {
     ls .\*\update.ps1 | % {
         $packageDir = gi (Split-Path $_)
         if ($packageDir.Name -like '_*') { return }
-        if ($packageDir -like "*$name*") { $packageDir }
+        if ($packageDir.Name -like "$name") { $packageDir }
     }
 }
 
-function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
+function Update-AUPackages($name, [switch]$Push, [hashtable]$Options, [int] $Wait = $null) {
     $cd = $pwd
     Write-Host 'Updating all automatic packages'
 
     $result = @()
     $a = Get-AUPackages $name
     $a | % {
-        $i = [ordered]@{PackageName=''; Updated=''; RemoteVersion=''; NuspecVersion=''; Message=''; Result=''; PushResult=''}
+        if ($Wait -and $result)  { Write-Host "Sleeping $Wait seconds"; sleep $Wait }
+        $i = [ordered]@{PackageName=''; Updated=''; RemoteVersion=''; NuspecVersion=''; Message=''; Result=''; PushResult=''; Error=''}
 
         Set-Location $_
         $i.PackageName = Split-Path $_ -Leaf
@@ -137,14 +139,31 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
         }
         Write-Host "  $($i.Message)"
         $result += [pscustomobject]$i
-
     }
     Set-Location $cd
 
     Write-Host ""
     Write-Host "Automatic packages processed: $($result.Length)"
-    Write-Host "Total errors: $( ($result | ? Error -ne $null).Length )"
+    $total_errors = ($result | ? Error -ne $null).Length
+    Write-Host "Total errors: $total_errors"
 
+    if ($total_errors -gt 0) {
+        if ($Options.Email){
+
+            $from = "Update-AUPackages@{0}.{1}" -f $Env:UserName, $Env:ComputerName
+            $msg  = New-Object System.Net.Mail.MailMessage $from, $Options.Email
+            $msg.Subject    = "$total_errors errors during update"
+            $msg.IsBodyHTML = $true
+            $msg.Body       = "<body><pre>" + ($result | fl * | out-string) + "</pre></body>"
+
+            $result | Export-CliXML $Env:TEMP\au_result.xml
+            $attachment = new-object Net.Mail.Attachment( "$Env:TEMP\au_result.xml" )
+            $msg.Attachments.Add($attachment)
+
+            $smtp = new-object Net.Mail.SmtpClient($Options.SmtpServer)
+            $smtp.Send($msg)
+        }
+    }
     $result
 }
 
@@ -156,8 +175,9 @@ function Install-AUScheduledTask($At="03:00")
     $limit = New-TimeSpan -Hours 1
     $user = "$env:USERDOMAIN\$env:USERNAME"
 
-    $poshArgs = '-NoProfile -WindowStyle Hidden -NonInteractive'
-    $poshArgs +='-Command {ls}'
+    $script   = "{cd '$PSScrptRoot';. .\au.ps1; `$r = updateall; `$r | Export-CliXML update_results.xml }"
+    $poshArgs = "-NoProfile -Command $script"
+    $poshArgs
 
     $a = New-ScheduledTaskAction -Execute powershell -Argument $poshArgs -WorkingDirectory $pwd
     $t = New-ScheduledTaskTrigger -Daily -At $at
@@ -185,9 +205,3 @@ Set-Alias update      Update-Package
 Set-Alias pp          Push-Package
 Set-Alias gup         Get-AuPackages
 Set-Alias test        Test-Package
-
-
-if ($MyInvocation.CommandOrigin -eq 'Runspace') {
-    Install-AUScheduledTask
-    #Update-AUPackages
-}

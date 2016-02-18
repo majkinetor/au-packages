@@ -1,3 +1,4 @@
 *.nupkg
 /api_key
 /update_all.log
+/update_results.xml

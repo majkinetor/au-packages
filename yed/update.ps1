@@ -8,7 +8,7 @@ function au_SearchReplace {
 
 function au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
-    $download_page.RawContent -match 'resources/yed/demo/.+\.zip')
+    $download_page.RawContent -match 'resources/yed/demo/.+\.zip'
     $url = "https://www.yworks.com/" + $Matches[0]
 
     #$url = "https://www.yworks.com/resources/yed/demo/yEd-3.14.4.zip"
