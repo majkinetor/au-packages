@@ -19,7 +19,7 @@ function au_GetLatest {
     $url64    = 'https://github.com' + $url[0]
     $url32    = 'https://github.com' + $url[1]
 
-    $version  = ($url64 -split '\/' | select -Index 5).Substring(1)
+    $version  = ($url[0] -split '\/' | select -Index 5).Substring(1)
 
     $Latest = @{ URL64 = $url64; URL32 = $url32; Version = $version }
     return $Latest
