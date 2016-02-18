@@ -148,6 +148,32 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
     $result
 }
 
+function Install-AUScheduledTask($At="03:00")
+{
+    if ([System.Environment]::OSVersion.Version -lt 6.2) { throw "This function can be used only on Windows 8/2012 or newer" }
+    import-module ScheduledTasks
+
+    $limit = New-TimeSpan -Hours 1
+    $user = "$env:USERDOMAIN\$env:USERNAME"
+
+    $poshArgs = '-NoProfile -WindowStyle Hidden -NonInteractive'
+    $poshArgs +='-Command {ls}'
+
+    $a = New-ScheduledTaskAction -Execute powershell -Argument $poshArgs -WorkingDirectory $pwd
+    $t = New-ScheduledTaskTrigger -Daily -At $at
+    $s = New-ScheduledTaskSettingsSet -ExecutionTimeLimit $Limit -DontStopIfGoingOnBatteries -AllowStartIfOnBatteries -Compatibility Win8 -StartWhenAvailable
+
+    $params = @{
+        Force    = $True
+        TaskPath = $user
+        Action   = $a
+        Trigger  = $t
+        Settings = $s
+        Taskname = "Update Chocolatey Packages"
+    }
+    Register-ScheduledTask @params
+}
+
 function Test-Package() {
     cpack
     cinst (gi *.nupkg).Name --source $pwd --force
@@ -161,4 +187,7 @@ Set-Alias gup         Get-AuPackages
 Set-Alias test        Test-Package
 
 
-#if ($MyInvocation.CommandOrigin -eq 'Runspace') { Update-AUPackages }
+if ($MyInvocation.CommandOrigin -eq 'Runspace') {
+    Install-AUScheduledTask
+    #Update-AUPackages
+}
