@@ -176,31 +176,9 @@ function Send-Mail($Mail) {
     $smtp.Send($msg)
 }
 
-function Install-AUScheduledTask($At="03:00")
+function Install-AUScheduledTask($At="03:00:00")
 {
-    if ([System.Environment]::OSVersion.Version -lt 6.2) { throw "This function can be used only on Windows 8/2012 or newer" }
-    import-module ScheduledTasks
-
-    $limit = New-TimeSpan -Hours 1
-    $user = "$env:USERDOMAIN\$env:USERNAME"
-
-    $script   = "{cd '$PSScrptRoot';. .\au.ps1; `$r = updateall; `$r | Export-CliXML update_results.xml }"
-    $poshArgs = "-NoProfile -Command $script"
-    $poshArgs
-
-    $a = New-ScheduledTaskAction -Execute powershell -Argument $poshArgs -WorkingDirectory $pwd
-    $t = New-ScheduledTaskTrigger -Daily -At $at
-    $s = New-ScheduledTaskSettingsSet -ExecutionTimeLimit $Limit -DontStopIfGoingOnBatteries -AllowStartIfOnBatteries -Compatibility Win8 -StartWhenAvailable
-
-    $params = @{
-        Force    = $True
-        TaskPath = $user
-        Action   = $a
-        Trigger  = $t
-        Settings = $s
-        Taskname = "Update Chocolatey Packages"
-    }
-    Register-ScheduledTask @params
+    schtasks /create /tn "Update-AUPackages" /tr "powershell -NoProfile -File '$pwd\update_all.ps1'" /sc daily /st $At
 }
 
 function Test-Package() {
