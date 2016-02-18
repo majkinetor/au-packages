@@ -94,6 +94,6 @@ Specify function parameter `Name` to specify package names via glob, for instanc
 
     Automatic packages processed: 6
     Total errors: 2
-    Mail with errors sent to xyz@gmail.com
+    Mail with errors sent to meh@gmail.com
 
-The attachment is `$result` object which can be loaded with `Import-CliXml` and inspected.
+The email attachment is a `$result` object that keeps all the information about each package which happened during update. It can be loaded with `Import-CliXml` and inspected.
