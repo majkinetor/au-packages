@@ -47,9 +47,33 @@ Instead of using [official method](https://github.com/chocolatey/choco/wiki/Auto
 
 This is best understood via the [example](https://github.com/majkinetor/chocolatey/blob/master/dngrep/update.ps1).
 
-With this set, you can:
+With this set, you can Call individual `update.ps1` from within its directory to update that specific package.
 
-- Call individual `update.ps1` to update specific package.
-- Update all packages using `update_all.ps1` - the script will call each `update.ps1` it finds and pack/push the package if there are changes. You can see its cumulative transcript in the `update_all.log`. For push to work, specify your api key in the file `api_key` in the scripts directory.
-- Schedule `update_all.ps1` using `install_ts.ps1` to install scheduled task that runs daily. Edit this script to configure scheduled task. This script requires Windows8++ (you will have to manually create scheduled task on older systems).
+Updating all packages
+---------------------
 
+You can update all packages and optionally push them to chocolatey repository with single command. 
+
+Function `Update-AUPackages` will iterate over `update.ps1` scripts and execute each. If it detects that package is updated it will `cpack` it and push it. 
+The function does some rudimentary verifications of URLs and version strings.
+-For push to work, specify your api key in the file `api_key` in the scripts directory.
+
+This function is designed for scheduling. You can use `Install-AUScheduledTask` to install daily task scheduler task that points to the `update_all.ps1` script. In this scenario, we want to be notified about possible errors during packages update procedure. If the update procedure fails for any reasons there is an option to send an email with results as an attachment in order to investigate the problem. This is the prototype of the `update_all.ps1`:
+
+    cd $PSScriptRoot
+    . .\au.ps1
+
+    $options = @{
+        Mail = @{
+            To       = 'meh@gmail.com'
+            Server   = 'smtp.gmail.com'
+            UserName = 'meh@gmail.com'
+            Password = '**************'
+            Port     = 587
+            EnableSsl= $true
+        }
+    }
+
+    Update-AUPackage -Options $options | Export-CliXML update_results.xml
+
+You can use parameter `-Name` to specify package names via glob, for instance "d*" would update only packages which names start with the letter d. Add `Push` among options to push sucesifully built packages to the chocolatey repository.

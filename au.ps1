@@ -151,23 +151,29 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
     Write-Host "Total errors: $total_errors"
 
     if ($total_errors -gt 0) {
-        if ($Options.Email){
-
-            $from = "Update-AUPackages@{0}.{1}" -f $Env:UserName, $Env:ComputerName
-            $msg  = New-Object System.Net.Mail.MailMessage $from, $Options.Email
-            $msg.Subject    = "$total_errors errors during update"
-            $msg.IsBodyHTML = $true
-            $msg.Body       = "<body><pre>" + ($result | fl * | out-string) + "</pre></body>"
-
-            $result | Export-CliXML $Env:TEMP\au_result.xml
-            $attachment = new-object Net.Mail.Attachment( "$Env:TEMP\au_result.xml" )
-            $msg.Attachments.Add($attachment)
-
-            $smtp = new-object Net.Mail.SmtpClient($Options.SmtpServer)
-            $smtp.Send($msg)
-        }
+        if ($Options.Mail) { Send-Mail $Options.Mail }
     }
     $result
+}
+
+function Send-Mail($Mail) {
+    $from = "Update-AUPackages@{0}.{1}" -f $Env:UserName, $Env:ComputerName
+    $msg  = New-Object System.Net.Mail.MailMessage $from, $Mail.To
+    $msg.Subject    = "$total_errors errors during update"
+    $msg.IsBodyHTML = $true
+    $msg.Body       = "<body><pre>" + ($result | fl * | out-string) + "</pre></body>"
+
+    $result | Export-CliXML "$Env:TEMP\au_result.xml"
+    $attachment = new-object Net.Mail.Attachment( "$Env:TEMP\au_result.xml" )
+    $msg.Attachments.Add($attachment)
+
+    $smtp = new-object Net.Mail.SmtpClient($Mail.Server)
+    if ($Mail.UserName) {
+        $smtp.Credentials = new-object System.Net.NetworkCredential($Mail.UserName, $Mail.Password)
+    }
+    if ($Mail.Port) { $smtp.port = $Mail.Port }
+    $smtp.EnableSsl = $Mail.EnableSsl
+    $smtp.Send($msg)
 }
 
 function Install-AUScheduledTask($At="03:00")
