@@ -112,7 +112,7 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
     $result = @()
     $a = Get-AUPackages $name
     $a | % {
-        $i = [ordered]@{PackageName=''; Updated=''; RemoteVersion=''; NuspecVersion=''; Message=''; Result=''; PushResult=''}
+        $i = [ordered]@{PackageName=''; Updated=''; RemoteVersion=''; NuspecVersion=''; Message=''; Result=''; PushResult=''; Error=''}
 
         Set-Location $_
         $i.PackageName = Split-Path $_ -Leaf
@@ -143,8 +143,21 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
 
     Write-Host ""
     Write-Host "Automatic packages processed: $($result.Length)"
-    Write-Host "Total errors: $( ($result | ? Error -ne $null).Length )"
+    $total_errors = ($result | ? Error -ne $null).Length
+    Write-Host "Total errors: $total_errors"
 
+    if ($total_errors -gt 0) {
+        if ($Options.Email){
+            $result | Export-CliXML $Env:TEMP\au_result.xml
+            Send-MailMessage `
+                -To $Options.Email
+                -From "Chocolatey Autoupdate Script"
+                -Subject "$total_errors errors during update"
+                -Body ($result | fl *)
+                -Attachments $Env:TEMP\au_result.xml
+                -SmtpServer $Options.SmtpServer
+        }
+    }
     $result
 }
 
