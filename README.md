@@ -96,4 +96,4 @@ Specify function parameter `Name` to specify package names via glob, for instanc
     Total errors: 2
     Mail with errors sent to xyz@gmail.com
 
-
+The attachment is `$result` object which can be loaded with `Import-CliXml` and inspected.
