@@ -157,7 +157,8 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options, [int] $Wai
             $msg.Body       = "<body><pre>" + ($result | fl * | out-string) + "</pre></body>"
 
             $result | Export-CliXML $Env:TEMP\au_result.xml
-            $msg.Attachments.Add( new-object Net.Mail.Attachment( "$Env:TEMP\au_result.xml" ) )
+            $attachment = new-object Net.Mail.Attachment( "$Env:TEMP\au_result.xml" )
+            $msg.Attachments.Add($attachment)
 
             $smtp = new-object Net.Mail.SmtpClient($Options.SmtpServer)
             $smtp.Send($msg)
