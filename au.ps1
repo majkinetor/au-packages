@@ -156,8 +156,9 @@ function Install-AUScheduledTask($At="03:00")
     $limit = New-TimeSpan -Hours 1
     $user = "$env:USERDOMAIN\$env:USERNAME"
 
-    $poshArgs = '-NoProfile -WindowStyle Hidden -NonInteractive'
-    $poshArgs +='-Command {ls}'
+    $script   = "{ cd $PSScriptRoot; . .\au.ps1; `$r = updateall; `$r | Export-CliXML update_results.xml }"
+    $poshArgs = "-NoProfile -Command $script"
+    $poshArgs
 
     $a = New-ScheduledTaskAction -Execute powershell -Argument $poshArgs -WorkingDirectory $pwd
     $t = New-ScheduledTaskTrigger -Daily -At $at
