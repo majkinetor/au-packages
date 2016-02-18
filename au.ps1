@@ -146,22 +146,26 @@ function Update-AUPackages($name, [switch]$Push, [hashtable]$Options) {
 
     Write-Host ""
     Write-Host "Automatic packages processed: $($result.Length)"
-    $total_errors = ($result | ? {$_.Error -ne $null} | measure).Count
 
+    $errors = $result | ? {$_.Error -ne $null}
+    $total_errors = ($errors | measure).Count
     Write-Host "Total errors: $total_errors"
 
     if ($total_errors -gt 0) {
-        if ($Options.Mail) { Send-Mail $Options.Mail }
+        if ($Options.Mail) {
+            Send-Mail $Options.Mail ($errors | out-string)
+            Write-Host ("Mail with errors sent to " + $Options.Mail.To)
+        }
     }
     $result
 }
 
-function Send-Mail($Mail) {
+function Send-Mail($Mail, $Body) {
     $from = "Update-AUPackages@{0}.{1}" -f $Env:UserName, $Env:ComputerName
     $msg  = New-Object System.Net.Mail.MailMessage $from, $Mail.To
     $msg.Subject    = "$total_errors errors during update"
     $msg.IsBodyHTML = $true
-    $msg.Body       = "<body><pre>" + ($result | fl * | out-string) + "</pre></body>"
+    $msg.Body       = "<body><pre>$Body</pre></body>"
 
     $result | Export-CliXML "$Env:TEMP\au_result.xml"
     $attachment = new-object Net.Mail.Attachment( "$Env:TEMP\au_result.xml" )

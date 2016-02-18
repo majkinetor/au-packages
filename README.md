@@ -56,7 +56,7 @@ You can update all packages and optionally push them to chocolatey repository wi
 
 Function `Update-AUPackages` will iterate over `update.ps1` scripts and execute each. If it detects that package is updated it will `cpack` it and push it. 
 The function does some rudimentary verifications of URLs and version strings.
--For push to work, specify your api key in the file `api_key` in the scripts directory.
+For push to work, specify your api key in the file `api_key` in the script's directory.
 
 This function is designed for scheduling. You can use `Install-AUScheduledTask` to install daily task scheduler task that points to the `update_all.ps1` script. In this scenario, we want to be notified about possible errors during packages update procedure. If the update procedure fails for any reasons there is an option to send an email with results as an attachment in order to investigate the problem. This is the prototype of the `update_all.ps1`:
 
@@ -76,4 +76,24 @@ This function is designed for scheduling. You can use `Install-AUScheduledTask` 
 
     Update-AUPackage -Options $options | Export-CliXML update_results.xml
 
-You can use parameter `-Name` to specify package names via glob, for instance "d*" would update only packages which names start with the letter d. Add `Push` among options to push sucesifully built packages to the chocolatey repository.
+Specify function parameter `Name` to specify package names via glob, for instance "d*" would update only packages which names start with the letter 'd'. Add `Push` among options to push sucesifully built packages to the chocolatey repository. The result may look like this:
+
+    PS C:\chocolatey> .\update_all.ps1
+
+    Updating all automatic packages
+    copyq is updated to 2.6.1 and pushed 
+    dngrep had errors during update
+        Can't validate URL 'https://github.com/dnGrep/dnGrep/releases/download/v2.8.16.0/dnGREP.2.8.16.x64.msi'
+        Exception calling "GetResponse" with "0" argument(s): "The operation has timed out"
+    eac has no updates
+    pandoc has no updates
+    plantuml has no updates
+    yed had errors during update
+        Can't validate URL 'https://www.yworks.com'
+        Invalid content type: text/html
+
+    Automatic packages processed: 6
+    Total errors: 2
+    Mail with errors sent to xyz@gmail.com
+
+
