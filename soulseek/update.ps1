@@ -3,7 +3,7 @@ import-module au
 $changelog = 'http://www.soulseekqt.net/news/changelog'
 
 function global:au_SearchReplace {
-    throw 'New version available. Nothing will be done automatically'
+    throw "New version $($Latest.Version) available. Nothing will be done automatically"
     #@{".\tools\chocolateyInstall.ps1" = @{ "(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.URL)'" }}
 }
 
