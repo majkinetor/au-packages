@@ -1,12 +1,12 @@
-. ../au.ps1
+import-module au
 
 $releases = 'http://www.exactaudiocopy.de/en/index.php/weitere-seiten/download-from-alternative-servers-2'
 
-function au_SearchReplace {
+function global:au_SearchReplace {
     @{".\tools\chocolateyInstall.ps1" = @{ "(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.URL)'" }}
 }
 
-function au_GetLatest {
+function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
 
     $re  = "eac.*\.exe"

@@ -1,8 +1,8 @@
-. ../au.ps1
+import-module au
 
 $releases = 'https://github.com/dnGrep/dnGrep/releases'
 
-function au_SearchReplace {
+function global:au_SearchReplace {
     @{
         'tools\chocolateyInstall.ps1' = @{
             "(^[$]url64\s*=\s*)('.*')" = "`$1'$($Latest.URL64)'"
@@ -11,7 +11,7 @@ function au_SearchReplace {
      }
 }
 
-function au_GetLatest {
+function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases #could use: 'https://api.github.com/repos/dnGrep/dnGrep/releases/latest' | select -expand Content | ConvertFrom-Json | select name, assets_url
 
     $re = 'dnGREP.*.msi'
