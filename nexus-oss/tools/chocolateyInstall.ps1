@@ -43,9 +43,9 @@ if ($s.Status -ne 'Running') { Write-Warning "Nexus service 'nexus-webapp' is in
 $ok = $false
 try {
     $request  = [System.Net.HttpWebRequest]::Create("http://localhost:8081/nexus")
-    $request.GetResponse()
-    $ok = $request.StatusCode -eq 'OK'
+    $response = $request.GetResponse()
+    $ok = $response.StatusCode -eq 'OK'
 } catch {}
 
 if (!$ok) { Write-Warning "Nexus should be available at http://localhost:8081/nexus but can't be reached" }
-Write-Host "Nexus is available at http://localhost:8081/nexus"
+else { Write-Host "Nexus is available at http://localhost:8081/nexus" }
