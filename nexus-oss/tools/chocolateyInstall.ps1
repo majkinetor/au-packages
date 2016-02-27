@@ -28,7 +28,7 @@ if (gcm nexus -ea 0) {
 Write-Host "Installing to '$installDir'"
 Install-ChocolateyZipPackage @packageArgs
 
-$nexusDir = ls C:\nexus\nexus-* | sort -Descending | select -First 1
+$nexusDir = ls $installDir\nexus-* | sort -Descending | select -First 1
 $nexus = "$nexusDir\bin\nexus.bat"
 if (!(Test-Path $nexus)) { throw "Can not find nexus.bat" }
 Install-BinFile nexus $nexus
