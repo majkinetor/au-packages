@@ -21,8 +21,8 @@ if ($Env:ChocolateyPackageParameters -match '/InstallDir:\s*(.+)') {
 
 if (gcm nexus -ea 0) {
     Write-Host "Detected existing installation, uninstalling service"
-    nexus stop
-    nexus uninstall
+    0 | nexus stop
+    0 | nexus uninstall
 }
 
 Write-Host "Installing to '$installDir'"
