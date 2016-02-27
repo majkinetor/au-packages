@@ -1,8 +1,8 @@
-. ../au.ps1
+import-module au
 
 $releases = 'https://github.com/jgm/pandoc/releases'
 
-function au_GetLatest() {
+function global:au_GetLatest() {
     $download_page = Invoke-WebRequest -Uri $releases
 
     $re  = '/pandoc-(.+?)-windows.msi'
@@ -15,7 +15,7 @@ function au_GetLatest() {
     return $Latest
 }
 
-function au_SearchReplace() {
+function global:au_SearchReplace() {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
             "(^[$]url\s*=\s*)('.*')" =  "`$1'$($Latest.URL)'"

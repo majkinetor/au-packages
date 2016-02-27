@@ -1,12 +1,12 @@
-. ../au.ps1
+import-module au
 
 $releases = 'https://www.yworks.com/products/yed/download'
 
-function au_SearchReplace {
+function global:au_SearchReplace {
     @{".\tools\chocolateyInstall.ps1" = @{ "(^[$]url\s*=\s*)('.*')" = "`$1'$($Latest.URL)'" }}
 }
 
-function au_GetLatest {
+function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
     if ($download_page.RawContent -match 'resources/yed/demo/.+\.zip')
     {
