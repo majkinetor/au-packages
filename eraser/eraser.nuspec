@@ -27,7 +27,7 @@ Features
         <dependency id="dotnet4.0" version="4.0.30319" />
         <dependency id="7zip.commandline" version="15.14" />
     </dependencies>
-    <releaseNotes>See http://www.exactaudiocopy.de/en/index.php/resources/whats-new/whats-new</releaseNotes>
+    <releaseNotes></releaseNotes>
     <mailingListUrl>http://eraser.heidi.ie/forum</mailingListUrl>
     <docsUrl>http://eraser.heidi.ie/help</docsUrl>
     <!--<bugTrackerUrl></bugTrackerUrl>-->
