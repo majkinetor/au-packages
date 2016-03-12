@@ -8,7 +8,6 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
     while($true) {
-        "Tryinig $url"
         $request = [System.Net.WebRequest]::Create($url)
         $request.AllowAutoRedirect=$false
         $response=$request.GetResponse()
