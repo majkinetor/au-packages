@@ -14,9 +14,15 @@
 
     [Full list of features](https://www.yworks.com/products/yed/applicationfeatures)
 
-    **Package Parameters**:
-    - `/Shortcut`  
-    Create desktop shortcut
+    ## Package Notes
+
+    ### Parameters
+
+    - `/Shortcut` - Create desktop shortcut
+
+    ### Notes
+
+    - Only last version is available for this package
 
     ![yed screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/screenshot.png)
     </description>
