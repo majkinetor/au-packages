@@ -5,26 +5,22 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>yed</id>
     <title>yEd</title>
-    <version>3.15.0.1</version>
+    <version>3.15.0.2</version>
     <authors>yWorks</authors>
     <owners>Miodrag Milić</owners>
     <summary>yEd Graph Editor: High-quality diagrams made easy</summary>
     <description>
-    yEd is a powerful desktop application that can be used to quickly and effectively generate high-quality diagrams. Create diagrams manually, or import your external data for analysis. Our automatic layout algorithms arrange even large data sets with just the press of a button. yEd is freely available and runs on all major platforms: Windows, Unix/Linux, and Mac OS X.
+yEd is a powerful desktop application that can be used to quickly and effectively generate high-quality diagrams. Create diagrams manually, or import your external data for analysis. Our automatic layout algorithms arrange even large data sets with just the press of a button. yEd is freely available and runs on all major platforms: Windows, Unix/Linux, and Mac OS X.
 
-    [Full list of features](https://www.yworks.com/products/yed/applicationfeatures)
+[Full list of features](https://www.yworks.com/products/yed/applicationfeatures)
 
-    ## Package Notes
+## Package Notes
 
-    ### Parameters
+### Parameters
 
-    - `/Shortcut` - Create desktop shortcut
+- `/Shortcut` - Create desktop shortcut
 
-    ### Notes
-
-    - Only last version is available for this package
-
-    ![yed screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/screenshot.png)
+![yed screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/screenshot.png)
     </description>
     <projectUrl>http://www.yworks.com/en/products/yfiles/yed</projectUrl>
     <tags>graph chart uml bpmn x-platform office</tags>
