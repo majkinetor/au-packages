@@ -13,7 +13,7 @@ $packageArgs = @{
 }
 Install-ChocolateyZipPackage @packageArgs
 
-$yedDir = (gi $toolsDir\yed-*).FullName
+$yedDir = gi $toolsDir\yed-* | sort creationtime -Descending | select -First 1 -Expand Fullname
 "start javaw -jar ""$yedDir\yed.jar""" | out-file $cmdPath -Encoding ascii
 
 if ($Env:ChocolateyPackageParameters -eq '/Shortcut') {
