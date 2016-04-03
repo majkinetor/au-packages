@@ -10,7 +10,7 @@ param($Name)
 function New-Package( $Name ) {
     if ($Name -eq $null) { throw "Name can't be empty" }
     if (Test-Path $Name) { throw "Package with that name already exists" }
-    if (Test-Path _template) { throw "Template package not found" }
+    if (!(Test-Path _template)) { throw "Template for the packages not found" }
     cp _template $Name -Recurse
 
     $nuspec = gc "$Name\template.nuspec"
