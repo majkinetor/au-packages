@@ -3,7 +3,12 @@ import-module au
 $releases = 'https://github.com/htacg/tidy-html5/releases'
 
 function global:au_SearchReplace {
-    @{".\tools\chocolateyInstall.ps1" = @{ "(^[$]url\s*=\s*)('.*')" = "`$1'$($Latest.URL)'" }}
+    @{
+        'tools\chocolateyInstall.ps1' = @{
+            "(^[$]url64\s*=\s*)('.*')" = "`$1'$($Latest.URL64)'"
+            "(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.URL32)'"
+        }
+     }
 }
 
 function global:au_GetLatest {
