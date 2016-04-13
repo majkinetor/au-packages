@@ -3,7 +3,6 @@ import-module au
 $releases = 'http://smplayer.sourceforge.net/en/downloads'
 
 function global:au_SearchReplace {
-    throw 'notify about update'
     @{
         ".\tools\chocolateyInstall.ps1" = @{
             "(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.URL32)'"
@@ -26,4 +25,4 @@ function global:au_GetLatest {
     return $Latest
 }
 
-update -NoCheck
+update -NoCheckUrl

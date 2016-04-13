@@ -16,7 +16,7 @@ One of the most interesting features of SMPlayer: **it remembers the settings of
 
 SMPlayer is a graphical user interface (GUI) for the award-winning MPlayer, which is capable of playing almost all known video and audio formats. But apart from providing access for the most common and useful options of MPlayer, SMPlayer adds other interesting features like the possibility to play Youtube videos or download subtitles.
 
-![smplayer screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/screenshot.png)
+![smplayer screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/screenshot.jpg)
     </description>
     <projectUrl>http://www.smplayer.eu</projectUrl>
     <tags>admin video mp3 audio media player multimedia</tags>
