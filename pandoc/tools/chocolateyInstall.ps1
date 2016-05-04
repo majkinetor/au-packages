@@ -7,7 +7,7 @@ $packageArgs = @{
   packageName            = $packageName
   fileType               = 'msi'
   url                    = $url
-  silentArgs             = '/quiet'
+  silentArgs             = '/quiet ALLUSERS=1'
   registryUninstallerKey = $packageName
 }
 Install-ChocolateyPackage @packageArgs
