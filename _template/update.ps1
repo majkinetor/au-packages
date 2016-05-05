@@ -3,8 +3,12 @@ import-module au
 $releases = ''
 
 function global:au_SearchReplace {
-    @{".\tools\chocolateyInstall.ps1" = @{ "(^[$]url\s*=\s*)('.*')" = "`$1'$($Latest.URL)'" }}
-}
+     @{
+        ".\tools\chocolateyInstall.ps1" = @{
+            "(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.URL32)'"
+            "(^[$]url64\s*=\s*)('.*')" = "`$1'$($Latest.URL64)'"
+        }
+    }}
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases

@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'plantuml'
-$url         = 'http://netix.dl.sourceforge.net/project/plantuml/plantuml.8038.jar'
+$url         = 'http://netix.dl.sourceforge.net/project/plantuml/plantuml.8039.jar'
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
 $cmdPath     = join-path $env:ChocolateyInstall $env:chocolatey_bin_root\plantuml.cmd
 
