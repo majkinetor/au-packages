@@ -1,14 +1,33 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'soulseek'
-$exeName     = 'ssk.exe'
-$url32       = 'http://www.soulseekqt.net/SoulseekQT/Windows/SoulseekQt-2015-6-12.exe'
+function download-dropbox($Url, $FilePath) {
+    $wc = New-Object system.net.webclient
+    $req = [System.Net.HttpWebRequest]::Create($Url)
+    $req.CookieContainer  = New-Object System.Net.CookieContainer
+    $res = $req.GetResponse()
+
+    $cookies = $res.Cookies | % { $_.ToString()}
+    $cookies = $cookies -join '; '
+
+    $wc.Headers.Add([System.Net.HttpRequestHeader]::Cookie, $cookies)
+    $newurl = $url + '?dl=1'
+
+    mkdir (Split-Path $FilePath) -force -ea 0 | out-null
+    $wc.downloadFile($newurl, $tempFile)
+}
+
+$packageName  = 'soulseek'
+$url32        = 'https://www.dropbox.com/s/adivgmpo08pgq13/SoulseekQt-2016-4-24.exe'
+
+$chocoTempDir = Join-Path $Env:Temp "chocolatey"
+$tempFile     = "$chocoTempDir\soulseek\soulseek.exe"
+download-dropbox $url32 $tempFile
 
 $packageArgs = @{
   packageName            = $packageName
   fileType               = 'EXE'
-  url                    = $url32
-  silentArgs             = '/S'
+  url                    = $tempFile
+  silentArgs             = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   validExitCodes         = @(0)
   registryUninstallerKey = $packageName
 }
