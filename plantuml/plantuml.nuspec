@@ -4,7 +4,7 @@
     <id>plantuml</id>
     <version>1.8039</version>
     <title>PlantUML</title>
-    <authors>PlantUML Developers</authors>
+    <authors>Arnaud Roques</authors>
     <owners>Yoshimov, Miodrag Milić</owners>
     <licenseUrl>http://www.gnu.org/copyleft/gpl.html</licenseUrl>
     <projectUrl>http://plantuml.com</projectUrl>
@@ -33,12 +33,13 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml/be
 </description>
     <releaseNotes>http://plantuml.com/changes.html</releaseNotes>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/icon.png</iconUrl>
-    <copyright>plantuml.com</copyright>
+    <copyright>© 2009 Arnaud Roques</copyright>
     <tags>plantuml uml diagram graph</tags>
     <dependencies>
        <dependency id="javaruntime" version="6.0.30" />
        <dependency id="graphviz" />
     </dependencies>
+    <projectSourceUrl>https://sourceforge.net/p/plantuml/code/</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/plantuml</packageSourceUrl>
     <mailingListUrl>http://plantuml.sourceforge.net/qa</mailingListUrl>
     <docsUrl>http://plantuml.com/PlantUML_Language_Reference_Guide.pdf</docsUrl>
