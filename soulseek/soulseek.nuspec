@@ -22,9 +22,8 @@ Soulseek is an ad-free, spyware free, just plain free file sharing network for W
     </dependencies>
     <releaseNotes>See http://www.soulseekqt.net/news/changelog</releaseNotes>
     <mailingListUrl>http://www.slsknet.org/news/forum/2</mailingListUrl>
-    <!--<docsUrl></docsUrl>-->
-    <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <!--<projectSourceUrl></projectSourceUrl>-->
+    <docsUrl>http://www.slsknet.org/news/faq-page</docsUrl>
+    <bugTrackerUrl>http://www.slsknet.org/news/soulseekqt-feature-bugfix-requests</bugTrackerUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/soulseek</packageSourceUrl>
   </metadata>
   <files>
