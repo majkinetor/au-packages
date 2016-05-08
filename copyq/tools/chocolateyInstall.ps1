@@ -3,6 +3,8 @@
 $packageName = 'copyq'
 $url         = 'https://github.com/hluk/CopyQ/releases/download/v2.7.0/copyq-2.7.0-setup.exe'
 
+$running     = if (ps $packageName -ea 0) { $true } else { $false }
+
 $packageArgs = @{
   packageName            = $packageName
   fileType               = 'EXE'
@@ -23,3 +25,10 @@ if ($key) {
         Write-Host "$packageName installed to '$installLocation'"
     }
 }
+
+if ($running) {
+    Write-Host "CopyQ was running before update, starting it again"
+    start "$installLocation\copyq.exe"
+}
+
+
