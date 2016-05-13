@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>msiinv</id>
+    <title>Windows Installer System Inventory Tool</title>
+    <version>1.3</version>
+    <authors>Microsoft</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>Provides information about the state of all Windows Installer products, features and components</summary>
+    <description>
+Provides information about the state of all Windows Installer products, features and components
+
+
+### Usage
+
+~~~
+    PS> msiinv.exe [option [option]]
+        -p [product]    Product list
+        -f      Feature state by product. (includes -p)
+        -q      Component count by product (includes -p)
+        -#      Component count and features states by product (-p -f -q)
+
+        -x      Orphaned components.
+        -m      Shared components.
+        -c      Evaluate components (-x -m).
+
+        -l      List of log files.
+
+        -s      Reduced output.(-p -#)
+        -n      Normal output. (default)
+        -v      Verbose output. (default + feature and component lists)
+~~~
+
+### Notes
+
+- This tool is not supported or recommended by Microsoft
+    </description>
+    <!--<projectUrl></projectUrl>-->
+    <tags>installation</tags>
+    <copyright>Microsoft Corporation</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/msiinv</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
