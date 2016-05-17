@@ -4,7 +4,6 @@ Prerequisites
 -------------
 
 - Powershell 3+
-- `cinst nuget.commandline`
 - [Automatic Chocolatey Package Update Powershell Module](https://github.com/majkinetor/au)
 
 Manual Testing
@@ -23,7 +22,7 @@ In package directory run:
 Or
 
     import-module au
-    test
+    Test-Package
 
 
 Automatic update

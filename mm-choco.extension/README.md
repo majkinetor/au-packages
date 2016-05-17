@@ -1,4 +1,4 @@
-# MM-Choco.Extension
+# mm-choco.extension
 
 
 This is the Powershell module that extends Chocolatey with new functions. The intended use for module is to supplement package authors with new functions.
