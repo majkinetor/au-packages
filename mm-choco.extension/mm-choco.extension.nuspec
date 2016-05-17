@@ -15,4 +15,7 @@
     <docsUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco-extension/README.md</docsUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
   </metadata>
+<files>
+    <file src="extensions\**" target="tools" />
+</files>
 </package>
