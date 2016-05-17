@@ -42,9 +42,9 @@ Features
     <licenseUrl>https://github.com/hluk/CopyQ/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon96.png</iconUrl>
-    <!--<dependencies>
-      <dependency id="" version="" />
-    </dependencies>-->
+    <dependencies>
+      <dependency id="mm-choco-extensions" version="0.0.1" />
+    </dependencies>
     <releaseNotes></releaseNotes>
     <docsUrl>https://github.com/hluk/CopyQ/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/hluk/CopyQ/issues</bugTrackerUrl>

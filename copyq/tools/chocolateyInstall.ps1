@@ -15,20 +15,10 @@ $packageArgs = @{
 }
 Install-ChocolateyPackage @packageArgs
 
-$local_key     = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$machine_key   = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$key = Get-ItemProperty -Path @($machine_key6432, $machine_key, $local_key) -ErrorAction SilentlyContinue | ? { $_.DisplayName -like "$packageName*" }
-if ($key) {
-    $installLocation = $key.InstallLocation
-    if (Test-Path $installLocation)  {
-        Write-Host "$packageName installed to '$installLocation'"
-    }
-}
+$installLocation = Get-AppInstallLocation $packageName
+if ($installLocation)  { Write-Host "$packageName installed to '$installLocation'" }
 
-if ($running) {
-    Write-Host "CopyQ was running before update, starting it again"
+if ($installLocation -and $running) {
+    Write-Host "CopyQ was running before update, starting it up again"
     start "$installLocation\copyq.exe"
 }
-
-

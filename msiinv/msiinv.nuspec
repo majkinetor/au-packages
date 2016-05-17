@@ -15,7 +15,6 @@ Provides information about the state of all Windows Installer products, features
 
 ### Usage
 
-~~~
     PS> msiinv.exe [option [option]]
         -p [product]    Product list
         -f      Feature state by product. (includes -p)
@@ -31,13 +30,12 @@ Provides information about the state of all Windows Installer products, features
         -s      Reduced output.(-p -#)
         -n      Normal output. (default)
         -v      Verbose output. (default + feature and component lists)
-~~~
 
 ### Notes
 
 - This tool is not supported or recommended by Microsoft
     </description>
-    <!--<projectUrl></projectUrl>-->
+    <projectUrl>https://blogs.msdn.microsoft.com/astebner/2005/07/01/using-msiinv-to-gather-information-about-what-is-installed-on-a-computer</projectUrl>
     <tags>installation</tags>
     <copyright>Microsoft Corporation</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
