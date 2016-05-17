@@ -16,9 +16,10 @@
     <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!--<iconUrl></iconUrl>-->
-    <!--<dependencies>
-      <dependency id="" version="" />
-    </dependencies>-->
+    <dependencies>
+      <dependency id="mm-choco.extension" version="0.0.1" />
+    </dependencies>
+
     <releaseNotes></releaseNotes>
     <docsUrl>http://www.mls-software.com/opensshd.html#botpage</docsUrl>
     <!--<bugTrackerUrl></bugTrackerUrl>-->

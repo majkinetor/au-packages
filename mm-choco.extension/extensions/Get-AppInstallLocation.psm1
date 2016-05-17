@@ -46,6 +46,11 @@ function Get-AppInstallLocation {
         $location = $key.UninstallString.Replace('"', '')
         if ($location) { $location = Split-Path $location }
         if ($location -and (Test-Path $location))  { return strip $location }
+
+        Write-Verbose "Trying Uninstall key property 'DisplayIcon'"
+        $location = $key.DisplayIcon
+        if ($location) { $location = Split-Path $location }
+        if ($location -and (Test-Path $location))  { return strip $location }
     } else { Write-Verbose "Found $($key.Count) keys" }
 
     Write-Verbose "Trying Program Files with 2 levels depth"
