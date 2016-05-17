@@ -22,10 +22,9 @@ If you need to convert files from one markup format into another, pandoc is your
     <bugTrackerUrl>https://github.com/jgm/pandoc/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/jgm/pandoc</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/pandoc</packageSourceUrl>
-    <!--<dependencies>
-      <dependency id="" version="" />
-    </dependencies>-->
-    <releaseNotes></releaseNotes>
+    <dependencies>
+      <dependency id="mm-choco.extension" version="0.0.1" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

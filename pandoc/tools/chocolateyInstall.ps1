@@ -12,15 +12,11 @@ $packageArgs = @{
 }
 Install-ChocolateyPackage @packageArgs
 
-$local_key     = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$machine_key   = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$key = Get-ItemProperty -Path @($machine_key6432, $machine_key, $local_key) -ErrorAction SilentlyContinue | ? { $_.DisplayName -like "$packageName*" }
-if ($key) {
-    $installLocation = $key.InstallLocation
-    if (Test-Path $installLocation)  {
-        Write-Host "$packageName installed to '$installLocation'"
-    }
+$installLocation = Get-AppInstallLocation $packageArgs.registryUninstallerKey
+if ($installLocation)  { Write-Host "$packageName installed to '$installLocation'" }
+else { Write-Warning "Can't find $PackageName install location" }
+
+if ($installLocation) {
     Write-Host "Adding $packageName to the PATH if needed"
     Install-ChocolateyPath $installLocation "Machine"
 }
