@@ -8,8 +8,8 @@
     <owners>Miodrag Milic</owners>
     <summary>Helper Functions packed as Chocolatey extension</summary>
     <description> Package contains a helper functions installed as Chocolatey extensions.</description>
-    <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extensions</projectUrl>
-    <projectSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extensions</projectSourceUrl>
+    <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension</projectUrl>
+    <projectSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension</projectSourceUrl>
     <bugTrackerUrl>https://github.com/majkinetor/chocolatey/issues</bugTrackerUrl>
     <tags>choco-extension</tags>
     <docsUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension/README.md</docsUrl>
