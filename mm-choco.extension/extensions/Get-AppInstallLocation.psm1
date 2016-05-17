@@ -8,7 +8,7 @@
 .DESCRIPTION
     Function tries to find install location in multiple places. It returns $null if all fail. The following
     locations are tried:
-      - local and machine (x32 & x64) Uninstall keys
+      - local and machine (x32 & x64) various Uninstall keys
       - x32 & x64 Program Files up to the 2nd level of depth
       - native commands available via PATH
       - locale and machine registry key SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths
@@ -51,10 +51,10 @@ function Get-AppInstallLocation {
         $location = $key.DisplayIcon
         if ($location) { $location = Split-Path $location }
         if ($location -and (Test-Path $location))  { return strip $location }
-    } else { Write-Verbose "Found $($key.Count) keys" }
+    } else { Write-Verbose "Found $($key.Count) keys, aborting this method" }
 
     Write-Verbose "Trying Program Files with 2 levels depth"
-    $dirs = $Env:ProgramFiles, ${ENV:ProgramFiles(x86)}, "$Env:ProgramFiles\*", "${ENV:ProgramFiles(x86)}\*"
+    $dirs = $Env:ProgramFiles, "$Env:ProgramFiles\*\*", ${ENV:ProgramFiles(x86)}, "${ENV:ProgramFiles(x86)}\*\*"
     $location = (ls $dirs | ? {$_.PsIsContainer}) -match $AppNamePattern | select -First 1 | % {$_.FullName}
     if ($location -and (Test-Path $location))  { return strip $location }
 
@@ -63,7 +63,7 @@ function Get-AppInstallLocation {
     if ($location -and (Test-Path $location))  { return strip $location }
 
     $appPaths =  "\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths"
-    Write-Verbose "Trying Registry keys: $appPaths"
+    Write-Verbose "Trying Registry: $appPaths"
     $location = (ls "HKCU:\$appPaths", "HKLM:\$appPaths") -match $AppNamePattern | select -First 1
     if ($location) { $location = Split-Path $location }
     if ($location -and (Test-Path $location))  { return strip $location }

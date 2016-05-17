@@ -6,6 +6,7 @@
     <version>0.0.1</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <summary>Helper Functions packed as Chocolatey extension</summary>
     <description> Package contains a helper functions installed as Chocolatey extensions.</description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension</projectUrl>
