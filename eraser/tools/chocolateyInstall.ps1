@@ -33,3 +33,8 @@ $packageArgs = @{
 Install-ChocolateyPackage @packageArgs
 rm -force -r $setupDir -ea 0
 rm $setupPath -ea 0
+
+$installLocation = Get-AppInstallLocation $packageArgs.registryUninstallerKey
+if ($installLocation)  { Write-Host "$packageName installed to '$installLocation'" }
+else { Write-Warning "Can't find $PackageName install location" }
+

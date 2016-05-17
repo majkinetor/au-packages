@@ -15,8 +15,9 @@ $packageArgs = @{
 }
 Install-ChocolateyPackage @packageArgs
 
-$installLocation = Get-AppInstallLocation $packageName
+$installLocation = Get-AppInstallLocation $packageArgs.registryUninstallerKey
 if ($installLocation)  { Write-Host "$packageName installed to '$installLocation'" }
+else { Write-Warning "Can't find $PackageName install location" }
 
 if ($installLocation -and $running) {
     Write-Host "CopyQ was running before update, starting it up again"

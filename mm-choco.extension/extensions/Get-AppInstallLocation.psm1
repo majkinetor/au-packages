@@ -46,14 +46,14 @@ function Get-AppInstallLocation {
         $location = $key.UninstallString
         if ($location) { $location = Split-Path $location }
         if ($location -and (Test-Path $location))  { return strip $location }
-    }
+    } else { Write-Verbose "Found $($key.Count) keys" }
 
     Write-Verbose "Trying Program Files with 2 levels depth"
     $dirs = $Env:ProgramFiles, ${ENV:ProgramFiles(x86)}, "$Env:ProgramFiles\*", "${ENV:ProgramFiles(x86)}\*"
     $location = (ls $dirs | ? {$_.PsIsContainer}) -match $AppNamePattern | select -First 1 | % {$_.FullName}
     if ($location -and (Test-Path $location))  { return strip $location }
 
-    Write-Verbose "Trying PATH"
+    Write-Verbose "Trying native commands on PATH"
     $location = (Get-Command -CommandType Application) -match $AppNamePattern | select -First 1 | % { Split-Path $_.Source }
     if ($location -and (Test-Path $location))  { return strip $location }
 
@@ -62,4 +62,6 @@ function Get-AppInstallLocation {
     $location = (ls "HKCU:\$appPaths", "HKLM:\$appPaths") -match $AppNamePattern | select -First 1
     if ($location) { $location = Split-Path $location }
     if ($location -and (Test-Path $location))  { return strip $location }
+
+    Write-Verbose "No location found"
 }
