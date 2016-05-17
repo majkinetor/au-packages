@@ -25,19 +25,19 @@ function Get-AppInstallLocation {
 
     $ErrorActionPreference = "SilentlyContinue"
 
-    $local_key     = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
-    $machine_key   = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
+    $local_key       = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
+    $machine_key     = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
     $machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
-    $key = Get-ItemProperty -Path @($machine_key6432, $machine_key, $local_key) | ? { $_.DisplayName -match $AppNamePattern }
-    if (!$key) { return '' }
+    $key = Get-ItemProperty @($machine_key6432, $machine_key, $local_key) | ? { $_.DisplayName -match $AppNamePattern } | select -First 1
+    if ($key ) {
+        Write-Debug "Trying Uninstall key 'InstallLocation'"
+        $location = $key.InstallLocation
+        if ($location -and (Test-Path $location))  { return strip $location }
 
-    Write-Debug "Trying Uninstall key 'InstallLocation'"
-    $location = $key.InstallLocation
-    if ($location -and (Test-Path $location))  { return strip $location }
-
-    Write-Debug "Trying Uninstall key 'UninstallString'"
-    $location = $key.UninstallString
-    if ($location -and (Test-Path (Split-Path $location)))  { return strip $location }
+        Write-Debug "Trying Uninstall key 'UninstallString'"
+        $location = $key.UninstallString
+        if ($location -and (Test-Path (Split-Path $location)))  { return strip $location }
+    }
 
     Write-Debug "Trying Program Files with 2 levels depth"
     $dirs = $Env:ProgramFiles, ${ENV:ProgramFiles(x86)}, "$Env:ProgramFiles\*", "${ENV:ProgramFiles(x86)}\*"
