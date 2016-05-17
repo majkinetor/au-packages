@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mm-choco-extensions</id>
+    <title>Chocolatey Extensions by majkinetor</title>
+    <version>0.0.1</version>
+    <authors>Miodrag Milic</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Helper Functions packed as Chocolatey extension</summary>
+    <description>
+Package contains a helper functions installed as Chocolatey extensions.
+
+### Functions
+
+- Get-AppInstallLocation  
+Try to find application install location using several methods
+
+    </description>
+    <projectUrl>https://github.com/majkinetor/chocolatey/mm-choco-extensions</projectUrl>
+    <tags>choco-extension</tags>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  </metadata>
+</package>
