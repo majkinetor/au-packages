@@ -24,6 +24,9 @@ There is also a C library, if you're into that kind of thing.
     <bugTrackerUrl>https://github.com/wkhtmltopdf/wkhtmltopdf/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/wkhtmltopdf/wkhtmltopdf</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/wkhtmltopdf</packageSourceUrl>
+    <dependencies>
+      <dependency id="mm-choco.extension" version="0.0.1" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
