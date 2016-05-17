@@ -6,17 +6,24 @@
     Get application install location
 
 .DESCRIPTION
-    Functions tries to find install location in multiple places. It returns empty string if all fail.
+    Function tries to find install location in multiple places. It returns $null if all fail. The following
+    locations are tried:
+      - local and machine (x32 & x64) Uninstall keys
+      - x32 & x64 Program Files up to the 2nd level of depth
+      - native commands available via PATH
+      - locale and machine registry key SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths
 
 .EXAMPLE
-    Get-AppInstallLocation copyq
+    Get-AppInstallLocation choco
 
-    Return the install location of the application 'copyq'.
+    Return the install location of the application 'choco'.
+.OUTPUTS
+    [String] or $null
 #>
 function Get-AppInstallLocation {
     [CmdletBinding()]
     param(
-        #Regular expression pattern
+        # Regular expression pattern
         [ValidateNotNullOrEmpty()]
         [string] $AppNamePattern
     )
