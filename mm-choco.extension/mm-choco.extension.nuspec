@@ -17,6 +17,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
   </metadata>
 <files>
-    <file src="extensions\**" target="tools" />
+    <file src="extensions\**" target="extensions" />
 </files>
 </package>
