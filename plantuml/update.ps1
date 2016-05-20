@@ -11,7 +11,7 @@ function global:au_GetLatest {
     if ($download_page.Content -match 'V\d{4,4}')
     {
         $version = "1." + $Matches[0].Substring(1)
-        $url = "http://netix.dl.sourceforge.net/project/plantuml/plantuml." + $version.Substring(2) + ".jar"
+        $url = "http://sourceforge.net/projects/plantuml/files/plantuml." + $version.Substring(2) + '.jar/download'
     }
     else { throw "Can't match version 'V\d{4,4}'" }
 
