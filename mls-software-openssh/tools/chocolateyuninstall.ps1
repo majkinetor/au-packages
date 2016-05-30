@@ -4,7 +4,7 @@ $softwareName = 'OpenSSH for Windows*'
 
 $packageArgs = @{
     packageName            = $packageName
-    silentArgs             = "/S"
+    silentArgs             = "/x86=0 /S"
     fileType               = 'EXE'
     validExitCodes         = @(0)
     file                   = ''
