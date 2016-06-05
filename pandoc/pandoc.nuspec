@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>pandoc</id>
     <title>Pandoc</title>
-    <version>1.17.0.2</version>
+    <version>1.17.1</version>
     <authors>John MacFarlane</authors>
     <owners>Miodrag Milić</owners>
     <summary>A universal document converter</summary>
