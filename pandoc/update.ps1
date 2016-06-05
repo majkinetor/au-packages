@@ -9,7 +9,7 @@ function global:au_GetLatest() {
     $url = $download_page.links | ? href -match $re | select -First 1 -expand href
     $url = 'https://github.com' + $url
 
-    $version = $Matches[1]
+    $version = $Matches[1] -replace '-.+$'
 
     $Latest = @{ URL = $url; Version = $version }
     return $Latest
