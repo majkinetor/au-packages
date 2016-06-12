@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName  = 'smplayer'
-$url32        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.4.0-win32.exe'
-$url64        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.4.0-x64.exe'
+$url32        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.6.0-win32.exe'
+$url64        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.6.0-x64.exe'
 
 function genLink($url) {
     $url = $url.Replace('http://www.fosshub.com', 'http://www.fosshub.com/genLink')
