@@ -3,8 +3,7 @@
 $packageName = 'plantuml'
 $url         = 'http://sourceforge.net/projects/plantuml/files/plantuml.8042.jar/download'
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
-$cmdPath     = join-path $env:ChocolateyInstall $env:chocolatey_bin_root\plantuml.cmd
-
+$cmdPath     = join-path $env:ChocolateyInstall bin\plantuml.cmd
 
 $params = @{
     PackageName = $packageName
