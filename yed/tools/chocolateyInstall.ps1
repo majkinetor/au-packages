@@ -3,7 +3,7 @@
 $packageName = 'yed'
 $url         = 'https://www.yworks.com/resources/yed/demo/yEd-3.15.0.2.zip'
 $toolsDir    = Split-Path $MyInvocation.MyCommand.Definition
-$cmdPath     = join-path $env:ChocolateyInstall $env:chocolatey_bin_root\yed.cmd
+$cmdPath     = join-path $env:ChocolateyInstall bin\yed.cmd
 
 $packageArgs = @{
   packageName   = $packageName
@@ -22,4 +22,4 @@ if ($Env:ChocolateyPackageParameters -eq '/Shortcut') {
 }
 
 Write-Host "Yed installed in: $yedDir"
-Write-Host "Yed added to chocolatey bin directory"
+Write-Host "yed.cmd added to chocolatey bin directory"
