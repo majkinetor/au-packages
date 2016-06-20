@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'copyq'
-$url         = 'https://github.com/hluk/CopyQ/releases/download/v2.7.0/copyq-2.7.0-setup.exe'
+$url         = 'https://github.com/hluk/CopyQ/releases/download/v2.7.1/copyq-2.7.1-setup.exe'
 
 $running     = if (ps $packageName -ea 0) { $true } else { $false }
 
