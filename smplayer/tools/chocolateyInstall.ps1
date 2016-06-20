@@ -9,7 +9,7 @@ function genLink($url) {
     $url.Replace('SMPlayer.html', 'SMPlayer')
 }
 
-$url = if (Get-ProcessorBits -eq 64) { $url64 } else { $url32}
+$url = if ((Get-ProcessorBits) -eq 64) { $url64 } else { $url32}
 $url = genlink $url
 $url = (new-object net.webclient).DownloadString( $url )
 
