@@ -10,12 +10,12 @@ function global:au_BeforeUpdate {
     iwr $Latest.URL -OutFile less.7z
     7za x less.7z
 
-    $lessdir = 'less-*-win*'
-    pushd $lessdir
-    cp less.exe, lesskey.exe, readme "$PSScriptRoot\tools" -Force
-    "Source: http://guysalias.tk/misc/less" | Out-File "$PSScriptRoot\tools\source.txt"
-    popd
+    $lessdir = gi 'less-*-win*'
+    cp $lessdir\* "$PSScriptRoot\tools" -Force
+    gi $PSScriptRoot\tools\* | ? Extension -eq '' | % { mv $_ "$_.txt"}
+
     rm $lessdir -recurse -force
+    rm less.7z -ea 0
 }
 
 function global:au_GetLatest {

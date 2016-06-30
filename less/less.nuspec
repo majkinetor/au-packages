@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>less</id>
-    <version>4.81</version>
+    <version>4.81.1</version>
     <title>Less for Windows</title>
     <authors>Mark Nudelman</authors>
     <owners>Miodrag Milić</owners>
@@ -24,4 +24,7 @@ Less is a CLI pager, a program that displays text files. Other pagers commonly i
     <projectSourceUrl>http://www.greenwoodsoftware.com/less/download.html#source</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/less</packageSourceUrl>
   </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
 </package>
