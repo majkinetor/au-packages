@@ -1,17 +1,11 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName  = 'smplayer'
-$url32        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.6.0-win32.exe'
-$url64        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.6.0-x64.exe'
-
-function genLink($url) {
-    $url = $url.Replace('http://www.fosshub.com', 'http://www.fosshub.com/genLink')
-    $url.Replace('SMPlayer.html', 'SMPlayer')
-}
+$url32        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.7.0-win32.exe'
+$url64        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.7.0-x64.exe'
 
 $url = if ((Get-ProcessorBits) -eq 64) { $url64 } else { $url32}
-$url = genlink $url
-$url = (new-object net.webclient).DownloadString( $url )
+$url = Get-UrlFromFosshub $url
 
 $packageArgs = @{
   packageName            = $packageName
