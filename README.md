@@ -6,14 +6,14 @@ Prerequisites
 - Powershell 3+
 - [Automatic Chocolatey Package Update Powershell Module](https://github.com/majkinetor/au): `Install-Module au`
 
-Manual Testing
---------------
+Testing
+-------
 
-**Build**
+**Build the package**
 
 In package directory run `cpack`.
 
-**Test**
+**Test locally**
 
 In package directory run: `Test-Package` or `tp`.
 

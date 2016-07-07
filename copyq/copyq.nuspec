@@ -35,6 +35,7 @@ Features
 * Ignore clipboard copied from some windows or containing some text
 * Support for simple Vim-like editor and shortcuts
 * Many more features
+
 </description>
     <projectUrl>https://hluk.github.io/CopyQ</projectUrl>
     <tags>admin clipboard copyq</tags>

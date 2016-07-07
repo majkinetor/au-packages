@@ -5,6 +5,7 @@ $options = @{
     Timeout = 100
     Push    = $true
     Threads = 10
+
     Mail = @{
         To       = 'miodrag.milic@gmail.com'
         Server   = 'smtp.gmail.com'
@@ -14,22 +15,26 @@ $options = @{
         EnableSsl= $true
     }
 
-    Script = { param($Phase, $Arg)
+    Script = { param($Phase, $Info)
         if ($Phase -ne 'END') { return }
 
         cd $PSScriptRoot
 
-        "Executing git pull"
+        $pushed = $Info.results | ? Pushed
+        if (!$pushed) { return }
+
+        "`nExecuting git pull"
         git pull
 
-        $pushed = $Info.results | ? Pushed
-        if ($pushed) {
-            $pushed | % { git add $_.PackageName }
-            "Commiting updated packages to git repository"
-            git commit -m "Update bot: $($pushed.length) packages updated"
-            git push
-        }
+        "Commiting updated packages to git repository"
+        $pushed | % { git add $_.PackageName }
+        git commit -m "UPDATE BOT: $($pushed.length) packages updated"
+
+        "`nPushing git"
+        git push
     }
 }
 
-updateall -Name $Name -Options $options | Export-CliXML update_results.xml
+$global:update = updateall -Name $Name -Options $options
+$global:update | Export-CliXML update_results.xml
+$global:update | ft
