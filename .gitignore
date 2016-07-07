@@ -1,5 +1,4 @@
 *.nupkg
 /api_key
-/update_all.log
+/mail_pass
 /update_results.xml
-/update_all.ps1
