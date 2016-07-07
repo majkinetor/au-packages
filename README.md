@@ -15,21 +15,16 @@ In package directory run `cpack`.
 
 **Test**
 
-In package directory run:
-
-    cpack; choco install (gi *.nupkg).Name --source $pwd --force
-
-Or
-
-    import-module au
-    Test-Package
+In package directory run: `Test-Package` or `tp`.
 
 
 Automatic update
 ----------------
 
-Run `./update.ps1` from within the directory of the package.
-Use the following to update all packages:
+**Update single package**
 
-    import-module au
-    updateall
+Run `<package_dir>/update.ps1` from within the directory of the package to update that package.
+
+**Update all packages**
+
+Run `./update_all.ps1`. Edit this file to change options.
