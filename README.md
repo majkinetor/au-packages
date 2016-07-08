@@ -1,6 +1,6 @@
-My chocolatey packages: https://chocolatey.org/profiles/majkinetor
+**My chocolatey packages**: [majkinetor](https://chocolatey.org/profiles/majkinetor)
 
-Last update status: https://gist.github.com/majkinetor/b9fc258ccc6baece63a64b3f8d26d92a
+**Last update status**: [Update-AUPackages Log](https://gist.github.com/majkinetor/9fe599394cb9154c1db8806266ad7aaf)
 
 Prerequisites
 -------------
