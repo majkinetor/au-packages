@@ -12,22 +12,15 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $url = $releases
-    while($true) {
-        $request = [System.Net.WebRequest]::Create($url)
-        $request.AllowAutoRedirect=$false
-        $response=$request.GetResponse()
-        $location = $response.GetResponseHeader('Location')
-        if (!$location -or ($location -eq $url)) { break }
-        $url = $location
-    }
+    $request = [System.Net.WebRequest]::Create($releases)
+    $request.AllowAutoRedirect=$false
+    $response=$request.GetResponse()
+    $url32 = $response.GetResponseHeader('Location')
+    $url64 = $url32 -replace '-x86-', '-x86_64-'
 
-    $url32 = $url
-    $url64 = $url -replace '-x86-', '-x86_64-'
-    $version = $url -split '-' | select -Last 1 -Skip 2
-
+    $version = $url32 -split '-' | select -Last 1 -Skip 2
     $Latest = @{ URL64 = $url64; URL32 = $url32; Version = $version }
     return $Latest
 }
 
-update
+update -NoCheckUrl
