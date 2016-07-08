@@ -20,6 +20,9 @@ $options = @{
 
         cd $PSScriptRoot
 
+        "Saving info"
+        $Info | Export-CliXML $PSScriptRoot\update_results.xml
+
         $pushed = $Info.results | ? Pushed
         if (!$pushed) { return }
 
@@ -35,6 +38,4 @@ $options = @{
     }
 }
 
-$global:update = updateall -Name $Name -Options $options
-$global:update | Export-CliXML update_results.xml
-$global:update | ft
+updateall -Name $Name -Options $options | ft
