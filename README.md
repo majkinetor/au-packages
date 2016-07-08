@@ -1,5 +1,7 @@
 My chocolatey packages: https://chocolatey.org/profiles/majkinetor
 
+Last update status: https://gist.github.com/majkinetor/b9fc258ccc6baece63a64b3f8d26d92a
+
 Prerequisites
 -------------
 
