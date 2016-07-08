@@ -37,7 +37,7 @@ function save-gist {
 
     $gist_id = '44c248fc1e58059e09a4f760928425f0'
 
-    gc $PSScriptRoot\update_results.xml | gist.bat --filename info.xml --update $gist_id
+    #gc $PSScriptRoot\update_results.xml | gist.bat --filename info.xml --update $gist_id
 
     $log = @()
     $log += "# Update-AUPackages`n"
