@@ -1,7 +1,7 @@
 param($Name = $null)
 cd $PSScriptRoot
 
-import-module ..\au -force
+#import-module ..\au -force
 
 $options = @{
     Timeout = 100
