@@ -1,6 +1,8 @@
 param($Name = $null)
 cd $PSScriptRoot
 
+#import-module ..\au -force
+
 $options = @{
     Timeout = 100
     Push    = $true
@@ -39,3 +41,4 @@ $options = @{
 }
 
 updateall -Name $Name -Options $options | ft
+$global:updateall = Import-CliXML $PSScriptRoot\update_results.xml
