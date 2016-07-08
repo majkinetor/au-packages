@@ -1,24 +1,20 @@
-﻿function Build-Url {
-    [CmdletBinding()]
-	param (
-		$version
-	)
+﻿$ErrorActionPreference = 'Stop'
 
-	$baseUrl = [string]::Format('http://dbeaver.jkiss.org/files/{0}/', $version)
+$packageName = 'dbeaver'
+$url32       = 'https://github.com/serge-rider/dbeaver/releases/download/3.7.0/dbeaver-ce-3.7.0-x86-setup.exe'
+$url64       = 'https://github.com/serge-rider/dbeaver/releases/download/3.7.0/dbeaver-ce-3.7.0-x86_64-setup.exe'
 
-	return [PSCustomObject]@{
-        Url64bit=[string]::Format('{1}dbeaver-ee-{0}-x86_64-setup.exe', $version, $baseUrl)
-        Url32bit=[string]::Format('{1}dbeaver-ee-{0}-x86-setup.exe', $version, $baseUrl)
-    }
+$packageArgs = @{
+  packageName            = $packageName
+  fileType               = 'EXE'
+  url                    = $url32
+  url64bit               = $url64
+  silentArgs             = '/S'
+  validExitCodes         = @(0)
+  registryUninstallerKey = $packageName
 }
+Install-ChocolateyPackage @packageArgs
 
-function Install-DBeaver {
-    $tempPackageName = 'dbeaver.exe'
-    $version = $env:chocolateyPackageVersion
-    $urls = Build-Url -version $version
-    $installArgs = '/S'
-
-    Install-ChocolateyPackage $tempPackageName 'exe' $installArgs $urls.Url32bit $urls.Url64bit
-}
-
-Install-DBeaver
+$installLocation = Get-AppInstallLocation $packageArgs.registryUninstallerKey
+if ($installLocation)  { Write-Host "$packageName installed to '$installLocation'" }
+else { Write-Warning "Can't find $PackageName install location" }
