@@ -59,7 +59,7 @@ function save-gist {
         $log += '```'
     }
 
-    $log | gist.bat --filename _update_results.md --update $gist_id
+    $log | gist.bat --filename 'Update-AUPackages.md' --update $gist_id
 }
 
 function git() {
