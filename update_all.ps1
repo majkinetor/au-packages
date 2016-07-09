@@ -35,7 +35,7 @@ function save-gist {
     "Saving to gist"
     if (!(gcm gist.bat -ea 0)) { "  Error: No gist.bat found: gem install gist"; return }
 
-    $gist_id = '44c248fc1e58059e09a4f760928425f0'
+    $gist_id = '181b18886fdd363158064baf817fa2ff'
 
     #gc $PSScriptRoot\update_results.xml | gist.bat --filename info.xml --update $gist_id
 
