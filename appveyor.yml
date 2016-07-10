@@ -2,9 +2,7 @@ version: '{build}'
 image: WMF 5
 
 install:
-- git clone https://github.com/majkinetor/au c:/projects/au
 - gem install gist
-- ps: "Module path: $Env:PSModulePath"
 - ps: |
     Install-PackageProvider -Name NuGet -Force
     Install-Module au
