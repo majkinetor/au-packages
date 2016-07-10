@@ -12,7 +12,7 @@ $options = @{
         To       = 'miodrag.milic@gmail.com'
         Server   = 'smtp.gmail.com'
         UserName = 'miodrag.milic@gmail.com'
-        Password = if (Test-Path $PSScriptRoot\mail_pass) { gc $PSScriptRoot\mail_pass } else {''}
+        Password = if (Test-Path $PSScriptRoot\mail_pass) { gc $PSScriptRoot\mail_pass } else { $Env:mail_pass }
         Port     = 587
         EnableSsl= $true
     }

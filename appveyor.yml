@@ -1,0 +1,25 @@
+version: '{build}'
+image: WMF 5
+
+install:
+- ps: "Running as: $(whoami)"
+- git clone https://github.com/majkinetor/au c:/projects/au
+- gem install gist
+- ps: "Module path: $Env:PSModulePath"
+
+build_script:
+- ps: c:/projects/chocolatey/update_all.ps1
+
+notifications:
+- provider: Email
+  to: miodrag.milic@gmail.com
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: false
+
+environment:
+  gist_id: 181b18886fdd363158064baf817fa2ff
+  mail_pass:
+    secure: BJGlZo/cyaxwcqaQsu/nQxopDo3Y6hk1iMMQtpcw4YA=Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
+  api_key:
+    secure: Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
