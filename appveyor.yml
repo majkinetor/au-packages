@@ -5,7 +5,8 @@ install:
 - gem install gist
 - ps: |
     Install-PackageProvider -Name NuGet -Force
-    Install-Module au -Force -Confirm
+    Install-Module au -Confirm
+    gcm -Module au | fl *
 
 build_script:
 - ps: c:/projects/chocolatey/update_all.ps1
