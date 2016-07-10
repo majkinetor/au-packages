@@ -7,7 +7,6 @@ install:
     Install-PackageProvider -Name NuGet -Force
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
     Install-Module au
-    gcm -Module au | fl *
 
 build_script:
 - ps: c:/projects/chocolatey/update_all.ps1
@@ -24,6 +23,8 @@ notifications:
 
 environment:
   gist_id: 181b18886fdd363158064baf817fa2ff
+  github_pass:
+    secure: MLLwE43J/DaZdfFcWWugSw==
   mail_pass:
     secure: BJGlZo/cyaxwcqaQsu/nQxopDo3Y6hk1iMMQtpcw4YA=Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
   api_key:
