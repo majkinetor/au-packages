@@ -5,7 +5,8 @@ install:
 - gem install gist
 - ps: |
     Install-PackageProvider -Name NuGet -Force
-    Install-Module au -Confirm
+    Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+    Install-Module au
     gcm -Module au | fl *
 
 build_script:
