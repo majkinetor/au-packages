@@ -4,6 +4,11 @@ cd $PSScriptRoot
 #import-module ..\au -force
 if (Test-Path update_vars.ps1) { . ./update_vars.ps1 }
 
+"==================="
+"'$ENV:mail_pass'" | out-file c:\projects\out1
+"'$ENV:mail_user'" | out-file c:\projects\out2
+"==================="
+
 $options = @{
     Timeout = 100
     Push    = $true
