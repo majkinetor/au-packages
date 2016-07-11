@@ -97,5 +97,6 @@ function git() {
 
 updateall -Name $Name -Options $options | ft
 $global:updateall = Import-CliXML $PSScriptRoot\update_results.xml
+if ($updateall.error_count.total) { throw 'Errors during update' }
 
 
