@@ -83,6 +83,7 @@ function git() {
     pushd $PSScriptRoot
 
     "`nExecuting git pull"
+    git checkout master
     git pull
 
     "Commiting updated packages to git repository"
@@ -90,7 +91,7 @@ function git() {
     git commit -m "UPDATE BOT: $($pushed.length) packages updated"
 
     "`nPushing git"
-    git push
+    git push "https://$Env:github_user:$Env:github_pass@github.com/majkinetor/chocolatey.git"
     popd
 }
 

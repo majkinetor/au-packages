@@ -21,14 +21,12 @@ install:
     Install-PackageProvider -Name NuGet -Force
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
     Install-Module au
-- ps: |
-    "machine github.com", "login $Env:github_user", "password $Env:github_pass" | Out-File ~/_netrc
 
 build_script:
 - ps: c:/projects/chocolatey/update_all.ps1
 
-on_finish:
-- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+#on_finish:
+#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 notifications:
 - provider: Email
