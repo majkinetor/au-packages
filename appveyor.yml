@@ -10,11 +10,6 @@ environment:
   #ID of the gist used to save run results
   gist_id: 181b18886fdd363158064baf817fa2ff
 
-  #Mail to send notifications to. Details are setup up in update_all.ps1
-  mail_user: miodrag.milic@gmail.com
-  mail_pass:
-    secure: BJGlZo/cyaxwcqaQsu/nQxopDo3Y6hk1iMMQtpcw4YA=
-
   #Chocolatey API key to push packages
   api_key:
     secure: Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
