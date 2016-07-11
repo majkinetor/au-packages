@@ -64,9 +64,9 @@ $($Info.result | ft | Out-String)
 $(
     if (!$info.error_count.total) { return }
     "## Errors`n`n"
-    "```"
+    '```'
         $info.error_info
-    "```"
+    '```'
 )
 "@
 
