@@ -3,7 +3,7 @@ image: WMF 5
 
 install:
 - gem install gist
-- ruby -e "require 'gist'; Gist.login! username: 'majkinetor', password: ENV['github_pass']"
+- "ruby -e \"require 'gist'; Gist.login! username: ENV['github_user'], password: ENV['github_pass']\""
 - ps: |
     Install-PackageProvider -Name NuGet -Force
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
@@ -24,6 +24,7 @@ notifications:
 
 environment:
   gist_id: 181b18886fdd363158064baf817fa2ff
+  github_user: majkinetor
   github_pass:
     secure: MLLwE43J/DaZdfFcWWugSw==
   mail_pass:
