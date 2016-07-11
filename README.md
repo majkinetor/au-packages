@@ -1,6 +1,8 @@
+![](https://ci.appveyor.com/api/projects/status/d508f777c9aypuv3?svg=true)
+
 **My chocolatey packages**: [majkinetor](https://chocolatey.org/profiles/majkinetor)
 
-**Last update status**: [Update-AUPackages Log](https://gist.github.com/majkinetor/181b18886fdd363158064baf817fa2ff)
+**Last update status**: [Update-AUPackages Log](https://gist.github.com/majkinetor/181b18886fdd363158064baf817fa2ff) 
 
 Prerequisites
 -------------
