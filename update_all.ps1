@@ -72,7 +72,6 @@ $(
 )
 "@
 
-    $log | Out-File log.md
     $log | gist.bat --filename 'Update-AUPackages.md' --update $Info.Options.Gist_ID
     if ($LastExitCode) { "ERROR: Gist update failed" }
 }
