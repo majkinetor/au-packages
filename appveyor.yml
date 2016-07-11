@@ -2,13 +2,20 @@ version: '{build}'
 image: WMF 5
 
 environment:
-  gist_id: 181b18886fdd363158064baf817fa2ff
+  #Github username and password used to save result to gist and push changes to the repository
   github_user: majkinetor
   github_pass:
     secure: MLLwE43J/DaZdfFcWWugSw==
+
+  #ID of the gist used to save run results
+  gist_id: 181b18886fdd363158064baf817fa2ff
+
+  #Mail to send notifications to. Details are setup up in update_all.ps1
   mail_user: 'miodrag.milic@gmail.com'
   mail_pass:
     secure: BJGlZo/cyaxwcqaQsu/nQxopDo3Y6hk1iMMQtpcw4YA=Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
+
+  #Chocolatey API key to push packages
   api_key:
     secure: Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
 
@@ -23,8 +30,8 @@ install:
 build_script:
 - ps: c:/projects/chocolatey/update_all.ps1
 
-on_finish:
-- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+#on_finish:
+#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 notifications:
 - provider: Email

@@ -75,7 +75,7 @@ $(
 
 function git() {
     $pushed = $Info.results | ? Pushed
-    if (!$pushed) { return }
+    if (!$pushed) { "Git: no updates, skipping"; return }
 
     pushd $PSScriptRoot
 
