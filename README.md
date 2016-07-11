@@ -32,3 +32,16 @@ Run `<package_dir>/update.ps1` from within the directory of the package to updat
 **Update all packages**
 
 Run `./update_all.ps1`. Edit this file to change options.
+
+
+Environment variables
+---------------------
+
+```
+$Env:mail_user  
+$Env:mail_pass  
+$Env:github_user
+$Env:github_pass
+$Env:api_key    
+$Env:gist_id    
+```
