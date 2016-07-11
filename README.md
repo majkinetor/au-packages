@@ -1,4 +1,4 @@
-![](https://ci.appveyor.com/api/projects/status/d508f777c9aypuv3?svg=true)
+[![](https://ci.appveyor.com/api/projects/status/d508f777c9aypuv3?svg=true)](https://ci.appveyor.com/project/majkinetor/chocolatey)
 
 **My chocolatey packages**: [majkinetor](https://chocolatey.org/profiles/majkinetor)
 
