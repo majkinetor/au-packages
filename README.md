@@ -28,11 +28,11 @@ Run `<package_dir>/update.ps1` from within the directory of the package to updat
 
 Run `./update_all.ps1` from the repository root. Edit this script to change the [AU](https://github.com/majkinetor/au) update options. Currently this script has the following features:
 
-- Push package to Chocolatey  
+- Push updated packages to Chocolatey  
 Uses `$Env:api_key`
-- Save results to gist  
+- Save run results to gist  
 Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`
-- Commit pushed packages to git repository  
+- Commit pushed packages to the git repository  
 Uses `$env:github_user` and `$env:github_pass`
 - Send error notifications to email  
 Uses `$env:mail_user` and `$env:mail_pass`
