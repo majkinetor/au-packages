@@ -9,16 +9,13 @@
 - Powershell 3+.
 - [Automatic Chocolatey Package Update Powershell Module](https://github.com/majkinetor/au): `Install-Module au`
 
-## Testing
+## Create a package
 
-**Build the package**
+To create a new package use `./New-Package.ps1 <Name>` function (change Github username inside this script). This script uses the template in the `_template` directory.
 
-In package directory run `cpack`.
+## Test the package
 
-**Test locally**
-
-In package directory run: `Test-Package` or `tp`.
-
+In package directory run: `Test-Package`.
 
 ## Automatic update
 
