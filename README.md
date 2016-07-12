@@ -39,7 +39,7 @@ Uses `$env:mail_user` and `$env:mail_pass`
 
 #### All Environment variables
 
-If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sourced so you can put environment variables there. If you are using the build server such as Appvayor, define password variables as secrets.
+If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sourced so you can put environment variables there. If you are using the build server such as AppVeyor, define password variables as secrets.
 
 ```
 $Env:mail_user
@@ -53,5 +53,5 @@ $Env:api_key
 
 ## Notes
 
-- If you use google mail for error notifications on a build server such as Appvayor, google will by default block authentication from unknown device. To receive those emails enable less secure apps - see [Allowing less secure apps to access your account](https://support.google.com/accounts/answer/6010255?hl=en). In any case, do not use your private email for this but create a new one and redirect its messages to your private one. This wont affect you if you run the scripts from your own machine from which you usually access the email.
-- If you are using Appvayor you should schedule your build under General options using [ncron](http://www.nncron.ru/help/EN/working/cron-format.htm) syntax, for example `0 22 * * *` runs the updater every night at 22h.
+- If you use google mail for error notifications on a build server such as AppVeyor, google will by default block authentication from unknown device. To receive those emails enable less secure apps - see [Allowing less secure apps to access your account](https://support.google.com/accounts/answer/6010255?hl=en). In any case, do not use your private email for this but create a new one and redirect its messages to your private one. This wont affect you if you run the scripts from your own machine from which you usually access the email.
+- If you are using AppVeyor you should schedule your build under General options using [ncron](http://www.nncron.ru/help/EN/working/cron-format.htm) syntax, for example `0 22 * * *` runs the updater every night at 22h.
