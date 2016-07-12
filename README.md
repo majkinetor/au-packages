@@ -26,7 +26,7 @@ Run `<package_dir>/update.ps1` from within the directory of the package to updat
 
 ### Update all packages
 
-Run `./update_all.ps1` from the repository root. Edit this file to change update options. This current script has the following features:
+Run `./update_all.ps1` from the repository root. Edit this script to change the [AU]((https://github.com/majkinetor/au) update options. Currently this script has the following features:
 
 - Push package to Chocolatey  
 Uses `$Env:api_key`
@@ -37,7 +37,7 @@ Uses `$env:github_user` and `$env:github_pass`
 - Send error notifications to email  
 Uses `$env:mail_user` and `$env:mail_pass`
 
-### All Environment variables
+#### All Environment variables
 
 If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sourced so you can put environment variables there. If you are using the build server such as Appvayor, define password variables as secrets.
 
