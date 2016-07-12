@@ -24,7 +24,8 @@ In package directory run: `Test-Package` or `tp`.
 
 ### Update single package
 
-Run `<package_dir>/update.ps1` from within the directory of the package to update that package.
+Run `<package_dir>/update.ps1` from within the directory of the package to update that package:
+
 
 ### Update all packages
 
@@ -34,7 +35,7 @@ Run `./update_all.ps1` from the repository root. Edit this file to change update
 Uses `$Env:api_key`
 - Save results to gist  
 Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`
-- Push changes to git  
+- Commit pushed packages to git repository  
 Uses `$env:github_user` and `$env:github_pass`
 - Send error notifications to email  
 Uses `$env:mail_user` and `$env:mail_pass`
@@ -51,3 +52,8 @@ $Env:github_pass
 $Env:gist_id
 $Env:api_key
 ```
+
+
+## Notes
+
+- If you use google mail for error notifications on a build server such as Appvayor, google will by default block authentication from unknown device. To receive those emails enable less secure apps [Allowing less secure apps to access your account](https://support.google.com/accounts/answer/6010255?hl=en). In any case, do not use your private email for this but create a new one and redirect its messages to your private one. This wont affect you if you run the scripts from your own machine from which you usually access the email.
