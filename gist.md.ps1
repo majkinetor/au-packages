@@ -1,6 +1,6 @@
 # Update-AUPackages
 
-**Time:** $($info.startTime)  
+**Time:** $($info.startTime.ToUniversalTime().ToString('yyyy-MM-dd HH:mm'))  
 **Packages:** [majkinetor@chocolatey](https://chocolatey.org/profiles/majkinetor)  
 **Git repository:** https://github.com/majkinetor/chocolatey  
 **Appvayor build:** https://ci.appveyor.com/project/majkinetor/chocolatey
