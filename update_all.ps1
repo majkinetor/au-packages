@@ -9,6 +9,8 @@ $options = @{
     Push    = $true
     Threads = 10
 
+    #Do not use mail notification, appvayor build will be broken on errors
+    # and we will get notifications on broken builds
     Mail = @{
         To       = $Env:mail_user
         Server   = 'smtp.gmail.com'
