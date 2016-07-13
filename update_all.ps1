@@ -48,7 +48,7 @@ function save-gist {
         $res += ((1..$columns.Length | % { '|---' }) -join '') + "|`r`n"
 
         $result | % {
-            $o = $_ | select @{N=$columns[0]; E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, (max_version $_)},
+            $o = $_ | select @{N=$columns[0]; E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, (max_version $_)} },
                     $columns[1], $columns[2], $columns[3], $columns[4],
                     @{N=$columns[5]; E={
                         $err = ("$($_.Error)" -replace "`r?`n", '; ').Trim()
