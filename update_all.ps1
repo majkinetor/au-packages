@@ -1,6 +1,8 @@
 param($Name = $null)
 cd $PSScriptRoot
 
+import-module -force ..\au
+
 if (Test-Path update_vars.ps1) { . ./update_vars.ps1 }
 
 $options = @{
@@ -82,7 +84,7 @@ function save-gist {
     if (!(gcm gist.bat -ea 0)) { "ERROR: No gist.bat found: gem install gist"; return }
 
     $log = gc $PSScriptRoot\gist.md.ps1 -Raw | Expand-PoshString
-    #$log | out-file log.md
+    #$log | Out-File $PSScriptRoot\gist.md
     $log | gist.bat --filename 'Update-AUPackages.md' --update $Info.Options.Gist_ID
     if ($LastExitCode) { "ERROR: Gist update failed with exit code: '$LastExitCode'" }
 }

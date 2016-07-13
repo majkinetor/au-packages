@@ -24,14 +24,14 @@ $(
     md_code $Info.stats
     ""
 
-    ConvertTo-MarkdownTable $Info.result
+    ConvertTo-MarkdownTable $Info.result.ok
 
     if ($Info.error_count.total) {
         "## Errors"
         ""
-        ConvertTo-MarkdownTable $Info.errors
+        ConvertTo-MarkdownTable $Info.result.errors
         ""
-        $Info.errors | % {
+        $Info.result.errors | % {
             "### $($_.PackageName)"
             ""
             md_code "$($_.Error)"
