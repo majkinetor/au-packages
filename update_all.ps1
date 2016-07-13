@@ -42,30 +42,24 @@ function save-gist {
         "@`"`n$str`n`"@" | iex
     }
 
-    function ConvertTo-MarkdownTable($result, [switch]$Errors)
+    function ConvertTo-MarkdownTable($result, $Columns, $MaxErrorLength=100)
     {
-        $max_err_len = 100
-        $columns = if ($Errors) {
-            'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion', 'Error'
-        } else {
-            'PackageName', 'NuspecVersion', 'Error'
-        }
-
-        $res = '|' + ($columns -join '|') + "|`r`n"
-        $res += ((1..$columns.Length | % { '|---' }) -join '') + "|`r`n"
+        if (!$Columns) { $Columns = 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion', 'Error' }
+        $res = '|' + ($Columns -join '|') + "|`r`n"
+        $res += ((1..$Columns.Length | % { '|---' }) -join '') + "|`r`n"
 
         $result | % {
-            $o = $_ | select @{N=$columns[0]; E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, (max_version $_)} },
-                    $columns[1], $columns[2], $columns[3], $columns[4],
-                    @{N=$columns[5]; E={
+            $o = $_ | select @{N='PackageName'; E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, (max_version $_)} },
+                    'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion',
+                    @{N='Error'; E={
                         $err = ("$($_.Error)" -replace "`r?`n", '; ').Trim()
                         if ($err) {
-                            if ($err.Length -gt $max_err_len) { $err = $err.Substring(0,$max_err_len-1) + ' ...' }
+                            if ($err.Length -gt $MaxErrorLength) { $err = $err.Substring(0,$MaxErrorLength) + ' ...' }
                             "[{0}](#{1})" -f $err, $_.PackageName.ToLower()
                         }
                     }}
 
-            $res += ((1..$columns.Length | % { $c = $columns[$_-1]; '|' + $o.$c }) -join '') + "|`r`n"
+            $res += ((1..$Columns.Length | % { $col = $Columns[$_-1]; '|' + $o.$col }) -join '') + "|`r`n"
         }
 
         $res

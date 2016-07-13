@@ -29,7 +29,7 @@ $(
     if ($Info.error_count.total) {
         "## Errors"
         ""
-        ConvertTo-MarkdownTable $Info.result.errors -Errors
+        ConvertTo-MarkdownTable $Info.result.errors -Columns 'PackageName', 'NuspecVersion', 'Error'
         ""
         $Info.result.errors | % {
             "### $($_.PackageName)"
