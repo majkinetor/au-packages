@@ -21,7 +21,7 @@ In package directory run: `Test-Package`.
 
 ### Update single package
 
-Run `<package_dir>/update.ps1` from within the directory of the package to update that package:
+Run `<package_dir>/update.ps1` from within the directory of the package to update that package.
 
 
 ### Update all packages
