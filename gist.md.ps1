@@ -20,9 +20,7 @@ $(
         "<img src='$icon_ok' width='48'> Last run was OK"
     }
 
-    ""
     md_code $Info.stats
-    ""
 
     ConvertTo-MarkdownTable $Info.result.ok -Columns 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion'
 
@@ -30,10 +28,8 @@ $(
         "## Errors"
         ""
         ConvertTo-MarkdownTable $Info.result.errors -Columns 'PackageName', 'NuspecVersion', 'Error'
-        ""
         $Info.result.errors | % {
             "### $($_.PackageName)"
-            ""
             md_code "$($_.Error)"
         }
     }
