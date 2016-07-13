@@ -51,9 +51,11 @@ function save-gist {
             $o = $_ | select @{N=$columns[0]; E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, $_.RemoteVersion}},
                     $columns[1], $columns[2], $columns[3], $columns[4],
                     @{N=$columns[5]; E={
-                        $err = "$($_.Error)" -replace "`r?`n", '; '
-                        if ($err.Length -gt $max_err_len) { $err = $err.Substring(0,$max_err_len-1) + ' ...' }
-                        "[{0}]({1}" -f $err, $_.PackageName
+                        $err = ("$($_.Error)" -replace "`r?`n", '; ').Trim()
+                        if ($err) {
+                            if ($err.Length -gt $max_err_len) { $err = $err.Substring(0,$max_err_len-1) + ' ...' }
+                            "[{0}](#{1})" -f $err, $_.PackageName.ToLower()
+                        }
                     }}
 
             $res += ((1..$columns.Length | % { $c = $columns[$_-1]; '|' + $o.$c }) -join '') + "|`r`n"
@@ -63,15 +65,16 @@ function save-gist {
     }
 
     function md_code($Text) {
-        "`r`n" + '```'
+        "`n" + '```' + "`n"
         ($Text -join "`n").Trim()
-        '```' + "`r`n"
+        "`n" + '```' + "`n"
     }
 
     "Commiting pushed package to gist"
     if (!(gcm gist.bat -ea 0)) { "ERROR: No gist.bat found: gem install gist"; return }
 
     $log = gc $PSScriptRoot\gist.md.ps1 -Raw | Expand-PoshString
+    #$log | out-file log.md
     $log | gist.bat --filename 'Update-AUPackages.md' --update $Info.Options.Gist_ID
     if ($LastExitCode) { "ERROR: Gist update failed with exit code: '$LastExitCode'" }
 }
