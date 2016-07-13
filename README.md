@@ -35,7 +35,8 @@ Uses `$Env:api_key`.
 - Save run results to gist  
 Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`. If not set, gist will be anonymous.
 - Commit pushed packages to the git repository  
-Uses `$env:github_user` and `$env:github_pass`.
+Uses `$env:github_user` and `$env:github_pass`. If not set package state may not be saved; if you run updater on your own machine, state is saved on your file system. However, if run updater on a build server witch always starts with a fresh repository copy, state can only be saved if you provide your git repository credentials. The updater will work correctly in any case since you can publish package only once on Chocolatey repository and subsequent pushes will be denied, but after some time basically all packages will have push errors because numspec version in the repository will be wrong. Contrary if your repository version is stale on the local machine, updater will report push errors only on the first run.
+
 - Send error notifications to email  
 Uses `$env:mail_user` and `$env:mail_pass`.
 
