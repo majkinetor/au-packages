@@ -24,7 +24,7 @@ $(
     md_code $Info.stats
     ""
 
-    ConvertTo-MarkdownTable $Info.result.ok
+    ConvertTo-MarkdownTable $Info.result.ok -Columns 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion'
 
     if ($Info.error_count.total) {
         "## Errors"
