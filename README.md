@@ -13,7 +13,7 @@
 
 To create a new package use `./New-Package.ps1 <Name>` function (change Github username inside this script). This script uses the template in the `_template` directory.
 
-## Test the package
+## Testing the package
 
 In package directory run: `Test-Package`.
 
@@ -36,6 +36,8 @@ Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`
 Uses `$env:github_user` and `$env:github_pass`
 - Send error notifications to email  
 Uses `$env:mail_user` and `$env:mail_pass`
+
+You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will avoid saving results to gist, sending mails on errors etc and will just run update process for each package.
 
 #### All Environment variables
 
