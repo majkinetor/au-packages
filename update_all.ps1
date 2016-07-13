@@ -25,7 +25,6 @@ $options = @{
     Git = @{
         UserName   = $Env:github_user
         Password   = $Env:github_pass
-        Repository = 'https://github.com/majkinetor/chocolatey.git'
     }
 
     Script = {

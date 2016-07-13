@@ -13,8 +13,9 @@ function save-git() {
     git commit -m "UPDATE BOT: $($pushed.Count) packages updated"
 
     "`nPushing git changes"
+    $repository = git ls-remote --get-url
     $o = $Info.Options.Git
-    $repo = if ( $o.UserName ) { $o.Repository -replace '://', ('$0{0}:{1}@' -f $o.UserName, $o.Password) } else { $o.Repository }
+    $repo = if ( $o.UserName ) { $repository -replace '://', ('$0{0}:{1}@' -f $o.UserName, $o.Password) } else { $repository }
     git push $repo
     popd
 }
