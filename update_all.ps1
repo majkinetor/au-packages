@@ -1,7 +1,7 @@
 param($Name = $null)
 cd $PSScriptRoot
 
-import-module -force ..\au
+#import-module -force ..\au
 
 if (Test-Path update_vars.ps1) { . ./update_vars.ps1 }
 
@@ -42,10 +42,15 @@ function save-gist {
         "@`"`n$str`n`"@" | iex
     }
 
-    function ConvertTo-MarkdownTable($result)
+    function ConvertTo-MarkdownTable($result, [switch]$Errors)
     {
-        $max_err_len = 50
-        $columns = 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion', 'Error'
+        $max_err_len = 100
+        $columns = if ($Errors) {
+            'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion', 'Error'
+        } else {
+            'PackageName', 'NuspecVersion', 'Error'
+        }
+
         $res = '|' + ($columns -join '|') + "|`r`n"
         $res += ((1..$columns.Length | % { '|---' }) -join '') + "|`r`n"
 
