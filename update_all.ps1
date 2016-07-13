@@ -72,9 +72,9 @@ function save-gist {
     }
 
     function md_code($Text) {
-        "`n" + '```' + "`n"
+        "`n" + '```'
         ($Text -join "`n").Trim()
-        "`n" + '```' + "`n"
+        '```' + "`n"
     }
 
     "Commiting pushed package to gist"
