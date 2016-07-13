@@ -29,6 +29,8 @@ $(
     if ($Info.error_count.total) {
         "## Errors"
         ""
+        ConvertTo-MarkdownTable $Info.errors
+        ""
         $Info.errors | % {
             "### $($_.PackageName)"
             ""
