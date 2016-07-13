@@ -30,7 +30,7 @@ $options = @{
 
 function save-runinfo {
     "Saving run info"
-    $Info | Export-CliXML $PSScriptRoot\update_results.xml
+    $Info | Export-CliXML $PSScriptRoot\update_info.xml
 }
 
 function save-gist {
@@ -77,7 +77,7 @@ function save-gist {
         '```' + "`n"
     }
 
-    "Commiting pushed package to gist"
+    "Saving results to gist"
     if (!(gcm gist.bat -ea 0)) { "ERROR: No gist.bat found: gem install gist"; return }
 
     $log = gc $PSScriptRoot\gist.md.ps1 -Raw | Expand-PoshString
@@ -87,8 +87,8 @@ function save-gist {
 }
 
 function git() {
-    $pushed = $Info.results | ? Pushed
-    if (!$pushed) { "Git: no updates, skipping"; return }
+    $pushed = $Info.result.pushed
+    if (!($pushed -and $pushed.Count)) { "Git: no package is pushed to chocolatey, skipping"; return }
 
     pushd $PSScriptRoot
 
@@ -106,7 +106,7 @@ function git() {
 }
 
 updateall -Name $Name -Options $options | ft
-$global:updateall = Import-CliXML $PSScriptRoot\update_results.xml
+$global:updateall = Import-CliXML $PSScriptRoot\update_info.xml
 
 #Uncomment to fail the build on AppVeyor on any package error
 #if ($updateall.error_count.total) { throw 'Errors during update' }
