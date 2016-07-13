@@ -13,6 +13,8 @@ function save-git() {
     git commit -m "UPDATE BOT: $($pushed.Count) packages updated"
 
     "`nPushing git changes"
-    git push "https://$Env:github_user:$Env:github_pass@github.com/majkinetor/chocolatey.git"
+    $o = $Info.Options.Git
+    $repo = if ( $o.UserName ) { $o.Repository -replace '://', ('$0{0}:{1}@' -f $o.UserName, $o.Password) } else { $o.Repository }
+    git push $repo
     popd
 }
