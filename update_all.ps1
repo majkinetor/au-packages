@@ -39,6 +39,23 @@ function save-gist {
         "@`"`n$str`n`"@" | iex
     }
 
+    function ConvertTo-MarkdownTable($result)
+    {
+        $columns = 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion', 'Error'
+        $res = '|' + ($columns -join '|') + "|`r`n"
+        $res += ((1..$columns.Length | % { '|---' }) -join '') + "|`r`n"
+
+        $result | % {
+            $o = $_ | select @{N=$columns[0]; E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, $_.RemoteVersion}},
+                    $columns[1], $columns[2], $columns[3], $columns[4],
+                    @{N=$columns[5]; E={"$($_.Error)" -replace "`n", '; '}}
+
+            $res += ((1..$columns.Length | % { $c = $columns[$_-1]; '|' + $o.$c }) -join '') + "|`r`n"
+        }
+
+        $res
+    }
+
     "Commiting pushed package to gist"
     if (!(gcm gist.bat -ea 0)) { "ERROR: No gist.bat found: gem install gist"; return }
 
