@@ -8,14 +8,15 @@ $options = @{
     Push    = $true
     Threads = 10
 
-    Mail = @{
-        To       = $Env:mail_user
-        Server   = 'smtp.gmail.com'
-        UserName = $Env:mail_user
-        Password = $Env:mail_pass
-        Port     = 587
-        EnableSsl= $true
-    }
+    Mail = if ($Env:mail_user) { @{
+            To        = $Env:mail_user
+            Server    = 'smtp.gmail.com'
+            UserName  = $Env:mail_user
+            Password  = $Env:mail_pass
+            Port      = 587
+            EnableSsl = $true
+          }
+        } else {}
 
     Gist_ID = $Env:Gist_ID
     Script = { param($Phase, $Info)
@@ -41,6 +42,7 @@ function save-gist {
 
     function ConvertTo-MarkdownTable($result)
     {
+        $max_err_len = 50
         $columns = 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion', 'Error'
         $res = '|' + ($columns -join '|') + "|`r`n"
         $res += ((1..$columns.Length | % { '|---' }) -join '') + "|`r`n"
@@ -48,12 +50,22 @@ function save-gist {
         $result | % {
             $o = $_ | select @{N=$columns[0]; E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, $_.RemoteVersion}},
                     $columns[1], $columns[2], $columns[3], $columns[4],
-                    @{N=$columns[5]; E={"$($_.Error)" -replace "`n", '; '}}
+                    @{N=$columns[5]; E={
+                        $err = "$($_.Error)" -replace "`r?`n", '; '
+                        if ($err.Length -gt $max_err_len) { $err = $err.Substring(0,$max_err_len-1) + ' ...' }
+                        "[{0}]({1}" -f $err, $_.PackageName
+                    }}
 
             $res += ((1..$columns.Length | % { $c = $columns[$_-1]; '|' + $o.$c }) -join '') + "|`r`n"
         }
 
         $res
+    }
+
+    function md_code($Text) {
+        "`r`n" + '```'
+        ($Text -join "`n").Trim()
+        '```' + "`r`n"
     }
 
     "Commiting pushed package to gist"
