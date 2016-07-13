@@ -28,14 +28,16 @@ Run `<package_dir>/update.ps1` from within the directory of the package to updat
 
 Run `./update_all.ps1` from the repository root. Edit this script to change the [AU](https://github.com/majkinetor/au) update options. Currently this script has the following features:
 
+
 - Push updated packages to Chocolatey  
-Uses `$Env:api_key`
+Uses `$Env:api_key`.
+- Save run results locally
 - Save run results to gist  
-Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`
+Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`. If not set, gist will be anonymous.
 - Commit pushed packages to the git repository  
-Uses `$env:github_user` and `$env:github_pass`
+Uses `$env:github_user` and `$env:github_pass`.
 - Send error notifications to email  
-Uses `$env:mail_user` and `$env:mail_pass`
+Uses `$env:mail_user` and `$env:mail_pass`.
 
 You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will avoid saving results to gist, sending mails on errors etc and will just run update process for each package.
 
@@ -44,12 +46,12 @@ You can also call AU method `Update-AUPackages` (alias `updateall`) in the repos
 If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sourced so you can put environment variables there. If you are using the build server such as AppVeyor, define password variables as secrets.
 
 ```
-$Env:mail_user
-$Env:mail_pass
-$Env:github_user
-$Env:github_pass
-$Env:gist_id
-$Env:api_key
+$Env:mail_user   = ''
+$Env:mail_pass   = ''
+$Env:github_user = ''
+$Env:github_pass = ''
+$Env:gist_id     = ''
+$Env:api_key     = ''
 ```
 
 

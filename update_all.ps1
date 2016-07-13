@@ -24,7 +24,7 @@ $options = @{
 
         save-runinfo
         save-gist
-        git
+        save-git
     }
 }
 
@@ -78,15 +78,19 @@ function save-gist {
     }
 
     "Saving results to gist"
-    if (!(gcm gist.bat -ea 0)) { "ERROR: No gist.bat found: gem install gist"; return }
+    if (!(gcm gist.bat -ea 0)) { "ERROR: No gist.bat found. Install it using:  'gem install gist'"; return }
 
     $log = gc $PSScriptRoot\gist.md.ps1 -Raw | Expand-PoshString
-    #$log | Out-File $PSScriptRoot\gist.md
-    $log | gist.bat --filename 'Update-AUPackages.md' --update $Info.Options.Gist_ID
+    $log | Out-File $PSScriptRoot\gist.md
+
+    $params = @( "--filename 'Update-AUPackages.md'")
+    $params += if ($Info.Options.Gist_ID) { "--update " + $Info.Options.Gist_ID } else { '--anonymous' }
+
+    iex -Command "`$log | gist.bat $params"
     if ($LastExitCode) { "ERROR: Gist update failed with exit code: '$LastExitCode'" }
 }
 
-function git() {
+function save-git() {
     $pushed = $Info.result.pushed
     if (!($pushed -and $pushed.Count)) { "Git: no package is pushed to chocolatey, skipping"; return }
 

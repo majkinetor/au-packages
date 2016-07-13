@@ -1,3 +1,5 @@
 *.nupkg
 /update_vars.ps1
 /update_results.xml
+/gist.md
+/update_info.xml
