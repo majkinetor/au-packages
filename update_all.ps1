@@ -68,4 +68,6 @@ function git() {
 
 updateall -Name $Name -Options $options | ft
 $global:updateall = Import-CliXML $PSScriptRoot\update_results.xml
-if ($updateall.error_count.total) { throw 'Errors during update' }
+
+#Uncomment to fail the build on AppVeyor on any package error
+#if ($updateall.error_count.total) { throw 'Errors during update' }
