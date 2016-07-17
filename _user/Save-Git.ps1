@@ -1,8 +1,6 @@
-function save-git() {
+function Save-Git() {
     $pushed = $Info.result.pushed
-    if (!($pushed -and $pushed.Count)) { "Git: no package is pushed to chocolatey, skipping"; return }
-
-    pushd $PSScriptRoot
+    if (!$Info.pushed) { "Git: no package is pushed to chocolatey, skipping"; return }
 
     "`nExecuting git pull"
     git checkout master
@@ -17,5 +15,4 @@ function save-git() {
     $o = $Info.Options.Git
     $repo = if ( $o.UserName ) { $repository -replace '://', ('$0{0}:{1}@' -f $o.UserName, $o.Password) } else { $repository }
     git push $repo
-    popd
 }
