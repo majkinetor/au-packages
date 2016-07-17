@@ -5,7 +5,26 @@ function Save-Gist {
         "@`"`n$str`n`"@" | iex
     }
 
-    function ConvertTo-MarkdownTable($result, $Columns, $MaxErrorLength=150)
+    function max_version($p) {
+        try {
+            $n = [version]$p.NuspecVersion
+            $r = [version]$p.RemoteVersion
+            if ($n -gt $r) { "$n" } else { "$r" }
+        } catch {}
+    }
+
+    function md_title($Title, $Level=2 ) {
+        ""
+        "#"*$Level + $Title
+    }
+
+    function md_code($Text) {
+        "`n" + '```'
+        ($Text -join "`n").Trim()
+        '```' + "`n"
+    }
+
+    function md_table($result, $Columns, $MaxErrorLength=150)
     {
         if (!$Columns) { $Columns = 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion', 'Error' }
         $res = '|' + ($Columns -join '|') + "|`r`n"
@@ -26,20 +45,6 @@ function Save-Gist {
         }
 
         $res
-    }
-
-    function max_version($p) {
-        try {
-            $n = [version]$p.NuspecVersion
-            $r = [version]$p.RemoteVersion
-            if ($n -gt $r) { "$n" } else { "$r" }
-        } catch {}
-    }
-
-    function md_code($Text) {
-        "`n" + '```'
-        ($Text -join "`n").Trim()
-        '```' + "`n"
     }
 
     "Saving results to gist"

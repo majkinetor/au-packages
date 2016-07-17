@@ -8,7 +8,7 @@ function Save-Git() {
 
     "Commiting updated packages to git repository"
     $pushed | % { git add $_.PackageName }
-    git commit -m "UPDATE BOT: $($pushed.Count) packages updated"
+    git commit -m "UPDATE BOT: $($Info.pushed) packages updated"
 
     "`nPushing git changes"
     $repository = git ls-remote --get-url

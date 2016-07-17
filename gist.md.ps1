@@ -22,14 +22,19 @@ $(
 
     md_code $Info.stats
 
-    ConvertTo-MarkdownTable $Info.result.ok -Columns 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion'
+    if ($Info.pushed) {
+        md_title 'Pushed'
+        md_table $Info.result.pushed -Columns 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion'
+        md_title 'All'
+    }
+
+    md_table $Info.result.ok -Columns 'PackageName', 'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion'
 
     if ($Info.error_count.total) {
-        "## Errors"
-        ""
-        ConvertTo-MarkdownTable $Info.result.errors -Columns 'PackageName', 'NuspecVersion', 'Error'
+        md_title Errors
+        md_table $Info.result.errors -Columns 'PackageName', 'NuspecVersion', 'Error'
         $Info.result.errors | % {
-            "### $($_.PackageName)"
+            md_title $_.PackageName
             md_code "$($_.Error)"
         }
     }
