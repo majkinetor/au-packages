@@ -26,21 +26,11 @@ Run `<package_dir>/update.ps1` from within the directory of the package to updat
 
 ### Update all packages
 
-Run `./update_all.ps1` from the repository root. Edit this script to change the [AU](https://github.com/majkinetor/au) update options. Currently this script has the following features:
+Run `./update_all.ps1` from the repository root. Edit this script to change the [AU](https://github.com/majkinetor/au) update options.
 
+You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will avoid saving results to gist, sending mails on errors etc. and will just run update process for each package.
 
-- Push updated packages to Chocolatey  
-Uses `$env:api_key`.
-- Save run results locally
-- Save run results to gist  
-Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`. If not set, gist will be anonymous.
-- Commit pushed packages to the git repository  
-Uses `$env:github_user` and `$env:github_pass`. If not set package state may not be saved; if you run updater on your own machine, the state is saved on your file system. However, if updater is run by a build server which always starts a new (with a fresh repository copy), the state can only be saved if you provide your git repository credentials. The updater will work correctly in any case since you can publish package only once on Chocolatey repository and subsequent pushes will not be tried since `update` function doesn't update the package if the latest version returned already exists in the chocolatey repository.
-
-- Send error notifications to email  
-Uses `$env:mail_user` and `$env:mail_pass`.
-
-You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will avoid saving results to gist, sending mails on errors etc and will just run update process for each package.
+If you want to use custom update features to save results to gist and/or github git repository on your local machine, you will have to setup credentials on your own (check out AppVeyor build that has this automated).
 
 #### All Environment variables
 
@@ -49,12 +39,22 @@ If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sour
 ```
 $Env:mail_user   = ''
 $Env:mail_pass   = ''
-$Env:github_user = ''
-$Env:github_pass = ''
 $Env:gist_id     = ''
 $Env:api_key     = ''
 ```
 
+## Build
+
+AppVeyor build has the following options:
+
+- Push updated packages to Chocolatey  
+Uses `$env:api_key`.
+- Save run results to gist  
+Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`. If not set, gist will be anonymous.
+- Commit pushed packages to the git repository  
+Uses `$env:github_user` and `$env:github_pass`. If not set package state may not be saved; if you run updater on your own machine, the state is saved on your file system. However, if updater is run by a build server which always starts a new (with a fresh repository copy), the state can only be saved if you provide your git repository credentials. The updater will work correctly in any case since you can publish package only once on Chocolatey repository and subsequent pushes will not be tried since `update` function doesn't update the package if the latest version returned already exists in the chocolatey repository.
+- Send error notifications to email  
+Uses `$env:mail_user` and `$env:mail_pass`.
 
 ## Notes
 

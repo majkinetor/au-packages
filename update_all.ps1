@@ -22,11 +22,6 @@ $options = @{
 
     Gist_ID = $Env:Gist_ID
 
-    Git = @{
-        UserName   = $Env:github_user
-        Password   = $Env:github_pass
-    }
-
     Script = {
         param($Phase, $Info)
 

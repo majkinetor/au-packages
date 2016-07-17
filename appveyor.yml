@@ -23,6 +23,7 @@ install:
 - gem install gist --no-ri --no-rdoc
 - "ruby -e \"require 'gist'; Gist.login! username: ENV['github_user'], password: ENV['github_pass'] if ENV['github_user'] \""
 - ps: |
+    "machine github.com`nlogin $Env:github_user`npassword $Env:github_password" | Out-File ~/.netrc
     Install-PackageProvider -Name NuGet -Force
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
     Install-Module au
