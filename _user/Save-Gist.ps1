@@ -32,7 +32,10 @@ function Save-Gist {
 
         $result | % {
             $o = $_ | select @{N='PackageName'; E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, (max_version $_)} },
-                    'Updated', 'Pushed', 'RemoteVersion', 'NuspecVersion',
+                    @{N='Updated'; E={
+                        "[{0}](#{1})" -f $_.Updated, $_.PackageName.ToLower()
+                    }},
+                    'Pushed', 'RemoteVersion', 'NuspecVersion',
                     @{N='Error'; E={
                         $err = ("$($_.Error)" -replace "`r?`n", '; ').Trim()
                         if ($err) {
