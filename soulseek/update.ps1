@@ -7,7 +7,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $changelog
+    $download_page = Invoke-WebRequest -Uri $changelog -UseBasicParsing
     $url   = $download_page.links | ? href -like '*.exe*' | select -First 1 -expand href
 
     $version  = $url -split '-|\.' | select -Last 3 -Skip 1
