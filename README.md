@@ -43,7 +43,7 @@ $Env:gist_id     = ''
 $Env:api_key     = ''
 ```
 
-## Build
+## AppVeyor build
 
 AppVeyor build has the following options:
 
@@ -55,6 +55,10 @@ Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`. If not set, gist
 Uses `$env:github_user` and `$env:github_pass`. If not set package state may not be saved; if you run updater on your own machine, the state is saved on your file system. However, if updater is run by a build server which always starts a new (with a fresh repository copy), the state can only be saved if you provide your git repository credentials. The updater will work correctly in any case since you can publish package only once on Chocolatey repository and subsequent pushes will not be tried since `update` function doesn't update the package if the latest version returned already exists in the chocolatey repository.
 - Send error notifications to email  
 Uses `$env:mail_user` and `$env:mail_pass`.
+
+## Make your own
+
+To use this system with your AU packages just fork it, delete all existing packages add your own, and specify your environment variables. The minimum for the system to work is to specify `$Env:api_key` in order to push updated packages to Chocolatey repository.
 
 ## Notes
 
