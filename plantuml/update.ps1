@@ -7,7 +7,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $download_page = Invoke-WebRequest -Uri $releases
     if ($download_page.Content -match 'V\d{4,4}')
     {
         $version = "1." + $Matches[0].Substring(1)

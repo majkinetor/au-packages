@@ -5,9 +5,9 @@ ls _user\*.ps1 | % { . $_ }
 if (Test-Path update_vars.ps1) { . ./update_vars.ps1 }
 
 $options = @{
-    Timeout  = 100
-    Push     = $true
-    Threads  = 10
+    Timeout = 100
+    Push    = $true
+    Threads = 10
 
     Mail = if ($Env:mail_user) {
             @{

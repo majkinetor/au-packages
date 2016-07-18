@@ -7,7 +7,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $download_page = Invoke-WebRequest -Uri $releases
     if ($download_page.RawContent -match 'resources/yed/demo/.+\.zip')
     {
         $url = "https://www.yworks.com/" + $Matches[0]

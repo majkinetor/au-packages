@@ -12,7 +12,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $download_page = Invoke-WebRequest -Uri $releases
 
     #tidy-5.1.25-win64.zip
     $re  = "tidy-.+-win(32|64).zip"
