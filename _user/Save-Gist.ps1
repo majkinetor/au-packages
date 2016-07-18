@@ -41,14 +41,14 @@ function Save-Gist {
         $result | % {
             $o = $_ | select `
                     @{ N='PackageName'
-                       E={
-                            $r  = if (diff_version $_) { '&#x1F538; ' }
-                            $r += '[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, (max_version $_)
-                            $r
-                       }
+                       E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, (max_version $_) }
                     },
                     @{ N='Updated'
-                       E={"[{0}](#{1})" -f $_.Updated, $_.PackageName.ToLower() }
+                       E={
+                            $r  = "[{0}](#{1})" -f $_.Updated, $_.PackageName.ToLower()
+                            $r += if (diff_version $_) { ' &#x1F538;' }
+                            $r
+                        }
                     },
                     'Pushed', 'RemoteVersion', 'NuspecVersion',
                     @{ N='Error'
