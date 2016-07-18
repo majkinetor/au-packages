@@ -13,6 +13,14 @@ function Save-Gist {
         } catch {}
     }
 
+    function diff_version($p) {
+        try {
+            $n = [version]$p.NuspecVersion
+            $r = [version]$p.RemoteVersion
+            return ($n -ne $r)
+        } catch { return $false }
+    }
+
     function md_title($Title, $Level=2 ) {
         ""
         "#"*$Level + $Title
@@ -31,18 +39,27 @@ function Save-Gist {
         $res += ((1..$Columns.Length | % { '|---' }) -join '') + "|`r`n"
 
         $result | % {
-            $o = $_ | select @{N='PackageName'; E={'[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, (max_version $_)} },
-                    @{N='Updated'; E={
-                        "[{0}](#{1})" -f $_.Updated, $_.PackageName.ToLower()
-                    }},
+            $o = $_ | select `
+                    @{ N='PackageName'
+                       E={
+                            $r  = if (diff_version $_) { '&#x1F538; ' }
+                            $r += '[{0}](https://chocolatey.org/packages/{0}/{1})' -f $_.PackageName, (max_version $_)
+                            $r
+                       }
+                    },
+                    @{ N='Updated'
+                       E={"[{0}](#{1})" -f $_.Updated, $_.PackageName.ToLower() }
+                    },
                     'Pushed', 'RemoteVersion', 'NuspecVersion',
-                    @{N='Error'; E={
-                        $err = ("$($_.Error)" -replace "`r?`n", '; ').Trim()
-                        if ($err) {
-                            if ($err.Length -gt $MaxErrorLength) { $err = $err.Substring(0,$MaxErrorLength) + ' ...' }
-                            "[{0}](#{1})" -f $err, $_.PackageName.ToLower()
-                        }
-                    }}
+                    @{ N='Error'
+                       E={
+                            $err = ("$($_.Error)" -replace "`r?`n", '; ').Trim()
+                            if ($err) {
+                                if ($err.Length -gt $MaxErrorLength) { $err = $err.Substring(0,$MaxErrorLength) + ' ...' }
+                                "[{0}](#{1})" -f $err, $_.PackageName.ToLower()
+                         }
+                       }
+                    }
 
             $res += ((1..$Columns.Length | % { $col = $Columns[$_-1]; '|' + $o.$col }) -join '') + "|`r`n"
         }
