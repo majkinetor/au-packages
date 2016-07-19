@@ -37,11 +37,14 @@ build_script:
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
+artifacts:
+- path: result_info.xml
+- path: gist.md
+
 notifications:
 - provider: Email
   to: majkinetor@gmail.com
   on_build_success: false
   on_build_failure: true
   on_build_status_changed: true
-
 
