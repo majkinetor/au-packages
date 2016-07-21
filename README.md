@@ -56,21 +56,22 @@ Uses `$env:github_user` and `$env:github_pass`. If not set package state may not
 - Send error notifications to email  
 Uses `$env:mail_user` and `$env:mail_pass`.
 - Send build failure notifications to email  
-Uses `$env:mail_user
+Uses `$env:mail_user`
 
 ## How to use with your own packages
 
 To use this system with your own AU packages do the following steps:
 
-* Fork this project
-* Delete all existing packages. In root of the repository run: `ls | ? PSISContainer | ?  Name -notlike '_*' | rm -Recurse`
-* Set your environment variables
-  * If you want to use AppVeyor edit the `appveyor.yml`. The minimum for the system to work is to specify `$Env:api_key` in order to push updated packages to Chocolatey repository.
-  * If you want to use on your own machine create `update_vars.ps1` and set the variables there. You may want to install `gist` gem: `cinst ruby; gem install gist`.
-* Add your own packages and you are ready to go.
+* Fork this project and clone it locally.
+* Delete all existing packages.  
+In the root of the repository run: `ls | ? PSISContainer | ?  Name -notlike '_*' | rm -Recurse`.
+* Set your environment variables:
+  * If you want to use AppVeyor edit the `appveyor.yml` environment section. The minimum for the system to work is to specify `$Env:api_key` in order to push updated packages to Chocolatey repository.
+  * If you want to use on your own machine create `update_vars.ps1` and set the variables there. You may also want to install `gist` gem: `cinst ruby; gem install gist` and to make sure `git push` doesn't require credentials.
+* Add your own packages.
 
 ## Notes
 
-- If you use google mail for error notifications on a build server such as AppVeyor, google will by default block authentication from unknown device. To receive those emails enable less secure apps - see [Allowing less secure apps to access your account](https://support.google.com/accounts/answer/6010255?hl=en). In any case, do not use your private email for this but create a new one and redirect its messages to your private one. This wont affect you if you run the scripts from your own machine from which you usually access the email.
-- If you are using AppVeyor you should schedule your build under General options using [ncron](http://www.nncron.ru/help/EN/working/cron-format.htm) syntax, for example `0 22 * * *` runs the updater every night at 22h.
-- For gist to work over proxy you need to set console proxy environment variable. See [Update-CLIProxy](https://github.com/majkinetor/posh/blob/master/MM_Network/Update-CLIProxy.ps1) function.
+- If you use Google mail for error notifications on a build server such as AppVeyor, Google will by default block authentication from unknown device. To receive those emails enable less secure apps - see [Allowing less secure apps to access your account](https://support.google.com/accounts/answer/6010255?hl=en). In any case, do not use your private email for this but create a new Google account and redirect its messages to your private one. This wont affect you if you run the scripts from your own machine from which you usually access the email.
+- If you are using AppVeyor you should schedule your build under the _General_ options using [ncron](http://www.nncron.ru/help/EN/working/cron-format.htm) syntax, for example `0 22 * * *` runs the updater every night at 22h.
+- For gist to work the over proxy you need to set console proxy environment variable. See [Update-CLIProxy](https://github.com/majkinetor/posh/blob/master/MM_Network/Update-CLIProxy.ps1) function.
