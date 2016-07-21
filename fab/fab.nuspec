@@ -20,7 +20,7 @@ the internet, you must go through the following steps:
 
 Firewall App Blocker makes the process very easy! Simply drag and drop the application you wish to block into the FAB window, or browse the hard disk to find it. That’s it! If you want to allow it access again, you need only select it and press the Delete button.
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/screenshot.png)
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/fab/screenshot.png)
 </description>
     <projectUrl>http://www.sordum.org/8125/firewall-app-blocker-fab-v1-4</projectUrl>
     <tags>network firewall</tags>
