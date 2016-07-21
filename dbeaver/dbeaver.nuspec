@@ -25,8 +25,7 @@
 - DBeaver consumes much less memory than other popular similar software (SQuirreL, DBVisualizer)
 - Database metadata is loaded on demand and there is no long-running “metadata caching” procedure at connect time
 - ResultSet viewer (grid) is very fast and consumes very little ammount of memory
-- All remote database operations work in non-blocking mode so DBeaver does not hang if the database server does not respond or if there is a related network issue</description>
-
+- All remote database operations work in non-blocking mode so DBeaver does not hang if the database server does not respond or if there is a related network issue
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/screenshot.png)
 </description>
