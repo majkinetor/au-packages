@@ -14,7 +14,7 @@ WZGrapher is an easy-to-use and small-footprinted Function Graphing and Calculat
 
 You can simply enter expressions like `x^3 - 2 x^2`,  `ln(sin(x-Pi/2))` or `pi*sin(2t + sin(t))`, the latter being designated as polarfunction by 't' used as independent variable. Differential equations (ODE) may look like `y'' = -xy' + 3y`, for example.
 
-![wzGrapher screenshot](http://www.walterzorn.de/en/images/grapher/wz_grapher.png)
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/wzgrapher/screenshot.png)
 </description>
     <projectUrl>http://www.walterzorn.de/en/grapher/grapher_app.htm</projectUrl>
     <tags>math graph chart</tags>

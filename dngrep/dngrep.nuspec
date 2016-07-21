@@ -26,6 +26,8 @@ Features
 * Try out complex searches in the Test window
 * Run from USB drive using the stand-alone distribution
 * Much more
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dngrep/screenshot.jpg)
 </description>
     <projectUrl>http://dngrep.github.io</projectUrl>
     <tags>admin search regex</tags>

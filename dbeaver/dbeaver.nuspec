@@ -26,6 +26,10 @@
 - Database metadata is loaded on demand and there is no long-running “metadata caching” procedure at connect time
 - ResultSet viewer (grid) is very fast and consumes very little ammount of memory
 - All remote database operations work in non-blocking mode so DBeaver does not hang if the database server does not respond or if there is a related network issue</description>
+
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/screenshot.png)
+</description>
     <summary>Free multi-platform database tool for developers, SQL programmers, database administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, MongoDB, etc.</summary>
     <releaseNotes>http://dbeaver.jkiss.org/news</releaseNotes>
     <tags>utility database UniversalDatabaseManager dbeaver</tags>

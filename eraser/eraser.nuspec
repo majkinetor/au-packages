@@ -16,7 +16,9 @@ Features
 - Erases residue from deleted files
 - Erases MFT and MFT-resident files (for NTFS volumes) and Directory Indices (for FAT)
 - Powerful and flexible scheduler
-    </description>
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/eraser/screenshot.png)
+</description>
     <projectUrl>http://eraser.heidi.ie</projectUrl>
     <tags>admin file delete erase forensic</tags>
     <copyright>Eraser</copyright>

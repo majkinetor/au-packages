@@ -49,6 +49,8 @@ Features
 - Glitch removal after extraction
 - Small WAV editor with the following functionality: delete, trim, normalize, pad, glitch removal, pop detection, interpolation of ranges, noise reduction, fade in/out, undo (and much more)
 - Program is free for personal use, so feel free to copy
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/eac/screenshot.png)
     </description>
     <projectUrl>http://www.exactaudiocopy.de</projectUrl>
     <tags>admin cd dvd grabber</tags>

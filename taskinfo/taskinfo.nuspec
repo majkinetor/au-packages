@@ -14,8 +14,8 @@ TaskInfo is a poweful utility that combines and improves features of Task Manage
 
 **NOTE**: Taskinfo is free for non-commercial use. To activate it, in registration menu click the "Free for personal non-commercial use or use parameter /Register: `choco install taskinfo /packageParameters /Register`
 
-![taskinfo screenshot](http://www.iarsn.com/images/taskinfo.gif)
-    </description>
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/taskinfo/screenshot.gif)
+</description>
     <projectUrl>http://www.iarsn.com/taskinfo.html</projectUrl>
     <tags>admin process system tasks tools</tags>
     <copyright>Igor Arsenin</copyright>

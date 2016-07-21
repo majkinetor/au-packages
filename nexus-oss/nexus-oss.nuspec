@@ -17,7 +17,9 @@ Package installer will install the nexus and start the service. The following pa
 
 * `/InstallDir`  
 Installation directory, by default `/InstallDir: c:\nexus`
-    </description>
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/nexus-oss/screenshot.png)
+</description>
     <projectUrl>http://www.sonatype.org/nexus/</projectUrl>
     <tags>admin repository maven nuget docker package</tags>
     <copyright>Sonatype</copyright>
