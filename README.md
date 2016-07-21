@@ -21,10 +21,10 @@ In package directory run: `Test-Package`.
 
 ### Update single package
 
-Run `<package_dir>/update.ps1` from within the directory of the package to update that package.
+Run `<package_dir>/update.ps1` from within the directory of the package to update that package. If this script is missing, the package is not automatic.
 
 
-### Update all packages
+### Update all automatic packages
 
 Run `./update_all.ps1` from the repository root. Edit this script to change the [AU](https://github.com/majkinetor/au) update options.
 
@@ -55,10 +55,19 @@ Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`. If not set, gist
 Uses `$env:github_user` and `$env:github_pass`. If not set package state may not be saved; if you run updater on your own machine, the state is saved on your file system. However, if updater is run by a build server which always starts a new (with a fresh repository copy), the state can only be saved if you provide your git repository credentials. The updater will work correctly in any case since you can publish package only once on Chocolatey repository and subsequent pushes will not be tried since `update` function doesn't update the package if the latest version returned already exists in the chocolatey repository.
 - Send error notifications to email  
 Uses `$env:mail_user` and `$env:mail_pass`.
+- Send build failure notifications to email  
+Uses `$env:mail_user
 
-## Make your own
+## How to use with your own packages
 
-To use this system with your AU packages just fork it, delete all existing packages add your own, and specify your environment variables. The minimum for the system to work is to specify `$Env:api_key` in order to push updated packages to Chocolatey repository.
+To use this system with your own AU packages do the following steps:
+
+* Fork this project
+* Delete all existing packages. In root of the repository run: `ls | ? PSISContainer | ?  Name -notlike '_*' | rm -Recurse`
+* Set your environment variables
+  * If you want to use AppVeyor edit the `appveyor.yml`. The minimum for the system to work is to specify `$Env:api_key` in order to push updated packages to Chocolatey repository.
+  * If you want to use on your own machine create `update_vars.ps1` and set the variables there. You may want to install `gist` gem: `cinst ruby; gem install gist`.
+* Add your own packages and you are ready to go.
 
 ## Notes
 

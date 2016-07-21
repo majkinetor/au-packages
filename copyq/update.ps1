@@ -16,6 +16,7 @@ function global:au_GetLatest {
     $version = $url -split '-|.exe' | select -Last 1 -Skip 2
 
     $Latest = @{ URL = $url; Version = $version }
+    throw dummy
     return $Latest
 }
 
