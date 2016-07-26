@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'dbeaver'
-$url32       = 'http://dbeaver.jkiss.org/files/3.7.1/dbeaver-ee-3.7.1-x86-setup.exe'
-$url64       = 'http://dbeaver.jkiss.org/files/3.7.1/dbeaver-ee-3.7.1-x86_64-setup.exe'
+$url32       = 'http://dbeaver.jkiss.org/files/3.7.2/dbeaver-ee-3.7.2-x86-setup.exe'
+$url64       = 'http://dbeaver.jkiss.org/files/3.7.2/dbeaver-ee-3.7.2-x86_64-setup.exe'
 
 $packageArgs = @{
   packageName            = $packageName
