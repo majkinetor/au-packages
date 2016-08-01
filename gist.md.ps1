@@ -1,5 +1,5 @@
 # Update-AUPackages
-[![](https://ci.appveyor.com/api/projects/status/9ipva7kgjigug2rn?svg=true)](https://ci.appveyor.com/project/majkinetor/chocolatey)
+[![](https://ci.appveyor.com/api/projects/status/9ipva7kgjigug2rn?svg=true)](https://ci.appveyor.com/project/majkinetor/chocolatey/build/$Env:APPVEYOR_BUILD_ID)
 [![](https://img.shields.io/badge/AU%20packages-$($Info.result.all.Length)-red.svg)](#ok)
 [![](https://img.shields.io/badge/AU-$(gmo au -ListAvailable | % Version | select -First 1 | % { "$_"} )-blue.svg)](https://www.powershellgallery.com/packages/AU)
 
