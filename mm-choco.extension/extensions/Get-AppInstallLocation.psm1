@@ -1,5 +1,5 @@
 <#
-    Last Change: 17-May-2016.
+    Last Change: 02-Aug-2016.
     Author: M. Milic <miodrag.milic@gmail.com>
 
 .SYNOPSIS
@@ -33,10 +33,7 @@ function Get-AppInstallLocation {
     $ErrorActionPreference = "SilentlyContinue"
 
     Write-Verbose "Trying local and machine (x32 & x64) Uninstall keys"
-    $local_key       = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
-    $machine_key     = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
-    $machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
-    [array]$key = Get-ItemProperty @($machine_key6432, $machine_key, $local_key) | ? { $_.DisplayName -match $AppNamePattern }
+    [array] $key = Get-UninstallRegistryKey $AppNamePattern
     if ($key.Count -eq 1) {
         Write-Verbose "Trying Uninstall key property 'InstallLocation'"
         $location = $key.InstallLocation

@@ -3,7 +3,7 @@
   <metadata>
     <id>mm-choco.extension</id>
     <title>Chocolatey Extensions by majkinetor</title>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
@@ -15,6 +15,12 @@
     <tags>choco-extension</tags>
     <docsUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension/README.md</docsUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>
+- 0.2
+  - Now works with bad registry keys.
+- 0.1
+  - Get-AppInstallLocation implementation.
+    </releaseNotes>
   </metadata>
 <files>
     <file src="extensions\**" target="extensions" />
