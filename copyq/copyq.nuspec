@@ -45,7 +45,7 @@ Features
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon96.png</iconUrl>
     <dependencies>
-      <dependency id="mm-choco.extension" version="0.0.1" />
+      <dependency id="mm-choco.extension" version="0.0.2" />
     </dependencies>
     <releaseNotes></releaseNotes>
     <docsUrl>https://github.com/hluk/CopyQ/wiki</docsUrl>
