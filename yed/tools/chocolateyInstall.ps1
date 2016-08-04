@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'yed'
-$url         = 'https://www.yworks.com/resources/yed/demo/yEd-3.16.zip'
+$url         = 'https://www.yworks.com/resources/yed/demo/yEd-3.16.1.zip'
 $toolsDir    = Split-Path $MyInvocation.MyCommand.Definition
 $cmdPath     = join-path $env:ChocolateyInstall bin\yed.cmd
 
