@@ -32,7 +32,12 @@ install:
     Get-Module au -ListAvailable | select Name, Version
 
 build_script:
-- ps: c:/projects/chocolatey/update_all.ps1
+- ps: |
+    if ($Env:APPVEYOR_REPO_COMMIT_AUTHOR -eq 'appveyor') {
+        "Build triggered by appveyor commit, aborting"
+    } else {
+        c:/projects/chocolatey/update_all.ps1
+    }
 
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
