@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>taskinfo</id>
     <title>Taskinfo</title>
-    <version>10.0.0.336</version>
+    <version>10.0.0.3361678</version>
     <authors>Igor Arsenin</authors>
     <owners>Miodrag Milić</owners>
     <summary>TaskInfo is a poweful utility that combines and improves features of Task Manager and System Information tools</summary>
@@ -24,6 +24,9 @@ TaskInfo is a poweful utility that combines and improves features of Task Manage
     <releaseNotes>http://www.iarsn.com/tihistory.html</releaseNotes>
     <docsUrl>http://www.iarsn.com/taskinfo/help/taskinfo_help.htm</docsUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/taskinfo</packageSourceUrl>
+    <dependencies>
+      <dependency id="mm-choco.extension" version="0.0.2" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
