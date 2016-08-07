@@ -4,9 +4,18 @@ $setupDir    = "$Env:TEMP\eraser_setup"
 $packageName = 'eraser'
 $url32       = 'http://netcologne.dl.sourceforge.net/project/eraser/Eraser%206/6.2/Eraser6.2.0.2971-NoRuntimes.exe'
 $url64       = $url32
+$checksum    = '3851189937D5D347D240A9C3703FE9F7BBC792EDCBDDD8ED08F34EE7D183C062'
 
 $setupPath  = $setupDir + ".exe"
-Get-ChocolateyWebFile $packageName $setupPath $url32 $url64
+$packageArgs = @{
+  packageName  = $packageName
+  fileFullPath = $setupPath
+  url          = $url32
+  url64bit     = $url64
+  checksum     = $checksum
+  checksumType = 'sha256'
+}
+Get-ChocolateyWebFile @packageArgs
 
 if (!(gcm 7z -ea 0)) {
     gp HKCU:\Software\7-Zip Path | select -Expand Path | set path
