@@ -1,4 +1,4 @@
-remove-module au
+import-module au
 
 $releases = 'https://github.com/hluk/CopyQ/releases'
 
