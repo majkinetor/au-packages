@@ -10,11 +10,7 @@ $packageArgs = @{
     file                   = ''
 }
 
-$local_key       = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$machine_key     = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
-$machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
-[array]$key = Get-ItemProperty -Path @($machine_key6432,$machine_key, $local_key) -ErrorAction SilentlyContinue | ? { $_.DisplayName -like "$softwareName" }
-
+[array] $key = Get-UninstallRegistryKey $softwareName
 if ($key.Count -eq 1) {
     $key | % {
         $packageArgs.file = "$($_.UninstallString.Replace(' /x86=0', ''))"   #"C:\Program Files\OpenSSH\uninstall.exe" /x86=0
