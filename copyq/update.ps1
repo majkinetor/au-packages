@@ -1,9 +1,14 @@
-import-module au
+remove-module au
 
 $releases = 'https://github.com/hluk/CopyQ/releases'
 
 function global:au_SearchReplace {
-    @{".\tools\chocolateyInstall.ps1" = @{ "(^[$]url\s*=\s*)('.*')" = "`$1'$($Latest.URL)'" }}
+    @{
+        ".\tools\chocolateyInstall.ps1" = @{
+            "(^[$]url32\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
+            "(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+        }
+    }
 }
 
 function global:au_GetLatest {
@@ -15,8 +20,7 @@ function global:au_GetLatest {
 
     $version = $url -split '-|.exe' | select -Last 1 -Skip 2
 
-    $Latest = @{ URL = $url; Version = $version }
-    return $Latest
+    return @{ URL32 = $url; Version = $version }
 }
 
-update
+update -ChecksumFor 32
