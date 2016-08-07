@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>smplayer</id>
     <title>SMPlayer</title>
-    <version>16.7.0.20160308</version>
+    <version>16.8.0</version>
     <authors>Ricardo Villalba</authors>
     <owners>Miodrag Milić</owners>
     <summary>SMPlayer is a free media player for Windows and Linux</summary>
@@ -26,7 +26,6 @@ SMPlayer is a graphical user interface (GUI) for the award-winning MPlayer, whic
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/icon.png</iconUrl>
     <dependencies>
       <dependency id="mm-choco.extension" version="0.0.2" />
-      <dependency id="chocolatey-fosshub.extension" />
     </dependencies>
     <releaseNotes>http://smplayer.sourceforge.net/en/changes</releaseNotes>
     <docsUrl>http://smplayer.sourceforge.net/en/first-steps</docsUrl>

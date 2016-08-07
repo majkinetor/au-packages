@@ -1,32 +1,19 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName  = 'smplayer'
-$url32        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.7.0-win32.exe'
-$url64        = 'http://www.fosshub.com/SMPlayer.html/smplayer-16.7.0-x64.exe'
-$checksum32   = '54fd0c0b13d0350154e6aac4eaba4863d804788f733fc9a25364fb983edc6413'
-$checksum64   = 'ba76235158edd0788226e992ef495d59fb620e56b0833af34990091507c8b994'
+$url32        = 'http://downloads.sourceforge.net/smplayer/smplayer-16.8.0-win32.exe'
+$url64        = 'http://downloads.sourceforge.net/smplayer/smplayer-16.8.0-x64.exe'
+$checksum32   = '0B0F8AD8204FF7667617451E8D6EB3A749F93363A6803BB3D7DA674ED2AF81A3'
+$checksum64   = 'B35FB2C15024A6ACE456DCB1DE33F2AECEBCD409A4FBB3D7593E70785F930F31'
 
-function genLink($url) {
-    $url = $url.Replace('http://www.fosshub.com', 'http://www.fosshub.com/genLink')
-    $url.Replace('SMPlayer.html', 'SMPlayer')
-}
-
-if (Get-ProcessorBits 64) {
-    $url = $url64; $checksum = $checksum64
-} else {
-    $url = $url32; $checksum = $checksum32
-}
-
-$url = genLink $url
-$url = Get-UrlFromFosshub $url
 
 $packageArgs = @{
   packageName            = $packageName
   fileType               = 'EXE'
-  url                    = $url
-  url64bit               = $url
-  checksum               = $checksum
-  checksum64             = $checksum
+  url                    = $url32
+  url64bit               = $url64
+  checksum               = $checksum32
+  checksum64             = $checksum64
   checksumType           = 'sha256'
   checksumType64         = 'sha256'
   silentArgs             = '/S'
