@@ -5,10 +5,10 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>ampfontviewer</id>
     <title>AMP Font Viewer</title>
-    <version>3.8.6</version>
+    <version>3.8.6.20160708</version>
     <authors>Alberto Martinez Perez</authors>
     <owners>Miodrag Milić</owners>
-    <summary> Easy to use but powerful font manager, which allows you getting a quick overview of both installed and non installed fonts. It can install and uninstall fonts, and organize them in categories
+    <summary>Easy to use but powerful font manager, which allows you getting a quick overview of both installed and non installed fonts. It can install and uninstall fonts, and organize them in categories
     </summary>
     <description>
 This program is an easy to use but powerful font manager, which allows you getting a quick overview of both installed and non installed fonts. It can install and uninstall fonts, and organize them in categories.
