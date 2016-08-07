@@ -3,7 +3,12 @@ import-module au
 $releases = 'https://www.yworks.com/products/yed/download'
 
 function global:au_SearchReplace {
-    @{".\tools\chocolateyInstall.ps1" = @{ "(^[$]url\s*=\s*)('.*')" = "`$1'$($Latest.URL)'" }}
+    @{
+        ".\tools\chocolateyInstall.ps1" = @{
+            "(^[$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL)'"
+            "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+        }
+    }
 }
 
 function global:au_GetLatest {
@@ -16,8 +21,7 @@ function global:au_GetLatest {
     #$url = "https://www.yworks.com/resources/yed/demo/yEd-3.14.4.zip"
     $version  = $url -split '[_-]|.zip' | select -Last 1 -Skip 1
 
-    $Latest = @{ URL = $url; Version = $version }
-    return $Latest
+    return @{ URL = $url; Version = $version }
 }
 
-update
+update -ChecksumFor 64
