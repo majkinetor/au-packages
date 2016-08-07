@@ -5,8 +5,10 @@ $releases = 'http://dbeaver.jkiss.org/files/dbeaver-ee-latest-x86-setup.exe'
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            "(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.URL32)'"
-            "(^[$]url64\s*=\s*)('.*')" = "`$1'$($Latest.URL64)'"
+            "(^[$]url32\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
+            "(^[$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
+            "(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+            "(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
         }
     }
 }
