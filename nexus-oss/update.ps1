@@ -3,7 +3,12 @@ import-module au
 $url = 'http://www.sonatype.org/downloads/nexus-latest-bundle.zip'
 
 function global:au_SearchReplace {
-    @{".\tools\chocolateyInstall.ps1" = @{ "(^[$]url\s*=\s*)('.*')" = "`$1'$($Latest.URL)'" }}
+    @{
+        'tools\chocolateyInstall.ps1' = @{
+            "(^[$]url\s*=\s*)('.*')"       = "`$1'$($Latest.URL)'"
+            "(^[$]checksum\s*=\s*)('.*')"  = "`$1'$($Latest.Checksum32)'"
+        }
+     }
 }
 
 function global:au_GetLatest {
@@ -21,4 +26,4 @@ function global:au_GetLatest {
     return $Latest
 }
 
-update -NoCheckUrl
+update -NoCheckUrl -ChecksumFor 32

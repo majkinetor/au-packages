@@ -2,15 +2,19 @@
 
 $packageName = 'nexus-oss'
 $url         = 'https://sonatype-download.global.ssl.fastly.net/nexus/oss/nexus-2.13.0-01-bundle.zip'
+$checksum    = '76E2A2904FF0341A5FB646F615E3724F6C54E8A71759A7F8F06F702339D0767B'
 $installDir  = 'c:\nexus'
 
 $packageArgs = @{
-  packageName   = $packageName
-  url           = $url
-  url64Bit      = $url
-  unzipLocation = $installDir
+  packageName    = $packageName
+  url            = $url
+  url64Bit       = $url
+  checksum       = $checksum
+  checksum64     = $checksum
+  checksumType   = 'sha256'
+  checksumType64 = 'sha256'
+  unzipLocation  = $installDir
 }
-
 
 if ($Env:ChocolateyPackageParameters -match '/InstallDir:\s*(.+)') {
     $installDir = $Matches[1]
