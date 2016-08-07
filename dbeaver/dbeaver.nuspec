@@ -38,7 +38,7 @@
     <mailingListUrl>http://dbeaver.jkiss.org/forum/index.php</mailingListUrl>
     <bugTrackerUrl>https://github.com/serge-rider/dbeaver/issues</bugTrackerUrl>
     <dependencies>
-        <dependency id="mm-choco.extension" version="0.0.1" />
+        <dependency id="mm-choco.extension" version="0.0.2" />
     </dependencies>
   </metadata>
   <files>
