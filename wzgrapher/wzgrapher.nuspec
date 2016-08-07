@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>wzgrapher</id>
     <title>WZGrapher</title>
-    <version>0.95</version>
+    <version>0.95.20160708</version>
     <authors>Walter Zorn</authors>
     <owners>Miodrag Milić</owners>
     <summary>WZGrapher is an easy-to-use and small-footprinted Function Graphing and Calculation Program</summary>
