@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>copyq</id>
     <title>CopyQ</title>
-    <version>2.7.1</version>
+    <version>2.7.1.20160708</version>
     <authors>Lukas Holocek</authors>
     <owners>Miodrag Milić</owners>
     <summary>Cross-platform clipboard manager with advanced features</summary>
