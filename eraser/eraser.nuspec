@@ -28,7 +28,7 @@ Features
     <dependencies>
         <dependency id="dotnet4.0" version="4.0.30319" />
         <dependency id="7zip.commandline" version="15.14" />
-        <dependency id="mm-choco.extension" version="0.0.1" />
+        <dependency id="mm-choco.extension" version="0.0.3" />
     </dependencies>
     <releaseNotes></releaseNotes>
     <mailingListUrl>http://eraser.heidi.ie/forum</mailingListUrl>

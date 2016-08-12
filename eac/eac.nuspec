@@ -59,7 +59,7 @@ Features
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/eac/icon.png</iconUrl>
     <dependencies>
-      <dependency id="mm-choco.extension" version="0.0.2" />
+      <dependency id="mm-choco.extension" version="0.0.3" />
     </dependencies>
     <releaseNotes>See http://www.exactaudiocopy.de/en/index.php/resources/whats-new/whats-new</releaseNotes>
     <mailingListUrl>http://www.digital-inn.de/forums/exact-audio-copy-english.14</mailingListUrl>

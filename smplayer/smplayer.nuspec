@@ -25,7 +25,7 @@ SMPlayer is a graphical user interface (GUI) for the award-winning MPlayer, whic
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/icon.png</iconUrl>
     <dependencies>
-      <dependency id="mm-choco.extension" version="0.0.2" />
+      <dependency id="mm-choco.extension" version="0.0.3" />
     </dependencies>
     <releaseNotes>http://smplayer.sourceforge.net/en/changes</releaseNotes>
     <docsUrl>http://smplayer.sourceforge.net/en/first-steps</docsUrl>

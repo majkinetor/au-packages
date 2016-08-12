@@ -27,7 +27,7 @@ The package by default installs pandoc for current user. To install for all user
     <projectSourceUrl>https://github.com/jgm/pandoc</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/pandoc</packageSourceUrl>
     <dependencies>
-      <dependency id="mm-choco.extension" version="0.0.2" />
+      <dependency id="mm-choco.extension" version="0.0.3" />
     </dependencies>
   </metadata>
   <files>
