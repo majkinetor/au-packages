@@ -18,11 +18,11 @@ function global:au_GetLatest {
 
     $re      = 'smplayer-.+\.exe$'
     $url     = $download_page.links | ? href -match $re | select -expand href
-    $url32   = $url[0]
-    $url64   = $url[1]
+    $url32   = $url[0] -replace '^http://', 'https://'
+    $url64   = $url[1] -replace '^http://', 'https://'
     $version = $url64 -split '-' | select -Last 1 -Skip 1
 
     return @{ URL32 = $url32; URL64 = $url64; Version = $version }
 }
 
-update -NoCheckUrl
+update -Force

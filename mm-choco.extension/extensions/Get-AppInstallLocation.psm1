@@ -1,5 +1,5 @@
 <#
-    Last Change: 02-Aug-2016.
+    Last Change: 12-Aug-2016.
     Author: M. Milic <miodrag.milic@gmail.com>
 
 .SYNOPSIS
@@ -50,8 +50,9 @@ function Get-AppInstallLocation {
         if ($location -and (Test-Path $location))  { return strip $location }
     } else { Write-Verbose "Found $($key.Count) keys, aborting this method" }
 
-    Write-Verbose "Trying Program Files with 2 levels depth"
-    $dirs = $Env:ProgramFiles, "$Env:ProgramFiles\*\*", ${ENV:ProgramFiles(x86)}, "${ENV:ProgramFiles(x86)}\*\*"
+    $dirs = $Env:ProgramFiles, "$Env:ProgramFiles\*\*"
+    if (Get-ProcessorBits 64) { $dirs += ${ENV:ProgramFiles(x86)}, "${ENV:ProgramFiles(x86)}\*\*" }
+    Write-Verbose "Trying Program Files with 2 levels depth: $dirs"
     $location = (ls $dirs | ? {$_.PsIsContainer}) -match $AppNamePattern | select -First 1 | % {$_.FullName}
     if ($location -and (Test-Path $location))  { return strip $location }
 
