@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>cpu-z.install</id>
+    <title>CPU-Z (Install)</title>
+    <version>1.77.20160812</version>
+    <authors>CPUID</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>System information software</summary>
+    <description>
+ A freeware system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features of a modern personal computer, and presents the information in one window:
+
+- Processor name and number, codename, process, package, cache levels.
+- Mainboard and chipset.
+- Memory type, size, timings, and module specifications (SPD).
+- Real time measurement of each core's internal frequency, memory frequency.
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z.install/screenshot.png)
+    </description>
+    <projectUrl>http://www.cpuid.com/softwares/cpu-z.html</projectUrl>
+    <tags>admin system-information hardware memory intel amd processor cpu motherboard</tags>
+    <copyright></copyright>
+    <licenseUrl>http://www.cpuid.com/softwares/hwmonitor-pro/eula.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z/icon.png</iconUrl>
+    <dependencies>
+      <dependency id="mm-choco.extension" version="0.0.3" />
+    </dependencies>
+    <releaseNotes>http://www.cpuid.com/softwares/cpu-z.html#version-history</releaseNotes>
+    <bugTrackerUrl>http://www.cpuid.com/bug-report.html</bugTrackerUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/cpu-z.install</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
