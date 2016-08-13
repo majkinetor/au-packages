@@ -26,7 +26,7 @@ Powershell module AU implements functions that can be used to automate Chocolate
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/au/screenshot.gif)
     </description>
     <projectUrl>https://github.com/majkinetor/au</projectUrl>
-    <tags>powershell module chocolatey package</tags>
+    <tags>powershell module package</tags>
     <copyright>Miodrag Milić</copyright>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
