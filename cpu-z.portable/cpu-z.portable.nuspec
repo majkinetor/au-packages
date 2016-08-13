@@ -21,7 +21,8 @@
     </description>
     <projectUrl>http://www.cpuid.com/softwares/cpu-z.html</projectUrl>
     <tags>admin system-information hardware memory intel amd processor cpu motherboard</tags>
-    <copyright></copyright>
+    <copyright>CPUID</copyright>
+    <docsUrl>http://www.cpuid.com/softwares/cpu-z.html#install</docsUrl>
     <licenseUrl>http://www.cpuid.com/softwares/hwmonitor-pro/eula.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z.portable/icon.png</iconUrl>
