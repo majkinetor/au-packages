@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'au'
-$url32       = 'https://github.com/majkinetor/au/archive/2016.8.12.zip'
+$url32       = 'https://github.com/majkinetor/au/archive/2016.8.13.zip'
 $url64       = $url32
-$checksum32  = 'B80085CD0D33921C2B0339CACCA493C04EB2CD873936CA7E397EDC262F3B1E2E'
+$checksum32  = '9E827F868B0B16897C76D3D7519436DD5A803B7853530C7F99E900961C13BD96'
 $checksum64  = $checksum32
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
 
@@ -23,3 +23,4 @@ $module_src = gi $toolsPath\au*
 $module_dst = "$Env:UserProfile\Documents\WindowsPowerShell\Modules\$packageName\$Env:ChocolateyPackageVersion"
 mkdir -force $module_dst | out-null
 mv -force $module_src\* $module_dst
+rm $module_src
