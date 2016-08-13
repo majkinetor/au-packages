@@ -25,6 +25,7 @@
     <licenseUrl>http://www.cpuid.com/softwares/hwmonitor-pro/eula.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z.install/icon.png</iconUrl>
+    <docsUrl>http://www.cpuid.com/softwares/cpu-z.html#install</docsUrl>
     <dependencies>
       <dependency id="mm-choco.extension" version="0.0.3" />
     </dependencies>
