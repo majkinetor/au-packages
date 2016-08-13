@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id></id>
     <title></title>
-    <version></version>
+    <version>0.0</version>
     <authors></authors>
     <owners>Miodrag Milić</owners>
     <summary></summary>

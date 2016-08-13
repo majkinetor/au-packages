@@ -5,7 +5,7 @@ param($Name, $Type)
     Create a new package from the template
 
 .DESCRIPTION
-    This function creates a new package by copying the directory _template which contains desired package basic settings.
+    This function creates a new package by using the directory _template which contains desired package basic settings.
 #>
 function New-Package{
     [CmdletBinding()]
