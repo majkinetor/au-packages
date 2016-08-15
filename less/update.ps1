@@ -12,7 +12,7 @@ function global:au_BeforeUpdate {
 
     $lessdir = gi 'less-*-win*'
     cp $lessdir\* "$PSScriptRoot\tools" -Force
-    gi $PSScriptRoot\tools\* | ? Extension -eq '' | % { mv $_ "$_.txt"}
+    gi $PSScriptRoot\tools\* | ? Extension -eq '' | % { mv -ea 0 $_ "$_.txt"}
 
     rm $lessdir -recurse -force
     rm less.7z -ea 0
