@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>au</id>
     <title>Automatic Chocolatey Package Update Powershell Module</title>
-    <version>2016.8.13</version>
+    <version>2016.8.15</version>
     <authors>Miodrag Milić</authors>
     <owners>Miodrag Milić</owners>
     <summary>Powershell module AU implements functions that can be used to automate Chocolatey package updates</summary>
@@ -15,7 +15,7 @@ Powershell module AU implements functions that can be used to automate Chocolate
 ## Features
 
 - Use only Powershell to create automatic update script for given package.
-- Automatically downloads installers and provides checksums for x32 and x64 versions.
+- Automatically downloads installers and provides/verifies checksums for x32 and x64 versions.
 - Verifies URLs, versions, remote Chocolatey existence etc.
 - Can use global variables to change functionality.
 - Sugar functions for maintainers.

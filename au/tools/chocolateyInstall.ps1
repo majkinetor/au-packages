@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'au'
-$url32       = 'https://github.com/majkinetor/au/archive/2016.8.13.zip'
+$url32       = 'https://github.com/majkinetor/au/archive/2016.8.15.zip'
 $url64       = $url32
-$checksum32  = '9E827F868B0B16897C76D3D7519436DD5A803B7853530C7F99E900961C13BD96'
+$checksum32  = '61812d31ca9d460eacd3b57ea61cc8830728465c10de3c2498309452118296cf'
 $checksum64  = $checksum32
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
 
