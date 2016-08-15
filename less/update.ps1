@@ -10,8 +10,11 @@ function global:au_BeforeUpdate {
     iwr $Latest.URL -OutFile less.7z
     7za x less.7z
 
+    rm $lessdir -recurse -force
+
     $lessdir = gi 'less-*-win*'
     cp $lessdir\* "$PSScriptRoot\tools" -Force
+    rm $PSScriptRoot\tools\* -ea 0 -recurse -force
     gi $PSScriptRoot\tools\* | ? Extension -eq '' | % { mv -ea 0 $_ "$_.txt"}
 
     rm $lessdir -recurse -force
