@@ -22,8 +22,6 @@ Powershell module AU implements functions that can be used to automate Chocolate
 - Update single package or any subset of previously created packages with single command.
 - Multithread support when updating multiple packages.
 - Send full command output to specified email in the case of errors.
-
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/au/screenshot.gif)
     </description>
     <projectUrl>https://github.com/majkinetor/au</projectUrl>
     <tags>powershell module package</tags>
