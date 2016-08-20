@@ -68,7 +68,8 @@ In the root of the repository run: `ls | ? PSISContainer | ?  Name -notlike '_*'
 * Set your environment variables:
   * If you want to use AppVeyor edit the `appveyor.yml` environment section. The minimum for the system to work is to specify `$Env:api_key` in order to push updated packages to Chocolatey repository.
   * If you want to use on your own machine create `update_vars.ps1` and set the variables there. You may also want to install `gist` gem: `cinst ruby; gem install gist` and to make sure `git push` doesn't require credentials.
-* Add your own packages.
+* Add your own packages.  
+You can use `./New-Package.ps1 <package_name>` to create one from the template.
 
 ## Notes
 
