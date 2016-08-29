@@ -33,18 +33,7 @@ install:
 
 build_script:
 - ps: |
-    if ($Env:APPVEYOR_REPO_COMMIT_AUTHOR -eq 'appveyor' ) {
-        $commit  = [DateTime]::Parse($Env:APPVEYOR_REPO_COMMIT_TIMESTAMP)
-        $now     = get-date
-        $minutes = ($now - $commit).TotalMinutes
-        $abort   = $minutes -lt 60
-    }
-
-    if ( $abort ) {
-        "Build triggered by appveyor commit, aborting"
-    } else {
-        c:/projects/chocolatey/update_all.ps1 
-    }
+    ./update_all.ps1
 
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
