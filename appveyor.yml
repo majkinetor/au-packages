@@ -6,6 +6,7 @@ environment:
   github_user: majkinetor
   github_pass:
     secure: MLLwE43J/DaZdfFcWWugSw==
+  github_user_repo: majkinetor/chocolatey 
 
   #Gmail credentials - for error notifications
   mail_user: majkinetor@gmail.com
