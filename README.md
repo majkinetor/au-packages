@@ -1,4 +1,4 @@
-[![](https://ci.appveyor.com/api/projects/status/9ipva7kgjigug2rn?svg=true)](https://ci.appveyor.com/project/majkinetor/chocolatey)
+[![](https://ci.appveyor.com/api/projects/status/github/majkinetor/chocolatey?svg=true)](https://ci.appveyor.com/project/majkinetor/chocolatey)
 [Update status](https://gist.github.com/majkinetor/181b18886fdd363158064baf817fa2ff)
 
 **My chocolatey packages**: [majkinetor](https://chocolatey.org/profiles/majkinetor)
