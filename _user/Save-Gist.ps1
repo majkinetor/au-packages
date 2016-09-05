@@ -68,11 +68,11 @@ function Save-Gist {
     }
 
     "Saving results to gist"
-    if (!(gcm gist.bat -ea 0)) { "ERROR: No gist.bat found. Install it using:  'gem install gist'"; return }
 
     $log = gc gist.md.ps1 -Raw | Expand-PoshString
     $log | Out-File gist.md
 
+    if (!(gcm gist.bat -ea 0)) { "ERROR: No gist.bat found. Install it using:  'gem install gist'"; return }
     $params = @( "--filename 'Update-AUPackages.md'")
     $params += if ($Info.Options.Gist_ID) { "--update " + $Info.Options.Gist_ID } else { '--anonymous' }
 

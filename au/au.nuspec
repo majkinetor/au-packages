@@ -24,7 +24,7 @@ Powershell module AU implements functions that can be used to automate Chocolate
 - Send full command output to specified email in the case of errors.
     </description>
     <projectUrl>https://github.com/majkinetor/au</projectUrl>
-    <tags>powershell module package</tags>
+    <tags>admin powershell module package</tags>
     <copyright>Miodrag Milić</copyright>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

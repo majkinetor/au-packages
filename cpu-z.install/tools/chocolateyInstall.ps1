@@ -3,7 +3,7 @@
 $packageName = 'cpu-z.install'
 $url32       = 'http://download.cpuid.com/cpu-z/cpu-z_1.77-en.exe'
 $url64       = $url32
-$checksum32  = '6AE07BED483A14E0589A6776A162E729021815C95BDCBCB9A4E2E8F0BCBF3D94'
+$checksum32  = 'bc6207da165c70acee8b9b14f78b26459ab667dcc735cfef4c1260454521206a'
 $checksum64  = $checksum32
 
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition

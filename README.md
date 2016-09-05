@@ -37,10 +37,11 @@ If you want to use custom update features to save results to gist and/or github 
 If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sourced so you can put environment variables there. If you are using the build server such as AppVeyor, define password variables as secrets.
 
 ```
-$Env:mail_user   = ''
-$Env:mail_pass   = ''
-$Env:gist_id     = ''
-$Env:api_key     = ''
+$Env:mail_user        = ''
+$Env:mail_pass        = ''
+$Env:github_user_repo = ''
+$Env:gist_id          = ''
+$Env:api_key          = ''
 ```
 
 ## AppVeyor build
@@ -50,7 +51,7 @@ AppVeyor build has the following options:
 - Push updated packages to Chocolatey  
 Uses `$env:api_key`.
 - Save run results to gist  
-Uses `$env:github_user`, `$env:github_pass` and `$env:gist_id`. If not set, gist will be anonymous.
+Uses `$env:github_user`, `$env:github_pass`, `$env:github_user_repo` and `$env:gist_id`. If not set, gist will be anonymous.
 - Commit pushed packages to the git repository  
 Uses `$env:github_user` and `$env:github_pass`. If not set package state may not be saved; if you run updater on your own machine, the state is saved on your file system. However, if updater is run by a build server which always starts a new (with a fresh repository copy), the state can only be saved if you provide your git repository credentials. The updater will work correctly in any case since you can publish package only once on Chocolatey repository and subsequent pushes will not be tried since `update` function doesn't update the package if the latest version returned already exists in the chocolatey repository.
 - Send error notifications to email  
