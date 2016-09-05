@@ -3,10 +3,9 @@ $(
     $au  = gmo au -ListAvailable | % Version | select -First 1 | % { "$_"}
     $pno = $Info.result.all.Length
     $Github_UserRepo = $Info.Options.Github_UserRepo
-    $AppVeyor_StatusId = '9ipva7kgjigug2rn'
 )
 
-[![](https://ci.appveyor.com/api/projects/status/${AppVeyor_StatusId}?svg=true)](https://ci.appveyor.com/project/$Github_UserRepo/build/$Env:APPVEYOR_BUILD_NUMBER)
+[![](https://ci.appveyor.com/api/projects/status/github/$Github_UserRepo?svg=true)](https://ci.appveyor.com/project/$Github_UserRepo/build/$Env:APPVEYOR_BUILD_NUMBER)
 [![$pno](https://img.shields.io/badge/AU%20packages-$($pno)-red.svg)](#ok)
 [![$au](https://img.shields.io/badge/AU-$($au)-blue.svg)](https://www.powershellgallery.com/packages/AU)
 

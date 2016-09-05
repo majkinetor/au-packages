@@ -20,7 +20,7 @@ $options = @{
             }
            } else {}
 
-    Gist_ID = $Env:gist_id
+    Gist_ID         = $Env:gist_id
     Github_UserRepo = $Env:github_user_repo
 
     Script = {
