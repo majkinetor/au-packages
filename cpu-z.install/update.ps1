@@ -25,4 +25,4 @@ function global:au_GetLatest {
     return @{ URL = $url; Version = $version }
 }
 
-update -ChecksumFor 32
+if (!$au_include) { update -ChecksumFor 32 }
