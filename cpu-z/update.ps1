@@ -1,4 +1,4 @@
-$au_include = $true; . $PSScriptRoot\..\cpu-z.install\update.ps1
+. $PSScriptRoot\..\cpu-z.install\update.ps1
 
 function global:au_SearchReplace {
    @{
