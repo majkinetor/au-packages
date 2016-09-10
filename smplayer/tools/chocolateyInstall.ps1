@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName  = 'smplayer'
-$url32        = 'http://downloads.sourceforge.net/smplayer/smplayer-16.8.0-win32.exe'
-$url64        = 'http://downloads.sourceforge.net/smplayer/smplayer-16.8.0-x64.exe'
-$checksum32   = '0B0F8AD8204FF7667617451E8D6EB3A749F93363A6803BB3D7DA674ED2AF81A3'
-$checksum64   = 'B35FB2C15024A6ACE456DCB1DE33F2AECEBCD409A4FBB3D7593E70785F930F31'
+$url32        = 'https://downloads.sourceforge.net/smplayer/smplayer-16.9.0-win32.exe'
+$url64        = 'https://downloads.sourceforge.net/smplayer/smplayer-16.9.0-x64.exe'
+$checksum32   = 'a7dd43d91712c8db1febc56809bcf0537a85e5839eb9e73ee018c772b851bc8a'
+$checksum64   = '394260c807956dab59fdf807915a7c6f5385a20f61ab107b58a0a5bf19ad58de'
 
 
 $packageArgs = @{
