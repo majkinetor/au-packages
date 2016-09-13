@@ -7,18 +7,16 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate {
+    $lessdir = "$PSScriptRoot\less-*-win*"
+    rm $lessdir -Recurse -Force -ea ignore
+
     iwr $Latest.URL -OutFile less.7z
-    7za x less.7z
+    7za x $PSScriptRoot\less.7z
 
-    rm $lessdir -recurse -force
-
-    $lessdir = gi 'less-*-win*'
-    cp $lessdir\* "$PSScriptRoot\tools" -Force
-    rm $PSScriptRoot\tools\* -ea 0 -recurse -force
-    gi $PSScriptRoot\tools\* | ? Extension -eq '' | % { mv -ea 0 $_ "$_.txt"}
-
-    rm $lessdir -recurse -force
-    rm less.7z -ea 0
+    rm $PSScriptRoot\tools\* -Recurse -Force
+    mv $lessdir\* $PSScriptRoot\tools -Force
+    rm $lessdir -Recurse -Force -ea ignore
+    rm $PSScriptRoot\less.7z -ea ignore
 }
 
 function global:au_GetLatest {
