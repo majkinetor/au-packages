@@ -4,7 +4,7 @@
   <metadata>
     <id>cpu-z</id>
     <title>CPU-Z</title>
-    <version>1.77</version>
+    <version>1.77.20160914</version>
     <authors>CPUID</authors>
     <owners>Miodrag Milić</owners>
     <summary>System information software</summary>
@@ -27,7 +27,7 @@
     <docsUrl>http://www.cpuid.com/softwares/cpu-z.html#install</docsUrl>
     <dependencies>
         <dependency id="mm-choco.extension" version="0.0.3" />
-        <dependency id="cpu-z.install" version="1.77" />
+        <dependency id="cpu-z.install" version="1.77.20160914" />
     </dependencies>
     <releaseNotes>http://www.cpuid.com/softwares/cpu-z.html#version-history</releaseNotes>
     <bugTrackerUrl>http://www.cpuid.com/bug-report.html</bugTrackerUrl>
