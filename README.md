@@ -34,15 +34,7 @@ If you want to use custom update features to save results to gist and/or github 
 
 #### All Environment variables
 
-If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sourced so you can put environment variables there. If you are using the build server such as AppVeyor, define password variables as secrets.
-
-```
-$Env:mail_user        = ''
-$Env:mail_pass        = ''
-$Env:github_user_repo = ''
-$Env:gist_id          = ''
-$Env:api_key          = ''
-```
+If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sourced so you can put environment variables there. If you are using the build server such as AppVeyor, define password variables as secrets. The repository contains stub file `update_vars_default.ps1` which you should set and rename to activate it.
 
 ## AppVeyor build
 
