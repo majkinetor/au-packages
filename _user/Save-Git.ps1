@@ -8,7 +8,7 @@ function Save-Git() {
     git pull
 
     "Commiting updated packages to git repository"
-    $pushed | % { git add $_.PackageName }
+    $pushed | % { git add $_.Name }
 
     $s = if ($Info.pushed -gt 1) { 's' } else { '' }
     git commit -m "UPDATE BOT: $($Info.pushed) package${s} updated [skip ci]"
