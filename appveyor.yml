@@ -2,11 +2,13 @@ version: '{build}'
 image: WMF 5
 
 environment:
-  #Github credentials - used to save result to gist and to commit pushed packages to the git repository
-  github_user: majkinetor
-  github_pass:
-    secure: MLLwE43J/DaZdfFcWWugSw==
-  github_user_repo: majkinetor/chocolatey 
+  #Set to use latest development au version from github
+  use_devel_au: $true
+
+  #Github token to commit pushed packages to repository
+  github_user_repo: majkinetor/chocolatey
+  github_api_key:
+    secure: 5/3TZtHT4M8984tJhsFyLST+e/JDpc8ia871UD4hv3dD2+Kb+xnaB4wMH1WloDD1
 
   #Gmail credentials - for error notifications
   mail_user: majkinetor@gmail.com
@@ -23,14 +25,20 @@ environment:
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
-- gem install gist --no-ri --no-rdoc
-- "ruby -e \"require 'gist'; Gist.login! username: ENV['github_user'], password: ENV['github_pass'] if ENV['github_user'] \""
 - ps: |
-    "machine github.com", "login $Env:github_user", "password $Env:github_pass" | Out-File ~/_netrc -Encoding ascii
-    Install-PackageProvider -Name NuGet -Force
-    Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-    Install-Module au -Scope CurrentUser
-    Get-Module au -ListAvailable | select Name, Version
+    if ($Env:use_devel_au) {
+        cd c:/projects
+        git clone https://github.com/majkinetor/au.git
+        cd au
+        git fetch
+        git checkout integrate
+        ./build.ps1 -Install
+    } else {
+        Install-PackageProvider -Name NuGet -Force
+        Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+        Install-Module au
+        Get-Module au -ListAvailable | select Name, Version
+    }
 
 build_script:
 - ps: |
@@ -41,7 +49,7 @@ build_script:
 
 artifacts:
 - path: update_info.xml
-- path: gist.md
+- path: Update-AUPackages.md
 
 notifications:
 - provider: Email
