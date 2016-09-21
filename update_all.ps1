@@ -1,13 +1,32 @@
 param($Name = $null)
-cd $PSScriptRoot
 
-ls _user\*.ps1 | % { . $_ }
-if (Test-Path update_vars.ps1) { . ./update_vars.ps1 }
+if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 
 $options = @{
     Timeout = 100
     Push    = $false
     Threads = 10
+
+    Report = @{
+        Type = 'markdown'
+        Path = "$PSScriptRoot\Update-AUPackages.md"
+        Params = @{ Github_UserRepo = $Env:github_user_repo }
+    }
+
+    Gist = @{
+        Id = $Env:gist_id
+        ApiKey = $Env:github_api_key
+        Path = "$PSScriptRoot\Update-AUPackages.md"
+    }
+
+    Git = @{
+            User     = ''
+            Password = $Env:github_api_key
+    }
+
+    RunInfo = @{
+        Path = "$PSScriptRoot\update_info.xml"
+    }
 
     Mail = if ($Env:mail_user) {
             @{
@@ -17,25 +36,10 @@ $options = @{
                 Password  = $Env:mail_pass
                 Port      = 587
                 EnableSsl = $true
+                Attachment = "$PSScriptRoot\update_info.xml"
             }
            } else {}
 
-    Gist_ID         = $Env:gist_id
-    Github_UserRepo = $Env:github_user_repo
-
-    Script = {
-        param($Phase, $Info)
-
-        if ($Phase -ne 'END') { return }
-
-        Save-RunInfo
-        Save-Gist
-        Save-Git
-    }
 }
 
 updateall -Name $Name -Options $options | ft
-$global:updateall = Import-CliXML $PSScriptRoot\update_info.xml
-
-#Uncomment to fail the build on AppVeyor on any package error
-#if ($updateall.error_count.total) { throw 'Errors during update' }
