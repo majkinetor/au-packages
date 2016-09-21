@@ -4,24 +4,24 @@ if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 
 $options = [ordered]@{
     Timeout = 100
-    Push    = $false
+    Push    = $true
     Threads = 10
 
     Report = @{
-        Type = 'markdown'
-        Path = "$PSScriptRoot\Update-AUPackages.md"
+        Type   = 'markdown'
+        Path   = "$PSScriptRoot\Update-AUPackages.md"
         Params = @{ Github_UserRepo = $Env:github_user_repo }
     }
 
     Gist = @{
-        Id = $Env:gist_id
+        Id     = $Env:gist_id
         ApiKey = $Env:github_api_key
-        Path = "$PSScriptRoot\Update-AUPackages.md"
+        Path   = "$PSScriptRoot\Update-AUPackages.md"
     }
 
     Git = @{
-            User     = ''
-            Password = $Env:github_api_key
+        User     = ''
+        Password = $Env:github_api_key
     }
 
     RunInfo = @{
@@ -30,12 +30,12 @@ $options = [ordered]@{
 
     Mail = if ($Env:mail_user) {
             @{
-                To        = $Env:mail_user
-                Server    = 'smtp.gmail.com'
-                UserName  = $Env:mail_user
-                Password  = $Env:mail_pass
-                Port      = 587
-                EnableSsl = $true
+                To         = $Env:mail_user
+                Server     = 'smtp.gmail.com'
+                UserName   = $Env:mail_user
+                Password   = $Env:mail_pass
+                Port       = 587
+                EnableSsl  = $true
                 Attachment = "$PSScriptRoot\update_info.xml"
             }
            } else {}
