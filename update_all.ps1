@@ -2,7 +2,7 @@ param($Name = $null)
 
 if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 
-$options = @{
+$options = [ordered]@{
     Timeout = 100
     Push    = $false
     Threads = 10
