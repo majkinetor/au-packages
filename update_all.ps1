@@ -15,7 +15,7 @@ $options = [ordered]@{
         Path   = "$PSScriptRoot\Update-AUPackages.md"
         Params = @{
             Github_UserRepo = $Env:github_user_repo
-            UserMessage     = "**TESTING AU LATEST DEVELOPMENT VERSION**"
+            UserMessage     = "**TESTING AU NEXT VERSION**"
         }
     }
 
@@ -28,7 +28,6 @@ $options = [ordered]@{
     Git = @{
         User     = $Env:github_username
         Password = $Env:github_password
-        Force = $true
     }
 
     RunInfo = @{
@@ -44,6 +43,7 @@ $options = [ordered]@{
                 Port       = 587
                 EnableSsl  = $true
                 Attachment = "$PSScriptRoot\update_info.xml"
+                UserMessage = "<p>Update status: http://tiny.cc/v1u1ey</p>"
             }
            } else {}
 }
