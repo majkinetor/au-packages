@@ -1,3 +1,5 @@
+# AU template: https://raw.githubusercontent.com/majkinetor/au/master/update_all_default.ps1
+
 param($Name = $null)
 
 if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
@@ -43,4 +45,8 @@ $options = [ordered]@{
 
 }
 
-updateall -Name $Name -Options $options | ft
+$au_Root = $PSScriptRoot
+$info = updateall -Name $Name -Options $Options
+
+#Uncomment to fail the build on AppVeyor on any package error
+#if ($info.error_count.total) { throw 'Errors during update' }
