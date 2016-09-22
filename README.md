@@ -1,5 +1,5 @@
 [![](https://ci.appveyor.com/api/projects/status/github/majkinetor/chocolatey?svg=true)](https://ci.appveyor.com/project/majkinetor/chocolatey)
-[Update status](https://gist.github.com/majkinetor/181b18886fdd363158064baf817fa2ff)
+[Update status](https://gist.github.com/majkinetor/a700c70b8847b29ebb1c918d47ee4eb1)
 
 **My chocolatey packages**: [majkinetor](https://chocolatey.org/profiles/majkinetor)
 
