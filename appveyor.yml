@@ -2,8 +2,8 @@ version: '{build}'
 image: WMF 5
 
 environment:
-  #Set to use latest development au version from github
-  use_devel_au: $true
+  #Set au version to use. Specify branch name to use development version from Github
+  au_version: integrate
 
   #Github token to commit pushed packages to repository
   github_user_repo: majkinetor/chocolatey
@@ -26,17 +26,22 @@ install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
 - ps: |
-    if ($Env:use_devel_au) {
+    $x=$null; $is_branch = ($Env:au_version -ne $null) -and ([version]::TryParse($Env:au_version, [ref]$x) -eq $false)
+    if ($is_branch) {
         git clone https://github.com/majkinetor/au.git
         pushd au
-        git fetch
-        git checkout integrate 3>&1
-        ./build.ps1 -Install -NoChocoPackage
+            git fetch
+            git checkout $Env:au_version 2>&1
+            ./build.ps1 -Install -NoChocoPackage
         popd
     } else {
         Install-PackageProvider -Name NuGet -Force
         Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-        Install-Module au
+
+        $params = @{ Name = 'au' }
+        if ( $Env:au_version -ne $null ) { $params.Version = $Env:au_version }
+        Install-Module @params
+
         Get-Module au -ListAvailable | select Name, Version
     }
 
