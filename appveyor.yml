@@ -32,7 +32,7 @@ install:
         cd au
         git fetch
         git checkout integrate
-        ./build.ps1 -Install
+        ./build.ps1 -Install -NoChocoPackage
     } else {
         Install-PackageProvider -Name NuGet -Force
         Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
