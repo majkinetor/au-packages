@@ -1,5 +1,11 @@
 version: '{build}'
+max_jobs: 1
 image: WMF 5
+branches:
+  only:
+  - master
+#build:
+#  verbosity: minimal
 
 environment:
   #Set au version to use or omit to use the latest. Specify branch name to use development version from Github
@@ -27,6 +33,10 @@ environment:
   api_key:
     secure: Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
 
+init:
+- git config --global user.email "chocolatey@realdimensions.net"
+- git config --global user.name "Chocolatey AU"
+- git config --global core.safecrlf false
 
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
@@ -34,8 +44,9 @@ install:
 - ps: |
     $x=$null; $is_branch = ($Env:au_version -ne $null) -and ([version]::TryParse($Env:au_version, [ref]$x) -eq $false)
     if ($is_branch) {
-        git clone https://github.com/majkinetor/au.git
-        pushd au
+        pushd ..
+            git clone https://github.com/majkinetor/au.git
+            cd au
             git fetch
             git checkout $Env:au_version
             ./build.ps1 -Install -NoChocoPackage
