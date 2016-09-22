@@ -13,7 +13,10 @@ $options = [ordered]@{
     Report = @{
         Type   = 'markdown'
         Path   = "$PSScriptRoot\Update-AUPackages.md"
-        Params = @{ Github_UserRepo = $Env:github_user_repo }
+        Params = @{
+            Github_UserRepo = $Env:github_user_repo
+            UserMessage     = "**TESTING AU integrate branch**"
+        }
     }
 
     Gist = @{
