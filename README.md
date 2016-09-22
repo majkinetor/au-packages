@@ -20,17 +20,15 @@ In package directory run: `Test-Package`.
 
 ## Automatic package update
 
-### Update single package
-
 Run `<package_dir>/update.ps1` from within the directory of the package to update that package. If this script is missing, the package is not automatic.
 
 Run `./update_all.ps1` from the repository root. Edit this script to change the [AU](https://github.com/majkinetor/au) update options.
 
 You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will avoid saving results to gist, sending mails on errors etc. and will just run update process for each package (temporary disable with `$au_NoPlugins`).
 
-If you want to use custom update features to save results to Gist and/or Github git repository on your local machine, you will have to setup the Github personal access token.
-
 #### All Environment variables
+
+If you want to use AU plugins to save results to Gist and/or Github git repository, you will have to setup the Github personal access token.
 
 If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sourced so you can put environment variables there. If you are using the build server such as AppVeyor, define sensitive variables as secrets.
 
@@ -39,7 +37,7 @@ If the script `update_vars.ps1` exists besides `update_all.ps1`, it will be sour
 To use this system with your own AU packages do the following steps:
 
 * Fork this project and clone it locally.
-* Delete all existing packages.  
+* Delete all existing packages:  
 In the root of the repository run: `ls | ? PSISContainer | ?  Name -notlike '_*' | rm -Recurse`.
 * Set your environment variables:
   * If you want to use AppVeyor edit the `appveyor.yml` environment section. The minimum for the system to work is to specify `$Env:api_key` in order to push updated packages to Chocolatey repository.
