@@ -6,7 +6,7 @@ if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 
 $options = [ordered]@{
     Timeout = 100
-    Push    = $true
+    Push    = $Env:au_Push -eq 'true'
     Threads = 10
 
     Report = @{
@@ -42,9 +42,7 @@ $options = [ordered]@{
                 Attachment = "$PSScriptRoot\update_info.xml"
             }
            } else {}
-
 }
-
 $au_Root = $PSScriptRoot
 $info = updateall -Name $Name -Options $Options
 
