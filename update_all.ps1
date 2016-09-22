@@ -24,7 +24,6 @@ $options = [ordered]@{
     Git = @{
         User     = ''
         Password = $Env:github_api_key
-        Force    = $true
     }
 
     RunInfo = @{
