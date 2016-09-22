@@ -1,5 +1,5 @@
 *.nupkg
 /update_vars.ps1
-/gist.md
+/Update-AUPackages.md
 /update_info.xml
 /api_key

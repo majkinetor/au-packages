@@ -2,11 +2,14 @@ version: '{build}'
 image: WMF 5
 
 environment:
-  #Github credentials - used to save result to gist and to commit pushed packages to the git repository
-  github_user: majkinetor
-  github_pass:
-    secure: MLLwE43J/DaZdfFcWWugSw==
-  github_user_repo: majkinetor/chocolatey 
+  #Set au version to use or omit to use the latest. Specify branch name to use development version from Github
+  au_version: integrate
+  au_push: true
+
+  #Github token to commit pushed packages to repository
+  github_user_repo: majkinetor/chocolatey
+  github_api_key:
+    secure: 5/3TZtHT4M8984tJhsFyLST+e/JDpc8ia871UD4hv3dD2+Kb+xnaB4wMH1WloDD1
 
   #Gmail credentials - for error notifications
   mail_user: majkinetor@gmail.com
@@ -14,23 +17,35 @@ environment:
     secure: h/+9+co89yapWdXBYYXJvPQQvViVRRq1zd2Us0aTSjY=
 
   #ID of the gist used to save run results
-  gist_id: 181b18886fdd363158064baf817fa2ff
+  gist_id: a700c70b8847b29ebb1c918d47ee4eb1
 
   #Chocolatey API key - to push updated packages
   api_key:
     secure: Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
 
+
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
-- gem install gist --no-ri --no-rdoc
-- "ruby -e \"require 'gist'; Gist.login! username: ENV['github_user'], password: ENV['github_pass'] if ENV['github_user'] \""
 - ps: |
-    "machine github.com", "login $Env:github_user", "password $Env:github_pass" | Out-File ~/_netrc -Encoding ascii
-    Install-PackageProvider -Name NuGet -Force
-    Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-    Install-Module au -Scope CurrentUser
-    Get-Module au -ListAvailable | select Name, Version
+    $x=$null; $is_branch = ($Env:au_version -ne $null) -and ([version]::TryParse($Env:au_version, [ref]$x) -eq $false)
+    if ($is_branch) {
+        git clone https://github.com/majkinetor/au.git
+        pushd au
+            git fetch
+            git checkout $Env:au_version
+            ./build.ps1 -Install -NoChocoPackage
+        popd
+    } else {
+        Install-PackageProvider -Name NuGet -Force
+        Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+
+        $params = @{ Name = 'au' }
+        if ( $Env:au_version -ne $null ) { $params.Version = $Env:au_version }
+        Install-Module @params
+
+        Get-Module au -ListAvailable | select Name, Version
+    }
 
 build_script:
 - ps: |
@@ -41,7 +56,7 @@ build_script:
 
 artifacts:
 - path: update_info.xml
-- path: gist.md
+- path: Update-AUPackages.md
 
 notifications:
 - provider: Email
