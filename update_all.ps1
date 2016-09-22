@@ -26,8 +26,8 @@ $options = [ordered]@{
     }
 
     Git = @{
-        User     = ''
-        Password = $Env:github_api_key
+        User     = $Env:github_username
+        Password = $Env:github_password
         Force = $true
     }
 

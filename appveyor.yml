@@ -11,6 +11,10 @@ environment:
   github_api_key:
     secure: 5/3TZtHT4M8984tJhsFyLST+e/JDpc8ia871UD4hv3dD2+Kb+xnaB4wMH1WloDD1
 
+  github_username: majkinetor
+  github_password:
+    secure: MLLwE43J/DaZdfFcWWugSw==
+
   #Gmail credentials - for error notifications
   mail_user: majkinetor@gmail.com
   mail_pass:
