@@ -31,7 +31,7 @@ install:
         git clone https://github.com/majkinetor/au.git
         pushd au
             git fetch
-            git checkout $Env:au_version *> $null
+            try { git checkout $Env:au_version } catch {}
             ./build.ps1 -Install -NoChocoPackage
         popd
     } else {
