@@ -1,6 +1,6 @@
 [![](https://ci.appveyor.com/api/projects/status/github/majkinetor/chocolatey?svg=true)](https://ci.appveyor.com/project/majkinetor/chocolatey)
 [![](http://transparent-favicon.info/favicon.ico)](#)[![](http://transparent-favicon.info/favicon.ico)](#)
-[Update status](https://gist.github.com/majkinetor/a700c70b8847b29ebb1c918d47ee4eb1)
+[Update status](http://tiny.cc/v1u1ey)
 [![](http://transparent-favicon.info/favicon.ico)](#)
 [chocolatey/majkinetor](https://chocolatey.org/profiles/majkinetor)
 

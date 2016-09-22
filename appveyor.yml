@@ -4,6 +4,7 @@ image: WMF 5
 environment:
   #Set au version to use or omit to use the latest. Specify branch name to use development version from Github
   au_version: integrate
+  au_push: true
 
   #Github token to commit pushed packages to repository
   github_user_repo: majkinetor/chocolatey
@@ -21,6 +22,7 @@ environment:
   #Chocolatey API key - to push updated packages
   api_key:
     secure: Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
+
 
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
