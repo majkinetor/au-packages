@@ -16,7 +16,7 @@ environment:
     secure: h/+9+co89yapWdXBYYXJvPQQvViVRRq1zd2Us0aTSjY=
 
   #ID of the gist used to save run results
-  gist_id: 181b18886fdd363158064baf817fa2ff
+  gist_id: a700c70b8847b29ebb1c918d47ee4eb1
 
   #Chocolatey API key - to push updated packages
   api_key:
