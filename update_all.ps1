@@ -11,8 +11,8 @@ $options = [ordered]@{
     Threads = 10
 
     Report = @{
-        Type   = 'markdown'
-        Path   = "$PSScriptRoot\Update-AUPackages.md"
+        Type   = 'text'
+        Path   = "$PSScriptRoot\Update-AUPackages.txt"
         Params = @{
             Github_UserRepo = $Env:github_user_repo
             UserMessage     = "**TESTING AU NEXT VERSION**"
@@ -22,7 +22,7 @@ $options = [ordered]@{
     Gist = @{
         Id     = $Env:gist_id
         ApiKey = $Env:github_api_key
-        Path   = "$PSScriptRoot\Update-AUPackages.md"
+        Path   = "$PSScriptRoot\Update-AUPackages.txt"
     }
 
     Git = @{
