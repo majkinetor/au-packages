@@ -15,7 +15,7 @@ $options = [ordered]@{
         Path   = "$PSScriptRoot\Update-AUPackages.md"
         Params = @{
             Github_UserRepo = $Env:github_user_repo
-            UserMessage     = "**TESTING AU NEXT VERSION**"
+            UserMessage     = "**USING AU NEXT VERSION**"
         }
     }
 
