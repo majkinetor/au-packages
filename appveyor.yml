@@ -45,7 +45,7 @@ install:
     $x=$null; $is_branch = ($Env:au_version -ne $null) -and ([version]::TryParse($Env:au_version, [ref]$x) -eq $false)
     if ($is_branch) {
         pushd ..
-            git clone https://github.com/majkinetor/au.git
+            git clone -q https://github.com/majkinetor/au.git
             cd au
             git fetch
             git checkout -q $Env:au_version
