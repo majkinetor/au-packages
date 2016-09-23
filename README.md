@@ -8,7 +8,7 @@
 ## Prerequisites
 
 - Powershell 4+.
-- [Automatic Chocolatey Package Update Powershell Module](https://github.com/majkinetor/au): `Install-Module au`
+- [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au): `Install-Module au`
 
 ## Create a package
 
