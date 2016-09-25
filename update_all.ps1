@@ -1,5 +1,4 @@
-# AU template: https://raw.githubusercontent.com/majkinetor/au/master/update_all_default.ps1
-#    env vars: https://raw.githubusercontent.com/majkinetor/au/master/update_vars_default.ps1
+# AU template: https://github.com/majkinetor/au-packages-template/blob/master/update_all.ps1
 
 param($Name = $null)
 
