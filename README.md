@@ -4,6 +4,7 @@
 [![](http://transparent-favicon.info/favicon.ico)](#)
 [chocolatey/majkinetor](https://chocolatey.org/profiles/majkinetor)
 
+This repository contains [chocolatey automatic packages](https://chocolatey.org/docs/automatic-packages).
 
 ## Prerequisites
 
