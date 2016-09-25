@@ -1,4 +1,4 @@
-# AU template: https://github.com/majkinetor/au-packages-template/blob/master/update_all.ps1
+# AU template: https://github.com/majkinetor/au-packages-template
 
 param($Name = $null)
 
