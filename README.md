@@ -37,4 +37,4 @@ In the root of the repository run: `ls | ? PSISContainer | rm -Recurse`.
 
 Add your own packages now, with this in mind:
 * You can keep both manual and automatic packages together. To get only AU packages any time use `Get-AUPackages` function (alias `lsau` or `gau`)
-* Keep all package additional files in the package di
+* Keep all package additional files in the package directory (icons, screenshots etc.). This keeps everything related to one package in its own directory so it is easy to move it around or remove it.
