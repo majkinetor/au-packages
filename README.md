@@ -12,27 +12,28 @@
 
 ## Create a package
 
-To create a new package use `./New-Package.ps1 <Name>` function (change Github username inside this script). This script uses the template in the `_template` directory.
+To create a new package see [Creating the package updater script](https://github.com/majkinetor/au#creating-the-package-updater-script).
 
 ## Testing the package
 
-In package directory run: `Test-Package`.
+In a package directory run: `Test-Package`.
 
 ## Automatic package update
 
 Run `<package_dir>/update.ps1` from within the directory of the package to update that package. If this script is missing, the package is not automatic.
 
-Run `./update_all.ps1` from the repository root. Edit this script to change the [AU](https://github.com/majkinetor/au) update options.
+You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will just update each package without any other action.
 
-You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will avoid saving results to gist, sending mails on errors etc. and will just run update process for each package (temporary disable with `$au_NoPlugins`).
+## Start using AU with your own packages
 
-## How to use with your own packages
-
-To use this system with your own AU packages do the following steps:
+To use this system with your own packages do the following steps:
 
 * Fork this project and clone it locally.
 * Delete all existing packages:  
 In the root of the repository run: `ls | ? PSISContainer | ?  Name -notlike '_*' | rm -Recurse`.
 * Set your environment variables. See [AU wiki](https://github.com/majkinetor/au/wiki/AppVeyor) for details.
-* Add your own packages.  
-You can use `./New-Package.ps1 <package_name>` to create one from the template. Just edit this script before using it first time to set up your GitHub chocolatey repository.
+
+Add your own packages now, with this in mind:
+* You can keep both manual and automatic packages together. To get only AU packages any time use `Get-AUPackages` function (alias `lsau` or `gau`)
+* Keep all package additional files in the package directory (icons, screenshots etc.). This keeps everything related to one package in its own directory.
+
