@@ -1,4 +1,4 @@
-[![](https://ci.appveyor.com/api/projects/status/github/majkinetor/chocolatey?svg=true)](https://ci.appveyor.com/project/majkinetor/chocolatey)
+[![](https://ci.appveyor.com/api/projects/status/github/majkinetor/au-packages?svg=true)](https://ci.appveyor.com/project/majkinetor/au-packages)
 [![](http://transparent-favicon.info/favicon.ico)](#)[![](http://transparent-favicon.info/favicon.ico)](#)
 [Update status](http://tiny.cc/v1u1ey)
 [![](http://transparent-favicon.info/favicon.ico)](#)

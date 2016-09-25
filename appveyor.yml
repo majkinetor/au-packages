@@ -13,7 +13,7 @@ environment:
   au_push: true
 
   #Github token to commit pushed packages to repository
-  github_user_repo: majkinetor/chocolatey
+  github_user_repo: majkinetor/au-packages
   github_api_key:
     secure: 5/3TZtHT4M8984tJhsFyLST+e/JDpc8ia871UD4hv3dD2+Kb+xnaB4wMH1WloDD1
 
