@@ -36,11 +36,11 @@ $options = [ordered]@{
     Mail = if ($Env:mail_user) {
             @{
                 To         = $Env:mail_user
-                Server     = 'smtp.gmail.com'
+                Server     = $Env:mail_server
                 UserName   = $Env:mail_user
                 Password   = $Env:mail_pass
-                Port       = 587
-                EnableSsl  = $true
+                Port       = $Env:mail_port
+                EnableSsl  = $Env:mail_enablessl -eq 'true'
                 Attachment = "$PSScriptRoot\update_info.xml"
                 UserMessage = "<p>Update status: http://tiny.cc/v1u1ey</p>"
             }
