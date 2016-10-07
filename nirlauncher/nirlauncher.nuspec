@@ -30,6 +30,10 @@ NirLauncher Features
     <iconUrl>https://cdn.rawgit.com/majkinetor/au-packages/master/nirlauncher/icon.png</iconUrl>
     <releaseNotes>http://blog.nirsoft.net/?s=nirlauncher</releaseNotes>
     <packageSourceUrl>https://github.com/majkinetor/au-packages/tree/master/nirlaunher</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey" version="0.9.10" />
+      <dependency id="mm-choco.extension" version="0.0.3" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
