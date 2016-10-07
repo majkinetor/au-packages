@@ -35,3 +35,6 @@ Write-Host "$packageName registered as $packageName"
 
 Install-BinFile $packageName $launcher_path
 
+Write-Host "Removing shims from older package installs if needed"
+ls $install_path\Nirsoft\*.exe | % { Uninstall-BinFile $_.Name }
+
