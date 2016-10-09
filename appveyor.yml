@@ -1,6 +1,9 @@
+# AU template: https://github.com/majkinetor/au-packages-template
+
 version: '{build}'
 max_jobs: 1
 image: WMF 5
+clone_depth: 5
 branches:
   only:
   - master
@@ -21,10 +24,13 @@ environment:
   github_password:
     secure: MLLwE43J/DaZdfFcWWugSw==
 
-  #Gmail credentials - for error notifications
+  #Mail credentials - for error notifications
   mail_user: majkinetor@gmail.com
   mail_pass:
     secure: h/+9+co89yapWdXBYYXJvPQQvViVRRq1zd2Us0aTSjY=
+  mail_server: smtp.gmail.com
+  mail_port: 587
+  mail_enablessl: true
 
   #ID of the gist used to save run results
   gist_id: a700c70b8847b29ebb1c918d47ee4eb1
@@ -35,7 +41,7 @@ environment:
 
 init:
 - git config --global user.email "chocolatey@realdimensions.net"
-- git config --global user.name "Chocolatey AU"
+- git config --global user.name  "Chocolatey"
 - git config --global core.safecrlf false
 
 install:
@@ -56,7 +62,7 @@ install:
         Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
         $params = @{ Name = 'au' }
-        if ( $Env:au_version -ne $null ) { $params.Version = $Env:au_version }
+        if ( $Env:au_version -ne $null ) { $params.MinimumVersion = $Env:au_version }
         Install-Module @params
 
         Get-Module au -ListAvailable | select Name, Version
