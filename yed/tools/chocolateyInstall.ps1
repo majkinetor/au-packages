@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'yed'
-$url         = 'https://www.yworks.com/resources/yed/demo/yEd-3.16.1.zip'
-$checksum    = 'F2C48697AE2D6D1FA29005157D3D8F319380BEF9ECC250AE727246BD2F9BFE40'
+$url         = 'https://www.yworks.com/resources/yed/demo/yEd-3.16.2.zip'
+$checksum    = 'd25432c7fa1e3d19d700e829e087c6ab32b0d7f23a1c367f6ea12a0e63363b0e'
 $toolsDir    = Split-Path $MyInvocation.MyCommand.Definition
 $cmdPath     = join-path $env:ChocolateyInstall bin\yed.cmd
 
