@@ -21,6 +21,13 @@ NirLauncher Features
 - On x64 systems, NirLauncher automatically run the x64 version of the utility, when there is a separated x64 version
 - NirLauncher also allows to add more software packages in additional to the main NirSoft package.
 - NirLauncher allows you generate plugin files for BartPE (Launcher -&gt; Generate BartPE Plugin Files), so you can easily use the utilities of NirSoft from a bootable live windows CD.
+
+Package Parameters
+------------------
+
+- `Sysinternals`
+Add sysinternals tools to the launcher: `choco install nirlauncher --params /Sysinternals`.
+
 </description>
     <projectUrl>http://launcher.nirsoft.net</projectUrl>
     <tags>utility tools admin nirsoft</tags>

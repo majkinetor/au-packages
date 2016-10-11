@@ -38,3 +38,21 @@ Install-BinFile $packageName $launcher_path
 Write-Host "Removing shims from older package installs if needed"
 ls $install_path\Nirsoft\*.exe | % { Uninstall-BinFile $_.Name }
 
+if ($Env:ChocolateyPackageParameters -match '/SysInternals($| )') {
+    Write-Host 'SysInternals utilities will be added'
+
+    $sysinternals_dir = gcm autoruns.exe -ea 0 | select -Expand Source | Split-Path
+    if (!$sysinternals_dir) { Write-Warning 'Sysinternals tools are not on the PATH' }
+
+    #Download nlp
+    Get-WebFile -Url http://download.nirsoft.net/sysinternals2.nlp -FileName $sysinternals_dir\sysinternals2.nlp 3>$null
+    rm $sysinternals_dir/*.istext -ea 0
+
+    #Configure nirlauncher
+    $nircfg = gc $install_path\NirLauncher.cfg -Raw
+    if ($nircfg -notmatch '\[Package1\]') {
+        $nircfg = $nircfg.Replace("PackageCount=1", "PackageCount=2")
+        $nircfg += "[Package1]`nfilename=$sysinternals_dir\sysinternals2.nlp"
+        $nircfg | Out-File $install_path\NirLauncher.cfg -Encoding ascii
+    }
+}
