@@ -78,6 +78,7 @@ build_script:
 artifacts:
 - path: update_info.xml
 - path: Update-AUPackages.md
+- path: $(TEMP)\chocolatey\au\*
 
 notifications:
 - provider: Email
