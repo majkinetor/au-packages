@@ -1,13 +1,19 @@
 # AU template: https://github.com/majkinetor/au-packages-template
 
-param($Name = $null)
+param($Name = $null, [string] $ForcedPackages)
 
 if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 
-$options = [ordered]@{
+$Options = [ordered]@{
     Timeout = 100
     Push    = $Env:au_Push -eq 'true'
     Threads = 10
+
+    ForcedPackages = $ForcedPackages -split ' '
+    BeforeEach = {
+        param($PackageName, $Options )
+        if ($Options.ForcedPackages -contains $PackageName) { $global:au_Force = $true }
+    }
 
     Report = @{
         Type   = 'markdown'
@@ -46,6 +52,8 @@ $options = [ordered]@{
             }
            } else {}
 }
+
+if ($ForcedPackages) { Write-Host "FORCED PACKAGES:  $ForcedPackages" }
 $au_Root = $PSScriptRoot
 $info = updateall -Name $Name -Options $Options
 
