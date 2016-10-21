@@ -25,7 +25,7 @@ function global:au_GetLatest {
     $re    = 'less-.+win.+\.7z'
     $url   = $download_page.links | ? href -match $re | select -First 1 -expand href
 
-    $version = ($url -split '-' | select -Index 1) / 100
+    $version = "$( ($url -split '-' | select -Index 1) / 100 )"
     $url = $releases + $url
 
     $Latest = @{ URL = $url; Version = $version }
