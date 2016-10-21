@@ -70,7 +70,10 @@ install:
 
 build_script:
 - ps: |
-    if ($Env:APPVEYOR_REPO_COMMIT_MESSAGE -match '\[AU (.+?)\]') { # [AU pkg1 pkg2 ... ]
+    if ( ($Env:APPVEYOR_REPO_COMMIT_MESSAGE -match '\[AU (.+?)\]') { # [AU pkg1 pkg2 ... ]
+    -and ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true')
+    -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true')
+    )
         $forced = $Matches[1]
     }
     ./update_all.ps1 -Name * -ForcedPackages $forced
