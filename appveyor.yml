@@ -73,10 +73,10 @@ build_script:
     if ( ($Env:APPVEYOR_REPO_COMMIT_MESSAGE -match '\[AU (.+?)\]') -and
          ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and
          ($Env:APPVEYOR_FORCED_BUILD -ne 'true')
-    )
-        $forced = $Matches[1]
-    }
+    ) { $forced = $Matches[1] }
+
     ./update_all.ps1 -Name * -ForcedPackages $forced
+
     7z a au_temp.zip $Env:TEMP\chocolatey\au\*
 
 #on_finish:
