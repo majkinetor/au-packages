@@ -12,7 +12,7 @@ branches:
 
 environment:
   #Set au version to use or omit to use the latest. Specify branch name to use development version from Github
-  au_version: master
+  au_version: before-each
   au_push: true
 
   #Github token to commit pushed packages to repository
@@ -70,7 +70,10 @@ install:
 
 build_script:
 - ps: |
-    ./update_all.ps1
+    if ($Env:APPVEYOR_REPO_COMMIT_MESSAGE -match '\[AU (.+?)\]') { # [AU pkg1 pkg2 ... ]
+        $forced = $Matches[1]
+    }
+    ./update_all.ps1 -Name * -ForcedPackages $forced
     7z a au_temp.zip $Env:TEMP\chocolatey\au\*
 
 #on_finish:
