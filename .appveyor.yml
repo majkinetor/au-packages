@@ -11,11 +11,11 @@ branches:
 #  verbosity: minimal
 
 environment:
-  #Set au version to use or omit to use the latest. Specify branch name to use development version from Github
+  # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
   au_version: master
   au_push: true
 
-  #Github token to commit pushed packages to repository
+  # Github token to commit pushed packages to repository
   github_user_repo: majkinetor/au-packages
   github_api_key:
     secure: 5/3TZtHT4M8984tJhsFyLST+e/JDpc8ia871UD4hv3dD2+Kb+xnaB4wMH1WloDD1
@@ -41,7 +41,7 @@ environment:
 
 init:
 - git config --global user.email "chocolatey@realdimensions.net"
-- git config --global user.name  "Chocolatey"
+- git config --global user.name "Chocolatey"
 - git config --global core.safecrlf false
 
 install:
@@ -79,14 +79,10 @@ build_script:
 
     7z a au_temp.zip $Env:TEMP\chocolatey\au\*
 
-#on_finish:
-#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
 artifacts:
 - path: update_info.xml
 - path: Update-AUPackages.md
 - path: au_temp.zip
-
 
 notifications:
 - provider: Email
@@ -95,3 +91,5 @@ notifications:
   on_build_failure: true
   on_build_status_changed: true
 
+#on_finish:
+#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
