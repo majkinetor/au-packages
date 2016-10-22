@@ -1,6 +1,6 @@
-# AU template: https://github.com/majkinetor/au-packages-template
+# AU Packages Template: https://github.com/majkinetor/au-packages-template
 
-param($Name = $null, [string] $ForcedPackages)
+param([string] $Name, [string] $ForcedPackages, [string] $Root = $PSScriptRoot)
 
 if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 
@@ -52,13 +52,13 @@ $Options = [ordered]@{
 
     ForcedPackages = $ForcedPackages -split ' '
     BeforeEach = {
-	param($PackageName, $Options )
-	if ($Options.ForcedPackages -contains $PackageName) { $global:au_Force = $true }
+        param($PackageName, $Options )
+        if ($Options.ForcedPackages -contains $PackageName) { $global:au_Force = $true }
     }
 }
 
 if ($ForcedPackages) { Write-Host "FORCED PACKAGES:  $ForcedPackages" }
-$au_Root = $PSScriptRoot                                    #Path to the AU packages
+$global:au_Root = $Root                                    #Path to the AU packages
 $info = updateall -Name $Name -Options $Options
 
 #Uncomment to fail the build on AppVeyor on any package error
