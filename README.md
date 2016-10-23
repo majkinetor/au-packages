@@ -8,6 +8,8 @@ This repository contains [chocolatey automatic packages](https://chocolatey.org/
 
 ## Prerequisites
 
+To run locally you will need:
+
 - Powershell 4+.
 - [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au): `Install-Module au`
 
@@ -23,7 +25,7 @@ In a package directory run: `Test-Package`.
 
 ### Single package
 
-Run  from within the directory of the package to update that package:
+Run from within the directory of the package to update that package:
    
     cd <package_dir>
     ./update.ps1
@@ -49,15 +51,29 @@ $au_NoPlugins = $true        #Do not execute plugins
 $au_Push      = $false       #Do not push to chocolatey
 ```
 
-You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will just update each package without any other action. For example to force update of all packages with a single command execute:
+You can also call AU method `Update-AUPackages` (alias `updateall`) on its own in the repository root. This will just run the updater for the each package without any other option from `update_all.ps1` script. For example to force update of all packages with a single command execute:
 
     updateall -Options ([ordered]@{ Force = $true })
+
+## Pushing To Community Repository Via Commit Message
+
+You can force package update and push using git commit message. AppVeyor build is set up to pass arguments from the commit message to the `./update_all.ps1` script.
+
+If commit message includes `[AU <forced_packages>]` message on the first line, the `forced_packages` string will be sent to the updater.
+
+Examples:
+- `[AU pkg1 pkg2]`  
+Force update ONLY packages `pkg1` and `pkg2`.
+- `[AU pkg1:ver1 pkg2 non_existent]`  
+Force `pkg1` and use explicit version `ver1`, force `pkg2` and ignore `non_existent`.
+
+To see how versions behave when package update is forced see the [force documentation](https://github.com/majkinetor/au/blob/master/README.md#force-update).
 
 ## Start using AU with your own packages
 
 To use this system with your own packages do the following steps:
 
-* Fork this project and clone it locally. If needed, rename it to `au-packages`.
+* Fork this project. If needed, rename it to `au-packages`.
 * Delete all existing packages.
 * Edit the `README.md` header with your repository info.
 * Set your environment variables. See [AU wiki](https://github.com/majkinetor/au/wiki#environment-variables) for details.
