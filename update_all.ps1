@@ -56,7 +56,7 @@ $Options = [ordered]@{
         param($PackageName, $Options )
         if ($Options.ForcedPackages -match "^${PackageName}(?:\:(.+))$") {
             $global:au_Force   = $true
-            $global:au_Version = $Matches[1]
+            $global:au_Version = '2.6.1' #$Matches[1]
         }
     }
 }
