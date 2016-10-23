@@ -54,14 +54,14 @@ $Options = [ordered]@{
     ForcedPackages = $ForcedPackages -split ' '
     BeforeEach = {
         param($PackageName, $Options )
-        if ($Options.ForcedPackages -match "^${PackageName}(:.+)$") {
-            $global:au_Force = $true
-            $global:au_Version = ($Matches[0] -split ':')[1]
+        if ($Options.ForcedPackages -match "^${PackageName}(?:\:(.+))$") {
+            $global:au_Force   = $true
+            $global:au_Version = $Matches[1]
         }
     }
 }
 
-if ($ForcedPackages) { Write-Host "FORCED PACKAGES:  $ForcedPackages" }
+if ($ForcedPackages) { Write-Host "FORCED PACKAGES: $ForcedPackages" }
 $global:au_Root = $Root                                    #Path to the AU packages
 $info = updateall -Name $Name -Options $Options
 

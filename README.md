@@ -25,24 +25,29 @@ In a package directory run: `Test-Package`.
 
 Run  from within the directory of the package to update that package:
    
-   cd <package_dir>
-   ./update.ps1
+    cd <package_dir>
+    ./update.ps1
 
-If this script is missing, the package is not automatic. Set `$au_Force = $true` prior to script call to update the package even if no new version is found.
+If this script is missing, the package is not automatic.  
+Set `$au_Force = $true` prior to script call to update the package even if no new version is found.
 
 ### Multiple packages
 
 To update all packages run `./update_all.ps1`. It accepts few options:
 
-    ./update_all.ps1 -Name a*                         #Update all packages which name start with letter 'a'
-    ./update_all.ps1 -ForcedPackages 'cpu-z copyq'    #Update all packages and force cpu-z and copyq
-    ./update_all.ps1 -ForcedPackages 'copyq:1.2.3'    #Update all packages but force copyq and use explicit version
-    ./update_all.ps1 -Root 'c:\packages'              #Update all packages in the c:\packages folder
+```powershell
+    ./update_all.ps1 -Name a*                         # Update all packages which name start with letter 'a'
+    ./update_all.ps1 -ForcedPackages 'cpu-z copyq'    # Update all packages and force cpu-z and copyq
+    ./update_all.ps1 -ForcedPackages 'copyq:1.2.3'    # Update all packages but force copyq with explicit version
+    ./update_all.ps1 -Root 'c:\packages'              # Update all packages in the c:\packages folder
+```
 
 The following global variables influence the execution of `update_all.ps1` script if set prior to the call:
 
+```powershell
     $au_NoPlugins = $true        #Do not execute plugins
     $au_Push      = $false       #Do not push to chocolatey
+```
 
 You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will just update each package without any other action. For example to force update of all packages with a single command execute:
 
