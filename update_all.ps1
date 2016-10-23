@@ -56,10 +56,9 @@ $Options = [ordered]@{
         param($PackageName, $Options )
         $p = $Options.ForcedPackages | ? { $_ -match "^${PackageName}(?:\:(.+))$" }
         if (!$p) { return }
-        $p = $p -split ':'
-
+        
         $global:au_Force   = $true
-        $global:au_Version = $p[1]
+        $global:au_Version = ($p -split ':')[1]
     }
 }
 
