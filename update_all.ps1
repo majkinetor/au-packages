@@ -54,10 +54,12 @@ $Options = [ordered]@{
     ForcedPackages = $ForcedPackages -split ' '
     BeforeEach = {
         param($PackageName, $Options )
-        if ($Options.ForcedPackages -match "^${PackageName}(?:\:(.+))$") {
-            $global:au_Force   = $true
-            $global:au_Version = '2.6.1' #$Matches[1]
-        }
+        $p = $Options.ForcedPackages | ? { $_ -match "^${PackageName}(?:\:(.+))$" }
+        if (!$p) { return }
+        $p = $p -split ':'
+
+        $global:au_Force   = $true
+        $global:au_Version = $p[1]
     }
 }
 
