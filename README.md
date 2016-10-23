@@ -36,17 +36,17 @@ Set `$au_Force = $true` prior to script call to update the package even if no ne
 To update all packages run `./update_all.ps1`. It accepts few options:
 
 ```powershell
-    ./update_all.ps1 -Name a*                         # Update all packages which name start with letter 'a'
-    ./update_all.ps1 -ForcedPackages 'cpu-z copyq'    # Update all packages and force cpu-z and copyq
-    ./update_all.ps1 -ForcedPackages 'copyq:1.2.3'    # Update all packages but force copyq with explicit version
-    ./update_all.ps1 -Root 'c:\packages'              # Update all packages in the c:\packages folder
+./update_all.ps1 -Name a*                         # Update all packages which name start with letter 'a'
+./update_all.ps1 -ForcedPackages 'cpu-z copyq'    # Update all packages and force cpu-z and copyq
+./update_all.ps1 -ForcedPackages 'copyq:1.2.3'    # Update all packages but force copyq with explicit version
+./update_all.ps1 -Root 'c:\packages'              # Update all packages in the c:\packages folder
 ```
 
 The following global variables influence the execution of `update_all.ps1` script if set prior to the call:
 
 ```powershell
-    $au_NoPlugins = $true        #Do not execute plugins
-    $au_Push      = $false       #Do not push to chocolatey
+$au_NoPlugins = $true        #Do not execute plugins
+$au_Push      = $false       #Do not push to chocolatey
 ```
 
 You can also call AU method `Update-AUPackages` (alias `updateall`) in the repository root. This will just update each package without any other action. For example to force update of all packages with a single command execute:
