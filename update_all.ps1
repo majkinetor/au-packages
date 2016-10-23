@@ -22,9 +22,9 @@ $Options = [ordered]@{
     }
 
     Gist = @{
-        Id     = $Env:gist_id                               #Your gist id or leave empty for anonymous
-        ApiKey = $Env:github_api_key                        #Your github api key
-        Path   = "$PSScriptRoot\Update-AUPackages.md"       #List of files to add to gist
+        Id     = $Env:gist_id                               #Your gist id; leave empty for new private or anonymous gist
+        ApiKey = $Env:github_api_key                        #Your github api key - if empty anoymous gist is created
+        Path   = "$PSScriptRoot\Update-AUPackages.md"       #List of files to add to the gist
     }
 
     Git = @{
@@ -54,7 +54,8 @@ $Options = [ordered]@{
     ForcedPackages = $ForcedPackages -split ' '
     BeforeEach = {
         param($PackageName, $Options )
-        if ($Options.ForcedPackages -contains $PackageName) { $global:au_Force = $true }
+        $p = $Packagename -split ':'
+        if ($Options.ForcedPackages -contains $p[0]) { $global:au_Force = $true; $global:au_Version = $p[1] }
     }
 }
 
