@@ -1,25 +1,19 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = ''
-$url32       = ''
-$url64       = ''
-$checksum32  = ''
-$checksum64  = ''
-
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
-  packageName            = $packageName
+  packageName            = ''
   fileType               = 'EXE'
-  url                    = $url32
-  url64bit               = $url64
-  checksum               = $checksum32
-  checksum64             = $checksum64
+  url                    = ''
+  url64bit               = ''
+  checksum               = ''
+  checksum64             = ''
   checksumType           = 'sha256'
   checksumType64         = 'sha256'
   silentArgs             = '/VERYSILENT'
   validExitCodes         = @(0)
-  registryUninstallerKey = $packageName
+  softwareName           = ''
 }
 Install-ChocolateyPackage @packageArgs
 
