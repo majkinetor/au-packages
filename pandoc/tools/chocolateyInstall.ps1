@@ -1,8 +1,8 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'pandoc'
-$url         = 'https://github.com/jgm/pandoc/releases/download/1.17.2/pandoc-1.17.2-windows.msi'
-$checksum    = '7E96A0D66C3C96841C15E01D3CEC863D470293F12C28EAB0CEE160285EABFA40'
+$url         = 'https://github.com/jgm/pandoc/releases/download/1.18/pandoc-1.18-windows.msi'
+$checksum    = '30c308603a960c69a72710f0e56ba0e60e1556d76a83dc6034f52af89871ad8b'
 
 $packageArgs = @{
   packageName            = $packageName
