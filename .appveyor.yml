@@ -24,7 +24,7 @@ environment:
   github_password:
     secure: MLLwE43J/DaZdfFcWWugSw==
 
-  #Mail credentials - for error notifications
+  # Mail credentials - for error notifications
   mail_user: majkinetor@gmail.com
   mail_pass:
     secure: h/+9+co89yapWdXBYYXJvPQQvViVRRq1zd2Us0aTSjY=
@@ -32,10 +32,11 @@ environment:
   mail_port: 587
   mail_enablessl: true
 
-  #ID of the gist used to save run results
+  # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
+  # Optional, leave empty to create anonymous gist
   gist_id: a700c70b8847b29ebb1c918d47ee4eb1
 
-  #Chocolatey API key - to push updated packages
+  # Chocolatey API key - to push updated packages
   api_key:
     secure: Zaby8iZHam4NMZ4AAjH/ZM19D+soKoohnHnRAcusk/HvNkEPMA8Wd3jxUGPnQgPJ
 
