@@ -15,7 +15,7 @@ function global:au_SearchReplace {
         }
 
         "$($Latest.PackageName).nuspec" = @{
-            "\<releaseNotes\>.*?\</releaseNotes\>" = "`$1`"$($Latest.ReleaseNotes)`""
+            "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
         }
     }
 }
