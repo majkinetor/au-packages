@@ -19,7 +19,7 @@ There is also a C library, if you're into that kind of thing.
     <copyright></copyright>
     <licenseUrl>http://www.gnu.org/licenses/lgpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/wkhtmltopdf/icon.png</iconUrl>
+    <iconUrl></iconUrl>
     <docsUrl>http://wkhtmltopdf.org/docs.html</docsUrl>
     <bugTrackerUrl>https://github.com/wkhtmltopdf/wkhtmltopdf/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/wkhtmltopdf/wkhtmltopdf</projectSourceUrl>
