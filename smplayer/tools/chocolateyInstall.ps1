@@ -1,10 +1,10 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName  = 'smplayer'
-$url32        = 'https://www.fosshub.com/SMPlayer.html/smplayer-16.9.0-win32.exe'
-$url64        = 'https://www.fosshub.com/SMPlayer.html/smplayer-16.9.0-x64.exe'
-$checksum32   = 'a7dd43d91712c8db1febc56809bcf0537a85e5839eb9e73ee018c772b851bc8a'
-$checksum64   = '394260c807956dab59fdf807915a7c6f5385a20f61ab107b58a0a5bf19ad58de'
+$url32        = 'https://www.fosshub.com/SMPlayer.html/smplayer-16.11.0-win32.exe'
+$url64        = 'https://www.fosshub.com/SMPlayer.html/smplayer-16.11.0-x64.exe'
+$checksum32   = '3fff91ed669acd737cc7d079bd30944a3d739fa1cd9cb526c7a87c9518016850'
+$checksum64   = '45332f2e784544de10ee156e3d42e7d0468f9321763c924e7aae497f854b59be'
 
 $webClient = New-Object System.Net.WebClient
 $url = if ((Get-ProcessorBits 32) -or ($Env:chocolateyForceX86 -eq 'true')) { $url32 } else { $url64 }
