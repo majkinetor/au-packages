@@ -28,7 +28,12 @@ function global:au_GetLatest {
 
     $version  = $url -split '[._-]|.exe' | select -Last 1 -Skip 2
 
-    @{ URL32 = $url; Version = $version }
+    @{
+        Version      = $version
+        URL32        = $url
+        URL64        = $url
+        ReleaseNotes = ''
+    }
 }
 
 update

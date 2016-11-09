@@ -3,12 +3,12 @@
   <metadata>
     <id>mm-choco.extension</id>
     <title>Chocolatey Extensions by majkinetor</title>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <summary>Helper Functions packed as Chocolatey extension</summary>
-    <description> Package contains a helper functions installed as Chocolatey extensions.</description>
+    <description>Package contains a helper functions installed as Chocolatey extensions</description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension</projectUrl>
     <projectSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension</projectSourceUrl>
     <bugTrackerUrl>https://github.com/majkinetor/chocolatey/issues</bugTrackerUrl>
@@ -16,6 +16,9 @@
     <docsUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension/README.md</docsUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>
+- 0.0.4
+  - Get-PackageParameters
+  - Register-Application new parameter `Name`
 - 0.0.3
   - Bugfix Get-AppInstallLocation on x32 systems
   - Register-Application added
