@@ -24,7 +24,7 @@
     <docsUrl>http://www.mls-software.com/opensshd.html#botpage</docsUrl>
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <projectSourceUrl>http://www.mls-software.com/opensshd.html</projectSourceUrl>
-    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/openssh</packageSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/mls-software-openssh</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
