@@ -10,7 +10,7 @@ function global:au_BeforeUpdate {
     $lessdir = "$PSScriptRoot\less-*-win*"
     rm $lessdir -Recurse -Force -ea ignore
 
-    iwr $Latest.URL -OutFile less.7z
+    iwr $Latest.URL -OutFile "$PSScriptRoot\less.7z"
     7za x $PSScriptRoot\less.7z
 
     rm $PSScriptRoot\tools\* -Recurse -Force
