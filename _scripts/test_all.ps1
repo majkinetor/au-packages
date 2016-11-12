@@ -25,4 +25,4 @@ $options = [ordered]@{
     }
 }
 $au_root = $Root
-$globa:info = updateall -Name $Name -Options $Options
+$global:info = updateall -Name $Name -Options $Options
