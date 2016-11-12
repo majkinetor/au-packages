@@ -29,7 +29,7 @@ $options = [ordered]@{
         Params= @{                                          #Report parameters:
             Github_UserRepo = $Env:github_user_repo         #  Markdown: shows user info in upper right corner
             NoAppVeyor  = $false                            #  Markdown: do not show AppVeyor build shield
-            Title       = 'Update Force Test - Group ${n}'
+            Title       = "Update Force Test - Group ${n}"
             UserMessage = "[Update report](http://tiny.cc/v1u1ey) | **USING AU NEXT VERSION**"       #  Markdown, Text: Custom user message to show
         }
     }
