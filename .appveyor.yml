@@ -16,7 +16,6 @@ environment:
   au_version: master
   au_push: true
   au_test_groups: 3
-  au_test_probability: 1
 
   # Github token to commit pushed packages to repository
   github_user_repo: majkinetor/au-packages
@@ -64,10 +63,9 @@ install:
 
 build_script:
 - ps: |
-    if ($Env:APPVEYOR_SCHEDULED_BUILD -eq 'true') {
-        Write-Host 'Scheduled Build, dropping dice for testing'
-        $fire = (get-random -Minimum 1 -Maximum 100) -le ($Env:au_test_probability*100)
-        if ($fire) { _scripts\test_all.ps1 "random $Env:au_test_groups"; return }
+    if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') {
+        _scripts\test_all.ps1 "random $Env:au_test_groups"
+        return
     }
 
     if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {
@@ -86,11 +84,6 @@ build_script:
                 }
                 return
             }
-            '\[TEST (.+?)\]' {
-                $groups = $Matches[1]
-                _scripts\test_all.ps1 "random $groups"
-                return
-             }
         }
     }
 
