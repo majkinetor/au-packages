@@ -1,4 +1,5 @@
-# all | random [n]
+# all | random [1/N]
+
 param([string] $Name, [string] $Root = "$PSScriptRoot\..")
 
 if (Test-Path $PSScriptRoot/../update_vars.ps1) { . $PSScriptRoot/../update_vars.ps1 }
@@ -24,4 +25,4 @@ $options = [ordered]@{
     }
 }
 $au_root = $Root
-updateall -Name $Name -Options $Options
+$globa:info = updateall -Name $Name -Options $Options

@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>wkhtmltopdf</id>
     <title>wkhtmltopdf</title>
-    <version>0.12.3.220160708</version>
+    <version>0.12.3.2</version>
     <authors>Jakob Truelsen, Ashish Kulkarni</authors>
     <owners>Miodrag Milić</owners>
     <summary>Convert HTML to PDF using Webkit</summary>
@@ -19,7 +19,6 @@ There is also a C library, if you're into that kind of thing.
     <copyright></copyright>
     <licenseUrl>http://www.gnu.org/licenses/lgpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl></iconUrl>
     <docsUrl>http://wkhtmltopdf.org/docs.html</docsUrl>
     <bugTrackerUrl>https://github.com/wkhtmltopdf/wkhtmltopdf/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/wkhtmltopdf/wkhtmltopdf</projectSourceUrl>
