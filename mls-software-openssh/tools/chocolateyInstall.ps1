@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'mls-software-openssh'
 $url         = 'http://www.mls-software.com/files/setupssh-7.3p1-2.exe'
