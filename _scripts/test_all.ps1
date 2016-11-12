@@ -10,18 +10,18 @@ $options = [ordered]@{
 
     Report = @{
         Type = 'markdown'                                   #Report type: markdown or text
-        Path = "$PSScriptRoot\Test-Report.md"               #Path where to save the report
+        Path = "$PSScriptRoot\Update-Force-Test.md"         #Path where to save the report
         Params= @{                                          #Report parameters:
             Github_UserRepo = $Env:github_user_repo         #  Markdown: shows user info in upper right corner
             NoAppVeyor  = $false                            #  Markdown: do not show AppVeyor build shield
-            Title       = 'AU Pakcage Force Test'
+            Title       = 'Update Force Test'
         }
     }
 
     Gist = @{
         Id     = $Env:gist_id                               #Your gist id; leave empty for new private or anonymous gist
         ApiKey = $Env:github_api_key                        #Your github api key - if empty anoymous gist is created
-        Path   = "$PSScriptRoot\Test-Report.md"             #List of files to add to the gist
+        Path   = "$PSScriptRoot\Update-Force-Test.md"       #List of files to add to the gist
     }
 }
 $au_root = $Root

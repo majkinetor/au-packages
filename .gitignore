@@ -4,5 +4,5 @@
 /update_info.xml
 /api_key
 /UpdateHistory.md
-/.vscode/launch.json
-/_scripts/Test-Report.md
+/_scripts/Update-Force-Test.md
+.vscode
