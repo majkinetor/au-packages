@@ -64,7 +64,7 @@ install:
 
 build_script:
 - ps: |
-    if ( ($Env:APPVEYOR_SCHEDULED_BUILD -eq 'true') {
+    if ($Env:APPVEYOR_SCHEDULED_BUILD -eq 'true') {
         $fire = (get-random -Minimum 1 -Maximum 100) -le ($Env:au_test_probability*100)
         if ($fire) { _scripts\test_all.ps1 "random $Env:au_test_groups"; return }
     }
