@@ -7,6 +7,8 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate {
+    if (!(gc 7za -ea 0)) { choco install 7zip.commandline }
+
     $lessdir = "$PSScriptRoot\less-*-win*"
     rm $lessdir -Recurse -Force -ea ignore
 
