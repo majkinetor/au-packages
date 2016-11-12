@@ -20,6 +20,7 @@ $Options = [ordered]@{
             UserMessage = "[History](#update-history) | **USING AU NEXT VERSION**"       #  Markdown, Text: Custom user message to show
             NoIcons     = $false                            #  Markdown: don't show icon
             IconSize    = 32                                #  Markdown: icon size
+            Title       = ''                                #  Markdown, Text: TItle of the report, by default 'Update-AUPackages'
         }
     }
 
