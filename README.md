@@ -60,12 +60,12 @@ You can also call AU method `Update-AUPackages` (alias `updateall`) on its own i
 
 ## Testing all packages
 
-You can force update all or subset of packages to see how they behave when complete update procedure is done:
+You can force the update of all or subset of packages to see how they behave when complete update procedure is done:
 
 
 ```powershell
 ./test_all.ps1                            # Test force update on all packages
-./test_all.ps1 'cdrtfe','freecad', 'p*'   # Test force update only give packages
+./test_all.ps1 'cdrtfe','freecad', 'p*'   # Test force update on only given packages
 ./test_all.ps1 'random 3'                 # Split packages in 3 groups and randomly select and test 1 of those each time
 ```
 
