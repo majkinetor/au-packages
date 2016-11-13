@@ -3,6 +3,6 @@
 /Update-AUPackages.md
 /update_info.xml
 /api_key
-/UpdateHistory.md
-/_scripts/Update-Force-Test.md
+/Update-History.md
+/Update-Force-Test*.md
 .vscode

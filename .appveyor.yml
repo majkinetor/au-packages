@@ -15,6 +15,7 @@ environment:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
   au_version: master
   au_push: true
+  # Use 1 to test all, or N to split testing into N groups
   au_test_groups: 1
 
   # Github token to commit pushed packages to repository
@@ -64,10 +65,7 @@ install:
 
 build_script:
 - ps: |
-    if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') {
-        _scripts\test_all.ps1 "random $Env:au_test_groups"
-        return
-    }
+    if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
 
     if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {
         switch -regex ($Env:APPVEYOR_REPO_COMMIT_MESSAGE)

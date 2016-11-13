@@ -1,8 +1,8 @@
 #Name can be 'random N' to randomly force the Nth group of packages.
 
-param( [string[]] $Name, [string] $Root = "$PSScriptRoot\.." )
+param( [string[]] $Name, [string] $Root = "$PSScriptRoot" )
 
-#if (Test-Path $PSScriptRoot/../update_vars.ps1) { . $PSScriptRoot/../update_vars.ps1 }
+if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 $global:au_root = Resolve-Path $Root
 
 if ($Name[0] -match '^random (.+)') {

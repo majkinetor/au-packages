@@ -14,6 +14,8 @@ To run locally you will need:
 - Powershell 4+.
 - [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au): `Install-Module au`
 
+In order to setup AppVeyor update runner please take a look at the AU wiki [AppVeyor section](https://github.com/majkinetor/au/wiki/AppVeyor).
+
 ## Create a package
 
 To create a new package see [Creating the package updater script](https://github.com/majkinetor/au#creating-the-package-updater-script).
@@ -55,6 +57,17 @@ $au_Push      = $false       #Do not push to chocolatey
 You can also call AU method `Update-AUPackages` (alias `updateall`) on its own in the repository root. This will just run the updater for the each package without any other option from `update_all.ps1` script. For example to force update of all packages with a single command execute:
 
     updateall -Options ([ordered]@{ Force = $true })
+
+## Testing all packages
+
+You can force update all or subset of packages to see how they behave when complete update procedure is done:
+
+
+```powershell
+./test_all.ps1                            # Test force update on all packages
+./test_all.ps1 'cdrtfe','freecad', 'p*'   # Test force update only give packages
+./test_all.ps1 'random 3'                 # Split packages in 3 groups and randomly select and test 1 of those each time
+```
 
 ## Pushing To Community Repository Via Commit Message
 
