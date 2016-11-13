@@ -69,6 +69,9 @@ You can force update all or subset of packages to see how they behave when compl
 ./test_all.ps1 'random 3'                 # Split packages in 3 groups and randomly select and test 1 of those each time
 ```
 
+
+**Note**: If you run this locally your packages will get updated. Use `git reset --hard` after running this to revert the changes.
+
 ## Pushing To Community Repository Via Commit Message
 
 You can force package update and push using git commit message. AppVeyor build is set up to pass arguments from the commit message to the `./update_all.ps1` script.
