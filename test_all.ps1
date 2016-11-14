@@ -5,7 +5,7 @@ param( [string[]] $Name, [string] $Root = "$PSScriptRoot" )
 if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 $global:au_root = Resolve-Path $Root
 
-if ($Name.Lengt -gt 0 -and ($Name[0] -match '^random (.+)')) {
+if (($Name.Length -gt 0) -and ($Name[0] -match '^random (.+)')) {
     [array] $lsau = lsau
 
     $group = [int]$Matches[1]
