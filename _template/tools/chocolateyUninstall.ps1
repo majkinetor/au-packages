@@ -1,19 +1,19 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = ''
+$packageName         = ''
 $softwareNamePattern = ''
 
-$packageArgs = @{
-    packageName            = $packageName
-    silentArgs             = "/x86=0 /S"
-    fileType               = 'EXE'
-    validExitCodes         = @(0)
-    file                   = ''
-}
 
 [array] $key = Get-UninstallRegistryKey $softwareNamePattern
 if ($key.Count -eq 1) {
     $key | % {
+        $packageArgs = @{
+            packageName            = $packageName
+            silentArgs             = "/x86=0 /S"
+            fileType               = 'EXE'
+            validExitCodes         = @(0)
+            file                   = ''
+        }
         $packageArgs.file = "$($_.UninstallString.Replace(' /x86=0', ''))"   #"C:\Program Files\OpenSSH\uninstall.exe" /x86=0
         Uninstall-ChocolateyPackage @packageArgs
     }

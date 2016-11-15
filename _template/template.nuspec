@@ -18,7 +18,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon.png</iconUrl>
     <dependencies>
-      <dependency id="mm-choco.extension" version="0.0.3" />
+      <dependency id="chocolatey-core.extension" version="1.0" />
     </dependencies>
     <releaseNotes></releaseNotes>
     <docsUrl></docsUrl>
