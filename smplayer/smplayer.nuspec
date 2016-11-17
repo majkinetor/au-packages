@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>smplayer</id>
     <title>SMPlayer</title>
-    <version>16.11.0</version>
+    <version>0.0</version>
     <authors>Ricardo Villalba</authors>
     <owners>Miodrag Milić</owners>
     <summary>SMPlayer is a free media player for Windows and Linux</summary>
@@ -16,16 +16,33 @@ One of the most interesting features of SMPlayer: **it remembers the settings of
 
 SMPlayer is a graphical user interface (GUI) for the award-winning MPlayer, which is capable of playing almost all known video and audio formats. But apart from providing access for the most common and useful options of MPlayer, SMPlayer adds other interesting features like the possibility to play Youtube videos or download subtitles.
 
+## Features
+
+- Configurable subtitles. You can choose font and size, and even colors for the subtitles.
+- Audio track switching. You can choose the audio track you want to listen. Works with avi and mkv. And of course with DVDs.
+- Seeking by mouse wheel. You can use your mouse wheel to go forward or backward in the video.
+- Video equalizer, allows you to adjust the brightness, contrast, hue, saturation and gamma of the video image.
+- Multiple speed playback. You can play at 2X, 4X... and even in slow motion.
+- Filters. Several filters are available: deinterlace, postprocessing, denoise... and even a karaoke filter (voice removal).
+- Audio and subtitles delay adjustment. Allows you to sync audio and subtitles.
+- Advanced options, such as selecting a demuxer or video and audio codecs.
+- Playlist. Allows you to enqueue several files to be played one after each other. Autorepeat and shuffle supported too.
+- Preferences dialog. You can easily configure every option of SMPlayer by using a nice preferences dialog.
+- Possibility to search automatically for subtitles in opensubtitles.org.
+- Translations: currently SMPlayer is translated into more than 20 languages.
+- It's multiplatform. Binaries available for Windows and Linux.
+
 ![smplayer screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/screenshot.jpg)
     </description>
     <projectUrl>http://www.smplayer.eu</projectUrl>
-    <tags>admin video mp3 audio media player multimedia</tags>
+    <tags>admin video foss cross-platform mp3 audio media player multimedia</tags>
     <copyright>Ricardo Villalba</copyright>
     <licenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/icon.png</iconUrl>
     <dependencies>
-      <dependency id="mm-choco.extension" version="0.0.3" />
+        <dependency id="chocolatey-core.extension" version="1.0" />
+        <dependency id="chocolatey-fosshub.extension" version="0.4.0" />
     </dependencies>
     <releaseNotes>http://smplayer.sourceforge.net/en/changes</releaseNotes>
     <docsUrl>http://smplayer.sourceforge.net/en/first-steps</docsUrl>

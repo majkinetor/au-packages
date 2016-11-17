@@ -5,10 +5,13 @@ $releases = 'http://smplayer.sourceforge.net/en/downloads'
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            "(^[$]url32\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
-            "(^[$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
-            "(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
-            "(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+            "(?i)(^\s*checksum\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum32)'"
+            "(?i)(^\s*checksum64\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum64)'"
+            "(?i)(^\s*packageName\s*=\s*)('.*')"  = "`$1'$($Latest.PackageName)'"
+            "(?i)(^\s*fileType\s*=\s*)('.*')"     = "`$1'$($Latest.FileType)'"
+
+            "(^[$]url32\s*=\s*Get-UrlFromFosshub\s*)('.*')" = "`$1'$($Latest.URL32)'"
+            "(^[$]url64\s*=\s*Get-UrlFromFosshub\s*)('.*')" = "`$1'$($Latest.URL64)'"
         }
     }
 }
