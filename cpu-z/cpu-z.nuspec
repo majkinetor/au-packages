@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>cpu-z</id>
     <title>CPU-Z</title>
-    <version>1.77.20160914</version>
+    <version>1.78</version>
     <authors>CPUID</authors>
     <owners>Miodrag Milić</owners>
     <summary>System information software</summary>
@@ -26,7 +26,7 @@
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z.install/icon.png</iconUrl>
     <docsUrl>http://www.cpuid.com/softwares/cpu-z.html#install</docsUrl>
     <dependencies>
-        <dependency id="cpu-z.install" version="1.77.20160914" />
+        <dependency id="cpu-z.install" version="1.78" />
     </dependencies>
     <releaseNotes>http://www.cpuid.com/softwares/cpu-z.html#version-history</releaseNotes>
     <bugTrackerUrl>http://www.cpuid.com/bug-report.html</bugTrackerUrl>

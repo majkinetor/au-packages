@@ -1,9 +1,9 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'cpu-z.install'
-$url32       = 'http://download.cpuid.com/cpu-z/cpu-z_1.77-en.exe'
+$url32       = 'http://download.cpuid.com/cpu-z/cpu-z_1.78-en.exe'
 $url64       = $url32
-$checksum32  = '418b0916726e31c8e3aa598ceb1f0549ed6261609e19018297ec1c38ca0fdeb8'
+$checksum32  = '2377cad64d919fff7d334db51e23f79d88251ddefe6290038aa27add0c3f3203'
 $checksum64  = $checksum32
 
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
