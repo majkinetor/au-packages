@@ -1,10 +1,10 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'wkhtmltopdf'
-$url32       = 'http://download.gna.org/wkhtmltopdf/0.12/0.12.3.2/wkhtmltox-0.12.3.2_msvc2013-win32.exe'
-$url64       = 'http://download.gna.org/wkhtmltopdf/0.12/0.12.3.2/wkhtmltox-0.12.3.2_msvc2013-win64.exe'
-$checksum32  = 'F75F1C58470BE5FC71BABDF9E14C9DD9E801F7549354F7E1CF4AB1FA7BD5D962'
-$checksum64  = 'E7DF45C7FF3B703C5938B66EA3DC0BD951C8E4ED07285E16FBD609E1DB431FED'
+$url32       = 'http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_msvc2015-win32.exe'
+$url64       = 'http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_msvc2015-win64.exe'
+$checksum32  = '6883d1456201bc9d421cb7dd32a99458be3d56631ea4f292e51b3c1aecbe2723'
+$checksum64  = '14a5996adc77dc606944dbc0dc682bff104cd38cc1bec19253444cb87f259797'
 
 $packageArgs = @{
   packageName            = $packageName
