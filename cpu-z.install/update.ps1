@@ -28,7 +28,7 @@ function global:au_GetLatest {
     $remote_checksum  = Get-RemoteChecksum $url
     if ($current_checksum -ne $remote_checksum) {
         Write-Host 'Remote checksum is different then the current one, forcing update'
-        $old_force = $global:au_force
+        $global:au_old_force = $global:au_force
         $global:au_force = $true
     }
 
@@ -40,5 +40,5 @@ function global:au_GetLatest {
 
 if ($MyInvocation.InvocationName -ne '.') { # run the update only if script is not sourced
     update -ChecksumFor 32
-    $global:au_force = $old_force
+    if ($global:au_old_force -is [bool]) { $global:au_force = $global:au_old_force }
 }
