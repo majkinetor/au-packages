@@ -1,8 +1,8 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'plantuml'
-$url         = 'https://sourceforge.net/projects/plantuml/files/plantuml.8050.jar/download'
-$checksum    = 'e356f8c18056e4ea6e5f7ba1f9553c80fdcb9342d50647151e13ab45515731bc'
+$url         = 'https://sourceforge.net/projects/plantuml/files/plantuml.8051.jar/download'
+$checksum    = 'f19125cdbda10eea63c94f12b87069448161fff205d4310a688402a08ec58e7f'
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
 $tmpPath     = "$Env:TMP\chocolatey\$packagename"
 $cmdPath     = join-path $env:ChocolateyInstall bin\plantuml.cmd
