@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>smplayer</id>
     <title>SMPlayer</title>
-    <version>16.11.0</version>
+    <version>16.11.0.20161203</version>
     <authors>Ricardo Villalba</authors>
     <owners>Miodrag Milić</owners>
     <summary>SMPlayer is a free media player for Windows and Linux</summary>
@@ -35,14 +35,13 @@ SMPlayer is a graphical user interface (GUI) for the award-winning MPlayer, whic
 ![smplayer screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/screenshot.jpg)
     </description>
     <projectUrl>http://www.smplayer.eu</projectUrl>
-    <tags>admin video foss cross-platform mp3 audio media player multimedia</tags>
+    <tags>admin foss cross-platform mp3 audio video media player multimedia</tags>
     <copyright>Ricardo Villalba</copyright>
     <licenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/icon.png</iconUrl>
     <dependencies>
-        <dependency id="chocolatey-core.extension" version="1.0" />
-        <dependency id="chocolatey-fosshub.extension" version="0.4.0" />
+        <dependency id="chocolatey-core.extension" version="1.0.1" />
     </dependencies>
     <releaseNotes>http://smplayer.sourceforge.net/en/changes</releaseNotes>
     <docsUrl>http://smplayer.sourceforge.net/en/first-steps</docsUrl>
