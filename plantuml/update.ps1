@@ -1,9 +1,6 @@
 import-module au
 
 $releases = 'http://plantuml.com/changes.html'
-$ignore   = @(
-    'Unable to connect to the remote server'
-)
 
 function global:au_SearchReplace {
     @{
@@ -29,8 +26,6 @@ function global:au_GetLatest {
 try {
     update -ChecksumFor 64
 } catch {
-    foreach ($err in $ignore) {
-        if ($_ -like "*$err*") { Write-Host 'Ignoring:' $err; exit }
-    }
-    throw $_
+    $ignore = 'Unable to connect to the remote server'
+    if ($_ -match $ignored) { Write-Host $ignore; 'ignore' }  else { throw $_ }
 }
