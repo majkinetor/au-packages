@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsDir      = Split-Path $MyInvocation.MyCommand.Definition
-$installerFile = if ((Get-ProcesorBits 64) -and $env:chocolateyForceX86 -ne 'true') { gi "$toolsDir\*x64.exe" } else { gi "$toolsDir\*win32.exe" }
+$installerFile = if ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') { gi "$toolsDir\*x64.exe" } else { gi "$toolsDir\*win32.exe" }
 
 $packageArgs = @{
   packageName    = 'smplayer'
