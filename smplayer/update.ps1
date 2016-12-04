@@ -21,7 +21,6 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate {
     $toolsPath = "$PSScriptRoot\tools"
 
-
     rm "$toolsPath\*.exe" -force -ea stop
     $client = New-Object System.Net.WebClient
         $fn = $latest.url32 -split '/' | select -Last 1 -Skip 1
