@@ -5,15 +5,35 @@ $releases = 'https://sourceforge.net/projects/smplayer/files/SMPlayer'
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            "(?i)(^\s*url\s*=\s*)('.*')"          = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*url64bit\s*=\s*)('.*')"     = "`$1'$($Latest.URL64)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksum64\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum64)'"
             "(?i)(^\s*packageName\s*=\s*)('.*')"  = "`$1'$($Latest.PackageName)'"
             "(?i)(^\s*softwareName\s*=\s*)('.*')" = "`$1'$($Latest.PackageName)*'"
-            "(?i)(^\s*fileType\s*=\s*)('.*')"     = "`$1'$($Latest.FileType)'"
+        }
+
+        ".\tools\verification.txt" = @{
+          "(?i)(\s+x32:).*"        = "`${1} $($Latest.URL32)"
+          "(?i)(\s+x64:).*"        = "`${1} $($Latest.URL64)"
+          "(?i)(checksum32:).*"    = "`${1} $($Latest.Checksum32)"
+          "(?i)(checksum64:).*"    = "`${1} $($Latest.Checksum64)"
         }
     }
+}
+
+function global:au_BeforeUpdate {
+    $toolsPath = "$PSScriptRoot\tools"
+
+
+    rm "$toolsPath\*.exe" -force -ea stop
+    $client = New-Object System.Net.WebClient
+        $fn = $latest.url32 -split '/' | select -Last 1 -Skip 1
+        Write-Host 'Downloading x32 installer: ' $fn
+        $client.DownloadFile($Latest.Url32, "$toolsPath\$fn")
+        $Latest.Checksum32 = Get-FileHash -Algorithm SHA256 -Path "$toolsPath\$fn" | % Hash
+
+        $fn = $latest.url64 -split '/' | select -Last 1 -Skip 1
+        Write-Host 'Downloading x64 installer: ' $fn
+        $client.DownloadFile($Latest.Url64, "$toolsPath\$fn")
+        $Latest.Checksum64 = Get-FileHash -Algorithm SHA256 -Path "$toolsPath\$fn" | % Hash
+    $client.Dispose()
 }
 
 function global:au_GetLatest {
@@ -24,10 +44,10 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
 
     @{
-        URL32   = $download_page.links | ? href -match '-win32\.exe/download' | % href
-        URL64   = $download_page.links | ? href -match '-x64\.exe/download' | % href
-        Version = $url.innerText
+        URL32    = $download_page.links | ? href -match '-win32\.exe/download' | % href
+        URL64    = $download_page.links | ? href -match '-x64\.exe/download' | % href
+        Version  = $url.innerText
     }
 }
 
-update
+update -ChecksumFor none

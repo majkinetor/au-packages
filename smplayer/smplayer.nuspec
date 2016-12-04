@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>smplayer</id>
     <title>SMPlayer</title>
-    <version>16.11.0.20161203</version>
+    <version>16.11.0.20161204</version>
     <authors>Ricardo Villalba</authors>
     <owners>Miodrag Milić</owners>
     <summary>SMPlayer is a free media player for Windows and Linux</summary>
