@@ -15,7 +15,7 @@ environment:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
   au_version: master
   au_push: true
-  # Use 1 to test all, or N to split testing into N groups
+  # Force test: use 1 to test all, or N to split testing into N groups
   au_test_groups: 1
 
   # Github token to commit pushed packages to repository
@@ -38,6 +38,8 @@ environment:
   # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
   # Optional, leave empty to create anonymous gist
   gist_id: a700c70b8847b29ebb1c918d47ee4eb1
+
+  # Force test: gist id for test results
   gist_id_test: 63cbcd31fb64837dd5e3d994cb4e4f65
 
   # Chocolatey API key - to push updated packages
@@ -48,7 +50,7 @@ init:
 - git config --global user.email "chocolatey@realdimensions.net"
 - git config --global user.name "Chocolatey"
 - git config --global core.safecrlf false
-- cinst chocolatey-core.extension chocolatey-fosshub.extension  #smplayer requires
+- cinst chocolatey-core.extension #smplayer requires
 
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
