@@ -12,6 +12,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>DBeaver is free and open source (GPL 2) universal database tool for developers and database administrators.
 
+## Features
+
 - Usability is the main goal of this project, program UI is carefully designed and implemented.
 - It is free and open-source (GPL).
 - It is multiplatform.
@@ -20,8 +22,6 @@
 - It may handle any external datasource which may or may not have a JDBC driver.
 - There is a set of plugins for certain databases (MySQL, Oracle, DB2, SQL Server, PostgreSQL, Vertica, Informix, MongoDB, Cassandra in version 3.x) and different database management utilities (e.g. ERD).
 - It has a great number of features.
-
-### Other Benefits
 - DBeaver consumes much less memory than other popular similar software (SQuirreL, DBVisualizer)
 - Database metadata is loaded on demand and there is no long-running “metadata caching” procedure at connect time
 - ResultSet viewer (grid) is very fast and consumes very little ammount of memory
@@ -31,14 +31,14 @@
 </description>
     <summary>Free multi-platform database tool for developers, SQL programmers, database administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, MongoDB, etc.</summary>
     <releaseNotes>http://dbeaver.jkiss.org/news</releaseNotes>
-    <tags>utility database UniversalDatabaseManager dbeaver</tags>
+    <tags>admin foss cross-platform database mysql oracle db2 sql-server postgresql nosql mongodb dbeaver</tags>
     <projectSourceUrl>https://github.com/serge-rider/dbeaver</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/dbeaver</packageSourceUrl>
     <docsUrl>http://dbeaver.jkiss.org/docs/</docsUrl>
     <mailingListUrl>http://dbeaver.jkiss.org/forum/index.php</mailingListUrl>
     <bugTrackerUrl>https://github.com/serge-rider/dbeaver/issues</bugTrackerUrl>
     <dependencies>
-        <dependency id="mm-choco.extension" version="0.0.3" />
+        <dependency id="chocolatey-core.extension" version="1.0.1" />
     </dependencies>
   </metadata>
   <files>
