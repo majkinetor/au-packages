@@ -10,8 +10,7 @@
     <description>
 NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed by NirSoft.
 
-NirLauncher Features
---------------------
+## Features
 
 - NirLauncher can be used from USB flash drive without need of any installation.
 - NirLauncher and all the utilities in the package are completely freeware, without any Spyware/Adware/Malware. This package doesn't contain any 3-party software, toolbars, Web browser plugins, or other unwanted surprises. It will not install any software on your system and it will not change your Web browser homepage or other settings on your system.
@@ -22,15 +21,13 @@ NirLauncher Features
 - NirLauncher also allows to add more software packages in additional to the main NirSoft package.
 - NirLauncher allows you generate plugin files for BartPE (Launcher -&gt; Generate BartPE Plugin Files), so you can easily use the utilities of NirSoft from a bootable live windows CD.
 
-Package Parameters
-------------------
+## Package Parameters
 
-- `Sysinternals`
-Add sysinternals tools to the launcher: `choco install nirlauncher --params /Sysinternals`.
+- `Sysinternals` - Add sysinternals tools to the launcher.
 
 </description>
     <projectUrl>http://launcher.nirsoft.net</projectUrl>
-    <tags>utility tools admin nirsoft</tags>
+    <tags>utility tools admin freeware system nirsoft</tags>
     <copyright></copyright>
     <licenseUrl>http://launcher.nirsoft.net</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -39,7 +36,7 @@ Add sysinternals tools to the launcher: `choco install nirlauncher --params /Sys
     <packageSourceUrl>https://github.com/majkinetor/au-packages/tree/master/nirlauncher</packageSourceUrl>
     <dependencies>
       <dependency id="chocolatey" version="0.9.10" />
-      <dependency id="mm-choco.extension" version="0.0.3" />
+      <dependency id="chocolatey-core.extension" version="1.0.1" />
     </dependencies>
   </metadata>
   <files>
