@@ -1,32 +1,26 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mm-choco.extension</id>
+    <id>[Deprecated] mm-choco.extension</id>
     <title>Chocolatey Extensions by majkinetor</title>
     <version>0.0.4</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <summary>Helper Functions packed as Chocolatey extension</summary>
-    <description>Package contains a helper functions installed as Chocolatey extensions</description>
+    <description>Package contains a helper functions installed as Chocolatey extensions.
+
+    **NOTE**: Extension is now completelly integrated into chocolatey-core.extension.
+    </description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension</projectUrl>
     <projectSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension</projectSourceUrl>
     <bugTrackerUrl>https://github.com/majkinetor/chocolatey/issues</bugTrackerUrl>
     <tags>choco-extension</tags>
     <docsUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension/README.md</docsUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.0.2" />
+    </dependencies>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>
-- 0.0.4
-  - Get-PackageParameters
-  - Register-Application new parameter `Name`
-- 0.0.3
-  - Bugfix Get-AppInstallLocation on x32 systems
-  - Register-Application added
-- 0.0.2
-  - Now works with bad registry keys.
-- 0.0.1
-  - Get-AppInstallLocation implementation.
-    </releaseNotes>
   </metadata>
 <files>
     <file src="extensions\**" target="extensions" />
