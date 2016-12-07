@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>hfs</id>
+    <title>Http File Server</title>
+    <version>2.3.9</version>
+    <authors>Massimo Melina</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>HTTP server designed for file transfer</summary>
+    <description>
+You can use HFS (HTTP File Server) to send and receive files. It's different from classic file sharing because it uses web technology to be more compatible with today's Internet. It also differs from classic web servers because it's very easy to use and runs "right out-of-the box".
+
+Access your remote files, over the network.
+It has been successfully tested with Wine under Linux.
+
+## Features
+
+- Download and upload
+- Virtual file system
+- Highly customizable
+- HTML template
+- Bandwidth control
+- Easy/Expert mode
+- Log
+- Full control over connections
+- Accounts
+- Dynamic DNS updater
+    </description>
+    <projectUrl>http://www.rejetto.com/hfs</projectUrl>
+    <tags>http web-server file-sharing foss</tags>
+    <copyright>2012-2016 Massimo Melina</copyright>
+    <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/hfs/icon.gif</iconUrl>
+    <releaseNotes>http://www.rejetto.com/hfs/?f=wn</releaseNotes>
+    <projectSourceUrl>https://sourceforge.net/projects/hfs/files/HFS/2.3i/hfs2.3i.src.zip/download</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/hfs</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
