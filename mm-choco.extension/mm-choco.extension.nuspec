@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>[Deprecated] mm-choco.extension</id>
-    <title>Chocolatey Extensions by majkinetor</title>
-    <version>0.0.4</version>
+    <id>mm-choco.extension</id>
+    <title>[Deprecated] Chocolatey Extensions by majkinetor</title>
+    <version>0.0.4.1</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
@@ -13,10 +13,7 @@
     **NOTE**: Extension is now completelly integrated into chocolatey-core.extension.
     </description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension</projectUrl>
-    <projectSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension</projectSourceUrl>
-    <bugTrackerUrl>https://github.com/majkinetor/chocolatey/issues</bugTrackerUrl>
     <tags>choco-extension</tags>
-    <docsUrl>https://github.com/majkinetor/chocolatey/tree/master/mm-choco.extension/README.md</docsUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.0.2" />
     </dependencies>

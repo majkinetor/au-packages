@@ -17,15 +17,15 @@
     <licenseUrl></licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon.png</iconUrl>
-    <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.0" />
-    </dependencies>
     <releaseNotes></releaseNotes>
     <docsUrl></docsUrl>
     <mailingListUrl></mailingListUrl>
     <bugTrackerUrl></bugTrackerUrl>
     <projectSourceUrl></projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.0.2" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
