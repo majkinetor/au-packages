@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>plantuml</id>
-    <version>1.8051</version>
+    <version>1.8052</version>
     <title>PlantUML</title>
     <authors>Arnaud Roques</authors>
     <owners>Yoshimov, Miodrag Milić</owners>
