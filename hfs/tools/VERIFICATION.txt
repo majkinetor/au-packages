@@ -20,3 +20,6 @@ Package can be verified like this:
 Using AU:
 
    Get-RemoteChecksum http://www.rejetto.com/hfs/download
+
+License obtained from:
+   http://www.rejetto.com/sw/license.txt
