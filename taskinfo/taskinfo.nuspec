@@ -25,7 +25,7 @@ TaskInfo is a poweful utility that combines and improves features of Task Manage
     <docsUrl>http://www.iarsn.com/taskinfo/help/taskinfo_help.htm</docsUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/taskinfo</packageSourceUrl>
     <dependencies>
-      <dependency id="mm-choco.extension" version="0.0.3" />
+      <dependency id="chocolatey-core.extension" version="1.0.4" />
     </dependencies>
   </metadata>
   <files>

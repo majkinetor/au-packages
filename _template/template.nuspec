@@ -24,7 +24,7 @@
     <projectSourceUrl></projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/</packageSourceUrl>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.0.2" />
+      <dependency id="chocolatey-core.extension" version="1.0.4" />
     </dependencies>
   </metadata>
   <files>
