@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>pandoc</id>
     <title>Pandoc</title>
-    <version>1.19.1.20161212</version>
+    <version>1.19.1.20161220</version>
     <authors>John MacFarlane</authors>
-    <owners>Miodrag Milić</owners>
+    <owners>Miodrag MiliÄ‡</owners>
     <summary>A universal document converter</summary>
     <description>
 If you need to convert files from one markup format into another, pandoc is your swiss-army knife. Pandoc can convert documents in markdown, reStructuredText, textile, HTML, DocBook, LaTeX and many others.
@@ -31,7 +31,7 @@ If you need to convert files from one markup format into another, pandoc is your
 </description>
     <projectUrl>http://pandoc.org/</projectUrl>
     <tags>admin text markdown latex pdf docx restructuredText textile html docbook slides foss cross-platform cli opendocument</tags>
-    <copyright>© 2006-2015 John MacFarlane</copyright>
+    <copyright>Â© 2006-2015 John MacFarlane</copyright>
     <licenseUrl>https://github.com/jgm/pandoc/blob/master/COPYRIGHT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>https://github.com/jgm/pandoc/releases/tag/1.19.1</releaseNotes>
