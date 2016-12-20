@@ -9,7 +9,7 @@ function global:au_SearchReplace {
             "(?i)(^\s*softwareName\s*=\s*)('.*')" = "`$1'$($Latest.PackageName)*'"
         }
 
-        ".\tools\verification.txt" = @{
+        ".\legal\verification.txt" = @{
           "(?i)(\s+x32:).*"        = "`${1} $($Latest.URL32)"
           "(?i)(\s+x64:).*"        = "`${1} $($Latest.URL64)"
           "(?i)(checksum32:).*"    = "`${1} $($Latest.Checksum32)"
@@ -19,20 +19,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate {
-    $toolsPath = "$PSScriptRoot\tools"
-
-    rm "$toolsPath\*.exe" -force -ea stop
-    $client = New-Object System.Net.WebClient
-        $fn = $latest.url32 -split '/' | select -Last 1 -Skip 1
-        Write-Host 'Downloading x32 installer: ' $fn
-        $client.DownloadFile($Latest.Url32, "$toolsPath\$fn")
-        $Latest.Checksum32 = Get-FileHash -Algorithm SHA256 -Path "$toolsPath\$fn" | % Hash
-
-        $fn = $latest.url64 -split '/' | select -Last 1 -Skip 1
-        Write-Host 'Downloading x64 installer: ' $fn
-        $client.DownloadFile($Latest.Url64, "$toolsPath\$fn")
-        $Latest.Checksum64 = Get-FileHash -Algorithm SHA256 -Path "$toolsPath\$fn" | % Hash
-    $client.Dispose()
+    Get-RemoteFiles -Purge -FileNameSkip 1
 }
 
 function global:au_GetLatest {
@@ -46,9 +33,9 @@ function global:au_GetLatest {
         URL32    = $download_page.links | ? href -match '-win32\.exe/download' | % href
         URL64    = $download_page.links | ? href -match '-x64\.exe/download' | % href
         Version  = $url.innerText
+        FileType = 'exe'
     }
 }
-
 
 try {
     update -ChecksumFor none
