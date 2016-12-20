@@ -5,21 +5,28 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>taskinfo</id>
     <title>Taskinfo</title>
-    <version>10.0.0.3361678</version>
+    <version>10.0.0.336161220</version>
     <authors>Igor Arsenin</authors>
     <owners>Miodrag Milić</owners>
     <summary>TaskInfo is a poweful utility that combines and improves features of Task Manager and System Information tools</summary>
     <description>
 TaskInfo is a poweful utility that combines and improves features of Task Manager and System Information tools. It visually monitors (in text and graphical forms) different types of system information in any Windows system in real time.
 
-**NOTE**: Taskinfo is free for non-commercial use. To activate it, in registration menu click the "Free for personal non-commercial use or use parameter /Register: `choco install taskinfo /packageParameters /Register`
+## Package parameters
+
+- `Register` - register for non-commercial use
+
+## Notes
+
+- Taskinfo is free for non-commercial use. To activate it, in registration menu click the "Free for personal non-commercial use or use parameter `Register`.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/taskinfo/screenshot.gif)
 </description>
     <projectUrl>http://www.iarsn.com/taskinfo.html</projectUrl>
-    <tags>admin process system tasks tools</tags>
+    <tags>admin process system tasks tools freeware</tags>
     <copyright>Igor Arsenin</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://www.iarsn.com/iarsn_license.html</licenseUrl>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon.gif</iconUrl>
     <releaseNotes>http://www.iarsn.com/tihistory.html</releaseNotes>
     <docsUrl>http://www.iarsn.com/taskinfo/help/taskinfo_help.htm</docsUrl>
