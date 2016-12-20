@@ -2,7 +2,10 @@ $ErrorActionPreference = 'Stop'
 
 $fileType      = ''
 $toolsDir      = Split-Path $MyInvocation.MyCommand.Definition
-$embedded_path = gi "$toolsDir\*.$fileType"
+#$embedded_path = gi "$toolsDir\*.$fileType"
+#$embedded_path = if ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') {
+         #Write-Host "Installing 64 bit version"; gi "$toolsDir\*_x64.exe"
+#} else { Write-Host "Installing 32 bit version"; gi "$toolsDir\*_x32.exe" }
 
 $packageArgs = @{
   packageName    = ''
