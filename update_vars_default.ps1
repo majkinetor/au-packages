@@ -9,6 +9,6 @@ $Env:mail_enablessl   = 'true'
 
 $Env:api_key          = ''          #Chocolatey api key
 $Env:gist_id          = ''          #Specify your gist id or leave empty for anonymous gist
-$Env:github_user_repo = ''          #{github_user>/{repo}
+$Env:github_user_repo = ''          #{github_user}/{repo}
 $Env:github_api_key   = ''          #Github personal access token
 $Env:au_Push          = 'false'     #Push to chocolatey
