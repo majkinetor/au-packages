@@ -51,5 +51,6 @@ SMPlayer is a graphical user interface (GUI) for the award-winning MPlayer, whic
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
