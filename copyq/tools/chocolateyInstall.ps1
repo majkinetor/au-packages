@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'copyq'
 $running     = if (ps $packageName -ea 0) { $true } else { $false }
@@ -6,8 +6,8 @@ $running     = if (ps $packageName -ea 0) { $true } else { $false }
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  url            = 'https://github.com/hluk/CopyQ/releases/download/v2.8.1/copyq-v2.8.1-setup.exe'
-  checksum       = '24c236bf2cb954a1a944b6a24612badef15621b49a07826b21e8e12c92027806'
+  url            = 'https://github.com/hluk/CopyQ/releases/download/v2.8.2/copyq-v2.8.2-setup.exe'
+  checksum       = '3b188645530ce6263150b280dfabcdca2591de105cebcc16db289f2695c83c53'
   checksumType   = 'sha256'
   silentArgs     = '/VERYSILENT'
   validExitCodes = @(0)
