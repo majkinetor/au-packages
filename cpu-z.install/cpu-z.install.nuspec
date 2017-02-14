@@ -27,7 +27,7 @@
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z.install/icon.png</iconUrl>
     <docsUrl>http://www.cpuid.com/softwares/cpu-z.html#install</docsUrl>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.0.4" />
+      <dependency id="chocolatey-core.extension" version="1.0.7" />
     </dependencies>
     <releaseNotes>http://www.cpuid.com/softwares/cpu-z.html#version-history</releaseNotes>
     <bugTrackerUrl>http://www.cpuid.com/bug-report.html</bugTrackerUrl>
