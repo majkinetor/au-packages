@@ -48,7 +48,7 @@ views and tooltips, and also to help with copying songs to/from devices.
     <licenseUrl>https://github.com/CDrummond/cantata/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://rawgit.com/majkinetor/au-packages/master/cantata/icon.png</iconUrl>
-    <releaseNotes>https://github.com/jgm/pandoc/releases/tag/v2.0.1</releaseNotes>
+    <releaseNotes>https://github.com/CDrummond/cantata/releases/tag/v2.0.1</releaseNotes>
     <docsUrl>https://github.com/CDrummond/cantata/blob/master/README</docsUrl>
     <bugTrackerUrl>https://github.com/CDrummond/cantata/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/CDrummond/cantata</projectSourceUrl>
