@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName         = ''
-$softwareNamePattern = ''
+$packageName         = 'cantata'
+$softwareNamePattern = 'Cantata'
 
 
 [array] $key = Get-UninstallRegistryKey $softwareNamePattern
