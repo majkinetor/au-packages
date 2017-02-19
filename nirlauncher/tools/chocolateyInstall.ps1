@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName   = 'nirlauncher'
-$url32         = 'http://download.nirsoft.net/nirsoft_package_1.19.116.zip'
-$checksum32    = 'c442a12591d5577e745d42ace4cf5d3b3a9101a56ac89f9d95e0f72b72587e23'
+$url32         = 'http://download.nirsoft.net/nirsoft_package_1.19.117.zip'
+$checksum32    = '6917ffa1251664e696488a8f1ed5b58e82d170618c0e2ba578ac58313f733389'
 $download_path = "$env:TEMP\chocolatey\$packageName\$Env:ChocolateyPackageVersion\nirlauncher.zip"
 $install_path  = "$(Get-ToolsLocation)\NirLauncher"
 
