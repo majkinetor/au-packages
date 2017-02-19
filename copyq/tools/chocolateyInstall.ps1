@@ -1,25 +1,30 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'copyq'
 $running     = if (ps $packageName -ea 0) { $true } else { $false }
 
+$fileType      = ''
+$toolsDir      = Split-Path $MyInvocation.MyCommand.Definition
+$embedded_path = gi "$toolsDir\*.$fileType"
+
 $packageArgs = @{
   packageName    = $packageName
-  fileType       = 'exe'
-  url            = 'https://github.com/hluk/CopyQ/releases/download/v2.9.0/copyq-v2.9.0-setup.exe'
-  checksum       = '56f3e783de34e411e6ec010e2e6c03b4ad1adc1fbf5d7f25ffc6f335fee6dd70'
-  checksumType   = 'sha256'
+  fileType       = $fileType
+  file           = $embedded_path
   silentArgs     = '/VERYSILENT'
   validExitCodes = @(0)
   softwareName   = $packageName
 }
-Install-ChocolateyPackage @packageArgs
+Install-ChocolateyInstallPackage @packageArgs
+rm $embedded_path -ea 0
 
-$installLocation = Get-AppInstallLocation $packageArgs.softwareName
-if ($installLocation) { Write-Host "$packageName installed to '$installLocation'" }
-else { Write-Warning "Can't find $PackageName install location" }
+$packageName = $packageArgs.packageName
+$installLocation = Get-AppInstallLocation $packageName
+if (!$installLocation)  { Write-Warning "Can't find $packageName install location"; return }
+Write-Host "$packageName installed to '$installLocation'"
 
-if ($installLocation -and $running) {
-    Write-Host "CopyQ was running before update, starting it up again"
-    start "$installLocation\copyq.exe"
-}
+Register-Application "$installLocation\$packageName.exe"
+Write-Host "$packageName registered as $packageName"
+
+Write-Host "CopyQ was running before update, starting it up again"
+start "$installLocation\$packageName.exe"

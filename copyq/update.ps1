@@ -3,18 +3,26 @@ import-module au
 $releases = 'https://github.com/hluk/CopyQ/releases'
 
 function global:au_SearchReplace {
-    @{
+   @{
         ".\tools\chocolateyInstall.ps1" = @{
-            "(?i)(^\s*url\s*=\s*)('.*')"          = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^[$]packageName\s*=\s*)('.*')"  = "`$1'$($Latest.PackageName)'"
-            "(?i)(^\s*fileType\s*=\s*)('.*')"     = "`$1'$($Latest.FileType)'"
+            "(?i)(^\s*`$packageName\s*=\s*)('.*')"= "`$1'$($Latest.PackageName)'"
+            "(?i)(^\s*`$fileType\s*=\s*)('.*')"   = "`$1'$($Latest.FileType)'"
         }
 
         "$($Latest.PackageName).nuspec" = @{
             "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
         }
+
+        ".\legal\VERIFICATION.txt" = @{
+          "(?i)(\s+x32:).*"            = "`${1} $($Latest.URL32)"
+          "(?i)(checksum32:).*"        = "`${1} $($Latest.Checksum32)"
+          "(?i)(Get-RemoteChecksum).*" = "`${1} $($Latest.URL32)"
+        }
     }
+}
+
+function global:au_BeforeUpdate {
+    Get-RemoteFiles -Purge
 }
 
 function global:au_GetLatest {
@@ -33,4 +41,4 @@ function global:au_GetLatest {
     }
 }
 
-update -ChecksumFor 32
+update -ChecksumFor none
