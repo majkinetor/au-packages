@@ -33,7 +33,7 @@ function global:au_GetLatest {
     @{
         URL32        = 'https://github.com' + $url
         Version      = $version
-        ReleaseNotes = "https://github.com/jgm/pandoc/releases/tag/v${version}"
+        ReleaseNotes = "https://github.com/CDrummond/cantata/releases/tag/v${version}"
     }
 }
 
