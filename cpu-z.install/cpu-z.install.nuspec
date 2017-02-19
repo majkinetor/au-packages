@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>cpu-z.install</id>
     <title>CPU-Z (Install)</title>
-    <version>1.78.0.20161124</version>
+    <version>1.78.0.20170218</version>
     <authors>CPUID</authors>
     <owners>Miodrag Milić</owners>
     <summary>System information software</summary>
@@ -27,7 +27,7 @@
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z.install/icon.png</iconUrl>
     <docsUrl>http://www.cpuid.com/softwares/cpu-z.html#install</docsUrl>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.0.4" />
+      <dependency id="chocolatey-core.extension" version="1.0.7" />
     </dependencies>
     <releaseNotes>http://www.cpuid.com/softwares/cpu-z.html#version-history</releaseNotes>
     <bugTrackerUrl>http://www.cpuid.com/bug-report.html</bugTrackerUrl>
