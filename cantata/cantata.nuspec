@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€śÎ©â€ť doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>cantata</id>
+    <title>Cantata</title>
+    <version>2.0.1</version>
+    <authors>Craig Drummond</authors>
+    <owners>Miodrag MiliÄ‡</owners>
+    <summary>Cantata is a graphical client for music player daemon (mpd)</summary>
+    <description>
+Cantata is a graphical client for MPD. It contains the following features:
+
+Cantata started off as a fork of QtMPC, mainly to provide better KDE integration - by using KDE libraries/classes wherever possible. However, the code (and user interface) is now *very* different to that of QtMPC, and both KDE and Qt (Linux) builds have the same feature set. Also, as of 1.4.0, by default Cantata is built as a Qt-only application (with no KDE dependencies).
+
+Unlike most other MPD clients, Cantata caches a copy of the MPD music library. This is so that it can create a proper hierarchy of artists and albums (where Cantata will use the AlbumArtist tag if found, otherwise it will fallback to the Artist tag), to provide album counts, tracks counts, etc in the browser
+views and tooltips, and also to help with copying songs to/from devices.
+
+## Features
+
+ 1. Support for Qt4, Qt5, KDE, MacOSX, and Windows.
+ 2. Multiple MPD collections.
+ 3. Highly customisable layout.
+ 4. Songs grouped by album in play queue.
+ 5. Context view to show artist, album, and song information of current track.
+ 6. Simple tag editor.
+ 7. File organizer - use tags to organize files and folders.
+ 8. Ability to calculate ReplyGain tags. (Linux only, and if relevant libraries installed)
+ 9. Dynamic playlists.
+10. Online services; Jamendo, Magnatune, SoundCloud, and Podcasts.
+11. Radio stream support - with the ability to search for streams via TuneIn, ShoutCast, or Dirble.
+12. USB-Mass-Storage and MTP device support. (Linux only, and if relevant libraries installed)
+13. Audio CD ripping and playback. (Linux only, and if relevant libraries installed)
+14. Playback of non-MPD songs - via simple in-built HTTP server if connected to MPD via a standard socket, otherwise filepath is sent to MPD.
+15. MPRISv2 DBUS interface.
+16. Support for KDE global shortcuts (KDE builds), GNOME media keys (Linux only), and standard media keys (via Qxt)
+17. Ubuntu/ambiance theme integration - including dragging of window via toolbar.
+18. Basic support for touch-style interface (views are made 'flickable')
+19. Scrobbling.
+20. Ratings support.
+    </description>
+    <projectUrl>https://github.com/CDrummond/cantata</projectUrl>
+    <tags>foss cross-platform audio mp3 radio media player multimedia mpd</tags>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/CDrummond/cantata/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/cantata/icon.png</iconUrl>
+    <releaseNotes>https://github.com/jgm/pandoc/releases/tag/v2.0.1</releaseNotes>
+    <docsUrl>https://github.com/CDrummond/cantata/blob/master/README</docsUrl>
+    <bugTrackerUrl>https://github.com/CDrummond/cantata/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/CDrummond/cantata</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/cantata</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.0.7" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
