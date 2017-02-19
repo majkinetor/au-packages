@@ -1,7 +1,5 @@
 # ![icon](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon.png) CopyQ
 
----
-
 CopyQ monitors system clipboard and saves its content in customized tabs. Saved clipboard can be later copied and pasted directly into any application.
 
 Items can be:

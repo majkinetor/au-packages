@@ -1,9 +1,9 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'copyq'
 $running     = if (ps $packageName -ea 0) { $true } else { $false }
 
-$fileType      = ''
+$fileType      = 'exe'
 $toolsDir      = Split-Path $MyInvocation.MyCommand.Definition
 $embedded_path = gi "$toolsDir\*.$fileType"
 
