@@ -5,9 +5,9 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>cantata</id>
     <title>Cantata</title>
-    <version>2.0.1</version>
+    <version>0.0</version>
     <authors>Craig Drummond</authors>
-    <owners>Miodrag MiliÄ‡</owners>
+    <owners>Miodrag Milic</owners>
     <summary>Cantata is a graphical client for music player daemon (mpd)</summary>
     <description>
 Cantata is a graphical client for MPD. It contains the following features:
@@ -39,13 +39,15 @@ views and tooltips, and also to help with copying songs to/from devices.
 18. Basic support for touch-style interface (views are made 'flickable')
 19. Scrobbling.
 20. Ratings support.
+
+![screenshot](https://rawgit.com/majkinetor/au-packages/master/cantata/screenshot.png)
     </description>
     <projectUrl>https://github.com/CDrummond/cantata</projectUrl>
     <tags>foss cross-platform audio mp3 radio media player multimedia mpd</tags>
-    <copyright></copyright>
+    <copyright>Craig Drummond</copyright>
     <licenseUrl>https://github.com/CDrummond/cantata/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/cantata/icon.png</iconUrl>
+    <iconUrl>https://rawgit.com/majkinetor/au-packages/master/cantata/icon.png</iconUrl>
     <releaseNotes>https://github.com/jgm/pandoc/releases/tag/v2.0.1</releaseNotes>
     <docsUrl>https://github.com/CDrummond/cantata/blob/master/README</docsUrl>
     <bugTrackerUrl>https://github.com/CDrummond/cantata/issues</bugTrackerUrl>

@@ -8,7 +8,6 @@ Package can be verified like this:
 1. Go to
 
    x32: https://github.com/CDrummond/cantata/releases/download/v2.0.1/Cantata-2.0.1-Setup.exe
-   x64:
 
    to download the installer.
 
@@ -17,11 +16,7 @@ Package can be verified like this:
    - Use Chocolatey utility 'checksum.exe'
 
    checksum32: F73CCF637CBB63C123A4233C3EEA925E5E208693DD8522FF64904D9B83885F37
-   checksum64:
 
-Using AU:
 
-   Get-RemoteChecksum
-
-File 'license.txt' is obtained from:
-   https://github.com/AutoHotkey/AutoHotkey/blob/26daaddf714135a6fcc730fe250bd1d41a9d3c53/license.txt
+File 'LICENSE' is obtained from:
+    https://github.com/CDrummond/cantata/blob/master/LICENSE
