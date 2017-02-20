@@ -26,4 +26,3 @@ Items can be:
 * Many more features
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
-

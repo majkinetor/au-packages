@@ -1,4 +1,5 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
 $releases    = 'https://github.com/hluk/CopyQ/releases'
 
@@ -21,22 +22,8 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate {
-    function readme2desc() {
-        Write-Host 'Setting README.md to Nuspec description tag'
-        $description = gc $PSScriptRoot\README.md  | select -Skip 2 | Out-String
-
-        $nuspecPath = "$PSScriptRoot\$($Latest.PackageName).nuspec"
-        $nu = gc $nuspecPath -Raw -Encoding UTF8
-        $nu = $nu -replace "(?smi)(\<description\>).*?(\</description\>)", "`${1}$($description)`$2"
-
-        $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False)
-        [System.IO.File]::WriteAllText($NuspecPath, $nu, $Utf8NoBomEncoding)
-    }
-
-    readme2desc
-    Get-RemoteFiles -Purge
-}
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
+function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
