@@ -1,15 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
-    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
-    <id>smplayer</id>
-    <title>SMPlayer</title>
-    <version>17.1.0</version>
-    <authors>Ricardo Villalba</authors>
-    <owners>Miodrag Milić</owners>
-    <summary>SMPlayer is a free media player for Windows and Linux</summary>
-    <description>
+# ![icon](https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/icon.png) [smplayer](https://chocolatey.org/packages/smplayer)
+
 SMPlayer is a free media player for Windows and Linux with **built-in codecs** that can play virtually all video and audio formats. It doesn't need any external codecs. Just install SMPlayer and you'll be able to play all formats without the hassle to find and install codec packs.
 
 One of the most interesting features of SMPlayer: **it remembers the settings of all files you play**. So you start to watch a movie but you have to leave... don't worry, when you open that movie again it will be resumed at the same point you left it, and with the same settings: audio track, subtitles, volume...
@@ -33,24 +23,4 @@ SMPlayer is a graphical user interface (GUI) for the award-winning MPlayer, whic
 - It's multiplatform. Binaries available for Windows and Linux.
 
 ![smplayer screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/screenshot.jpg)
-    </description>
-    <projectUrl>http://www.smplayer.eu</projectUrl>
-    <tags>admin foss cross-platform mp3 audio video media player multimedia</tags>
-    <copyright>Ricardo Villalba</copyright>
-    <licenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/icon.png</iconUrl>
-    <dependencies>
-        <dependency id="chocolatey-core.extension" version="1.0.7" />
-    </dependencies>
-    <releaseNotes>http://smplayer.sourceforge.net/en/changes</releaseNotes>
-    <docsUrl>http://smplayer.sourceforge.net/en/first-steps</docsUrl>
-    <bugTrackerUrl>https://sourceforge.net/p/smplayer/bugs</bugTrackerUrl>
-    <projectSourceUrl>https://www.assembla.com/spaces/smplayer/subversion/source</projectSourceUrl>
-    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/smplayer</packageSourceUrl>
-  </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-    <file src="legal\**" target="legal" />
-  </files>
-</package>
+   
