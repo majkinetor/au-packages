@@ -1,4 +1,6 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
+
 
 $releases = 'http://www.exactaudiocopy.de/en/index.php/weitere-seiten/download-from-alternative-servers-2'
 
@@ -10,6 +12,8 @@ function global:au_SearchReplace {
         }
     }
 }
+
+function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing

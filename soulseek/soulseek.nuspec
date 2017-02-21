@@ -15,7 +15,7 @@ Soulseek is an ad-free, spyware free, just plain free file sharing network for W
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/soulseek/screenshot.png)
 </description>
     <projectUrl>http://www.soulseekqt.net</projectUrl>
-    <tags>admin share multimedia music audio video music mp3 x-platform</tags>
+    <tags>admin share multimedia music audio video music mp3 freeware cross-platform</tags>
     <copyright>Freeware</copyright>
     <!--<licenseUrl></licenseUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
