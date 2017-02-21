@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>dbeaver</id>
-    <version>0.0</version>
+    <version>4.0.0</version>
     <title>DBeaver - Community Edition</title>
     <authors>Serge Rieder</authors>
     <owners>Paul Davies, Miodrag Milic</owners>
@@ -10,7 +10,7 @@
     <projectUrl>http://dbeaver.jkiss.org/</projectUrl>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>DBeaver is free and open source (GPL 2) universal database tool for developers and database administrators.
+    <description>DBeaver is free and open source universal database tool for developers and database administrators.
 
 ## Features
 
@@ -29,8 +29,8 @@
 
 ## Notes
 
-- Prior to version 4.0, this package used to be Enterprise Edition. Use dbeaver-ee for enterprise edition.
-- Installer contained in the package includes JRE
+- This package used to be Enterprise Edition prior to version 4.0
+- This installer includes JRE
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/screenshot.png)
 
