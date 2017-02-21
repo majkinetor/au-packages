@@ -14,14 +14,10 @@
     <projectUrl>https://www.oo-software.com/en/shutup10</projectUrl>
     <tags>freeware windows antispy</tags>
     <copyright>O&amp;OSoftware</copyright>
-    <licenseUrl></licenseUrl>
+    <licenseUrl>https://www.oo-software.com/en/shutup10/eula</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/shutup10/icon.png</iconUrl>
     <releaseNotes></releaseNotes>
-    <docsUrl></docsUrl>
-    <mailingListUrl></mailingListUrl>
-    <bugTrackerUrl></bugTrackerUrl>
-    <projectSourceUrl></projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/shutup10</packageSourceUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.0.4" />
