@@ -1,4 +1,6 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
+
 
 $releases = 'https://github.com/dnGrep/dnGrep/releases'
 
@@ -12,6 +14,8 @@ function global:au_SearchReplace {
         }
      }
 }
+
+function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases #could use: 'https://api.github.com/repos/dnGrep/dnGrep/releases/latest' | select -expand Content | ConvertFrom-Json | select name, assets_url

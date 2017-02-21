@@ -30,11 +30,11 @@ Features
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dngrep/screenshot.jpg)
 </description>
     <projectUrl>http://dngrep.github.io</projectUrl>
-    <tags>admin search regex</tags>
+    <tags>admin foss search regex</tags>
     <copyright></copyright>
     <licenseUrl>https://github.com/dnGrep/dnGrep/blob/master/license.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dngrep/icon100.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dngrep/icon.png</iconUrl>
     <dependencies>
       <dependency id="dotnet4.0" version="4.0.30319" />
     </dependencies>
