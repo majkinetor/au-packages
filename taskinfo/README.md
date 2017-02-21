@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/taskinfo/icon.png" width="48" height="48"/> [taskinfo](https://chocolatey.org/packages/taskinfo]
+# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/taskinfo/icon.png" width="48" height="48"/> [taskinfo](https://chocolatey.org/packages/taskinfo)
 
 TaskInfo is a poweful utility that combines and improves features of Task Manager and System Information tools. It visually monitors (in text and graphical forms) different types of system information in any Windows system in real time.
 
