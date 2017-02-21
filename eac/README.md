@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/eac/icon.png" width="48" height="48"/> [eac](https://chocolatey.org/packages/eac]
+# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/eac/icon.png" width="48" height="48"/> [eac](https://chocolatey.org/packages/eac)
 
 Exact Audio Copy is a audio grabber for audio CDs using standard CD and DVD-ROM drives. It works with a technology which reads audio CDs almost perfectly. If there are any errors that can’t be corrected, it will tell you on which time position the (possible) distortion occurred, so you could easily control it with e.g. the media player.
 
