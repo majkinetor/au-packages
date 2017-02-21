@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>shutup10</id>
+    <title>ShutUp10</title>
+    <version>0.0</version>
+    <authors>O&amp;OSoftware</authors>
+    <owners>Miodrag Milić</owners>
+    <summary>Free antispy tool for Windows 10</summary>
+    <description>
+    </description>
+    <projectUrl>https://www.oo-software.com/en/shutup10</projectUrl>
+    <tags>freeware windows antispy</tags>
+    <copyright>O&amp;OSoftware</copyright>
+    <licenseUrl></licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/shutup10/icon.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <docsUrl></docsUrl>
+    <mailingListUrl></mailingListUrl>
+    <bugTrackerUrl></bugTrackerUrl>
+    <projectSourceUrl></projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/shutup10</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.0.4" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
