@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/icon.png" width="48" height="48"/> [plantuml](https://chocolatey.org/packages/plantuml]
+# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/icon.png" width="48" height="48"/> [plantuml](https://chocolatey.org/packages/plantuml)
 
 PlantUML is a component that allows to quickly write:
 
