@@ -14,6 +14,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate {
+    mkdir $PSScriptRoot\tools -ea 0 | out-null
     Get-RemoteFiles -Purge
     mv $PSScriptRoot\tools\*.exe $PSScriptRoot\tools\OOSU10.exe
 }
