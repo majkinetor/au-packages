@@ -1,4 +1,4 @@
-# ![icon](https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/icon.png) [smplayer](https://chocolatey.org/packages/smplayer)
+# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/icon.png" width="48" height="48"/> [smplayer](https://chocolatey.org/packages/smplayer)
 
 SMPlayer is a free media player for Windows and Linux with **built-in codecs** that can play virtually all video and audio formats. It doesn't need any external codecs. Just install SMPlayer and you'll be able to play all formats without the hassle to find and install codec packs.
 

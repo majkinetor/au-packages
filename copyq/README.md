@@ -1,4 +1,4 @@
-# ![icon](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon.png) [CopyQ](https://chocolatey.org/packages/copyq)
+# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon.png" width="48" height="48"/> [CopyQ](https://chocolatey.org/packages/copyq)
 
 CopyQ monitors system clipboard and saves its content in customized tabs. Saved clipboard can be later copied and pasted directly into any application.
 
