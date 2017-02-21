@@ -7,7 +7,7 @@
     <title></title>
     <version>0.0</version>
     <authors></authors>
-    <owners>Miodrag Milić</owners>
+    <owners>Miodrag Milic</owners>
     <summary></summary>
     <description>
     </description>
@@ -16,7 +16,7 @@
     <copyright></copyright>
     <licenseUrl></licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/*****/icon.png</iconUrl>
     <releaseNotes></releaseNotes>
     <docsUrl></docsUrl>
     <mailingListUrl></mailingListUrl>
@@ -24,7 +24,7 @@
     <projectSourceUrl></projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/</packageSourceUrl>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.0.4" />
+      <dependency id="chocolatey-core.extension" version="1.0.7" />
     </dependencies>
   </metadata>
   <files>

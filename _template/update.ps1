@@ -1,4 +1,5 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
 $releases = ''
 
@@ -27,17 +28,9 @@ function global:au_SearchReplace {
         }
     }
 }
-function global:au_BeforeUpdate {
-    rm "$PSScriptRoot\tools\*.zip"
 
-    $client = New-Object System.Net.WebClient
-        $filePath = "$PSScriptRoot\tools\$($Latest.FileName)"
-        $client.DownloadFile($Latest.URL, $filePath)
-    $client.Dispose()
-
-    $Latest.ChecksumType = 'sha256'
-    $Latest.Checksum = Get-FileHash -Algorithm $Latest.ChecksumType -Path $filePath | % Hash
-}
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
+function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing

@@ -14,8 +14,8 @@ function New-Package{
         [string] $Name,
 
         #Type of the package
-        [ValidateSet('Portable', 'Installer')]
-        [string] $Type='Installer',
+        [ValidateSet('Portable', 'Installer', 'EPortable', 'EInstaller')]
+        [string] $Type,
 
         #Github repository in the form username/repository
         [string] $GithubRepository
@@ -39,15 +39,24 @@ function New-Package{
     {
         'Installer' {
             Write-Verbose 'Using installer template'
-            rm "$Name\tools\chocolateyInstallZip.ps1"
             mv "$Name\tools\chocolateyInstallExe.ps1" "$Name\tools\chocolateyInstall.ps1"
         }
         'Portable' {
             Write-Verbose 'Using portable template'
-            rm "$Name\tools\chocolateyInstallExe.ps1"
             mv "$Name\tools\chocolateyInstallZip.ps1" "$Name\tools\chocolateyInstall.ps1"
         }
+        'EInstaller' {
+            Write-Verbose 'Using embedded installer template'
+            mv "$Name\tools\chocolateyInstallEmbeddedExe.ps1" "$Name\tools\chocolateyInstall.ps1"
+        }
+        'EPortable' {
+            Write-Verbose 'Using embedded portable template'
+            mv "$Name\tools\chocolateyInstallEmbeddedZip.ps1" "$Name\tools\chocolateyInstall.ps1"
+        }
+
+        default { throw 'No template given' }
     }
+    rm "$Name\tools\*.ps1" -Exclude chocolateyInstall.ps1, chocolateyUninstall.ps1
 
     Write-Verbose 'Fixing chocolateyInstall.ps1'
     $installer = gc "$Name\tools\chocolateyInstall.ps1"
