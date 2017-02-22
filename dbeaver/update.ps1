@@ -40,7 +40,7 @@ function global:au_GetLatest {
         Version      = $version
         URL32        = $url | ? {$_ -notmatch 'x86_64'} | select -First 1
         URL64        = $url | ? {$_ -match    'x86_64'} | select -First 1
-        ReleaseNotes = 'https://github.com/serge-rider/dbeaver/releases/tag/${version}'
+        ReleaseNotes = "https://github.com/serge-rider/dbeaver/releases/tag/${version}"
     }
 }
 
