@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/serge-rider/dbeaver/releases/download/4.0.0/dbeaver-ce-4.0.0-x86-setup.exe
-   x64: https://github.com/serge-rider/dbeaver/releases/download/4.0.0/dbeaver-ce-4.0.0-x86_64-setup.exe
+   x32: https://github.com/serge-rider/dbeaver/releases/download/4.0.1/dbeaver-ce-4.0.1-x86-setup.exe
+   x64: https://github.com/serge-rider/dbeaver/releases/download/4.0.1/dbeaver-ce-4.0.1-x86_64-setup.exe
 
    to download the installer.
 
@@ -16,12 +16,12 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 0D00F86120EAB93B539B88DC75959FAC0AE3EBB77E9195E3C33A989B35911861
-   checksum64: 2988C1E97B9436A813AAC6A574374898C86C64980A116A37CF7B80EA5A6E3447
+   checksum32: EBDDFD0BE861E8DC3563C7126BC3F02BABDBB796A503CB9B4B0BDFDB4C788651
+   checksum64: CEA93714FFC679A0696FFBDACE663819097D3F34A877CB4A0CA2D0ACBBCE5AF4
 
 Using AU:
 
-   Get-RemoteChecksum https://github.com/serge-rider/dbeaver/releases/download/4.0.0/dbeaver-ce-4.0.0-x86_64-setup.exe
+   Get-RemoteChecksum https://github.com/serge-rider/dbeaver/releases/download/4.0.1/dbeaver-ce-4.0.1-x86_64-setup.exe
 
 File 'LICENSE.md' is obtained from:
     https://raw.githubusercontent.com/serge-rider/dbeaver/devel/LICENSE.md
