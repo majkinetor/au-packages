@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>shutup10</id>
     <title>ShutUp10</title>
-    <version>0.0</version>
+    <version>1.4.1386</version>
     <authors>O&amp;OSoftware</authors>
-    <owners>Miodrag Milić</owners>
+    <owners>Miodrag MiliÄ‡</owners>
     <summary>Free antispy tool for Windows 10</summary>
-    <description>
-    </description>
+    <description>O&amp;O ShutUp10 means you have full control over which comfort functions under Windows 10 you wish to use, and you decide when the passing on of your data goes too far.
+
+Using a very simple interface, you decide how Windows 10 should respect your privacy by deciding which unwanted functions should be deactivated.
+O&amp;O ShutUp10 is entirely free and does not have to be installed – it can be simply run directly and immediately on your PC. And it will not install or download retrospectively unwanted or unnecessary software, like so many other programs do these days!
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/shutup10/screenshot.png)
+
+</description>
     <projectUrl>https://www.oo-software.com/en/shutup10</projectUrl>
     <tags>freeware windows antispy</tags>
     <copyright>O&amp;OSoftware</copyright>
