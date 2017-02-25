@@ -36,9 +36,4 @@ function global:au_GetLatest {
     }
 }
 
-try {
-    update -ChecksumFor none
-} catch {
-    $ignore = "The specified API key does not provide the authority to push packages"
-    if ($_ -match $ignore) { Write-Host $ignore; 'ignore' } else { throw $_ }
-}
+update -ChecksumFor none
