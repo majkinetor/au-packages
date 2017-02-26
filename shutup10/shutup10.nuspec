@@ -25,9 +25,6 @@ O&amp;O ShutUp10 is entirely free and does not have to be installed – it can b
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/shutup10/icon.png</iconUrl>
     <releaseNotes></releaseNotes>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/shutup10</packageSourceUrl>
-    <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.0.4" />
-    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
