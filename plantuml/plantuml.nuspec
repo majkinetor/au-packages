@@ -2,16 +2,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>plantuml</id>
-    <version>1.8055</version>
+    <version>1.8057</version>
     <title>PlantUML</title>
     <authors>Arnaud Roques</authors>
-    <owners>Yoshimov, Miodrag Milić</owners>
+    <owners>Yoshimov, Miodrag MiliÄ‡</owners>
     <licenseUrl>http://www.gnu.org/copyleft/gpl.html</licenseUrl>
     <projectUrl>http://plantuml.com</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>PlantUML is a component that allows to quickly write UML diagrams using simple and intuitive language.</summary>
-    <description>
-PlantUML is a component that allows to quickly write:
+    <description>PlantUML is a component that allows to quickly write:
 
 - [sequence diagram](http://plantuml.com/sequence.html)
 - [use case diagram](http://plantuml.com/usecase.html)
@@ -33,7 +32,7 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml/be
 </description>
     <releaseNotes>http://plantuml.com/changes.html</releaseNotes>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/icon.png</iconUrl>
-    <copyright>© 2009 Arnaud Roques</copyright>
+    <copyright>Â© 2009 Arnaud Roques</copyright>
     <tags>plantuml uml diagram graph</tags>
     <dependencies>
        <dependency id="javaruntime" version="6.0.30" />
