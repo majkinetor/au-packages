@@ -10,5 +10,6 @@ $packageArgs = @{
     FileFullPath = $embedded_path
     Destination  = $toolsDir
 }
+ls $toolsDir\* | ? { $_.PSISContainer } | rm -Recurse -Force #remove older package dirs
 Get-ChocolateyUnzip @packageArgs
 rm $toolsDir\*.zip -ea 0
