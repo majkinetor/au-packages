@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>plantuml</id>
-    <version>1.8057</version>
+    <version>1.8057.0.20170307</version>
     <title>PlantUML</title>
     <authors>Arnaud Roques</authors>
-    <owners>Yoshimov, Miodrag MiliÄ‡</owners>
+    <owners>Yoshimov, Miodrag MiliÃ„â€¡</owners>
     <licenseUrl>http://www.gnu.org/copyleft/gpl.html</licenseUrl>
     <projectUrl>http://plantuml.com</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -32,7 +32,7 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml/be
 </description>
     <releaseNotes>http://plantuml.com/changes.html</releaseNotes>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/icon.png</iconUrl>
-    <copyright>Â© 2009 Arnaud Roques</copyright>
+    <copyright>Ã‚Â© 2009 Arnaud Roques</copyright>
     <tags>plantuml uml diagram graph</tags>
     <dependencies>
        <dependency id="javaruntime" version="6.0.30" />

@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'plantuml'
 $url         = 'https://sourceforge.net/projects/plantuml/files/plantuml.8057.jar/download'
