@@ -1,15 +1,13 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'plantuml'
 $url         = 'https://sourceforge.net/projects/plantuml/files/plantuml.8057.jar/download'
 $checksum    = '5519dea83f6a3890cee67655a51932aa0fe6c50000890e5723255cd05f8e0af7'
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
-$tmpPath     = "$Env:TMP\chocolatey\$packagename"
-$cmdPath     = join-path $env:ChocolateyInstall bin\plantuml.cmd
 
 $params = @{
     PackageName    = $packageName
-    FileFullPath   = "$tmpPath\plantuml.jar"
+    FileFullPath   = "$toolsPath\plantuml.jar"
     Url            = $url
     Url64Bit       = $url
     checksum       = $checksum
@@ -19,7 +17,18 @@ $params = @{
 }
 Get-ChocolateyWebFile @params
 
-cp "$tmpPath\plantuml.jar" $toolsPath
-"start java -jar ""$toolsPath\plantuml.jar"" %*" | out-file $cmdPath -Encoding ascii
+# Create desktop shortcut
+$params = @{
+    ShortcutFilePath = "$Env:USERPROFILE\Desktop\plantuml.lnk"
+    TargetPath       = gcm javaw | % { $_.Source }
+    Arguments        = "-jar ""$toolsPath\plantuml.jar"""
+    IconLocation     = "$toolsPath\plantuml.ico"
+}
+Install-ChocolateyShortcut @params
 
-Write-Host "Plantuml installed in: $toolsPath\plantuml"
+# Create additional shortcut in tools directory for Register-Application
+$params.ShortcutFilePath = "$toolsPath\plantuml.lnk"
+Install-ChocolateyShortcut @params
+
+Register-Application "$toolsPath\plantuml.lnk" plantuml
+Write-Host "$packageName registered as $packageName"
