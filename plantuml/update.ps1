@@ -4,14 +4,17 @@ import-module au
 $releases = 'http://plantuml.com/changes.html'
 
 function global:au_SearchReplace {
-    @{
-        ".\tools\chocolateyInstall.ps1" = @{
-            "(^[$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL)'"
-            "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+   @{
+
+        ".\legal\VERIFICATION.txt" = @{
+          "(?i)(\s+x32:).*"            = "`${1} $($Latest.URL32)"
+          "(?i)(checksum32:).*"        = "`${1} $($Latest.Checksum32)"
+          "(?i)(Get-RemoteChecksum).*" = "`${1} $($Latest.URL32)"
         }
     }
 }
 
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -FileNameBase plantuml -NoSuffix}
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 
@@ -24,11 +27,15 @@ function global:au_GetLatest {
     }
     else { throw "Can't match version 'V\d{4,4}'" }
 
-    return @{ URL = $url; Version = $version }
+    @{
+        URL32    = $url
+        Version  = $version
+        FileType = 'jar'
+    }
 }
 
 try {
-    update -ChecksumFor 64
+    update -NoCheckUrl -ChecksumFor none
 } catch {
     $ignore = 'Unable to connect to the remote server'
     if ($_ -match $ignored) { Write-Host $ignore; 'ignore' }  else { throw $_ }

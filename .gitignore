@@ -6,6 +6,7 @@
 /Update-History.md
 /Update-Force-Test*.md
 .vscode
+*.jar
 *.exe
 *.7z
 *.msi

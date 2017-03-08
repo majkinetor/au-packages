@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>plantuml</id>
-    <version>1.8057.0.20170307</version>
+    <version>1.8057.0.20170308</version>
     <title>PlantUML</title>
     <authors>Arnaud Roques</authors>
-    <owners>Yoshimov, Miodrag MiliÃ„â€¡</owners>
+    <owners>Yoshimov, Miodrag Milic</owners>
     <licenseUrl>http://www.gnu.org/copyleft/gpl.html</licenseUrl>
     <projectUrl>http://plantuml.com</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -32,11 +32,14 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml/be
 </description>
     <releaseNotes>http://plantuml.com/changes.html</releaseNotes>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/icon.png</iconUrl>
-    <copyright>Ã‚Â© 2009 Arnaud Roques</copyright>
+    <copyright> 2009 Arnaud Roques</copyright>
     <tags>plantuml uml diagram graph</tags>
     <dependencies>
        <dependency id="javaruntime" version="6.0.30" />
-       <dependency id="graphviz" />
+       <dependency id="graphviz" version="2.38.0.1" />
+
+       <dependency id="chocolatey" version="0.10.3" />
+       <dependency id="chocolatey-core.extension" version="1.1" />
     </dependencies>
     <projectSourceUrl>https://sourceforge.net/p/plantuml/code/</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/plantuml</packageSourceUrl>
