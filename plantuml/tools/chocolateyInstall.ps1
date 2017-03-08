@@ -5,7 +5,7 @@ $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
 
 Update-SessionEnvironment #java might be installed
 
-$javaw_path = gcm javaw | % { $_.Source }
+$javaw_path = gcm javaw | % { $_.Path }
 if (!$javaw_path) { throw "javaw is not on the PATH" }
 
 # Create desktop shortcut
