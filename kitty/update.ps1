@@ -10,7 +10,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate {
     $ErrorActionPreference = 'stop'
 
-    if (!(gcm youtube-dl)) { cinst youtube-dl  }
+    if (!(gcm curl.exe)) { cinst curl }
     mkdir $PSScriptRoot\tools -ea 0 | Out-Null
 
     $files = gc $PSScriptRoot\legal\VERIFICATION.txt | select -Skip 5
@@ -20,7 +20,7 @@ function global:au_BeforeUpdate {
         Write-Host "Downloading $($file[1]) from $($file[2])"
         $fpath = "$PSScriptRoot\tools\" + $file[1]
         rm $fpath -ea 0
-        youtube-dl $file[2] -o $fpath
+        curl.exe $file[2] -o $fpath
         if (!(Test-Path $fpath)) {throw "Can't download $($file[1]) from $($file[2])" }
     }
 }
