@@ -10,7 +10,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate {
     $ErrorActionPreference = 'stop'
 
-    if (!(gcm youtube-dl)) { cinst youtube-dl | Out-Null }
+    if (!(gcm youtube-dl)) { cinst youtube-dl  }
     mkdir $PSScriptRoot\tools -ea 0 | Out-Null
 
     $files = gc $PSScriptRoot\legal\VERIFICATION.txt | select -Skip 5
