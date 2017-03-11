@@ -41,5 +41,6 @@ DNS Jumper is a portable freeware app which makes changing your DNS settings as 
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>

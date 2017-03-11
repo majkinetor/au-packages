@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>fab</id>
     <title>Firewall App Blocker</title>
-    <version>1.4</version>
+    <version>1.5</version>
     <authors>Velociraptor</authors>
     <owners>Miodrag Milić</owners>
     <summary>Quickly block apps using Windows Firewall</summary>
@@ -23,9 +23,9 @@ Firewall App Blocker makes the process very easy! Simply drag and drop the appli
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/fab/screenshot.png)
 </description>
     <projectUrl>http://www.sordum.org/8125/firewall-app-blocker-fab-v1-4</projectUrl>
-    <tags>network firewall</tags>
+    <tags>network firewall freeware</tags>
     <copyright>Freeware</copyright>
-    <!--<licenseUrl></licenseUrl>-->
+    <licenseUrl>http://www.sordum.org/eula</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/fab/icon.png</iconUrl>
     <!--<dependencies>-->
@@ -39,5 +39,6 @@ Firewall App Blocker makes the process very easy! Simply drag and drop the appli
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
