@@ -20,7 +20,7 @@ function global:au_BeforeUpdate {
         Write-Host "Downloading $($file[1]) from $($file[2])"
         $fpath = "$PSScriptRoot\tools\" + $file[1]
         rm $fpath -ea 0
-        curl.exe $file[2] -o $fpath
+        curl.exe --silent --show-error $file[2] -o $fpath
         if (!(Test-Path $fpath)) {throw "Can't download $($file[1]) from $($file[2])" }
     }
 }
