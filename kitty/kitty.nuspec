@@ -6,7 +6,7 @@
     <title>KiTTY</title>
     <authors>Cyril Dupont</authors>
     <owners>Andre-Patrick Bubel, Miodrag Milic</owners>
-    <licenseUrl>http://svn.9bis.com/websvn/filedetails.php?repname=Sandbox&path=%2Fkitty%2Ftrunk%2FLICENCE.TXT</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/majkinetor/au-packages/master/kitty/legal/LICENCE.TXT</licenseUrl>
     <projectUrl>http://www.9bis.net/kitty/</projectUrl>
     <iconUrl>https://cdn.rawgit.com/majkinetor/au-packages/ea7e5cfe/kitty/kitty.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -23,6 +23,6 @@ Sessions filter, portability, predefined command shortcuts, session launcher, au
     <projectSourceUrl>http://svn.9bis.com/websvn/listing.php?repname=Sandbox</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/au-packages/tree/master/kitty</packageSourceUrl>
     <docsUrl>http://www.9bis.net/kitty/?page=Welcome</docsUrl>
-    <mailingListUrl>http://www.9bis.net/kitty/?action=forum&zone=en</mailingListUrl>
+    <mailingListUrl>http://www.9bis.net/kitty/?action=forum</mailingListUrl>
   </metadata>
 </package>
