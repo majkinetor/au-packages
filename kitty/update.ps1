@@ -33,4 +33,4 @@ function global:au_GetLatest {
     @{ Version = $Matches[1] }
 }
 
-update -ChecksumFor none
+update -NoUrlCheck -ChecksumFor none
