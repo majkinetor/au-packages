@@ -25,4 +25,8 @@ Sessions filter, portability, predefined command shortcuts, session launcher, au
     <docsUrl>http://www.9bis.net/kitty/?page=Welcome</docsUrl>
     <mailingListUrl>http://www.9bis.net/kitty/?action=forum</mailingListUrl>
   </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
 </package>
