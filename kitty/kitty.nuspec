@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>kitty</id>
-    <version>0.67.4.4</version>
+    <version>0.68.0.1</version>
     <title>KiTTY</title>
     <authors>Cyril Dupont</authors>
     <owners>Andre-Patrick Bubel, Miodrag Milic</owners>
@@ -25,4 +25,8 @@ Sessions filter, portability, predefined command shortcuts, session launcher, au
     <docsUrl>http://www.9bis.net/kitty/?page=Welcome</docsUrl>
     <mailingListUrl>http://www.9bis.net/kitty/?action=forum</mailingListUrl>
   </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
 </package>
