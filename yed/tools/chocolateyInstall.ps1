@@ -1,30 +1,42 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'yed'
-$url         = 'https://www.yworks.com/resources/yed/demo/yEd-3.16.2.1.zip'
-$checksum    = '47ac746ad30eb6375b8f45e9382efd0db0b6e3b1eb8f4760625963175b753805'
-$toolsDir    = Split-Path $MyInvocation.MyCommand.Definition
-$cmdPath     = join-path $env:ChocolateyInstall bin\yed.cmd
-
+$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 $packageArgs = @{
-  packageName    = $packageName
-  url            = $url
-  url64bit       = $url
-  checksum       = $checksum
-  checksum64     = $checksum
+  packageName    = 'yed'
+  url            = 'https://www.yworks.com/resources/yed/demo/yEd-3.16.2.1.zip'
+  url64bit       = 'https://www.yworks.com/resources/yed/demo/yEd-3.16.2.1.zip'
+  checksum       = '47ac746ad30eb6375b8f45e9382efd0db0b6e3b1eb8f4760625963175b753805'
+  checksum64     = '47ac746ad30eb6375b8f45e9382efd0db0b6e3b1eb8f4760625963175b753805'
   checksumType   = 'sha256'
   checksumType64 = 'sha256'
   unzipLocation  = Split-Path $MyInvocation.MyCommand.Definition
 }
 Install-ChocolateyZipPackage @packageArgs
+$yedDir = gi $toolsDir\yed-*
+mv $yedDir\* $toolsDir
+rm $yedDir
 
-$yedDir = gi $toolsDir\yed-* | sort creationtime -Descending | select -First 1 -Expand Fullname
-"start javaw -jar ""$yedDir\yed.jar"" %1" | out-file $cmdPath -Encoding ascii
+$cmdPath = "$toolsDir\yed.cmd"
+"start javaw -jar $toolsDir\yed.jar" | Out-File -Encoding ASCII $cmdPath
 
-if ($Env:ChocolateyPackageParameters -eq '/Shortcut') {
+$yedIcon = "$toolsDir\icons\yIcon.ico"
+$pp = Get-PackageParameters
+if ( !$pp.NoShortcut ) {
     Write-Host "Creating desktop shortcut"
-    Install-ChocolateyShortcut -shortcutFilePath "$env:USERPROFILE\Desktop\yed.lnk" -targetPath $cmdPath -IconLocation $yedDir\icons\yicon.ico
+    Install-ChocolateyShortcut -shortcutFilePath "$env:USERPROFILE\Desktop\yed.lnk" -targetPath $cmdPath -IconLocation $yedIcon
 }
 
-Write-Host "Yed installed in: $yedDir"
-Write-Host "yed.cmd added to chocolatey bin directory"
+if ( !$pp.NoStartMenu ) {
+    Write-Host "Creating Start menu shortcut"
+    Install-ChocolateyShortcut -shortcutFilePath "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\yed.lnk" -targetPath $cmdPath -IconLocation $yedIcon
+}
+
+if ( !$pp.NoAssociate ) {
+    ".graphml", ".graphmlz", ".ygf", ".gml", ".xgml", ".tgf", ".ged" | % {
+        "Associating $_"
+        Install-ChocolateyFileAssociation -Extension $_ -Executable $cmdPath
+    }
+}
+
+Register-Application $cmdPath yed
+Write-Host "Application registered as yed"

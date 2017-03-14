@@ -10,13 +10,15 @@ yEd is a powerful desktop application that can be used to quickly and effectivel
 - Impressive Output
 - [Full list of features](https://www.yworks.com/products/yed/applicationfeatures)
 
-## Parameters
+## Package parameters
 
-- `/Shortcut` - Create desktop shortcut
+- `/NoShortcut` - Do not create desktop shortcut
+- `/NoStartMenu` - Do not create start menu shortcut
+- `/NoAssociate` - Do not associate files
 
 ## Notes
 
-Only the last version works.
+- Only the last version works.
 
 ![yed screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/screenshot.png)
 

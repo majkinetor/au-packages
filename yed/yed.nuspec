@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if Ä‚ËĂ˘â€šÂ¬Äąâ€şÄ‚Ĺ˝Ă‚Â©Ä‚ËĂ˘â€šÂ¬ÄąÄ„ doesnÄ‚ËĂ˘â€šÂ¬Ă˘â€žËt appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
@@ -7,31 +7,40 @@
     <title>yEd</title>
     <version>3.16.2.1</version>
     <authors>yWorks</authors>
-    <owners>Miodrag Milić</owners>
+    <owners>Miodrag MiliÄ‚â€žĂ˘â‚¬Ë‡</owners>
     <summary>yEd Graph Editor: High-quality diagrams made easy</summary>
-    <description>
-yEd is a powerful desktop application that can be used to quickly and effectively generate high-quality diagrams. Create diagrams manually, or import your external data for analysis. Our automatic layout algorithms arrange even large data sets with just the press of a button. yEd is freely available and runs on all major platforms: Windows, Unix/Linux, and Mac OS X.
+    <description>yEd is a powerful desktop application that can be used to quickly and effectively generate high-quality diagrams. Create diagrams manually, or import your external data for analysis. Our automatic layout algorithms arrange even large data sets with just the press of a button. yEd is freely available and runs on all major platforms: Windows, Unix/Linux, and Mac OS X.
 
-[Full list of features](https://www.yworks.com/products/yed/applicationfeatures)
+## Features
 
-## Package Notes
+- Diagram Creation
+- Automatic Layout
+- Easy Data Import
+- Impressive Output
+- [Full list of features](https://www.yworks.com/products/yed/applicationfeatures)
 
-Only the last version works.
+## Package parameters
 
-### Parameters
+- `/NoShortcut` - Do not create desktop shortcut
+- `/NoStartMenu` - Do not create start menu shortcut
+- `/NoAssociate` - Do not associate files
 
-- `/Shortcut` - Create desktop shortcut
+## Notes
+
+- Only the last version works.
 
 ![yed screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/screenshot.png)
-    </description>
+
+</description>
     <projectUrl>http://www.yworks.com/en/products/yfiles/yed</projectUrl>
-    <tags>graph chart uml bpmn x-platform office</tags>
+    <tags>graph chart uml bpmn freeware cross-platform office</tags>
     <copyright>http://www.yworks.com</copyright>
     <licenseUrl>https://www.yworks.com/products/yed/license.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/icon.png</iconUrl>
     <dependencies>
       <dependency id="javaruntime" version="6.0.30" />
+      <dependency id="chocolatey-core.extension" version="1.1" />
     </dependencies>
     <releaseNotes>See https://www.yworks.com/products/yed/download#ReleaseNotes</releaseNotes>
     <mailingListUrl>http://yed.yworks.com/support/qa/</mailingListUrl>
