@@ -39,8 +39,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/icon.png</iconUrl>
     <dependencies>
-      <dependency id="javaruntime" version="6.0.30" />
-      <dependency id="chocolatey-core.extension" version="1.1" />
+       <dependency id="javaruntime" version="6.0.30" />
+       <dependency id="chocolatey" version="0.10.3" />
+       <dependency id="chocolatey-core.extension" version="1.1" />
     </dependencies>
     <releaseNotes>See https://www.yworks.com/products/yed/download#ReleaseNotes</releaseNotes>
     <mailingListUrl>http://yed.yworks.com/support/qa/</mailingListUrl>

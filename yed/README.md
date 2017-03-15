@@ -14,7 +14,7 @@ yEd is a powerful desktop application that can be used to quickly and effectivel
 
 - `/NoShortcut` - Do not create desktop shortcut
 - `/NoStartMenu` - Do not create start menu shortcut
-- `/NoAssociate` - Do not associate files
+- `/Associate` - Associate files with yed
 
 ## Notes
 
