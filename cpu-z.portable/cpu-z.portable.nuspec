@@ -1,24 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>cpu-z.portable</id>
     <title>CPU-Z (Portable)</title>
-    <version>1.78</version>
+    <version>1.78.0.20170316</version>
     <authors>CPUID</authors>
-    <owners>Miodrag Milić</owners>
+    <owners>Miodrag MiliÄ‡</owners>
     <summary>System information software</summary>
-    <description>
- A freeware system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features of a modern personal computer, and presents the information in one window:
+    <description> A freeware system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features of a modern personal computer, and presents the information in one window:
 
 - Processor name and number, codename, process, package, cache levels.
 - Mainboard and chipset.
 - Memory type, size, timings, and module specifications (SPD).
 - Real time measurement of each core's internal frequency, memory frequency.
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z.portable/screenshot.png)
-    </description>
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z.install/screenshot.png)
+</description>
     <projectUrl>http://www.cpuid.com/softwares/cpu-z.html</projectUrl>
     <tags>admin system-information hardware memory intel amd processor cpu motherboard</tags>
     <copyright>CPUID</copyright>
