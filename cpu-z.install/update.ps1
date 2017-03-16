@@ -36,12 +36,13 @@ function global:au_GetLatest {
     }
 
     @{
-        Version = $url -split '[_-]' | select -Last 1 -Skip 1
-        URL32   = $url
+        Version    = $url -split '[_-]' | select -Last 1 -Skip 1
+        URL32      = $url
+        Checksum32 = $remote_checksum
     }
 }
 
 if ($MyInvocation.InvocationName -ne '.') { # run the update only if script is not sourced
-    update -ChecksumFor 32
+    update -ChecksumFor none
     if ($global:au_old_force -is [bool]) { $global:au_force = $global:au_old_force }
 }
