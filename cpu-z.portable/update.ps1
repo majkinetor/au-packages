@@ -23,9 +23,20 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $url -UseBasicParsing
     $url     = $download_page.links | ? href -match $re | select -First 1 -Expand href
 
-    $version = $url -split '[_-]' | select -Last 1 -Skip 1
+    $current_checksum = (gi $PSScriptRoot\tools\chocolateyInstall.ps1 | sls '\bchecksum\b') -split "=|'" | Select -Last 1 -Skip 1
+    $remote_checksum  = Get-RemoteChecksum $url
+    if ($current_checksum -ne $remote_checksum) {
+        Write-Host 'Remote checksum is different then the current one, forcing update'
+        $global:au_old_force = $global:au_force
+        $global:au_force = $true
+    }
 
-    return @{ URL = $url; Version = $version }
+    @{
+        Version = $url -split '[_-]' | select -Last 1 -Skip 1
+        URL32   = $url
+    }
 }
 
 update -ChecksumFor 32
+if ($global:au_old_force -is [bool]) { $global:au_force = $global:au_old_force }
+
