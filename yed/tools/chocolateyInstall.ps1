@@ -5,10 +5,10 @@ rm $toolsDir\yed-* -ea 0
 
 $packageArgs = @{
   packageName    = 'yed'
-  url            = 'https://www.yworks.com/resources/yed/demo/yEd-3.16.2.1.zip'
-  url64bit       = 'https://www.yworks.com/resources/yed/demo/yEd-3.16.2.1.zip'
-  checksum       = '47ac746ad30eb6375b8f45e9382efd0db0b6e3b1eb8f4760625963175b753805'
-  checksum64     = '47ac746ad30eb6375b8f45e9382efd0db0b6e3b1eb8f4760625963175b753805'
+  url            = 'https://www.yworks.com/resources/yed/demo/yEd-3.17.zip'
+  url64bit       = 'https://www.yworks.com/resources/yed/demo/yEd-3.17.zip'
+  checksum       = 'ea0b1e95e1eaa9776dbac0b2b2f307d108f7a474b853796889c38344314365f2'
+  checksum64     = 'ea0b1e95e1eaa9776dbac0b2b2f307d108f7a474b853796889c38344314365f2'
   checksumType   = 'sha256'
   checksumType64 = 'sha256'
   unzipLocation  = Split-Path $MyInvocation.MyCommand.Definition
