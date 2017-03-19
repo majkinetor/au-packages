@@ -50,6 +50,6 @@ Enterprise Edition includes NoSQL databases support and additional Eclipse exten
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
-    <file src="legal\**" target="legal" />
+    <!--<file src="legal\**" target="legal" />-->
   </files>
 </package>
