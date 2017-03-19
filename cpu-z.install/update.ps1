@@ -28,6 +28,7 @@ function global:au_GetLatest {
     $url = $download_page.links | ? href -match $re | select -First 1 -Expand href
 
     $current_checksum = (gi $PSScriptRoot\tools\chocolateyInstall.ps1 | sls '\bchecksum\b') -split "=|'" | Select -Last 1 -Skip 1
+    if ($current_checksum.Length -ne 64) { throw "Can't find current checksum" }
     $remote_checksum  = Get-RemoteChecksum $url
     if ($current_checksum -ne $remote_checksum) {
         Write-Host 'Remote checksum is different then the current one, forcing update'
