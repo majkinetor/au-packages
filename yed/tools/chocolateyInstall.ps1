@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-rm $toolsDir\yed-* -ea 0
+rm $toolsDir\yed-* -Recurse -ea 0
 
 $packageArgs = @{
   packageName    = 'yed'
