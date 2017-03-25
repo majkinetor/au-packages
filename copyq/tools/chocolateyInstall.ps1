@@ -1,7 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'copyq'
-$running     = if (ps $packageName -ea 0) { $true } else { $false }
 
 $fileType      = 'exe'
 $toolsDir      = Split-Path $MyInvocation.MyCommand.Definition
@@ -31,5 +30,4 @@ Write-Host "$packageName installed to '$installLocation'"
 Register-Application "$installLocation\$packageName.exe"
 Write-Host "$packageName registered as $packageName"
 
-Write-Host "CopyQ was running before update, starting it up again"
 start "$installLocation\$packageName.exe"
