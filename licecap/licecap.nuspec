@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>licecap</id>
+    <title></title>
+    <version>1.26.0.20170325</version>
+    <authors>Miodrag Milic</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Simple animated screen captures</summary>
+    <description> LICEcap can capture an area of your desktop and save it directly to .GIF (for viewing in web browsers, etc) or .LCF.
+
+LICEcap is an intuitive but flexible application (for Windows and now OSX), that is designed to be lightweight and function with high performance.
+
+## Features
+
+- Record directly to .GIF or .LCF.
+- Move the screen capture frame while recording.
+- Pause and restart recording, with optional inserted text messages.
+- Global hotkey (shift+space) to toggle pausing while recording
+- Adjustable maximum recording framerate, to allow throttling CPU usage.
+- Basic title frame, with or without text.
+- Record mouse button presses.
+- Display elapsed time in the recording.
+    </description>
+    <projectUrl>http://www.cockos.com/licecap</projectUrl>
+    <tags>screen gif cross-platform foss</tags>
+    <copyright>2004-2017 Cockos Incorporated</copyright>
+    <licenseUrl>https://github.com/justinfrankel/licecap/blob/master/licecap/license.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/licecap/icon.png</iconUrl>
+    <releaseNotes>https://github.com/justinfrankel/licecap/blob/master/licecap/whatsnew.txt</releaseNotes>
+    <mailingListUrl>http://forum.cockos.com/forumdisplay.php?f=44</mailingListUrl>
+    <projectSourceUrl>https://github.com/justinfrankel/licecap</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/licecap</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
