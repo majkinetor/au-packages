@@ -4,6 +4,14 @@ $packageName = 'mls-software-openssh'
 $url         = 'https://www.mls-software.com/files/setupssh-7.5p1-1.exe'
 $checksum    = '254bb11ff2e7cf9010fc75236da9195c67ccda234d0305fac7518b32bf981fa8'
 
+$pp = Get-PackageParameters
+$params = @()
+foreach ($key in $pp.Keys) {
+    $params += "/{0}={1}" -f $key, $pp[$key]
+}
+$params = $params -join ' '
+Write-Host "Passed parameters: $params"
+
 $packageArgs = @{
   packageName            = $packageName
   fileType               = 'EXE'
@@ -13,7 +21,7 @@ $packageArgs = @{
   checksum64             = $checksum
   checksumType           = 'sha256'
   checksumType64         = 'sha256'
-  silentArgs             = "/S"
+  silentArgs             = "/S $params"
   validExitCodes         = @(0)
   registryUninstallerKey = "OpenSSH"
 }
