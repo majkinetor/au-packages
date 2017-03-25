@@ -36,7 +36,7 @@ NirLauncher is a package of more than 180 portable freeware utilities for Window
     <packageSourceUrl>https://github.com/majkinetor/au-packages/tree/master/nirlauncher</packageSourceUrl>
     <dependencies>
       <dependency id="chocolatey" version="0.9.10" />
-      <dependency id="chocolatey-core.extension" version="1.0.1" />
+      <dependency id="chocolatey-core.extension" version="1.2" />
     </dependencies>
   </metadata>
   <files>

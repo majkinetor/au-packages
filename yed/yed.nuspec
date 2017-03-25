@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if Ã„â€šÃ‹Â˜Ä‚Ë˜Ã¢â‚¬Å¡Ã‚Â¬Ã„Ä…Ã¢â‚¬ÅŸÃ„â€šÄ¹ËÄ‚â€šÃ‚Â©Ã„â€šÃ‹Â˜Ä‚Ë˜Ã¢â‚¬Å¡Ã‚Â¬Ã„Ä…Ã„â€ž doesnÃ„â€šÃ‹Â˜Ä‚Ë˜Ã¢â‚¬Å¡Ã‚Â¬Ä‚Ë˜Ã¢â‚¬Å¾Ã‹Â˜t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if Ãƒâ€žÃ¢â‚¬Å¡Ãƒâ€¹Ã‚ËœÃ„â€šÃ‹ËœÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬Ãƒâ€žÃ„â€¦ÃƒÂ¢Ã¢â€šÂ¬Ã…Å¸Ãƒâ€žÃ¢â‚¬Å¡Ã„Â¹Ã‹ÂÃ„â€šÃ¢â‚¬Å¡Ãƒâ€šÃ‚Â©Ãƒâ€žÃ¢â‚¬Å¡Ãƒâ€¹Ã‚ËœÃ„â€šÃ‹ËœÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬Ãƒâ€žÃ„â€¦Ãƒâ€žÃ¢â‚¬Å¾ doesnÃƒâ€žÃ¢â‚¬Å¡Ãƒâ€¹Ã‚ËœÃ„â€šÃ‹ËœÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬Ã„â€šÃ‹ËœÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€¹Ã‚Ëœt appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>yed</id>
     <title>yEd</title>
-    <version>3.17</version>
+    <version>3.17.0.20170320</version>
     <authors>yWorks</authors>
-    <owners>Miodrag MiliÃ„â€šÃ¢â‚¬Å¾Ä‚Ë˜Ã¢â€šÂ¬Ã‹â€¡</owners>
+    <owners>Miodrag MiliÃƒâ€žÃ¢â‚¬Å¡ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ã„â€šÃ‹ËœÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¹Ã¢â‚¬Â¡</owners>
     <summary>yEd Graph Editor: High-quality diagrams made easy</summary>
     <description>yEd is a powerful desktop application that can be used to quickly and effectively generate high-quality diagrams. Create diagrams manually, or import your external data for analysis. Our automatic layout algorithms arrange even large data sets with just the press of a button. yEd is freely available and runs on all major platforms: Windows, Unix/Linux, and Mac OS X.
 

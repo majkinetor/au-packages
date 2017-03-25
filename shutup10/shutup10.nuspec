@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÅ½Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â doesnÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã…Â½Ãƒâ€šÃ‚Â©ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â doesnÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>shutup10</id>
     <title>ShutUp10</title>
-    <version>1.4.1387</version>
+    <version>1.4.1388</version>
     <authors>O&amp;OSoftware</authors>
-    <owners>Miodrag MiliÃƒâ€žÃ¢â‚¬Â¡</owners>
+    <owners>Miodrag MiliÃƒÆ’Ã¢â‚¬Å¾ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡</owners>
     <summary>Free antispy tool for Windows 10</summary>
     <description>O&amp;O ShutUp10 means you have full control over which comfort functions under Windows 10 you wish to use, and you decide when the passing on of your data goes too far.
 
