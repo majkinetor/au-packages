@@ -7,11 +7,16 @@ $fileType      = 'exe'
 $toolsDir      = Split-Path $MyInvocation.MyCommand.Definition
 $embedded_path = gi "$toolsDir\*.$fileType"
 
+$pp = Get-PackageParameters
+$tasks=@()
+if (!$pp.NoStartup)     { Write-Host 'Automatically start with Windows'; $tasks += 'startup'}
+if (!$pp.NoDesktopIcon) { Write-Host 'Create desktop icon'; $tasks += 'desktopicon' }
+
 $packageArgs = @{
   packageName    = $packageName
   fileType       = $fileType
   file           = $embedded_path
-  silentArgs     = '/VERYSILENT'
+  silentArgs     = '/VERYSILENT /TASKS=' + ($tasks -join ',')
   validExitCodes = @(0)
   softwareName   = $packageName
 }

@@ -25,4 +25,9 @@ Items can be:
 * Support for simple Vim-like editor and shortcuts
 * Many more features
 
+## Package parameters
+
+* `NoDesktopIcon` - do not create desktop icon
+* `NoStartup`   - do not run CopyQ on OS startup
+
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
