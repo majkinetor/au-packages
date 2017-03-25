@@ -26,14 +26,13 @@ Features
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/eraser/icon.png</iconUrl>
     <dependencies>
-        <dependency id="dotnet4.0" version="4.0.30319" />
+        <dependency id="dotnet4.5" version="4.5.20120822" />
         <dependency id="7zip.commandline" version="15.14" />
-        <dependency id="chocolatey-core.extension" version="1.0.4" />
+        <dependency id="chocolatey-core.extension" version="1.2" />
     </dependencies>
     <releaseNotes></releaseNotes>
     <mailingListUrl>http://eraser.heidi.ie/forum</mailingListUrl>
     <docsUrl>http://eraser.heidi.ie/help</docsUrl>
-    <!--<bugTrackerUrl></bugTrackerUrl>-->
     <projectSourceUrl>http://sourceforge.net/p/eraser/code/HEAD/tree</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/eraser</packageSourceUrl>
   </metadata>

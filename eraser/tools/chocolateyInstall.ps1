@@ -1,12 +1,13 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$setupDir    = "$Env:TEMP\eraser_setup"
 $packageName = 'eraser'
-$url32       = 'http://netcologne.dl.sourceforge.net/project/eraser/Eraser%206/6.2/Eraser6.2.0.2971-NoRuntimes.exe'
+$url32       = 'https://sourceforge.net/projects/eraser/files/Eraser%206/6.2/Eraser%206.2.0.2979.exe'
 $url64       = $url32
-$checksum    = '3851189937D5D347D240A9C3703FE9F7BBC792EDCBDDD8ED08F34EE7D183C062'
+$checksum    = '090968D0D9C386924A2838C484855595890DA9879544C7D8B4B201F9756712C6'
 
-$setupPath  = $setupDir + ".exe"
+$setupDir    = Get-PackageCacheLocation
+
+$setupPath  = "$setupDir\eraser.exe"
 $packageArgs = @{
   packageName  = $packageName
   fileFullPath = $setupPath
@@ -18,32 +19,33 @@ $packageArgs = @{
 Get-ChocolateyWebFile @packageArgs
 
 if (!(gcm 7z -ea 0)) {
-    gp HKCU:\Software\7-Zip Path | select -Expand Path | set path
+    $path = gp HKCU:\Software\7-Zip Path | select -Expand Path
     if (!(Test-Path "$path\7z.exe")) { throw "Can not find 7z.exe" }
     sal 7z "$path\7z.exe"
 }
 
-cd $Env:TEMP
+cd $setupDir
 7z x -aoa $setupPath -o*
 
-$url32 = gi "$setupDir\*86*" | Select -Expand FullName
-$url64 = gi "$setupDir\*64*" | Select -Expand FullName
-if (((Test-Path $url32,$url64) -eq $false).Count) { throw "Unpacking failed" }
+$msi_path = if ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') {
+         Write-Host "Installing 64 bit version"; ls "$setupDir\*eraser*x86*.msi" -Recurse | Select -Expand FullName
+} else { Write-Host "Installing 32 bit version"; ls "$setupDir\*eraser*x64*.msi" -Recurse | Select -Expand FullName }
+
+
+if (!(Test-Path $msi_path)) { throw "Unpacking failed" }
 
 $packageArgs = @{
-  packageName            = $packageName
-  fileType               = 'msi'
-  url                    = $url32
-  url64bit               = $url64
-  silentArgs             = '/quiet'
-  validExitCodes         = @(0)
-  registryUninstallerKey = "Eraser"
+  packageName    = $packageName
+  fileType       = 'msi'
+  file           = $msi_path
+  silentArgs     = '/quiet'
+  validExitCodes = @(0)
+  softwareName   = "Eraser"
 }
-Install-ChocolateyPackage @packageArgs
-rm -force -r $setupDir -ea 0
-rm $setupPath -ea 0
+Install-ChocolateyInstallPackage @packageArgs
+rm -force -r $setupDir\eraser\* -ea 0
 
-$installLocation = Get-AppInstallLocation $packageArgs.registryUninstallerKey
-if ($installLocation)  { Write-Host "$packageName installed to '$installLocation'" }
-else { Write-Warning "Can't find $PackageName install location" }
+$installLocation = Get-AppInstallLocation $packageArgs.softwareName
+if (!$installLocation) { Write-Warning "Can't find $packageName install location"; return }
+Write-Host "$packageName installed to '$installLocation'"
 
