@@ -1,17 +1,22 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
 $releases = 'http://wkhtmltopdf.org/downloads.html'
 
 function global:au_SearchReplace {
     @{
-        ".\tools\chocolateyInstall.ps1" = @{
-            "(^[$]url32\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
-            "(^[$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
-            "(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
-            "(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+        ".\legal\VERIFICATION.txt" = @{
+          "(?i)(\s+x32:).*"            = "`${1} $($Latest.URL32)"
+          "(?i)(\s+x64:).*"            = "`${1} $($Latest.URL64)"
+          "(?i)(checksum32:).*"        = "`${1} $($Latest.Checksum32)"
+          "(?i)(checksum64:).*"        = "`${1} $($Latest.Checksum64)"
+          "(?i)(Get-RemoteChecksum).*" = "`${1} $($Latest.URL64)"
         }
     }
 }
+
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
+function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -UseBasicParsing -Uri $releases
@@ -24,4 +29,4 @@ function global:au_GetLatest {
     return @{ URL64 = $url64; URL32 = $url32; Version = $version }
 }
 
-update
+update -ChecksumFor none

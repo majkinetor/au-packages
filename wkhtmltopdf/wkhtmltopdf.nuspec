@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>wkhtmltopdf</id>
     <title>wkhtmltopdf</title>
-    <version>0.12.4</version>
+    <version>0.12.4.20170325</version>
     <authors>Jakob Truelsen, Ashish Kulkarni</authors>
-    <owners>Miodrag Milić</owners>
+    <owners>Miodrag Milic</owners>
     <summary>Convert HTML to PDF using Webkit</summary>
     <description>
 wkhtmltopdf and wkhtmltoimage are open source (LGPLv3) cross platform command line tools to render HTML into PDF and various image formats using the Qt WebKit rendering engine. These run entirely "headless" and do not require a display or display service.
@@ -23,11 +23,13 @@ There is also a C library, if you're into that kind of thing.
     <bugTrackerUrl>https://github.com/wkhtmltopdf/wkhtmltopdf/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/wkhtmltopdf/wkhtmltopdf</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/wkhtmltopdf</packageSourceUrl>
+    <releaseNotes>https://github.com/wkhtmltopdf/wkhtmltopdf/blob/master/CHANGELOG.md</releaseNotes>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.1" />
+      <dependency id="chocolatey-core.extension" version="1.2" />
     </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
