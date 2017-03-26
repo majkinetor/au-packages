@@ -1,19 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>dngrep</id>
     <title>dnGrep</title>
-    <version>2.8.16.020170325</version>
+    <version>2.9.21.0</version>
     <authors>Denis Stankovski, John Burak</authors>
-    <owners>Miodrag Milić</owners>
+    <owners>Miodrag MiliÄ‡</owners>
     <summary>Powerful search for Windows</summary>
-    <description>
-dnGrep allows you to search across files with easy-to-read results. Search through text files, Word documents, PDFs, and archives using text, regular expression, XPath, and phonetic queries. dnGrep includes search-and-replace, whole-file preview, right-click search in File Explorer, and much more.
+    <description>dnGrep allows you to search across files with easy-to-read results. Search through text files, Word documents, PDFs, and archives using text, regular expression, XPath, and phonetic queries. dnGrep includes search-and-replace, whole-file preview, right-click search in File Explorer, and much more.
 
 ## Features
-
 
 * Search across text files, Word documents, PDFs, and archives
 * Search using text, regular expressions (regex), XPath, and phonetics
@@ -28,6 +26,7 @@ dnGrep allows you to search across files with easy-to-read results. Search throu
 * Much more
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dngrep/screenshot.jpg)
+
 </description>
     <projectUrl>http://dngrep.github.io</projectUrl>
     <tags>admin foss search regex</tags>
