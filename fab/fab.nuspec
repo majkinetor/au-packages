@@ -32,7 +32,7 @@ Firewall App Blocker makes the process very easy! Simply drag and drop the appli
     <!--</dependencies>-->
     <!--<releaseNotes></releaseNotes>-->
     <!--<mailingListUrl></mailingListUrl>-->
-    <docsUrl>http://www.sordum.org/7952/dns-jumper-v2-0/2/#1</docsUrl>
+    <!--<docsUrl></docsUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <!--<projectSourceUrl></projectSourceUrl>-->
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/fab</packageSourceUrl>
