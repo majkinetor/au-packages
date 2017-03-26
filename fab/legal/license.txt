@@ -1,0 +1,23 @@
+END-USER LICENSE AGREEMENT ("EULA")
+
+IMPORTANT-READ CAREFULLY: This End-User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and Sordum.org. By downloading and using the software from Sordum.org web site you are automatically agreeing to and show that you have read and understood the terms and conditions contained within this Freeware Software License Agreement. This Freeware Software License Agreement is then effective while you use and continue to make use of these software products. If you do not agree with this Freeware Software License Agreement you must not use software products downloaded from Sordum.orgwebsite – this Freeware Software License Agreement will then not apply to you.
+
+1. Freeware
+You may use the SOFTWARE without charge. (Any kind of donation welcome and very much appreciated)
+
+2. Distribution of SOFTWARE.
+You may make copies of the SOFTWARE as you wish; give exact copies of the original SOFTWARE to anyone; and distribute the SOFTWARE in its unmodified form via electronic means. (Under one circumstance : You must give a direct link the Original download page or Home page of the sordum.org), You may not charge any fees for the copy or use of the SOFTWARE itself. You must not represent in any way that you are selling the SOFTWARE itself. Your distribution of the SOFTWARE will not entitle you to any compensation from Sordum.org. You must distribute a copy of this EULA with any copy of the SOFTWARE and anyone to whom you distribute the SOFTWARE is subject to this EULA.
+
+3. Restrictions
+3.1 You may not reverse engineer, de-compile, or disassemble the SOFTWARE.
+3.2 You may not rent, lease, or lend the SOFTWARE.
+3.3 You may permanently transfer all of your rights under this EULA, provided the recipient agrees to the terms of this EULA.
+3.4 You may not use the SOFTWARE to perform any unauthorized transfer of information or for any illegal purpose.
+3.5 The Program may not be sold or incorporated into any product which is sold without prior permission from the Author
+
+4. Code Distribution
+Sordum.org does not provide the source code of the freeware applications available from the web site
+
+5. NO WARRANTIES
+Sordum.org expressly disclaims any warranty for the SOFTWARE. THE SOFTWARE AND ANY RELATED DOCUMENTATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OR MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT. THE ENTIRE RISK ARISING OUT OF USE OR PERFORMANCE OF THE SOFTWARE REMAINS WITH YOU.
+Copyright Â© 2006-2015 sordum.org. All rights reserved.
