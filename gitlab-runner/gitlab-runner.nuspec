@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€śÎ©â€ť doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>gitlab-runner</id>
+    <title>Gitlab Runner</title>
+    <version>9.0.0</version>
+    <authors>Gitlab</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Run build jobs and send the results to GitLab</summary>
+    <description>GitLab Runner is the open source project that is used to run your jobs and send the results back to GitLab. It is used in conjunction with GitLab CI, the open-source continuous integration service included with GitLab that coordinates the jobs.
+
+## Features
+
+- Allows to run:
+  - multiple jobs concurrently
+  - use multiple tokens with multiple server (even per-project)
+  - limit number of concurrent jobs per-token
+- Jobs can be run:
+  - locally
+  - using Docker containers
+  - using Docker containers and executing job over SSH
+  - using Docker containers with autoscaling on different clouds and virtualization hypervisors 
+  - connecting to remote SSH server
+- Is written in Go and distributed as single binary without any other requirements
+- Supports Bash, Windows Batch and Windows PowerShell
+- Works on GNU/Linux, OS X and Windows (pretty much anywhere you can run Docker)
+- Allows to customize the job running environment
+- Automatic configuration reload without restart
+- Easy to use setup with support for Docker, Docker-SSH, Parallels or SSH running environments
+- Enables caching of Docker containers
+- Easy installation as a service for GNU/Linux, OSX and Windows
+- Embedded Prometheus metrics HTTP server
+
+## Package parameters
+
+- `InstallDir` - Installation directory
+</description>
+    <projectUrl>https://docs.gitlab.com/runner</projectUrl>
+    <tags>admin cli foss git cross-platform build gitlab</tags>
+    <copyright>GitLab</copyright>
+    <licenseUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/raw/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/gitlab-runner/icon.png</iconUrl>
+    <releaseNotes>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/CHANGELOG.md</releaseNotes>
+    <docsUrl>https://docs.gitlab.com/runner/commands/README.html</docsUrl>
+    <bugTrackerUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues</bugTrackerUrl>
+    <projectSourceUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/tree/master</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/gitlab-runner</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.2" />
+      <dependency id="git.install" version="2.12.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
