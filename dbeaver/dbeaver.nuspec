@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>dbeaver</id>
-    <version>4.0.3</version>
+    <version>4.0.4</version>
     <title>DBeaver - Community Edition</title>
     <authors>Serge Rieder</authors>
     <owners>Paul Davies, Miodrag Milic</owners>
@@ -36,7 +36,7 @@
 
 </description>
     <summary>Free multi-platform database tool for developers, SQL programmers, database administrators and analysts.</summary>
-    <releaseNotes>https://github.com/serge-rider/dbeaver/releases/tag/4.0.3</releaseNotes>
+    <releaseNotes>https://github.com/serge-rider/dbeaver/releases/tag/4.0.4</releaseNotes>
     <tags>admin foss cross-platform database mysql oracle db2 sql-server postgresql mongodb dbeaver</tags>
     <projectSourceUrl>https://github.com/serge-rider/dbeaver</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/dbeaver</packageSourceUrl>
