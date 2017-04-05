@@ -11,7 +11,7 @@ if ($current_dir) {
     $pp.InstallDir = $current_dir
 } else {
     if (!$pp.InstallDir) { $pp.InstallDir = "C:\GitLab-Runner" }
-    Write-Host 'Using install directory:'  $pp.InstallDir
+    Write-Host 'Using install directory:' $pp.InstallDir
 }
 
 $tmp_path = Join-Path (Get-PackageCacheLocation)  "gitlab-runner.exe"
@@ -29,4 +29,7 @@ Get-ChocolateyWebFile @packageArgs
 
 Get-Service gitlab-runner -ea 0 | Stop-Service
 mkdir $pp.InstallDir -ea 0 | Out-Null
-cp $tmp_path $pp.InstallDir -force
+cp $tmp_path, $toolsPath\register_example.ps1 $pp.InstallDir -force
+
+$runner_path = $pp.InstallDir + '\gitlab-runner.exe'
+Install-BinFile gitlab-runner $runner_path

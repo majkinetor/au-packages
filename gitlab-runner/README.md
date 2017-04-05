@@ -26,4 +26,8 @@ GitLab Runner is the open source project that is used to run your jobs and send 
 
 ## Package parameters
 
-- `InstallDir` - Installation directory
+- `InstallDir` - Installation directory. If the Gitlab Runner is already installed, its current directory will be used. To install to a new directory, uninstall it first.
+
+## Notes
+
+- The script `register_example.ps1` is provided along the executable which can be used to quickly register runner non-interactively. If you want to use it, rename it, because it will be overwritten on updates.
