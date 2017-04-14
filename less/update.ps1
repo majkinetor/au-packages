@@ -12,7 +12,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate {
-    set-alias 7z $Env:chocolateyInstall\bin\7z.exe
+    set-alias 7z $Env:chocolateyInstall\tools\7z.exe
 
     $lessdir = "$PSScriptRoot\less-*-win*"
     rm $lessdir -Recurse -Force -ea ignore
