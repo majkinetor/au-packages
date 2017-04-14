@@ -12,7 +12,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate {
-    set-alias 7z $Env:chocoInstall\bin\7z.exe
+    set-alias 7z $Env:chocolateyInstall\bin\7z.exe
 
     $lessdir = "$PSScriptRoot\less-*-win*"
     rm $lessdir -Recurse -Force -ea ignore
@@ -29,7 +29,7 @@ function global:au_BeforeUpdate {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re  = 'less-.+win.+\.7z'
+    $re  = 'less-.+win.+\.7z$'
     $url = $download_page.links | ? href -match $re | select -First 1 -expand href
     $version = "$( ($url -split '-' | select -Index 1) / 100 )"
     @{
