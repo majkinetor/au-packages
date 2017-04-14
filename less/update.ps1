@@ -17,7 +17,7 @@ function global:au_BeforeUpdate {
     $lessdir = "$PSScriptRoot\less-*-win*"
     rm $lessdir -Recurse -Force -ea ignore
 
-    iwr $Latest.URL -OutFile "$PSScriptRoot\less.7z"
+    iwr $Latest.URL32 -OutFile "$PSScriptRoot\less.7z"
     7z x $PSScriptRoot\less.7z
 
     rm $PSScriptRoot\tools\* -Recurse -Force -Exclude VERIFICATION.txt
@@ -39,7 +39,7 @@ function global:au_GetLatest {
 }
 
 try {
-    update
+    update -ChecksumFor none
 } catch {
     $ignore = 'Unable to connect to the remote server'
     if ($_ -match $ignored) { Write-Host $ignore; 'ignore' }  else { throw $_ }
