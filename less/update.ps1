@@ -42,5 +42,5 @@ try {
     update -ChecksumFor none
 } catch {
     $ignore = 'Unable to connect to the remote server'
-    if ($_ -match $ignored) { Write-Host $ignore; 'ignore' }  else { throw $_ }
+    if ($_ -match $ignore) { Write-Host $ignore; 'ignore' }  else { throw $_ }
 }
