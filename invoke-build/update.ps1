@@ -1,21 +1,27 @@
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://www.powershellgallery.com/packages/InvokeBuild'
+$moduleName = 'InvokeBuild'
+
 
 function global:au_SearchReplace {
-   @{}
+   @{
+        ".\tools\chocolateyInstall.ps1" = @{
+            "(?i)(^\s*[$]moduleName\s*=\s*)('.*')"= "`$1'$moduleName'"
+        }
+   }
 }
 
 function global:au_BeforeUpdate {
-    rm tools\InvokeBuild -Force -Recurse -ea 0
+    rm tools\$moduleName -Force -Recurse -ea 0
     Install-PackageProvider Nuget -Force
-    Save-Module -Name InvokeBuild -Path tools
+    Save-Module -Name $moduleName -Path tools
 }
 
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
+    $releases = "https://www.powershellgallery.com/packages/$moduleName"
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
     $re    = '/Download$'

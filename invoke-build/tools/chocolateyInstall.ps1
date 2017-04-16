@@ -1,4 +1,5 @@
-Write-Host "Installing module to $Env:ProgramFile\WindowsPowerShell\Module"
+﻿$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
+$moduleName = 'InvokeBuild'
 
-$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-cp $toolsDir\InvokeBuild $Env:ProgramFiles\WindowsPowerShell\Module
+Write-Host "Installing module $moduleName to $Env:ProgramFile\WindowsPowerShell\Module"
+cp $toolsDir\$moduleName $Env:ProgramFiles\WindowsPowerShell\Module
