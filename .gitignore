@@ -12,3 +12,4 @@
 *.msi
 *.rar
 *.zip
+/invoke-build/tools/InvokeBuild
