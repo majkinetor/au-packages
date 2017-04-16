@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://sourceforge.net/projects/smplayer/files/SMPlayer/16.11.0/smplayer-16.11.0-win32.exe/download
+   x32: http://guysalias.tk/misc/less/less-487-win32-static-x86.7z.7z
 
    to download the zip package.
 
@@ -15,4 +15,4 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 3FFF91ED669ACD737CC7D079BD30944A3D739FA1CD9CB526C7A87C9518016850
+   checksum32: 
