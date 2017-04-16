@@ -9,6 +9,9 @@ function global:au_SearchReplace {
         ".\tools\chocolateyInstall.ps1" = @{
             "(?i)(^\s*[$]moduleName\s*=\s*)('.*')"= "`$1'$moduleName'"
         }
+        ".\tools\chocolateyUninstall.ps1" = @{
+            "(?i)(^\s*[$]moduleName\s*=\s*)('.*')"= "`$1'$moduleName'"
+        }
    }
 }
 
