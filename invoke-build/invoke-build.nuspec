@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã…Â½Ãƒâ€šÃ‚Â©ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â doesnÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>invoke-build</id>
+    <title>Invoke-Build</title>
+    <version>3.3.4</version>
+    <authors>Roman Kuzmin</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Invoke-Build is a build and test automation tool</summary>
+    <description>Invoke-Build is a build and test automation tool which invokes tasks defined in
+PowerShell v2.0+ scripts. It is similar to psake but arguably easier to use and
+more powerful. It is complete, bug free, well covered by tests.
+
+## Features
+
+- Incremental tasks with effectively processed inputs and outputs.
+- Persistent builds which can be resumed after interruptions.
+- Parallel builds in separate workspaces with common stats.
+- Batch invocation of tests composed as tasks.
+- Ability to define new classes of tasks.
+
+Invoke-Build can invoke the current task from a build script being composed in
+ISE and VSCode, see *Invoke-TaskFromISE.ps1* and *Invoke-TaskFromVSCode.ps1*.
+
+Invoke-Build can be used as the task runner in VSCode with tasks maintained in
+a PowerShell build script instead of *tasks.json*, see *New-VSCodeTask.ps1*.
+
+Invoke-Build v3.0.1 is cross-platform with PowerShell v6.0.0-alpha.
+</description>
+    <projectUrl>https://github.com/nightroman/Invoke-Build</projectUrl>
+    <tags>build powershell module cross-platform foss</tags>
+    <copyright>Roman Kuzmin</copyright>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/invoke-build/icon.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <docsUrl>https://github.com/nightroman/Invoke-Build/wiki</docsUrl>
+    <bugTrackerUrl>https://github.com/nightroman/Invoke-Build/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/nightroman</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/invoke-build</packageSourceUrl>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
