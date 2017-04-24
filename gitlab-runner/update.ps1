@@ -20,7 +20,7 @@ function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $version = ($download_page.Content -split "`n") -match '^v (.+)$' | select -first 1
-    $version = $version.Substring(2).Trim() -replace '\(.+'
+    $version = ($version.Substring(2) -replace '\(.+').Trim()
     @{
         Version      = $version
         URL32        = "https://gitlab-ci-multi-runner-downloads.s3.amazonaws.com/v${version}/binaries/gitlab-ci-multi-runner-windows-386.exe"
