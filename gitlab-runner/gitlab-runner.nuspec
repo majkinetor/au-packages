@@ -4,7 +4,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>gitlab-runner</id>
     <title>Gitlab Runner</title>
-    <version>9.0.0</version>
+    <version>9.1.0</version>
     <authors>Gitlab</authors>
     <owners>Miodrag Milic</owners>
     <summary>Run build jobs and send the results to GitLab</summary>
@@ -34,7 +34,11 @@
 
 ## Package parameters
 
-- `InstallDir` - Installation directory
+- `InstallDir` - Installation directory. If the Gitlab Runner is already installed, its current directory will be used. To install to a new directory, uninstall it first.
+
+## Notes
+
+- The script `register_example.ps1` is provided along the executable which can be used to quickly register runner non-interactively. If you want to use it, rename it, because it will be overwritten on updates.
 </description>
     <projectUrl>https://docs.gitlab.com/runner</projectUrl>
     <tags>admin cli foss git cross-platform build gitlab</tags>
