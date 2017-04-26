@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>furmark</id>
+    <title>Furmark</title>
+    <version>1.18.2</version>
+    <authors>jeGX</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>GPU Stress Test OpenGL Benchmark </summary>
+    <description>
+    FurMark is a very intensive OpenGL benchmark that uses fur rendering algorithms to measure the performance of the graphics card. Fur rendering is especially adapted to overheat the GPU and that's why FurMark is also a perfect stability and stress test tool (also called GPU burner) for the graphics card.
+    FurMark requires an OpenGL 2.0 compliant graphics card: NVIDIA GeForce 6 (and higher), AMD/ATI Radeon 9600 (and higher), Intel HD Graphics 2000/3000 or a S3 Graphics Chrome 400 series with the latest graphics drivers.
+    </description>
+    <projectUrl>http://www.ozone3d.net/benchmarks/fur/</projectUrl>
+    <tags>gpu freeware stress test performance cpu hardware</tags>
+    <copyright>2007-2016 Geeks3D.com </copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/furmark/icon.png</iconUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/furmark</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
