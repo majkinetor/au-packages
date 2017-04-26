@@ -1,9 +1,8 @@
 # msiinv
 
-**Install**: iwr https://goo.gl/0aP4PK | iex; cinst-majkinetor msiinv
+**Install**: `iwr https://goo.gl/0aP4PK | iex; cinst-majkinetor msiinv`
 
 Provides information about the state of all Windows Installer products, features and components.
-
 
 ## Usage
 
