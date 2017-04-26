@@ -1,5 +1,10 @@
 #  furmark
 
+**Install**
+```
+$p = 'furmark.1.18.2.nupkg';  iwr "https://rawgit.com/majkinetor/au-packages/master/$(($p -split '\.')[0])/$p" -Out $p; cinst $p; rm $p
+```
+
 FurMark is a very intensive OpenGL benchmark that uses fur rendering algorithms to measure the performance of the graphics card. Fur rendering is especially adapted to overheat the GPU and that's why FurMark is also a perfect stability and stress test tool (also called GPU burner) for the graphics card.
 
 FurMark requires an OpenGL 2.0 compliant graphics card: NVIDIA GeForce 6 (and higher), AMD/ATI Radeon 9600 (and higher), Intel HD Graphics 2000/3000 or a S3 Graphics Chrome 400 series with the latest graphics drivers.
