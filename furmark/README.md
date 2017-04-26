@@ -1,6 +1,6 @@
 #  furmark
 
-**Install**
+**Install with:**
 ```
 $p = 'furmark.1.18.2.nupkg';  iwr "https://rawgit.com/majkinetor/au-packages/master/$(($p -split '\.')[0])/$p" -Out $p; cinst $p; rm $p
 ```
