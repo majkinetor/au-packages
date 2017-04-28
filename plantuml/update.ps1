@@ -20,10 +20,10 @@ function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
-    if ($download_page.Content -match 'V\d{4,4}')
+    if ($download_page.Content -match 'V\d\.\d{4,4}\.\d+')
     {
-        $version = "1." + $Matches[0].Substring(1)
-        $url = "https://sourceforge.net/projects/plantuml/files/plantuml." + $version.Substring(2) + '.jar/download'
+        $version = $Matches[0].Substring(1)
+        $url = "https://sourceforge.net/projects/plantuml/files/plantuml." + $version + '.jar/download'
     }
     else { throw "Can't match version 'V\d{4,4}'" }
 
