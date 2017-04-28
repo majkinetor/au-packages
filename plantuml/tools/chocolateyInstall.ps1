@@ -22,4 +22,13 @@ $params.ShortcutFilePath = "$toolsPath\plantuml.lnk"
 Install-ChocolateyShortcut @params
 
 Register-Application "$toolsPath\plantuml.lnk" plantuml
+
+$binparams = @{
+    name =  "plantuml"
+    path = $params.TargetPath
+    useStart = $true
+    command = """$($params.Arguments)"""
+}
+Generate-BinFile @binparams
+
 Write-Host "$packageName registered as $packageName"
