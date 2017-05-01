@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>fzf</id>
     <title>A command-line fuzzy finder</title>
-    <version>0.16.6</version>
+    <version>0.16.7</version>
     <authors>Junegunn Choi</authors>
     <owners>Miodrag Milic</owners>
     <summary>fzf is a general-purpose command-line fuzzy finder</summary>
@@ -25,7 +25,7 @@
     <licenseUrl>https://raw.githubusercontent.com/junegunn/fzf-bin/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/fzf/icon.png</iconUrl>
-    <releaseNotes>https://github.com/junegunn/fzf-bin/releases/tag/0.16.6</releaseNotes>
+    <releaseNotes>https://github.com/junegunn/fzf-bin/releases/tag/0.16.7</releaseNotes>
     <docsUrl>https://github.com/junegunn/fzf/blob/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/junegunn/fzf/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/junegunn/fzf</projectSourceUrl>
