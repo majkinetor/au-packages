@@ -2,10 +2,10 @@
 
 $packageName = 'dngrep'
 $exeName     = 'dnGREP.exe'
-$url32       = 'https://github.com/dnGrep/dnGrep/releases/download/v2.9.31.0/dnGREP.2.9.31.x86.msi'
-$url64       = 'https://github.com/dnGrep/dnGrep/releases/download/v2.9.31.0/dnGREP.2.9.31.x64.msi'
-$checksum32  = '373159291a29825d5c6593e3e830ba445cbae4fca69ea4f69a91f36f47b0e4bf'
-$checksum64  = '35d7c6faed329d46db238a8ee6d690ec3922758b854a9b2bbd20954ed9a5bd3a'
+$url32       = 'https://github.com/dnGrep/dnGrep/releases/download/v2.9.40.0/dnGREP.2.9.40.x86.msi'
+$url64       = 'https://github.com/dnGrep/dnGrep/releases/download/v2.9.40.0/dnGREP.2.9.40.x64.msi'
+$checksum32  = '50929f259ab5c7fa914a12833728f915e19bba2dd05d7efa1a79b9460f5e2223'
+$checksum64  = 'b7d593a31069b4379a146696b1f21e71bfca413defb0d2e7648f7ed915a37840'
 
 $packageArgs = @{
   packageName    = $packageName
