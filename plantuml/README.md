@@ -18,6 +18,3 @@ Images can be generated in PNG, in SVG or LaTeX format. It is also possible to g
 Try it online using [plantuml online server](http://www.plantuml.com/plantuml/beta).
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/screenshot.png)
-
- 
- 
