@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>plantuml</id>
@@ -29,7 +29,6 @@ Images can be generated in PNG, in SVG or LaTeX format. It is also possible to g
 Try it online using [plantuml online server](http://www.plantuml.com/plantuml/beta).
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/screenshot.png)
-
 </description>
     <releaseNotes>http://plantuml.com/changes.html</releaseNotes>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/icon.png</iconUrl>
