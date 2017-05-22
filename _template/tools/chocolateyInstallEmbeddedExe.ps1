@@ -15,7 +15,7 @@ $packageArgs = @{
   validExitCodes = @(0, 1223)
 }
 Install-ChocolateyInstallPackage @packageArgs
-rm $embedded_path -ea 0
+ls $toolsDir\*.exe | % { rm $_ -ea 0; if (Test-Path $_) { touch "$_.ignore" }}
 
 $packageName = $packageArgs.packageName
 $installLocation = Get-AppInstallLocation $packageName
