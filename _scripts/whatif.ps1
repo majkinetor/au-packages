@@ -29,6 +29,8 @@ function backup()  {
 }
 
 function restore() { 
+    if (!$WhatIf) { return }
+    
     $packageName = Split-Path -Leaf $MyInvocation.PSScriptRoot
     $d = "$Env:TEMP\au\$packageName"
 
