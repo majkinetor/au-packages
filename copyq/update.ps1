@@ -1,3 +1,5 @@
+param ([switch]$WhatIf)
+
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
@@ -23,7 +25,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
-function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
+function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2}
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
@@ -41,4 +43,6 @@ function global:au_GetLatest {
     }
 }
 
+backup
 update -ChecksumFor none
+restore
