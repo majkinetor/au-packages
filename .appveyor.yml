@@ -49,7 +49,7 @@ environment:
 init:
 - git config --global user.email "chocolatey@realdimensions.net"
 - git config --global user.name "Chocolatey"
-- git config --global core.safecrlf falses
+- git config --global core.safecrlf false
 
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
