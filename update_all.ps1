@@ -10,6 +10,12 @@ $Options = [ordered]@{
     Threads       = 10                                      #Number of background jobs to use
     Push          = $Env:au_Push -eq 'true'                 #Push to chocolatey
     PluginPath    = ''                                      #Path to user plugins
+    RepeatOn      = @(
+        'The request was canceled'
+    )
+    IgnoreOn      = @(
+        'The request was canceled'
+    )
 
     Report = @{
         Type = 'markdown'                                   #Report type: markdown or text
