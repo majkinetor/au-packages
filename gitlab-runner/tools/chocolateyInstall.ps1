@@ -18,10 +18,10 @@ $tmp_path = Join-Path (Get-PackageCacheLocation)  "gitlab-runner.exe"
 $packageArgs = @{
   packageName    = 'gitlab-runner'
   fileFullPath   = $tmp_path
-  url            = 'https://gitlab-ci-multi-runner-downloads.s3.amazonaws.com/v9.1.1/binaries/gitlab-ci-multi-runner-windows-386.exe'
-  url64Bit       = 'https://gitlab-ci-multi-runner-downloads.s3.amazonaws.com/v9.1.1/binaries/gitlab-ci-multi-runner-windows-amd64.exe'
-  checksum       = 'b2f867bd28e59ef8895c39a1f2360f490a95b1989c9c7e225ad7a6153a6e0c87'
-  checksum64     = '429d6e191556ab6ebf769fd160cc56d0cafd6e5a2ce153631480e0fd1e9ae88e'
+  url            = 'https://gitlab-ci-multi-runner-downloads.s3.amazonaws.com/v9.2.0/binaries/gitlab-ci-multi-runner-windows-386.exe'
+  url64Bit       = 'https://gitlab-ci-multi-runner-downloads.s3.amazonaws.com/v9.2.0/binaries/gitlab-ci-multi-runner-windows-amd64.exe'
+  checksum       = '6ffe21b68e4cf098d6c464db5d0bbe85313c7803adcd66ae562fca6f104d55f5'
+  checksum64     = 'e918773814a71dd8e62b450d0c028cff89155f715219a5eda5d1feb0725ddcbb'
   checksumType   = 'sha256'
   checksumType64 = 'sha256'
 }
