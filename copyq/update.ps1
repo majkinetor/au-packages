@@ -43,5 +43,4 @@ function global:au_GetLatest {
     }
 }
 
-backup
-try { update -ChecksumFor none } finally { restore }
+update -ChecksumFor none
