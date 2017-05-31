@@ -1,8 +1,9 @@
 <# Installs package directly from Github repository
    To use with your own repo: 
      - Set the path to your packages root in $Repo
-     - Create short link to raw github file via for example goo.gl 
-
+     - Create short link to this raw github script via for example goo.gl
+     - Commit nupkg files in the repository along with the package source code
+    
    Usage:
      - Pass repository package name as a first argument
      - Pass any cinst option after that (some may not work ofc. such as `version`)
