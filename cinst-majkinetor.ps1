@@ -1,11 +1,10 @@
 <# Installs package directly from Github repository
- To use with your own repo: 
-   - Rename the function to contain your Github name
-   - Set the path to your packages root in $Repo 
-   - Create short link, via for example goo.gl
-
- Example: iwr https://goo.gl/0aP4PK | iex; cinst-majkinetor furmark
- Example: cinst-majkinetor furmark
+   To use with your own repo: 
+     - Rename the function to contain your Github name
+     - Set the path to your packages root in $Repo 
+     - Create short link, via for example goo.gl   
+   Example: 
+     iwr https://goo.gl/0aP4PK | iex; cinst-majkinetor furmark
 #>
 function cinst-majkinetor {
     param($Name, $Repo = "https://github.com/majkinetor/au-packages/tree/master" )
