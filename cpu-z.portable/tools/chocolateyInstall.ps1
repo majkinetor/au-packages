@@ -3,7 +3,7 @@
 $packageName = 'cpu-z.portable'
 $url32       = 'http://download.cpuid.com/cpu-z/cpu-z_1.79-en.zip'
 $url64       = $url32
-$checksum32  = '6735a7fbb765e03c0c48f5ee0e0a4b43b7106eedeb45699930f0d963039484f8'
+$checksum32  = '2b347fe98892d0db6368c8d89c9f5305b9ac17378f5002c686b132159b107ffe'
 $checksum64  = $checksum32
 
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
