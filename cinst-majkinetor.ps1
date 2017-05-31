@@ -6,7 +6,9 @@ function cinst-majkinetor {
     $download_page = iwr $Repo/$Name -UseBasicParsing
     $url = $download_page.Links.href -like '*.nupkg'
     $p = $url -split '/' | select -last 1
-    iwr "https://rawgit.com/majkinetor/au-packages/master/$(($p -split '\.')[0])/$p" -Out $p
+    
+    $raw = $Repo -replace 'github.com', 'rawgit.com' -replace 'tree/'
+    iwr "$raw/$(($p -split '\.')[0])/$p" -Out $p
     cinst $p
     rm $p
 }
