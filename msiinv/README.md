@@ -2,7 +2,7 @@
 
 ---
 
-**Install**: `iwr https://goo.gl/0aP4PK | iex; cinst-gh msiinv`
+**Install**: `iwr https://goo.gl/SZ9c3m | iex; cinst-gh msiinv`
 
 ---
 
