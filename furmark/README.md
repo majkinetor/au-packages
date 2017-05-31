@@ -1,6 +1,9 @@
 #  furmark
 
+---
 **Install**: `iwr https://goo.gl/0aP4PK | iex; cinst-gh furmark`
+
+---
 
 FurMark is a very intensive OpenGL benchmark that uses fur rendering algorithms to measure the performance of the graphics card. Fur rendering is especially adapted to overheat the GPU and that's why FurMark is also a perfect stability and stress test tool (also called GPU burner) for the graphics card.
 
