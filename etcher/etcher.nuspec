@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>etcher</id>
+    <title>Etcher</title>
+    <version>0.0</version>
+    <authors>Resin.io</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Flash OS images to SD cards and USB drives, safely and easily</summary>
+    <description>Etcher is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more.
+
+## Features
+
+- Validated Burning  
+No more writing images on corrupted cards and wondering why your device isn't booting.
+- Hard Drive Friendly  
+Makes drive selection obvious to avoid wiping your entire hard-drive
+- Beautiful Interface  
+Who said burning SD cards has to be an eyesore.
+- Open Source  
+Made with JS, HTML, node.js and Electron. Dive in and contribute!
+- Cross Platform 
+Works for everyone, no more complicated install instructions.
+</description>
+    <projectUrl>https://etcher.io</projectUrl>
+    <tags>usb format boot cross-platform foss</tags>
+    <copyright>Resin.io</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/resin-io/etcher/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/etcher/icon.png</iconUrl>
+    <releaseNotes>https://github.com/resin-io/etcher/blob/master/CHANGELOG.md</releaseNotes>
+    <docsUrl>https://github.com/resin-io/etcher/blob/master/docs/USER-DOCUMENTATION.md</docsUrl>
+    <bugTrackerUrl>https://github.com/resin-io/etcher/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/resin-io/etcher</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/etcher</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
