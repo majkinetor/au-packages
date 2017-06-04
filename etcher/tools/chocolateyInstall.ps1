@@ -11,6 +11,6 @@ $packageArgs = @{
   checksumType64         = 'sha256'
   silentArgs             = '/S'
   validExitCodes         = @(0)
-  softwareName           = 'etcher'
+  softwareName           = 'etcher*'
 }
 Install-ChocolateyPackage @packageArgs
