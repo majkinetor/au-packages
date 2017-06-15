@@ -27,7 +27,7 @@ Rundeck allows you to run tasks on any number of nodes from a web-based or comma
 * Command line interface tools
 </description>
     <projectUrl>http://rundeck.org/index.html</projectUrl>
-    <tags>admin cron scheduler devops scripts rest</tags>
+    <tags>admin cron scheduler devops scripts rest foss cross-platform</tags>
     <copyright>Rundeck, Inc.</copyright>
     <licenseUrl>https://github.com/rundeck/rundeck/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

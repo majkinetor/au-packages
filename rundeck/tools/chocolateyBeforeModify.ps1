@@ -4,5 +4,6 @@ if (!($Env:RDECK_BASE -and (Test-Path $Env:RDECK_BASE)) { throw "RDECK_BASE envi
 
 if (Get-Service rundeck -ea 0) { Stop-Service rundeck }
 
-rm $Env:RDECK_BASE\server\exp -Recurse -Force
-rm $Env:RDECK_BASE\server\lib -Recurse -Force
+Write-Host "Removing 'exp' and 'lib' folders from '$Env:RDECK_BASE\server'"
+cd $Env:RDECK_BASE\server
+rm exp,lib -Recurse -Force
