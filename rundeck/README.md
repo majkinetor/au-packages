@@ -25,8 +25,8 @@ Rundeck allows you to run tasks on any number of nodes from a web-based or comma
 * `/SslOpts` - Value for `RDECK_SSL_OPTS`.
 * `/AdminPwd` - Admin password, by default `admin`.
 * `/DateFormat` - Date format.
-* `/TokenDuration` - API token duration. Format: "##{ydhms}" (years, days, hours, minutes, seconds).
-* `/EnableSsl` - Use self signed SSL as described in [SSL configuration](http://rundeck.org/docs/administration/configuring-ssl.html)
+* `/TokenDuration` - API token duration. Format: `##{ydhms}` (years, days, hours, minutes, seconds).
+* `/EnableSsl` - Use self signed SSL as described in [SSL configuration](http://rundeck.org/docs/administration/configuring-ssl.html).
 
 For example:
 
