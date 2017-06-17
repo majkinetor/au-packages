@@ -24,7 +24,7 @@
     <copyright>Junegunn Choi</copyright>
     <licenseUrl>https://raw.githubusercontent.com/junegunn/fzf-bin/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/fzf/icon.png</iconUrl>
+
     <releaseNotes>https://github.com/junegunn/fzf-bin/releases/tag/0.16.8</releaseNotes>
     <docsUrl>https://github.com/junegunn/fzf/blob/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/junegunn/fzf/issues</bugTrackerUrl>
