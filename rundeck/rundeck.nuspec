@@ -58,6 +58,7 @@ cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms
     <bugTrackerUrl>https://github.com/rundeck/rundeck/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/rundeck/rundeck</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/rundeck</packageSourceUrl>
+    <mailingListUrl>https://groups.google.com/forum/#!forum/rundeck-discuss</mailingListUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.3.1" />
       <dependency id="nssm" version="2.24.0.20161223" />
