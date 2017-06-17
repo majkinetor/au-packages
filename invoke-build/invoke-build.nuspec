@@ -30,7 +30,6 @@ Invoke-Build v3.0.1 is cross-platform with PowerShell v6.0.0-alpha.
     <copyright>Roman Kuzmin</copyright>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/invoke-build/icon.png</iconUrl>
     <releaseNotes></releaseNotes>
     <docsUrl>https://github.com/nightroman/Invoke-Build/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/nightroman/Invoke-Build/issues</bugTrackerUrl>
