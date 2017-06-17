@@ -29,12 +29,13 @@ Rundeck allows you to run tasks on any number of nodes from a web-based or comma
 ## Package parameters
 
 * `/InstallDir` - Rundeck installation directory, by default `c:\rundeck`.
-* `/Service` - Install rundeck Windows service.
+* `/Service` - Install rundeck Windows service. If value `0` is specified, service will be created but not started.
 * `/CliOpts` - Value for `RDECK_CLI_OPTS`, by default `-Xms1048m -Xmx2096m`.
 * `/SslOpts` - Value for `RDECK_SSL_OPTS`.
 * `/AdminPwd` - Admin password, by default `admin`.
 * `/DateFormat` - Date format.
 * `/TokenDuration` - API token duration. Format: "##{ydhms}" (years, days, hours, minutes, seconds).
+* `/EnableSsl` - Use self signed SSL as described in [SSL configuration](http://rundeck.org/docs/administration/configuring-ssl.html)
 
 For example:
 
