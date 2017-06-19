@@ -14,9 +14,11 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge -FileNameBase plantuml -NoSuffix}
+function global:au_BeforeUpdate {
+    Get-RemoteFiles -Purge -FileNameBase plantuml -NoSuffix
+    iwr $Latest.Manual -OutFile "tools\$(Split-Path -Leaf $Latest.Manual)"    
+}
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
-
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
@@ -29,8 +31,9 @@ function global:au_GetLatest {
 
     @{
         URL32    = $url
+        Manual   = "http://plantuml.com/PlantUML_Language_Reference_Guide.pdf"
         Version  = $version
-        FileType = 'jar'
+        FileType = 'jar'        
     }
 }
 
