@@ -23,6 +23,14 @@ Install-ChocolateyShortcut @params
 Register-Application "$toolsPath\plantuml.lnk" plantuml
 Write-Host "$packageName registered as $packageName"
 
+$binparams = @{
+    name =  "plantuml"
+    path = $params.TargetPath
+    useStart = $true
+    command = """$($params.Arguments)"""
+}
+Generate-BinFile @binparams
+
 if (!$pp.NoShortcuts) { 
     Write-Host "Creating desktop shortcuts"
     $params.ShortcutFilePath = "$Env:USERPROFILE\Desktop\Plantuml.lnk"
@@ -34,11 +42,3 @@ if (!$pp.NoShortcuts) {
     }
     Install-ChocolateyShortcut @params
 }
-
-$binparams = @{
-    name =  "plantuml"
-    path = $params.TargetPath
-    useStart = $true
-    command = """$($params.Arguments)"""
-}
-Generate-BinFile @binparams
