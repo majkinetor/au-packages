@@ -15,7 +15,7 @@ $pp = Get-PackageParameters
 $params = @{
     ShortcutFilePath = "$toolsPath\plantuml.lnk"
     TargetPath       = $javaw_path
-    Arguments        = "-jar ""$toolsPath\plantuml.jar"""
+    Arguments        = "-Dfile.encoding=UTF-8 -jar ""$toolsPath\plantuml.jar"""
     IconLocation     = "$toolsPath\plantuml.ico"
 }
 Install-ChocolateyShortcut @params
