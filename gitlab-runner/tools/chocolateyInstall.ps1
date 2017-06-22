@@ -43,7 +43,7 @@ if ($pp.Service) {
     $cmd = "$runner_path install"
     if ($Username) {
         Add-User $Username $Password
-        Add-ServiceLogonRight $Usersname
+        Add-ServiceLogonRight $Username
         $cmd += " --user $Env:COMPUTERNAME\$Username --password $Password" 
     }
     iex $cmd
