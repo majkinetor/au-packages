@@ -1,6 +1,10 @@
 function Get-RunnerInstallDir() {
     $res = Get-WmiObject win32_service | ? {$_.Name -eq 'gitlab-runner'} | select -Expand PathName
-    if (!$res) { return }
+    if (!$res) { 
+        if (!(gcm gitlab-runner.exe)) { return }
+        $res = (gitlab-runner.exe --shimgen-help 2>&1) -match '^\s*Target:' -replace "Target:|'"
+        $res = $res.Trim()
+    }
     $res = $res -split '\\gitlab-runner.exe' | select -First 1
     if (Test-Path $res) { return $res }
 }
