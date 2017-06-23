@@ -10,32 +10,24 @@ if ($current_dir) {
     Write-Host 'Using previous gitlab-runner install path:' $current_dir
     $pp.InstallDir = $current_dir
 } else {
-    if (!$pp.InstallDir) { $pp.InstallDir = "C:\GitLab-Runner" }
+    if (!$pp.InstallDir) { $pp.InstallDir = "c:\gitlab-runner" }
     Write-Host 'Using install directory:' $pp.InstallDir
 }
+$installDir = $pp.InstallDir
 
 if ($pp.Service -is [string]) { 
     $Username, $Password = $pp.Service -split ':'
     if (!$Password) { throw 'When specifying service user, password is required' } 
 }
+$is64 = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
+$runner_embedded = if ($is64) { Write-Host "Installing x64 bit version"; gi $toolsPath\*_x64.exe } else { Write-Host "Installing x32 bit version"; gi $toolsPath\*_x32.exe }
 
-$tmp_path = Join-Path (Get-PackageCacheLocation)  "gitlab-runner.exe"
-$packageArgs = @{
-  packageName    = 'gitlab-runner'
-  fileFullPath   = $tmp_path
-  url            = 'https://gitlab-ci-multi-runner-downloads.s3.amazonaws.com/v9.3.0/binaries/gitlab-ci-multi-runner-windows-386.exe'
-  url64Bit       = 'https://gitlab-ci-multi-runner-downloads.s3.amazonaws.com/v9.3.0/binaries/gitlab-ci-multi-runner-windows-amd64.exe'
-  checksum       = 'e8fd62e426d0ece44d81eeaa8c48bf7a2f2b11eed81aeb1c05f26f6b7bc4bab5'
-  checksum64     = '745a033615714e72f27dbc06ed54aeddfb115028c30019ce76a4f45b424bbb39'
-  checksumType   = 'sha256'
-  checksumType64 = 'sha256'
-}
-Get-ChocolateyWebFile @packageArgs
+mkdir $installDir -ea 0 | Out-Null
+mv $runner_embedded, $toolsPath\register_example.ps1 $installDir -force
+ls $toolsPath\*.exe | % { rm $_ -ea 0; if (Test-Path $_) { touch "$_.ignore" }}
+mv $installDir\gitlab*.exe $installDir\gitlab-runner.exe
 
-mkdir $pp.InstallDir -ea 0 | Out-Null
-cp $tmp_path, $toolsPath\register_example.ps1 $pp.InstallDir -force
-
-$runner_path = Join-Path $pp.InstallDir 'gitlab-runner.exe'
+$runner_path = Join-Path $installDir 'gitlab-runner.exe'
 Install-BinFile gitlab-runner $runner_path
 
 if ($pp.Service) {

@@ -17,12 +17,12 @@ function Add-ServiceLogonRight([string] $Username) {
 }
 
 function Add-User([string] $Username, [string] $Password ) {
-    $user = Get-WmiObject win32_useraccount | ? { $_.Name -eq $Username }
+    $user = Get-WmiObject win32_useraccount -Filter { LocalAccount = 'true' } | ? { $_.Name -eq $Username }
     if ($user) { Write-Host "User $Username already exists"; return } 
 
     Write-Host "Creating user $Username as local administrator"
-    net user $Username $Password /add
-    net localgroup Administrators $Username /add
-    $user = Get-WmiObject win32_useraccount | ? { $_.Name -eq $Username }
+    net user $Username $Password /add | Out-Null
+    net localgroup Administrators $Username /add | Out-NUll
+    $user = Get-WmiObject win32_useraccount -Filter { LocalAccount = 'true' } | ? { $_.Name -eq $Username }
     $user.PasswordExpires = $false
 }
