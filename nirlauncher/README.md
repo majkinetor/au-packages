@@ -1,14 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
-    <id>nirlauncher</id>
-    <title>NirLauncher</title>
-    <version>1.20.5</version>
-    <authors>Nir Sofer</authors>
-    <owners>Miodrag Milić</owners>
-    <summary>NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed by NirSoft</summary>
-    <description>
+# [nirlauncher](https://chocolatey.org/packages/nirlauncher)
+
 NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed by NirSoft.
 
 ## Features
@@ -26,21 +17,4 @@ NirLauncher is a package of more than 180 portable freeware utilities for Window
 
 - `/Sysinternals` - Add sysinternals tools to the launcher.
 
-</description>
-    <projectUrl>http://launcher.nirsoft.net</projectUrl>
-    <tags>utility tools admin freeware system nirsoft</tags>
-    <copyright></copyright>
-    <licenseUrl>http://launcher.nirsoft.net</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/au-packages/master/nirlauncher/icon.png</iconUrl>
-    <releaseNotes>http://blog.nirsoft.net/?s=nirlauncher</releaseNotes>
-    <packageSourceUrl>https://github.com/majkinetor/au-packages/tree/master/nirlauncher</packageSourceUrl>
-    <dependencies>
-      <dependency id="chocolatey" version="0.9.10" />
-      <dependency id="chocolatey-core.extension" version="1.3.1" />
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-  </files>
-</package>
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/nirlauncher/screenshot.png)
