@@ -1,28 +1,19 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName   = 'nirlauncher'
-$url32         = 'http://download.nirsoft.net/nirsoft_package_1.20.5.zip'
-$checksum32    = '47b491badd90bba299d806bd83ebbef08ca141973b43ce7716832e56d1b12d99'
-$download_path = "$env:TEMP\chocolatey\$packageName\$Env:ChocolateyPackageVersion\nirlauncher.zip"
+$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
+$is64 = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
 $install_path  = "$(Get-ToolsLocation)\NirLauncher"
 
-$options =  @{ Headers=@{ Referer = 'http://launcher.nirsoft.net/download.html' } }
-Get-WebFile -Url $url32 -FileName $download_path -Options $options
-
-Write-Host "Installing $packageName to '$install_path'"
 $packageArgs = @{
-  packageName    = $packageName
-  url            = $download_path
-  url64Bit       = $download_path
-  checksum       = $checksum32
-  checksum64     = $checksum32
-  checksumType   = 'sha256'
-  checksumType64 = 'sha256'
-  unzipLocation  = $install_path
+    PackageName    = 'nirlauncher'
+    FileFullPath   = gi $toolsDir\*.zip
+    FileFullPath64 = gi $toolsDir\*.zip
+    Destination    = $install_path
 }
-Install-ChocolateyZipPackage @packageArgs
+Get-ChocolateyUnzip @packageArgs
+rm $toolsDir\*.zip -ea 0
 
-if (Get-ProcessorBits 64) {
+if ($is64) {
     Write-Host '64 bit architecture - overwriting x32 apps with x64 versions'
     mv $install_path\Nirsoft\x64\* $install_path\Nirsoft -force
     rm $install_path\Nirsoft\x64 -ea 0
@@ -35,18 +26,14 @@ Write-Host "$packageName registered as $packageName"
 
 Install-BinFile $packageName $launcher_path
 
-Write-Host "Removing shims from older package installs if needed"
-ls $install_path\Nirsoft\*.exe | % { Uninstall-BinFile $_.Name }
-
-if ($Env:ChocolateyPackageParameters -match '/SysInternals($| )') {
+$pp = Get-PackageParameters
+if ($pp.SysInternals) {
     Write-Host 'SysInternals utilities will be added'
 
     $sysinternals_dir = gcm autoruns.exe -ea 0 | select -Expand Source | Split-Path
-    if (!$sysinternals_dir) { Write-Warning 'Sysinternals tools are not on the PATH' }
+    if (!$sysinternals_dir) { Write-Warning 'Sysinternals tools are not on the PATH'; return }
 
-    #Download nlp
-    Get-WebFile -Url http://download.nirsoft.net/sysinternals2.nlp -FileName $sysinternals_dir\sysinternals2.nlp 3>$null
-    rm $sysinternals_dir/*.istext -ea 0
+    mv $toolsDir\sysinternals2.nlp $sysinternals_dir -Force
 
     #Configure nirlauncher
     $nircfg = gc $install_path\NirLauncher.cfg -Raw

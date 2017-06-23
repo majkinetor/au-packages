@@ -4,12 +4,11 @@
   <metadata>
     <id>nirlauncher</id>
     <title>NirLauncher</title>
-    <version>1.20.5</version>
+    <version>1.20.5.20170623</version>
     <authors>Nir Sofer</authors>
     <owners>Miodrag Milić</owners>
     <summary>NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed by NirSoft</summary>
-    <description>
-NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed by NirSoft.
+    <description>NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed by NirSoft.
 
 ## Features
 
@@ -26,6 +25,7 @@ NirLauncher is a package of more than 180 portable freeware utilities for Window
 
 - `/Sysinternals` - Add sysinternals tools to the launcher.
 
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/nirlauncher/screenshot.png)
 </description>
     <projectUrl>http://launcher.nirsoft.net</projectUrl>
     <tags>utility tools admin freeware system nirsoft</tags>
@@ -42,5 +42,6 @@ NirLauncher is a package of more than 180 portable freeware utilities for Window
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
