@@ -4,14 +4,19 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 . $toolsPath\helpers.ps1
 
 $pp = Get-PackageParameters
-$current_dir = Get-RunnerInstallDir
 
+$current_dir = Get-RunnerInstallDir
 if ($current_dir) {
     Write-Host 'Using previous gitlab-runner install path:' $current_dir
     $pp.InstallDir = $current_dir
 } else {
     if (!$pp.InstallDir) { $pp.InstallDir = "C:\GitLab-Runner" }
     Write-Host 'Using install directory:' $pp.InstallDir
+}
+
+if ($pp.Service -is [string]) { 
+    $Username, $Password = $pp.Service -split ':'
+    if (!$Password) { throw 'When specifying service user, password is required' } 
 }
 
 $tmp_path = Join-Path (Get-PackageCacheLocation)  "gitlab-runner.exe"
@@ -27,9 +32,22 @@ $packageArgs = @{
 }
 Get-ChocolateyWebFile @packageArgs
 
-Get-Service gitlab-runner -ea 0 | Stop-Service
 mkdir $pp.InstallDir -ea 0 | Out-Null
 cp $tmp_path, $toolsPath\register_example.ps1 $pp.InstallDir -force
 
-$runner_path = $pp.InstallDir + '\gitlab-runner.exe'
+$runner_path = Join-Path $pp.InstallDir 'gitlab-runner.exe'
 Install-BinFile gitlab-runner $runner_path
+
+if ($pp.Service) {
+    Write-Host "Installing gitlab-runner service"
+    $cmd = "$runner_path install"
+    if ($Username) {
+        Add-User $Username $Password
+        Add-ServiceLogonRight $Username
+        $cmd += " --user $Env:COMPUTERNAME\$Username --password $Password" 
+    }
+    iex $cmd
+
+    Write-Host "Starting service"
+    iex "$runner_path start"
+}

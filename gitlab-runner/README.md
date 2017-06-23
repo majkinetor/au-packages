@@ -26,8 +26,9 @@ GitLab Runner is the open source project that is used to run your jobs and send 
 
 ## Package parameters
 
-- `InstallDir` - Installation directory. If the Gitlab Runner is already installed, its current directory will be used. To install to a new directory, uninstall it first.
+- `/InstallDir` - Installation directory. If the Gitlab Runner is already installed, its current directory will be used. To install to a new directory, uninstall it first.
+- `/Service` - Install as a service. If value is not specified system account will be used. If value is specified it is in the form of `Username:Password`. The installer will create that user if it doesn't exist, add it to local administrators group, enable _ServiceLogonRight_ and disable password expiration. Example: `/Service:gitlab-runner:P@ssw0rd`.
 
 ## Notes
 
-- The script `register_example.ps1` is provided along the executable which can be used to quickly register runner non-interactively. If you want to use it, rename it, because it will be overwritten on updates.
+- The script `register_example.ps1` is provided along the executable which can be used to quickly register runner non-interactively. If you want to use it, rename it to `register.ps1` and set desired environment variables.
