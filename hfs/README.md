@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/hfs/icon.png" width="48" height="48"/> [hfs](https://chocolatey.org/packages/hfs)
+# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/hfs/icon.gif" width="48" height="48"/> [hfs](https://chocolatey.org/packages/hfs)
 
 
 

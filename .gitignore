@@ -13,3 +13,4 @@
 *.rar
 *.zip
 /invoke-build/tools/InvokeBuild
+/plantuml/tools/PlantUML_Language_Reference_Guide.pdf
