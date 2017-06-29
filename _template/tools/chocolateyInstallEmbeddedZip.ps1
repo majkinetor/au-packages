@@ -1,15 +1,15 @@
 $ErrorActionPreference = 'Stop'
 
-$toolsDir      = Split-Path $MyInvocation.MyCommand.Definition
-$embedded_path = if ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') {
-         Write-Host "Installing 64 bit version"; gi "$toolsDir\*_x64.zip"
-} else { Write-Host "Installing 32 bit version"; gi "$toolsDir\*_x32.zip" }
+$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
+$is64      = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
 
 $packageArgs = @{
-    PackageName  = ''
-    FileFullPath = $embedded_path
-    Destination  = $toolsDir
+    PackageName    = ''
+    FileFullPath   = $toolsPath\*_x32.zip
+    FileFullPath64 = $toolsPath\*_x64.zip    
+    Destination    = $toolsPath
 }
-ls $toolsDir\* | ? { $_.PSISContainer } | rm -Recurse -Force #remove older package dirs
+
+ls $toolsPath\* | ? { $_.PSISContainer } | rm -Recurse -Force #remove older package dirs
 Get-ChocolateyUnzip @packageArgs
-rm $toolsDir\*.zip -ea 0
+rm $toolsPath\*.zip -ea 0
