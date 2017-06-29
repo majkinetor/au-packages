@@ -1,24 +1,21 @@
 $ErrorActionPreference = 'Stop'
 
-$fileType      = ''
-$toolsDir      = Split-Path $MyInvocation.MyCommand.Definition
-#$embedded_path = gi "$toolsDir\*.$fileType"
-#$embedded_path = if ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') {
-         #Write-Host "Installing 64 bit version"; gi "$toolsDir\*_x64.exe"
-#} else { Write-Host "Installing 32 bit version"; gi "$toolsDir\*_x32.exe" }
+$toolsPath      = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
   packageName    = ''
   fileType       = $fileType
-  file           = $embedded_path
+  file           = gi $toolsPath\*_x32.exe
+  file64         = gi $toolsPath\*_x64.exe
   silentArgs     = '/S'
-  validExitCodes = @(0, 1223)
+  validExitCodes = @(0)
+  softwareName   = ''
 }
 Install-ChocolateyInstallPackage @packageArgs
-ls $toolsDir\*.exe | % { rm $_ -ea 0; if (Test-Path $_) { touch "$_.ignore" }}
+ls $toolsPath\*.exe | % { rm $_ -ea 0; if (Test-Path $_) { touch "$_.ignore" }}
 
 $packageName = $packageArgs.packageName
-$installLocation = Get-AppInstallLocation $packageName
+$installLocation = Get-AppInstallLocation "$packageName*"
 if (!$installLocation)  { Write-Warning "Can't find $packageName install location"; return }
 Write-Host "$packageName installed to '$installLocation'"
 
