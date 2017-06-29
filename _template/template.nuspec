@@ -25,6 +25,7 @@
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/</packageSourceUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.3.1" />
+      <dependency id="chocolatey" version="0.10.7" />     
     </dependencies>
   </metadata>
   <files>
