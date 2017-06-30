@@ -28,8 +28,8 @@ function global:au_GetLatest {
 
     @{
         Version      = $version
-        URL32        = $url[0]
-        URL64        = $url[1]
+        URL32        = $url[1]
+        URL64        = $url[0]
     }
 }
 
