@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>rundeck</id>
     <title>Rundeck</title>
-    <version>2.8.2</version>
+    <version>2.8.3</version>
     <authors>Rundeck, Inc.</authors>
     <owners>Miodrag Milic</owners>
     <summary>Job scheduler and runbook automation. Enable self-service access to existing scripts and tools.</summary>
@@ -34,8 +34,8 @@ Rundeck allows you to run tasks on any number of nodes from a web-based or comma
 * `/SslOpts` - Value for `RDECK_SSL_OPTS`.
 * `/AdminPwd` - Admin password, by default `admin`.
 * `/DateFormat` - Date format.
-* `/TokenDuration` - API token duration. Format: "##{ydhms}" (years, days, hours, minutes, seconds).
-* `/EnableSsl` - Use self signed SSL as described in [SSL configuration](http://rundeck.org/docs/administration/configuring-ssl.html)
+* `/TokenDuration` - API token duration. Format: `##{ydhms}` (years, days, hours, minutes, seconds).
+* `/EnableSsl` - Use self signed SSL as described in [SSL configuration](http://rundeck.org/docs/administration/configuring-ssl.html).
 
 For example:
 
@@ -45,7 +45,9 @@ cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms
 
 ## Notes
 
-* The package performs installation that is described in official [documentation](http://rundeck.org/docs/administration/installation.html#install-on-windows). After installation, you can access the service via URL http://localhost:4440.
+* The package performs installation that is described in official [documentation](http://rundeck.org/docs/administration/installation.html#install-on-windows). After installation, you can access the service via URL http://localhost:4440 or https://localhost:4443 if `EnableSsl` parameter is used.
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/rundeck/screenshot.png)
 </description>
     <projectUrl>http://rundeck.org/index.html</projectUrl>
     <tags>admin cron scheduler devops scripts rest foss cross-platform</tags>
@@ -53,7 +55,7 @@ cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms
     <licenseUrl>https://github.com/rundeck/rundeck/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/rundeck/icon.png</iconUrl>
-    <releaseNotes>https://github.com/rundeck/rundeck/blob/v2.8.2/RELEASE.md</releaseNotes>
+    <releaseNotes>https://github.com/rundeck/rundeck/blob/v2.8.3/RELEASE.md</releaseNotes>
     <docsUrl>http://rundeck.org/docs.html</docsUrl>
     <bugTrackerUrl>https://github.com/rundeck/rundeck/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/rundeck/rundeck</projectSourceUrl>
