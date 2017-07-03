@@ -1,5 +1,3 @@
-param ([switch]$WhatIf)
-
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
