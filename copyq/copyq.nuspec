@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>copyq</id>
     <title>CopyQ</title>
-    <version>3.0.2</version>
+    <version>3.0.3</version>
     <authors>Lukas Holocek</authors>
     <owners>Miodrag Milic</owners>
     <summary>Cross-platform clipboard manager with advanced features</summary>
@@ -36,8 +36,9 @@ Items can be:
 
 ## Package parameters
 
-* `NoDesktopIcon` - do not create desktop icon
-* `NoStartup`   - do not run CopyQ on OS startup
+* `/NoDesktopIcon` - Do not create desktop icon
+* `/NoStartup`   - Do not run CopyQ on OS startup
+* `/ToggleShortcut` - Specify global shortcut to use to launch copyq, for example `/ToggleShortcut:ctrl+q`.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
 </description>
@@ -50,7 +51,7 @@ Items can be:
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.2" />
     </dependencies>
-    <releaseNotes>https://github.com/hluk/CopyQ/releases/tag/v3.0.2</releaseNotes>
+    <releaseNotes>https://github.com/hluk/CopyQ/releases/tag/v3.0.3</releaseNotes>
     <docsUrl>https://github.com/hluk/CopyQ/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/hluk/CopyQ/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/hluk/CopyQ</projectSourceUrl>
