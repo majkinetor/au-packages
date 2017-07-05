@@ -24,7 +24,7 @@ function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
-    $url = $download_page.links | ? { [version]::TryParse($_.innerText, [ref]($__)) } | select -First 1
+    $url = $download_page.links | ? { [version]::TryParse($_.innerText, [ref]($__)) } | select -First 1    
 
     $releases = 'https://sourceforge.net' + $url.href
     $download_page = Invoke-WebRequest -Uri $releases
@@ -37,9 +37,4 @@ function global:au_GetLatest {
     }
 }
 
-try {
-    update -ChecksumFor none
-} catch {
-    $ignore = 'Unable to connect to the remote server'
-    if ($_ -match $ignore) { Write-Host $ignore; 'ignore' }  else { throw $_ }
-}
+update -ChecksumFor none
