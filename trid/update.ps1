@@ -13,6 +13,10 @@ function global:au_SearchReplace {
           "(?i)(checksum_trid:).*"       = "`${1} $($Latest.checksum_trid)"
           "(?i)(checksum_triddefs:).*"   = "`${1} $($Latest.checksum_triddefs)"
         }
+
+        "$($Latest.PackageName).nuspec" = @{
+            "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
+        }
     }
 }
 
@@ -39,11 +43,13 @@ function global:au_GetLatest {
 
     # trid_defs version
     [xml]$rss = Invoke-WebRequest 'http://mark0.net/forum/index.php?action=.xml;sa=recent;board=8.0;limit=15;type=rss2' -UseBasicParsing
-    $date = $rss.rss.channel.item.pubDate | Select -First 1     #Sat, 15 Jul 2017 14:03:31 GMT
+    $item1 = $rss.rss.channel.item | Select -First 1     #Sat, 15 Jul 2017 14:03:31 GMT
+    $date = $item1.pubDate
     $version_def = [datetime]::Parse($date).ToString('yyyyMMdd')
 
     @{
-        Version  = "${version_trid}.${version_def}"
+        Version       = "${version_trid}.${version_def}"
+        ReleaseNotes  = $item1.link
     }
 }
 
