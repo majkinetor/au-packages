@@ -22,7 +22,7 @@ function global:au_AfterUpdate  {  Set-DescriptionFromReadme -SkipFirst 2 }
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
 
-    $re    = '\.exe$'
+    $re    = '(?<!portable)\.exe$'
     $url   =  $download_page.links | ? href -match $re | select -First 2 |  % { "https://github.com" + $_.href }
     $version  = $url[0] -split '-' | select -last 1 -Skip 2
 
