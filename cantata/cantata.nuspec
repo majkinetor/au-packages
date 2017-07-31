@@ -5,12 +5,11 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>cantata</id>
     <title>Cantata</title>
-    <version>2.0.1</version>
+    <version>2.1.0</version>
     <authors>Craig Drummond</authors>
     <owners>Miodrag Milic</owners>
     <summary>Cantata is a graphical client for music player daemon (mpd)</summary>
-    <description>
-Cantata is a graphical client for MPD. It contains the following features:
+    <description>Cantata is a graphical client for MPD. It contains the following features:
 
 Cantata started off as a fork of QtMPC, mainly to provide better KDE integration - by using KDE libraries/classes wherever possible. However, the code (and user interface) is now *very* different to that of QtMPC, and both KDE and Qt (Linux) builds have the same feature set. Also, as of 1.4.0, by default Cantata is built as a Qt-only application (with no KDE dependencies).
 
@@ -41,14 +40,15 @@ views and tooltips, and also to help with copying songs to/from devices.
 - Ratings support.
 
 ![screenshot](https://rawgit.com/majkinetor/au-packages/master/cantata/screenshot.png)
-    </description>
+
+</description>
     <projectUrl>https://github.com/CDrummond/cantata</projectUrl>
     <tags>foss cross-platform audio mp3 radio media player multimedia mpd</tags>
     <copyright>Craig Drummond</copyright>
     <licenseUrl>https://github.com/CDrummond/cantata/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://rawgit.com/majkinetor/au-packages/master/cantata/icon.png</iconUrl>
-    <releaseNotes>https://github.com/CDrummond/cantata/releases/tag/v2.0.1</releaseNotes>
+    <releaseNotes>https://github.com/CDrummond/cantata/releases/tag/v2.1.0</releaseNotes>
     <docsUrl>https://github.com/CDrummond/cantata/blob/master/README</docsUrl>
     <bugTrackerUrl>https://github.com/CDrummond/cantata/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/CDrummond/cantata</projectSourceUrl>
