@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/junegunn/fzf-bin/releases/download/0.16.10/fzf-0.16.10-windows_386.zip
-   x64: https://github.com/junegunn/fzf-bin/releases/download/0.16.10/fzf-0.16.10-windows_amd64.zip
+   x32: https://github.com/junegunn/fzf-bin/releases/download/0.16.11/fzf-0.16.11-windows_386.zip
+   x64: https://github.com/junegunn/fzf-bin/releases/download/0.16.11/fzf-0.16.11-windows_amd64.zip
 
    to download the installer.
 
@@ -16,11 +16,11 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 9B795FA47A3B69A9474E2674F38787E169F755F0590554B62D54101F70A534EB
-   checksum64: 4EC6792492B977FEFF256274257B9E255F8AB3043BC2001E13862A9B7ACB90A9
+   checksum32: 24B2B6C09F6D361E1233E18A53E975DBAFE9B77813EE59A6825A3C4C2359F431
+   checksum64: 8B4FF9EC3818C0F7E2A5EAB3400238AA3796F357671F284898D6EF4139DB4039
 
 Using AU:
-   Get-RemoteChecksum https://github.com/junegunn/fzf-bin/releases/download/0.16.10/fzf-0.16.10-windows_amd64.zip
+   Get-RemoteChecksum https://github.com/junegunn/fzf-bin/releases/download/0.16.11/fzf-0.16.11-windows_amd64.zip
 
 File 'LICENSE' is obtained from:
    https://raw.githubusercontent.com/junegunn/fzf-bin/master/LICENSE
