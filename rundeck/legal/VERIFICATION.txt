@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: http://dl.bintray.com/rundeck/rundeck-maven/rundeck-launcher-2.8.4.jar
+   x32: http://dl.bintray.com/rundeck/rundeck-maven/rundeck-launcher-2.9.0.jar
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 3E6D30B80EAADEA253D3CBC1AA3AE47B921B7562C28BB9D1F8EB1AFDEB5D2251
+   checksum32: D285F93F274176E018EF59D61F919EDE2D359EB8F7727054FBADD8E792D09C7F
 
 File 'license.txt' is obtained from:
    https://raw.githubusercontent.com/rundeck/rundeck/master/LICENSE
