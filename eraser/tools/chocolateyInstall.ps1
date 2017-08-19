@@ -19,9 +19,9 @@ $packageArgs = @{
 Install-ChocolateyZipPackage @packageArgs
 
 $msi_path = if ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') {
-    ls "$setupDir\*eraser*x86*.msi" -Recurse | Select -Expand FullName
+    ls "$setupDir\*eraser*x64*.msi" -Recurse | select -Expand FullName
 } else {
-    ls "$setupDir\*eraser*x64*.msi" -Recurse | Select -Expand FullName
+    ls "$setupDir\*eraser*x86*.msi" -Recurse | select -Expand FullName
 }
 if (!(Test-Path $msi_path)) { throw "Unpacking failed" }
 
