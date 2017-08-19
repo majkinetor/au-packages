@@ -1,7 +1,7 @@
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'http://dbeaver.jkiss.org/files/dbeaver-ee-latest-x86-setup.exe'
+$releases = 'https://dbeaver.com/files/dbeaver-ee-latest-x86-setup.exe'
 
 function global:au_SearchReplace {
     @{
