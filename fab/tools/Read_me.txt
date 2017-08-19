@@ -1,6 +1,17 @@
 Author: BlueLife , Velociraptor
 www.sordum.org
 
+[010101010101010101]--Firewall App Blocker (Fab) v1.6--[010101010101010101]
+
+(Friday , 21. April 2017)
+------------
+Changelog:
+01. FIXED - Add a folder feature doesn't support shortcuts 
+02. FIXED - If the firewall is closed, added icons seems to be blocked
+03. FIXED - In whitelist mode MS Edge continues to establish normal connections to the Internet (Need extra step)
+04. FIXED - Fab cannot remove old versions Context Menu registry entries properly
+
+
 [010101010101010101]--Firewall App Blocker (Fab) v1.5--[010101010101010101]
 
 (07.02.2017)

@@ -16,12 +16,12 @@ Package can be verified like this:
    - Use Chocolatey utility 'checksum.exe'
 
     File: Fab_x64.exe
-    MD5: d11cd3d89632f5c6758ec853cc040e76
-    SHA1: 0c65bb9fccb332f6bb06b3ef78f89989d4258df5
+    MD5: 2441beb1a1f695dc33e9b097442e0e6c
+    SHA1: e602773634767fb71360d18631ec7e5bae390618
 
     File: Fab.exe
-    MD5: 0e54516ed67acd5ae8971663b72ab223
-    SHA1: 9e3ce35c897002c47a73d9a23feb88c7e8eff785
+    MD5: 2294c122d38f564e8ef2bd3e58d7a623
+    SHA1: 1bdd95fc5cf5408688f32fcb4483af5eecf543da
 
 File 'eula_sordum's_freeware.rtf' is obtained from:
    http://www.sordum.org/eula
