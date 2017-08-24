@@ -2,11 +2,15 @@
 $moduleName = 'InvokeBuild'
 
 Write-Host "Installing module $moduleName to $Env:ProgramFiles\WindowsPowerShell\Modules"
+$dstDirectory = "$Env:ProgramFiles\WindowsPowerShell\Modules\$moduleName\"
 if ($PSVersionTable.PSVersion.Major -lt 5)
 {
-    $srcDirectory = "$toolsDir\$moduleName\*\"
+    $srcDirectory = "$toolsDir\$moduleName\*\*"
 } else {
-    $srcDirectory = "$toolsDir\$moduleName"
+    $srcDirectory = "$toolsDir\$moduleName\*"
 }
 
-cp $srcDirectory $Env:ProgramFiles\WindowsPowerShell\Modules\$moduleName -Force -Recurse
+if (-not (Test-Path $dstDirectory)) {
+    mkdir $dstDirectory | Out-Null
+}
+cp $srcDirectory $dstDirectory -Force -Recurse
