@@ -2,15 +2,16 @@
 $moduleName = 'InvokeBuild'
 
 Write-Host "Installing module $moduleName to $Env:ProgramFiles\WindowsPowerShell\Modules"
-$dstDirectory = "$Env:ProgramFiles\WindowsPowerShell\Modules\$moduleName\"
+$destination = "$Env:ProgramFiles\WindowsPowerShell\Modules\$moduleName\"
 if ($PSVersionTable.PSVersion.Major -lt 5)
 {
-    $srcDirectory = "$toolsDir\$moduleName\*\*"
+    $source = "$toolsDir\$moduleName\*\*"
 } else {
-    $srcDirectory = "$toolsDir\$moduleName\*"
+    $source = "$toolsDir\$moduleName\*"
 }
 
-if (-not (Test-Path $dstDirectory)) {
-    mkdir $dstDirectory | Out-Null
+# Copy-Item results differ depending on if destination exists or not
+if (-not (Test-Path $destination)) {
+    mkdir $destination | Out-Null
 }
-cp $srcDirectory $dstDirectory -Force -Recurse
+cp $source $destination -Force -Recurse
