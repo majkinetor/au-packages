@@ -15,3 +15,11 @@ Invoke-Build can invoke the current task from a build script being composed in I
 Invoke-Build can be used as the task runner in VSCode with tasks maintained in a PowerShell build script instead of *tasks.json*, see *New-VSCodeTask.ps1*.
 
 Invoke-Build v3.0.1 is cross-platform with PowerShell v6.0.0-alpha.
+
+## Notes
+
+- Its recommended to include the following in your PowerShell `$PROFILE`:
+    ```
+    sal ib Invoke-Build
+    & "$env:ChocolateyInstall\lib\invoke-build\tools\Invoke-Build.ArgumentCompleters.ps1"
+    ```
