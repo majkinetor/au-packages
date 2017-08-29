@@ -19,6 +19,7 @@ function global:au_BeforeUpdate {
     rm tools\$moduleName -Force -Recurse -ea 0
     Install-PackageProvider Nuget -Force
     Save-Module -Name $moduleName -Path tools
+    Save-Script Invoke-Build.ArgumentCompleters -Path tools
 }
 
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
