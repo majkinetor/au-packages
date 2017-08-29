@@ -1,4 +1,4 @@
-# # <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/invoke-build/icon.png" width="48" height="48"/>[invoke-build](https://chocolatey.org/packages/invoke-build)
+# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/invoke-build/icon.png" width="48" height="48"/>[invoke-build](https://chocolatey.org/packages/invoke-build)
 
 Invoke-Build is a build and test automation tool which invokes tasks defined in PowerShell v2.0+ scripts. It is similar to psake but arguably easier to use and more powerful. It is complete, bug free, well covered by tests.
 
@@ -18,6 +18,7 @@ Invoke-Build v3.0.1 is cross-platform with PowerShell v6.0.0-alpha.
 
 ## Notes
 
+- This package includes `Invoke-TaskFromISE`, `Invoke-TaskFromVSCode` and `Invoke-Build.ArgumentCompleters` supportive scripts.
 - Its recommended to include the following in your PowerShell `$PROFILE`:
     ```
     sal ib Invoke-Build
