@@ -18,7 +18,7 @@ Invoke-Build v3.0.1 is cross-platform with PowerShell v6.0.0-alpha.
 
 ## Notes
 
-- This package includes `Invoke-TaskFromISE`, `Invoke-TaskFromVSCode` and `Invoke-Build.ArgumentCompleters` supportive scripts.
+- This package includes `Invoke-TaskFromISE`, `Invoke-TaskFromVSCode`, `New-VSCodeTask` and `Invoke-Build.ArgumentCompleters` supportive scripts.
 - Its recommended to include the following in your PowerShell `$PROFILE`:
     ```
     sal ib Invoke-Build

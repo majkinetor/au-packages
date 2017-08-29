@@ -19,7 +19,7 @@ function global:au_BeforeUpdate {
     rm tools\$moduleName -Force -Recurse -ea 0
     Install-PackageProvider Nuget -Force
     Save-Module -Name $moduleName -Path tools
-    'Invoke-Build.ArgumentCompleters', 'Invoke-TaskFromISE', 'Invoke-TaskFromVSCode' | % { Save-Script $_ -Path tools }
+    'Invoke-Build.ArgumentCompleters', 'Invoke-TaskFromISE', 'Invoke-TaskFromVSCode','New-VSCodeTask' | % { Save-Script $_ -Path tools }
 }
 
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
