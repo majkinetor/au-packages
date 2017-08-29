@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>invoke-build</id>
     <title>Invoke-Build</title>
-    <version>3.6.4</version>
+    <version>3.6.4.20170829</version>
     <authors>Roman Kuzmin</authors>
     <owners>Miodrag Milic</owners>
     <summary>Invoke-Build is a build and test automation tool</summary>
@@ -35,6 +35,7 @@ Invoke-Build v3.0.1 is cross-platform with PowerShell v6.0.0-alpha.
     <bugTrackerUrl>https://github.com/nightroman/Invoke-Build/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/nightroman</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/invoke-build</packageSourceUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dngrep/icon.png</iconUrl>
     <dependencies>
     </dependencies>
   </metadata>
