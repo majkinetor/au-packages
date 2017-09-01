@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>pass-winmenu</id>
+    <title>pass-winmenu</title>
+    <version>0.0</version>
+    <authors>Johan Geluk</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>An easy-to-use Windows interface for pass</summary>
+    <description>
+    </description>
+    <projectUrl>https://github.com/Baggykiin/pass-winmenu</projectUrl>
+    <tags>foss password security</tags>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/Baggykiin/pass-winmenu/blob/master/LICENCE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/pass-winmenu/icon.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <docsUrl>https://github.com/Baggykiin/pass-winmenu/blob/master/README.md</docsUrl>
+    <mailingListUrl></mailingListUrl>
+    <bugTrackerUrl>https://github.com/Baggykiin/pass-winmenu/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/Baggykiin/pass-winmenu</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/pass-winmenu</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.1" />
+      <dependency id="gpg4win-vanilla" version="2.3.4.20170711" />     
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
