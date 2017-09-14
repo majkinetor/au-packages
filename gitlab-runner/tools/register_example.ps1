@@ -1,4 +1,8 @@
-# For the list of all environment vars run `gitlab-runner register --help`
+<# 
+    Rename this file to register.ps1 or it will get overwritten by the future updates.
+    For the list of all environment vars run `gitlab-runner register --help`
+    Running runners should automatically pick up config.toml changes.
+#>
 
 $Env:REGISTRATION_TOKEN         = ''
 $Env:CI_SERVER_URL              = ''
