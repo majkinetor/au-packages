@@ -12,7 +12,7 @@ function Get-RunnerInstallDir() {
 function Add-ServiceLogonRight([string] $Username) {
     Write-Host "Enable ServiceLogonRight for $Username"
     
-    $tmp = New-TemporaryFile
+    $tmp = [System.IO.Path]::GetTempFileName()
     secedit /export /cfg "$tmp.inf" | Out-Null
     (gc -Encoding ascii "$tmp.inf") -replace '^SeServiceLogonRight .+', "`$0,$Username" | sc -Encoding ascii "$tmp.inf"
     secedit /import /cfg "$tmp.inf" /db "$tmp.sdb" | Out-Null
