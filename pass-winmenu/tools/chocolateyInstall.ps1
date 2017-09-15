@@ -1,15 +1,16 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
-$is64      = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
+
+$pp = Get-PackageParameters
+$installDir = if ($pp.InstallDir ) { $pp.InstallDir } else { Join-Path (Get-ToolsLocation) $Env:ChocolateyPackageName }
+Write-Host "Sysinternals Suite is going to be installed in '$installDir'"
 
 $packageArgs = @{
-    PackageName    = ''
-    FileFullPath   = $toolsPath\*_x32.zip
-    FileFullPath64 = $toolsPath\*_x64.zip    
-    Destination    = $toolsPath
+    PackageName    = 'pass-winmenu'
+    FileFullPath   = gi $toolsPath\*.zip
+    Destination    = $installDir
 }
 
-ls $toolsPath\* | ? { $_.PSISContainer } | rm -Recurse -Force #remove older package dirs
 Get-ChocolateyUnzip @packageArgs
 rm $toolsPath\*.zip -ea 0
