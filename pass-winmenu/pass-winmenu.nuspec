@@ -37,7 +37,7 @@
     <licenseUrl>https://github.com/Baggykiin/pass-winmenu/blob/master/LICENCE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/pass-winmenu/icon.png</iconUrl>
-    <releaseNotes>https://github.com/Baggykiin/pass-winmenu/releases/tag/1.6</releaseNotes>
+    <releaseNotes>https://github.com/Baggykiin/pass-winmenu/releases/tag/v1.6</releaseNotes>
     <docsUrl>https://github.com/Baggykiin/pass-winmenu/blob/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/Baggykiin/pass-winmenu/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/Baggykiin/pass-winmenu</projectSourceUrl>
