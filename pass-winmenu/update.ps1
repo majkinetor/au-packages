@@ -36,7 +36,7 @@ function global:au_GetLatest {
     @{
         Version      = $version
         URL32        = $url
-        ReleaseNotes = "https://github.com/Baggykiin/pass-winmenu/releases/tag/$version"
+        ReleaseNotes = "https://github.com/Baggykiin/pass-winmenu/releases/tag/v$version"
     }
 }
 
