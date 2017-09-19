@@ -1,5 +1,4 @@
 import-module au
-. $PSScriptRoot\..\_scripts\all.ps1
 
 $trid_url     = 'http://mark0.net/download/trid_w32.zip'
 $triddefs_url = 'http://mark0.net/download/triddefs.zip'
