@@ -1,5 +1,4 @@
 import-module au
-. $PSScriptRoot\..\_scripts\all.ps1
 
 $trid_url     = 'http://mark0.net/download/trid_w32.zip'
 $triddefs_url = 'http://mark0.net/download/triddefs.zip'
@@ -26,8 +25,6 @@ function global:au_BeforeUpdate {
     7z e tools\triddefs.zip -otools -aoa
     rm tools\triddefs.zip
 }
-
-function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
 
