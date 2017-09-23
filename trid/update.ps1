@@ -26,8 +26,6 @@ function global:au_BeforeUpdate {
     rm tools\triddefs.zip
 }
 
-function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
-
 function global:au_GetLatest {
 
     # trid.exe version
