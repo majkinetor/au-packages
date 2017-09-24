@@ -1,5 +1,4 @@
 import-module au
-. $PSScriptRoot\..\_scripts\all.ps1
 
 $releases = 'http://plantuml.com/changes.html'
 
@@ -18,7 +17,6 @@ function global:au_BeforeUpdate {
     Get-RemoteFiles -Purge -FileNameBase plantuml -NoSuffix
     iwr $Latest.Manual -OutFile "tools\$(Split-Path -Leaf $Latest.Manual)"    
 }
-function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
