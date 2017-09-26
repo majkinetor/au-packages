@@ -5,11 +5,11 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>gitlab-runner</id>
     <title>Gitlab Runner</title>
-    <version>9.5.0</version>
+    <version>10.0.0-rc1</version>
     <authors>Gitlab</authors>
     <owners>Miodrag Milic</owners>
     <summary>Run build jobs and send the results to GitLab</summary>
-    <description>GitLab Runner is the open source project that is used to run your jobs and send the results back to GitLab. It is used in conjunction with GitLab CI, the open-source continuous integration service included with GitLab that coordinates the jobs.
+    <description><![CDATA[GitLab Runner is the open source project that is used to run your jobs and send the results back to GitLab. It is used in conjunction with GitLab CI, the open-source continuous integration service included with GitLab that coordinates the jobs.
 
 ## Features
 
@@ -41,7 +41,7 @@
 ## Notes
 
 - The script `register_example.ps1` is provided along the executable which can be used to quickly register runner non-interactively. If you want to use it, rename it to `register.ps1` and set desired environment variables.
-</description>
+]]></description>
     <projectUrl>https://docs.gitlab.com/runner</projectUrl>
     <tags>admin cli foss git cross-platform build docker shell gitlab</tags>
     <copyright>GitLab</copyright>
