@@ -1,7 +1,6 @@
 import-module au
 
 $releases    = 'https://github.com/hluk/CopyQ/releases'
-
 function global:au_SearchReplace {
    @{
         ".\tools\chocolateyInstall.ps1" = @{
