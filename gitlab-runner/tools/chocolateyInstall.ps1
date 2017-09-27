@@ -15,10 +15,6 @@ if ($current_dir) {
 }
 $installDir = $pp.InstallDir
 
-if ($pp.Service -is [string]) { 
-    $Username, $Password = $pp.Service -split ':'
-    if (!$Password) { throw 'When specifying service user, password is required' } 
-}
 $is64 = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
 $runner_embedded = if ($is64) { Write-Host "Installing x64 bit version"; gi $toolsPath\*_x64.exe } else { Write-Host "Installing x32 bit version"; gi $toolsPath\*_x32.exe }
 
@@ -31,6 +27,13 @@ $runner_path = Join-Path $installDir 'gitlab-runner.exe'
 Install-BinFile gitlab-runner $runner_path
 
 if ($pp.Service) {
+    if ($pp.Autologon) { throw 'Autologon and Service parameters are mutally exclusive' }
+
+    if ($pp.Service -is [string]) { 
+        $Username, $Password = $pp.Service -split ':'
+        if (!$Password) { throw 'When specifying service user, password is required' } 
+    }
+
     Write-Host "Installing gitlab-runner service"
     $cmd = "$runner_path install"
     if ($Username) {
@@ -42,4 +45,12 @@ if ($pp.Service) {
 
     Write-Host "Starting service"
     iex "$runner_path start"
+}
+
+if ($pp.Autologon) { 
+    if ($pp.Service) { throw 'Autologon and Service parameters are mutally exclusive' }
+    
+    $Username, $Password = $pp.Autologon -split ':'
+    Write-Host "Setting autologon for $Username"
+    Set-AutoLogon $Username $Password  
 }
