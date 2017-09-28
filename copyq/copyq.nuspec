@@ -5,11 +5,11 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>copyq</id>
     <title>CopyQ</title>
-    <version>3.0.3</version>
+    <version>3.1.0</version>
     <authors>Lukas Holocek</authors>
     <owners>Miodrag Milic</owners>
     <summary>Cross-platform clipboard manager with advanced features</summary>
-    <description>CopyQ monitors system clipboard and saves its content in customized tabs. Saved clipboard can be later copied and pasted directly into any application.
+    <description><![CDATA[CopyQ monitors system clipboard and saves its content in customized tabs. Saved clipboard can be later copied and pasted directly into any application.
 
 Items can be:
 
@@ -41,7 +41,7 @@ Items can be:
 * `/ToggleShortcut` - Specify global shortcut to use to launch copyq, for example `/ToggleShortcut:ctrl+q`.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
-</description>
+]]></description>
     <projectUrl>https://hluk.github.io/CopyQ</projectUrl>
     <tags>admin clipboard copyq cross-platform foss</tags>
     <copyright></copyright>
@@ -51,7 +51,7 @@ Items can be:
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.2" />
     </dependencies>
-    <releaseNotes>https://github.com/hluk/CopyQ/releases/tag/v3.0.3</releaseNotes>
+    <releaseNotes>https://github.com/hluk/CopyQ/releases/tag/v3.1.0</releaseNotes>
     <docsUrl>https://github.com/hluk/CopyQ/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/hluk/CopyQ/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/hluk/CopyQ</projectSourceUrl>
