@@ -28,6 +28,4 @@ function global:au_GetLatest {
     }
 }
 
-#update -ChecksumFor none
-Write-Host 'ignored until autologon is finished'
-return 'ignore'
+update -ChecksumFor none

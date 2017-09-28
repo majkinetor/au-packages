@@ -21,13 +21,13 @@ $runner_embedded = if ($is64) { Write-Host "Installing x64 bit version"; gi $too
 mkdir $installDir -ea 0 | Out-Null
 mv $runner_embedded, $toolsPath\register_example.ps1 $installDir -force
 ls $toolsPath\*.exe | % { rm $_ -ea 0; if (Test-Path $_) { touch "$_.ignore" }}
-mv $installDir\gitlab*.exe $installDir\gitlab-runner.exe
+mv $installDir\gitlab*.exe $installDir\gitlab-runner.exe -Force
 
 $runner_path = Join-Path $installDir 'gitlab-runner.exe'
 Install-BinFile gitlab-runner $runner_path
 
 if ($pp.Service) {
-    if ($pp.Autologon) { throw 'Autologon and Service parameters are mutally exclusive' }
+    if ($pp.Autologon) { throw 'Autologon and Service parameters are mutually exclusive' }
 
     if ($pp.Service -is [string]) { 
         $Username, $Password = $pp.Service -split ':'
@@ -48,9 +48,28 @@ if ($pp.Service) {
 }
 
 if ($pp.Autologon) { 
-    if ($pp.Service) { throw 'Autologon and Service parameters are mutally exclusive' }
+    if ($pp.Service) { throw 'Autologon and Service parameters are mutually exclusive' }
     
     $Username, $Password = $pp.Autologon -split ':'
+    if (!$Password) { throw 'When specifying autologon user, password is required' } 
+    
+    Add-User $Username $Password
+
     Write-Host "Setting autologon for $Username"
-    Set-AutoLogon $Username $Password  
+    Set-AutoLogon $Username $Password -Script "$installDir\autologon.bat"
+
+    Write-Host "Creating logon script: $installDir\autologon.bat"
+    "cd ""$installDir""`n" +
+    """$installDir\gitlab-runner.exe"" run" | Out-File $installDir\autologon.bat -Encoding ascii
+
+    Write-Host "Creating scheduled task: autologon"
+    [xml] $xml = gc $toolsPath\autologon.xml -Encoding Ascii
+    $xml.Task.RegistrationInfo.Author       = "$Env:COMPUTERNAME\$Env:USERNAME"
+    $xml.task.Triggers.LogonTrigger.UserId  = "$Env:COMPUTERNAME\$Username"
+    $xml.task.Principals.Principal.UserId   = "$Env:COMPUTERNAME\$Username"
+    $xml.task.Actions.Exec.Command          = "$installDir\autologon.bat"
+    $xml.Save( "$toolsPath\autologon.xml" )
+
+    schtasks.exe /Create /XML "$toolsPath\autologon.xml" /Tn autologon /F
+    if ($LASTEXITCODE) { throw "Scheduled task not created ($LastExitCode)" }
 }
