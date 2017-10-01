@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/hluk/CopyQ/releases/download/v3.1.0/copyq-v3.1.0-setup.exe
+   x32: https://github.com/hluk/CopyQ/releases/download/v3.1.1/copyq-v3.1.1-setup.exe
 
    to download the installer.
 
@@ -15,11 +15,11 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: E65F239A292434119CF760013DF80E278470AD16AEFA350EBFCD8A9A72EDC604
+   checksum32: 9F328BDF76DFBE899CF472CBCEFD25F6E2A515FCFB3DA917598706FE1D7EF2D6
 
 Using AU:
 
-   Get-RemoteChecksum https://github.com/hluk/CopyQ/releases/download/v3.1.0/copyq-v3.1.0-setup.exe
+   Get-RemoteChecksum https://github.com/hluk/CopyQ/releases/download/v3.1.1/copyq-v3.1.1-setup.exe
 
 File 'license.txt' is obtained from:
    https://raw.githubusercontent.com/hluk/CopyQ/master/LICENSE
