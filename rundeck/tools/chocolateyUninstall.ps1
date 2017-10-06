@@ -5,7 +5,7 @@
 }
 
 Write-Host "Removing $Env:RDECK_BASE"
-rm $Env:RDECK_BASE -Recurse
+rm $Env:RDECK_BASE -Recurse -ea 0
 
 Write-Host "Removing environment variable"
 Uninstall-ChocolateyEnvironmentVariable 'RDECK_BASE' 'Machine'
