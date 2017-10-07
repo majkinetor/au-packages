@@ -18,7 +18,7 @@ Invoke-Build v3.0.1 is cross-platform with PowerShell v6.0.0-alpha.
 
 ## Notes
 
-- This package includes `Invoke-TaskFromISE`, `Invoke-TaskFromVSCode`, `New-VSCodeTask` and `Invoke-Build.ArgumentCompleters` supportive scripts. To setup debugin in VSCode use the following script path in `launch.json`:
+- This package includes `Invoke-TaskFromISE`, `Invoke-TaskFromVSCode`, `New-VSCodeTask` and `Invoke-Build.ArgumentCompleters` supportive scripts. To setup launch profile in VSCode for build.ps1 files, use the following script path in `launch.json`:
    ```
    "script": "${env:ChocolateyInstall}/lib/invoke-build/tools/Invoke-TaskFromVSCode.ps1"
    ```
