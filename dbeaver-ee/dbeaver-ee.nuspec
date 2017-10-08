@@ -7,8 +7,8 @@
     <title>DBeaver - Enterprise Edition</title>
     <authors>Serge Rieder</authors>
     <owners>Paul Davies, Miodrag Milic</owners>
-    <licenseUrl>http://dbeaver.jkiss.org/files/dbeaver_license.txt</licenseUrl>
-    <projectUrl>http://dbeaver.jkiss.org/</projectUrl>
+    <licenseUrl>https://dbeaver.com/license/</licenseUrl>
+    <projectUrl>https://dbeaver.com</projectUrl>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>DBeaver is free and open source universal database tool for developers and database administrators.
@@ -39,7 +39,7 @@
     <!--<releaseNotes></releaseNotes>-->
     <tags>admin cross-platform database mysql oracle db2 sql-server postgresql mongodb dbeaver</tags>
     <projectSourceUrl>https://github.com/serge-rider/dbeaver</projectSourceUrl>
-    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/dbeaver</packageSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/dbeaver-ee</packageSourceUrl>
     <docsUrl>http://dbeaver.jkiss.org/docs/</docsUrl>
     <mailingListUrl>http://dbeaver.jkiss.org/forum/index.php</mailingListUrl>
     <bugTrackerUrl>https://github.com/serge-rider/dbeaver/issues</bugTrackerUrl>
