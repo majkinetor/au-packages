@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://gitlab-runner-downloads.s3.amazonaws.com/v10.0.0-rc.1/binaries/gitlab-runner-windows-386.exe
-   x64: https://gitlab-runner-downloads.s3.amazonaws.com/v10.0.0-rc.1/binaries/gitlab-runner-windows-amd64.exe
+   x32: https://gitlab-runner-downloads.s3.amazonaws.com/v10.1.0-rc.1/binaries/gitlab-runner-windows-386.exe
+   x64: https://gitlab-runner-downloads.s3.amazonaws.com/v10.1.0-rc.1/binaries/gitlab-runner-windows-amd64.exe
 
    to download the installer.
 
@@ -16,8 +16,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 181AF0CCF16000ABD498670458FA14AABB58DE7EFDEB280A11C1AF1066013E9C
-   checksum64: 61859573609BD637328B625861C50C72E6F4F6EADDD7A48ACD6AD4784A656901
+   checksum32: 760E695ED91C058B0D267CA72851FB56A2FD55061FCC3024708E6B022EC3D60C
+   checksum64: 81E2A7448CB69C3DE6115BBBD3862D25E78A412EF3964C50F01C5227D7E9645D
 
 
 File 'license.txt' is obtained from:
