@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>fzf</id>
     <title>A command-line fuzzy finder</title>
-    <version>0.17.0</version>
+    <version>0.17.1</version>
     <authors>Junegunn Choi</authors>
     <owners>Miodrag Milic</owners>
     <summary>fzf is a general-purpose command-line fuzzy finder</summary>
@@ -25,7 +25,7 @@
     <licenseUrl>https://raw.githubusercontent.com/junegunn/fzf-bin/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
-    <releaseNotes>https://github.com/junegunn/fzf-bin/releases/tag/0.17.0</releaseNotes>
+    <releaseNotes>https://github.com/junegunn/fzf-bin/releases/tag/0.17.1</releaseNotes>
     <docsUrl>https://github.com/junegunn/fzf/blob/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/junegunn/fzf/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/junegunn/fzf</projectSourceUrl>

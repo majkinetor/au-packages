@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>dbeaver</id>
-    <version>4.2.2</version>
+    <version>4.2.3</version>
     <title>DBeaver - Community Edition</title>
     <authors>Serge Rieder</authors>
     <owners>Paul Davies, Miodrag Milic</owners>
@@ -30,14 +30,14 @@
 
 ## Notes
 
-- This package used to be [Enterprise Edition](https://chocolatey.org/packages/dbeaver-ee) prior to version 4.0.
+- Dbeaver is also avaialable as commercial [Enterprise Edition](https://chocolatey.org/packages/dbeaver-ee).
 - This installer includes JRE.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/screenshot.png)
 
 </description>
     <summary>Free multi-platform database tool for developers, SQL programmers, database administrators and analysts.</summary>
-    <releaseNotes>https://github.com/serge-rider/dbeaver/releases/tag/4.2.2</releaseNotes>
+    <releaseNotes>https://github.com/serge-rider/dbeaver/releases/tag/4.2.3</releaseNotes>
     <tags>admin cross-platform database mysql oracle db2 sql-server postgresql mongodb dbeaver trial</tags>
     <projectSourceUrl>https://github.com/serge-rider/dbeaver</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/dbeaver</packageSourceUrl>
