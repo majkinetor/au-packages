@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://sourceforge.net/projects/smplayer/files/SMPlayer/17.10.0/smplayer-17.10.0-win32.exe/download
-   x64: https://sourceforge.net/projects/smplayer/files/SMPlayer/17.10.0/smplayer-17.10.0-x64.exe/download
+   x32: https://sourceforge.net/projects/smplayer/files/SMPlayer/17.10.2/smplayer-17.10.2-win32.exe/download
+   x64: https://sourceforge.net/projects/smplayer/files/SMPlayer/17.10.2/smplayer-17.10.2-x64.exe/download
 
    to download the installer.
 
@@ -16,8 +16,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: BD30ECF4C8F86FF1562D356A8916604BCD3AB15958803638CE621C8E01E5B045
-   checksum64: 9B32E3C118767441406781DA77FA66135DA719ED1FBB92A59DA06600EE0CED9E
+   checksum32: F8CEE9BF4426BE5AD0B3E9FEF55A3E23FF7C13D141E9497BDD5DBC5CCC505CA2
+   checksum64: 9433A7F2A3CB1A66FFF4EE279DA364892185A738B1076229DB8C6895B264D50F
 
 File 'Copying.txt' is obtained from:
    https://app.assembla.com/spaces/smplayer/subversion/source/HEAD/smplayer/trunk/Copying.txt?_format=raw
