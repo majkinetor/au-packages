@@ -50,7 +50,7 @@
     <licenseUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/raw/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/gitlab-runner/icon.png</iconUrl>
-    <releaseNotes>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/CHANGELOG.md</releaseNotes>
+    <releaseNotes>https://gitlab.com/gitlab-org/gitlab-runner/blob/master/CHANGELOG.md</releaseNotes>
     <docsUrl>https://docs.gitlab.com/runner/commands/README.html</docsUrl>
     <bugTrackerUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues</bugTrackerUrl>
     <projectSourceUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/tree/master</projectSourceUrl>
