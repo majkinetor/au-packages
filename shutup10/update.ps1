@@ -26,7 +26,7 @@ function global:au_GetLatest {
 
     $re      = '\.exe$'
     $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $version = $download_page.AllElements | ? {$_.TagName -eq 'h4' -and $_.InnerText -like 'Version *'} | select -Expand InnerText -First 1
+    $version = $download_page.AllElements | ? { $_.InnerText -like 'Version *' } | select -Expand InnerText -First 1
     $version -match "Version ([0-9.]+)" | Out-Null
     @{
         URL32        = $url
