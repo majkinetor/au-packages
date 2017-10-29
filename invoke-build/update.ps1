@@ -1,8 +1,6 @@
 import-module au
-. $PSScriptRoot\..\_scripts\all.ps1
 
 $moduleName = 'InvokeBuild'
-
 
 function global:au_SearchReplace {
    @{
@@ -21,8 +19,6 @@ function global:au_BeforeUpdate {
     Save-Module -Name $moduleName -Path tools
     'Invoke-Build.ArgumentCompleters', 'Invoke-TaskFromISE', 'Invoke-TaskFromVSCode','New-VSCodeTask' | % { Save-Script $_ -Path tools }
 }
-
-function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $releases = "https://www.powershellgallery.com/packages/$moduleName"

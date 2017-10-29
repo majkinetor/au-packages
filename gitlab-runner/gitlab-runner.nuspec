@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>gitlab-runner</id>
     <title>Gitlab Runner</title>
-    <version>10.1.0-rc1</version>
+    <version>10.1.0</version>
     <authors>Gitlab</authors>
     <owners>Miodrag Milic</owners>
     <summary>Run build jobs and send the results to GitLab</summary>
@@ -50,7 +50,7 @@
     <licenseUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/raw/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/gitlab-runner/icon.png</iconUrl>
-    <releaseNotes>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/CHANGELOG.md</releaseNotes>
+    <releaseNotes>https://gitlab.com/gitlab-org/gitlab-runner/blob/master/CHANGELOG.md</releaseNotes>
     <docsUrl>https://docs.gitlab.com/runner/commands/README.html</docsUrl>
     <bugTrackerUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues</bugTrackerUrl>
     <projectSourceUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/tree/master</projectSourceUrl>

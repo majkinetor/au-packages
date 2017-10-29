@@ -5,11 +5,11 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>invoke-build</id>
     <title>Invoke-Build</title>
-    <version>3.6.5.20170830</version>
+    <version>3.7.1</version>
     <authors>Roman Kuzmin</authors>
     <owners>Miodrag Milic</owners>
     <summary>Invoke-Build is a build and test automation tool</summary>
-    <description>Invoke-Build is a build and test automation tool which invokes tasks defined in PowerShell v2.0+ scripts. It is similar to psake but arguably easier to use and more powerful. It is complete, bug free, well covered by tests.
+    <description><![CDATA[Invoke-Build is a build and test automation tool which invokes tasks defined in PowerShell v2.0+ scripts. It is similar to psake but arguably easier to use and more powerful. It is complete, bug free, well covered by tests.
 
 ## Features
 
@@ -27,13 +27,17 @@ Invoke-Build v3.0.1 is cross-platform with PowerShell v6.0.0-alpha.
 
 ## Notes
 
-- This package includes `Invoke-TaskFromISE`, `Invoke-TaskFromVSCode`, `New-VSCodeTask` and `Invoke-Build.ArgumentCompleters` supportive scripts.
+- This package includes `Invoke-TaskFromISE`, `Invoke-TaskFromVSCode`, `New-VSCodeTask` and `Invoke-Build.ArgumentCompleters` supportive scripts. To setup launch profile in VSCode for build.ps1 files, use the following script path in `launch.json`:
+   ```json
+   "script": "${env:ChocolateyInstall}/lib/invoke-build/tools/Invoke-TaskFromVSCode.ps1"
+   ```
 - Its recommended to include the following in your PowerShell `$PROFILE`:
-    ```
+    ```powershell
     sal ib Invoke-Build
-    &amp; "$env:ChocolateyInstall\lib\invoke-build\tools\Invoke-Build.ArgumentCompleters.ps1"
+    & $env:ChocolateyInstall\lib\invoke-build\tools\Invoke-Build.ArgumentCompleters.ps1
     ```
-</description>
+    
+]]></description>
     <projectUrl>https://github.com/nightroman/Invoke-Build</projectUrl>
     <tags>build powershell module cross-platform foss</tags>
     <copyright>Roman Kuzmin</copyright>
