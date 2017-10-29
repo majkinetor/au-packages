@@ -1,5 +1,4 @@
 import-module au
-. $PSScriptRoot\..\_scripts\all.ps1
 
 $releases = 'https://dbeaver.com/files/dbeaver-ee-latest-x86-setup.exe'
 
@@ -13,8 +12,6 @@ function global:au_SearchReplace {
         }
     }
 }
-
-function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $request = [System.Net.WebRequest]::Create($releases)

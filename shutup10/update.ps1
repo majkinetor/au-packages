@@ -1,5 +1,4 @@
 import-module au
-. $PSScriptRoot\..\_scripts\all.ps1
 
 $releases    = 'https://www.oo-software.com/en/shutup10'
 
@@ -18,8 +17,6 @@ function global:au_BeforeUpdate {
     Get-RemoteFiles -Purge
     mv $PSScriptRoot\tools\*.exe $PSScriptRoot\tools\OOSU10.exe
 }
-
-function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases

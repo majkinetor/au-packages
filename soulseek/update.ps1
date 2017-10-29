@@ -1,5 +1,4 @@
 import-module au
-. $PSScriptRoot\..\_scripts\all.ps1
 
 $changelog = 'http://www.soulseekqt.net/news/node/1'
 
@@ -11,8 +10,6 @@ function global:au_SearchReplace {
         }
     }
 }
-
-function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $changelog
