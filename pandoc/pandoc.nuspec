@@ -5,12 +5,11 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>pandoc</id>
     <title>Pandoc</title>
-    <version>1.19.2.1</version>
+    <version>2.0</version>
     <authors>John MacFarlane</authors>
     <owners>Miodrag MiliÄ‡</owners>
     <summary>A universal document converter</summary>
-    <description>
-If you need to convert files from one markup format into another, pandoc is your swiss-army knife. Pandoc can convert documents in markdown, reStructuredText, textile, HTML, DocBook, LaTeX and many others.
+    <description><![CDATA[If you need to convert files from one markup format into another, pandoc is your swiss-army knife. Pandoc can convert documents in markdown, reStructuredText, textile, HTML, DocBook, LaTeX and many others.
 
 ## Features
 
@@ -28,13 +27,13 @@ If you need to convert files from one markup format into another, pandoc is your
 ## Notes
 
 - The package by default installs pandoc for current user. To install for all users use `choco install pandoc --ia=ALLUSERS=1`.
-</description>
+]]></description>
     <projectUrl>http://pandoc.org/</projectUrl>
     <tags>admin text markdown latex pdf docx restructuredText textile html docbook slides foss cross-platform cli opendocument</tags>
     <copyright>Â© 2006-2015 John MacFarlane</copyright>
     <licenseUrl>https://github.com/jgm/pandoc/blob/master/COPYRIGHT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>https://github.com/jgm/pandoc/releases/tag/1.19.2.1</releaseNotes>
+    <releaseNotes>https://github.com/jgm/pandoc/releases/tag/2.0</releaseNotes>
     <docsUrl>http://pandoc.org/README.html</docsUrl>
     <bugTrackerUrl>https://github.com/jgm/pandoc/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/jgm/pandoc</projectSourceUrl>
