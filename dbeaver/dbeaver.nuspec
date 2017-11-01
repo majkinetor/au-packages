@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>dbeaver</id>
-    <version>4.2.3</version>
+    <version>4.2.4</version>
     <title>DBeaver - Community Edition</title>
     <authors>Serge Rieder</authors>
     <owners>Paul Davies, Miodrag Milic</owners>
@@ -11,7 +11,7 @@
     <projectUrl>http://dbeaver.jkiss.org/</projectUrl>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>DBeaver is free and open source universal database tool for developers and database administrators.
+    <description><![CDATA[DBeaver is free and open source universal database tool for developers and database administrators.
 
 ## Features
 
@@ -35,9 +35,9 @@
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/screenshot.png)
 
-</description>
+]]></description>
     <summary>Free multi-platform database tool for developers, SQL programmers, database administrators and analysts.</summary>
-    <releaseNotes>https://github.com/serge-rider/dbeaver/releases/tag/4.2.3</releaseNotes>
+    <releaseNotes>https://github.com/serge-rider/dbeaver/releases/tag/4.2.4</releaseNotes>
     <tags>admin cross-platform database mysql oracle db2 sql-server postgresql mongodb dbeaver trial</tags>
     <projectSourceUrl>https://github.com/serge-rider/dbeaver</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/dbeaver</packageSourceUrl>
