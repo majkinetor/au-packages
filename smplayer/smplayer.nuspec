@@ -5,11 +5,11 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>smplayer</id>
     <title>SMPlayer</title>
-    <version>17.10.2</version>
+    <version>17.11.0</version>
     <authors>Ricardo Villalba</authors>
     <owners>Miodrag MiliÃ„â€¡</owners>
     <summary>SMPlayer is a free media player for Windows and Linux</summary>
-    <description>SMPlayer is a free media player for Windows and Linux with **built-in codecs** that can play virtually all video and audio formats. It doesn't need any external codecs. Just install SMPlayer and you'll be able to play all formats without the hassle to find and install codec packs.
+    <description><![CDATA[SMPlayer is a free media player for Windows and Linux with **built-in codecs** that can play virtually all video and audio formats. It doesn't need any external codecs. Just install SMPlayer and you'll be able to play all formats without the hassle to find and install codec packs.
 
 One of the most interesting features of SMPlayer: **it remembers the settings of all files you play**. So you start to watch a movie but you have to leave... don't worry, when you open that movie again it will be resumed at the same point you left it, and with the same settings: audio track, subtitles, volume...
 
@@ -33,7 +33,7 @@ SMPlayer is a graphical user interface (GUI) for the award-winning MPlayer, whic
 
 ![smplayer screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/smplayer/screenshot.jpg)
    
-</description>
+]]></description>
     <projectUrl>http://www.smplayer.eu</projectUrl>
     <tags>admin foss cross-platform mp3 audio video media player multimedia</tags>
     <copyright>Ricardo Villalba</copyright>
