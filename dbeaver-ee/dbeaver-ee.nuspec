@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>dbeaver-ee</id>
-    <version>4.2.0</version>
+    <version>4.2.0.20171109</version>
     <title>DBeaver - Enterprise Edition</title>
     <authors>Serge Rieder</authors>
     <owners>Paul Davies, Miodrag Milic</owners>
@@ -11,7 +11,7 @@
     <projectUrl>https://dbeaver.com</projectUrl>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>DBeaver is free and open source universal database tool for developers and database administrators.
+    <description><![CDATA[DBeaver is free and open source universal database tool for developers and database administrators.
 
 ## Features
 
@@ -29,12 +29,12 @@
 
 ## Notes
 
-- This is commercial package. You can also install free [Community Edition](https://chocolatey.org/packages/dbeaver).
+- This is commercial package which can be tested with [trial license](https://dbeaver.com/trial/). You can also install free [Community Edition](https://chocolatey.org/packages/dbeaver). See [FAQ](https://dbeaver.com/faq/) for differences between 2 versions.
 - This installer includes JRE.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/screenshot.png)
 
-</description>
+]]></description>
     <summary>Multi-platform database tool for developers, SQL programmers, database administrators and analysts.</summary>
     <!--<releaseNotes></releaseNotes>-->
     <tags>admin cross-platform database mysql oracle db2 sql-server postgresql mongodb dbeaver</tags>
