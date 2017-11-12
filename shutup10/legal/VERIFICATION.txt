@@ -15,11 +15,11 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: DB16E2F26BBDB009053BCD608E41959CFE26AD1FE5645C108D0517C05B39E17E
+   checksum32: C3441F7D6A81C519F68B4EBECDD5524F640C020F0B8DD9E12E02AB9675278CF5
 
 Using AU:
 
    Get-RemoteChecksum https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe
 
-File 'eula' is obtained from:
+File 'license.txt' is obtained from:
    https://www.oo-software.com/en/shutup10/eula

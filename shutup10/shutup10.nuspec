@@ -5,18 +5,18 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>shutup10</id>
     <title>ShutUp10</title>
-    <version>1.6.1393</version>
+    <version>1.6.1394</version>
     <authors>O&amp;OSoftware</authors>
-    <owners>Miodrag MiliÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡</owners>
+    <owners>Miodrag Milic</owners>
     <summary>Free antispy tool for Windows 10</summary>
-    <description>O&amp;O ShutUp10 means you have full control over which comfort functions under Windows 10 you wish to use, and you decide when the passing on of your data goes too far.
+    <description><![CDATA[O&amp;O ShutUp10 means you have full control over which comfort functions under Windows 10 you wish to use, and you decide when the passing on of your data goes too far.
 
 Using a very simple interface, you decide how Windows 10 should respect your privacy by deciding which unwanted functions should be deactivated.
 O&amp;O ShutUp10 is entirely free and does not have to be installed – it can be simply run directly and immediately on your PC. And it will not install or download retrospectively unwanted or unnecessary software, like so many other programs do these days!
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/shutup10/screenshot.png)
 
-</description>
+]]></description>
     <projectUrl>https://www.oo-software.com/en/shutup10</projectUrl>
     <tags>freeware windows antispy</tags>
     <copyright>O&amp;OSoftware</copyright>

@@ -32,7 +32,7 @@ Run from within the directory of the package to update that package:
    
     cd <package_dir>
     ./update.ps1
-
+ 
 If this script is missing, the package is not automatic.  
 Set `$au_Force = $true` prior to script call to update the package even if no new version is found.
 

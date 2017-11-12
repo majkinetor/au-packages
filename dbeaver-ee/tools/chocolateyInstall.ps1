@@ -3,8 +3,8 @@
 $packageName = 'dbeaver'
 $url32       = 'https://dbeaver.com/files/4.2.0/dbeaver-ee-4.2.0-x86-setup.exe'
 $url64       = 'https://dbeaver.com/files/4.2.0/dbeaver-ee-4.2.0-x86_64-setup.exe'
-$checksum32  = 'a41b044b65d990a797949bb4c9f45c29a811bd62825ebb7d8af639fd63565b7c'
-$checksum64  = 'a7151064d2be5810a6437b682fd9fc0a953a41f11de2ec7d20bd40d47e81ac88'
+$checksum32  = '44ee0097c6841422f4e17185078f90be2fb9e37394266d21406447a5f82ba33a'
+$checksum64  = '45187bd358441fea341a6b5ae2baa35a2e84f0574efd6633e5e66bf5dc8628db'
 
 $packageArgs = @{
   packageName            = $packageName
