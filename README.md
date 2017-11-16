@@ -37,7 +37,7 @@ If this script is missing, the package is not automatic.
 Set `$au_Force = $true` prior to script call to update the package even if no new version is found.
 
 ### Multiple packages
-
+ 
 To update all packages run `./update_all.ps1`. It accepts few options:
 
 ```powershell
