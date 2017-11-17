@@ -26,10 +26,16 @@ function global:au_GetLatest {
 
     $releases = 'https://sourceforge.net' + $url.href
     $download_page = Invoke-WebRequest -Uri $releases
+    $url32 = $download_page.links | ? href -match '-win32\.exe/download' | % href
+    $url64 = $download_page.links | ? href -match '-x64\.exe/download' | % href
+    if (!$url32 -and !$url64) {
+        Write-Host 'No Windows binaries found'
+        return 'ignore'
+    }
 
     @{
-        URL32    = $download_page.links | ? href -match '-win32\.exe/download' | % href
-        URL64    = $download_page.links | ? href -match '-x64\.exe/download' | % href
+        URL32    = $url32
+        URL64    = $url64
         Version  = $url.innerText
         FileType = 'exe'
     }
