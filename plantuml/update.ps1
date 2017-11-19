@@ -15,6 +15,7 @@ function global:au_SearchReplace {
 
 function global:au_BeforeUpdate {
     Get-RemoteFiles -Purge -FileNameBase plantuml -NoSuffix
+    Write-Host 'Downloading manual'
     iwr $Latest.Manual -OutFile "tools\$(Split-Path -Leaf $Latest.Manual)"    
 }
 
@@ -35,9 +36,4 @@ function global:au_GetLatest {
     }
 }
 
-try {
-    update -NoCheckUrl -ChecksumFor none
-} catch {
-    $ignore = 'Unable to connect to the remote server'
-    if ($_ -match $ignored) { Write-Host $ignore; 'ignore' }  else { throw $_ }
-}
+update -NoCheckUrl -ChecksumFor none

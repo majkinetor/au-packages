@@ -26,4 +26,8 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml).
 
 - `/NoShortcuts` - Do not create desktop shortcuts for plantuml and its manual.
 
+## Notes
+
+- This package creates two shims - `plantuml` (invoked via `javaw`) and `plantumlc` (invoked via `java`). The later one should be used with scripting. See available command line options with `plantumlc -help`. For example, to convert entire directory of plantuml files to images recursivelly, you can use `plantumlc -r -tsvg **\*.puml`.
+
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/screenshot.png)
