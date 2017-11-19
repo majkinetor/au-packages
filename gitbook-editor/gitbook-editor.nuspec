@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>gitbook-editor</id>
+    <title>GitBook Editor</title>
+    <version>1.0</version>
+    <authors>Gitbook</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Write, publish, and collaborate seamlessly</summary>
+    <description><![CDATA[Write, publish, and collaborate seamlessly. The Editor brings the GitBook workflow you love to your desktop.
+
+## Features
+
+- Expressive Markup  
+Books are written using Markdown or Asciidoc. LaTeX is supported to typeset mathematics.
+- Convenient editing  
+The Editor is smart at editing books in the GitBook format. It helps you edit swiftly, using auto-completion, shortcuts, drag and drop, etc.
+- Version Control  
+Manage versions of your book thanks to the powerful Git technology.
+]]></description>
+    <projectUrl>https://www.gitbook.com/editor</projectUrl>
+    <tags>foss cross-platform git documentation book </tags>
+    <copyright>© GitBook.com</copyright>
+    <licenseUrl>https://www.gitbook.com/terms</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/gitbook-editor/icon.png</iconUrl>
+    <releaseNotes>https://www.gitbook.com/editor/releases/stable</releaseNotes>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/gitbook-editor</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey" version="0.10.8" />  
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
