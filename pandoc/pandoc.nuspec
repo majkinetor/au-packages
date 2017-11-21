@@ -7,7 +7,7 @@
     <title>Pandoc</title>
     <version>2.0.2</version>
     <authors>John MacFarlane</authors>
-    <owners>Miodrag MiliÄ‡</owners>
+    <owners>Miodrag Milic</owners>
     <summary>A universal document converter</summary>
     <description><![CDATA[If you need to convert files from one markup format into another, pandoc is your swiss-army knife. Pandoc can convert documents in markdown, reStructuredText, textile, HTML, DocBook, LaTeX and many others.
 
@@ -44,5 +44,6 @@
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
