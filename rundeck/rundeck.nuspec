@@ -5,11 +5,11 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>rundeck</id>
     <title>Rundeck</title>
-    <version>2.10.0</version>
+    <version>2.10.1</version>
     <authors>Rundeck, Inc.</authors>
     <owners>Miodrag Milic</owners>
     <summary>Job scheduler and runbook automation. Enable self-service access to existing scripts and tools.</summary>
-    <description>Rundeck is open source software that helps you automate routine operational procedures in data center or cloud environments. Rundeck provides a number of features that will alleviate time-consuming grunt work and make it easy for you to scale up your automation efforts and create self service for others. Teams can collaborate to share how processes are automated while others are given trust to view operational activity or execute tasks.
+    <description><![CDATA[Rundeck is open source software that helps you automate routine operational procedures in data center or cloud environments. Rundeck provides a number of features that will alleviate time-consuming grunt work and make it easy for you to scale up your automation efforts and create self service for others. Teams can collaborate to share how processes are automated while others are given trust to view operational activity or execute tasks.
 
 Rundeck allows you to run tasks on any number of nodes from a web-based or command-line interface. Rundeck also includes other features that make it easy to scale up your automation efforts including: access control, workflow building, scheduling, logging, and integration with external sources for node and option data. 
 
@@ -48,14 +48,14 @@ cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms
 * The package performs installation that is described in official [documentation](http://rundeck.org/docs/administration/installation.html#install-on-windows). After installation, you can access the service via URL http://localhost:4440 or https://localhost:4443 if `EnableSsl` parameter is used.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/rundeck/screenshot.png)
-</description>
+]]></description>
     <projectUrl>http://rundeck.org/index.html</projectUrl>
     <tags>admin cron scheduler devops scripts rest foss cross-platform</tags>
     <copyright>Rundeck, Inc.</copyright>
     <licenseUrl>https://github.com/rundeck/rundeck/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/rundeck/icon.png</iconUrl>
-    <releaseNotes>https://github.com/rundeck/rundeck/blob/v2.10.0/RELEASE.md</releaseNotes>
+    <releaseNotes>https://github.com/rundeck/rundeck/blob/v2.10.1/RELEASE.md</releaseNotes>
     <docsUrl>http://rundeck.org/docs.html</docsUrl>
     <bugTrackerUrl>https://github.com/rundeck/rundeck/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/rundeck/rundeck</projectSourceUrl>
