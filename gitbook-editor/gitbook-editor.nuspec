@@ -28,9 +28,6 @@ Manage versions of your book thanks to the powerful Git technology.
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/gitbook-editor/icon.png</iconUrl>
     <releaseNotes>https://www.gitbook.com/editor/releases/stable</releaseNotes>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/gitbook-editor</packageSourceUrl>
-    <dependencies>
-      <dependency id="chocolatey" version="0.10.8" />  
-    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
