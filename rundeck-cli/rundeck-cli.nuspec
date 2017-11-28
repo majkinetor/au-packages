@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>rundeck-cli</id>
+    <title>Rundeck CLI</title>
+    <version>1.0.22.20171128</version>
+    <authors>Rundeck</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>A simple commandline interface for the Rundeck </summary>
+    <description><![CDATA[This is the CLI tool for Rundeck.
+
+- [Command list](https://rundeck.github.io/rundeck-cli/commands)
+- [Configuration](https://rundeck.github.io/rundeck-cli/configuration)
+
+
+## Environment variables
+
+Use the following variables to configure rundeck-cli:
+ 
+```powershell
+$Env:RD_URL           = 'http://localhost:4440'     # Connection info
+    
+$Env:RD_TOKEN         = '...'                       # Credentials
+$Env:RD_USER          = 'admin' 
+$Env:RD_PASSWORD      = 'admin'                     
+
+$Env:RD_AUTH_PROMPT   = $false                      # Prompted to enter a username/password or token if not defined
+$Env:RD_INSECURE_SSL  = $false                      # To disable all SSL certificate checks, and hostname verifications
+$Env:RD_DEBUG         = ''                          # 1 - basic http request debug; 2 -http headers; 3 - http body
+$Env:RD_CONNECT_RETRY = $true                       # Retry in case of recoverable connection issue (e.g. failure to connect)
+$Env:RD_HTTP_TIMEOUT  = 30                          # HTTP/connect timeout
+$Env:RD_DATE_FORMAT   = "yyyy-MM-dd'T'HH:mm:ssXX"   # Date format
+```
+]]></description>
+    <projectUrl>https://rundeck.github.io/rundeck-cli/</projectUrl>
+    <tags>rundeck cli cross-platform schedule api</tags>
+    <copyright>Rundeck</copyright>
+    <licenseUrl>https://github.com/rundeck/rundeck-cli/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/rundeck-cli/icon.png</iconUrl>
+    <releaseNotes>https://rundeck.github.io/rundeck-cli/changes</releaseNotes>
+    <docsUrl>https://rundeck.github.io/rundeck-cli/commands</docsUrl>
+    <bugTrackerUrl>https://github.com/rundeck/rundeck-cli/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/rundeck/rundeck-cli</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/rundeck-cli</packageSourceUrl>
+    <dependencies>
+      <dependency id="jdk8" version="8.0.151" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

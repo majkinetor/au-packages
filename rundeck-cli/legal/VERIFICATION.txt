@@ -1,0 +1,19 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Package can be verified like this:
+
+1. Go to
+
+   x32: https://github.com/rundeck/rundeck-cli/releases/download/v1.0.22/rd-1.0.22.zip
+
+2. You can use one of the following methods to obtain the SHA256 checksum:
+   - Use powershell function 'Get-FileHash'
+   - Use Chocolatey utility 'checksum.exe'
+
+   checksum32: 933B3F8D0FCDA00D8745F4A7ED6589903A0A53F90A8E36FF97FCDFD2BB96E09C
+
+File 'license.txt' is obtained from:
+   https://raw.githubusercontent.com/rundeck/rundeck-cli/master/LICENSE
