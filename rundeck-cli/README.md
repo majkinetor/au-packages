@@ -8,6 +8,7 @@ This is the CLI tool for Rundeck.
 ## Notes
 
 - The installer creates a shim named `rdcli` instead `rd` because the later is PowerShell alias for `Remove-Item`.
+- Related package: [rundeck](https://chocolatey.org/packages/rundeck) 
 
 ## Environment variables
 
