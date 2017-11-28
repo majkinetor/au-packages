@@ -5,10 +5,10 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>rundeck-cli</id>
     <title>Rundeck CLI</title>
-    <version>1.0.22.20171128</version>
+    <version>0.0</version>
     <authors>Rundeck</authors>
     <owners>Miodrag Milic</owners>
-    <summary>A simple commandline interface for the Rundeck </summary>
+    <summary>A simple commandline interface for the Rundeck</summary>
     <description><![CDATA[This is the CLI tool for Rundeck.
 
 - [Command list](https://rundeck.github.io/rundeck-cli/commands)
