@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>licecap</id>
     <title></title>
-    <version>1.26.0.20170325</version>
+    <version>1.28.0.20171202</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <summary>Simple animated screen captures</summary>
