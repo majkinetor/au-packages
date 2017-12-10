@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>dbeaver-ee</id>
-    <version>4.2.0.20171109</version>
+    <version>4.3.0</version>
     <title>DBeaver - Enterprise Edition</title>
     <authors>Serge Rieder</authors>
     <owners>Paul Davies, Miodrag Milic</owners>

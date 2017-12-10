@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://archive.apache.org/dist/lucene/solr/6.6.2/solr-6.6.2.zip
+   x32: https://archive.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.zip
 
    to download the installer.
 
