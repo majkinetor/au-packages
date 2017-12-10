@@ -1,5 +1,3 @@
-param([string]$Include)
-
 import-module au
 
 $releases = 'https://archive.apache.org/dist/lucene/solr'
@@ -38,4 +36,4 @@ function global:au_GetLatest {
     @{ Streams = $streams }
 }
 
-update -ChecksumFor none -Include $Include
+update -ChecksumFor none
