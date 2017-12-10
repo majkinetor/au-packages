@@ -1,3 +1,5 @@
+param([string]$Include)
+
 import-module au
 
 $releases = 'https://archive.apache.org/dist/lucene/solr'
@@ -16,12 +18,12 @@ function global:au_SearchReplace {
     }
 }
 
-#function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $versions = $download_page.links.href | ? {$_ -match '\d.\d' } | % { Get-Version $_ }
-    $versions | sort -desc | % { $vs =[ordered]@{}} { $k = $_.ToString(1); if (!$vs.$k) { $vs.$k = $_ } }
+    $versions | sort | % { $vs =[ordered]@{}} { $vs[ $_.ToString(1) ] = $_ }
     $streams = [ordered]@{}
     foreach ($s in $vs.GetEnumerator()) {
         if ($s.Key -lt 4) { continue }
@@ -36,4 +38,4 @@ function global:au_GetLatest {
     @{ Streams = $streams }
 }
 
-update -ChecksumFor none
+update -ChecksumFor none -Include $Include
