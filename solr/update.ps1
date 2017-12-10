@@ -1,4 +1,4 @@
-param($IncludeStream, [switch]$Force)
+param([string]$IncludeStream, [switch]$Force)
 
 import-module au
 
