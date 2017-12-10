@@ -1,4 +1,4 @@
-param([string]$Include)
+param($IncludeStream, [switch]$Force)
 
 import-module au
 
@@ -38,4 +38,4 @@ function global:au_GetLatest {
     @{ Streams = $streams }
 }
 
-update -ChecksumFor none -Include $Include
+update -ChecksumFor none -IncludeStream $IncludeStream -Force:$Force
