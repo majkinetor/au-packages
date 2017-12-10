@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>licecap</id>
     <title></title>
-    <version>1.26.0.20170325</version>
+    <version>1.28</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <summary>Simple animated screen captures</summary>
@@ -35,7 +35,7 @@ LICEcap is an intuitive but flexible application (for Windows and now OSX), that
     <projectSourceUrl>https://github.com/justinfrankel/licecap</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/licecap</packageSourceUrl>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.1" />
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>
   </metadata>
   <files>

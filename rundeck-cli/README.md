@@ -16,11 +16,11 @@ Use the following variables to configure rundeck-cli:
  
 ```powershell
 $Env:RD_URL           = 'http://localhost:4440'     # Connection info
-    
-$Env:RD_TOKEN         = '...'                       # Credentials
-$Env:RD_USER          = 'admin' 
-$Env:RD_PASSWORD      = 'admin'                     
 
+$Env:RD_USER          = 'admin'
+$Env:RD_PASSWORD      = 'admin'
+$Env:RD_TOKEN         = '...'                       # Credentials
+                  
 $Env:RD_AUTH_PROMPT   = $false                      # Prompted to enter a username/password or token if not defined
 $Env:RD_INSECURE_SSL  = $false                      # To disable all SSL certificate checks, and hostname verifications
 $Env:RD_DEBUG         = ''                          # 1 - basic http request debug; 2 -http headers; 3 - http body
