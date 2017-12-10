@@ -23,7 +23,7 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $versions = $download_page.links.href | ? {$_ -match '\d.\d' } | % { Get-Version $_ }
-    $versions | sort | % { $vs =[ordered]@{}} { $vs[ $_.ToString(2) ] = $_ }
+    $versions | sort | % { $vs =[ordered]@{}} { $vs[ $_.ToString(1) ] = $_ }
     $streams = [ordered]@{}
     foreach ($s in $vs.GetEnumerator()) {
         if ($s.Key -lt 5) { continue }
