@@ -11,6 +11,7 @@ $Options = [ordered]@{
     UpdateTimeout = 1200                                    #Update timeout in seconds
     Threads       = 10                                      #Number of background jobs to use
     Push          = $Env:au_Push -eq 'true'                 #Push to chocolatey
+    PushAll       = $true                                   #Allow to push multiple packages at once    
     PluginPath    = ''                                      #Path to user plugins
     RepeatOn      = @(
         'The request was canceled'
