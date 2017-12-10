@@ -4,7 +4,7 @@
   <metadata>
     <id>solr</id>
     <title>Apache Solr</title>
-    <version>6.1.0</version>
+    <version>5.0.0</version>
     <authors>majkinetor, Manimaran, Chandrasekaran</authors>
     <owners>Miodrag Milic</owners>
     <summary>Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene</summary>
@@ -45,7 +45,7 @@ See more at [features page](https://lucene.apache.org/solr/features.html)
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/solr/icon.png</iconUrl>
-    <releaseNotes>https://archive.apache.org/dist/lucene/solr/6.1.0/changes/Changes.html</releaseNotes>
+    <releaseNotes>https://archive.apache.org/dist/lucene/solr/5.0.0/changes/Changes.html</releaseNotes>
     <docsUrl>https://lucene.apache.org/solr/guide</docsUrl>
     <mailingListUrl>https://lucene.apache.org/solr/community.html</mailingListUrl>
     <bugTrackerUrl>https://issues.apache.org/jira/projects/SOLR/issues</bugTrackerUrl>
