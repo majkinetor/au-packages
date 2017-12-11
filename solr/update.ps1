@@ -26,7 +26,7 @@ function global:au_GetLatest {
     $versions | sort | % { $vs =[ordered]@{}} { $vs[ $_.ToString(1) ] = $_ }
     $streams = [ordered]@{}
     foreach ($s in $vs.GetEnumerator()) {
-        if ($s.Key -lt 5) { continue }
+        if ($s.Key -lt 6) { continue }
         $version = $s.Value
         $streams[$s.Key] = @{
             Version      = $version
