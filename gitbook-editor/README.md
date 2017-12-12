@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/gitbook-editor/icon.png" width="48" height="48"/> [](https://chocolatey.org/packages/gitbook-editor)
+# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/gitbook-editor/icon.png" width="48" height="48"/> [gitbook-editor](https://chocolatey.org/packages/gitbook-editor)
 
 Write, publish, and collaborate seamlessly. The Editor brings the GitBook workflow you love to your desktop.
 
