@@ -5,7 +5,7 @@
     <id>solr</id>
     <title>Apache Solr</title>
     <version>5.0.0</version>
-    <authors>majkinetor, Manimaran, Chandrasekaran</authors>
+    <authors>The Apache Software Foundation</authors>
     <owners>Miodrag Milic</owners>
     <summary>Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene</summary>
     <description><![CDATA[Solr is a standalone enterprise search server with a REST-like API. You put documents in it (called "indexing") via JSON, XML, CSV or binary over HTTP. You query it via HTTP GET and receive JSON, XML, CSV or binary results.
