@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>plantuml</id>
-    <version>1.2017.19</version>
+    <version>1.2017.20</version>
     <title>PlantUML</title>
     <authors>Arnaud Roques</authors>
     <owners>Yoshimov, Miodrag Milic</owners>
@@ -36,6 +36,10 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml).
 ## Package parameters
 
 - `/NoShortcuts` - Do not create desktop shortcuts for plantuml and its manual.
+
+## Notes
+
+- This package creates two shims - `plantuml` (invoked via `javaw`) and `plantumlc` (invoked via `java`). The later one should be used with scripting. See available command line options with `plantumlc -help`. For example, to convert entire directory of plantuml files to images recursivelly, you can use `plantumlc -r -tsvg **\*.puml`.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/screenshot.png)
 ]]></description>
