@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>visualsvnserver</id>
     <title>VisualSVN Server</title>
-    <version>0.0</version>
+    <version>3.7.1</version>
     <authors>VisualSVN Software</authors>
     <owners>Miodrag Milic</owners>
     <summary>VisualSVN Server allows you to easily install and manage a fully-functional Subversion server on the Windows platform</summary>
@@ -26,6 +26,9 @@
 ## Notes
 
 - There is a single package for both Standard and Enterprise editions of VisualSVN Server. Upgrade to Enterprise Edition by entering a license key. See more about version differences on the official [location](https://www.visualsvn.com/server/licensing).
+
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/visualsvnserver/screenshot.png)
 ]]></description>
     <projectUrl>https://www.visualsvn.com</projectUrl>
     <tags>admin development svn server freeware</tags>
