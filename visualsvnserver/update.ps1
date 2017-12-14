@@ -18,8 +18,8 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
     $re    = '\.msi$'
-    $download_page.links | ? href -match $re | select -First 2 -expand href
-    $version  = $url -split '-' | select -Last 1 -Skip 1
+    $url = $download_page.links | ? href -match $re | select -First 2 -expand href
+    $version  = $url[0] -split '-' | select -Last 1 -Skip 1
     @{
         Version      = $version
         URL32        = "https://www.visualsvn.com" + ( $url -match 'win32' | select -first 1)
