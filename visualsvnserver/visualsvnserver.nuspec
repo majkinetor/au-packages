@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>visualsvnserver</id>
+    <title>VisualSVN Server</title>
+    <version>0.0</version>
+    <authors>VisualSVN Software</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>VisualSVN Server allows you to easily install and manage a fully-functional Subversion server on the Windows platform</summary>
+    <description><![CDATA[VisualSVN Server allows you to easily install and manage a fully-functional Subversion server on the Windows platform. Thanks to its robustness, unbeatable usability and unique enterprise-grade features, VisualSVN Server is useful both for small business and corporate users.
+
+## Features
+
+- Active Directory Single Sign-On
+- Multisite Repository Replication
+- Backup and Restore
+- HTML5-powered Web Interface
+- PowerShell Scripting and Automation
+- Repository Management Delegation
+- Remote Server Administration
+- Access and Operational Logging
+- Free for commercial use!
+
+## Notes
+
+- There is a single package for both Standard and Enterprise editions of VisualSVN Server. Upgrade to Enterprise Edition by entering a license key. See more about version differences on the official [location](https://www.visualsvn.com/server/licensing).
+]]></description>
+    <projectUrl>https://www.visualsvn.com</projectUrl>
+    <tags>admin development svn server freeware</tags>
+    <copyright>© 2005-2017 VisualSVN Software Ltd.</copyright>
+    <licenseUrl>https://www.visualsvn.com/server/licensing/eula</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/visualsvnserver/icon.png</iconUrl>
+    <releaseNotes>https://www.visualsvn.com/server/changes</releaseNotes>
+    <docsUrl>https://www.visualsvn.com/visualsvn/doc/</docsUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/visualsvnserver</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
