@@ -11,7 +11,7 @@ $packageArgs = @{
   checksum64             = '30999ff7dcc837120f0e9c86cb71ac0c88fec401ddb0229fd0b5a7b2842ffca5'
   checksumType           = 'sha256'
   checksumType64         = 'sha256'
-  silentArgs             = '/VERYSILENT'
+  silentArgs             = '/quiet /norestart /log "{0}/setup.log"' -f "$Env:TEMP\chocolatey\visualsvnserver"
   validExitCodes         = @(0)
   softwareName           = 'VisualSVN Server*'
 }
