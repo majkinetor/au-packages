@@ -45,7 +45,7 @@ function Set-RundeckOpts() {
     }
     $bat | sc start_rundeck.bat
 }
-function Set-RundeckAdminPwd() {
+function Set-RundeckAdminPass() {
     Write-Host "Setting up admin password"
     $realm = gc server\config\realm.properties
     $realm -replace 'admin:admin', "admin:$($pp.AdminPwd)" | sc server\config\realm.properties 
