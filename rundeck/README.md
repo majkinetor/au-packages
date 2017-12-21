@@ -38,7 +38,7 @@ cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms
 ## Notes
 
 * The package performs installation that is described in official [documentation](http://rundeck.org/docs/administration/installation.html#install-on-windows). After installation, you can access the service via URL http://localhost:4440 or https://localhost:4443 if `EnableSsl` parameter is used.
-* To setup mail notifications edit `$RDECK_BASE/server/config/rundeck-config.properties` and edit all `grails.mail.<attribute>` settings.
+* To setup mail notifications edit `$RDECK_BASE/server/config/rundeck-config.properties` and edit all `grails.mail.*` settings.
 * You generally shouldn't use `choco update` with this package because each release may have its own migration procedure.
 * Related package: [rundeck-cli](https://chocolatey.org/packages/rundeck-cli)
 
