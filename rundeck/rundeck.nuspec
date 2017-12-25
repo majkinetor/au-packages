@@ -68,7 +68,7 @@ cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms
     <mailingListUrl>https://groups.google.com/forum/#!forum/rundeck-discuss</mailingListUrl>
     <dependencies>
       <dependency id="chocolatey" version="0.10.8" />
-      <dependency id="nssm" version="2.24.0.20161223" />
+      <dependency id="nssm" version="2.24.101" />
       <dependency id="jdk8" version="8.0.151" />
     </dependencies>
   </metadata>
