@@ -4,8 +4,8 @@ Signal is an encrypted communications application for Android and iOS. It uses t
 
 ## Features
 
-- Send high-quality group, text, voice, video, document, and picture messages anywhere in the world without SMS or MMS fees
-- Crystal-clear voice and video calls to people who live across town, or across the ocean, with no long-distance charges
+- Send high-quality group, text, voice, video, document, and picture messages anywhere in the world without SMS or MMS fees.
+- Crystal-clear voice and video calls to people who live across town, or across the ocean, with no long-distance charges.
 - Signal messages and calls are always end-to-end encrypted.
 - Keeps your chat history tidy with messages that you can set to disappear.
 - Free for everyone.
