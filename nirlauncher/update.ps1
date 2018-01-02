@@ -1,6 +1,6 @@
 import-module au
 
-$releases = "http://launcher.nirsoft.net/downloads/index.html"
+$releases = "https://launcher.nirsoft.net/downloads/index.html"
 
 function global:au_SearchReplace() {
   @{
@@ -23,7 +23,7 @@ function global:au_GetLatest() {
     $url     = $download_page.links | ? href -match "nirsoft_package_.*.zip" | select -First 1 -expand href
     $version = $url -split '_|.zip' | select -Last 1 -Skip 1
 
-    @{ Version = $version; URL32 = $url }
+    @{ Version = $version; URL32 = "https:$url" }
 }
 
 update -ChecksumFor none -NoCheckUrl
