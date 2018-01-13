@@ -18,7 +18,6 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
     $version = $download_page.links.href -match 'tag/v' | Select -First 1 | % { $_ -split '/' | select -Last 1 }
     $version = $version.Substring(1)
-
     @{
         Version      = $version
         URL32        = "https://updates.signal.org/desktop/signal-desktop-win-$version.exe"
@@ -26,4 +25,9 @@ function global:au_GetLatest {
     }
 }
 
-update
+try { 
+    update
+} catch { 
+    "$_"
+    return 'ignore'
+}
