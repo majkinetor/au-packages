@@ -7,6 +7,10 @@ function global:au_SearchReplace {
         ".\tools\chocolateyInstall.ps1" = @{
             "(?i)(^\s*packageName\s*=\s*)('.*')"  = "`$1'$($Latest.PackageName)'"
         }
+        
+        "$($Latest.PackageName).nuspec" = @{
+            "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
+        }
 
         ".\legal\VERIFICATION.txt" = @{
           "(?i)(\s+x32:).*"            = "`${1} $($Latest.URL32)"
@@ -18,21 +22,22 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
 
-    #tidy-5.1.25-win64.zip
-    $re  = "tidy-.+-win(32|64).zip"
+    #tidy-5.6.0-vc14-32b.zip
+    $re  = "tidy-(.+)-vc14-(32|64)b.zip$"
     $url = $download_page.links | ? href -match $re | select -First 2 -expand href
 
-    $version = $url[0] -split '-' | select -Last 1 -Skip 1
+    $version = $url[0] -split '-' | select -Last 1 -Skip 2  
 
     @{
         Version = $version
         URL32   = 'https://github.com' + $url[0]
         URL64   = 'https://github.com' + $url[1]
+        ReleaseNotes = "http://binaries.html-tidy.org/release_notes/$version.html"
     }
 }
 

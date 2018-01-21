@@ -5,29 +5,30 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>html-tidy</id>
     <title>HTML Tidy with HTML5 support</title>
-    <version>5.4.0</version>
+    <version>0.0</version>
     <authors>HTACG</authors>
     <owners>Miodrag Milic</owners>
     <summary>Tidy is a console application for Mac OS X, Linux, Windows, UNIX, and more. It corrects and cleans up HTML and XML documents by fixing markup errors and upgrading legacy code to modern standards</summary>
-    <description>Tidy is a console application for Mac OS X, Linux, Windows, UNIX, and more. It corrects and cleans up HTML and XML documents by fixing markup errors and upgrading legacy code to modern standards.
+    <description><![CDATA[Tidy is a console application for Mac OS X, Linux, Windows, UNIX, and more. It corrects and cleans up HTML and XML documents by fixing markup errors and upgrading legacy code to modern standards.
 
 `libtidy` is a C static and dynamic library that developers can integrate into their applications in order to bring all of Tidy’s power to your favorite tools. `libtidy` is used today in desktop applications, web servers, and more.
 
 The HTML Tidy library, libtidy, is used and incorporated into many applications and projects. It offers an extensive API to read in and parse html from a file or buffer into a DOM like node tree, has cleaning and diagnostic services, ability to iterate through this node tree, interogating attributes, child nodes, and a pretty print output.
-</description>
+]]></description>
     <projectUrl>http://www.html-tidy.org/</projectUrl>
     <tags>foss cross-platform xml html tidy html5</tags>
     <copyright>HTACG</copyright>
     <licenseUrl>https://github.com/htacg/tidy-html5/blob/master/README/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <!--<dependencies>
-      <dependency id="" version="" />
-    </dependencies>-->
     <releaseNotes></releaseNotes>
     <docsUrl>http://www.html-tidy.org/documentation</docsUrl>
     <bugTrackerUrl>https://github.com/htacg/tidy-html5/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/htacg/tidy-html5</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/html-tidy</packageSourceUrl>
+    <dependencies>
+      <dependency id="vcredist140" version="14.12.25810" />
+      <dependency id="chocolatey" version="0.10.8" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
