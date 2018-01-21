@@ -22,9 +22,14 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge -FileNameSkip 1 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $url = $download_page.links | ? { [version]::TryParse($_.innerText, [ref]($__)) } | select -First 1    
+    $url = $download_page.links | ? {
+        if (!$_.href) { return }
+        $v = $_.href.split('/', [System.StringSplitOptions]::RemoveEmptyEntries)[-1]
+        [version]::TryParse($v, [ref]($__)) } | select -First 1 -Expand href   
 
-    $releases = 'https://sourceforge.net' + $url.href
+    $version = $url.split('/', [System.StringSplitOptions]::RemoveEmptyEntries)[-1]
+    
+    $releases = 'https://sourceforge.net' + $url
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $url32 = $download_page.links | ? href -match '-win32\.exe/download' | % href
     $url64 = $download_page.links | ? href -match '-x64\.exe/download' | % href
@@ -33,7 +38,12 @@ function global:au_GetLatest {
         return 'ignore'
     }
 
-    @{ Version  = $url.innerText;  URL32 = $url32;  URL64 = $url64; FileType = 'exe' }
+    @{ 
+        Version = $version
+        URL32   = $url32
+        URL64   = $url64
+        FileType = 'exe' 
+    }
 }
 
 update -ChecksumFor none
