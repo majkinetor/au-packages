@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: http://guysalias.tk/misc/less/less-487-win32-static-x86.7z.7z
+   x32: http://guysalias.tk/misc/less/less-527-win32-static-x86.7z
 
    to download the zip package.
 

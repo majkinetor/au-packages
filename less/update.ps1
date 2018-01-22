@@ -4,14 +4,14 @@ $releases = 'http://guysalias.tk/misc/less/'
 
 function global:au_SearchReplace {
     @{
-        ".\tools\VERIFICATION.txt" = @{
+        ".\legal\VERIFICATION.txt" = @{
           "(?i)(\s+x32:).*"        = "`${1} $($Latest.URL32)"
           "(?i)(checksum32:).*"    = "`${1} $($Latest.Checksum32)"
         }
     }
 }
 
-function global:au_BeforeUpdate {
+function global:au_BeforeUpdate {    
     set-alias 7z $Env:chocolateyInstall\tools\7z.exe
 
     $lessdir = "$PSScriptRoot\less-*-win*"
@@ -20,7 +20,8 @@ function global:au_BeforeUpdate {
     iwr $Latest.URL32 -OutFile "$PSScriptRoot\less.7z"
     7z x $PSScriptRoot\less.7z
 
-    rm $PSScriptRoot\tools\* -Recurse -Force -Exclude VERIFICATION.txt
+    rm $PSScriptRoot\tools -Recurse -Force
+    mkdir $PSScriptRoot\tools | Out-Null
     mv $lessdir\* $PSScriptRoot\tools -Force
     rm $lessdir -Recurse -Force -ea ignore
     rm $PSScriptRoot\less.7z -ea ignore
@@ -29,8 +30,8 @@ function global:au_BeforeUpdate {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re  = 'less-.+win.+\.7z$'
-    $url = $download_page.links | ? href -match $re | select -First 1 -expand href
+    $re  = 'less-(.+)win(.+)\.7z$'
+    $url = $download_page.links | ? href -match $re | % href | sort | select -Last 1
     $version = "$( ($url -split '-' | select -Index 1) / 100 )"
     @{
        URL32   = $releases + $url
