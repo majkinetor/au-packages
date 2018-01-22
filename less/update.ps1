@@ -20,7 +20,7 @@ function global:au_BeforeUpdate {
     iwr $Latest.URL32 -OutFile "$PSScriptRoot\less.7z"
     7z x $PSScriptRoot\less.7z
 
-    rm $PSScriptRoot\tools -Recurse -Force
+    rm $PSScriptRoot\tools -Recurse -Force -ea 0
     mkdir $PSScriptRoot\tools | Out-Null
     mv $lessdir\* $PSScriptRoot\tools -Force
     rm $lessdir -Recurse -Force -ea ignore
