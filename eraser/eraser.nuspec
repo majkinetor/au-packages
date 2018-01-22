@@ -21,7 +21,7 @@ Eraser is an advanced security tool for Windows which allows you to completely r
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/eraser/screenshot.png)
 </description>
     <projectUrl>http://eraser.heidi.ie</projectUrl>
-    <tags>admin file delete erase forensic</tags>
+    <tags>admin foss file delete erase forensic</tags>
     <copyright>Eraser</copyright>
     <licenseUrl>http://www.fsf.org/licensing/licenses/gpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
