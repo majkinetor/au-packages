@@ -5,21 +5,23 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>nexus-oss</id>
     <title>Nexus Repository Manager OSS</title>
-    <version>2.14.5.02</version>
+    <version>2.14.6.02</version>
     <authors>Sonatype</authors>
     <owners>Miodrag Milić</owners>
     <summary>Repository to manage software components required for development, deployment, and provisioning</summary>
-    <description>Nexus Repository Manager OSS manage software components required for development, deployment, and provisioning. If you develop software, the repository manager can help you share those components with other developers and end users. It greatly simplifies the maintenance of your own internal repositories and access to external repositories. With Nexus Repository Manager and Nexus Repository Manager OSS you can completely control access to, and deployment of, every component in your organization from a single location.
+    <description><![CDATA[Nexus Repository Manager OSS manage software components required for development, deployment, and provisioning. If you develop software, the repository manager can help you share those components with other developers and end users. It greatly simplifies the maintenance of your own internal repositories and access to external repositories. With Nexus Repository Manager and Nexus Repository Manager OSS you can completely control access to, and deployment of, every component in your organization from a single location.
 
-### Package
+## Package parameters
 
-Package installer will install the nexus and start the service. The following parameters are available:
+* `/InstallDir` - Installation directory, by default `/InstallDir: c:\nexus`
 
-* `/InstallDir`  
-Installation directory, by default `/InstallDir: c:\nexus`
+## Notes
+
+- Package will install the nexus and start the service. 
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/nexus-oss/screenshot.png)
-</description>
+
+]]></description>
     <projectUrl>http://www.sonatype.org/nexus/</projectUrl>
     <tags>admin repository maven nuget docker package</tags>
     <copyright>Sonatype</copyright>
