@@ -21,7 +21,7 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $url = $download_page.links | ? href -match $re | select -First 1 -Expand href
 
-    $download_page = Invoke-WebRequest -Uri $url -UseBasicParsing
+    $download_page = Invoke-WebRequest -Uri "http://www.cpuid.com/$url" -UseBasicParsing
     $url = $download_page.links | ? href -match $re | select -First 1 -Expand href
 
     $current_checksum = (gi $PSScriptRoot\tools\chocolateyInstall.ps1 | sls '\bchecksum\b') -split "=|'" | Select -Last 1 -Skip 1
