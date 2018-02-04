@@ -17,7 +17,11 @@ function global:au_BeforeUpdate {
     rm tools\$moduleName -Force -Recurse -ea 0
     Install-PackageProvider Nuget -Force
     Save-Module -Name $moduleName -Path tools
-    'Invoke-Build.ArgumentCompleters', 'Invoke-TaskFromISE', 'Invoke-TaskFromVSCode','New-VSCodeTask' | % { Save-Script $_ -Path tools }
+    
+    $scripts =  'Invoke-Build.ArgumentCompleters', 'Invoke-TaskFromISE', 'Invoke-TaskFromVSCode',
+                'New-VSCodeTask', 'Show-BuildTree', 'Show-BuildDgml', 'Show-TaskHelp'
+    
+    $scripts | % { iwr https://raw.githubusercontent.com/nightroman/Invoke-Build/master/$_.ps1 -OutFile tools\$_.ps1 }
 }
 
 function global:au_GetLatest {
