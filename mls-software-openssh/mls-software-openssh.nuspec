@@ -5,11 +5,12 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>mls-software-openssh</id>
     <title>OpenSSH (mls-software)</title>
-    <version>0.0</version>
+    <version>7.6.1.1</version>
     <authors>The OpenBSD Project</authors>
     <owners>Miodrag Milić</owners>
     <summary>OpenSSH server on Windows</summary>
-    <description>Dummy</description>
+    <description><![CDATA[Windows installer package of Openssh for Windows that is actively maintained.
+]]></description>
     <projectUrl>http://www.mls-software.com/opensshd.html</projectUrl>
     <tags>admin server ssh network</tags>
     <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
