@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>mls-software-openssh</id>
     <title>OpenSSH (mls-software)</title>
-    <version>7.5.1.1</version>
+    <version>0.0</version>
     <authors>The OpenBSD Project</authors>
     <owners>Miodrag Milić</owners>
     <summary>OpenSSH server on Windows</summary>
@@ -21,7 +21,7 @@
     <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.2" />
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>
     <docsUrl>http://www.mls-software.com/opensshd.html#botpage</docsUrl>
     <projectSourceUrl>http://www.mls-software.com/opensshd.html</projectSourceUrl>
