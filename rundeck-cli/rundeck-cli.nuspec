@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>rundeck-cli</id>
     <title>Rundeck CLI</title>
-    <version>1.0.22</version>
+    <version>1.0.23</version>
     <authors>Rundeck</authors>
     <owners>Miodrag Milic</owners>
     <summary>A simple commandline interface for the Rundeck</summary>
@@ -17,6 +17,7 @@
 ## Notes
 
 - The installer creates a shim named `rdcli` instead `rd` because the later is PowerShell alias for `Remove-Item`.
+- Related package: [rundeck](https://chocolatey.org/packages/rundeck) 
 
 ## Environment variables
 
@@ -24,11 +25,11 @@ Use the following variables to configure rundeck-cli:
  
 ```powershell
 $Env:RD_URL           = 'http://localhost:4440'     # Connection info
-    
-$Env:RD_TOKEN         = '...'                       # Credentials
-$Env:RD_USER          = 'admin' 
-$Env:RD_PASSWORD      = 'admin'                     
 
+$Env:RD_USER          = 'admin'
+$Env:RD_PASSWORD      = 'admin'
+$Env:RD_TOKEN         = '...'                       # Credentials
+                  
 $Env:RD_AUTH_PROMPT   = $false                      # Prompted to enter a username/password or token if not defined
 $Env:RD_INSECURE_SSL  = $false                      # To disable all SSL certificate checks, and hostname verifications
 $Env:RD_DEBUG         = ''                          # 1 - basic http request debug; 2 -http headers; 3 - http body
