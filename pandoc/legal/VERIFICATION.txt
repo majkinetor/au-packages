@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-windows.msi
+   x32: https://github.com/jgm/pandoc/releases/download/2.1.2/pandoc-2.1.2-windows.msi
 
    to download the installer.
 
@@ -15,11 +15,11 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 0C0B4CE8E86CA4C66A86BD40FAF75B2C03B1B5AAA27B4D369E2B3DEC111C5210
+   checksum32: E8A5B53B01BC9C5B31DA724E4BB33D3F1F72B080BFF6204191096176A929C978
 
 Using AU:
 
-   Get-RemoteChecksum https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-windows.msi
+   Get-RemoteChecksum https://github.com/jgm/pandoc/releases/download/2.1.2/pandoc-2.1.2-windows.msi
 
 File License.txt is saved from:
     https://raw.githubusercontent.com/jgm/pandoc/master/COPYRIGHT
