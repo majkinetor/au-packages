@@ -26,7 +26,7 @@ function global:au_BeforeUpdate  {
     set-alias 7z $Env:chocolateyInstall\tools\7z.exe
     7z x -aoa $zip_file_enc "-p$pass" "-o$zip_name" 
     7z a -aoa tools\$zip_name.zip .\$zip_name\*
-    rm $zip_name_enc, $zip_name -Recurse
+    rm $zip_file_enc, $zip_name -Recurse
 }
 
 function global:au_GetLatest() {
