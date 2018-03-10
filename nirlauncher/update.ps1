@@ -16,6 +16,17 @@ function global:au_BeforeUpdate  {
     $name = Split-Path -Leaf $Latest.URL32
     iwr -Headers @{ Referer = $releases } $Latest.URL32 -OutFile tools\$name
     iwr http://download.nirsoft.net/sysinternals2.nlp -OutFile tools\sysinternals2.nlp
+
+    Write-Host "Removing password"
+    $pass = 'nirsoft9876$'
+
+    $zip_file_enc = gi tools\*.zip
+    $zip_name_enc = $zip_file_enc.Name -replace '\.zip$'
+    $zip_name     = $zip_name_enc -replace '_enc'
+    set-alias 7z $Env:chocolateyInstall\tools\7z.exe
+    7z x -aoa $zip_file_enc "-p$pass" "-o$zip_name" 
+    7z a -aoa tools\$zip_name.zip .\$zip_name\*
+    rm $zip_name_enc, $zip_name -Recurse
 }
 
 function global:au_GetLatest() {
