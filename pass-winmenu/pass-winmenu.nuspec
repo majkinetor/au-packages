@@ -5,11 +5,11 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>pass-winmenu</id>
     <title>pass-winmenu</title>
-    <version>1.6.1</version>
+    <version>1.7-pre</version>
     <authors>Johan Geluk</authors>
     <owners>Miodrag Milic</owners>
     <summary>An easy-to-use Windows interface for pass</summary>
-    <description>Pass-winmenu follows the philosophy of (and is compatible with) the Linux password manager pass, which defines an open standard for password management that's easy to extend and customise to your personal requirements.
+    <description><![CDATA[Pass-winmenu follows the philosophy of (and is compatible with) the Linux password manager pass, which defines an open standard for password management that's easy to extend and customise to your personal requirements.
 
 ## Features
 
@@ -30,14 +30,14 @@
 - If you use git to sync the passwords with multiple environments, you need to install it along with this package since git synchronization is not mandatory: `cinst pass-winmenu git`.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/pass-winmenu/screenshot.gif)
-</description>
+]]></description>
     <projectUrl>https://github.com/Baggykiin/pass-winmenu</projectUrl>
     <tags>foss password security</tags>
     <copyright></copyright>
     <licenseUrl>https://github.com/Baggykiin/pass-winmenu/blob/master/LICENCE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/pass-winmenu/icon.png</iconUrl>
-    <releaseNotes>https://github.com/Baggykiin/pass-winmenu/releases/tag/v1.6.1</releaseNotes>
+    <releaseNotes>https://github.com/Baggykiin/pass-winmenu/releases/tag/v1.7-pre</releaseNotes>
     <docsUrl>https://github.com/Baggykiin/pass-winmenu/blob/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/Baggykiin/pass-winmenu/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/Baggykiin/pass-winmenu</projectSourceUrl>
