@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/Baggykiin/pass-winmenu/releases/download/v1.7-pre2/pass-winmenu-nogpg.zip
+   x32: https://github.com/Baggykiin/pass-winmenu/releases/download/v1.7/pass-winmenu-nogpg.zip
 
    to download the zip file.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: FE7E52693910C556A3BD9DABCF1C57419695A34421BE59CFB0512DBE4072B78E
+   checksum32: BE7A3F04917C6DA878AE7158ED6FC9EBC81622A34E2D29932567781185ADA022
 
 File 'license.txt' is obtained from:
    https://github.com/Baggykiin/pass-winmenu/blob/master/LICENCE
