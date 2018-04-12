@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://www.gitbook.com/editor/releases/all'
+$releases = 'https://legacy.gitbook.com/editor/releases/all'
 
 function global:au_SearchReplace {
    @{
