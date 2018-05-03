@@ -1,0 +1,10 @@
+License
+-------
+
+TagScanner provided as FREEWARE for private and commercial use.
+
+TagScanner may be freely distributed, with exceptions noted below, provided the distribution package is not modified.
+
+PROGRAM IS DISTRIBUTED "AS IS". NO WARRANTY OF ANY KIND IS EXPRESSED OR IMPLIED. 
+YOU USE AT YOUR OWN RISK. 
+THE AUTHOR WILL NOT BE LIABLE FOR DATA LOSS, DAMAGES, LOSS OF PROFITS OR ANY OTHER KIND OF LOSS WHILE USING OR MISUSING THIS SOFTWARE.
