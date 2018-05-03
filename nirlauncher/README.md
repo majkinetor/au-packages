@@ -15,6 +15,6 @@ NirLauncher is a package of more than 180 portable freeware utilities for Window
 
 ## Package Parameters
 
-- `/Sysinternals` - Add sysinternals tools to the launcher.
+- `/Sysinternals` - Add sysinternals tools to the launcher if chocolatey package `sysinternals` is already installed.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/nirlauncher/screenshot.png)
