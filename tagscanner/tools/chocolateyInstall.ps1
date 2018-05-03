@@ -19,4 +19,4 @@ if (!$installLocation)  { Write-Warning "Can't find $packageName install locatio
 Write-Host "$packageName installed to '$installLocation'"
 
 Register-Application "$installLocation\Tagscan.exe"
-Write-Host "$packageName registered as $packageName"
+Write-Host "$packageName registered as Tagscan"
