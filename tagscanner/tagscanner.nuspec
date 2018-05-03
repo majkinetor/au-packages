@@ -7,7 +7,7 @@
     <authors>Sergey Serkov</authors>
     <owners>majkinetor, niks255</owners>
     <projectUrl>http://www.xdlab.ru/en/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/niks255/PackagesIcons/master/TagScanner.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tagscanner/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>TagScanner is a powerful tool for organizing and managing your music collection</summary>
     <description><![CDATA[TagScanner is a powerful tool for organizing and managing your music collection. It can edit tags of most modern audio formats, supports ID3v1/v2, Vorbis comments, APEv2, WMA and MP4 (iTunes) tags. You can rename files according to information from the tags, import tag information from filenames or other sources, perform any text replacement and transformations in tags and filenames. Also you may get album info and download covers via online databases like freedb, Discogs or MusicBrainz. You can create playlists in one click and export your collection to HTML, Excel or any user-defined format. Program has easy-to-use multilingual interface and built-in audio player.
