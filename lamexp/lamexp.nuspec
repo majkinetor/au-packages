@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>lamexp</id>
+    <title>LameXP (Install)</title>
+    <version>4.13</version>
+    <authors>LoRd_MuldeR</authors>
+    <owners>majkinetor, angga</owners>
+    <summary>Audio Encoder Front-End for LAME MP3, Ogg Vorbis, Opus, FLAC, MP4/AAC and many more</summary>
+    <description><![CDATA[
+LameXP is a graphical user-interface (front-end) for various of audio encoders: It allows you to convert your audio files from one audio format to another one in the most simple way. Despite its name, LameXP is not only a front-end for the LAME MP3 encoder, but supports a wide range of output formats, including MP3, Ogg Vorbis, Opus, AAC/MP4, FLAC, AC-3 and Wave Audio. The number of supported input formats is even bigger! Furthermore LameXP not only runs on Windows XP, but also on Windows 7, 8 and 10 as well as many other operating systems.
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/lamexp/screenshot.png)
+]]></description>
+    <projectUrl>http://muldersoft.com/#lamexp</projectUrl>
+    <tags>admin audio converter transcoder encoder foss mp3</tags>
+    <copyright>Copyright © 2004-2018 LoRd_MuldeR</copyright>
+    <licenseUrl>https://github.com/lordmulder/LameXP/blob/master/Copying.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/lamexp/icon.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <docsUrl>http://lamexp.sourceforge.net/doc/Manual.html</docsUrl>
+    <mailingListUrl>http://forum.doom9.org/showthread.php?t=157726</mailingListUrl>
+    <bugTrackerUrl>https://github.com/lordmulder/LameXP/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/lordmulder/LameXP</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/lamexp</packageSourceUrl>
+    <dependencies>
+      <dependency id="autohotkey.portable" /> 
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
