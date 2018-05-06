@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>lamexp</id>
     <title>LameXP (Install)</title>
-    <version>4.13</version>
+    <version>4.16</version>
     <authors>LoRd_MuldeR</authors>
     <owners>majkinetor, angga</owners>
     <summary>Audio Encoder Front-End for LAME MP3, Ogg Vorbis, Opus, FLAC, MP4/AAC and many more</summary>
