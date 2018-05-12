@@ -3,8 +3,8 @@
 $packageArgs = @{
   packageName            = 'signal'
   fileType               = 'EXE'
-  url                    = 'https://updates.signal.org/desktop/signal-desktop-win-1.10.0.exe'
-  checksum               = '4041f1904649911a6352559534b7c54d51a4c9f8ff73492111ada2f201738589'
+  url                    = 'https://updates.signal.org/desktop/signal-desktop-win-1.10.1.exe'
+  checksum               = 'cfefe00e7304063014509f8e7a77cf99bde8ee812b30f0191b6cf8066ef2ece4'
   checksumType           = 'sha256'
   silentArgs             = '/S'
   validExitCodes         = @(0)
