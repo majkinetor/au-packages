@@ -56,8 +56,8 @@ if ($pp.Autologon) {
     Add-User $Username $Password
 
     Write-Host "Setting autologon for $Username"
-    Set-AutoLogon $Username $Password -Script "$installDir\autologon.bat"
-
+    Set-AutoLogon $Username $Password 
+    
     Write-Host "Creating logon script: $installDir\autologon.bat"
     "cd ""$installDir""`n" +
     """$installDir\gitlab-runner.exe"" run" | Out-File $installDir\autologon.bat -Encoding ascii
