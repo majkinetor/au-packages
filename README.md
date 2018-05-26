@@ -3,9 +3,12 @@
 [Update status](http://tiny.cc/v1u1ey)
 [![](http://transparent-favicon.info/favicon.ico)](#)
 [chocolatey/majkinetor](https://chocolatey.org/profiles/majkinetor)
-[![](http://transparent-favicon.info/favicon.ico)](#)
-[![](http://transparent-favicon.info/favicon.ico)](#)
-[![](http://transparent-favicon.info/favicon.ico)](#)
+[![](http://transparent-favicon.info/favicon.ico)](#) 
+[![](http://transparent-favicon.info/favicon.ico)](#) 
+[![](http://transparent-favicon.info/favicon.ico)](#) 
+[![](http://transparent-favicon.info/favicon.ico)](#) 
+[![](http://transparent-favicon.info/favicon.ico)](#) 
+[![](http://transparent-favicon.info/favicon.ico)](#) 
 [![](https://img.shields.io/badge/donate-patreon-blue.svg?longCache=true&style=for-the-badge)](https://www.patreon.com/majkinetor)
 
 This repository contains [chocolatey automatic packages](https://chocolatey.org/docs/automatic-packages).  
