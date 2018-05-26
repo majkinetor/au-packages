@@ -3,6 +3,10 @@
 [Update status](http://tiny.cc/v1u1ey)
 [![](http://transparent-favicon.info/favicon.ico)](#)
 [chocolatey/majkinetor](https://chocolatey.org/profiles/majkinetor)
+[![](http://transparent-favicon.info/favicon.ico)](#)
+[![](http://transparent-favicon.info/favicon.ico)](#)
+[![](http://transparent-favicon.info/favicon.ico)](#)
+[![](https://img.shields.io/badge/donate-patreon-blue.svg?longCache=true&style=for-the-badge)](https://www.patreon.com/majkinetor)
 
 This repository contains [chocolatey automatic packages](https://chocolatey.org/docs/automatic-packages).  
 The repository is setup so that you can manage your packages entirely from the GitHub web interface (using AppVeyor to update and push packages) and/or using the local repository copy.
