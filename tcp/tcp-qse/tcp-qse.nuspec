@@ -5,12 +5,12 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp-qse</id>
     <title>TC Plugin: Quick Search Extended</title>
-    <version>0.0</version>
+    <version>2.2.6</version>
     <authors>Samuel Plentz</authors>
     <owners>Miodrag Milic</owners>
-    <summary>Total Commander plugin that extends quick search funtionality</summary>
+    <summary>Total Commander plugin that extends Quick search funtionality</summary>
     <description>
-Total Commander plugin that extends quick search funtionality.
+Total Commander plugin that extends _Quick Search_ funtionality.
 
 The main feature is that the search string is divided in substrings at each space. A file matches the
 search string if all substrings are found in it. You can use the char `|` to find either the string to the
@@ -31,11 +31,11 @@ left or the string to the right. Use the char `!` in front of a search string to
     <licenseUrl>https://www.ghisler.ch/board/viewtopic.php?t=22592</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp-qse/icon.png</iconUrl>
-    <releaseNotes></releaseNotes>
     <docsUrl>http://cid-f8c4901fa2fb692e.skydrive.live.com/self.aspx/TC/QuickSearch%20eXtended/tcmatch.pdf</docsUrl>
     <projectSourceUrl>http://cid-f8c4901fa2fb692e.skydrive.live.com/self.aspx/TC/QuickSearch%20eXtended/QuickSearch%20eXtended%20-%20source.zip</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp-qse</packageSourceUrl>
     <dependencies>
+      <dependency id="TotalCommander" />
     </dependencies>
   </metadata>
   <files>

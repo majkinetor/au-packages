@@ -1,14 +1,14 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
-$is64      = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
+
+if (!($Env:COMMANDER_PATH -and (Test-Path $Env:COMMANDER_PATH))) { throw 'This package requires COMMANDER_PATH environment variable set' }
 
 $packageArgs = @{
     PackageName    = 'tcp-qse'
-    FileFullPath   = gi $toolsPath\*.zip  
+    FileFullPath   = gi $toolsPath\*.zip
     Destination    = $Env:COMMANDER_PATH
 }
 
-ls $toolsPath\* | ? { $_.PSISContainer } | rm -Recurse -Force #remove older package dirs
 Get-ChocolateyUnzip @packageArgs
 rm $toolsPath\*.zip -ea 0
