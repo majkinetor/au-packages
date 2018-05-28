@@ -1,0 +1,1 @@
+This folder contains Total Commander plugin packages

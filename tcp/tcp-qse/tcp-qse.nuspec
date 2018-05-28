@@ -33,7 +33,7 @@ left or the string to the right. Use the char `!` in front of a search string to
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp-qse/icon.png</iconUrl>
     <docsUrl>http://cid-f8c4901fa2fb692e.skydrive.live.com/self.aspx/TC/QuickSearch%20eXtended/tcmatch.pdf</docsUrl>
     <projectSourceUrl>http://cid-f8c4901fa2fb692e.skydrive.live.com/self.aspx/TC/QuickSearch%20eXtended/QuickSearch%20eXtended%20-%20source.zip</projectSourceUrl>
-    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp-qse</packageSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-qse</packageSourceUrl>
     <dependencies>
       <dependency id="TotalCommander" version="9.12.0.20180528" />
     </dependencies>
