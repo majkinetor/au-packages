@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-qse</id>
+    <title>TC Plugin: Quick Search Extended</title>
+    <version>2.2.6</version>
+    <authors>Samuel Plentz</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander plugin that extends Quick search funtionality</summary>
+    <description>
+Total Commander plugin that extends _Quick Search_ funtionality.
+
+The main feature is that the search string is divided in substrings at each space. A file matches the
+search string if all substrings are found in it. You can use the char `|` to find either the string to the
+left or the string to the right. Use the char `!` in front of a search string to invert the result list.
+
+## Features
+
+- Search substrings in random order
+- RegEx search
+- Similarity search
+- Possibility to use presets
+- PinYin support
+- Highly customizable
+</description>
+    <projectUrl>https://www.ghisler.ch/board/viewtopic.php?t=22592</projectUrl>
+    <tags>total-commander plugin search</tags>
+    <copyright>Samuel Plentz 2018</copyright>
+    <licenseUrl>https://www.ghisler.ch/board/viewtopic.php?t=22592</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp-qse/icon.png</iconUrl>
+    <docsUrl>http://cid-f8c4901fa2fb692e.skydrive.live.com/self.aspx/TC/QuickSearch%20eXtended/tcmatch.pdf</docsUrl>
+    <projectSourceUrl>http://cid-f8c4901fa2fb692e.skydrive.live.com/self.aspx/TC/QuickSearch%20eXtended/QuickSearch%20eXtended%20-%20source.zip</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp-qse</packageSourceUrl>
+    <dependencies>
+      <dependency id="TotalCommander" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
