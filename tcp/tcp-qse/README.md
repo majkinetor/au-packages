@@ -20,5 +20,5 @@ The main feature is that the search string is divided in substrings at each spac
 - Run `& $Env:COMMANDER_PATH\tcmatch.pdf` to see plugin documentation
 
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-qse/screenshot.gif)
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-qse/screenshot.png)
 
