@@ -1,0 +1,27 @@
+Allowed by personal communication
+
+Forum link:   https://www.ghisler.ch/board/viewtopic.php?p=341989&sid=304d8c7444c512bcfdce845adf9d4cc2#341989
+Archive link: http://archive.is/glVmc#75%
+Screenshot:   Redistribution.png
+
+---
+
+Samuel
+Joined: 29 Aug 2003
+Posts: 1840
+Location: Brandenburg, Germany
+	
+PostPosted: Sun May 27, 2018 1:13 pm    Post subject: 	Reply with quote
+    majkinetor ! wrote:	
+    > Hi Samuel,
+    > 
+    > I would like to create chocolatey package for this awesome plugin to acompanny existing TC package here:
+    > 
+    > https://chocolatey.org/packages/TotalCommander
+    > 
+    > 
+    > I didn't find any license file. Am I amble to redistribute plugin (no modifications, just silent install script and meta data)?
+    > 
+    > Thanks.	
+
+Feel free to use it for this purpose.
