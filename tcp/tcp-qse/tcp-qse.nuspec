@@ -35,7 +35,7 @@ left or the string to the right. Use the char `!` in front of a search string to
     <projectSourceUrl>http://cid-f8c4901fa2fb692e.skydrive.live.com/self.aspx/TC/QuickSearch%20eXtended/QuickSearch%20eXtended%20-%20source.zip</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp-qse</packageSourceUrl>
     <dependencies>
-      <dependency id="TotalCommander" />
+      <dependency id="TotalCommander" version="9.12.0.20180528" />
     </dependencies>
   </metadata>
   <files>
