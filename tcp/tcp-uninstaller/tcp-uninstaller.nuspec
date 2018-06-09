@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-uninstaller</id>
+    <title>TC Plugin: Uninstaller64</title>
+    <version>1.0.1</version>
+    <authors>Konstantin Vlasov</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander plugin for managing uninstallation of applications</summary>
+    <description>This plugin allows to view the list of installed applications directly in the Total Commander panel, view detailed information about each uninstallation entry, launch deinstallation and forcibly delete invalid entries.
+
+## Features
+
+- 64-bit version.
+- Full Unicode support.
+- Listing of both 32- and 64-bit uninstallation entries (no matter which TC version is used).
+- Options to confirm uninstallation.
+- Support background operations.
+- Content data fields with basic information about uninstallation entries.
+- Option where to store plugin settings.
+- When deleting a key, auxiliary keys are also deleted from the registry.
+- [More...](http://flint-inc.ru/eng/info/uninstaller64.html)
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-uninstaller/screenshot.png)
+    </description>
+    <projectUrl>http://flint-inc.ru/eng/info/uninstaller64.html</projectUrl>
+    <tags>total-commander plugin tcplugin uninstall foss</tags>  
+    <copyright>Konstantin Vlasov, 2012</copyright>
+    <licenseUrl>https://opensource.org/licenses/Artistic-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp-uninstaller/icon.png</iconUrl>
+    <mailingListUrl>https://ghisler.ch/board/viewtopic.php?t=34710</mailingListUrl>
+    <projectSourceUrl>http://flint-inc.ru/files/mlang/uninstaller64_1.0.1.src.rar</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-uninstaller</packageSourceUrl>
+    <dependencies>
+      <dependency id="TotalCommander" version="9.12.0.20180528" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

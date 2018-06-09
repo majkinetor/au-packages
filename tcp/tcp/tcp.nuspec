@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp</id>
+    <title>Total Commander with plugins</title>
+    <version>0.1</version>
+    <authors>Miodrag Milic</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander with plugins</summary>
+    <description>Metapackage containing all [Totall Commander plugins](https://chocolatey.org/packages?q=tag%3Atcplugin).</description>
+    <projectUrl></projectUrl>
+    <tags> total-commander tcplugin</tags>
+    <copyright>Miodrg Milic 2018</copyright>
+    <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/icon.png</iconUrl>
+    <projectSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</packageSourceUrl>
+    <dependencies>
+      <dependency id="TotalCommander" version="9.12.0.20180528" />
+      <dependency id="tcp-qse" />
+      <dependency id="tcp-uninstaller"/>
+    </dependencies>
+  </metadata>
+</package>
