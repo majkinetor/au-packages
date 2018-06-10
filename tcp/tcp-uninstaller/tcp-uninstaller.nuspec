@@ -26,7 +26,7 @@
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-uninstaller/screenshot.png)
     </description>
     <projectUrl>http://flint-inc.ru/eng/info/uninstaller64.html</projectUrl>
-    <tags>total-commander plugin tcplugin uninstall foss</tags>  
+    <tags>total-commander totalcmd plugin tcplugin tcpfilesystem uninstall foss</tags>  
     <copyright>Konstantin Vlasov, 2012</copyright>
     <licenseUrl>https://opensource.org/licenses/Artistic-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -36,6 +36,7 @@
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-uninstaller</packageSourceUrl>
     <dependencies>
       <dependency id="TotalCommander" version="9.12.0.20180528" />
+      <dependency id="7zip.portable" version="18.5" />   
     </dependencies>
   </metadata>
   <files>
