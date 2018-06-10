@@ -1,3 +1,8 @@
+<#
+Author: Miodrag Milic <miodrag.milic@gmail.com>
+This script contains various Total Commander functions
+#>
+
 function Test-Commander {
     if (!($Env:COMMANDER_PATH -and (Test-Path $Env:COMMANDER_PATH))) { throw 'This package requires COMMANDER_PATH environment variable set' }
     if (ps totalcmd* -ea 0) {
@@ -25,8 +30,16 @@ function Install-TCPlugin([string] $Path, [string] $Name ) {
     mv $tmpDestination\* $plugin_path -Force
     
     Write-Host "TotalCmd plugin installed at: $plugin_path" 
-}
 
+    # $iniPath = gc "$Env:APPDATA\GHISLER\wincmd.ini"
+
+    # 'FileSystemPlugins'     Name=Path
+    # 'ListerPlugins' wlx ordered
+    # 'PackerPlugins' Name=Path
+    # 'ContentPlugins' wdx ordered
+
+    # $sectionNo = ($ini -split '\n' | sls '^\s*\[.+?\]').Count
+}
 function Uninstall-TCPlugin([string] $Name) {
     Write-Host "Removing TotalCmd plugin files: $Name"
     rm $Env:COMMANDER_PATH\plugins\*\$Name -Recurse -Force

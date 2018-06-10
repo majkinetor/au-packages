@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
-. $toolsPath\helpers.ps1
+. $toolsPath\totalcmd.ps1
 
 Uninstall-TCPlugin Uninstaller64
