@@ -10,7 +10,7 @@
     <owners>Miodrag Milic</owners>
     <summary>Total Commander with plugins</summary>
     <description>Metapackage containing all [Totall Commander plugins](https://chocolatey.org/packages?q=tag%3Atcplugin).</description>
-    <projectUrl></projectUrl>
+    <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</projectUrl>
     <tags> total-commander tcplugin</tags>
     <copyright>Miodrg Milic 2018</copyright>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</licenseUrl>
