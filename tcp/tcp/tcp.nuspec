@@ -24,4 +24,7 @@
       <dependency id="tcp-uninstaller"/>
     </dependencies>
   </metadata>
+    <files>
+
+  </files>
 </package>
