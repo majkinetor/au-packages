@@ -22,6 +22,7 @@
       <dependency id="TotalCommander" version="9.12.0.20180528" />
       <dependency id="tcp-qse" />
       <dependency id="tcp-uninstaller"/>
+      <dependency id="tcp-envvars"/>
     </dependencies>
   </metadata>
     <files>
