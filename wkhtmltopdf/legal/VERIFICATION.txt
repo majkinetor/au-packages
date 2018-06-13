@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_msvc2015-win32.exe
-   x64: https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_msvc2015-win64.exe
+   x32: https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox-0.12.5-1.msvc2015-win32.exe
+   x64: https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox-0.12.5-1.msvc2015-win64.exe
 
    to download the installer.
 
@@ -16,12 +16,12 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 6883D1456201BC9D421CB7DD32A99458BE3D56631EA4F292E51B3C1AECBE2723
-   checksum64: 14A5996ADC77DC606944DBC0DC682BFF104CD38CC1BEC19253444CB87F259797
+   checksum32: 894644B32C767DC267513F381D06EC5783C2CBAA3E9E139ADC1E04D3FACF4561
+   checksum64: B5A60B8801A599B9097C5CC8B0D2B18D1709B119B9D88B960F1F38FAD498DCD8
 
 Using AU:
 
-   Get-RemoteChecksum https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_msvc2015-win64.exe
+   Get-RemoteChecksum https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox-0.12.5-1.msvc2015-win64.exe
 
 File 'license.txt' is obtained from:
   https://raw.githubusercontent.com/wkhtmltopdf/wkhtmltopdf/master/LICENSEt
