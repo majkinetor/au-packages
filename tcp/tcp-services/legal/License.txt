@@ -1,0 +1,14 @@
+Source:  wfx_Services2_0.7.0.rar\readme.htm
+
+---
+
+8. License
+
+The plugin's cog icon "Fatcow-Farm-Fresh-Cog", part of the "Farm-Fresh Web Icons" package:
+(C) {Fatcow Web Hosting}, licensed under {CC Attribution 3.0}
+All other icons (except the Delphi main icon) were made by my brother.
+This software is provided "as is". No warranty provided. You use this program at your own risk. The author will not be responsible for data loss, damages, etc. while using or misusing this software.
+
+The software must not be modified, you may not decompile or disassemble it.
+
+This plugin is copyrighted freeware.

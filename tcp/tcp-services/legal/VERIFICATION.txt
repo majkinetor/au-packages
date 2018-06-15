@@ -1,0 +1,19 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Package can be verified like this:
+
+1. Go to http://totalcmd.net/plugring/Services2.html to download the plugin:
+
+   http://totalcmd.net/download.php?id=Services2
+
+2. You can use one of the following methods to obtain the SHA256 checksum:
+   - Use powershell function 'Get-FileHash'
+   - Use Chocolatey utility 'checksum.exe'
+
+   823484D30A38A0895F5439242D5E5659E576A0F97F6EE2BF629FBEEBD3EDC9DC
+
+File 'License.txt' contains text copied from the archive:
+    wfx_Services2_0.7.0.rar\readme.htm

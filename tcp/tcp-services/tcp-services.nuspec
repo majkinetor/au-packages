@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-services</id>
+    <title>TC Plugin: Services</title>
+    <version>0.7</version>
+    <authors>Dalai</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander plugin that can list, control and manage services registered in the local or remote system.</summary>
+    <description>Total Commander plugin that can list, control and manage services registered in the local or remote system.
+
+## Features
+
+* List services registered in the system 
+* Control service states 
+* Edit service properties 
+* Delete services from the system 
+* Analyze service executables with internal and external tools
+* Manage services on remote systems
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-services/screenshot.png)
+    </description>
+    <projectUrl>https://ghisler.ch/board/viewtopic.php?t=40155</projectUrl>
+    <tags>total-commander plugin tcplugin tcpfilesystem services freeware</tags>
+    <copyright>Dalai 2012</copyright>
+    <licenseUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-services/legal/License.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-services</packageSourceUrl>
+    <dependencies>
+      <dependency id="TotalCommander" version="9.12.0.20180528" />
+      <dependency id="7zip.portable" version="18.5" />   
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
