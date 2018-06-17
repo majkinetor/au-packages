@@ -25,7 +25,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases
+    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
     #tidy-5.6.0-vc14-32b.zip
     $re  = "tidy-(.+)-vc14-(32|64)b.zip$"
