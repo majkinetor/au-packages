@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>copyq</id>
     <title>CopyQ</title>
-    <version>3.5.0</version>
+    <version>3.5.0.20180617</version>
     <authors>Lukas Holocek</authors>
     <owners>Miodrag Milic</owners>
     <summary>Cross-platform clipboard manager with advanced features</summary>
@@ -36,8 +36,8 @@ Items can be:
 
 ## Package parameters
 
-* `/NoDesktopIcon` - Do not create desktop icon
-* `/NoStartup`   - Do not run CopyQ on OS startup
+* `/NoDesktopIcon`  - Do not create desktop icon
+* `/NoStartup`      - Do not run CopyQ on OS startup
 * `/ToggleShortcut` - Specify global shortcut to use to launch copyq, for example `/ToggleShortcut:ctrl+q`.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
