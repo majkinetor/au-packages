@@ -27,7 +27,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases
+    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
     $re    = '\.exe$'
     $url   = $download_page.links | ? href -match $re | select -Expand href -First 2 | % { 'https://github.com' + $_ }
