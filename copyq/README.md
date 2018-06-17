@@ -27,8 +27,8 @@ Items can be:
 
 ## Package parameters
 
-* `/NoDesktopIcon` - Do not create desktop icon
-* `/NoStartup`   - Do not run CopyQ on OS startup
+* `/NoDesktopIcon`  - Do not create desktop icon
+* `/NoStartup`      - Do not run CopyQ on OS startup
 * `/ToggleShortcut` - Specify global shortcut to use to launch copyq, for example `/ToggleShortcut:ctrl+q`.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
