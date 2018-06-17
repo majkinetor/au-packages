@@ -14,8 +14,8 @@ function global:au_SearchReplace {
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases #could use: 'https://api.github.com/repos/dnGrep/dnGrep/releases/latest' | select -expand Content | ConvertFrom-Json | select name, assets_url
-
+    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing 
+    
     $re      = 'dnGREP.*.msi'
     $url     = $download_page.links | ? href -match $re | select -First 2 -expand href
     $url64   = 'https://github.com' + $url[0]
