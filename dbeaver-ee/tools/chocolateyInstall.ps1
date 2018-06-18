@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'dbeaver'
-$url32       = 'https://dbeaver.com/files/5.1.0/dbeaver-ee-5.1.0-x86-setup.exe'
-$url64       = 'https://dbeaver.com/files/5.1.0/dbeaver-ee-5.1.0-x86_64-setup.exe'
-$checksum32  = '9a7e2855dc9cf9e2793edc42bac66f13e150d59431a29aed8fa3419d5dd3ad4c'
-$checksum64  = '0531e0dd952eb893808a3ff84219c2b594b6159081e122b4aa503292b3fca509'
+$url32       = 'https://dbeaver.com/files/5.1.1/dbeaver-ee-5.1.1-x86-setup.exe'
+$url64       = 'https://dbeaver.com/files/5.1.1/dbeaver-ee-5.1.1-x86_64-setup.exe'
+$checksum32  = '166ff7f47de50b899016a517e17e8d39a705bd199ff92df1185affcb7c4f8446'
+$checksum64  = '88e7448bcafaf7d20800ded68fbc948912a7f53b2469a7270f590c77a9fcec50'
 
 $packageArgs = @{
   packageName            = $packageName
