@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://archive.apache.org/dist/lucene/solr/6.6.4/solr-6.6.4.zip
+   x32: https://archive.apache.org/dist/lucene/solr/7.4.0/solr-7.4.0.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 915DDF92FAC49D1FACC6AC5C237E144742FCD806D6C7B05DD987562A1EBDAF11
+   checksum32: 994B90C250F206C7AA681789B8C96E8B46BCDEEE5EB1096640A58854B6DA1242
 
 File 'license.txt' is obtained from:
    http://www.apache.org/licenses/LICENSE-2.0.txt
