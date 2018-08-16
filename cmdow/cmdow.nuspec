@@ -25,11 +25,11 @@ Cmdow was written with batch file programmers in mind. Particular attention has 
     <!--<iconUrl></iconUrl>-->
     <!--<dependencies>-->
     <!--</dependencies>-->
-    <releaseNotes>See http://www.commandline.co.uk/cmdow/#revision</releaseNotes>
+    <releaseNotes>http://ritchielawrence.github.io/cmdow/#revisions</releaseNotes>
     <!--<mailingListUrl></mailingListUrl>-->
     <docsUrl>https://github.com/ritchielawrence/cmdow/blob/master/README.md</docsUrl>
     <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <projectSourceUrl>http://sourceforge.net/projects/cmdow/files/1.4.8</projectSourceUrl>
+    <projectSourceUrl>https://github.com/ritchielawrence/cmdow</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/cmdow</packageSourceUrl>
   </metadata>
   <files>
