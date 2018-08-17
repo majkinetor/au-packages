@@ -18,7 +18,7 @@ Cmdow was written with batch file programmers in mind. Particular attention has 
 
 </description>
     <projectUrl>https://ritchielawrence.github.io/cmdow</projectUrl>
-    <tags>cli window admin</tags>
+    <tags>cli window foss scripting admin</tags>
     <copyright>Ritchie Lawrence</copyright>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -34,5 +34,6 @@ Cmdow was written with batch file programmers in mind. Particular attention has 
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
