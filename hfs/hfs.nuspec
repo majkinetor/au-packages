@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>hfs</id>
     <title>Http File Server</title>
-    <version>2.3.9</version>
+    <version>2.3.12</version>
     <authors>Massimo Melina</authors>
     <owners>Miodrag Milić</owners>
     <summary>HTTP server designed for file transfer</summary>
@@ -35,10 +35,11 @@ It has been successfully tested with Wine under Linux.
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/hfs/icon.gif</iconUrl>
     <releaseNotes>http://www.rejetto.com/hfs/?f=wn</releaseNotes>
-    <projectSourceUrl>https://sourceforge.net/projects/hfs/files/HFS/2.3i/hfs2.3i.src.zip/download</projectSourceUrl>
+    <projectSourceUrl>https://sourceforge.net/projects/hfs/files/HFS/2.3m/hfs2.3m.src.zip/download</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/hfs</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />    
   </files>
 </package>
