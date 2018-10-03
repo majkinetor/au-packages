@@ -28,10 +28,9 @@ function global:au_GetLatest {
     $releases = "https://www.powershellgallery.com/packages/$moduleName"
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re    = '/Download$'
-    $url   = $download_page.links | ? href -match $re | select -First 1 -expand href
+    $url = ($download_page.Content -split '\n' | sls 'DownloadNupkg_Button' ).ToString().Split("'") | select -Last 1 -Skip 1
     @{
-        Version  = $url -split '/' | select -Last 1 -Skip 1
+        Version  = $url -split '/' | select -Last 1
     }
 }
 
