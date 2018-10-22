@@ -1,7 +1,9 @@
 <# 
     Rename this file to register.ps1 or it will get overwritten by the future updates.
-    For the list of all environment vars run `gitlab-runner register --help`
-    Running runners should automatically pick up config.toml changes.
+    For the list of all environment vars run `gitlab-runner register --help`.
+    
+    After registration, config.toml is generated and subsequent configuration changes should
+    be set in that file. Gitlab-Runner automatically picks up config.toml changes while executing.
 #>
 
 $Env:RUNNER_NAME                = ''
