@@ -25,6 +25,7 @@ Invoke-Build v3.0.1 is cross-platform with PowerShell v6.0.0-alpha.
 - Its recommended to include the following in your PowerShell `$PROFILE`:
     ```powershell
     sal ib Invoke-Build
+    sal ib? $env:ChocolateyInstall/lib/invoke-build/tools/Show-TaskHelp.ps1
     & $env:ChocolateyInstall\lib\invoke-build\tools\Invoke-Build.ArgumentCompleters.ps1
     ```
     
