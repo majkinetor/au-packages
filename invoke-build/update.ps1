@@ -19,7 +19,7 @@ function global:au_BeforeUpdate {
     Save-Module -Name $moduleName -Path tools
     
     $scripts =  'Invoke-Build.ArgumentCompleters', 'Invoke-TaskFromISE', 'Invoke-TaskFromVSCode',
-                'New-VSCodeTask', 'Show-BuildTree', 'Show-BuildDgml', 'Show-TaskHelp'
+                'New-VSCodeTask', 'Show-BuildTree', 'Show-BuildDgml'
     
     $scripts | % { iwr https://raw.githubusercontent.com/nightroman/Invoke-Build/master/$_.ps1 -OutFile tools\$_.ps1 }
 }
