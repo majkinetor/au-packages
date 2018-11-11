@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>lamexp</id>
     <title>LameXP (Install)</title>
-    <version>4.16</version>
+    <version>4.17</version>
     <authors>LoRd_MuldeR</authors>
     <owners>majkinetor, angga</owners>
     <summary>Audio Encoder Front-End for LAME MP3, Ogg Vorbis, Opus, FLAC, MP4/AAC and many more</summary>
@@ -20,7 +20,7 @@ LameXP is a graphical user-interface (front-end) for various of audio encoders: 
     <licenseUrl>https://github.com/lordmulder/LameXP/blob/master/Copying.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/lamexp/icon.png</iconUrl>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>https://github.com/lordmulder/LameXP/releases/tag/Release_417</releaseNotes>
     <docsUrl>http://lamexp.sourceforge.net/doc/Manual.html</docsUrl>
     <mailingListUrl>http://forum.doom9.org/showthread.php?t=157726</mailingListUrl>
     <bugTrackerUrl>https://github.com/lordmulder/LameXP/issues</bugTrackerUrl>
