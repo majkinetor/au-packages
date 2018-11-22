@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'nexus-oss'
-$url         = 'https://sonatype-download.global.ssl.fastly.net/repository/repositoryManager/oss/nexus-2.14.10-01-bundle.zip'
-$checksum    = '9f9c05982de6ac34f12f1b81ad4d0182443f45b9ae7291a980b3a5c4e395145e'
+$url         = 'https://sonatype-download.global.ssl.fastly.net/repository/repositoryManager/oss/nexus-2.14.11-01-bundle.zip'
+$checksum    = 'a6e036a45679afbe98a6ddff1dca2c00d5d5471a01ee75d3314be1fb82382fea'
 $installDir  = 'c:\nexus'
 
 $packageArgs = @{
