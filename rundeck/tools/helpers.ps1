@@ -1,3 +1,16 @@
+function Invoke-FirstRun() {
+    Write-Host "Running first time initialization with 5 minutes timeout"
+
+    $job = Start-Job { cd $using:pwd; java -jar rundeck.war > rundeck.log }
+    for ($i=0; $i -le 300; $i++) {
+        if ($e -eq 300) { throw "Error starting rundeck" }
+        if (gc .\rundeck.log -ea 0 | sls "Rundeck startup finished") { 
+            rjb $job -force; break 
+        } else { sleep 1 }
+    }
+    rjb $job -force -ea 0
+}
+
 function Enable-RundeckSsl() {
     Write-Host "Enable self signed SSL"
 
@@ -6,7 +19,6 @@ function Enable-RundeckSsl() {
     if (!(Test-Path $keytool_path)) { throw "Can't find keytool" }
     sal keytool $keytool_path
     
-    mkdir etc -ea 0 | Out-Null
     $ErrorActionPreference = 'Continue'
     'Venkman.local','devops','my org','my city','my state','us','yes' | keytool -keystore etc\truststore -alias rundeck -genkey -keyalg RSA -keypass adminadmin -storepass adminadmin 2>$null
     $ErrorActionPreference = 'Stop'
@@ -15,18 +27,13 @@ function Enable-RundeckSsl() {
     (gc server/config/rundeck-config.properties) -replace '4440','4443' -replace 'http://','https://' | sc server/config/rundeck-config.properties
     (gc start_rundeck.bat) -replace '^java', '$0 -Drundeck.ssl.config=%RDECK_BASE%/server/config/ssl.properties' | sc start_rundeck.bat
 
-    if (!(Test-Path etc/framework.properties)) {
-        Write-Host "Starting rundeck to generate etc/framework.properties"
-        $job = Start-Job { cd $using:pwd; .\start_rundeck.bat }
-        for ($i=0; $i -lt 120; $i++) { if (Test-Path etc/framework.properties) { rjb $job -force; break } else { sleep 1 } }
-        rjb $job -force -ea 0
-    }
     (gc etc/framework.properties) -replace '4440','4443' -replace 'http://','https://' | sc etc/framework.properties
     # (gc etc/preferences.properties) -replace 'http://','https://' | sc etc/preferences.properties
 }
 
 function Install-RundeckService() {
     Write-Host "Installing service 'rundeck'"
+
     nssm install rundeck "$($pp.InstallDir)\start_rundeck.bat"
     if ($pp.Service -ne 0) {
         Write-Host "Starting service"
@@ -34,7 +41,9 @@ function Install-RundeckService() {
     }
 }
 function Set-RundeckOpts() {
-    $bat = gc start_rundeck.bat
+    $path = "start_rundeck.bat"
+
+    $bat = gc $path
     if ($pp.CliOpts) { 
         Write-Host "Setting RDECK_CLI_OPTS to" $pp.CliOpts
         $bat = $bat -replace '^(set RDECK_CLI_OPTS=).+',"`$1$($pp.CliOpts)"
@@ -43,21 +52,34 @@ function Set-RundeckOpts() {
         Write-Host "Setting RDECK_SSL_OPTS to" $pp.SslOpts
         $bat = $bat -replace '^::(set RDECK_SSL_OPTS=).+',"`$1$($pp.SslOpts)"
     }
-    $bat | sc start_rundeck.bat
+    $bat | sc $path
 }
 function Set-RundeckAdminPass() {
+    $path = "server\config\realm.properties"
+
     Write-Host "Setting up admin password"
-    $realm = gc server\config\realm.properties
-    $realm -replace 'admin:admin', "admin:$($pp.AdminPwd)" | sc server\config\realm.properties 
+    
+    $realm = gc $path
+    $realm -replace 'admin:admin', "admin:$($pp.AdminPwd)" | sc $path
 }
 function Set-RundeckDateFormat() {
-    Write-Host "Setting up date format to" $pp.DateFormat
-    $m = gc server\exp\webapp\WEB-INF\grails-app\i18n\messages.properties
-    $m -replace '(jobslist.date.format=).+', "`$1$($pp.DateFormat)" | sc server\exp\webapp\WEB-INF\grails-app\i18n\messages.properties
+    $path = "i18n\messages.properties"
+
+    Write-Host "Setting up date formats in $path"
+
+    mkdir i18n -ea 0 | Out-Null
+    @(
+        "jobslist.date.format=" + $pp.DateFormat
+        'jobslist.date.format.ko=' + $pp.DateFormatKo
+        'jobslist.running.format.ko=' + $pp.RunningFormatKo 
+    ) | Set-Content $path
 }
 
 function Set-RundeckTokenDuration() {
+    $path = "server\config\rundeck-config.properties"
+
     Write-Host "Setting token duration to" $pp.TokenDuration
-    $config = gc server\config\rundeck-config.properties
-    $config + "rundeck.api.tokens.duration.max=$($pp.TokenDuration)" | sc server\config\rundeck-config.properties 
+
+    $config = Get-Content $path
+    $config + "rundeck.api.tokens.duration.max=$($pp.TokenDuration)" | Set-Content $path 
 }

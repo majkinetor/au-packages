@@ -19,8 +19,7 @@ mv -Force $toolsDir\*.war "$($pp.InstallDir)\rundeck.war"
 mv -Force $toolsDir\start_rundeck.bat $pp.InstallDir
 cd $pp.InstallDir
 
-Write-Host "Running with --installonly"
-java -jar rundeck.war --installonly
+Invoke-FirstRun
 
 if ($pp.CliOpts -or $pp.SslOpts) { Set-RundeckOpts }
 if ($pp.AdminPwd)      { Set-RundeckAdminPass }
