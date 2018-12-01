@@ -3,8 +3,9 @@ function Get-JavaPaths {
         [array] $paths = (gi -Path $Env:JAVA_HOME\bin\* -ea 0 -Include java.exe,javaw.exe).FullName
         if ($paths.Count -eq 2) { return $paths } 
    }
-   $javaw_path = (gcm javaw.exe -ea 0).Path | select -First 1
-   $java_path  = (gcm java.exe -ea 0).Path  | select -First 1
+
+   $javaw_path = (gcm javaw.exe -ea 0) | select -First 1 -ExpandProperty Path
+   $java_path  = (gcm java.exe -ea 0)  | select -First 1 -ExpandProperty Path
 
    if (!$javaw_path) { throw "javaw.exe is not on the PATH" }
    
