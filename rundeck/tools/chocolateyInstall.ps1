@@ -3,6 +3,8 @@ $ErrorActionPreference = 'Stop'
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 . $toolsDir\helpers.ps1
 
+Update-SessionEnvironment   # Java might have been installed as dependency
+
 $pp = Get-PackageParameters
 if (!$pp.InstallDir) { $pp.InstallDir = 'C:\rundeck' }
 
@@ -13,12 +15,11 @@ Write-Host "Setting up machine environment variable RDECK_BASE"
 Install-ChocolateyEnvironmentVariable 'RDECK_BASE' $pp.InstallDir 'Machine'
 
 Write-Host "Copying files"
-mv -Force $toolsDir\*.jar "$($pp.InstallDir)\rundeck-launcher.jar" 
+mv -Force $toolsDir\*.war "$($pp.InstallDir)\rundeck.war" 
 mv -Force $toolsDir\start_rundeck.bat $pp.InstallDir
 cd $pp.InstallDir
 
-Write-Host "Running with --installonly"
-java -jar rundeck-launcher.jar --installonly
+Invoke-FirstRun
 
 if ($pp.CliOpts -or $pp.SslOpts) { Set-RundeckOpts }
 if ($pp.AdminPwd)      { Set-RundeckAdminPass }

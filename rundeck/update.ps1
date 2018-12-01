@@ -20,7 +20,7 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re    = '\.jar$'
+    $re    = '\.war$'
     $url   =  $download_page.links | ? href -match $re | % href | select -First 1
 
     $release_notes = $download_page.links | ? class -eq 'rd_releasenotes' | select -First 1 | % href

@@ -24,20 +24,21 @@ Rundeck allows you to run tasks on any number of nodes from a web-based or comma
 * `/CliOpts` - Value for `RDECK_CLI_OPTS`, by default `-Xms1048m -Xmx2096m`.
 * `/SslOpts` - Value for `RDECK_SSL_OPTS`.
 * `/AdminPwd` - Admin password, by default `admin`.
-* `/DateFormat` - Date format in [Java SimpleDateFormat](http://rundeck.org/docs/administration/localization.html#date-formats) notation. It is used for date in job _Activity_ tab. Dates in _recent_ executions are in different format. To set this date format, manually edit file `<path_to_rundeck>\server\exp\webapp\WEB-INF\grails-app\i18n\messages.properties` and set `jobslist.date.format.ko` attribute in `moment.js` format.
-
+* `/DateFormat` - Date format in [Java SimpleDateFormat](http://rundeck.org/docs/administration/localization.html#date-formats) notation. It is used for date in job _Activity_ tab.
+* `/DateFormatKo` - Dates in _recent_ executions are in [moment.js](https://momentjs.com) format.
+* `/RunningFormatKo` - Dates in _running_ executions are in [moment.js](https://momentjs.com) format.
 * `/TokenDuration` - API token duration. Format: `##{ydhms}` (years, days, hours, minutes, seconds).
 * `/EnableSsl` - Use self signed SSL as described in [SSL configuration](http://rundeck.org/docs/administration/configuring-ssl.html).
 
 For example:
 
 ```
-cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms2048m -Xmx4096m' /TokenDuration:10y /DateFormat:'yy-MM-dd HH:mm' /Service"
+cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms2048m -Xmx4096m' /TokenDuration:10y /DateFormat:'yy-MM-dd HH:mm' /Service /EnableSsl"
 ```
 
 ## Notes
 
-* The package performs installation that is described in official [documentation](http://rundeck.org/docs/administration/installation.html#install-on-windows). After installation, you can access the service via URL http://localhost:4440 or https://localhost:4443 if `EnableSsl` parameter is used.
+* The package performs installation that is described in official [documentation](https://rundeck.org/docs/administration/install/windows.html). After installation, you can access the service via URL http://localhost:4440 or https://localhost:4443 if `EnableSsl` parameter is used.
 * To setup mail notifications edit `$RDECK_BASE/server/config/rundeck-config.properties` and edit all `grails.mail.*` settings.
 * You generally shouldn't use `choco update` with this package because each release may have its own migration procedure.
 * Related package: [rundeck-cli](https://chocolatey.org/packages/rundeck-cli)
