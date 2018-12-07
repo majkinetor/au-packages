@@ -3,10 +3,12 @@ function Invoke-FirstRun() {
 
     $job = Start-Job { cd $using:pwd; java -jar rundeck.war > rundeck.log }
     for ($i=0; $i -le 300; $i++) {
-        if ($e -eq 300) { throw "Error starting rundeck" }
+        if ($i -eq 300) { throw "Error starting rundeck" }
+        
         if (gc .\rundeck.log -ea 0 | sls "Rundeck startup finished") { 
             rjb $job -force; break 
-        } else { sleep 1 }
+        }
+        sleep 1
     }
     rjb $job -force -ea 0
 }
