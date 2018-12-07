@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/fab/icon.png" width="48" height="48"/> [fab](https://chocolatey.org/packages/fab)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/fab/icon.png" width="48" height="48"/> [fab](https://chocolatey.org/packages/fab)
 
 
 In Windows, you can use Windows Firewall to block or unblock certain applications, but it doesn’t offer an easy-to-use interface for its advanced features. If you want to block an application from accessing

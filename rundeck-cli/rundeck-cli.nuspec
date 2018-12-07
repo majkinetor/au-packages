@@ -43,7 +43,7 @@ $Env:RD_DATE_FORMAT   = "yyyy-MM-dd'T'HH:mm:ssXX"   # Date format
     <copyright>Rundeck</copyright>
     <licenseUrl>https://github.com/rundeck/rundeck-cli/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/rundeck-cli/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/rundeck-cli/icon.png</iconUrl>
     <releaseNotes>https://rundeck.github.io/rundeck-cli/changes</releaseNotes>
     <docsUrl>https://rundeck.github.io/rundeck-cli/commands</docsUrl>
     <bugTrackerUrl>https://github.com/rundeck/rundeck-cli/issues</bugTrackerUrl>

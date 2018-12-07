@@ -35,7 +35,7 @@
     <copyright>© 2005-2017 VisualSVN Software Ltd.</copyright>
     <licenseUrl>https://www.visualsvn.com/server/licensing/eula</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/visualsvnserver/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/visualsvnserver/icon.png</iconUrl>
     <releaseNotes>https://www.visualsvn.com/server/changes</releaseNotes>
     <docsUrl>https://www.visualsvn.com/visualsvn/doc/</docsUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/visualsvnserver</packageSourceUrl>

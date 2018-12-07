@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/icon.png" width="48" height="48"/> [DBeaver](https://chocolatey.org/packages/dbeaver)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/dbeaver/icon.png" width="48" height="48"/> [DBeaver](https://chocolatey.org/packages/dbeaver)
 
 DBeaver is free and open source universal database tool for developers and database administrators.
 

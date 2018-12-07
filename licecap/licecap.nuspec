@@ -29,7 +29,7 @@ LICEcap is an intuitive but flexible application (for Windows and now OSX), that
     <copyright>2004-2017 Cockos Incorporated</copyright>
     <licenseUrl>https://github.com/justinfrankel/licecap/blob/master/licecap/license.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/au-packages/3b9270d0/licecap/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/au-packages@3b9270d0/licecap/icon.png</iconUrl>
     <releaseNotes>https://github.com/justinfrankel/licecap/blob/master/licecap/whatsnew.txt</releaseNotes>
     <mailingListUrl>http://forum.cockos.com/forumdisplay.php?f=44</mailingListUrl>
     <projectSourceUrl>https://github.com/justinfrankel/licecap</projectSourceUrl>

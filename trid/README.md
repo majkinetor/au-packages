@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/trid/icon.jpg" width="48" height="48"/> [trid](https://chocolatey.org/packages/trid)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/trid/icon.jpg" width="48" height="48"/> [trid](https://chocolatey.org/packages/trid)
 
 TrID is an utility designed to identify file types from their binary signatures. While there are similar utilities with hard coded logic, TrID has no fixed rules. Instead, it's extensible and can be trained to recognize new formats in a fast and automatic way.
 

@@ -27,7 +27,7 @@ Firewall App Blocker makes the process very easy! Simply drag and drop the appli
     <copyright>Freeware</copyright>
     <licenseUrl>http://www.sordum.org/eula</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/fab/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/fab/icon.png</iconUrl>
     <!--<dependencies>-->
     <!--</dependencies>-->
     <!--<releaseNotes></releaseNotes>-->

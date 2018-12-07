@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/wzgrapher/icon.png" width="48" height="48"/> [wzgrapher](https://chocolatey.org/packages/wzgrapher)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/wzgrapher/icon.png" width="48" height="48"/> [wzgrapher](https://chocolatey.org/packages/wzgrapher)
 
 WZGrapher is an easy-to-use and small-footprinted Function Graphing and Calculation Program written in C language, with capabilities to plot both cartesian and polar functions. WZGrapher can also be used to graph numerical solution curves of integrals, to solve numerically and to graph ordinary differential equations up to the fifth order, and to calculate value tables (also of ODEs) including the first derivative values. 
 

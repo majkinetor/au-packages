@@ -24,7 +24,7 @@
     <docsUrl>http://www.cpuid.com/softwares/cpu-z.html#install</docsUrl>
     <licenseUrl>http://www.cpuid.com/softwares/hwmonitor-pro/eula.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/cpu-z.portable/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/cpu-z.portable/icon.png</iconUrl>
     <releaseNotes>http://www.cpuid.com/softwares/cpu-z.html#version-history</releaseNotes>
     <bugTrackerUrl>http://www.cpuid.com/bug-report.html</bugTrackerUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/cpu-z.portable</packageSourceUrl>

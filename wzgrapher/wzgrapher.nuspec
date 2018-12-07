@@ -21,7 +21,7 @@ You can simply enter expressions like `x^3 - 2 x^2`,  `ln(sin(x-Pi/2))` or `pi*s
     <copyright>Freeware (non-commerical)</copyright>
     <!--<licenseUrl></licenseUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/wzgrapher/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/wzgrapher/icon.png</iconUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->

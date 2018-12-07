@@ -47,7 +47,7 @@ Items can be:
     <copyright></copyright>
     <licenseUrl>https://github.com/hluk/CopyQ/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/copyq/icon.png</iconUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.2" />
     </dependencies>

@@ -19,7 +19,7 @@ LameXP is a graphical user-interface (front-end) for various of audio encoders: 
     <copyright>Copyright © 2004-2018 LoRd_MuldeR</copyright>
     <licenseUrl>https://github.com/lordmulder/LameXP/blob/master/Copying.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/lamexp/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/lamexp/icon.png</iconUrl>
     <releaseNotes>https://github.com/lordmulder/LameXP/releases/tag/Release_417</releaseNotes>
     <docsUrl>http://lamexp.sourceforge.net/doc/Manual.html</docsUrl>
     <mailingListUrl>http://forum.doom9.org/showthread.php?t=157726</mailingListUrl>

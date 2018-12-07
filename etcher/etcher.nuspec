@@ -29,7 +29,7 @@ Works for everyone, no more complicated install instructions.
     <copyright>Resin.io</copyright>
     <licenseUrl>https://raw.githubusercontent.com/resin-io/etcher/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/etcher/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/etcher/icon.png</iconUrl>
     <releaseNotes>https://github.com/resin-io/etcher/blob/master/CHANGELOG.md</releaseNotes>
     <docsUrl>https://github.com/resin-io/etcher/blob/master/docs/USER-DOCUMENTATION.md</docsUrl>
     <bugTrackerUrl>https://github.com/resin-io/etcher/issues</bugTrackerUrl>

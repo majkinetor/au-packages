@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/solr/icon.png" width="48" height="48"/> [solr](https://chocolatey.org/packages/solr)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/solr/icon.png" width="48" height="48"/> [solr](https://chocolatey.org/packages/solr)
 
 Solr is a standalone enterprise search server with a REST-like API. You put documents in it (called "indexing") via JSON, XML, CSV or binary over HTTP. You query it via HTTP GET and receive JSON, XML, CSV or binary results.
 

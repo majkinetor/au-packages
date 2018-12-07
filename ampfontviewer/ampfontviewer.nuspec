@@ -35,7 +35,7 @@ Features
     <copyright>Freeware (non-commerical)</copyright>
     <!--<licenseUrl></licenseUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/ampfontviewer/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/ampfontviewer/icon.png</iconUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->

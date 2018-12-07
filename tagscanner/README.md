@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/tagscanner/icon.png" width="48" height="48"/> [tagscanner](https://chocolatey.org/packages/tagscanner)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/tagscanner/icon.png" width="48" height="48"/> [tagscanner](https://chocolatey.org/packages/tagscanner)
 
 TagScanner is a powerful tool for organizing and managing your music collection. It can edit tags of most modern audio formats, supports ID3v1/v2, Vorbis comments, APEv2, WMA and MP4 (iTunes) tags. You can rename files according to information from the tags, import tag information from filenames or other sources, perform any text replacement and transformations in tags and filenames. Also you may get album info and download covers via online databases like freedb, Discogs or MusicBrainz. You can create playlists in one click and export your collection to HTML, Excel or any user-defined format. Program has easy-to-use multilingual interface and built-in audio player.
 

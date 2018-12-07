@@ -44,7 +44,7 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml).
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/screenshot.png)
 ]]></description>
     <releaseNotes>http://plantuml.com/changes.html</releaseNotes>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/plantuml/icon.png</iconUrl>
     <copyright> 2009 Arnaud Roques</copyright>
     <tags>plantuml uml diagram graph foss cross-platform documentation</tags>
     <dependencies>
