@@ -60,7 +60,7 @@ cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms
     <copyright>Rundeck, Inc.</copyright>
     <licenseUrl>https://github.com/rundeck/rundeck/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/rundeck/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/rundeck/icon.png</iconUrl>
     <releaseNotes>https://github.com/rundeck/rundeck/blob/v3.0.9/RELEASE.md</releaseNotes>
     <docsUrl>http://rundeck.org/docs.html</docsUrl>
     <bugTrackerUrl>https://github.com/rundeck/rundeck/issues</bugTrackerUrl>

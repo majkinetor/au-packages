@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/dngrep/icon.png" width="48" height="48"/> [dngrep](https://chocolatey.org/packages/dngrep)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/dngrep/icon.png" width="48" height="48"/> [dngrep](https://chocolatey.org/packages/dngrep)
 
 dnGrep allows you to search across files with easy-to-read results. Search through text files, Word documents, PDFs, and archives using text, regular expression, XPath, and phonetic queries. dnGrep includes search-and-replace, whole-file preview, right-click search in File Explorer, and much more.
 

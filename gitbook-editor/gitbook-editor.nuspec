@@ -25,7 +25,7 @@ Manage versions of your book thanks to the powerful Git technology.
     <copyright>© GitBook.com</copyright>
     <licenseUrl>https://www.gitbook.com/terms</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/gitbook-editor/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/gitbook-editor/icon.png</iconUrl>
     <releaseNotes>https://www.gitbook.com/editor/releases/stable</releaseNotes>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/gitbook-editor</packageSourceUrl>
   </metadata>

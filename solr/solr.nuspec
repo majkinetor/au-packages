@@ -44,7 +44,7 @@ See more at [features page](https://lucene.apache.org/solr/features.html)
     <copyright>Copyright © 2017 The Apache Software Foundation</copyright>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/solr/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/solr/icon.png</iconUrl>
     <releaseNotes>https://archive.apache.org/dist/lucene/solr/7.5.0/changes/Changes.html</releaseNotes>
     <docsUrl>https://lucene.apache.org/solr/guide</docsUrl>
     <mailingListUrl>https://lucene.apache.org/solr/community.html</mailingListUrl>

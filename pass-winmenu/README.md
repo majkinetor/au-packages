@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/pass-winmenu/icon.ico" width="48" height="48"/> [pass-winmenu](https://chocolatey.org/packages/pass-winmenu)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/pass-winmenu/icon.ico" width="48" height="48"/> [pass-winmenu](https://chocolatey.org/packages/pass-winmenu)
 
 Pass-winmenu follows the philosophy of (and is compatible with) the Linux password manager pass, which defines an open standard for password management that's easy to extend and customise to your personal requirements.
 

@@ -22,7 +22,7 @@ O&amp;O ShutUp10 is entirely free and does not have to be installed – it can b
     <copyright>O&amp;OSoftware</copyright>
     <licenseUrl>https://www.oo-software.com/en/shutup10/eula</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/shutup10/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/shutup10/icon.png</iconUrl>
     <releaseNotes></releaseNotes>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/shutup10</packageSourceUrl>
   </metadata>

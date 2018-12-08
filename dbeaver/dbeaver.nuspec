@@ -9,7 +9,7 @@
     <owners>Paul Davies, Miodrag Milic</owners>
     <licenseUrl>http://dbeaver.jkiss.org/files/dbeaver_license.txt</licenseUrl>
     <projectUrl>http://dbeaver.jkiss.org/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dbeaver/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/dbeaver/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description><![CDATA[DBeaver is free and open source universal database tool for developers and database administrators.
 

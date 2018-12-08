@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/visualsvnserver/icon.png" width="48" height="48"/> [visualsvnserver](https://chocolatey.org/packages/visualsvnserver)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/visualsvnserver/icon.png" width="48" height="48"/> [visualsvnserver](https://chocolatey.org/packages/visualsvnserver)
 
 VisualSVN Server allows you to easily install and manage a fully-functional Subversion server on the Windows platform. Thanks to its robustness, unbeatable usability and unique enterprise-grade features, VisualSVN Server is useful both for small business and corporate users.
 

@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/shutup10/icon.png" width="48" height="48"/> [ShutUp10](https://chocolatey.org/packages/shutup10)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/shutup10/icon.png" width="48" height="48"/> [ShutUp10](https://chocolatey.org/packages/shutup10)
 
 O&amp;O ShutUp10 means you have full control over which comfort functions under Windows 10 you wish to use, and you decide when the passing on of your data goes too far.
 

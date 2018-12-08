@@ -27,7 +27,7 @@
     <copyright>Sonatype</copyright>
     <licenseUrl>https://www.eclipse.org/legal/epl-v10.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/nexus-oss/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/nexus-oss/icon.png</iconUrl>
     <dependencies>
       <dependency id="javaruntime" version="8.0.40" />
     </dependencies>

@@ -47,7 +47,7 @@ views and tooltips, and also to help with copying songs to/from devices.
     <copyright>Craig Drummond</copyright>
     <licenseUrl>https://github.com/CDrummond/cantata/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://rawgit.com/majkinetor/au-packages/master/cantata/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/au-packages/cantata/icon.png</iconUrl>
     <releaseNotes>https://github.com/CDrummond/cantata/releases/tag/v2.3.2</releaseNotes>
     <docsUrl>https://github.com/CDrummond/cantata/blob/master/README</docsUrl>
     <bugTrackerUrl>https://github.com/CDrummond/cantata/issues</bugTrackerUrl>

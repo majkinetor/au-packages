@@ -26,7 +26,7 @@ Because TrID uses an expandable database it will never be out of date. As new fi
     <copyright>Freeware (non-commerical)</copyright>
     <!--<licenseUrl></licenseUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/trid/icon.jpg</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/trid/icon.jpg</iconUrl>
     <!--<dependencies>-->
     <!--</dependencies>-->
     <releaseNotes>http://mark0.net/forum/index.php/topic,681.msg2659.html#msg2659</releaseNotes>
