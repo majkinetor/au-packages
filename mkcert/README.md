@@ -1,6 +1,6 @@
 # [mkcert](https://chocolatey.org/packages/mkcert)
 
-`mkcert` is a simple tool for making locally-trusted development certificates. It requires no configuration.
+`mkcert` is a simple CLI tool for making locally-trusted development certificates. It requires no configuration.
 
 `mkcert` automatically creates and installs a local CA in the system root store, and generates locally-trusted certificates. mkcert does not automatically configure servers to use the certificates, though, that's up to you.
 
