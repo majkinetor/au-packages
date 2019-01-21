@@ -8,7 +8,7 @@ $packageArgs = @{
   fileType       = 'exe'
   file           = gi "$toolsDir\*_x32.exe"
   file64         = gi "$toolsDir\*_x64.exe"
-  silentArgs     = '/S'
+  silentArgs     = '/S /allusers'
   validExitCodes = @(0)
 }
 Install-ChocolateyInstallPackage @packageArgs
