@@ -15,7 +15,7 @@ $packageArgs = @{
   checksum64             = $checksum64
   checksumType           = 'sha256'
   checksumType64         = 'sha256'
-  silentArgs             = '/S'
+  silentArgs             = '/S /allusers'
   validExitCodes         = @(0)
   registryUninstallerKey = $packageName
 }
