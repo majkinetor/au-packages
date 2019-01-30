@@ -30,7 +30,7 @@ function global:au_BeforeUpdate  {
 }
 
 function global:au_GetLatest() {
-    $download_page = Invoke-WebRequest $releases -UseBasicParsing
+    $download_page = Invoke-WebRequest $releases
     $url     = $download_page.links | ? href -match "nirsoft_package_.*.zip" | select -First 1 -expand href
     $version = $url -split '_|.zip' | select -Last 1 -Skip 1
 
