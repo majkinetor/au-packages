@@ -30,7 +30,15 @@ function global:au_BeforeUpdate  {
 }
 
 function global:au_GetLatest() {
-    $download_page = Invoke-WebRequest $releases
+    try { 
+        $download_page = Invoke-WebRequest $releases -UseBasicParsing
+    } catch {
+        if ($_ -eq 'Unable to connect to the remote server') { 
+            Write-Host "Ignoring unknown connection problem with AppVeyor"
+            return 'ignore'
+        }
+    }
+
     $url     = $download_page.links | ? href -match "nirsoft_package_.*.zip" | select -First 1 -expand href
     $version = $url -split '_|.zip' | select -Last 1 -Skip 1
 
