@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'http://plantuml.com/changes.html'
+$releases = 'http://plantuml.com/changes'
 
 function global:au_SearchReplace {
    @{
@@ -9,6 +9,10 @@ function global:au_SearchReplace {
           "(?i)(\s+x32:).*"            = "`${1} $($Latest.URL32)"
           "(?i)(checksum32:).*"        = "`${1} $($Latest.Checksum32)"
           "(?i)(Get-RemoteChecksum).*" = "`${1} $($Latest.URL32)"
+        }
+
+        "$($Latest.PackageName).nuspec" = @{
+            "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
         }
     }
 }
@@ -29,10 +33,11 @@ function global:au_GetLatest {
     else { throw "Can't match version 'V\d{4,4}'" }
 
     @{
-        URL32    = $url
-        Manual   = "http://plantuml.com/PlantUML_Language_Reference_Guide.pdf"
-        Version  = $version
-        FileType = 'jar'        
+        Version      = $version
+        URL32        = $url
+        FileType     = 'jar'
+        Manual       = "http://plantuml.com/PlantUML_Language_Reference_Guide.pdf"
+        ReleaseNotes = $releases
     }
 }
 

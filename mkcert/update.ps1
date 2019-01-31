@@ -31,7 +31,7 @@ function global:au_GetLatest {
     @{
         Version      = $version.Substring(1)
         URL64        = 'https://github.com/' + $url
-        ReleaseNotes = 'https://github.com/FiloSottile/mkcert/releases/tag/$version'
+        ReleaseNotes = "https://github.com/FiloSottile/mkcert/releases/tag/$version"
     }
 }
 

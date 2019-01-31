@@ -8,7 +8,7 @@
     <authors>Filippo Valsorda</authors>
     <owners>majkinetor, Stefan Scherer</owners>
     <summary>A simple zero-config tool to make locally trusted development certificates with any names you'd like.</summary>
-    <description><![CDATA[`mkcert` is a simple tool for making locally-trusted development certificates. It requires no configuration.
+    <description><![CDATA[`mkcert` is a simple CLI tool for making locally-trusted development certificates. It requires no configuration.
 
 `mkcert` automatically creates and installs a local CA in the system root store, and generates locally-trusted certificates. mkcert does not automatically configure servers to use the certificates, though, that's up to you.
 
@@ -39,7 +39,7 @@ The certificate is at "./example.com+5.pem" and the key at "./example.com+5-key.
     <licenseUrl>https://github.com/FiloSottile/mkcert/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/mkcert</packageSourceUrl>
-    <releaseNotes>https://github.com/FiloSottile/mkcert/releases/tag/$version</releaseNotes>
+    <releaseNotes>https://github.com/FiloSottile/mkcert/releases/tag/v1.2.0</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

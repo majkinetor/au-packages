@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'dbeaver'
-$url32       = 'https://dbeaver.com/files/5.3.0/dbeaver-ee-5.3.0-x86-setup.exe'
-$url64       = 'https://dbeaver.com/files/5.3.0/dbeaver-ee-5.3.0-x86_64-setup.exe'
-$checksum32  = '540378092c7fb6e3617dd758e27c64ec4f1b08ba20d055943527bfc697cdc1f9'
-$checksum64  = 'cb5c2861180bad8cc2d2c1894f10bdf320845a159bf38f80dfc3a8a6d2fedb34'
+$url32       = 'https://dbeaver.com/files/5.3.3/dbeaver-ee-5.3.3-x86-setup.exe'
+$url64       = 'https://dbeaver.com/files/5.3.3/dbeaver-ee-5.3.3-x86_64-setup.exe'
+$checksum32  = '8976696e02e4337e5c3bcc0e618571783f6b2312fbc8730bbdd2505603fffa89'
+$checksum64  = 'b68467210db785afb9da67c09bd091e0890b64f3a40f24d8457ced718dc0178c'
 
 $packageArgs = @{
   packageName            = $packageName
@@ -15,7 +15,7 @@ $packageArgs = @{
   checksum64             = $checksum64
   checksumType           = 'sha256'
   checksumType64         = 'sha256'
-  silentArgs             = '/S'
+  silentArgs             = '/S /allusers'
   validExitCodes         = @(0)
   registryUninstallerKey = $packageName
 }
