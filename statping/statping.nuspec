@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>statping</id>
     <title>Statping</title>
-    <version>0.0</version>
+    <version>0.80.40</version>
     <authors>Hunter Long</authors>
     <owners>Miodrag Milic</owners>
     <summary>An easy to use Status Page for your websites and applications</summary>
