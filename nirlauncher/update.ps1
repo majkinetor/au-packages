@@ -33,7 +33,7 @@ function global:au_GetLatest() {
     try { 
         $download_page = Invoke-WebRequest $releases -UseBasicParsing
     } catch {
-        if ($_ -eq 'Unable to connect to the remote server') { 
+        if ("$_" -eq 'Unable to connect to the remote server') { 
             Write-Host "Ignoring unknown connection problem with AppVeyor"
             return 'ignore'
         }
