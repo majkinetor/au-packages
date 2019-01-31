@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>statping</id>
+    <title>Statping</title>
+    <version>0.80.40.20190131</version>
+    <authors>Hunter Long</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>An easy to use Status Page for your websites and applications</summary>
+    <description><![CDATA[An easy to use Status Page for your websites and applications. Statping will automatically fetch the application and render a beautiful status page with tons of features for you to build an even better status page. 
+
+This Status Page generator allows you to use MySQL, Postgres, or SQLite on multiple operating systems.
+
+## Features
+
+- 3 Different Databases
+- Easy to setup
+- Plugins
+- No Maintence
+- Email & Slack Notifications
+- Prometheus Exporter
+
+
+## Package parameters
+
+- `/InstallDir` - Installation directory, by default `c:\statping`.
+- `/Service`    - Install Windows service. If value `0` is specified, service will be created but not started.
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/statping/screenshot.gif)
+]]></description>
+    <projectUrl>https://github.com/hunterlong/statping</projectUrl>
+    <tags>status server foss cross-platform cli</tags>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/hunterlong/statping/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>https://github.com/hunterlong/statping/releases/tag/v0.80.40</releaseNotes>
+    <docsUrl>https://github.com/hunterlong/statping/wiki</docsUrl>
+    <bugTrackerUrl>https://github.com/hunterlong/statping/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/hunterlong/statping</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/statping</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
+      <dependency id="nssm" version="2.24.101" />
+      <dependency id="chocolatey" version="0.10.8" />     
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
