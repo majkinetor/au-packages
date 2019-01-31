@@ -37,6 +37,7 @@ function global:au_GetLatest() {
             Write-Host "Ignoring unknown connection problem with AppVeyor"
             return 'ignore'
         }
+        throw $_
     }
 
     $url     = $download_page.links | ? href -match "nirsoft_package_.*.zip" | select -First 1 -expand href
