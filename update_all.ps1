@@ -33,8 +33,8 @@ $Options = [ordered]@{
       'remote session failed with an unexpected state'
       'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
     )
-    RepeatSleep   = 10                                     #How much to sleep between repeats in seconds, by default 0
-    RepeatCount   = 5                                      #How many times to repeat on errors, by default 1
+    #RepeatSleep   = 10                                     #How much to sleep between repeats in seconds, by default 0
+    #RepeatCount   = 5                                      #How many times to repeat on errors, by default 1
 
     Report = @{
         Type = 'markdown'                                   #Report type: markdown or text
