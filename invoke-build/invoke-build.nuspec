@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>invoke-build</id>
     <title>Invoke-Build</title>
-    <version>5.4.5</version>
+    <version>5.4.6</version>
     <authors>Roman Kuzmin</authors>
     <owners>Miodrag Milic</owners>
     <summary>Invoke-Build is a build and test automation tool</summary>
