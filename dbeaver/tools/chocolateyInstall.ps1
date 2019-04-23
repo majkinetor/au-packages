@@ -6,13 +6,12 @@ $packageArgs = @{
   packageName    = 'dbeaver'
   softwareName   = 'dbeaver*'
   fileType       = 'exe'
-  file           = gi "$toolsDir\*_x32.exe"
-  file64         = gi "$toolsDir\*_x64.exe"
+  file64         = gi $toolsDir\*.exe
   silentArgs     = '/S /allusers'
   validExitCodes = @(0)
 }
 Install-ChocolateyInstallPackage @packageArgs
-rm $toolsDir\*.exe -ea 0
+ls $toolsPath\*.exe | % { rm $_ -ea 0; if (Test-Path $_) { sc "$_.ignore" "" }}
 
 $packageName = $packageArgs.packageName
 $installLocation = Get-AppInstallLocation $packageName
