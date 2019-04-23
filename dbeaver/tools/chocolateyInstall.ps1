@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
+$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
   packageName    = 'dbeaver'
