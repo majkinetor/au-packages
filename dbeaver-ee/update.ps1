@@ -24,4 +24,6 @@ function global:au_GetLatest {
     @{ URL64 = $url64; URL32 = $url32; Version = $version }
 }
 
+Write-Host "ignored until next version since x32 arch will be removed"
+return 'ignore'
 update -NoCheckUrl
