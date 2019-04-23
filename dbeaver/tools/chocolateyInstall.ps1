@@ -6,7 +6,7 @@ $packageArgs = @{
   packageName    = 'dbeaver'
   softwareName   = 'dbeaver*'
   fileType       = 'exe'
-  file64         = gi $toolsDir\*.exe
+  file64         = gi $toolsPath\*.exe
   silentArgs     = '/S /allusers'
   validExitCodes = @(0)
 }
