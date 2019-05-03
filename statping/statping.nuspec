@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>statping</id>
     <title>Statping</title>
-    <version>0.80.56</version>
+    <version>0.80.57</version>
     <authors>Hunter Long</authors>
     <owners>Miodrag Milic</owners>
     <summary>An easy to use Status Page for your websites and applications</summary>
@@ -33,7 +33,7 @@ This Status Page generator allows you to use MySQL, Postgres, or SQLite on multi
     <copyright></copyright>
     <licenseUrl>https://github.com/hunterlong/statping/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>https://github.com/hunterlong/statping/releases/tag/v0.80.56</releaseNotes>
+    <releaseNotes>https://github.com/hunterlong/statping/releases/tag/v0.80.57</releaseNotes>
     <docsUrl>https://github.com/hunterlong/statping/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/hunterlong/statping/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/hunterlong/statping</projectSourceUrl>
