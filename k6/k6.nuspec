@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>k6</id>
+    <title>k6</title>
+    <version>0.0</version>
+    <authors>https://github.com/loadimpact/k6/graphs/contributors</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>A modern load testing tool for developers and testers in the DevOps era</summary>
+    <description><![CDATA[k6 is a developer centric open source load and performance regression testing tool for testing the performance of your cloud native backend infrastructure: APIs, microservices, serverless, containers and websites. It’s built to integrate well into your development workflow and CI/CD automation pipelines.
+
+## Features
+
+- Scripting in Javascript ES2015/ES6 - with support for local and remote modules
+- Checks and Thresholds - for goal-oriented, automation-friendly load testing
+- Configuration options as code
+- Appropriate metric statistics - including 90th, 95th and 99th percentiles on response times
+- Custom metrics - for flexibility in what metrics gets collected during a test
+- Protocol support - with support for HTTP/1.1, HTTP/2 and WebSockets out of the box
+- TLS features: client certificates, configurable versions and ciphers
+- Cookies - simple key-value session cookies and more advanced persistent cookies
+- Crypto library - for implementing authentication/authorization protocols
+- Session recording / HAR support - for converting a recorded user session (HAR file) to a load test.
+- Convert JMeter tests - to make the switch from JMeter to k6 quicker and easier.
+- Convert Postman collections - as a starting point for your test cases.
+
+
+![screenshot](  ttps://cdn.rawgit.com/majkinetor/chocolatey/master/k6/screenshot.svg)
+]]></description>
+    <projectUrl>https://k6.io</projectUrl>
+    <tags>cross-platform testing devops foss cli javascript performance</tags>
+    <copyright>© 2019 LOAD IMPACT. STEWARDSHIP</copyright>
+    <licenseUrl>https://github.com/loadimpact/k6/blob/master/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/k6/icon.png</iconUrl>
+    <releaseNotes>https://github.com/loadimpact/k6/releases/tag/v0.24.0</releaseNotes>
+    <docsUrl>https://docs.k6.io/docs</docsUrl>
+    <mailingListUrl>https://community.k6.io</mailingListUrl>
+    <bugTrackerUrl>https://github.com/loadimpact/k6/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/loadimpact/k6</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/k6</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
