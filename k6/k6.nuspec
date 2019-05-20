@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>k6</id>
     <title>k6</title>
-    <version>0.0</version>
+    <version>0.24.0</version>
     <authors>https://github.com/loadimpact/k6/graphs/contributors</authors>
     <owners>Miodrag Milic</owners>
     <summary>A modern load testing tool for developers and testers in the DevOps era</summary>
@@ -27,7 +27,7 @@
 - Convert Postman collections - as a starting point for your test cases.
 
 
-![screenshot](  ttps://cdn.rawgit.com/majkinetor/chocolatey/master/k6/screenshot.svg)
+![screenshot](https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/k6/screenshot.svg)
 ]]></description>
     <projectUrl>https://k6.io</projectUrl>
     <tags>cross-platform testing devops foss cli javascript performance</tags>
