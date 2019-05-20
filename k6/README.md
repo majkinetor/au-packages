@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/k6/icon.png" width="48" height="48"/> [](https://chocolatey.org/packages/k6.portable)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/k6/icon.png" width="48" height="48"/> [k6](https://chocolatey.org/packages/k6)
 
 k6 is a developer centric open source load and performance regression testing tool for testing the performance of your cloud native backend infrastructure: APIs, microservices, serverless, containers and websites. It’s built to integrate well into your development workflow and CI/CD automation pipelines.
 
