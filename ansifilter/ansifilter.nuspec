@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>ansifilter</id>
+    <title></title>
+    <version>2.14.0.</version>
+    <authors>André Simon</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Ansifilter handles text files containing ANSI terminal escape codes</summary>
+    <description><![CDATA[ANSI codes are commands embedded in a text stream to add formatting instructions into this text. These codes are interpreted by terminal emulators like xterm or Putty.
+
+Ansifilter parses common ANSI codes to remove them or to convert them to another colored text file format (HTML, TeX, LaTeX, RTF, Pango or BBCode).
+Support for ANSI art files (based on codepage 437 and ANSI.SYS sequences or BIN/XBIN/TND files) is enabled with the --art-cp437, --art-bin and --art-tundra options.
+
+The utility is also available as command line interface.
+
+## Features
+
+```
+File handling:
+  -i, --input=<file>     Name of input file
+  -o, --output=<file>    Name of output file
+  -O, --outdir<dir>      Name of output directory
+  -t, --tail             Continue reading after end-of-file (like tail -f)
+
+Output text formats:
+  -T, --text (default)   Output text
+  -H, --html             Output HTML
+  -M, --pango            Output Pango Markup
+  -L, --latex            Output LaTeX
+  -P, --tex              Output Plain TeX
+  -R, --rtf              Output RTF
+  -B, --bbcode           Output BBCode
+
+Formatted text options:
+  -a, --anchors          Add HTML line anchors (assumes -l)
+  -d, --doc-title        Set HTML/LaTeX document title
+  -e, --encoding         Set HTML encoding (must match input file encoding)
+  -f, --fragment         Omit HTML header and footer
+  -F, --font=<font>      Set HTML/RTF font face
+  -l, --line-numbers     Print line numbers in output file
+  -m, --map=<path>       Read color mapping file (see README)
+  -r, --style-ref=<rf>   Set HTML/TeX/LaTeX stylesheet path
+  -s, --font-size=<fs>   Set HTML/RTF font size
+  -p, --plain            Ignore ANSI formatting information
+  -w, --wrap<len>        Wrap long lines
+      --no-trailing-nl   Omit trailing newline
+      --wrap-no-numbers  Omit line numbers of wrapped lines (assumes -l)
+      
+ANSI art options:
+      --art-cp437        Parse codepage 437 ANSI art (HTML and RTF output)
+      --art-bin          Parse BIN/XBIN ANSI art (HTML output, no stdin)
+      --art-tundra       Parse Tundra ANSI art (HTML output, no stdin)
+      --art-width        Set ANSI art width (default 80)
+      --art-height       Set ANSI art height (default 150)
+```
+
+![screenshot](https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/master/ansifilter/screenshot.png)
+[More screenshots](http://www.andre-simon.de/doku/ansifilter/en/screenshots.php)
+]]></description>
+    <projectUrl>http://www.andre-simon.de/doku/ansifilter/en/ansifilter.php</projectUrl>
+    <tags>cross-platform ansi text cli foss</tags>
+    <copyright></copyright>
+    <licenseUrl>https://gitlab.com/saalen/ansifilter/blob/master/COPYING</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/ansifilter/icon.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <docsUrl>http://www.andre-simon.de/doku/ansifilter/en/ansifilter.php</docsUrl>
+    <bugTrackerUrl>https://gitlab.com/saalen/ansifilter/issues</bugTrackerUrl>
+    <projectSourceUrl>http://www.andre-simon.de/doku/ansifilter/en/sfnet.php</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/ansifilter</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
