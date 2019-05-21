@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/keycastow/icon.ico" width="48" height="48"/> [](https://chocolatey.org/packages/keycastow)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/keycastow/icon.ico" width="48" height="48"/> [keycastow](https://chocolatey.org/packages/keycastow)
 
 Keystroke visualizer for Windows, lets you easily display your keystrokes while recording screencasts.
 
