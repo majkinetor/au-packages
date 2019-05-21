@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>keycastow</id>
+    <title>KeyCastOW</title>
+    <version>2.0.2.4</version>
+    <authors>brookhong</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Keystroke visualizer for Windows, lets you easily display your keystrokes while recording screencasts</summary>
+    <description>
+Keystroke visualizer for Windows, lets you easily display your keystrokes while recording screencasts.
+
+## Features
+
+- Small footprint (one 100kb executable file)
+- Green and portable, only depends on windows system dlls
+- Plenty of settings for keystroke display
+- Hotkey to turn on/off
+
+![screenshot](https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/master/keycastow/screenshot.png)
+    </description>
+    <projectUrl>https://github.com/brookhong/KeyCastOW</projectUrl>
+    <tags>presentation foss recording screencast</tags>
+    <copyright>2017 brookhong</copyright>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/keycastow/icon.ico</iconUrl>
+    <projectSourceUrl>https://github.com/brookhong/KeyCastOW</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/keycastow</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
