@@ -27,5 +27,5 @@ Dukto is an excellent tool for transferring text and files that lets you share a
 - Metro style UI
 - Free and open source
 
-![screenshot](https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/master/dukto/screenshot.jpg)
+![screenshot](https://raw.githubusercontent.com/majkinetor/au-packages/master/dukto/screenshot.jpg)
 
