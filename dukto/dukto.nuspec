@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>dukto</id>
+    <title>Dukto R6</title>
+    <version>6.0.0.20192215</version>
+    <authors>Emanuele Colombo</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Dukto is an easy file transfer tool designed for LAN use</summary>
+    <description>
+Dukto is a program that lets you transfer all kinds of files and text to several devices, regardless of their operating systems. In short, you can transfer any file to and from Windows computers, Linux computers, and smartphones using the Android operating system.
+
+To be able to use Dukto it's very important that you have the app installed on the two devices that you want to use in the file exchange. Luckily, the Android version takes up very little space and has an interface that's equally comfortable.
+
+Sending and receiving files on both devices is very simple. You just have to select the device that you want to send the file to, and then choose the files. In a matter of seconds (as long as you have Internet access, of course) the files will be transferred to the other device. The same process applies for sending text.
+
+Dukto is an excellent tool for transferring text and files that lets you share all kinds of documents in a matter of seconds. It's a magnificent alternative for anyone who's looking for an effective solution for sharing files between Windows and Android.
+
+## Features
+
+- Simple user interface
+- No server or internet connection needed
+- Zero configuration
+- Clients auto-discovery
+- High speed file transfer
+- Multi-OS native support
+- Cross platform: Windows (XP or later), OS X (10.6.x or later), Linux (packaged for Ubuntu and Fedora), Symbian (for Nokia touch phones)
+- Multi files and folders transfer
+- Transfers log
+- Send and receive text snippets (eg. useful for sending URLs)
+- Open received files directly from the application
+- Windows 7 taskbar integration with progress and transfer indicator
+- Show your IP addresses on the IP connection page
+- Full Unicode support
+- Metro style UI
+- Free and open source
+    </description>
+    <projectUrl>http://www.msec.it/blog/?page_id=11</projectUrl>
+    <tags>filesharing lan foss cross-platform network</tags>
+    <copyright>2013, Emanuele Colombo</copyright>
+    <licenseUrl>https://choosealicense.com/licenses/gpl-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/dukto/icon.png</iconUrl>
+    <projectSourceUrl>https://sourceforge.net/p/dukto/code</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/dukto</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
