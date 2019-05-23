@@ -8,7 +8,7 @@ Package can be verified like this:
 1. Go to
 
    x32: http://www.andre-simon.de/zip/ansifilter-2.14.zip
-   x64: http://www.andre-simon.de/zip/ansifilter-2.14-x64.zip
+   x64: http://www.andre-simon.de/zip/ansifilter-2.14.1-x64.zip
 
    to download the installer.
 
@@ -17,7 +17,7 @@ Package can be verified like this:
    - Use Chocolatey utility 'checksum.exe'
 
    checksum32: 3085173647864CDA4CE39FBBFA3348A5566EF7B4BD2EA058762710EA4ADB8870
-   checksum64: C192219D5FF3EDCA9B31160755ED0B90FA4E6EC47068D5DA6F7921AD38EB1FC1
+   checksum64: A4DDC5FE9B402A25E09C6674B280A76F7A148FAE9D8F2D2FA7C9E002176C5E9D
 
 File 'license.txt' is obtained from:
    https://gitlab.com/saalen/ansifilter/blob/master/COPYING
