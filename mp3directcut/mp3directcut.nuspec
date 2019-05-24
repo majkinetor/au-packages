@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>mp3directcut</id>
+    <title>mp3DirectCut</title>
+    <version>2.24</version>
+    <authors>Martin Pesch</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>mp3DirectCut is a fast and extensive audio editor and recorder for encoded MP3</summary>
+    <description><![CDATA[mp3DirectCut is a fast and extensive audio editor and recorder for encoded MP3. Without re-encoding you can directly cut, crop or split your MP3 and AAC tracks, change the volume on MP3 and much more. Direct editing saves encoding time and preserves the original audio quality of your tracks. The built in recorder creates MP3 on the fly. By using Cue sheets, Pause detection or Auto cue you can easily divide long files.
+
+## Features
+
+- Direct data copying, no re-encoding 
+- Non-destructive cut, copy, paste 
+- Volume change, fading, normalizing for MP3 
+- MP3 recording/encoding with ACM or Lame 
+- Fast MPEG visualisation and easy navigation 
+- AAC support, MP2 support 
+- Batch processing, Cue Sheet support 
+- Pause detection, Auto cue by time values 
+- Track splitting with filename and tag creation 
+- Trim, Crop, Fast play, Loop play 
+- ID3v1.1 tag editor, ID3v2 tag keeping 
+- VU meter, bitrate visualisation 
+- Command line usage, Unicode support 
+
+## Notes
+
+- Optional requirements:
+    - For MP3 recording: encoding ACM or Lame encoder DLL (32 bit): `choco install lame`
+    - For MP4 demuxing: ffmpeg.exe: `choco install ffmpeg`
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/mp3directcut/screenshot.png)
+]]></description>
+    <projectUrl>http://mpesch3.de1.cc/index.html</projectUrl>
+    <tags>audio mp3 freeware multimedia editing recording</tags>
+    <copyright>Copyright © 2000-2019 Martin Pesch</copyright>
+    <licenseUrl>https://github.com/majkinetor/chocolatey/tree/master/mp3directcut/legal/License.txt</licenseUrl>
+    <releaseNotes>See tools\Version.txt inside the package</releaseNotes>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/mp3directcut/icon.png</iconUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/mp3directcut</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
