@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://github.com/serge-rider/dbeaver/releases/latest'
+$releases = 'https://github.com/dbeaver/dbeaver/releases/latest'
 
 function global:au_SearchReplace {
    @{
