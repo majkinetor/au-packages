@@ -2,7 +2,7 @@
 
 **ARCHIVED**
 
-**This *embedded* package is archvied as the software is [no longer maintained](https://legacy.gitbook.com/editor/releases/stable)**
+**This *embedded* package is archived as the software is [no longer maintained](https://legacy.gitbook.com/editor/releases/stable)**
 
 ---
 
