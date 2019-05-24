@@ -22,7 +22,7 @@ It has been successfully tested with Wine under Linux.
 
 ## Notes
 
-- The original version is `2.3m`. Letter is replaced with this code: `[char]'m' - [char]'a'`
+- The original version is `2.3m`. Letter is replaced with this code: `[char]'m' - [char]'a' = 13`
 
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/hfs/screenshot.png)
