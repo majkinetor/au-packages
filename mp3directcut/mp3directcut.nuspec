@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>mp3directcut</id>
     <title>mp3DirectCut</title>
-    <version>2.24</version>
+    <version>2.25</version>
     <authors>Martin Pesch</authors>
     <owners>Miodrag Milic</owners>
     <summary>mp3DirectCut is a fast and extensive audio editor and recorder for encoded MP3</summary>
@@ -30,10 +30,11 @@
 ## Notes
 
 - Optional requirements:
+    - For AAC play: [libfaad2.dll](http://www.rarewares.org/files/aac/libfaad2-2.7.zip) (32 bit)
     - For MP3 recording: encoding ACM or Lame encoder DLL (32 bit): `choco install lame`
     - For MP4 demuxing: ffmpeg.exe: `choco install ffmpeg`
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/mp3directcut/screenshot.png)
+![screenshot](https://github.com/majkinetor/au-packages/raw/master/mp3directcut/screenshot.jpg)
 ]]></description>
     <projectUrl>http://mpesch3.de1.cc/index.html</projectUrl>
     <tags>audio mp3 freeware multimedia editing recording</tags>
