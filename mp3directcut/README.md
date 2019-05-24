@@ -25,4 +25,4 @@ mp3DirectCut is a fast and extensive audio editor and recorder for encoded MP3. 
     - For MP3 recording: encoding ACM or Lame encoder DLL (32 bit): `choco install lame`
     - For MP4 demuxing: ffmpeg.exe: `choco install ffmpeg`
 
-![screenshot](https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/master/mp3directcut/screenshot.jpg)
+![screenshot](https://github.com/majkinetor/au-packages/raw/master/mp3directcut/screenshot.jpg)
