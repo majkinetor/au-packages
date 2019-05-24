@@ -20,5 +20,9 @@ It has been successfully tested with Wine under Linux.
 - Accounts
 - Dynamic DNS updater
 
+## Notes
+
+- The original version is `2.3m`. Letter is replaced with this code: `[char]'m' - [char]'a'`
+
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/hfs/screenshot.png)
