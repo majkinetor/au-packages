@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>lame</id>
+    <title>LAME</title>
+    <version>3.100.20190524</version>
+    <authors>Robert Hegemann, Alexander Leidinger, Rogério Brito</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>LAME is a high quality MP3 encoder</summary>
+    <description>
+LAME is a high quality MPEG Audio Layer III (MP3) encoder licensed under the LGPL. 
+
+LAME is considered the best MP3 encoder at mid-high bitrates and at VBR, mostly thanks to the dedicated work of its developers and the open source licensing model that allowed the project to tap into engineering resources from all around the world. Both quality and speed improvements are still happening, probably making LAME the only MP3 encoder still being actively developed.
+
+## Features
+
+- Quality better than all other encoders at most bitrates.
+- Fast! Encodes faster than real time on a PII 266 at highest quality mode.
+- Many improvements in quality in speed over ISO reference software.
+- MPEG1, MPEG2 and MPEG2.5 layer III encoding.
+- CBR (constant bitrate) and two types of variable bitrate, VBR and ABR.
+- Encoding engine can be compiled as a shared library (Linux/UNIX), DLL , Directshow filter or ACM codec (Windows).
+- Free format encoding and decoding.
+- GPSYCHO: a GPL'd psycho acoustic and noise shaping model.
+- Powerful and easy to use presets.
+- MP3x: a GTK/X-Window MP3 frame analyzer for both .mp3 and unencoded audio files.
+    </description>
+    <projectUrl>http://lame.sourceforge.net/index.php</projectUrl>
+    <tags>foss cross-platform cli audio multimedia encoding</tags>
+    <copyright></copyright>
+    <mailingListUrl>http://lame.sourceforge.net/contact.php</mailingListUrl>
+    <docsUrl>http://lame.sourceforge.net/using.php</docsUrl>
+    <licenseUrl>http://lame.sourceforge.net/license.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html</releaseNotes>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/lame/icon.png</iconUrl>
+    <projectSourceUrl>https://sourceforge.net/p/lame/svn/HEAD/tree</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/lame</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

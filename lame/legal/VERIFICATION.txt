@@ -1,0 +1,21 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Package can be verified like this:
+
+1. Go to
+
+   x32: http://www.rarewares.org/files/mp3/lame3.100.zip
+
+   to download the installer.
+
+2. You can use one of the following methods to obtain the SHA256 checksum:
+   - Use powershell function 'Get-FileHash'
+   - Use Chocolatey utility 'checksum.exe'
+
+   checksum32: 910e14565e7edc419e3b841d1cd7eb83db52727d0f34fceec2b04d905a148ac6
+
+File 'license.txt' is obtained from:
+   http://lame.sourceforge.net/license.txt
