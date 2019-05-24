@@ -2,7 +2,7 @@
 
 Dukto is a program that lets you transfer all kinds of files and text to several devices, regardless of their operating systems. In short, you can transfer any file to and from Windows computers, Linux computers, and smartphones using the Android operating system.
 
-To be able to use Dukto it's very important that you have the app installed on the two devices that you want to use in the file exchange. Luckily, the Android version takes up very little space and has an interface that's equally comfortable.
+To be able to use Dukto it's very important that you have the app installed on the two devices that you want to use in the file exchange. Luckily, the [Android version](https://play.google.com/store/apps/details?id=it.msec.dukto&hl=en) takes up very little space and has an interface that's equally comfortable.
 
 Sending and receiving files on both devices is very simple. You just have to select the device that you want to send the file to, and then choose the files. In a matter of seconds (as long as you have Internet access, of course) the files will be transferred to the other device. The same process applies for sending text.
 
