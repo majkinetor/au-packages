@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>furmark</id>
     <title>Furmark</title>
-    <version>1.20.5.0</version>
+    <version>0.0</version>
     <authors>jeGX</authors>
     <owners>Miodrag Milic</owners>
     <summary>GPU Stress Test OpenGL Benchmark</summary>
@@ -61,7 +61,7 @@ pause
 ![screenshot](https://github.com/majkinetor/au-packages/blob/master/furmark/screenshot.jpg)
 ]]></description>
     <projectUrl>https://geeks3d.com/furmark</projectUrl>
-    <tags>gpu freeware stress test performance cpu hardware</tags>
+    <tags>admin gpu freeware stress test performance cpu hardware</tags>
     <copyright>2007-2016 Geeks3D.com </copyright>
     <mailingListUrl>https://www.geeks3d.com/forums/index.php?PHPSESSID=0512c49c95869adb991aff9f942fd2eb;wwwRedirect;board=4</mailingListUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
