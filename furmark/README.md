@@ -29,7 +29,7 @@ That said, let’s see the parameters.
 - `/disable_catalyst_warning` : disable warning message box when Catalyst 8.8+ is detected. See here and here for more information. FurMark 1.5.0+
 
 
-```bat
+```
 @echo off
 echo Call Test 1...
 call FurMark.exe /width=640 /height=480 /msaa=4 /max_time=60000 
