@@ -1,5 +1,11 @@
 # <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/gitbook-editor/icon.png" width="48" height="48"/> [gitbook-editor](https://chocolatey.org/packages/gitbook-editor)
 
+**ARCHIVED**
+
+**This *embedded* package is archvied as the software is [no longer maintained](https://legacy.gitbook.com/editor/releases/stable)**
+
+---
+
 Write, publish, and collaborate seamlessly. The Editor brings the GitBook workflow you love to your desktop.
 
 ## Features
