@@ -1,9 +1,4 @@
-#  furmark
-
----
-**Install**: `iwr https://goo.gl/SZ9c3m | iex; cinst-gh furmark`
-
----
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/furmark/icon.png" width="48" height="48"/> [furmark](https://chocolatey.org/packages/furmark)
 
 FurMark is a very intensive OpenGL benchmark that uses fur rendering algorithms to measure the performance of the graphics card. Fur rendering is especially adapted to overheat the GPU and that's why FurMark is also a perfect stability and stress test tool (also called GPU burner) for the graphics card.
 
@@ -54,4 +49,4 @@ echo Test 3 complete OK.
 pause
 ```
 
-![screenshot](https://github.com/majkinetor/au-packages/blob/master/furmark/screenshot.jpg)
+![screenshot](https://raw.githubusercontent.com/majkinetor/au-packages/master/furmark/screenshot.jpg)

@@ -1,0 +1,41 @@
+Geeks3D FurMark - GPU stress test and OpenGL benchmark.
+Copyright (C) 2007-2019 Geeks3D, All rights reserved.
+https://geeks3d.com/furmark/
+
+****************************************************************
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE 
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+****************************************************************
+
+Permission is granted to anyone to use this software 
+for any purpose, excluding commercial applications, 
+and to redistribute it freely, subject to the following 
+restrictions:
+
+1. The origin of this software must not be misrepresented; 
+   you must not claim that you wrote the original software.
+
+2. This software is a freeware, it cannot be sold or rented.
+
+3. - Websites: you can copy and distribute it freely as long
+     as you add a backlink to the source post at Geeks3D.com
+     or a backlink to https://geeks3d.com/furmark/
+   - CDROM/DVDROM or other kind of BUNDLES (graphics cards, etc.): 
+     please contact the author at jegx@ozone3d.net
+
+4. This notice may not be removed or altered from any distribution.
+
+
+
+----------------- Geeks3D PRO Pack ---------------------
+To use FurMark in a commercial context, visit this page:
+
+http://www.ozone3d.net/g3dpp/
+
+or send an email at jegx@ozone3d.net.
