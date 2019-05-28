@@ -21,10 +21,10 @@ $packageArgs = @{
 
 Install-ChocolateyZipPackage @packageArgs
 if (Get-ProcessorBits 64) {
-    rm $toolsPath\cpuz_x32.exe
-    mv $toolsPath\cpuz_x64.exe $toolsPath\cpuz.exe
+    Remove-Item $toolsPath\cpuz_x32.exe
+    Move-Item -force $toolsPath\cpuz_x64.exe $toolsPath\cpuz.exe
 } else {
-    rm $toolsPath\cpuz_x64.exe
-    mv $toolsPath\cpuz_x32.exe $toolsPath\cpuz.exe
+    Remove-Item $toolsPath\cpuz_x64.exe
+    Move-Item -force $toolsPath\cpuz_x32.exe $toolsPath\cpuz.exe
 }
 Write-Host "$packageName installed to $toolsPath"
