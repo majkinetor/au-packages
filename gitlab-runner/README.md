@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/gitlab-runner/icon.png" width="48" height="48"/>  [gitlab-runner](https://chocolatey.org/packages/gitlab-runner)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/gitlab-runner/icon.png" width="48" height="48"/>  [![](https://img.shields.io/chocolatey/v/gitlab-runner.svg?color=red&label=gitlab-runner)](https://chocolatey.org/packages/gitlab-runner)
 
 GitLab Runner is the open source project that is used to run your jobs and send the results back to GitLab. It is used in conjunction with GitLab CI, the open-source continuous integration service included with GitLab that coordinates the jobs.
 
