@@ -21,6 +21,7 @@ $Options = [ordered]@{
       'Service Temporarily Unavailable'
       'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
       'Conflict'
+      'OutOfMemoryException'
     )
     RepeatOn      = @(                                      #Error message parts on which to repeat package updater
       'Could not create SSL/TLS secure channel'             # https://github.com/chocolatey/chocolatey-coreteampackages/issues/718
