@@ -50,9 +50,12 @@ function global:au_GetLatest {
     }
 }
 
-#Write-Host 'Disabled for now as forum doesnt work'
-#return 'ignore'
-
 sal 7z $env:ChocolateyInstall\tools\7z.exe
 mkdir $PSScriptRoot\tools -ea 0
-update -ChecksumFor none -NoCheckUrl
+
+try {
+    update -ChecksumFor none -NoCheckUrl
+} catch {
+    $ignore = 'Server Unavailable'
+    if ($_ -match $ignore) { Write-Host $ignore; 'ignore' }  else { throw $_ }
+}
