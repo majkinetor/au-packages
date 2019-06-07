@@ -33,10 +33,10 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re    = '\.exe$'
-    $url   = $download_page.links | ? href -match $re | select -First 1 -expand href
-
-    $version  = $url -split '[._-]|.exe' | select -Last 1 -Skip 2
+    $re      = '\.exe$'
+    $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
+    $domain  = $releases -split '(?<=//.+)/' | select -First 1
+    $version = $url -split '[._-]|.exe' | select -Last 1 -Skip 2
 
     @{
         Version      = $version
