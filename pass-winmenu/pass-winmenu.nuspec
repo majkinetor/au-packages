@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>pass-winmenu</id>
     <title>pass-winmenu</title>
-    <version>1.9</version>
+    <version>1.9.1</version>
     <authors>Johan Geluk</authors>
     <owners>Miodrag Milic</owners>
     <summary>An easy-to-use Windows interface for pass</summary>
@@ -37,7 +37,7 @@
     <licenseUrl>https://github.com/Baggykiin/pass-winmenu/blob/master/LICENCE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/pass-winmenu/icon.png</iconUrl>
-    <releaseNotes>https://github.com/Baggykiin/pass-winmenu/releases/tag/v1.9</releaseNotes>
+    <releaseNotes>https://github.com/Baggykiin/pass-winmenu/releases/tag/v1.9.1</releaseNotes>
     <docsUrl>https://github.com/Baggykiin/pass-winmenu/blob/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/Baggykiin/pass-winmenu/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/Baggykiin/pass-winmenu</projectSourceUrl>
