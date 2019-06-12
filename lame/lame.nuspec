@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>lame</id>
     <title>LAME</title>
-    <version>3.100.20190524</version>
+    <version>3.100.20190612</version>
     <authors>Robert Hegemann, Alexander Leidinger, Rogério Brito</authors>
     <owners>Miodrag Milic</owners>
     <summary>LAME is a high quality MP3 encoder</summary>
