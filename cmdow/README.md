@@ -1,4 +1,5 @@
-﻿# <img src="" width="48" height="48"/> [cmdow](https://chocolatey.org/packages/cmdow)
+﻿# [![](https://img.shields.io/chocolatey/v/cmdow.svg?color=red&label=cmdow)](https://chocolatey.org/packages/cmdow)
+
 
 Cmdow is a Win32 commandline utility for NT4/2000/XP/2003/2008/7 that allows windows to be listed, moved, resized, renamed, hidden/unhidden, disabled/enabled, minimized, maximized, restored, activated/inactivated, closed, killed and more.
 

@@ -1,4 +1,5 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/cpu-z.install/icon.png" width="48" height="48"/> [cpu-z](https://chocolatey.org/packages/cpu-z)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/cpu-z.portable/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/cpu-z.portable.svg?color=red&label=cpu-z.portable)](https://chocolatey.org/packages/cpu-z.portable)
+
 
  A freeware system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features of a modern personal computer, and presents the information in one window:
 

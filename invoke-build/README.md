@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/invoke-build/icon.png" width="48" height="48"/> [invoke-build](https://chocolatey.org/packages/invoke-build)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/invoke-build/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/invoke-build.svg?color=red&label=invoke-build)](https://chocolatey.org/packages/invoke-build)
 
 Invoke-Build is a build and test automation tool which invokes tasks defined in PowerShell v2.0+ scripts. It is similar to psake but arguably easier to use and more powerful. It is complete, bug free, well covered by tests.
 

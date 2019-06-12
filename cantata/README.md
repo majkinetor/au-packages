@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/majkinetor/chocolatey/master/cantata/icon100.png" width="48" height="48"/> [cantata](https://chocolatey.org/packages/cantata)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/cantata/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/cantata.svg?color=red&label=cantata)](https://chocolatey.org/packages/cantata)
 
 Cantata is a graphical client for MPD. It contains the following features:
 

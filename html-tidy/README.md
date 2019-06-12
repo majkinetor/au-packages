@@ -1,4 +1,5 @@
-# [html-tidy](https://chocolatey.org/packages/html-tidy)
+# [![](https://img.shields.io/chocolatey/v/html-tidy.svg?color=red&label=html-tidy)](https://chocolatey.org/packages/html-tidy)
+
 
 Tidy is a console application for Mac OS X, Linux, Windows, UNIX, and more. It corrects and cleans up HTML and XML documents by fixing markup errors and upgrading legacy code to modern standards.
 

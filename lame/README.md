@@ -1,4 +1,5 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/lame/icon.png" width="48" height="48"/> [lame](https://chocolatey.org/packages/lame)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/lame/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/lame.svg?color=red&label=lame)](https://chocolatey.org/packages/lame)
+
 
 LAME is a high quality MPEG Audio Layer III (MP3) encoder licensed under the LGPL. 
 

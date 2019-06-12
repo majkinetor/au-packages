@@ -1,4 +1,5 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/ampfontviewer/icon.png" width="48" height="48"/> [ampfontviewer](https://chocolatey.org/packages/ampfontviewer)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/ampfontviewer/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/ampfontviewer.svg?color=red&label=ampfontviewer)](https://chocolatey.org/packages/ampfontviewer)
+
 
 This program is an easy to use but powerful font manager, which allows you getting a quick overview of both installed and non installed fonts. It can install and uninstall fonts, and organize them in categories.
 

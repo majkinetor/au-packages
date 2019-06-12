@@ -1,4 +1,5 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/licecap/icon.png" width="48" height="48"/> [licecap](https://chocolatey.org/packages/licecap)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/licecap/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/licecap.svg?color=red&label=licecap)](https://chocolatey.org/packages/licecap)
+
 
 LICEcap can capture an area of your desktop and save it directly to .GIF (for viewing in web browsers, etc) or .LCF.
 

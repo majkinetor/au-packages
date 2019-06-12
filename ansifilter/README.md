@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/ansifilter/icon.png" width="48" height="48"/> [ansifilter](https://chocolatey.org/packages/ansifilter)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/ansifilter/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/ansifilter.svg?color=red&label=ansifilter)](https://chocolatey.org/packages/ansifilter)
 
 ANSI codes are commands embedded in a text stream to add formatting instructions into this text. These codes are interpreted by terminal emulators like xterm or Putty.
 

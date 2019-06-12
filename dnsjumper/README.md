@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/dnsjumper/icon.png" width="48" height="48"/> [dnsjumper](https://chocolatey.org/packages/dnsjumper)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/dnsjumper/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/dnsjumper.svg?color=red&label=dnsjumper)](https://chocolatey.org/packages/dnsjumper)
 
 DNS Jumper is a portable freeware app which makes changing your DNS settings as easy as clicking a button. 
 

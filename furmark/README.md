@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/furmark/icon.png" width="48" height="48"/> [furmark](https://chocolatey.org/packages/furmark)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/furmark/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/furmark.svg?color=red&label=furmark)](https://chocolatey.org/packages/furmark)
 
 FurMark is a very intensive OpenGL benchmark that uses fur rendering algorithms to measure the performance of the graphics card. Fur rendering is especially adapted to overheat the GPU and that's why FurMark is also a perfect stability and stress test tool (also called GPU burner) for the graphics card.
 

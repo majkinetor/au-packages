@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/dukto/icon.png" width="48" height="48"/> [dukto](https://chocolatey.org/packages/dukto)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/dukto/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/dukto.svg?color=red&label=dukto)](https://chocolatey.org/packages/dukto)
 
 Dukto is a program that lets you transfer all kinds of files and text to several devices, regardless of their operating systems. In short, you can transfer any file to and from Windows computers, Linux computers, and smartphones using the Android operating system.
 

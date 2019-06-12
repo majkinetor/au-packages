@@ -1,4 +1,5 @@
-# [fzf](https://chocolatey.org/packages/fzf)
+# [![](https://img.shields.io/chocolatey/v/fzf.svg?color=red&label=fzf)](https://chocolatey.org/packages/fzf)
+
 
 fzf is a general-purpose command-line fuzzy finder.
 
