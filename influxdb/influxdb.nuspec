@@ -5,11 +5,13 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>influxdb</id>
     <title>InfluxDB</title>
-    <version>0.0</version>
+    <version>1.7.6</version>
     <authors>InfluxData</authors>
     <owners>Miodrag Milic</owners>
     <summary>Scalable datastore for metrics, events, and real-time analytics</summary>
-    <description><![CDATA[## Features
+    <description><![CDATA[InfluxDB is a time series database designed to handle high write and query loads. It is an integral component of the TICK stack. InfluxDB is meant to be used as a backing store for any use case involving large amounts of timestamped data, including DevOps monitoring, application metrics, IoT sensor data, and real-time analytics.
+
+## Features
 
 - Custom high performance datastore written specifically for time series data. The TSM engine allows for high ingest speed and data compression
 - Written entirely in Go. It compiles into a single binary with no external dependencies.
@@ -20,6 +22,9 @@
 - Retention policies efficiently auto-expire stale data.
 - Continuous queries automatically compute aggregate data to make frequent queries more efficient.
 
+## Package parameters
+
+-  `/InstallRoot` - Installation directory root, by default `c:\influxdata`
 
 ## Notes
 
