@@ -44,7 +44,7 @@
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/pass-winmenu</packageSourceUrl>
     <dependencies>
       <dependency id="chocolatey" version="0.10.8" />
-      <dependency id="gpg4win-vanilla" version="2.3.4.20170711" />
+      <dependency id="gpg4win" version="3.1.8"     />
     </dependencies>
   </metadata>
   <files>
