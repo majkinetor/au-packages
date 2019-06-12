@@ -38,9 +38,12 @@ function global:au_GetLatest {
     $re  = 'less-(.+)win(.+)\.7z$'
     $url = $download_page.links | ? href -match $re | % href | sort | select -Last 1
     $version = $url -split '-' | select -Index 1
+    $version = "$($version / 100)"  #must use string interpollation here to force the invariant rather than the current culture
+    if ($version.Length -eq 3) { $version += "0" }
+
     @{
        URL32   = $releases + $url
-       Version = "$($version / 100)" #must use string interpollation here to force the invariant rather than the current culture
+       Version = $version
        ReleaseNotes = "http://www.greenwoodsoftware.com/less/news.$version.html"
     }
 }
