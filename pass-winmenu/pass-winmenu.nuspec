@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>pass-winmenu</id>
     <title>pass-winmenu</title>
-    <version>1.9.1</version>
+    <version>1.9.1.20190612</version>
     <authors>Johan Geluk</authors>
     <owners>Miodrag Milic</owners>
     <summary>An easy-to-use Windows interface for pass</summary>
@@ -44,7 +44,7 @@
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/pass-winmenu</packageSourceUrl>
     <dependencies>
       <dependency id="chocolatey" version="0.10.8" />
-      <dependency id="gpg4win" version="3.1.8"     />
+      <dependency id="gpg4win" version="3.1.8" />
     </dependencies>
   </metadata>
   <files>
