@@ -42,11 +42,7 @@
     <projectSourceUrl>https://github.com/influxdata/influxdb</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/influxdb</packageSourceUrl>
     <dependencies>
-<<<<<<< HEAD
-        <dependency id="influxdb1" version="[1.7.6.20190613]" />
-=======
-        <dependency id="influxdb1" version="1.7.6" />
->>>>>>> e64850b79f2d4f00a9bef6dc9758e50f8e9339fe
+        <dependency id="influxdb1" version="[1.7.6]" />
     </dependencies>
   </metadata>
   <files>
