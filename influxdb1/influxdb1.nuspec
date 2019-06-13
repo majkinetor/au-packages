@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>influxdb1</id>
-    <title>InfluxDB v1.x</title>
+    <title>InfluxDB</title>
     <version>1.7.6</version>
     <authors>InfluxData</authors>
     <owners>Miodrag Milic</owners>
@@ -36,11 +36,11 @@
     <copyright>© 2019 InfluxData, Inc.</copyright>
     <licenseUrl>https://github.com/influxdata/influxdb/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/influxdb/icon.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/influxdb1/icon.png</iconUrl>
     <docsUrl>https://www.docs.influxdata.com/influxdb</docsUrl>
     <bugTrackerUrl>https://github.com/influxdata/influxdb/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/influxdata/influxdb</projectSourceUrl>
-    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/influxdb</packageSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/influxdb1</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
