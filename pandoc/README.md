@@ -1,4 +1,4 @@
-# [pandoc](https://chocolatey.org/packages/pandoc)
+# [![](https://img.shields.io/chocolatey/v/pandoc.svg?color=red&label=pandoc)](https://chocolatey.org/packages/pandoc)
 
 If you need to convert files from one markup format into another, pandoc is your swiss-army knife. Pandoc can convert documents in markdown, reStructuredText, textile, HTML, DocBook, LaTeX and many others.
 

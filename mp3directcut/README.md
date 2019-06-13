@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/mp3directcut/icon.png" width="48" height="48"/> [mp3directcut](https://chocolatey.org/packages/mp3directcut)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/mp3directcut/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/mp3directcut.svg?color=red&label=mp3directcut)](https://chocolatey.org/packages/mp3directcut)
 
 mp3DirectCut is a fast and extensive audio editor and recorder for encoded MP3. Without re-encoding you can directly cut, crop or split your MP3 and AAC tracks, change the volume on MP3 and much more. Direct editing saves encoding time and preserves the original audio quality of your tracks. The built in recorder creates MP3 on the fly. By using Cue sheets, Pause detection or Auto cue you can easily divide long files.
 

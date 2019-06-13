@@ -1,4 +1,4 @@
-# [nirlauncher](https://chocolatey.org/packages/nirlauncher)
+# [![](https://img.shields.io/chocolatey/v/nirlauncher.svg?color=red&label=nirlauncher)](https://chocolatey.org/packages/nirlauncher)
 
 NirLauncher is a package of more than 180 portable freeware utilities for Windows, all of them developed by NirSoft.
 

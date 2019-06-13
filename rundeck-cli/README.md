@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/rundeck-cli/icon.png" width="48" height="48"/> [rundeck-cli](https://chocolatey.org/packages/rundeck-cli)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/rundeck-cli/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/rundeck-cli.svg?color=red&label=rundeck-cli)](https://chocolatey.org/packages/rundeck-cli)
 
 This is the CLI tool for Rundeck.
 

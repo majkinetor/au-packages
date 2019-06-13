@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/plantuml/icon.png" width="48" height="48"/> [plantuml](https://chocolatey.org/packages/plantuml)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/plantuml/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/plantuml.svg?color=red&label=plantuml)](https://chocolatey.org/packages/plantuml)
 
 PlantUML is an open-source tool allowing users to create UML and other diagrams from a plain text language. Diagrams are defined using a simple and intuitive language. This can be used within many other tools. Images can be generated in PNG, in SVG or LaTeX format. It is also possible to generate ASCII art diagrams (only for sequence diagrams).
 

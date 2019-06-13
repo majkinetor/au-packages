@@ -1,4 +1,4 @@
-# [mkcert](https://chocolatey.org/packages/mkcert)
+# [![](https://img.shields.io/chocolatey/v/mkcert.svg?color=red&label=mkcert)](https://chocolatey.org/packages/mkcert)
 
 `mkcert` is a simple CLI tool for making locally-trusted development certificates. It requires no configuration.
 
