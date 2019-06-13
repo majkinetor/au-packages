@@ -6,7 +6,7 @@ $pp = Get-PackageParameters
 if (!$pp.InstallDir) { $pp.InstallDir = 'C:\influxdata' }
 
 $packageArgs = @{
-    PackageName    = 'influxdb'
+    PackageName    = 'influxdb1'
     FileFullPath64 = gi $toolsPath\*.zip    
     Destination    = $pp.InstallDir
 }
