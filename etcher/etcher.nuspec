@@ -5,11 +5,12 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>etcher</id>
     <title>Etcher</title>
-    <version>1.5.47</version>
+    <version>1.5.49</version>
     <authors>Resin.io</authors>
     <owners>Miodrag Milic</owners>
     <summary>Flash OS images to SD cards and USB drives, safely and easily</summary>
-    <description><![CDATA[Etcher is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more.
+    <description><![CDATA[
+Etcher is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more.
 
 ## Features
 
