@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: http://guysalias.tk/misc/less/less-550-win32-static-x86.7z
+   x32: http://guysalias.tk/misc/less/less-551-win32-static-x86.7z
 
    to download the zip package.
 
@@ -15,4 +15,4 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: AF55DD42C3053707027F7684E3FAD05ABE676FFB09D33CF229580DADC99AABE8
+   checksum32: 8EC4EB52B6F8CEDF48D18491FD161EA9039BA40FDBD8FB466AA978C55CF5A372
