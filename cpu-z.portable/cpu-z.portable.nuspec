@@ -5,11 +5,12 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>cpu-z.portable</id>
     <title>CPU-Z (Portable)</title>
-    <version>1.89</version>
+    <version>1.89.0.20190627</version>
     <authors>CPUID</authors>
     <owners>majkinetor</owners>
     <summary>System information software</summary>
-    <description><![CDATA[ A freeware system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features of a modern personal computer, and presents the information in one window:
+    <description><![CDATA[
+ A freeware system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features of a modern personal computer, and presents the information in one window:
 
 - Processor name and number, codename, process, package, cache levels.
 - Mainboard and chipset.
