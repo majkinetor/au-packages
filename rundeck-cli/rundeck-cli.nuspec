@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>rundeck-cli</id>
     <title>Rundeck CLI</title>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
     <authors>Rundeck</authors>
     <owners>Miodrag Milic</owners>
     <summary>A simple commandline interface for the Rundeck</summary>
