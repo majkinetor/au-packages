@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://geeks3d.com/dl/get/602
+   x32: https://geeks3d.com/dl/get/606
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: EC247EE22720B0A4018CAF60F3CDE6EA02658D27E6D815312E2BCA96479432E2
+   checksum32: 04D28D4CA876D4E2CA36EF25502C35B10EB30354A1A097FA08EBC4E0BC79D22A
 
 Using AU:
 
