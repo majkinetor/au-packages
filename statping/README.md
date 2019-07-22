@@ -18,3 +18,7 @@ This Status Page generator allows you to use MySQL, Postgres, or SQLite on multi
 
 - `/InstallDir` - Installation directory, by default `c:\statping`.
 - `/Service`    - Install Windows service. If value `0` is specified, service will be created but not started.
+
+## Notes
+
+- Test default installation in browser using address http://localhost:8080
