@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'eraser'
-$url         = 'https://sourceforge.net/projects/eraser/files/Eraser%206/6.2/Eraser%206.2.0.2982.exe'
-$checksum    = '6F7B1DF4C8B3CB176F5B9910736355F8FC9401ED8DE635B0DB20CC0A6D2076DC'
+$url         = 'https://sourceforge.net/projects/eraser/files/Eraser%206/6.2/Eraser%206.2.0.2983.exe'
+$checksum    = '8dab1160e05d0600ead6628acd113f126fba9cf0e47ea82a53d41c8147dfb934'
 
 $setupDir    = Get-PackageCacheLocation
 
