@@ -5,11 +5,12 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>k6</id>
     <title>k6</title>
-    <version>0.24.0</version>
+    <version>0.25.0</version>
     <authors>https://github.com/loadimpact/k6/graphs/contributors</authors>
     <owners>Miodrag Milic</owners>
     <summary>A modern load testing tool for developers and testers in the DevOps era</summary>
-    <description><![CDATA[k6 is a developer centric open source load and performance regression testing tool for testing the performance of your cloud native backend infrastructure: APIs, microservices, serverless, containers and websites. It’s built to integrate well into your development workflow and CI/CD automation pipelines.
+    <description><![CDATA[
+k6 is a developer centric open source load and performance regression testing tool for testing the performance of your cloud native backend infrastructure: APIs, microservices, serverless, containers and websites. It’s built to integrate well into your development workflow and CI/CD automation pipelines.
 
 ## Features
 
@@ -35,7 +36,7 @@
     <licenseUrl>https://github.com/loadimpact/k6/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/k6/icon.png</iconUrl>
-    <releaseNotes>https://github.com/loadimpact/k6/releases/tag/v0.24.0</releaseNotes>
+    <releaseNotes>https://github.com/loadimpact/k6/releases/tag/v0.25.0</releaseNotes>
     <docsUrl>https://docs.k6.io/docs</docsUrl>
     <mailingListUrl>https://community.k6.io</mailingListUrl>
     <bugTrackerUrl>https://github.com/loadimpact/k6/issues</bugTrackerUrl>
