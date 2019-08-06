@@ -19,6 +19,7 @@ $Options = [ordered]@{
       'The operation has timed out'
       'Internal Server Error'
       'Service Temporarily Unavailable'
+      'the package version already exists on the repository'
       'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
       'Conflict'
       'OutOfMemoryException'
@@ -33,6 +34,7 @@ $Options = [ordered]@{
       'Internal Server Error'
       'An exception occurred during a WebClient request'
       'remote session failed with an unexpected state'
+      'the package version already exists on the repository'
       'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
       'Conflict'
       'Job returned no object'
