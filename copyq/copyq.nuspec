@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>copyq</id>
     <title>CopyQ</title>
-    <version>3.9.1</version>
+    <version>3.9.2</version>
     <authors>Lukas Holocek</authors>
     <owners>Miodrag Milic</owners>
     <summary>Cross-platform clipboard manager with advanced features</summary>
@@ -51,7 +51,7 @@ Items can be:
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.2" />
     </dependencies>
-    <releaseNotes>https://github.com/hluk/CopyQ/releases/tag/v3.9.1</releaseNotes>
+    <releaseNotes>https://github.com/hluk/CopyQ/releases/tag/v3.9.2</releaseNotes>
     <docsUrl>https://github.com/hluk/CopyQ/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/hluk/CopyQ/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/hluk/CopyQ</projectSourceUrl>
