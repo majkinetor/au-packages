@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>influxdb</id>
     <title>InfluxDB</title>
-    <version>1.7.7.20190716</version>
+    <version>1.7.8</version>
     <authors>InfluxData</authors>
     <owners>Miodrag Milic</owners>
     <summary>Scalable datastore for metrics, events, and real-time analytics</summary>
@@ -44,7 +44,7 @@
     <projectSourceUrl>https://github.com/influxdata/influxdb</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/influxdb</packageSourceUrl>
     <dependencies>
-        <dependency id="influxdb1" version="[1.7.7.20190716]" />
+        <dependency id="influxdb1" version="[1.7.8]" />
     </dependencies>
   </metadata>
   <files>
