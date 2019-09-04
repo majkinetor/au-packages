@@ -1,0 +1,2 @@
+Uninstall-BinFile musikcube
+Uninstall-BinFile mcube
