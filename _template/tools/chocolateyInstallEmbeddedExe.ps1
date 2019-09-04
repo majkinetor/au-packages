@@ -1,9 +1,9 @@
 $ErrorActionPreference = 'Stop'
 
-$toolsPath      = Split-Path $MyInvocation.MyCommand.Definition
+$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
-  packageName    = ''
+  packageName    = $Env:ChocolateyPackageName
   fileType       = $fileType
   file           = gi $toolsPath\*_x32.exe
   file64         = gi $toolsPath\*_x64.exe

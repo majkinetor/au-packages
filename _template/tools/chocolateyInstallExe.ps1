@@ -3,7 +3,7 @@
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
-  packageName            = ''
+  packageName            = $Env:ChocolateyPackageName
   fileType               = 'EXE'
   url                    = ''
   url64bit               = ''

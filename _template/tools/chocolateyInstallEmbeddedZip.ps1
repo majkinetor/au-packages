@@ -4,9 +4,9 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 $is64      = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
 
 $packageArgs = @{
-    PackageName    = ''
-    FileFullPath   = $toolsPath\*_x32.zip
-    FileFullPath64 = $toolsPath\*_x64.zip    
+    PackageName    = $Env:ChocolateyPackageName 
+    FileFullPath   = gi $toolsPath\*_x32.zip
+    FileFullPath64 = gi $toolsPath\*_x64.zip    
     Destination    = $toolsPath
 }
 

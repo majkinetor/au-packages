@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName         = ''
+$packageName         = $Env:ChocolateyPackageName
 $softwareNamePattern = ''
 
 [array] $key = Get-UninstallRegistryKey $softwareNamePattern
