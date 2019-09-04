@@ -17,8 +17,8 @@ function download-dropbox($Url, $FilePath) {
 }
 
 $packageName  = 'soulseek'
-$url32        = 'https://www.slsknet.org/SoulseekQt/Windows/SoulseekQt-2017-2-20.exe'
-$checksum32   = '0c9c9610669b8b3ce7b02f460b152d514e69499e78d17deb02c51d894eb703fc'
+$url32        = 'https://www.slsknet.org/SoulseekQt/Windows/SoulseekQt-2018-11-16-32bit.exe'
+$checksum32   = '2bb1776b8665c3c50af54c1159c0cc5c3e8bbef0a387a4502de5ba42e533fbf3'
 
 $chocoTempDir = Join-Path $Env:Temp "chocolatey"
 $tempFile     = "$chocoTempDir\soulseek\soulseek.exe"
