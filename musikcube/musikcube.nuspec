@@ -37,7 +37,7 @@ musikdroid is a native Android app that connects to musikcube servers. it can be
     <copyright>(c) casey langen, 2017</copyright>
     <licenseUrl>https://github.com/clangen/musikcube/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>https://github.com/clangen/musikcube/releases/download/0.65.0</releaseNotes>
+    <releaseNotes>https://github.com/clangen/musikcube/releases/tag/0.65.0</releaseNotes>
     <docsUrl>https://github.com/clangen/musikcube/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/clangen/musikcube/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/clangen/musikcube</projectSourceUrl>
