@@ -38,7 +38,8 @@
     <projectSourceUrl>https://github.com/WhisperSystems/Signal-Desktop</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/signal</packageSourceUrl>
     <dependencies>
-      <dependency id="chocolatey" version="0.10.8" />     
+      <dependency id="chocolatey" version="0.10.8" />
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>
   </metadata>
   <files>
