@@ -15,7 +15,7 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $changelog
 
     $url     = $download_page.links | ? href -like '*.exe*' | select -First 1 -expand href
-    $version = $url -split '-|\.' | select -Last 3 -Skip 1
+    $version = $url -split '-|\.' | select -Last 3 -Skip 2
     $version = $version -join '.'
     $url     = $url -replace '\?.+'
 
