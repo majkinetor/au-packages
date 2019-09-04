@@ -19,4 +19,4 @@ $installLocation = Get-AppInstallLocation $packageArgs.softwareName
 if (!$installLocation)  { Write-Warning "Can't find $packageName install location"; return }
 
 Write-Host "$packageName installed to '$installLocation'"
-Install-BinFile $packageName $installLocation\pandoc.exe
+'pandoc', 'pandoc-citeproc' | % { Install-BinFile $_ $installLocation\$_.exe }

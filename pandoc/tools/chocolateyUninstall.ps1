@@ -1,1 +1,1 @@
-﻿Uninstall-BinFile pandoc
+﻿'pandoc', 'pandoc-citeproc.exe' | % { Uninstall-BinFile $_ }
