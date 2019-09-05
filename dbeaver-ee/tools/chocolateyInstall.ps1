@@ -1,26 +1,23 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'dbeaver'
-$url32       = 'https://dbeaver.com/files/6.1.0/dbeaver-ee-6.1.0-x86-setup.exe'
-$url64       = 'https://dbeaver.com/files/6.1.0/dbeaver-ee-6.1.0-x86_64-setup.exe'
-$checksum32  = 'd1e02d09d3b13bad7fe1c6de476d115eaf7536a6fa10c7ec3188440a1ac00530'
-$checksum64  = '248ce47503e2826bd719b2c8bc3dd06a727026537f909cd1b85e9bcc94f0f109'
-
 $packageArgs = @{
-  packageName            = $packageName
+  packageName            = 'dbeaver-ee'
   fileType               = 'EXE'
-  url                    = $url32
-  url64bit               = $url64
-  checksum               = $checksum32
-  checksum64             = $checksum64
+  url                    = 'https://dbeaver.com/files/6.1.0/dbeaver-ee-6.1.0-x86-setup.exe'
+  url64bit               = 'https://dbeaver.com/files/6.1.0/dbeaver-ee-6.1.0-x86_64-setup.exe'
+  checksum               = '07bbe3ef14b1000105dfbc3c43a44de01a07e011df0555addb4b9affcdea986c'
+  checksum64             = 'b1e570b55ff33db4fba461da566c9c4d936aa21725a575ed13c35f8d6a557f69'
   checksumType           = 'sha256'
   checksumType64         = 'sha256'
   silentArgs             = '/S /allusers'
   validExitCodes         = @(0)
-  registryUninstallerKey = $packageName
+  softwareName           = 'DBeaverEE *'
 }
 Install-ChocolateyPackage @packageArgs
 
-$installLocation = Get-AppInstallLocation $packageArgs.registryUninstallerKey
-if ($installLocation)  { Write-Host "$packageName installed to '$installLocation'" }
-else { Write-Warning "Can't find $PackageName install location" }
+$installLocation = Get-AppInstallLocation $packageArgs.softwareName
+if (!$installLocation)  { Write-Warning "Can't find install location"; return }
+Write-Host "Installed to '$installLocation'"
+
+Register-Application "$installLocation\dbeaver.exe"
+Write-Host "DBeaverEE registered as dbeaver"
