@@ -7,6 +7,7 @@ function Install-DesktopShortcut {
         ShortcutFilePath  = Join-Path ([Environment]::GetFolderPath("Desktop")) signal.lnk
         TargetPath        = "$toolsPath\signal.bat"
         IconLocation      = "$Env:LOCALAPPDATA\Programs\signal-desktop\Signal.exe"
+        WindowStyle       = 7 # Minimized
     }
     Install-ChocolateyShortcut @params
 }
