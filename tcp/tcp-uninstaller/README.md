@@ -1,6 +1,6 @@
 # [tcp-uninstaller](https://chocolatey.org/packages/tcp-uninstaller)
 
-This plugin allows to view the list of installed applications directly in the Total Commander panel, view detailed information about each uninstallation entry, launch deinstallation and forcibly delete invalid entries.
+This plugin allows to view the list of installed applications, view detailed information about each uninstallation entry, launch deinstallation and forcibly delete invalid entries.
 
 ## Features
 
@@ -13,5 +13,9 @@ This plugin allows to view the list of installed applications directly in the To
 - Option where to store plugin settings.
 - When deleting a key, auxiliary keys are also deleted from the registry.
 - [More...](http://flint-inc.ru/eng/info/uninstaller64.html)
+
+## Notes
+
+- Works for Total Commander or Double Commander
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-uninstaller/screenshot.png)
