@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tree</id>
+    <title>Tree for Windows</title>
+    <version>1.5.2.2</version>
+    <authors>Steve Baker</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>List contents of directories in a tree-like format</summary>
+    <description>
+    Tree is a recursive directory listing program that produces a depth indented listing of files, which is colorized ala dircolors if the LS_COLORS environment variable is set and output is to tty. With no arguments, tree lists the files in the current directory. When directory arguments are given, tree lists all thefiles and/or directories found in the given directories each in turn. Upon completion of listing all files/directories found, tree returns the total number of files and/or directories listed. 
+    </description>
+    <projectUrl>http://gnuwin32.sourceforge.net/packages/tree.htm</projectUrl>
+    <tags>cross-platform cli files</tags>
+    <copyright>Steve Baker</copyright>
+    <licenseUrl>https://opensource.org/licenses/gpl-2.0.php</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tree/icon.png</iconUrl>
+    <docsUrl>http://gnuwin32.sourceforge.net/install.html</docsUrl>
+    <mailingListUrl></mailingListUrl>
+    <projectSourceUrl>http://downloads.sourceforge.net/gnuwin32/tree-1.5.2.2-src.zip</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tree</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

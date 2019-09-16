@@ -1,0 +1,3 @@
+# [![](https://img.shields.io/chocolatey/v/tree.svg?color=red&label=tree)](https://chocolatey.org/packages/tree)
+
+Tree is a recursive directory listing program that produces a depth indented listing of files, which is colorized ala dircolors if the LS_COLORS environment variable is set and output is to tty. With no arguments, tree lists the files in the current directory. When directory arguments are given, tree lists all thefiles and/or directories found in the given directories each in turn. Upon completion of listing all files/directories found, tree returns the total number of files and/or directories listed. 
