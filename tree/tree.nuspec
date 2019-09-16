@@ -21,6 +21,9 @@
     <docsUrl>http://gnuwin32.sourceforge.net/install.html</docsUrl>
     <projectSourceUrl>http://downloads.sourceforge.net/gnuwin32/tree-1.5.2.2-src.zip</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tree</packageSourceUrl>
+    <dependencies>
+      <dependency id="vcredist140" />
+    </dependencies>    
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
