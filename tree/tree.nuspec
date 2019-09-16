@@ -19,7 +19,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tree/icon.png</iconUrl>
     <docsUrl>http://gnuwin32.sourceforge.net/install.html</docsUrl>
-    <mailingListUrl></mailingListUrl>
     <projectSourceUrl>http://downloads.sourceforge.net/gnuwin32/tree-1.5.2.2-src.zip</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tree</packageSourceUrl>
   </metadata>
