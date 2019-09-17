@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
@@ -9,8 +9,8 @@
     <authors>Dennis van Lith, Joel Low, Garrett Trant</authors>
     <owners>Miodrag Milić</owners>
     <summary>Eraser is an advanced security tool for Windows which allows you to completely remove sensitive data from your hard drive by overwriting it several times with carefully selected patterns.</summary>
-    <description>
-Eraser is an advanced security tool for Windows which allows you to completely remove sensitive data from your hard drive by overwriting it several times with carefully selected patterns. Eraser is currently supported under Windows XP (with Service Pack 3), Windows Server 2003 (with Service Pack 2), Windows Vista, Windows Server 2008, Windows 7,8 ,10 and Windows Server 2012.
+    <description><![CDATA[
+Eraser is an advanced security tool for Windows which allows you to completely remove sensitive data from your hard drive by overwriting it several times with carefully selected patterns. Eraser is currently supported under Windows XP (with Service Pack 3), Windows Server 2003 (with Service Pack 2), Windows Vista, Windows Server 2008, Windows 7,8,10 and Windows Server 2012.
 
 ## Features
 
@@ -19,7 +19,8 @@ Eraser is an advanced security tool for Windows which allows you to completely r
 - Powerful and flexible scheduler
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/eraser/screenshot.png)
-</description>
+
+]]></description>
     <projectUrl>http://eraser.heidi.ie</projectUrl>
     <tags>admin foss files delete erase forensic</tags>
     <copyright>Eraser</copyright>
@@ -38,5 +39,6 @@ Eraser is an advanced security tool for Windows which allows you to completely r
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
