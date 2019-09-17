@@ -13,7 +13,7 @@
     Tree is a recursive directory listing program that produces a depth indented listing of files, which is colorized ala dircolors if the LS_COLORS environment variable is set and output is to tty. With no arguments, tree lists the files in the current directory. When directory arguments are given, tree lists all thefiles and/or directories found in the given directories each in turn. Upon completion of listing all files/directories found, tree returns the total number of files and/or directories listed. 
     </description>
     <projectUrl>http://gnuwin32.sourceforge.net/packages/tree.htm</projectUrl>
-    <tags>cross-platform cli files</tags>
+    <tags>cross-platform cli files foss</tags>
     <copyright>Steve Baker</copyright>
     <licenseUrl>https://opensource.org/licenses/gpl-2.0.php</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
