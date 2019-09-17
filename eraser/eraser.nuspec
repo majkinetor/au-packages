@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>eraser</id>
     <title>Eraser</title>
-    <version>6.2.0.2983</version>
+    <version>6.2.0.2986</version>
     <authors>Dennis van Lith, Joel Low, Garrett Trant</authors>
     <owners>Miodrag Milić</owners>
     <summary>Eraser is an advanced security tool for Windows which allows you to completely remove sensitive data from your hard drive by overwriting it several times with carefully selected patterns.</summary>
@@ -21,14 +21,14 @@ Eraser is an advanced security tool for Windows which allows you to completely r
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/eraser/screenshot.png)
 </description>
     <projectUrl>http://eraser.heidi.ie</projectUrl>
-    <tags>admin foss file delete erase forensic</tags>
+    <tags>admin foss files delete erase forensic</tags>
     <copyright>Eraser</copyright>
     <licenseUrl>http://www.fsf.org/licensing/licenses/gpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/eraser/icon.png</iconUrl>
     <dependencies>
         <dependency id="dotnet4.5" version="4.5.20120822" />
-        <dependency id="chocolatey-core.extension" version="1.3.1" />
+        <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>
     <releaseNotes></releaseNotes>
     <mailingListUrl>http://eraser.heidi.ie/forum</mailingListUrl>
