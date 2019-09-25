@@ -15,11 +15,13 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml).
 - [Object diagram](http://plantuml.com/objects.html)
 - [Deployment diagram](http://plantuml.com/deployment.html)
 - [Timing diagram](http://plantuml.com/timing-diagram)
+- [Mindmap diagram](http://plantuml.com/mindmap-diagram)
 - [Wireframe graphical interface](http://plantuml.com/salt.html)
 - [Archimate diagram](http://plantuml.com/timing-diagram)
 - [Specification and Description Language (SDL)](http://plantuml.com/activity-diagram-beta#sdl)
 - [Ditaa diagram](http://plantuml.com/ditaa)
 - [Gantt diagram](http://plantuml.com/gantt-diagram)
+- [Work Breakdown Structure diagram](http://plantuml.com/wbs-diagram)
 - [Mathematic with AsciiMath or JLaTeXMath notation](http://plantuml.com/ascii-math)
 
 ## Package parameters
