@@ -55,7 +55,3 @@ if ( $pp.Associate ) {
         Install-ChocolateyFileAssociation -Extension $_ -Executable $cmdPath
     }
 }
-
-# Remove outdated cmd file
-$cmdPath = join-path $env:ChocolateyInstall bin\yed.cmd
-if (Test-Path $cmdPath) { rm $cmdPath }
