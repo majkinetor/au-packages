@@ -31,6 +31,6 @@ Try it online using [plantuml online server](http://www.plantuml.com/plantuml).
 ## Notes
 
 - This package creates two shims - `plantuml` (invoked via `javaw`) and `plantumlc` (invoked via `java`). The later one should be used with scripting. See available command line options with `plantumlc -help`. For example, to convert entire directory of plantuml files to images recursivelly, you can use `plantumlc -r -tsvg **\*.puml`.
-- Since version `1.2019.11.20191001`, this package uses [AdoptOpenJDK11JRE](https://chocolatey.org/packages/AdoptOpenJDK11JRE) package instead of the [javaruntime](https://chocolatey.org/packages/javaruntime) package that it previously used as later requires a license for commercial use.
+- Since version `1.2019.11.20191001`, this package depends on [AdoptOpenJDKJRE](https://chocolatey.org/packages/AdoptOpenJDKJRE) package instead of the [javaruntime](https://chocolatey.org/packages/javaruntime) that it previously used; later requires a license for commercial use since 2019.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/plantuml/screenshot.png)
