@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>pgmetrics</id>
+    <title></title>
+    <version>0.0</version>
+    <authors>RapidLoop</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Collect and display information and stats from a running PostgreSQL server</summary>
+    <description><![CDATA[pgmetrics is an open-source, zero-dependency, single-binary tool that can collect a lot of information and statistics from a running PostgreSQL server and display it in easy-to-read text format or export it as JSON and CSV for scripting. 
+
+## Features
+
+- Server: version, system identifier, timeline, transaction id wraparound, checkpoint lag
+- Replication: primary-side, standby-side, physical and logical replication slots
+- WAL Archiving: archive rate, wal and ready file counts, last success and fail time
+- BG Writer: checkpoint rate, total checkpoints (sched+req), buffers
+- Vacuum-related: ongoing auto/manual vacuum progress, last analyze/vacuum, settings
+- Tablespaces: location, size, disk and inode usage of filesystem
+- Database: size, bloat, disabled triggers, installed extensions, temp files, transaction id wraparound, deadlocks, conflicts
+- Roles: users, groups, membership
+- Active backends: transaction running too long, idling in transaction, waiting for locks
+- Tables: vacuum, analyze, row estimates, idx and seq scans, cache hit ratio, HOT update ratio, size, bloat
+- Indexes: cache hit ratio, scans, rows read/scan, rows fetched/scan
+- Sequences: cache hit ratio
+- System metrics: cores, load average, memory and disk usage
+- Settings: current values, and default ones where different
+- Slow queries: from pg_stat_statements, if available
+- Locks: granted and waiting locks, from pg_locks
+- Blocked queries: blocked queries, along with the queries that they are waiting for
+- Collect and report information about PgBouncer instances when connected to PgBouncer’s admin database.
+
+## Notes
+
+- This package contains only x64 bit executable.
+]]></description>
+    <projectUrl>https://pgmetrics.io</projectUrl>
+    <tags>postgresql database cross-platform foss cli metrics</tags>
+    <copyright>© RapidLoop, Inc. 2019</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/rapidloop/pgmetrics/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/pgmetrics/icon.png</iconUrl>
+    <releaseNotes>https://github.com/rapidloop/pgmetrics/releases/tag/v1.7.0</releaseNotes>
+    <docsUrl>https://pgmetrics.io/docs</docsUrl>
+    <bugTrackerUrl>https://github.com/rapidloop/pgmetrics/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/rapidloop/pgmetrics</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/pgmetrics</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

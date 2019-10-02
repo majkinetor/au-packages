@@ -1,0 +1,28 @@
+# [![](https://img.shields.io/chocolatey/v/pgmetrics.svg?color=red&label=pgmetrics)](https://chocolatey.org/packages/pgmetrics)
+
+pgmetrics is an open-source, zero-dependency, single-binary tool that can collect a lot of information and statistics from a running PostgreSQL server and display it in easy-to-read text format or export it as JSON and CSV for scripting. 
+
+## Features
+
+- Server: version, system identifier, timeline, transaction id wraparound, checkpoint lag
+- Replication: primary-side, standby-side, physical and logical replication slots
+- WAL Archiving: archive rate, wal and ready file counts, last success and fail time
+- BG Writer: checkpoint rate, total checkpoints (sched+req), buffers
+- Vacuum-related: ongoing auto/manual vacuum progress, last analyze/vacuum, settings
+- Tablespaces: location, size, disk and inode usage of filesystem
+- Database: size, bloat, disabled triggers, installed extensions, temp files, transaction id wraparound, deadlocks, conflicts
+- Roles: users, groups, membership
+- Active backends: transaction running too long, idling in transaction, waiting for locks
+- Tables: vacuum, analyze, row estimates, idx and seq scans, cache hit ratio, HOT update ratio, size, bloat
+- Indexes: cache hit ratio, scans, rows read/scan, rows fetched/scan
+- Sequences: cache hit ratio
+- System metrics: cores, load average, memory and disk usage
+- Settings: current values, and default ones where different
+- Slow queries: from pg_stat_statements, if available
+- Locks: granted and waiting locks, from pg_locks
+- Blocked queries: blocked queries, along with the queries that they are waiting for
+- Collect and report information about PgBouncer instances when connected to PgBouncer’s admin database.
+
+## Notes
+
+- This package contains only x64 bit executable.
