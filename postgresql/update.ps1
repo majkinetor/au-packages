@@ -70,7 +70,7 @@ function global:au_GetLatest {
         if (!$s1.Url32) { $s1.Remove("Url32") }
         
         $s = $v.ToString(2);   $streams.$s = $s1
-        $s = $s2.Dependency;   $streams.$s = $s2
+        $s = "postgresql-$s";  $streams.$s = $s2
     }
     
     $streams.postgresql = @{ 
