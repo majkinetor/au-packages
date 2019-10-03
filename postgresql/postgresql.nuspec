@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>postgresql</id>
-    <version>10.10</version>
+    <version>9.6.15</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
@@ -38,7 +38,7 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
     <mailingListUrl>https://www.postgresql.org/list</mailingListUrl>
     <bugTrackerUrl>https://www.postgresql.org/account/submitbug</bugTrackerUrl>
     <dependencies>
-      <dependency id="postgresql10" version="[10.10]" />
+      <dependency id="postgresql9" version="[9.6.15]" />
     </dependencies>
   </metadata>
   
