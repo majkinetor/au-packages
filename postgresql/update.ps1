@@ -51,7 +51,7 @@ function global:au_GetLatest {
         $v = [version]$version
         $major = $v.ToString(1)
 
-        $l = @{
+        $s1 = @{
             Version      = $version
             Url64        = Resolve-PostgreUrl $item."Windows x86-64"
             Url32        = Resolve-PostgreUrl $item."Windows x86-32"
@@ -59,11 +59,18 @@ function global:au_GetLatest {
             ReleaseNotes = "https://www.postgresql.org/docs/$major/static/release.html"
             SoftwareName = "PostgreSQL $major*"
         }
-        if (!$l.Url64 -and !$l.Url32) { continue }
-        if (!$l.Url64) { $l.Remove("Url64") }
-        if (!$l.Url32) { $l.Remove("Url32") }
-        $s = $v.ToString(2)
-        $streams.$s = $l
+
+        $s2 = @{
+            Version     = $version
+            Dependency  = $s1.PackageName
+            PackageName = 'postgresql'
+        }
+        if (!$s1.Url64 -and !$s1.Url32) { continue }
+        if (!$s1.Url64) { $s1.Remove("Url64") }
+        if (!$s1.Url32) { $s1.Remove("Url32") }
+        
+        $s = $v.ToString(2);   $streams.$s = $s1
+        $s = $s2.Dependency;   $streams.$s = $s2
     }
     
     $streams.postgresql = @{ 
