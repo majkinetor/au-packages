@@ -34,6 +34,6 @@ Write-Host "Installation log: $Env:TEMP\install-postgresql.log"
 
 $installLocation = Get-AppInstallLocation $packageArgs.softwareName
 if (!$installLocation)  { Write-Warning "Can't find install location"; return }
-Write-Host "Iinstalled to '$installLocation'"
+Write-Host "Installed to '$installLocation'"
 
 if (!$pp.NoPath) { Install-ChocolateyPath "$installLocation\bin" -PathType 'Machine' }
