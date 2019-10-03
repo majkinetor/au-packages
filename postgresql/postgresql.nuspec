@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>postgresql</id>
-    <version>9.6.15</version>
+    <version>12.0.0.20191004</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
@@ -24,12 +24,12 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
 
 ## Notes
 
-- This package will install PostgreSQL to `$Env:ProgramFiles\PostgreSQL\<version>`
+- This package will install PostgreSQL to `$Env:ProgramFiles\PostgreSQL\[MajorVersion]`
 - [Silent install options](https://www.enterprisedb.com/edb-docs/d/postgresql/installation-getting-started/installation-guide-installers/10/PostgreSQL_Installation_Guide.1.16.html)
 - If you have problems during installation see [troubleshooting page](https://wiki.postgresql.org/wiki/Troubleshooting_Installation)
 ]]></description>
     <summary>PostgreSQL is an object-relational database management system</summary>
-    <releaseNotes>https://www.postgresql.org/docs/11/static/release.html</releaseNotes>
+    <releaseNotes>https://www.postgresql.org/docs/12/static/release.html</releaseNotes>
     <copyright>Copyright © 1996-2019 The PostgreSQL Global Development Group</copyright>
     <tags>foss cross-platform postgres postgresql sql relational database admin</tags>
     <projectSourceUrl>https://github.com/postgres/postgres</projectSourceUrl>
@@ -37,9 +37,7 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
     <docsUrl>https://www.postgresql.org/docs/10/static/index.html</docsUrl>
     <mailingListUrl>https://www.postgresql.org/list</mailingListUrl>
     <bugTrackerUrl>https://www.postgresql.org/account/submitbug</bugTrackerUrl>
-    <dependencies>
-      <dependency id="postgresql9" version="[9.6.15]" />
-    </dependencies>
+    <dependencies><dependency id="postgresql12" version="[12.0.0.20191004]" /></dependencies>
   </metadata>
   
   <files>
