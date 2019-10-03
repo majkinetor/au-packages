@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>postgresql</id>
+    <version>0.0</version>
+    <title>PostgreSQL</title>
+    <authors>PostgreSQL Global Development Group</authors>
+    <owners>majkinetor, cole.mike</owners>
+    <licenseUrl>https://www.postgresql.org/about/licence/</licenseUrl>
+    <projectUrl>https://postgresql.org/</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/postgresql/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description><![CDATA[PostgreSQL is an object-relational database management system (ORDBMS) based on POSTGRE, developed at the University of California at Berkeley Computer Science Department. POSTGRES pioneered many concepts that only became available in some commercial database systems much later.
+
+PostgreSQL can be used, modified, and distributed by anyone free of charge for any purpose, be it private, commercial, or academic.
+
+## Features
+
+- [Feature Matrix](https://www.postgresql.org/about/featurematrix)
+
+## Package parameters
+
+- `/Password` - Password to be assigned to the `postgres` user. If ommited, it will be generated and shown in install output.
+
+## Notes
+
+- This package will install PostgreSQL to `$Env:ProgramFiles\PostgreSQL\<version>`
+- [Silent install options](https://www.enterprisedb.com/edb-docs/d/postgresql/installation-getting-started/installation-guide-installers/10/PostgreSQL_Installation_Guide.1.16.html)
+- If you have problems during installation see [troubleshooting page](https://wiki.postgresql.org/wiki/Troubleshooting_Installation)
+]]></description>
+    <summary>PostgreSQL is an object-relational database management system</summary>
+    <releaseNotes>https://www.postgresql.org/docs/11/static/release.html</releaseNotes>
+    <copyright>Copyright © 1996-2019 The PostgreSQL Global Development Group</copyright>
+    <tags>foss cross-platform postgres postgresql sql relational database admin</tags>
+    <projectSourceUrl>https://github.com/postgres/postgres</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/postgresql</packageSourceUrl>
+    <docsUrl>https://www.postgresql.org/docs/10/static/index.html</docsUrl>
+    <mailingListUrl>https://www.postgresql.org/list</mailingListUrl>
+    <bugTrackerUrl>https://www.postgresql.org/account/submitbug</bugTrackerUrl>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
+    </dependencies>
+  </metadata>
+  
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
