@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>postgresql</id>
-    <version>12.0.0.20191004</version>
+    <id>postgresql12</id>
+    <version>12.0</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
@@ -37,10 +37,10 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
     <docsUrl>https://www.postgresql.org/docs/10/static/index.html</docsUrl>
     <mailingListUrl>https://www.postgresql.org/list</mailingListUrl>
     <bugTrackerUrl>https://www.postgresql.org/account/submitbug</bugTrackerUrl>
-    <dependencies><dependency id="postgresql12" version="[12.0.0.20191004]" /></dependencies>
+    <dependencies><dependency id="chocolatey-core.extension" version="1.3.3" /><dependency id="vcredist140" version="14.23.27820" /></dependencies>
   </metadata>
   
   <files>
-    <file src="tools\*.dummy" target="tools" />
+    <file src="tools\**" target="tools" />
   </files>
 </package>
