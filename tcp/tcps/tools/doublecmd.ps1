@@ -1,13 +1,14 @@
+function Test-DC() { $null -ne (Get-DCConfig) }
 
 function Close-DC() {
     $doublecmd = Get-Process doublecmd -ea 0
     if (!$doublecmd) { return }
-    $doublecmd | % { $_.CloseMainWindow() }
+    $doublecmd | % { $_.CloseMainWindow() | Out-Null }
 }
 
 function Get-DCConfig ([switch] $Path) { 
     $cfg_path = "$Env:AppData\doublecmd\doublecmd.xml"
-    if (!(Test-Path $cfg_path)) { throw "Can't find DC config at: $cfg_path"}
+    if (!(Test-Path $cfg_path)) { return }
 
     if ($Path) { return $cfg_path }
     return ([xml](Get-Content $cfg_path))
@@ -23,34 +24,33 @@ function Set-DCPlugin {
     param(
         [string] $Name,
         [string] $PluginsPath = $Env:COMMANDER_PLUGINS_PATH,
-        [switch] $x32
+        [switch] $x32,
+        [switch] $Uninstall
     )
 
-    $plugin_types = 'Wcx', 'Wdx', 'Wfx', 'Wlx'
-
-    $pluginExtensions = $plugin_types | % { if ($x32) {"*.$_"} else {"*.${_}64"} }
-    $pluginFile = Get-ChildItem -Recurse -Path $PluginsPath -Include $pluginExtensions -Filter "$Name.*" 
-    if (!$pluginFile) { throw "Can't find plugin by the name '$Name'" }
-    if ($pluginFile.Count -gt 1) { throw "Multiple plugins found by the name '$Name': $($pluginFile.Name)"  } 
-    $pluginType = $pluginFile.Extension.Substring(1) -replace '64'
-    $pluginType = $pluginType.Substring(0,1).ToUpper() + $pluginType.Substring(1)
+    Get-TCPluginInfo $Name $PluginsPath $x32
 
     $config = Get-DCConfig
-    $plugin = $config.doublecmd.Plugins[$pluginType+'Plugins'].$($pluginType+'Plugin') | ? { $_.Name -eq $Name }
-    if (!$plugin) { 
-        $plugin = $config.CreateElement($pluginType+"Plugin")
+
+    $plugin = $config.doublecmd.Plugins[$global:TCP_PluginType+'Plugins'].$($global:TCP_PluginType+'Plugin') | ? { $_.Name -eq $Name }
+    if (!$plugin) {
+        if ($Uninstall) { Write-Warning 'Plugin is already removd from Double Commander via other means'; return }
+        
+        $plugin = $config.CreateElement($global:TCP_PluginType+"Plugin")
         $plugin.Attributes.Append( $config.CreateAttribute('Enabled') ) | Out-Null
         "Name", "Path" | % { $plugin.AppendChild($config.CreateElement($_)) } | Out-Null
-        #TODO: WlxPlugins didn't exist
-        $config.doublecmd.Plugins[$pluginType+'Plugins'].AppendChild( $plugin ) | Out-Null
+        $config.doublecmd.Plugins[$global:TCP_PluginType+'Plugins'].AppendChild( $plugin ) | Out-Null
     }
-
-    $plugin.Enabled = 'True'
-    $plugin.Name    = $Name    
-    $plugin.Path    = $pluginFile.FullName
-    
+    if (!$Uninstall) {
+        $plugin.Enabled = 'True'
+        $plugin.Name    = $Name    
+        $plugin.Path    = $global:TCP_PluginFile.FullName
+    } else {
+        $config.doublecmd.Plugins[$global:TCP_PluginType+'Plugins'].RemoveChild( $plugin ) | Out-Null
+    }
+    Close-DC
     Set-DCConfig $config
 }
 
-$Env:COMMANDER_PLUGINS_PATH = "C:\tools\TCPlugins"
-Set-DCPlugin 'fileinfo'
+# $Env:COMMANDER_PLUGINS_PATH = "C:\tools\TCPlugins"
+# Set-DCPlugin 'uninstaller64' -Uninstall

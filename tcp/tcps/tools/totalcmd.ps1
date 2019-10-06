@@ -1,14 +1,9 @@
-<#
-Author: Miodrag Milic <miodrag.milic@gmail.com>
-This script contains various Total Commander functions
-#>
+function Test-TC { $null -ne (Get-TCConfig -Path) }
 
-function Test-Commander {
-    if (!($Env:COMMANDER_PATH -and (Test-Path $Env:COMMANDER_PATH))) { throw 'This package requires COMMANDER_PATH environment variable set' }
-    
-    if (ps totalcmd* -ea 0) {
-        Write-Warning "Total Commander is running; restart it for any changes to take effect"
-    }
+function Close-TC() {
+    $totalcmd = Get-Process totalcmd* -ea 0
+    if (!$totalcmd) { return }
+    $totalcmd | % { $_.CloseMainWindow() | Out-Null }
 }
 
 function Get-TCInstallPath {
@@ -24,59 +19,69 @@ function Get-TCInstallPath {
     if ( check $res ) { return $res }
 }
 
-function Get-TCIniPath {
+function Get-DCConfig ([switch] $Path) { 
+    $cfg_path = "$Env:AppData\doublecmd\doublecmd.xml"
+    if (!(Test-Path $cfg_path)) { return }
 
-    $res = $Env:COMMANDER_INI
-    if ( $res -and (Test-Path $res)) { return $res }
-
-    $res = (gp 'HKCU:\Software\Ghisler\Total Commander' -ea 0).IniFileName
-    if ( $res -and (Test-Path $res)) { return $res }
-
-    $res = (gp 'HKLM:\Software\Ghisler\Total Commander' -ea 0).IniFileName
-    if ( $res -and (Test-Path $res)) { return $res }
-
-    $res = "$Env:AppData\Ghisler\wincmd.ini"
-    if ( $res -and (Test-Path $res)) { return $res }
-
-    $res = "$Env:WinDir\wincmd.ini"
-    if ( $res -and (Test-Path $res)) { return $res }
+    if ($Path) { return $cfg_path }
+    return ([xml](Get-Content $cfg_path))
 }
 
-function Install-TCPlugin( [string] $Path, [string] $Name ) {
-    
-    $plugin_name = Split-Path $Path -Leaf
-    $plugins_path = "$Env:COMMANDER_PATH\plugins"
-    mkdir $plugins_path -ea 0 | Out-Null
-    
-    $tmpDestination = "$Env:TEMP\_tcp\$plugin_name"
-    rm $tmpDestination -Recurse -ea 0
-    7z x $Path "-o$tmpDestination"
-    if ($LastExitCode) { throw "Error while unpacking plugin: $LastExitCode" }
-   
-    $plugin_types = 'wfx', 'wlx', 'wcx', 'wdx'
-    $plugin_type = $plugin_types | ? { ([array](ls $tmpDestination\* -Include *$_*)).Count -gt 0 } | select -First 1
-    if (!$plugin_type) { throw "Plugin type must be one of the: $plugin_types" }
+function Get-TCConfig( [switch] $Path ) {
+    function ini_path {
+        $res = $Env:COMMANDER_INI
+        if ( $res -and (Test-Path $res)) { return $res }
 
-    $plugin_path = "$plugins_path\$plugin_type\$Name"
+        $res = (gp 'HKCU:\Software\Ghisler\Total Commander' -ea 0).IniFileName
+        if ( $res -and (Test-Path $res)) { return $res }
 
-    Write-Host "Installing Total Commander plugin files at: $plugin_path" 
-    
-    rm $plugin_path -Recurse -Force -ea 0
-    mkdir $plugin_path -ea 0 | Out-Null
-    mv $tmpDestination\* $plugin_path -Force
+        $res = (gp 'HKLM:\Software\Ghisler\Total Commander' -ea 0).IniFileName
+        if ( $res -and (Test-Path $res)) { return $res }
 
-    if (!($iniPath = Get-TCIniPath)) { throw "Can't find Total Commander ini path" }
-    
-    Write-Host "Adding plugin to ini file: $iniPath"
-    $iniContent = gc $iniPath -Encoding UTF8 -Raw
+        $res = "$Env:AppData\Ghisler\wincmd.ini"
+        if ( $res -and (Test-Path $res)) { return $res }
 
-    if ($plugin_type -in 'wfx','wcx') {
-        $iniContent | Set-IniValue FileSystemPlugins $Name $plugin_path\$Name.$plugin_type `
-                    | Set-IniValue FileSystemPlugins64 $Name 1 `
-                    | Save-Content $iniPath
-    } else {
-        throw "This plugin type is not yet supported"
+        $res = "$Env:WinDir\wincmd.ini"
+        if ( $res -and (Test-Path $res)) { return $res }
     }
+
+    $cfg_path = ini_path
+    if (!(Test-Path $cfg_path)) { return }
+
+    if ($Path) { return $cfg_path }
+    return (Get-Content $cfg_path -Encoding UTF8 -Raw )
+}
+
+function Set-TCConfig( $ini ) {
+    $ini_path = Get-TCConfig -Path
+    Save-Content $ini_path $ini
+}
+
+function Set-TCPlugin {
+    param(
+        [string] $Name,
+        [string] $PluginsPath = $Env:COMMANDER_PLUGINS_PATH,
+        [switch] $x32,
+        [switch] $Uninstall
+    )
+
+    Get-TCPluginInfo $Name $PluginsPath $x32
+
+    $config = Get-TCConfig
+    
+    if (!$Uninstall) {
+        if ($global:TCP_PluginType -in 'wfx','wcx') {
+            $config = $config | Set-IniValue FileSystemPlugins $Name $global:TCP_PluginFile.FullName `
+                              | Set-IniValue FileSystemPlugins64 $Name 1       
+        } else {
+            Write-Warning "This plugin type is not yet supported"
+        }
+    } else {
+        $config = $config | Set-IniValue FileSystemPlugins $Name | Save-Content $iniPath
+    }
+
+    Close-TC
+    Set-TCConfig $config
 
     # 'FileSystemPlugins'    Name=Path
     # 'PackerPlugins'        Name=Path
@@ -88,16 +93,3 @@ function Save-Content([string] $Path, [Parameter(ValueFromPipeline=$true)] [stri
     $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False)
     [System.IO.File]::WriteAllText($Path, $Text, $Utf8NoBomEncoding)
 }
-
-
-function Uninstall-TCPlugin( [string] $Name ) {
-    Write-Host "Removing Total Commander plugin files: $Name"
-    rm $Env:COMMANDER_PATH\plugins\*\$Name -Recurse -Force
-
-    Write-Host "Removing Total Commander ini key"
-    if (!($iniPath = Get-TCIniPath)) { throw "Can't find Total Commander ini path" }
-    $iniContent = gc $iniPath -Encoding UTF8 -Raw
-    $iniContent | Set-IniValue FileSystemPlugins $Name | Save-Content $iniPath
-}
-
-Test-Commander
