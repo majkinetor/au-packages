@@ -1,6 +1,4 @@
 $ErrorActionPreference = 'Stop'
+. $Env:ChocolateyInstall\lib\tcps\tools\tcps.ps1
 
-$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
-ls $toolsPath\helpers\*.ps1 | % { . $_ }
-
-Install-TCPlugin $toolsPath\wfx_envvars_1.0a.zip 'EnvVars'
+Install-TCPlugin EnvVars

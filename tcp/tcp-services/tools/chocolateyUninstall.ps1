@@ -1,6 +1,4 @@
 ﻿$ErrorActionPreference = 'Stop'
-
-$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
-ls $toolsPath\helpers\*.ps1 | % { . $_ }
+. $Env:ChocolateyInstall\lib\tcps\tools\tcps.ps1
 
 Uninstall-TCPlugin Services2

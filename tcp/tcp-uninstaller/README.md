@@ -2,6 +2,8 @@
 
 This plugin allows to view the list of installed applications, view detailed information about each uninstallation entry, launch deinstallation and forcibly delete invalid entries.
 
+TC plugins work for [Total Commander](https://chocolatey.org/packages/totalcmd) or [Double Commander](https://chocolatey.org/packages/doublecmd).
+
 ## Features
 
 - 64-bit version.
@@ -14,8 +16,12 @@ This plugin allows to view the list of installed applications, view detailed inf
 - When deleting a key, auxiliary keys are also deleted from the registry.
 - [More...](http://flint-inc.ru/eng/info/uninstaller64.html)
 
+## Package parameters
+
+- `/NoDC` - Do not update Double Commander config.
+
 ## Notes
 
-- Works for Total Commander or Double Commander
+- The package will install plugin files to `$Env:COMMANDER_PLUGINS_PATH` or `[ToolsLocation]\TCPlugins` if it doesn't exist.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-uninstaller/screenshot.png)

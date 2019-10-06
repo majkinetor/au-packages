@@ -1,6 +1,4 @@
 $ErrorActionPreference = 'Stop'
+. $Env:ChocolateyInstall\lib\tcps\tools\tcps.ps1
 
-$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
-ls $toolsPath\helpers\*.ps1 | % { . $_ }
-
-Install-TCPlugin $toolsPath\wfx_Services2_0.7.0.rar Services2
+Install-TCPlugin Services2

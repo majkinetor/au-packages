@@ -35,8 +35,7 @@
     <projectSourceUrl>http://flint-inc.ru/files/mlang/uninstaller64_1.0.1.src.rar</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-uninstaller</packageSourceUrl>
     <dependencies>
-      <dependency id="TotalCommander" version="9.12.0.20180528" />
-      <dependency id="7zip.portable" version="18.5" />   
+      <dependency id="tcps" version="0.1"/>
     </dependencies>
   </metadata>
   <files>
