@@ -37,7 +37,7 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
     <projectUrl>http://www.totalcmd.net/plugring/registry.html</projectUrl>
     <tags>totalcmd doublecmd plugin tcplugin tcpfilesystem registry freeware</tags>  
     <copyright>Vitaly Knyazev, 2012</copyright>
-    <licenseUrl>https://opensource.org/licenses/Artistic-2.0</licenseUrl>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-registry</packageSourceUrl>
     <dependencies>
