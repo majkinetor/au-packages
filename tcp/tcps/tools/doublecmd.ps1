@@ -36,13 +36,13 @@ function Set-DCPlugin {
     $pluginType = $pluginType.Substring(0,1).ToUpper() + $pluginType.Substring(1)
 
     $config = Get-DCConfig
-    $plugin = $config.doublecmd.Plugins.$($pluginType+'Plugins').$($pluginType+'Plugin') | ? { $_.Name -eq $Name }
+    $plugin = $config.doublecmd.Plugins[$pluginType+'Plugins'].$($pluginType+'Plugin') | ? { $_.Name -eq $Name }
     if (!$plugin) { 
         $plugin = $config.CreateElement($pluginType+"Plugin")
         $plugin.Attributes.Append( $config.CreateAttribute('Enabled') ) | Out-Null
         "Name", "Path" | % { $plugin.AppendChild($config.CreateElement($_)) } | Out-Null
         #TODO: WlxPlugins didn't exist
-        $config.doublecmd.Plugins.$($pluginType+'Plugins').AppendChild( $plugin ) | Out-Null
+        $config.doublecmd.Plugins[$pluginType+'Plugins'].AppendChild( $plugin ) | Out-Null
     }
 
     $plugin.Enabled = 'True'
@@ -52,5 +52,5 @@ function Set-DCPlugin {
     Set-DCConfig $config
 }
 
-#$Env:COMMANDER_PLUGINS_PATH = "C:\tools\TCPlugins"
-#Set-DCPlugin 'fileinfo'
+$Env:COMMANDER_PLUGINS_PATH = "C:\tools\TCPlugins"
+Set-DCPlugin 'fileinfo'
