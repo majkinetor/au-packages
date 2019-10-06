@@ -6,8 +6,6 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
 
 ## Features
 
-## Features
-
 - Quick search
 - Browse system registry
 - Remote registry connection

@@ -2,6 +2,9 @@
 
 Total Commander plugin that can list, control and manage services registered in the local or remote system.
 
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+
 ## Features
 
 * List services registered in the system 

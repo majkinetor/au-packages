@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-shelldetails</id>
+    <title>TC Plugin: ShellDetails</title>
+    <version>1.26</version>
+    <authors>Lefteous</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander that displays all Windows Explorer fields</summary>
+    <description>Total Commander plugin for shell details
+    </description>
+    <projectUrl>http://lefteous.totalcmd.net/tc/archives/shelldetails/wdx_shelldetails_1.26.zip</projectUrl>
+    <tags>doublecmd totalcmd plugin tcplugin tcpcontent shell</tags>  
+    <copyright>Leftious, 2019</copyright>
+    <licenseUrl>http://lefteous.totalcmd.net/tc/docs/shelldetails/readme.htm#license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-shelldetails</packageSourceUrl>
+    <dependencies>
+      <dependency id="tcps" version="0.1"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
