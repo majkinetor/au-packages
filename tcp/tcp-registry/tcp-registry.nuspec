@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-registry</id>
+    <title>TC Plugin: Registry</title>
+    <version>5.2</version>
+    <authors>Vitaly Knyazev</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander plugin for managing Windows Registry</summary>
+    <description>Total Commander plugin for managing Windows Registry.
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+## Features
+
+## Features
+
+- Quick search
+- Browse system registry
+- Remote registry connection
+- Create new value
+- Modify values (REG_DWORD, REG_QWORD, REG_SZ, REG_EXPAND_SZ, REG_BINARY)
+- Delete/Rename keys and values
+- Create keys like folders (F7)
+- View (F3) and Quick view (Ctrl+Q)
+- Export keys and values into .reg file, including binary values (F5)
+- Permission edit dialog
+- Options dialog
+- Open in regedit
+- Shows last modified date on keys (Win2k or newer)
+- Special characters conversion
+ 
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-registry/screenshot.png)
+    </description>
+    <projectUrl>http://www.totalcmd.net/plugring/registry.html</projectUrl>
+    <tags>totalcmd doublecmd plugin tcplugin tcpfilesystem registry freeware</tags>  
+    <copyright>Vitaly Knyazev, 2012</copyright>
+    <licenseUrl>https://opensource.org/licenses/Artistic-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-registry</packageSourceUrl>
+    <dependencies>
+      <dependency id="tcps" version="0.1"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
