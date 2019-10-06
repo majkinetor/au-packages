@@ -1,0 +1,5 @@
+License Agreement
+--------------------------------------------------------
+This plugin is free software and provided "as is" without warranty of any kind, including, but not limited to, the implied warranties of merchant ability and fitness for a particular purpose. Should the program prove defective, you assume the cost of all necessary servicing, repair or correction.
+This program can be freely copied/distributed without breaking distributive package integrity.
+
