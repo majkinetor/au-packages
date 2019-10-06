@@ -74,7 +74,10 @@ function Set-TCPlugin {
             $config = $config | Set-IniValue FileSystemPlugins $Name $global:TCP_PluginFile.FullName `
                               | Set-IniValue FileSystemPlugins64 $Name 1       
         } else {
-            Write-Warning "This plugin type is not yet supported"
+            $sectionName = if ($global:TCP_PluginType -eq 'wlx') { 'ListerPlugins' } else {'ContentPlugins'}
+            $iniSection = Get-IniSection $config $sectionName
+            $cnt = $iniSection -split "`n" | select -skip 1 | % { $_ -split '=' | select -first 1 } | sort | select -last 1
+            $cnt = $cnt -replace '_.+'
         }
     } else {
         $config = $config | Set-IniValue FileSystemPlugins $Name | Save-Content $iniPath
@@ -93,3 +96,4 @@ function Save-Content([string] $Path, [Parameter(ValueFromPipeline=$true)] [stri
     $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False)
     [System.IO.File]::WriteAllText($Path, $Text, $Utf8NoBomEncoding)
 }
+

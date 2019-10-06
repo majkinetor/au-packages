@@ -68,3 +68,7 @@ function Uninstall-TCPlugin($Name) {
 }
 
 #Install-TCPlugin uninstaller64
+
+$Env:COMMANDER_INI = ''
+$Env:COMMANDER_PLUGINS_PATH = 'C:\tools\TCPlugins'
+Set-TCPlugin 'FileInfo'

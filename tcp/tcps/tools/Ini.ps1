@@ -6,35 +6,6 @@
 
 <#
 .SYNOPSIS
-    Convert ini string to ordered HashTable
-#>
-function ConvertFrom-Ini{
-    param(
-        # Array of strings representing ini content
-        [Parameter(ValueFromPipeline=$true)]
-        [string[]] $InputObject,
-
-        # Trim key and section values
-        [switch] $Trim
-    )
-
-    $ini = [ordered]@{}  
-    switch -Regex ($InputObject -split "`r`n" ) {
-      "^\s*\[(.+)\]\s*$" {
-        $section = $matches[1]; if ($Trim) { $section = $section.Trim() }
-        $ini.$section = [ordered]@{}
-      }
-      "^\s*(.+?)\s*=(.*)" {
-        $key, $value = $matches[1..2]; if ($Trim) { $value = $value.Trim() }
-        if ($key.StartsWith(";")) { continue }     # skip comments
-        $ini.$section.$key = $value; 
-      }
-    }
-    $ini
-}
-
-<#
-.SYNOPSIS
     Set ini value 
 
 .DESCRIPTION
@@ -61,11 +32,9 @@ function Set-IniValue {
     $remove = $Value -eq $null
     $line = if ($remove) {''} else { "$Key=$Value" }
 
-    $sectionRe = '(?<=(?:\s*\n)+)\[\s*(?<Section>.+?)\s*\]\s*\n(?<Keys>(?:.|\n)*?)(?=(?:\s*\n)*\[)'
-    $m = "`n$ini`n[" | sls -AllMatches $sectionRe
-    $matchSection = $m.Matches | ? { $_.Groups['Section'].Value -eq $Section }
+    $matchSection = Get-IniSection $ini $Section
     if (!$matchSection) { return $( if ($remove) {} else { "$ini`n[$Section]`n$line" } ) }
-    
+
     $matchKeys = $matchSection.Groups['Keys']
     $keys = $matchKeys.Value
     if ($keys -and ($m = "`n$keys`n" | sls "\s*\n$Key\s*=.+(?=\n)")) {
@@ -80,34 +49,50 @@ function Set-IniValue {
     $ini 
 }
 
-# $ini = @"
-# [S1]
-# foo = boo
-# faa=baaa   
+function Get-IniSection {
+    param(
+        # Ini string
+        [Parameter(ValueFromPipeline=$true)]
+        [string] $InputObject,
+        
+        [Parameter(Mandatory=$true)]
+        [string] $Section
+    )
+    $sectionRe = '(?<=(?:\s*\n)+)\[\s*(?<Section>.+?)\s*\]\s*\n(?<Keys>(?:.|\n)*?)(?=(?:\s*\n)*\[)'
+    $m = "`n$InputObject`n[" | sls -AllMatches $sectionRe
+    $matchSection = $m.Matches | ? { $_.Groups['Section'].Value -eq $Section }
+    $matchSection
+}
 
-# [S2]
-# foo = boo
-# saa saa = b1 c2  d3
-# p=l
-# [Empty]
-# ;Empty with comment
-# [Empty2]
+$ini = @"
+[S1]
+foo = boo
+faa=baaa   
 
-# [Empty3]
+[S2]
+foo = boo
+saa saa = b1 c2  d3
+p=l
+[Empty]
+;Empty with comment
+[Empty2]
 
-# [S3]
+[Empty3]
 
-# ; Some comment here
-# foo= boo
+[S3]
 
-# ; More comments
-# sa = ba
+; Some comment here
+foo= boo
 
-# [Meh]
-# "@
+; More comments
+sa = ba
+
+[Meh]
+"@
 
 
-# $ini = gc "$Env:AppData\Ghisler\wincmd.ini" -Encoding UTF8 -Raw
+ $ini = gc "$Env:AppData\Ghisler\wincmd.ini" -Encoding UTF8 -Raw
+#Get-IniSection $ini ListerPlugins
 #$ini = Set-IniValue $ini FileSystemPlugins Uninstaller64 meh
 #$ini = Set-IniValue $ini FileSystemPlugins64 Uninstaller64 1
 #$ini | Out-File temp.ini
