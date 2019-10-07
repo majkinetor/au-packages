@@ -6,7 +6,7 @@
     <id>tcp-fileinfo</id>
     <title>TC Plugin: FileInfo</title>
     <version>2.23</version>
-    <authors>Vitaly Knyazev</authors>
+    <authors>François Gannier</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander lister plugin for viewing file information</summary>
     <description>Total Commander lister plugin for viewing file information.
@@ -14,10 +14,11 @@
 See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-fileinfo/screenshot.gif)</description>
-    <projectUrl>https://totalcmd.net/plugring/fileinfo.html</projectUrl>
+    <projectUrl>http://fg.tcplugins.free.fr/fileinfo.htm</projectUrl>
     <tags>totalcmd doublecmd plugin tcplugin tcplister files freeware</tags>  
     <copyright>François Gannier, 2017</copyright>
     <licenseUrl>https://totalcmd.net/plugring/fileinfo.html</licenseUrl>
+    <releaseNotes>http://fg.tcplugins.free.fr/fileinfoHS.htm</releaseNotes>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-fileinfo</packageSourceUrl>
     <dependencies>
