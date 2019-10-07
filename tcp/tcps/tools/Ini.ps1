@@ -33,7 +33,7 @@ function Set-IniValue {
     $line = if ($remove) {''} else { "$Key=$Value" }
 
     $matchSection = Get-IniSection $ini $Section
-    if (!$matchSection) { return $( if ($remove) {} else { "$ini`n[$Section]`n$line" } ) }
+    if (!$matchSection) { return $( if ($remove) { $ini } else { "$ini`n[$Section]`n$line" } ) }
 
     $matchKeys = $matchSection.Groups['Keys']
     $keys = $matchKeys.Value
@@ -43,7 +43,7 @@ function Set-IniValue {
         if (!$remove) { $line = "`n$line"}
         $ini = $ini.Substring(0, $idxStart) + $line + $ini.Substring($idxEnd)
     } else {
-        if ($remove) { return }
+        if ($remove) { return $ini }
         $ini = $ini -replace "`n\s*\[\s*$Section\s*\]\s*", "`$0`n$line`n"
     }
     $ini 

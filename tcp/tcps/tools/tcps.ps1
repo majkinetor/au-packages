@@ -24,7 +24,6 @@ function Get-TCPluginInfo {
     $global:TCP_PluginType = $type.Substring(0,1).ToUpper() + $type.Substring(1)
 }
 
-
 function Get-CallingPackageToolsDir
 {
     $cStack = @(Get-PSCallStack)
@@ -71,4 +70,4 @@ function Uninstall-TCPlugin($Name) {
 
 $Env:COMMANDER_INI = ''
 $Env:COMMANDER_PLUGINS_PATH = 'C:\tools\TCPlugins'
-Set-TCPlugin 'FileInfo'
+Set-TCPlugin 'FileInfo' -Uninstall

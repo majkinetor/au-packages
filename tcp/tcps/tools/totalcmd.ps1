@@ -64,32 +64,43 @@ function Set-TCPlugin {
         [switch] $x32,
         [switch] $Uninstall
     )
-
     Get-TCPluginInfo $Name $PluginsPath $x32
 
+    $sectionName = . { switch ( $global:TCP_PluginType ) {
+        'Wlx' { 'ListerPlugins' }
+        'Wfx' { 'FileSystemPlugins' }
+        'Wdx' { 'ContentPlugins' }
+        'Wcx' { 'PackerPlugins' }
+    }}
+
     $config = Get-TCConfig
-    
     if (!$Uninstall) {
-        if ($global:TCP_PluginType -in 'wfx','wcx') {
-            $config = $config | Set-IniValue FileSystemPlugins $Name $global:TCP_PluginFile.FullName `
-                              | Set-IniValue FileSystemPlugins64 $Name 1       
+        if ($sectionName -in 'FileSystemPlugins','PackerPlugins') {
+            $config = $config | Set-IniValue $sectionName $Name $global:TCP_PluginFile.FullName
+            if (!$x32) { $config = $config | Set-IniValue "${sectionName}64" $Name 1 }  
         } else {
-            $sectionName = if ($global:TCP_PluginType -eq 'wlx') { 'ListerPlugins' } else {'ContentPlugins'}
-            $iniSection = Get-IniSection $config $sectionName
-            $cnt = $iniSection -split "`n" | select -skip 1 | % { $_ -split '=' | select -first 1 } | sort | select -last 1
-            $cnt = $cnt -replace '_.+'
+            $iniSection = (Get-IniSection $config $sectionName) -split "`n"
+            if ($iniSection | sls $global:TCP_PluginFile.Name) { return }
+
+            $cnt = $iniSection  | select -skip 1 | % { $_ -split '=' | select -first 1 } | sort | select -last 1
+            $cnt = 1+($cnt -replace '_.+')
+            $config = $config | Set-IniValue $sectionName$co $cnt $global:TCP_PluginFile.FullName
         }
     } else {
-        $config = $config | Set-IniValue FileSystemPlugins $Name | Save-Content $iniPath
+        if ($sectionName -in 'FileSystemPlugins','PackerPlugins') {
+            $config = $config | Set-IniValue $sectionName  $Name | Save-Content $iniPath
+            if (!$x32) { $config = $config | Set-IniValue "${sectionName}64" $Name }   
+        } else {
+            $iniSection = (Get-IniSection $config $sectionName) -split "`n"
+            $line = $iniSection | sls $global:TCP_PluginFile.Name
+            $cnt = $line -split "=" | select -first 1
+            $cnt = $cnt -replace '_.+'
+            $config = $config | Set-IniValue $sectionName $cnt `
+                              | Set-IniValue $sectionName "${cnt}_detect"
+        }
     }
-
     Close-TC
     Set-TCConfig $config
-
-    # 'FileSystemPlugins'    Name=Path
-    # 'PackerPlugins'        Name=Path
-    # 'ListerPlugins'        No=Path
-    # 'ContentPlugins'       No=Path
 }
 
 function Save-Content([string] $Path, [Parameter(ValueFromPipeline=$true)] [string] $Text) {
