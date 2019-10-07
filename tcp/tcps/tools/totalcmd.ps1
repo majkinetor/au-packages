@@ -76,7 +76,7 @@ function Set-TCPlugin ( [switch] $Uninstall ) {
 
             $cnt = $iniSection  | select -skip 1 | % { $_ -split '=' | select -first 1 } | sort | select -last 1
             $cnt = if ($cnt) { 1+($cnt -replace '_.+') } else { 0 }
-            $config = $config | Set-IniValue $sectionName $cnt $global:TCP_PluginFile.FullName
+            $config = $config | Set-IniValue $sectionName $cnt.ToString() $global:TCP_PluginFile.FullName
         }
     } else {
         if ($sectionName -in 'FileSystemPlugins','PackerPlugins') {
