@@ -2,7 +2,7 @@
 . $PSScriptRoot\totalcmd.ps1
 . $PSScriptRoot\ini.ps1
 
-if (!$Env:COMMANDER_PLUGINS_PATH) { $Env:COMMANDER_PLUGINS_PATH = Join-Path (Get-ToolsLocation) TCPlugins }
+if (!$Env:COMMANDER_PLUGINS_PATH) { $Env:COMMANDER_PLUGINS_PATH = Join-Path $Env:ChocolateyToolsLocation TCPlugins }
 mkdir -ea 0 $Env:COMMANDER_PLUGINS_PATH
 
 $TCP_Types      = 'Wcx', 'Wdx', 'Wfx', 'Wlx'
@@ -26,6 +26,8 @@ function Get-TCPluginInfo {
 
 function Get-CallingPackageToolsDir
 {
+    if ($toolsPath) {return $toolsPath}
+
     $cStack = @(Get-PSCallStack)
     Split-Path $cStack[$cStack.Length-3].InvocationInfo.MyCommand.Source
 }
@@ -40,7 +42,7 @@ function Install-TCPlugin($Name) {
         Destination    = "$Env:COMMANDER_PLUGINS_PATH\$Name"
     }
     Get-ChocolateyUnzip @packageArgs
-    Remove-Item $packageArgs.FileFullPath -ea 0
+    if ($Env:ChocolateyPackageName) {  Remove-Item $packageArgs.FileFullPath -ea 0 }
 
     if (Test-DC) {
         Write-Host "Adding plugin settings for Double Commander"
@@ -66,8 +68,9 @@ function Uninstall-TCPlugin($Name) {
     Remove-Item $Env:COMMANDER_PLUGINS_PATH\$Name
 }
 
-#Install-TCPlugin uninstaller64
+# $Name = 'FileInfo'
 
-$Env:COMMANDER_INI = ''
-$Env:COMMANDER_PLUGINS_PATH = 'C:\tools\TCPlugins'
-Set-TCPlugin 'FileInfo' -Uninstall
+# $toolsPath = Resolve-Path $PSScriptRoot\..\..\tcp-$Name\tools
+# $Env:COMMANDER_INI = ''
+# $Env:COMMANDER_PLUGINS_PATH = Resolve-Path "$Env:ChocolateyToolsLocation\TCPlugins"
+# Install-TCPlugin $Name
