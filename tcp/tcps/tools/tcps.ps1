@@ -2,7 +2,7 @@
 . $PSScriptRoot\totalcmd.ps1
 . $PSScriptRoot\ini.ps1
 
-if (!$Env:COMMANDER_PLUGINS_PATH) { $Env:COMMANDER_PLUGINS_PATH = Join-Path $Env:ChocolateyToolsLocation TCPlugins }
+if (!$Env:COMMANDER_PLUGINS_PATH) { $Env:COMMANDER_PLUGINS_PATH = Join-Path (Get-ToolsLocation) TCPlugins }
 mkdir -ea 0 $Env:COMMANDER_PLUGINS_PATH
 
 $is32 = if ($Env:ChocolateyPackageName) { (Get-ProcessorBits 32) -or $env:chocolateyForceX86 -eq 'true' } else { $false }

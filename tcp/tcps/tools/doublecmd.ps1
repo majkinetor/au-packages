@@ -28,7 +28,7 @@ function Set-DCConfig( $xml ) {
 
 # Must close DC before changing its config if 'save on exit' option is on as it will overwrite changes on shutting down
 function Set-DCPlugin ([switch] $Uninstall){
-    $pluginName = $TCP_PluginFile.BaseName.ToString()
+    $pluginName = $global:TCP_PluginFile.BaseName.ToString()
     $config = Get-DCConfig
 
     $plugin = $config.doublecmd.Plugins[$global:TCP_PluginType+'Plugins'].$($global:TCP_PluginType+'Plugin') | ? { $_.Name -eq $pluginName }

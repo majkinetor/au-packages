@@ -62,7 +62,7 @@ function Set-TCConfig( $ini ) {
 }
 
 function Set-TCPlugin ( [switch] $Uninstall ) {
-    $pluginName = $TCP_PluginFile.BaseName.ToString()
+    $pluginName = $global:TCP_PluginFile.BaseName.ToString()
     $sectionName = @{Wlx='ListerPlugins'; Wfx='FileSystemPlugins'; Wdx='ContentPlugins'; Wcx='PackerPlugins'}[$global:TCP_PluginType]
     $config = Get-TCConfig
     

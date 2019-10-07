@@ -18,7 +18,7 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
     <copyright>Leftious, 2019</copyright>
     <licenseUrl>https://github.com/lefteous-tc/ShellDetails/edit/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/lefteous-tc/ShellDetails</projectSourceUrl
+    <projectSourceUrl>https://github.com/lefteous-tc/ShellDetails</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-shelldetails</packageSourceUrl>
     <dependencies>
       <dependency id="tcps" version="0.1"/>
