@@ -11,6 +11,8 @@
     <summary>Total Commander plugin that can list, control and manage services registered in the local or remote system.</summary>
     <description>Total Commander plugin that can list, control and manage services registered in the local or remote system.
 
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
 ## Features
 
 * List services registered in the system 
@@ -20,7 +22,8 @@
 * Analyze service executables with internal and external tools
 * Manage services on remote systems
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-services2/screenshot.png)
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-services/screenshot.png)
+
     </description>
     <projectUrl>https://ghisler.ch/board/viewtopic.php?t=40155</projectUrl>
     <tags>total-commander plugin tcplugin tcpfilesystem services freeware</tags>

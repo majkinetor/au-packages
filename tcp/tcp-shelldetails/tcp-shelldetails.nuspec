@@ -9,7 +9,9 @@
     <authors>Lefteous</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander that displays all Windows Explorer fields</summary>
-    <description>Total Commander plugin for shell details
+    <description>ShellDetails displays all Windows Explorer fields in Total Commander.
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
     </description>
     <projectUrl>http://lefteous.totalcmd.net/tc/archives/shelldetails/wdx_shelldetails_1.26.zip</projectUrl>
     <tags>foss doublecmd totalcmd plugin tcplugin tcpcontent shell</tags>  

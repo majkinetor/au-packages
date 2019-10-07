@@ -9,7 +9,11 @@
     <authors>Alexander Pravdin</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander plugin for environment variables editing</summary>
-    <description>Total Commander plugin for environment variables editing
+    <description>Total Commander file system plugin for environment variables editing.
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-envvars/screenshot.png)
     </description>
     <projectUrl>http://flint-inc.ru/eng/info/uninstaller64.html</projectUrl>
