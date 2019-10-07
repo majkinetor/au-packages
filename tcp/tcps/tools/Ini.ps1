@@ -44,7 +44,7 @@ function Set-IniValue {
         $ini = $ini.Substring(0, $idxStart) + $line + $ini.Substring($idxEnd)
     } else {
         if ($remove) { return $ini }
-        $ini = $ini -replace "`n\s*\[\s*$Section\s*\]\s*", "`$0`n$line`n"
+        $ini = $ini -replace "(^|`n)\s*\[\s*$Section\s*\]\s*", "`$0$line`n"
     }
     $ini 
 }
@@ -91,8 +91,10 @@ function Get-IniSection {
 # "@
 
 
-# $ini = gc "$Env:AppData\Ghisler\wincmd.ini" -Encoding UTF8 -Raw
-#Get-IniSection $ini ListerPlugins
-#$ini = Set-IniValue $ini FileSystemPlugins Uninstaller64 meh
-#$ini = Set-IniValue $ini FileSystemPlugins64 Uninstaller64 1
-#$ini | Out-File temp.ini
+# # $ini = gc "$Env:AppData\Ghisler\wincmd.ini" -Encoding UTF8 -Raw
+# #Get-IniSection $ini ListerPlugins
+# $ini = $ini | Set-IniValue S1 f1 bar
+# # $ini = $ini | Set-IniValue S1 f1
+# $ini
+# #$ini = Set-IniValue $ini FileSystemPlugins64 Uninstaller64 1
+# #$ini | Out-File temp.ini
