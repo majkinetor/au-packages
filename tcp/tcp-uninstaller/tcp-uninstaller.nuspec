@@ -5,13 +5,13 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp-uninstaller</id>
     <title>TC Plugin: Uninstaller64</title>
-    <version>1.0.1</version>
+    <version>1.0.1.20191007</version>
     <authors>Konstantin Vlasov</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander plugin for managing uninstallation of applications</summary>
     <description>This plugin allows to view the list of installed applications, view detailed information about each uninstallation entry, launch deinstallation and forcibly delete invalid entries.
 
-TC plugins work for [Total Commander](https://chocolatey.org/packages/totalcmd) or [Double Commander](https://chocolatey.org/packages/doublecmd).
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
 
 ## Features
 

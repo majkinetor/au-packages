@@ -2,7 +2,7 @@
 
 This plugin allows to view the list of installed applications, view detailed information about each uninstallation entry, launch deinstallation and forcibly delete invalid entries.
 
-TC plugins work for [Total Commander](https://chocolatey.org/packages/totalcmd) or [Double Commander](https://chocolatey.org/packages/doublecmd).
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
 
 ## Features
 

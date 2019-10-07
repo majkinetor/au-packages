@@ -16,7 +16,7 @@ Package can be verified like this:
    - Use Chocolatey utility 'checksum.exe'
 
    plugin:   B25906CC6E8D05EDBDA134470FC3D19A5C229265E354597F38161CFEF596543D
-   repacked: 98FCDE07669EE40B0AD780EC6B11FBF6557637C60CA35435648FC51E4409FCC0
+   repacked: 7B6AFB2CE20A2E485EDCAD7392273F0B9320B30E60F60CD3CE94B07CC2B55387
 
 File 'license.txt' is extracted from the archive:
    wlx_fileinfo223_repacked.zip -> README.txt
