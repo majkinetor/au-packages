@@ -1,4 +1,4 @@
-# [tcps](https://chocolatey.org/packages/tcps)
+# [![](https://img.shields.io/chocolatey/v/tcps.svg?color=red&label=tcps)](https://chocolatey.org/packages/tcps)[tcps](https://chocolatey.org/packages/tcps)
 
 TCP Scripts can be used to automate Total Commander plugin installation. Besides unpacking, scripts will setup or remove plugin for file managers that are found on the local system. Supported file managers are:
 

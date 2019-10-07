@@ -1,4 +1,4 @@
-# # [![](https://img.shields.io/chocolatey/v/tcp-registry.svg?color=red&label=tcp-registry)](https://chocolatey.org/packages/tcp-registry)
+# [![](https://img.shields.io/chocolatey/v/tcp-registry.svg?color=red&label=tcp-registry)](https://chocolatey.org/packages/tcp-registry)
 
 Total Commander plugin for managing Windows Registry.
 

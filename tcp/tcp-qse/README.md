@@ -1,4 +1,4 @@
-# # [![](https://img.shields.io/chocolatey/v/tcp-qse.svg?color=red&label=tcp-qse)](https://chocolatey.org/packages/tcp-qse)
+# [![](https://img.shields.io/chocolatey/v/tcp-qse.svg?color=red&label=tcp-qse)](https://chocolatey.org/packages/tcp-qse)
 
 Total Commander plugin that extends quick search funtionality.
 
