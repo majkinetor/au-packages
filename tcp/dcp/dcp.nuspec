@@ -20,13 +20,12 @@
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/dcp</packageSourceUrl>
     <dependencies>
       <dependency id="doublecmd"/>
-      <dependency id="tcp-uninstaller"/>
-      <dependency id="tcp-envvars"/>
-      <dependency id="tcp-services2"/>
-      <dependency id="tcp-registry"/>
       <dependency id="tcp-envvars"/>
       <dependency id="tcp-fileinfo"/>
+      <dependency id="tcp-registry"/>
+      <dependency id="tcp-services2"/>
       <dependency id="tcp-shelldetails"/>
+      <dependency id="tcp-uninstaller"/>
     </dependencies>
   </metadata>
     <files>

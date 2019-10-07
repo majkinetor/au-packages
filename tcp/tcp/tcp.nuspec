@@ -19,15 +19,15 @@
     <projectSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</packageSourceUrl>
     <dependencies>
-      <dependency id="TotalCommander" version="9.12.0.20180528" />
-      <dependency id="tcp-qse" />
-      <dependency id="tcp-uninstaller"/>
+      <dependency id="totalcommander" />
       <dependency id="tcp-envvars"/>
-      <dependency id="tcp-services2"/>
-      <dependency id="tcp-registry"/>
       <dependency id="tcp-envvars"/>
       <dependency id="tcp-fileinfo"/>
+      <dependency id="tcp-qse" />
+      <dependency id="tcp-registry"/>
+      <dependency id="tcp-services2"/>
       <dependency id="tcp-shelldetails"/>
+      <dependency id="tcp-uninstaller"/>
     </dependencies>
   </metadata>
     <files>
