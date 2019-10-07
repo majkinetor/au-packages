@@ -16,3 +16,11 @@ Both TC and DC are automatically detected if present on the system.
 
 - By default plugins are installed at `$Env:COMMANDER_PLUGINS_PATH`. If not set in the system, it defaults to `$Env:ChocolateyToolsLocation\TCPlugins`
 - Plugin installer will close any running instances of TC or DC prior to plugin installation
+- Use the following tags to browse for TC plugins on Chocolatey Community Gallery:    
+    |                                  Tag                                   | TC plugin category |
+    | ---------------------------------------------------------------------- | ------------------ |
+    | [tcplugin](https://chocolatey.org/packages?q=tag%3Atcplugin)           | Any                |
+    | [tcpfilesystem](https://chocolatey.org/packages?q=tag%3Atcpfilesystem) | File System        |
+    | [tcplister](https://chocolatey.org/packages?q=tag%3Atcplister)         | Lister             |
+    | [tcpcontent](https://chocolatey.org/packages?q=tag%3Atcpcontent)       | Content            |
+    | [tcppacker](https://chocolatey.org/packages?q=tag%3Atcppacker)         | Packer             |
