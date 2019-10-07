@@ -13,7 +13,7 @@ Use the following tags to browse for TC plugins on Chocolatey Community Gallery:
 - [File System](https://chocolatey.org/packages?q=tag%3Atcpfilesystem)
 - [Lister](https://chocolatey.org/packages?q=tag%3Atcplister)
 - [Content](https://chocolatey.org/packages?q=tag%3Atcpcontent)
-- [Packer](https://chocolatey.org/packages?q=tag%3Atcppacker   
+- [Packer](https://chocolatey.org/packages?q=tag%3Atcppacker)
 
 ## Features
 
