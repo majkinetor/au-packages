@@ -44,7 +44,7 @@ function Set-IniValue {
         $ini = $ini.Substring(0, $idxStart) + $line + $ini.Substring($idxEnd)
     } else {
         if ($remove) { return $ini }
-        $ini = $ini -replace "(^|`n)\s*\[\s*$Section\s*\]\s*", "`$0$line`n"
+        $ini = $ini -replace "(^|`n)\s*\[\s*$Section\s*\]\s*", "`${0}$line`n"
     }
     $ini 
 }
@@ -89,7 +89,6 @@ function Get-IniSection {
 
 # [Meh]
 # "@
-
 
 # # $ini = gc "$Env:AppData\Ghisler\wincmd.ini" -Encoding UTF8 -Raw
 # #Get-IniSection $ini ListerPlugins

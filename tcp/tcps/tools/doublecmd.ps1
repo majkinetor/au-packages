@@ -36,12 +36,12 @@ function Set-DCPlugin ([switch] $Uninstall){
         if ($Uninstall) { Write-Warning 'Plugin is already removd from Double Commander via other means'; return }
         
         $plugin = $config.CreateElement($global:TCP_PluginType+"Plugin")
-        $plugin.Attributes.Append( $config.CreateAttribute('Enabled') ) | Out-Null
+        #$plugin.Attributes.Append( $config.CreateAttribute('Enabled') ) | Out-Null
         "Name", "Path" | % { $plugin.AppendChild($config.CreateElement($_)) } | Out-Null
         $config.doublecmd.Plugins[$global:TCP_PluginType+'Plugins'].AppendChild( $plugin ) | Out-Null
     }
     if (!$Uninstall) {
-        $plugin.Enabled = 'True'
+        #$plugin.Enabled = 'True'
         $plugin.Name    = $pluginName
         $plugin.Path    = $global:TCP_PluginFile.FullName
     } else {

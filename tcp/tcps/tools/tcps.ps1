@@ -78,8 +78,9 @@ function Uninstall-TCPlugin($Name) {
     Remove-Item $Env:COMMANDER_PLUGINS_PATH\$Name -Recurse
 }
 
-# $Name = 'Uninstaller'
+# $Name = 'FileInfo'
 
+# import-module C:\ProgramData\chocolatey\helpers\chocolateyInstaller.psm1
 # $toolsPath = Resolve-Path $PSScriptRoot\..\..\tcp-$Name\tools
 # $Env:COMMANDER_INI = ''
 # $Env:COMMANDER_PLUGINS_PATH = Resolve-Path "$Env:ChocolateyToolsLocation\TCPlugins"
