@@ -23,6 +23,11 @@
       <dependency id="tcp-qse" />
       <dependency id="tcp-uninstaller"/>
       <dependency id="tcp-envvars"/>
+      <dependency id="tcp-services2"/>
+      <dependency id="tcp-registry"/>
+      <dependency id="tcp-envvars"/>
+      <dependency id="tcp-fileinfo"/>
+      <dependency id="tcp-shelldetails"/>
     </dependencies>
   </metadata>
     <files>

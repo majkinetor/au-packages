@@ -7,8 +7,15 @@ function Close-DC() {
 }
 
 function Get-DCConfig ([switch] $Path) { 
-    $cfg_path = "$Env:AppData\doublecmd\doublecmd.xml"
-    if (!(Test-Path $cfg_path)) { return }
+    function xml_path {
+        $res = "$Env:AppData\doublecmd\doublecmd.xml"
+        if (Test-Path $res) {return $res}
+
+        $res = "$Env:ProgramFiles\Double Commander\doublecmd.xml"
+        if (Test-Path $res) {return $res}
+    }
+    $cfg_path = xml_path
+    if (!$cfg_path) { return }
 
     if ($Path) { return $cfg_path }
     return ([xml](Get-Content $cfg_path))
@@ -20,19 +27,11 @@ function Set-DCConfig( $xml ) {
 }
 
 # Must close DC before changing its config if 'save on exit' option is on as it will overwrite changes on shutting down
-function Set-DCPlugin {
-    param(
-        [string] $Name,
-        [string] $PluginsPath = $Env:COMMANDER_PLUGINS_PATH,
-        [switch] $x32,
-        [switch] $Uninstall
-    )
-
-    Get-TCPluginInfo $Name $PluginsPath $x32
-
+function Set-DCPlugin ([switch] $Uninstall){
+    $pluginName = $TCP_PluginFile.BaseName.ToString()
     $config = Get-DCConfig
 
-    $plugin = $config.doublecmd.Plugins[$global:TCP_PluginType+'Plugins'].$($global:TCP_PluginType+'Plugin') | ? { $_.Name -eq $Name }
+    $plugin = $config.doublecmd.Plugins[$global:TCP_PluginType+'Plugins'].$($global:TCP_PluginType+'Plugin') | ? { $_.Name -eq $pluginName }
     if (!$plugin) {
         if ($Uninstall) { Write-Warning 'Plugin is already removd from Double Commander via other means'; return }
         
@@ -43,7 +42,7 @@ function Set-DCPlugin {
     }
     if (!$Uninstall) {
         $plugin.Enabled = 'True'
-        $plugin.Name    = $Name    
+        $plugin.Name    = $pluginName
         $plugin.Path    = $global:TCP_PluginFile.FullName
     } else {
         $config.doublecmd.Plugins[$global:TCP_PluginType+'Plugins'].RemoveChild( $plugin ) | Out-Null
@@ -51,6 +50,3 @@ function Set-DCPlugin {
     Close-DC
     Set-DCConfig $config
 }
-
-# $Env:COMMANDER_PLUGINS_PATH = "C:\tools\TCPlugins"
-# Set-DCPlugin 'uninstaller64' -Uninstall

@@ -46,38 +46,30 @@ function Get-TCConfig( [switch] $Path ) {
     }
 
     $cfg_path = ini_path
-    if (!(Test-Path $cfg_path)) { return }
+    if (!$cfg_path) { return }
 
     if ($Path) { return $cfg_path }
     return (Get-Content $cfg_path -Encoding UTF8 -Raw )
 }
 
 function Set-TCConfig( $ini ) {
-    $ini_path = Get-TCConfig -Path
+    function Save-Content([string] $Path, [Parameter(ValueFromPipeline=$true)] [string] $Text) {
+        $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False)
+        [System.IO.File]::WriteAllText($Path, $Text, $Utf8NoBomEncoding)
+    }
+    $ini_path = Get-TCConfig -Path    
     Save-Content $ini_path $ini
 }
 
-function Set-TCPlugin {
-    param(
-        [string] $Name,
-        [string] $PluginsPath = $Env:COMMANDER_PLUGINS_PATH,
-        [switch] $x32,
-        [switch] $Uninstall
-    )
-    Get-TCPluginInfo $Name $PluginsPath $x32
-
-    $sectionName = . { switch ( $global:TCP_PluginType ) {
-        'Wlx' { 'ListerPlugins' }
-        'Wfx' { 'FileSystemPlugins' }
-        'Wdx' { 'ContentPlugins' }
-        'Wcx' { 'PackerPlugins' }
-    }}
-
+function Set-TCPlugin ( [switch] $Uninstall ) {
+    $pluginName = $TCP_PluginFile.BaseName.ToString()
+    $sectionName = @{Wlx='ListerPlugins'; Wfx='FileSystemPlugins'; Wdx='ContentPlugins'; Wcx='PackerPlugins'}[$global:TCP_PluginType]
     $config = Get-TCConfig
+    
     if (!$Uninstall) {
         if ($sectionName -in 'FileSystemPlugins','PackerPlugins') {
-            $config = $config | Set-IniValue $sectionName $Name $global:TCP_PluginFile.FullName
-            if (!$x32) { $config = $config | Set-IniValue "${sectionName}64" $Name 1 }  
+            $config = $config | Set-IniValue $sectionName $pluginName $global:TCP_PluginFile.FullName
+            if (!$x32) { $config = $config | Set-IniValue "${sectionName}64" $pluginName 1 }  
         } else {
             $iniSection = (Get-IniSection $config $sectionName) -split "`n"
             if ($iniSection | sls $global:TCP_PluginFile.Name) { return }
@@ -88,8 +80,8 @@ function Set-TCPlugin {
         }
     } else {
         if ($sectionName -in 'FileSystemPlugins','PackerPlugins') {
-            $config = $config | Set-IniValue $sectionName  $Name | Save-Content $iniPath
-            if (!$x32) { $config = $config | Set-IniValue "${sectionName}64" $Name }   
+            $config = $config | Set-IniValue $sectionName $pluginName
+            if (!$x32) { $config = $config | Set-IniValue "${sectionName}64" $pluginName }   
         } else {
             $iniSection = (Get-IniSection $config $sectionName) -split "`n"
             $line = $iniSection | sls $global:TCP_PluginFile.Name
@@ -99,12 +91,5 @@ function Set-TCPlugin {
                               | Set-IniValue $sectionName "${cnt}_detect"
         }
     }
-    Close-TC
     Set-TCConfig $config
 }
-
-function Save-Content([string] $Path, [Parameter(ValueFromPipeline=$true)] [string] $Text) {
-    $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False)
-    [System.IO.File]::WriteAllText($Path, $Text, $Utf8NoBomEncoding)
-}
-

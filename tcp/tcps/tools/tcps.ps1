@@ -5,6 +5,8 @@
 if (!$Env:COMMANDER_PLUGINS_PATH) { $Env:COMMANDER_PLUGINS_PATH = Join-Path $Env:ChocolateyToolsLocation TCPlugins }
 mkdir -ea 0 $Env:COMMANDER_PLUGINS_PATH
 
+$is32 = if ($Env:ChocolateyPackageName) { (Get-ProcessorBits 32) -or $env:chocolateyForceX86 -eq 'true' } else { $false }
+
 $TCP_Types      = 'Wcx', 'Wdx', 'Wfx', 'Wlx'
 $TCP_PluginType = ''
 $TCP_PluginFile = ''
@@ -44,33 +46,41 @@ function Install-TCPlugin($Name) {
     Get-ChocolateyUnzip @packageArgs
     if ($Env:ChocolateyPackageName) {  Remove-Item $packageArgs.FileFullPath -ea 0 }
 
+    Get-TCPluginInfo $Name -x32:$is32
+
     if (Test-DC) {
         Write-Host "Adding plugin settings for Double Commander"
-        Set-DCPlugin $Name
+        Close-DC
+        Set-DCPlugin
     }
     if (Test-TC) {
         Write-Host "Adding plugin settings for Total Commander"
-        Set-TCPlugin $Name
+        CLose-TC
+        Set-TCPlugin
     }
 }
 
 function Uninstall-TCPlugin($Name) {
+    Get-TCPluginInfo $Name -x32:$is32
+
     if (Test-DC) {
         Write-Host "Removing plugin settings for Double Commander"
-        Set-DCPlugin $Name -Uninstall
+        Close-DC
+        Set-DCPlugin -Uninstall
     }
     if (Test-TC) {
         Write-Host "Removing plugin settings for Total Commander"
-        Set-TCPlugin $Name -Uninstall
+        Close-TC
+        Set-TCPlugin -Uninstall
     }
 
     Write-Host "Removing plugin files"
-    Remove-Item $Env:COMMANDER_PLUGINS_PATH\$Name
+    Remove-Item $Env:COMMANDER_PLUGINS_PATH\$Name -Recurse
 }
 
-$Name = 'Services2'
+# $Name = 'Uninstaller'
 
-$toolsPath = Resolve-Path $PSScriptRoot\..\..\tcp-$Name\tools
-$Env:COMMANDER_INI = ''
-$Env:COMMANDER_PLUGINS_PATH = Resolve-Path "$Env:ChocolateyToolsLocation\TCPlugins"
-Install-TCPlugin $Name
+# $toolsPath = Resolve-Path $PSScriptRoot\..\..\tcp-$Name\tools
+# $Env:COMMANDER_INI = ''
+# $Env:COMMANDER_PLUGINS_PATH = Resolve-Path "$Env:ChocolateyToolsLocation\TCPlugins"
+# Install-TCPlugin $Name 
