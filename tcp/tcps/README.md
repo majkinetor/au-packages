@@ -2,7 +2,7 @@
 
 TCP Scripts can be used to automate Total Commander plugin installation. Besides unpacking, scripts will setup or remove plugin for file managers that are found on the local system. Supported file managers are:
 
-- [Total Commander](https://chocolatey.org/packages/totalcmd) (TC) 
+- [Total Commander](https://chocolatey.org/packages/totalcommander) (TC) 
 - [Double Commander](https://chocolatey.org/packages/doublecmd) (DC)
 
 Both TC and DC are automatically detected if present on the system.
@@ -31,7 +31,7 @@ Use the following tags to browse for TC plugins on Chocolatey Community Gallery:
 
 To use the functions, depend on this package and import `tcps.ps1` like this:
 
-```ps1
+```
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 . $Env:ChocolateyInstall\lib\tcps\tools\tcps.ps1
 ```
