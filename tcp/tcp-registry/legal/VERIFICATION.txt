@@ -7,17 +7,15 @@ Package can be verified like this:
 
 1. Go to
 
-   plugin: http://flint-inc.ru/files/mlang/uninstaller64_1.0.1.rar
-   src: http://flint-inc.ru/files/mlang/uninstaller64_1.0.1.src.rar
+   http://totalcmd.net/plugring/registry.html
 
-   to download the plugin.
+   to download the plugin wfx_registry_5.2.zip.
 
 2. You can use one of the following methods to obtain the SHA256 checksum:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   plugin: 774247a236576ba4a651ff37cb9ee797b6298d59aafe64930580e7902c5a3c28
-   src: 727a33e059655a7b8ccb1af697ca99041ff96281ac1b8eed2e0ec73fcefd7a0c
+   checksum: C7F381DCEF17DD9F2ADD1C5CF9516929C0009FC680446F476C4E986F14CDFAB1
 
-File 'license.txt' is obtained from the archive:
-   uninstaller64_1.0.1.rar/Descripts/Artistic License 2.0.html
+File 'license.txt' is obtained from
+   http://totalcmd.net/plugring/registry.html

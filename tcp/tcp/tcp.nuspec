@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp</id>
     <title>Total Commander with plugins</title>
-    <version>0.1</version>
+    <version>0.2</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander with plugins</summary>
@@ -20,7 +20,6 @@
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</packageSourceUrl>
     <dependencies>
       <dependency id="totalcommander" />
-      <dependency id="tcp-envvars"/>
       <dependency id="tcp-envvars"/>
       <dependency id="tcp-fileinfo"/>
       <dependency id="tcp-qse" />
