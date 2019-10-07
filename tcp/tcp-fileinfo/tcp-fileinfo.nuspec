@@ -8,10 +8,18 @@
     <version>2.23</version>
     <authors>François Gannier</authors>
     <owners>Miodrag Milic</owners>
-    <summary>Total Commander lister plugin for viewing file information</summary>
-    <description>Total Commander lister plugin for viewing file information.
+    <summary>Total Commander lister plugin for viewing binary file information</summary>
+    <description>Version Information viewer plugin for Total Commander.
 
 See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+## Features
+
+- File properties
+- Image file header
+- DLL dependencies
+- Imports/Exports
+- Various customizations
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-fileinfo/screenshot.gif)</description>
     <projectUrl>http://fg.tcplugins.free.fr/fileinfo.htm</projectUrl>
