@@ -3,8 +3,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
-    <id>tcp-services</id>
-    <title>TC Plugin: Services</title>
+    <id>tcp-services2</id>
+    <title>TC Plugin: Services2</title>
     <version>0.7</version>
     <authors>Dalai</authors>
     <owners>Miodrag Milic</owners>
@@ -20,14 +20,14 @@
 * Analyze service executables with internal and external tools
 * Manage services on remote systems
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-services/screenshot.png)
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-services2/screenshot.png)
     </description>
     <projectUrl>https://ghisler.ch/board/viewtopic.php?t=40155</projectUrl>
     <tags>total-commander plugin tcplugin tcpfilesystem services freeware</tags>
     <copyright>Dalai 2012</copyright>
-    <licenseUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-services/legal/License.txt</licenseUrl>
+    <licenseUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-services2/legal/License.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-services</packageSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-services2</packageSourceUrl>
     <dependencies>
       <dependency id="tcps" version="0.1"/>
     </dependencies>

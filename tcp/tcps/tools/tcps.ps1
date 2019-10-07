@@ -26,7 +26,7 @@ function Get-TCPluginInfo {
 
 function Get-CallingPackageToolsDir
 {
-    if ($toolsPath) {return $toolsPath}
+    if ($toolsPath) { return $toolsPath }
 
     $cStack = @(Get-PSCallStack)
     Split-Path $cStack[$cStack.Length-3].InvocationInfo.MyCommand.Source
@@ -68,9 +68,9 @@ function Uninstall-TCPlugin($Name) {
     Remove-Item $Env:COMMANDER_PLUGINS_PATH\$Name
 }
 
-# $Name = 'FileInfo'
+$Name = 'Services2'
 
-# $toolsPath = Resolve-Path $PSScriptRoot\..\..\tcp-$Name\tools
-# $Env:COMMANDER_INI = ''
-# $Env:COMMANDER_PLUGINS_PATH = Resolve-Path "$Env:ChocolateyToolsLocation\TCPlugins"
-# Install-TCPlugin $Name
+$toolsPath = Resolve-Path $PSScriptRoot\..\..\tcp-$Name\tools
+$Env:COMMANDER_INI = ''
+$Env:COMMANDER_PLUGINS_PATH = Resolve-Path "$Env:ChocolateyToolsLocation\TCPlugins"
+Install-TCPlugin $Name
