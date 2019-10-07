@@ -64,34 +64,34 @@ function Get-IniSection {
     $matchSection
 }
 
-$ini = @"
-[S1]
-foo = boo
-faa=baaa   
+# $ini = @"
+# [S1]
+# foo = boo
+# faa=baaa   
 
-[S2]
-foo = boo
-saa saa = b1 c2  d3
-p=l
-[Empty]
-;Empty with comment
-[Empty2]
+# [S2]
+# foo = boo
+# saa saa = b1 c2  d3
+# p=l
+# [Empty]
+# ;Empty with comment
+# [Empty2]
 
-[Empty3]
+# [Empty3]
 
-[S3]
+# [S3]
 
-; Some comment here
-foo= boo
+# ; Some comment here
+# foo= boo
 
-; More comments
-sa = ba
+# ; More comments
+# sa = ba
 
-[Meh]
-"@
+# [Meh]
+# "@
 
 
- $ini = gc "$Env:AppData\Ghisler\wincmd.ini" -Encoding UTF8 -Raw
+# $ini = gc "$Env:AppData\Ghisler\wincmd.ini" -Encoding UTF8 -Raw
 #Get-IniSection $ini ListerPlugins
 #$ini = Set-IniValue $ini FileSystemPlugins Uninstaller64 meh
 #$ini = Set-IniValue $ini FileSystemPlugins64 Uninstaller64 1
