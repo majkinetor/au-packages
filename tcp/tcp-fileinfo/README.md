@@ -1,4 +1,4 @@
-# [tcp-fileinfo](https://chocolatey.org/packages/tcp-fileinfo)
+# # [![](https://img.shields.io/chocolatey/v/tcp-fileinfo.svg?color=red&label=tcp-fileinfo)](https://chocolatey.org/packages/tcp-fileinfo)
 
 Version Information viewer plugin for Total Commander.
 

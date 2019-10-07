@@ -1,4 +1,4 @@
-# [tcp-uninstaller](https://chocolatey.org/packages/tcp-uninstaller)
+# [![](https://img.shields.io/chocolatey/v/tcp-uninstaller.svg?color=red&label=tcp-uninstaller)](https://chocolatey.org/packages/tcp-uninstaller)
 
 This plugin allows to view the list of installed applications, view detailed information about each uninstallation entry, launch deinstallation and forcibly delete invalid entries.
 
