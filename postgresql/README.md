@@ -29,18 +29,22 @@ Each major version has its own package: [postgresql12](https://chocolatey.org/pa
 
 **Virtual package** [postgresql](https://chocolatey.org/packages/postgresql) also contains all versions that depend on adequate major version, but using it without problems require some special choco parameters.
 
-To propagate package parameters to dependencies use `--params-global` choco install parameter with virtual package `postgresql`. For example, to provide password the following two examples result in identical installation:
+To propagate package parameters to dependencies use `--params-global` choco install parameter with virtual package `postgresql`. Assuming latest version is 12, to provide password the following two examples result in identical installation:
 
 ```
 cinst postgresql --params '/Password:test' --params-global
 cinst postgresql12 --params '/Password:test'
 ```
 
-To uninstall dependent package use `--force-dependencies`. The following two examples are identical:
+To uninstall dependent package use `--force-dependencies`:
 
 ```
+# The following two examples are identical
 cuninst postgresql --force-dependencies
 cuninst postgresql12 postgresql
+
+# This example uninstalls only postgresql virtual package and not postgresql12 
+cuninst postgresql
 ```
 
 To force reinstallation via virtual package use `--force-dependencies`:
@@ -49,6 +53,9 @@ To force reinstallation via virtual package use `--force-dependencies`:
 # The following two examples are identical
 cinst postgresql --force --force-dependencies
 cinst postgresql12 --force --force-dependencies
+
+# This will reinstall only postgresql virtual package and not its dependency postgresql12 
+cinst postgresql -force
 
 # This one is not, as vcredist140 dependency is not reinstalled
 cinst postgresql12 --force
