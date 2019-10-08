@@ -16,7 +16,7 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
 ## Notes
 
 - Test installation (specify your password):  
-`$Env:PGPASSWORD='test'; '\conninfo' | psql -Upostgres` 
+`$Env:PGPASSWORD='test'; '\conninfo' | psql -Upostgres`  
 This should output:  
 `You are connected to database "postgres" as user "postgres" on host "localhost" at port "5432"`
 - This package will install PostgreSQL to `$Env:ProgramFiles\PostgreSQL\[MajorVersion]`.
