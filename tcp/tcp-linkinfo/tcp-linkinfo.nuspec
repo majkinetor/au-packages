@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-linkinfo</id>
+    <title>TC Plugin: LinkInfo</title>
+    <version>1.5.2</version>
+    <authors>Konstantin Vlasov</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander lister plugin to view and edit *.lnk files</summary>
+    <description>Total Commander lister plugin to view and edit *.lnk files.
+
+The plugin allows to view LNK files in Total Commander by simply pressing F3.
+
+The following information is shown:
+
+1. Link target
+2. Additional command-line arguments
+3. Working folder
+4. Description (comment)
+5. Hotkey
+6. Window size
+7. Icon (path to the icon file and icon number)
+
+By right-clicking you can open context menu containing the "Edit..." command. It
+allows to update the contents of the shortcut file you are viewing.
+
+In addition, the archive contains a stand-alone program for editing LNK files.
+When started, it shows the same dialog for editing the shortcut file which can
+also be supplied as command-line parameter.
+
+These two parts of project are independent and can work without each other.
+It is not necessary to keep LinkEditor with LinkInfo.
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+</description>
+    <projectUrl>http://flint-inc.ru/eng/info/linkinfo.html</projectUrl>
+    <tags>doublecmd totalcmd plugin tcplugin tcplister files</tags>  
+    <copyright>Konstantin Vlasov, 2011</copyright>
+    <licenseUrl>https://opensource.org/licenses/Artistic-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-listvars</packageSourceUrl>
+    <dependencies>
+      <dependency id="tcps" version="0.1"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
