@@ -25,10 +25,10 @@ Each major version has its own package: [postgresql12](https://chocolatey.org/pa
 
 **Virtual package** [postgresql](https://chocolatey.org/packages/postgresql) also contains all versions that depend on adequate major version, but using it without problems require some special choco parameters.
 
-To propagate package parameters to dependencies use `--paramsglobal` choco install parameter with virtual package `postgresql`. For example, to provide password the following two examples result in identical installation:
+To propagate package parameters to dependencies use `--params-global` choco install parameter with virtual package `postgresql`. For example, to provide password the following two examples result in identical installation:
 
 ```
-cinst postgresql --params '/Password:test' --paramsglobal
+cinst postgresql --params '/Password:test' --params-global
 cinst postgresql12 --params '/Password:test'
 ```
 
