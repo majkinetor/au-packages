@@ -57,7 +57,7 @@ cinst postgresql12 --force --force-dependencies
 # This will reinstall only postgresql virtual package and not its dependency postgresql12 
 cinst postgresql -force
 
-# This one is not, as vcredist140 dependency is not reinstalled
+# This one is different then the first one as vcredist140 dependency is not reinstalled
 cinst postgresql12 --force
 ```
 
