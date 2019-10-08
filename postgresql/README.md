@@ -15,6 +15,7 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
 
 ## Notes
 
+- Test installation (change password): `$Env:PGPASSWORD='test'; '\conninfo' | psql -Upostgres`
 - This package will install PostgreSQL to `$Env:ProgramFiles\PostgreSQL\[MajorVersion]`.
 - [Silent install options](https://www.enterprisedb.com/edb-docs/d/postgresql/installation-getting-started/installation-guide-installers/10/PostgreSQL_Installation_Guide.1.16.html).
 - If you have problems during installation see [troubleshooting page](https://wiki.postgresql.org/wiki/Troubleshooting_Installation).
