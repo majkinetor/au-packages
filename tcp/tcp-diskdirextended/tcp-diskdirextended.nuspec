@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-diskdirextended</id>
+    <title>TC Plugin: Disk Dir Extended</title>
+    <version>1.67</version>
+    <authors>Peter Trebaticky</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander packer plugin that creates a list with all selected files and directories</summary>
+    <description>
+Total Commander packer plugin that creates a list file with all selected files and directories, including subdirs - but also lists contents of archive files internally and also lists all the other archive files recognised by installed TC plugins.
+
+You can choose which archive types to list and whether to try to determine unknown archive type using installed TC plugins.
+
+It creates plain text list files which can be opened in Word, Excel or other office tools which can format TAB-delimited files, and then be formatted for printing. It can also be used as a catalog tool: You can scan your CDs with it,each to a file, and then search in these catalogs using the Search command with the option "Search in archives".
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+    </description>
+    <projectUrl>https://github.com/TrePe0/diskdir-extended</projectUrl>
+    <tags>doublecmd totalcmd plugin tcplugin tcppacker files foss</tags>  
+    <copyright>Peter Trebaticky, 2015</copyright>
+    <licenseUrl>https://github.com/TrePe0/diskdir-extended/blob/32bit/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/TrePe0/diskdir-extended</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-diskdirextended</packageSourceUrl>
+    <dependencies>
+      <dependency id="tcps" version="0.1"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
