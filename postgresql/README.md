@@ -39,7 +39,7 @@ cuninst postgresql --force-dependencies
 cuninst postgresql12 postgresql
 ```
 
-To force reinstallation via virtual package use `--force-dependencies`.
+To force reinstallation via virtual package use `--force-dependencies`:
 
 ```
 # The following two examples are identical
