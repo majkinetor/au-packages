@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-peviewer</id>
+    <title>TC Plugin: PE Viewer</title>
+    <version>2.0</version>
+    <authors>Alexander Pravdin</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander lister plugin to view the information on PE executable format modules</summary>
+    <description>Total Commander lister plugin to view the information on PE executable format modules (EXE, DLL, OCX, etc.).
+Plug-in shows functions imported and exported by the module, the detailed information about sections and headers of the module, and also the contained resources.
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+## Features
+
+- Basic info
+- Import/Export
+- Headers and sections
+- Resource viewer and extractor
+- Customizations
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-peviewer/screenshot.png)
+    </description>
+    <projectUrlhttp://www.totalcmd.net/plugring/peviewer.html</projectUrl>
+    <tags>doublecmd totalcmd plugin tcplugin tcplister files foss</tags>  
+    <copyright>Alexander Pravdin, 2012</copyright>
+    <licenseUrl>https://github.com/speller/peviewer/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp-uninstaller/icon.png</iconUrl>
+    <projectSourceUrl>https://github.com/speller/peviewer</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-peviewer</packageSourceUrl>
+    <dependencies>
+      <dependency id="tcps" version="0.1"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
