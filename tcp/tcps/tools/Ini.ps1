@@ -1,119 +1,93 @@
-<#
-    Author: M. Milic <miodrag.milic@gmail.com>
+function Get-IniSection([string]$Path, [string]$SectionName) { 
+    [ProfileAPI]::GetSection($Path, $SectionName) 
+}
+function Set-IniSection([string]$Path, [string]$SectionName, [string]$Value) { 
+    [ProfileAPI]::WritePrivateProfileSection($SectionName, $Value, $Path)
+}
+function Get-IniKey([string]$Path, [string]$SectionName, [string]$Key, [string]$Value, [string]$DefaultValue) {
+    $sb = New-Object System.Text.StringBuilder(256)
+    [ProfileApi]::GetPrivateProfileString($SectionName, $Key, $DefaultValue, $sb, $sb.Capacity, $Path) 
+}
+function Set-IniKey([string]$Path, [string]$SectionName, [string]$Key, [string]$Value) {
+    [ProfileApi]::WritePrivateProfileString($SectionName, $Key, $Value, $Path) 
+}
+
+Add-Type @' 
+using System; 
+using System.Collections.Generic; 
+using System.Text; 
+using System.Runtime.InteropServices; 
+public class ProfileAPI{ 
+    [DllImport("kernel32.dll")] 
+    public static extern bool WritePrivateProfileSection( 
+        string lpAppName, 
+        string lpString,
+        string lpFileName
+    ); 
+
+    [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)] 
+    [return: MarshalAs(UnmanagedType.Bool)] 
+    public static extern bool WritePrivateProfileString( 
+        string lpAppName, 
+        string lpKeyName, 
+        string lpString, 
+        string lpFileName); 
+     
+    [DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true)] 
+    public static extern uint GetPrivateProfileSectionNames(
+        IntPtr lpReturnedString, 
+        uint nSize, 
+        string lpFileName); 
+     
+    [DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true)] 
+    static extern uint GetPrivateProfileSection(
+        string lpAppName, 
+        IntPtr lpReturnedString, 
+        uint nSize, 
+        string lpFileName); 
+     
+    [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)] 
+    public static extern uint GetPrivateProfileString( 
+        string lpAppName, 
+        string lpKeyName, 
+        string lpDefault, 
+        StringBuilder lpReturnedString, 
+        uint nSize, 
+        string lpFileName); 
     
-    Quick and dirty Ini functions
-#>
-
-<#
-.SYNOPSIS
-    Set ini value 
-
-.DESCRIPTION
-    Set ini value in memory using regular expression replace.
-    This is not fast, but ini files are usually very small and this keeps original formating, comments etc.
-#>
-function Set-IniValue {
-    param(
-        [Parameter(Mandatory=$true)]
-        [string] $Section,
-
-        [Parameter(Mandatory=$true)]
-        [string] $Key,
-
-        # Key value; if null, key will be deleted
-        $Value = $null,
-
-        # Ini string
-        [Parameter(ValueFromPipeline=$true)]
-        [string] $InputObject
-    ) 
-    $ini = $InputObject
-    
-    $remove = $Value -eq $null
-    $line = if ($remove) {''} else { "$Key=$Value" }
-
-    $matchSection = Get-IniSection $ini $Section
-    if (!$matchSection) { return $( if ($remove) { $ini } else { "$ini`n[$Section]`n$line" } ) }
-
-    $matchKeys = $matchSection.Groups['Keys']
-    $keys = $matchKeys.Value
-    if ($keys -and ($m = "`n$keys`n" | sls "\s*\n$Key\s*=.+(?=\n)")) {
-        $idxStart = $matchKeys.Index + $m.Matches[0].Index - 2
-        $idxEnd   = $idxStart + $m.Matches[0].Length
-        if (!$remove) { $line = "`n$line"}
-        $ini = $ini.Substring(0, $idxStart) + $line + $ini.Substring($idxEnd)
-    } else {
-        if ($remove) { return $ini }
-        $ini = $ini -replace "(^|`n)\s*\[\s*$Section\s*\]\s*", "`${0}$line`n"
-    }
-    $ini 
-}
-
-function Get-IniSection {
-    param(
-        # Ini string
-        [Parameter(ValueFromPipeline=$true)]
-        [string] $InputObject,
+    public static string[] GetSectionNames(string iniFile) { 
+        uint MAX_BUFFER = 32767; 
+        IntPtr pReturnedString = Marshal.AllocCoTaskMem((int)MAX_BUFFER); 
+        uint bytesReturned = GetPrivateProfileSectionNames(pReturnedString, MAX_BUFFER, iniFile); 
+        if (bytesReturned == 0) { 
+            Marshal.FreeCoTaskMem(pReturnedString); 
+            return null; 
+        } 
+        string local = Marshal.PtrToStringAnsi(pReturnedString, (int)bytesReturned).ToString(); 
+        char[] c = new char[1]; 
+        c[0] = '\x0'; 
+        return local.Split(c, System.StringSplitOptions.RemoveEmptyEntries);
         
-        [Parameter(Mandatory=$true)]
-        [string] $Section
-    )
-    $sectionRe = '(?<=(?:\s*\n)+)\[\s*(?<Section>.+?)\s*\]\s*\n(?<Keys>(?:.|\n)*?)(?=(?:\s*\n)*\[)'
-    $m = "`n$InputObject`n[" | sls -AllMatches $sectionRe
-    $matchSection = $m.Matches | ? { $_.Groups['Section'].Value -eq $Section }
-    $matchSection
-}
-
-function Set-IniSection {
-    param(
-        # Ini string
-        [Parameter(ValueFromPipeline=$true)]
-        [string] $InputObject,
-        
-        [Parameter(Mandatory=$true)]
-        [string] $Section,
-
-        # Section keys
-        [string] $Keys
-    )
-    $m = Get-IniSection $InputObject $Section
-    $InputObject.Substring(0, $m.Index-1) + "[$Section]`n$Keys" + $InputObject.Substring($m.Index + $m.Length)
-}
-
-$ini = @"
-[S1]
-foo = boo
-faa=baaa   
-
-[S2]
-foo = boo
-saa saa = b1 c2  d3
-p=l
-[Empty]
-;Empty with comment
-[Empty2]
-
-[Empty3]
-
-[S3]
-
-; Some comment here
-foo= boo
-
-; More comments
-sa = ba
-
-[Meh]
-"@
-
-# # $ini = gc "$Env:AppData\Ghisler\wincmd.ini" -Encoding UTF8 -Raw
-# $ini = Set-IniSection  $ini S2 '[S2]
-# k1=v1
-# k2=v2'
-
-# $ini
-# $ini = $ini | Set-IniValue S1 f1 bar
-# # $ini = $ini | Set-IniValue S1 f1
-# $ini
-# #$ini = Set-IniValue $ini FileSystemPlugins64 Uninstaller64 1
-# #$ini | Out-File temp.ini
+        //Marshal.FreeCoTaskMem(pReturnedString); 
+        //use of Substring below removes terminating null for split 
+        //char[] c = local.ToCharArray(); 
+        //return MultistringToStringArray(ref c); 
+        //return c; 
+        //return local; //.Substring(0, local.Length - 1).Split('\0'); 
+    } 
+     
+    public static string[] GetSection(string iniFilePath, string sectionName) { 
+        uint MAX_BUFFER = 32767; 
+        IntPtr pReturnedString = Marshal.AllocCoTaskMem((int)MAX_BUFFER); 
+        uint bytesReturned = GetPrivateProfileSection(sectionName, pReturnedString, MAX_BUFFER, iniFilePath); 
+        if (bytesReturned == 0) { 
+            Marshal.FreeCoTaskMem(pReturnedString); 
+            return null; 
+        } 
+        string local = Marshal.PtrToStringAnsi(pReturnedString, (int)bytesReturned).ToString(); 
+        char[] c = new char[1] { '\x0' }; 
+        return local.Split(c, System.StringSplitOptions.RemoveEmptyEntries); 
+    } 
+     
+} 
+'@
