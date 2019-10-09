@@ -28,7 +28,7 @@ Use the following tags to browse for TC plugins on Chocolatey Community Gallery:
 - Plugin installer will close any running instances of TC or DC prior to plugin installation
 - Plugin installer will setup up either x32 or x64 bit plugin version, but not both
 
-### Maintainer notes
+## Using 
 
 To use the functions, depend on this package and import `tcps.ps1` like this:
 
@@ -39,6 +39,8 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 After that simply call `Install-TCPlugin` or `UnInstall-TCPlugin` with plugin name as a parameter and it will take care of everything. Note that you must define `$toolsPath` as it is used to find out embedded TC plugin path.
 
+1q  'DetectString', 'ArchiveExt'
+
 TCP scripts expect that TC plugin archive is embedded in the package with the file name that *contains* plugin name. The base file name of the plugin itself, once unpacked, must be the same as the name used within Chocolatey installation script. See code and content of existing packages for details.
 
 For example:
@@ -46,3 +48,5 @@ For example:
 - TC plugin name : `FileInfo`
 - Embedded archive file name: `wlx_fileinfo223.zip`
 - TC Plugin name (unpacked): `$Env:COMMANDER_PLUGINS_PATH\...\fileinfo.wlx[64]`
+
+Scripts `totalcmd.ps1` and `doublecmd.ps1` handle plugin operations for respective file managers and can be used standalone.

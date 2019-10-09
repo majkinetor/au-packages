@@ -51,7 +51,7 @@ function Set-DCPlugin {
     
     $config = Get-DCConfig
 
-    $all_plugins = $config.doublecmd.Plugins."${pType}Plugins"."${pType}Plugin"   
+    $all_plugins = $config.doublecmd.Plugins."${pType}Plugins"."${pType}Plugin" 
     $plugins = $all_plugins | ? { if ($pType -eq 'Wcx') { $_.Path -eq $PluginPath } else { $_.Name -eq $pName } }
     $plugins | % { $config.doublecmd.Plugins."${pType}Plugins".RemoveChild( $_ ) | Out-Null }
     if ($Uninstall)  { return Set-DCConfig $config }
@@ -77,13 +77,15 @@ function Set-DCPlugin {
     $plugins = if ($pType -eq 'Wcx') { 
         foreach ($ext in $archiveExts) { $p = $plugin.Clone(); $p.ArchiveExt = $ext; $p }
     } else { $plugin }
-    $plugins | % { $config.doublecmd.Plugins."${pType}Plugins".AppendChild( $_ ) | Out-Null }
+    $plugins | % { $config.doublecmd.Plugins["${pType}Plugins"].AppendChild( $_ ) | Out-Null }
 
     Set-DCConfig $config
 }
 
-#Close-DC
+# Close-DC
 #Set-DCPlugin "C:\tools\TCPlugins\DiskDirExtended\DiskDirExtended.wcx64" -ArchiveExt 'list ls'
 #Set-DCPlugin "C:\tools\TCPlugins\EnvVars\envvars.wfx64"
-#Set-DCPlugin "C:\tools\TCPlugins\ShellDetails\ShellDetails.wdx64"
 #Set-DCPlugin "C:\tools\TCPlugins\FileInfo\fileinfo.wlx64" -DetectString 'EXT="WAV" | EXT="AVI"'
+# Set-DCPlugin "C:\tools\TCPlugins\Linkinfo\Linkinfo.wlx64" -DetectString 'EXT="LNK"'
+#Set-DCPlugin "C:\tools\TCPlugins\ShellDetails\ShellDetails.wdx64"
+# Set-DCPlugin "C:\tools\TCPlugins\Uninstaller64\Uninstaller64.wfx"

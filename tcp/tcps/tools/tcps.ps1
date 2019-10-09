@@ -30,7 +30,7 @@ function Install-TCPlugin($Name, $DetectString, $ArchiveExt) {
     Get-ChocolateyUnzip @packageArgs
     Remove-Item $packageArgs.FileFullPath -ea 0
 
-    $pluginPath = Get-TCPluginInfo $Name
+    $pluginPath = Get-TCPluginPath $Name
     if (Test-DC) {
         Write-Host "Adding plugin settings for Double Commander"
         Close-DC
@@ -44,16 +44,17 @@ function Install-TCPlugin($Name, $DetectString, $ArchiveExt) {
 }
 
 function Uninstall-TCPlugin($Name) {
-
+    $pluginPath = Get-TCPluginPath $Name
+    
     if (Test-DC) {
         Write-Host "Removing plugin settings for Double Commander"
         Close-DC
-        Set-DCPlugin -Uninstall
+        Set-DCPlugin $pluginPath -Uninstall
     }
     if (Test-TC) {
         Write-Host "Removing plugin settings for Total Commander"
         Close-TC
-        Set-TCPlugin -Uninstall
+        Set-TCPlugin $pluginPath -Uninstall
     }
 
     Write-Host "Removing plugin files"
