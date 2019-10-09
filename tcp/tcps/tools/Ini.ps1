@@ -64,34 +64,54 @@ function Get-IniSection {
     $matchSection
 }
 
-# $ini = @"
-# [S1]
-# foo = boo
-# faa=baaa   
+function Set-IniSection {
+    param(
+        # Ini string
+        [Parameter(ValueFromPipeline=$true)]
+        [string] $InputObject,
+        
+        [Parameter(Mandatory=$true)]
+        [string] $Section,
 
-# [S2]
-# foo = boo
-# saa saa = b1 c2  d3
-# p=l
-# [Empty]
-# ;Empty with comment
-# [Empty2]
+        # Section keys
+        [string] $Keys
+    )
+    $m = Get-IniSection $InputObject $Section
+    $InputObject.Substring(0, $m.Index-1) + "[$Section]`n$Keys" + $InputObject.Substring($m.Index + $m.Length)
+}
 
-# [Empty3]
+$ini = @"
+[S1]
+foo = boo
+faa=baaa   
 
-# [S3]
+[S2]
+foo = boo
+saa saa = b1 c2  d3
+p=l
+[Empty]
+;Empty with comment
+[Empty2]
 
-# ; Some comment here
-# foo= boo
+[Empty3]
 
-# ; More comments
-# sa = ba
+[S3]
 
-# [Meh]
-# "@
+; Some comment here
+foo= boo
+
+; More comments
+sa = ba
+
+[Meh]
+"@
 
 # # $ini = gc "$Env:AppData\Ghisler\wincmd.ini" -Encoding UTF8 -Raw
-# #Get-IniSection $ini ListerPlugins
+# $ini = Set-IniSection  $ini S2 '[S2]
+# k1=v1
+# k2=v2'
+
+# $ini
 # $ini = $ini | Set-IniValue S1 f1 bar
 # # $ini = $ini | Set-IniValue S1 f1
 # $ini

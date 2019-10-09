@@ -1,3 +1,4 @@
+. $PSScriptRoot\ini.ps1
 function Test-TC { $null -ne (Get-TCConfig -Path) }
 
 function Close-TC() {
@@ -17,14 +18,6 @@ function Get-TCInstallPath {
 
     $res = (gp 'HKLM:\Software\Ghisler\Total Commander' -ea 0).InstallDir
     if ( check $res ) { return $res }
-}
-
-function Get-DCConfig ([switch] $Path) { 
-    $cfg_path = "$Env:AppData\doublecmd\doublecmd.xml"
-    if (!(Test-Path $cfg_path)) { return }
-
-    if ($Path) { return $cfg_path }
-    return ([xml](Get-Content $cfg_path))
 }
 
 function Get-TCConfig( [switch] $Path ) {
@@ -61,35 +54,95 @@ function Set-TCConfig( $ini ) {
     Save-Content $ini_path $ini
 }
 
-function Set-TCPlugin ( [switch] $Uninstall ) {
-    $pluginName = $global:TCP_PluginFile.BaseName.ToString()
-    $sectionName = @{Wlx='ListerPlugins'; Wfx='FileSystemPlugins'; Wdx='ContentPlugins'; Wcx='PackerPlugins'}[$global:TCP_PluginType]
-    $config = Get-TCConfig
+function Set-DCPlugin {
+    param(
+        # Full path to the one of the supported TC plugins to add to settings file
+        [string] $PluginPath,
+        
+        # Lister and Content plugins: A string which determines whether plugin can handle the file or not
+        # For semantics see http://java.totalcmd.net/V1.7/javadoc/plugins/wlx/WLXPluginInterface.html#listGetDetectString(int)
+        [string] $DetectString,
+        
+        # Packer plugins: Space separated list of extensions to associate with this plugin
+        [string] $ArchiveExt,
+        
+        # Set to remove plugin from settings file
+        # Packer plugins: all instances will be removed
+        [switch] $Uninstall
+    )  
+    function Capitalize($s) { $s.Substring(0,1).ToUpper() + $s.Substring(1) }
     
-    if (!$Uninstall) {
-        if ($sectionName -in 'FileSystemPlugins','PackerPlugins') {
-            $config = $config | Set-IniValue $sectionName $pluginName $global:TCP_PluginFile.FullName
-            if (!$x32) { $config = $config | Set-IniValue "${sectionName}64" $pluginName 1 }  
-        } else {
-            $iniSection = (Get-IniSection $config $sectionName) -split "`n"
-            if ($iniSection | sls $global:TCP_PluginFile.Name) { return }
+    $pFile = Get-Item $PluginPath
+    $pName = Capitalize $pFile.BaseName.ToString()
+    $pType = Capitalize $pFile.Extension.Substring(1).Replace('64','')
+    $archiveExts = $archiveExt -split ' '
+    
+    $config = Get-TCConfig
+    $sectionName = @{Wlx='ListerPlugins'; Wfx='FileSystemPlugins'; Wdx='ContentPlugins'; Wcx='PackerPlugins'}.$pType
+    
+    if ($Uninstall) {
+        switch ($pType) {
+            {$_ -in 'Wcx','Wlx' } {       
+                $iniSection = (Get-IniSection $config $sectionName) -split "`n"
+                $iniSection | sls $PluginPath -SimpleMatch  | % {
+                    $key = $_ -split "=",2 | select -first 1
+                    $config = $config | Set-IniValue $sectionName $key
+                    if ($_ -eq 'Wlx') { $config = $config | Set-IniValue $sectionName ${key}_detect }
+                }
+                if ($_ -eq 'Wlx') {
+                    [array] $iniSection = (Get-IniSection $config $sectionName) -split "`n" | select -Skip 1 | sort
+                    $s = @(); $j=0
+                    for ($i=0; $i -lt $iniSection.Count; $i++) {
+                        $key, $val = $iniSection[$i] -split "=", 2
+                        $key = $key.Trim()
+                        if ($key -like '*_detect') {                            
+                            $lastkey = $j++
+                            $s += "$($lastkey)_detect=$val"
+                        }  elseif ($key -match '\d+') {
+                            $s += "$lastkey=$val"
+                        }
+                    }
+                    $s = $s -join "`n"
+                    $config = Set-IniSection $config $sectionName $s
+                }
+            }
+            default {
+                $config = $config | Set-IniValue $sectionName $pName
+                $config = $config | Set-IniValue "${sectionName}64" $pName
+            }
+        }
+        return Set-TCConfig $config        
+    }
 
+    switch ($pType) {
+        'Wcx' {
+            foreach ($ext in $archiveExts) { $config = $config | Set-IniValue $sectionName $ext $PluginPath }
+        } 
+        'Wlx' {
+            $iniSection = (Get-IniSection $config $sectionName) -split "`n" | select -Skip 1
+            $iniSection | sls $PluginPath -SimpleMatch  | % {
+                $key = $_ -split "=",2 | select -first 1
+                $config = $config | Set-IniValue $sectionName $key
+                $config = $config | Set-IniValue $sectionName ${key}_detect
+            }
+
+            $iniSection = (Get-IniSection $config $sectionName) -split "`n" | select -Skip 1                     
             $cnt = $iniSection  | select -skip 1 | % { $_ -split '=' | select -first 1 } | sort | select -last 1
             $cnt = if ($cnt) { 1+($cnt -replace '_.+') } else { 0 }
-            $config = $config | Set-IniValue $sectionName $cnt.ToString() $global:TCP_PluginFile.FullName
+            $cnt = $cnt.ToString()
+            $config = $config | Set-IniValue $sectionName $cnt $PluginPath
+            if ($DetectString) { $config = $config | Set-IniValue $sectionName "${cnt}_detect" $DetectString }
         }
-    } else {
-        if ($sectionName -in 'FileSystemPlugins','PackerPlugins') {
-            $config = $config | Set-IniValue $sectionName $pluginName
-            if (!$x32) { $config = $config | Set-IniValue "${sectionName}64" $pluginName }   
-        } else {
-            $iniSection = (Get-IniSection $config $sectionName) -split "`n"
-            $line = $iniSection | sls $global:TCP_PluginFile.Name
-            $cnt = $line -split "=" | select -first 1
-            $cnt = $cnt -replace '_.+'
-            $config = $config | Set-IniValue $sectionName $cnt `
-                              | Set-IniValue $sectionName "${cnt}_detect"
-        }
+        default {
+            $config = $config | Set-IniValue $sectionName $pName $PluginPath 
+        }        
     }
+
     Set-TCConfig $config
 }
+
+Close-TC
+#Set-DCPlugin "C:\tools\TCPlugins\DiskDirExtended\DiskDirExtended.wcx64" -ArchiveExt 'list ls'
+#Set-DCPlugin "C:\tools\TCPlugins\EnvVars\envvars.wfx64"
+#Set-DCPlugin "C:\tools\TCPlugins\ShellDetails\ShellDetails.wdx64"
+#Set-DCPlugin "C:\tools\TCPlugins\FileInfo\fileinfo.wlx64" -DetectString 'EXT="EXE" | EXT="DLL"'

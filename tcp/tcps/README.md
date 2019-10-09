@@ -26,6 +26,7 @@ Use the following tags to browse for TC plugins on Chocolatey Community Gallery:
 
 - By default plugins are installed at `$Env:COMMANDER_PLUGINS_PATH`. If not set in the system, it defaults to `$Env:ChocolateyToolsLocation\TCPlugins`
 - Plugin installer will close any running instances of TC or DC prior to plugin installation
+- Plugin installer will setup up either x32 or x64 bit plugin version, but not both
 
 ### Maintainer notes
 
