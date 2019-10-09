@@ -34,7 +34,7 @@ function Get-CallingPackageToolsDir
     Split-Path $cStack[$cStack.Length-3].InvocationInfo.MyCommand.Source
 }
 
-function Install-TCPlugin($Name) {
+function Install-TCPlugin($Name, $DetectString, $ArchiveExt) {
     $toolsPath = Get-CallingPackageToolsDir
 
     $packageArgs = @{
@@ -78,10 +78,10 @@ function Uninstall-TCPlugin($Name) {
     Remove-Item $Env:COMMANDER_PLUGINS_PATH\$Name -Recurse
 }
 
-# $Name = 'FileInfo'
+$Name = 'DiskDirExtended'
 
-# import-module C:\ProgramData\chocolatey\helpers\chocolateyInstaller.psm1
-# $toolsPath = Resolve-Path $PSScriptRoot\..\..\tcp-$Name\tools
-# $Env:COMMANDER_INI = ''
-# $Env:COMMANDER_PLUGINS_PATH = Resolve-Path "$Env:ChocolateyToolsLocation\TCPlugins"
-# Install-TCPlugin $Name 
+import-module C:\ProgramData\chocolatey\helpers\chocolateyInstaller.psm1
+$toolsPath = Resolve-Path $PSScriptRoot\..\..\tcp-$Name\tools
+$Env:COMMANDER_INI = ''
+$Env:COMMANDER_PLUGINS_PATH = Resolve-Path "$Env:ChocolateyToolsLocation\TCPlugins"
+Install-TCPlugin $Name -ArchiveExt 'list'
