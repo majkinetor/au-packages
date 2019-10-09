@@ -8,16 +8,21 @@ function Get-IniKey([string]$Path, [string]$SectionName, [string]$Key, [string]$
     $sb = New-Object System.Text.StringBuilder(256)
     [ProfileApi]::GetPrivateProfileString($SectionName, $Key, $DefaultValue, $sb, $sb.Capacity, $Path) 
 }
-function Set-IniKey([string]$Path, [string]$SectionName, [string]$Key, [string]$Value) {
+function Set-IniKey([string]$Path, [string]$SectionName, $Key, $Value) {
+    if ($null -eq $Value) { $Value = [NullString]::Value }
+    if ($null -eq $Key)   { $Key   = [NullString]::Value }
     [ProfileApi]::WritePrivateProfileString($SectionName, $Key, $Value, $Path) 
 }
+if ("ProfileApi" -as [type]) { return }
 
-Add-Type @' 
+Add-Type @'
 using System; 
 using System.Collections.Generic; 
 using System.Text; 
 using System.Runtime.InteropServices; 
-public class ProfileAPI{ 
+
+public class ProfileAPI { 
+
     [DllImport("kernel32.dll")] 
     public static extern bool WritePrivateProfileSection( 
         string lpAppName, 
@@ -31,7 +36,7 @@ public class ProfileAPI{
         string lpAppName, 
         string lpKeyName, 
         string lpString, 
-        string lpFileName); 
+        string lpFileName);
      
     [DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true)] 
     public static extern uint GetPrivateProfileSectionNames(

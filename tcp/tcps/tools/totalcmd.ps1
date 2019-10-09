@@ -46,7 +46,7 @@ function Get-TCConfig( [switch] $Path ) {
     return (Get-Content $cfg_path -Encoding UTF8 -Raw )
 }
 
-function Set-DCPlugin {
+function Set-TCPlugin {
     param(
         # Full path to the one of the supported TC plugins to add to settings file
         [string] $PluginPath,
@@ -74,14 +74,15 @@ function Set-DCPlugin {
     
     if ($Uninstall) {
         switch ($pType) {
-            {$_ -in 'Wcx','Wlx' } {       
+            {$_ -in 'Wcx','Wlx','Wdx' } {       
                 $iniSection = Get-IniSection $configPath $sectionName
                 $iniSection | sls $PluginPath -SimpleMatch  | % {
                     $key = $_ -split "=",2 | select -first 1
-                    Set-IniKey $configPath $sectionName $key
-                    if ($_ -eq 'Wlx') { Set-IniKey $configPath $sectionName ${key}_detect }
+                    Set-IniKey $configPath $sectionName $key | Out-Null
+                    if ($_ -in 'Wlx','Wdx') { Set-IniKey $configPath $sectionName ${key}_detect }
                 }
-                if ($_ -eq 'Wlx') {
+                if ($_ -in 'Wlx','Wdx') {
+                    # Reorder other keys once a plugin is removed
                     $iniSection = Get-IniSection $configPath $sectionName | sort
                     $s = @(); $j=0
                     for ($i=0; $i -lt $iniSection.Count; $i++) {
@@ -95,43 +96,44 @@ function Set-DCPlugin {
                         }
                     }
                     $s = $s -join "`n"
-                    $config = Set-IniSection $configPath $sectionName $s
+                    Set-IniSection $configPath $sectionName $s | Out-Null
                 }
             }
-            default {
-                Set-IniKey $configPath $sectionName     $pName
-                Set-IniKey $configPath ${sectionName}64 $pName
+            'Wfx' {
+                Set-IniKey $configPath $sectionName     $pName | Out-Null
+                Set-IniKey $configPath ${sectionName}64 $pName | Out-Null
             }
         }
+        return
     }
 
     switch ($pType) {
         'Wcx' {
-            foreach ($ext in $archiveExts) { Set-IniKey $configPath $sectionName $ext $PluginPath }
+            foreach ($ext in $archiveExts) { Set-IniKey $configPath $sectionName $ext $PluginPath | Out-Null }
         }
-        'Wlx' {
+        {$_ -in 'Wdx','Wlx' } {
             $iniSection = Get-IniSection $configPath $sectionName
             $iniSection | sls $PluginPath -SimpleMatch  | % {
                 $key = $_ -split "=",2 | select -first 1
-                Set-IniKey $configPath $sectionName $key
-                Set-IniKey $configPath $sectionName ${key}_detect
+                Set-IniKey $configPath $sectionName $key | Out-Null
+                Set-IniKey $configPath $sectionName ${key}_detect | Out-Null
             }
 
             $iniSection = Get-IniSection $configPath $sectionName                 
             $cnt = $iniSection | % { $_ -split '=' | select -first 1 } | sort | select -last 1
             $cnt = if ($cnt) { 1+($cnt -replace '_.+') } else { 0 }
             $cnt = $cnt.ToString()
-            Set-IniKey $configPath $sectionName $cnt $PluginPath
+            Set-IniKey $configPath $sectionName $cnt $PluginPath | Out-Null
             if ($DetectString) { Set-IniKey $configPath $sectionName ${cnt}_detect $DetectString }
         }
-        default {
-            Set-IniKey $configPath $sectionName $pName $PluginPath 
+        'Wfx' {
+            Set-IniKey $configPath $sectionName $pName $PluginPath | Out-Null
         }        
     }
 }
 
-#Set-DCPlugin "C:\tools\TCPlugins\DiskDirExtended\DiskDirExtended.wcx64" -ArchiveExt 'list ls'
-#Set-DCPlugin "C:\tools\TCPlugins\EnvVars\envvars.wfx64"
-#Set-DCPlugin "C:\tools\TCPlugins\ShellDetails\ShellDetails.wdx64"
-# Close-TC
-# Set-DCPlugin "C:\tools\TCPlugins\LinkInfo\LinkInfo.wlx64" -DetectString 'EXT="LNK"' -Uninstall
+#Close-TC
+#Set-TCPlugin "C:\tools\TCPlugins\DiskDirExtended\DiskDirExtended.wcx64" -ArchiveExt 'list ls'
+#Set-TCPlugin "C:\tools\TCPlugins\EnvVars\envvars.wfx64"
+#Set-TCPlugin "C:\tools\TCPlugins\ShellDetails\ShellDetails.wdx64"
+#Set-TCPlugin "C:\tools\TCPlugins\LinkInfo\LinkInfo.wlx64" -DetectString 'EXT="LNK"'
