@@ -5,13 +5,13 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp</id>
     <title>Total Commander with plugins</title>
-    <version>0.2</version>
+    <version>0.3</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander with plugins</summary>
     <description>Metapackage containing all [Totall Commander plugins](https://chocolatey.org/packages?q=tag%3Atcplugin).</description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</projectUrl>
-    <tags> total-commander tcplugin</tags>
+    <tags>totalcmd tcplugin files</tags>
     <copyright>Miodrg Milic 2018</copyright>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -20,13 +20,22 @@
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</packageSourceUrl>
     <dependencies>
       <dependency id="totalcommander" />
+
+      <dependency id="tcp-cloud"/>
+      <dependency id="tcp-csvview"/>
+      <dependency id="tcp-diskdirextended"/>
       <dependency id="tcp-envvars"/>
       <dependency id="tcp-fileinfo"/>
-      <dependency id="tcp-qse" />
-      <dependency id="tcp-registry"/>
+      <dependency id="tcp-iclview"/>
+      <dependency id="tcp-linkinfo"/>
+      <dependency id="tcp-peviewer"/>      
+      <dependency id="tcp-peviewer"/>      
+      <dependency id="tcp-mediainfo"/>
       <dependency id="tcp-services2"/>
       <dependency id="tcp-shelldetails"/>
+      <dependency id="tcp-startups"/>
       <dependency id="tcp-uninstaller"/>
+      <dependency id="tcp-virtualpanel"/>
     </dependencies>
   </metadata>
     <files>

@@ -20,12 +20,22 @@
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/dcp</packageSourceUrl>
     <dependencies>
       <dependency id="doublecmd"/>
+
+      <dependency id="tcp-cloud"/>
+      <dependency id="tcp-csvview"/>
+      <dependency id="tcp-diskdirextended"/>
       <dependency id="tcp-envvars"/>
       <dependency id="tcp-fileinfo"/>
+      <dependency id="tcp-iclview"/>
+      <dependency id="tcp-linkinfo"/>
+      <dependency id="tcp-mediainfo"/>      
+      <dependency id="tcp-peviewer"/>      
       <dependency id="tcp-registry"/>
       <dependency id="tcp-services2"/>
       <dependency id="tcp-shelldetails"/>
+      <dependency id="tcp-startups"/>
       <dependency id="tcp-uninstaller"/>
+      <dependency id="tcp-virtualpanel"/>
     </dependencies>
   </metadata>
     <files>
