@@ -30,7 +30,7 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-fileinfo</packageSourceUrl>
     <dependencies>
-      <dependency id="tcps" version="0.1"/>
+       <dependency id="tcps" version="0.2"/>
     </dependencies>
   </metadata>
   <files>

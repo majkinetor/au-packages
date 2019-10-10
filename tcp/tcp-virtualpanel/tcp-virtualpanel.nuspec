@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-virtualpanel</id>
+    <title>TC Plugin: VirtualPanel</title>
+    <version>2.0.7.1372</version>
+    <authors>MVV</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander file system plugin that provides temporary panel</summary>
+    <description>Total Commander file system plugin that provides temporary panel.
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+VirtualPanel is a sort of virtual folder that allows keeping links to frequently used files and accessing them as if they were real files and not just links. It doesn't store any files, it only keeps links to them in special list files. You can use VP as a temporary place for files that should be copied to some other place. Also you can use it for organizing media libraries and for other needs. You can even set up some folder for collecting files from multiple folders on your PC.
+
+## Features
+
+- Keeping links to files and folders, and virtual folders
+- Saving VP state on exit TC or Windows, by timer or after each modification
+- Import/export of whole contents or separate directories
+- Import/export of usual filelists (like m3u)
+- Correct copy/move operations processing
+- Deleting real files when Shift key is down
+- Logging file operations
+- Internal commands for extra functions (execute ? command for help)
+- Ability to execute command batches and create script files
+- Autoexecuted scripts on load state or enter directory
+- Support for executing scripts remotely
+- Virtual explorer with drag-and-drop support
+- Multi-threading support (background operations in TC 7.55 and later)
+- Support for internal associations in TC 7.51 and later
+- Support for standard cd command in TC
+- Full Unicode support
+</description>
+    <projectUrl>https://www.ghisler.com/plugins.htm</projectUrl>
+    <tags>totalcmd doublecmd plugin tcplugin tcpfilesystem files freeware</tags>  
+    <copyright>MVV 2019</copyright>
+    <licenseUrl>https://www.ghisler.com/plugins.htm</licenseUrl>
+    <mailingListUrl>https://www.ghisler.ch/board/viewtopic.php?t=24293</mailingListUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-virtualpanel</packageSourceUrl>
+    <dependencies>
+       <dependency id="tcps" version="0.2"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

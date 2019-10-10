@@ -8,7 +8,7 @@
     <version>3.0</version>
     <authors>Christian Ghisler</authors>
     <owners>Miodrag Milic</owners>
-    <summary>otal Commander file system plugin to access WebDAV protocol over HTTP and HTTPS</summary>
+    <summary>Total Commander file system plugin to access WebDAV protocol over HTTP and HTTPS</summary>
     <description>Total Commander file system plugin to access WebDAV protocol over HTTP and HTTPS, also known as Web Folders.
 
 See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
