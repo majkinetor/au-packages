@@ -24,7 +24,7 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-peviewer/screenshot.png)
     </description>
-    <projectUrlhttp://www.totalcmd.net/plugring/peviewer.html</projectUrl>
+    <projectUrl>http://www.totalcmd.net/plugring/peviewer.html</projectUrl>
     <tags>doublecmd totalcmd plugin tcplugin tcplister files foss</tags>  
     <copyright>Alexander Pravdin, 2012</copyright>
     <licenseUrl>https://github.com/speller/peviewer/blob/master/LICENSE</licenseUrl>
