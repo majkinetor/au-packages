@@ -14,8 +14,29 @@ function Get-DCConfig ([switch] $Path) {
         $res = "$Env:ProgramFiles\Double Commander\doublecmd.xml"
         if (Test-Path $res) {return $res}
     }
+
     $cfg_path = xml_path
-    if (!$cfg_path) { return }
+    if (!$cfg_path) {
+        $exePath = "$Env:ProgramFiles\Double Commander\doublecmd.exe"
+        if (!(Test-Path $exePath)) {
+            $exePath = "$Env:COMMANDER_PATH\doublecmd.exe"
+            if (!(Test-Path $exePath)) { return }
+        }
+
+        Write-Host "Double Commander config file is not found while its executable exists"
+        Write-Host "It will now be run and closed for the first time to generate config file"
+        Start-Process $exePath -WindowStyle Hidden
+        Start-Sleep 1
+        for ($i=0; $i -lt 5; $i++) {
+            $doublecmd = Get-Process doublecmd -ea 0
+            if (!$doublecmd) { Start-Sleep 1; continue }
+            $doublecmd.CloseMainWindow() | Out-Null
+            Start-Sleep 1
+            break
+        }
+        $cfg_path = xml_path
+        if (!$cfg_path) { return }
+    }
 
     if ($Path) { return $cfg_path }
     return ([xml](Get-Content $cfg_path))
