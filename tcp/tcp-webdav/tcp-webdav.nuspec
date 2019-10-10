@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-webdav</id>
+    <title>TC Plugin: WebDAV</title>
+    <version>3.0</version>
+    <authors>Christian Ghisler</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>otal Commander file system plugin to access WebDAV protocol over HTTP and HTTPS</summary>
+    <description>Total Commander file system plugin to access WebDAV protocol over HTTP and HTTPS, also known as Web Folders.
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+</description>
+    <projectUrl>https://www.ghisler.com/plugins.htm</projectUrl>
+    <tags>totalcmd doublecmd plugin tcplugin tcpfilesystem files foss</tags>  
+    <copyright>Christian Ghisler 2004-2014</copyright>
+    <licenseUrl>https://www.ghisler.com/plugins.htm</licenseUrl>
+    <projectSourceUrl>http://ghisler.fileburst.com/fsplugins/webdav_src.zip</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-webdav</packageSourceUrl>
+    <dependencies>
+       <dependency id="tcps" version="0.2"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
