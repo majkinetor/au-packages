@@ -9,7 +9,10 @@
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander with plugins</summary>
-    <description>Metapackage containing all [Totall Commander plugins](https://chocolatey.org/packages?q=tag%3Atcplugin).</description>
+    <description>Metapackage containing all [Totall Commander plugins](https://chocolatey.org/packages?q=tag%3Atcplugin).
+    
+See the package section *Dependencies* to find out which plugins are included.
+    </description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</projectUrl>
     <tags>totalcmd tcplugin files</tags>
     <copyright>Miodrg Milic 2018</copyright>
