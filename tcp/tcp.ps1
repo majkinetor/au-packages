@@ -5,7 +5,7 @@ ls $PSScriptRoot -Directory | % {
     pushd $_
         rm *.nupkg
         cpack | Out-Null
-        if ($_ -eq 'tcps') {
+        if ($_.Name -eq 'tcps') {
             $n = gi tcps*.nupkg
             $_n = $n.Name -replace '^', '_'
             mv $n $_
