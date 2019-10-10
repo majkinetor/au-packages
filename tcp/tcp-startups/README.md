@@ -23,4 +23,4 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
 - Check if a startup is currently running, with matching process names and matching command lines
 - Jump to the startup's executable with Enter and/or Shift+Enter
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-startup/screenshot.png)
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-startups/screenshot.png)
