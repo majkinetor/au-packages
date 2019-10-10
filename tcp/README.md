@@ -14,9 +14,11 @@ All plugins are manual with embedded plugin archive.
 
 To update the package, minimally do the following:
 
-1. Replace plugin archive in tools diretory with newer version (make sure it contains plugin name in the file name)
+1. Replace plugin archive in tools directory with newer version (make sure it contains plugin name in the file name)
 2. Set new version in .nuspec file
-3. Push package to Chocolatey Gallery
+3. Push package to Chocolatey Gallery. 
+
+To publish multiple packages, generate *.nupkg files using `tcp.ps1` and then use `Push-Package -All` from AU module.
 
 ## [TCPS](tcps)
 
