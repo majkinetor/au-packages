@@ -10,7 +10,7 @@ Majority of plugins are obtained from the following sources:
 
 All plugins are manual.
 
-## TCPS
+## [TCPS](tcps)
 
 All plugin packages depend on `tcps` dependency with version `>=` to specific one. 
 
