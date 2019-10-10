@@ -36,7 +36,7 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
     <projectSourceUrl>http://flint-inc.ru/files/mlang/uninstaller64_1.0.1.src.rar</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-uninstaller</packageSourceUrl>
     <dependencies>
-       <dependency id="tcps" version="0.2"/>
+        <dependency id="tcps" version="0.3"/>
     </dependencies>
   </metadata>
   <files>

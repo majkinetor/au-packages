@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcps</id>
     <title>Total Commander Plugins Scripts</title>
-    <version>0.2</version>
+    <version>0.3</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <summary>TCP Scripts can be used to automate Total Commander plugin installation</summary>
