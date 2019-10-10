@@ -3,8 +3,8 @@
 $packageArgs = @{
   packageName            = 'etcher'
   fileType               = 'exe'
-  url                    = 'https://github.com/balena-io/etcher/releases/download/v1.5.57/balenaEtcher-Setup-1.5.57.exe'
-  checksum               = 'd0b6d1b90dd1769d4d45a1fd110dc07031a5a8981907f9911d72b09da4e1e981'
+  url                    = 'https://github.com/balena-io/etcher/releases/download/v1.5.58/balenaEtcher-Setup-1.5.58.exe'
+  checksum               = '2640d1de31879a2391d9fe3c919fe1ad600b20d339e35e38ca9c5c5dc3f8ad90'
   checksumType           = 'sha256'
   silentArgs             = '/S'
   validExitCodes         = @(0)
