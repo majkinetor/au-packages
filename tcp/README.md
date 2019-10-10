@@ -1,4 +1,4 @@
-This folder contains Total Commander plugin packages.
+This folder contains Total Commander plugin **manual** packages.
 
 Majority of plugins are obtained from the following sources:
 
@@ -7,8 +7,15 @@ Majority of plugins are obtained from the following sources:
 - http://www.totalcmd.net
 - http://wincmd.ru/
 
+## Updating 
 
-All plugins are manual.
+All plugins are manual with embedded plugin archive. 
+
+To update the package, minimally do the following:
+
+1. Replace plugin archive in tools diretory with newer version (make sure it contains plugin name in the file name)
+2. Set new version in .nuspec file
+3. Push package to Chocolatey Gallery
 
 ## [TCPS](tcps)
 
