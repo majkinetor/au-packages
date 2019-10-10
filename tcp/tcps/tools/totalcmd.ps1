@@ -57,6 +57,9 @@ function Set-TCPlugin {
         
         # Packer plugins: Space separated list of extensions to associate with this plugin
         [string] $ArchiveExt,
+
+        # Force specific plugin type
+        [string] $ForceType,
         
         # Set to remove plugin from settings file
         # Packer plugins: all instances will be removed
@@ -66,7 +69,7 @@ function Set-TCPlugin {
     
     $pFile = Get-Item $PluginPath
     $pName = Capitalize $pFile.BaseName.ToString()
-    $pType = Capitalize $pFile.Extension.Substring(1).Replace('64','')
+    $pType = if ($ForceType) { $ForceType } else { Capitalize $pFile.Extension.Substring(1).Replace('64','') }
     $archiveExts = $archiveExt -split ' '
     
     $configPath = Get-TCConfig -Path
@@ -79,7 +82,7 @@ function Set-TCPlugin {
                 $iniSection | sls $PluginPath -SimpleMatch  | % {
                     $key = $_ -split "=",2 | select -first 1
                     Set-IniKey $configPath $sectionName $key | Out-Null
-                    if ($_ -in 'Wlx','Wdx') { Set-IniKey $configPath $sectionName ${key}_detect }
+                    if ($_ -in 'Wlx','Wdx') { Set-IniKey $configPath $sectionName ${key}_detect | Out-Null }
                 }
                 if ($_ -in 'Wlx','Wdx') {
                     # Reorder other keys once a plugin is removed
@@ -124,7 +127,7 @@ function Set-TCPlugin {
             $cnt = if ($cnt) { 1+($cnt -replace '_.+') } else { 0 }
             $cnt = $cnt.ToString()
             Set-IniKey $configPath $sectionName $cnt $PluginPath | Out-Null
-            if ($DetectString) { Set-IniKey $configPath $sectionName ${cnt}_detect $DetectString }
+            if ($DetectString) { Set-IniKey $configPath $sectionName ${cnt}_detect $DetectString | Out-Null }
         }
         'Wfx' {
             Set-IniKey $configPath $sectionName $pName $PluginPath | Out-Null

@@ -37,6 +37,9 @@ function Set-DCPlugin {
         
         # Packer plugins: Space separated list of extensions to associate with this plugin
         [string] $ArchiveExt,
+
+        # Force specific plugin type
+        [string] $ForceType,
         
         # Set to remove plugin from settings file
         # Packer plugins: all instances will be removed
@@ -46,7 +49,7 @@ function Set-DCPlugin {
     
     $pFile = Get-Item $PluginPath
     $pName = Capitalize $pFile.BaseName.ToString()
-    $pType = Capitalize $pFile.Extension.Substring(1).Replace('64','')
+    $pType = if ($ForceType) { $ForceType } else { Capitalize $pFile.Extension.Substring(1).Replace('64','') }
     $archiveExts = $archiveExt -split ' '
     
     $config = Get-DCConfig

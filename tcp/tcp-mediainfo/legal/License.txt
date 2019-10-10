@@ -1,0 +1,6 @@
+Copyrights
+Copyright 2009-2019, Dmitry Yudin 
+
+This plugin is freeware. 
+
+Allowed inclusion of this plugin in any Total Commander packs, personal or publc, in case of information in this section will remain intact. 

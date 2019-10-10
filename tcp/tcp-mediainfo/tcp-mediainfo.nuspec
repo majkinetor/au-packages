@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-mediainfo</id>
+    <title>TC Plugin: TCMediaInfo</title>
+    <version>1.0.3</version>
+    <authors>Loopback</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander content and lister plugin to retrieve an info from the video and audio files.</summary>
+    <description>Total Commander content and lister plugin to retrieve an info from the video and audio files.
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+Plugin uses [MediaInfo](http://mediainfo.sourceforge.net) library and support all formats that library support.
+
+Since MediaInfo library can retreive a LOT information from file, plugin is fully customizable and allow to wrap any MediaInfo library's field. By default some most useful fields already configured and you can instantly start use plugun. 
+
+## Features
+
+- [Supported audio and video format](http://mediainfo.sourceforge.net/Support/Formats)
+- Content plugin is support data caching in the SQlite database, what is dramatically increase the speed of retrieving in the future
+- Provides scripting interpreter to fully customise the output
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-mediainfo/screenshot.png)
+</description>
+    <projectUrl>https://www.ghisler.com/plugins.htm</projectUrl>
+    <tags>totalcmd doublecmd plugin tcplugin tcpcontent tcplister multimedia audio vide mp3 freeware</tags>  
+    <copyright>Copyright 2009-2019, Dmitry Yudin</copyright>
+    <licenseUrl>http://totalcmd.net/plugring/tcmediainfo.html</licenseUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-mediainfo</packageSourceUrl>
+    <dependencies>
+        <dependency id="tcps" version="0.3"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

@@ -31,37 +31,39 @@ function Expand-TCPlugin([string] $Name, [string]$SourcePath = $toolsPath, [stri
     Remove-Item $packageArgs.FileFullPath -ea 0
 }
 
-function Install-TCPlugin($Name, $DetectString, $ArchiveExt) { 
+function Install-TCPlugin([string]$Name, [string]$DetectString, [string]$ArchiveExt, [switch]$NoExpand, [string] $ForceType ) { 
     Close-DC; Close-TC
 
-    Expand-TCPlugin $Name
+    if (!$NoExpand) { Expand-TCPlugin $Name }
 
     $pluginPath = Get-TCPluginPath $Name
     if (Test-DC) {
         Write-Host "Adding plugin settings for Double Commander"
-        Set-DCPlugin $pluginPath -DetectString $DetectString -ArchiveExt $ArchiveExt
+        Set-DCPlugin $pluginPath -DetectString $DetectString -ArchiveExt $ArchiveExt -ForceType $ForceType
     }
     if (Test-TC) {
         Write-Host "Adding plugin settings for Total Commander"
-        Set-TCPlugin $pluginPath -DetectString $DetectString -ArchiveExt $ArchiveExt
+        Set-TCPlugin $pluginPath -DetectString $DetectString -ArchiveExt $ArchiveExt -ForceType $ForceType
     }
 }
 
-function Uninstall-TCPlugin($Name, $DestinationPath=$Env:COMMANDER_PLUGINS_PATH) {
+function Uninstall-TCPlugin([string]$Name, [string]$DestinationPath=$Env:COMMANDER_PLUGINS_PATH, [string]$ForceType, [switch]$NoRemove) {
     Close-DC; Close-TC
 
-    $pluginPath = Get-TCPluginPath $Name        
+    $pluginPath = Get-TCPluginPath $Name
     if (Test-DC) {
         Write-Host "Removing plugin settings for Double Commander"
-        Set-DCPlugin $pluginPath -Uninstall
+        Set-DCPlugin $pluginPath -Uninstall -ForceType $ForceType
     }
     if (Test-TC) {
         Write-Host "Removing plugin settings for Total Commander"
-        Set-TCPlugin $pluginPath -Uninstall
+        Set-TCPlugin $pluginPath -Uninstall -ForceType $ForceType
     }
 
-    Write-Host "Removing plugin files: $DestinationPath\$Name"
-    Remove-Item $DestinationPath\$Name -Recurse
+    if (!$NoRemove) {
+        Write-Host "Removing plugin files: $DestinationPath\$Name"
+        Remove-Item $DestinationPath\$Name -Recurse
+    }
 }
 
 # $Name = 'DiskDirExtended'
