@@ -39,8 +39,6 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 After that simply call `Install-TCPlugin` or `UnInstall-TCPlugin` with plugin name as a parameter and it will take care of everything. Note that you must define `$toolsPath` as it is used to find out embedded TC plugin path.
 
-1q  'DetectString', 'ArchiveExt'
-
 TCP scripts expect that TC plugin archive is embedded in the package with the file name that *contains* plugin name. The base file name of the plugin itself, once unpacked, must be the same as the name used within Chocolatey installation script. See code and content of existing packages for details.
 
 For example:
