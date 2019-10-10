@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-cloud</id>
+    <title>TC Plugin: Cloud</title>
+    <version>2.10</version>
+    <authors>Christian Ghisler</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander file system plugin for accessing cloud services</summary>
+    <description>Total Commander file system plugin for accessing cloud services.
+    
+The cloud plugin allows you to interactively access files on multiple cloud services:
+
+- Google Drive
+- Microsoft OneDrive
+- Microsoft Azure Datalake Store
+- Dropbox
+- Box
+- Yandex Drive
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+## Features
+
+-  Browse your cloud account folders interactively
+-  Upload/Download files and whole subfolders
+-  Inplace rename (Shift+F6)
+-  Create folder (F7)
+-  Delete
+-  Configure how to convert documents downloaded from Google Docs
+-  Choose browser for logging in: Google Chrome, Mozilla Firefox, Opera, Microsoft Edge or Internet Explorer
+
+    </description>
+    <projectUrl>https://www.ghisler.com/cloudplugin.htm</projectUrl>
+    <tags>doublecmd totalcmd plugin tcplugin tcpfilesystem cloud freeware</tags>  
+    <copyright>Christian Ghisler, 2019</copyright>
+    <licenseUrl>https://www.ghisler.com/cloudplugin.htm</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-cloud</packageSourceUrl>
+    <dependencies>
+       <dependency id="tcps" version="0.2"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

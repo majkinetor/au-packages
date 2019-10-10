@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-startups</id>
+    <title>TC Plugin: Startups</title>
+    <version>0.4.0</version>
+    <authors>Dalai</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander file system plugin that can manage system startups that are located in the Registry or Start Menu</summary>
+    <description>Startups is a file-system plugin that can list, disable, analyze, edit and delete system startups that are located in the Registry or Start Menu.
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+## Features
+
+- List system startups that are located in the Registry (HKCU, HKLM in Run and RunOnce, respectively) and Start Menu folders (All Users and current user)
+- Disable startups so they don't start automatically, but can easily be re-enabled
+- Run startups manually on request
+- Delete startups
+- Manage startups in 32 and 64 bit Registry branches on 64 bit Windows
+- Show correct executable information in the file list of Total Commander (32 bit) on Windows 64 bit, i.e. file date/time and sizes
+- Show information about the executable like file size, company name, file version, description and so on
+- Edit startups, e.g. command line parameters, name etc.
+- Ability to show startups with the same name in different locations as each startup will have a unique name.
+- Copy or move startups to a different location, even across Registry and Start Menu (with some limitations)
+- Unicode capable
+- Translation to other languages possible (Danish, English, German and Russian included in the package)
+- Support for custom columns (default view available)
+- View and edit properties specific to Start Menu shortcuts like comments and window state
+- Check if a startup is currently running, with matching process names and matching command lines
+- Jump to the startup's executable with Enter and/or Shift+Enter
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-startup/screenshot.png)
+    </description>
+    <projectUrl>http://totalcmd.net/plugring/Startups.html</projectUrl>
+    <tags>doublecmd totalcmd plugin tcplugin tcpfilesystem freeware</tags>  
+    <copyright>Dalai, 2015</copyright>
+    <licenseUrl>https://creativecommons.org/licenses/by/3.0/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <mailingListUrl>http://ghisler.ch/board/viewtopic.php?t=42374</mailingListUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-startups</packageSourceUrl>
+    <dependencies>
+       <dependency id="tcps" version="0.2"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
