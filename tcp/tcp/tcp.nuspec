@@ -23,6 +23,7 @@ See the package section *Dependencies* to find out which plugins are included.
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</packageSourceUrl>
     <dependencies>
       <dependency id="totalcommander" />
+      <dependency id="tcp-qse" />
 
       <dependency id="tcp-cloud"/>
       <dependency id="tcp-csvview"/>
@@ -31,8 +32,7 @@ See the package section *Dependencies* to find out which plugins are included.
       <dependency id="tcp-fileinfo"/>
       <dependency id="tcp-iclview"/>
       <dependency id="tcp-linkinfo"/>
-      <dependency id="tcp-peviewer"/>      
-      <dependency id="tcp-peviewer"/>      
+      <dependency id="tcp-peviewer"/>
       <dependency id="tcp-mediainfo"/>
       <dependency id="tcp-services2"/>
       <dependency id="tcp-shelldetails"/>
