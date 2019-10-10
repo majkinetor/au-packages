@@ -6,6 +6,7 @@ Majority of plugins are obtained from the following sources:
 - https://ghisler.ch/wiki/index.php/List_of_64-bit_plugins_and_addons
 - http://www.totalcmd.net
 - http://wincmd.ru/
+- https://github.com/doublecmd/doublecmd/wiki/Plugins-development
 
 ## Updating 
 
