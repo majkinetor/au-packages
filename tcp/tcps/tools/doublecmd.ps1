@@ -47,6 +47,56 @@ function Set-DCConfig( $xml ) {
     $xml.Save($cfg_path)
 }
 
+function Set-Options($Options) {
+    $Options = @{ 
+        Behaviors = @{
+            BriefViewFileExtAligned = $true
+            'Mouse.Selection.Button' = 1
+            OnlyOneAppInstance  = $true
+        }
+        Colors = @{
+            Foreground = 16777215
+            Background = 0
+            Background2 = 0
+        }
+        Icons = @{
+            Size = 30
+            ShowInMenus = @{ Enabled = $true } 
+        }
+        Layout = @{
+            ButtonBar           = @{ Enabled = $false }
+            DrivesListButton    = $false
+            DriveFreeSpace      = $false
+            ShortFormatDriveInfo= $false
+        }
+        Miscellaneous = @{
+            SpaceMovesDown   = $true
+            InplaceRename    = $true
+            DblClickToParent = $true
+        }
+        QuickFilter = @{
+            SaveSessionModifications = $false
+        }
+        QuickSearch = @{
+            MatchBeginning = $true
+            MatchEnding = $true
+        }
+        Typing = @{
+            'Actions.NoModifier' = 3
+            'Actions.Alt'        = 1
+            'Actions.CtrlAlt'    = 0
+        }
+    }
+
+    $config = Get-DCConfig
+    foreach ($section in $Options.Keys) {
+        foreach ($key in $Options.$section.Keys) {
+            $xml_path = "`$config.doublecmd.$section.$key"
+            $node = iex $xml_path
+        }
+    } 
+}
+Set-Options
 function Set-DCPlugin {
     param(
         # Full path to the one of the supported TC plugins to add to settings file
