@@ -23,6 +23,10 @@
 
 - `/FontSize` - Set file list font size, by default 10
 
+## Notes
+
+- Also available for Double Commander: [dcc-unlit](https://chocolatey.org/packages/dcc-unlit)
+
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcc-unlit/screenshot.png)
 </description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcc-unlit</projectUrl>

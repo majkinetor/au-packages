@@ -1,4 +1,4 @@
-# [![](https://img.shields.io/chocolatey/v/tcc-unlit.svg?color=red&label=tcc-unlit)](https://chocolatey.org/packages/tcc-unlit)
+# [![](https://img.shields.io/chocolatey/v/dcc-unlit.svg?color=red&label=dcc-unlit)](https://chocolatey.org/packages/dcc-unlit)
 
 Double Commander dark and minimal configuration settings.
 
@@ -16,5 +16,8 @@ Double Commander dark and minimal configuration settings.
 - `/IconSize` - Set file list icon size, by default 20
 - `/FontSize` - Set file list font size, by default 10
 
+## Notes
+
+- Also available for Total Commander: [tcc-unlit](https://chocolatey.org/packages/tcc-unlit)
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/dcc-unlit/screenshot.png)

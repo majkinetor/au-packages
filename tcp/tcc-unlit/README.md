@@ -14,5 +14,8 @@ Total Commander dark and minimal configuration settings.
 
 - `/FontSize` - Set file list font size, by default 10
 
+## Notes
+
+- Also available for Double Commander: [dcc-unlit](https://chocolatey.org/packages/dcc-unlit)
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcc-unlit/screenshot.png)

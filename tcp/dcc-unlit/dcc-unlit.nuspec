@@ -25,8 +25,12 @@
 - `/IconSize` - Set file list icon size, by default 20
 - `/FontSize` - Set file list font size, by default 10
 
+## Notes
+
+- Also available for Total Commander: [tcc-unlit](https://chocolatey.org/packages/tcc-unlit)
+
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/dcc-unlit/screenshot.png)
-    </description>
+</description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/dcc-unlit</projectUrl>
     <tags>doublecmd dcconfig settings dark minimal</tags>  
     <copyright>Miodrag Milic, 2019</copyright>
