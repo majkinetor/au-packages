@@ -4,7 +4,7 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 . $Env:ChocolateyInstall\lib\tcps\tools\doublecmd.ps1
 
 $pp = Get-PackageParameters
-if (!$pp.IconSize) { $pp.IconSize = 16 }
+if (!$pp.IconSize) { $pp.IconSize = 20 }
 if (!$pp.FontSize) { $pp.FontSize = 10 }
 
 Write-Host "Setting Double Commander Configuration: $Env:ChocolateyPackageName"
