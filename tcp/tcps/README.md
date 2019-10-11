@@ -13,7 +13,7 @@ Use the following tags to browse for TC plugins on Chocolatey Community Gallery:
 - [File System (tcpfilesystem)](https://chocolatey.org/packages?q=tag%3Atcpfilesystem)
 - [Lister (tcplister)](https://chocolatey.org/packages?q=tag%3Atcplister)
 - [Content (tcpcontent)](https://chocolatey.org/packages?q=tag%3Atcpcontent)
-- [Packer (tcppacker](https://chocolatey.org/packages?q=tag%3Atcppacker)
+- [Packer (tcppacker)](https://chocolatey.org/packages?q=tag%3Atcppacker)
 
 Use the following tags to browse custom DC/TC configuration settings:
 

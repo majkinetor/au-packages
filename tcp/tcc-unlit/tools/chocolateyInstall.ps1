@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
-. C:\Work\au-packages\tcp\tcps\tools\totalcmd.ps1 #$Env:ChocolateyInstall\lib\tcps\tools\totalcmd.ps1
+. $Env:ChocolateyInstall\lib\tcps\tools\totalcmd.ps1
 
 $pp = Get-PackageParameters
 if (!$pp.FontSize) { $pp.FontSize = 10 }

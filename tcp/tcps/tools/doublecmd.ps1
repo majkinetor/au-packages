@@ -48,7 +48,8 @@ function Set-DCConfig( $xml ) {
 }
 
 function Set-DCOptions([Parameter(ValueFromPipeline=$true)][HashTable]$Options, $UserConfig) {
-    $config = if ($UserConfig) { $UserConfig } else { Close-DC; Get-DCConfig}
+    $config = if ($UserConfig) { $UserConfig } else { Close-DC; Get-DCConfig }
+    if (!$config) { Write-Warning "Can't find Double Commander config, doing nothing"; return } # This prevent Gallery verifyer to fail as it runs as a user SYSTEM which has different profile path
     
     foreach ($section in $Options.Keys) {        
         foreach ($key in $Options.$section.Keys) {
