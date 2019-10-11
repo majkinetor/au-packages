@@ -23,6 +23,7 @@ See the package section *Dependencies* to find out which plugins are included.
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/dcp</packageSourceUrl>
     <dependencies>
       <dependency id="doublecmd"/>
+      <dependency id="dcc-unlit"/>     
 
       <dependency id="tcp-cloud"/>
       <dependency id="tcp-csvview"/>
