@@ -60,7 +60,7 @@ function Set-DCOptions([Parameter(ValueFromPipeline=$true)][HashTable]$Options, 
             }
 
             $xml_path = "`$config.doublecmd.${section}${prefix}['$xmlkey']"
-            $node = try { iex $xml_path } catch { Write-Warning "Can't set value for '$section.$key': $_" }
+            $node = try { iex $xml_path } catch { Write-Warning "Can't set value for '$section.$key': $_"; continue }
             $val = $Options.$section.$key
 
             if ( $val -is [HashTable]) {
@@ -68,7 +68,9 @@ function Set-DCOptions([Parameter(ValueFromPipeline=$true)][HashTable]$Options, 
                     $node.Attributes.Append( $config.CreateAttribute( $a ) ) | Out-Null
                     $node.$a = $val.$a.ToString()
                 }
-            } else { $node.InnerText = $val.ToString() }
+            } else { 
+                try { $node.InnerText = $val.ToString() } catch { Write-Warning "Can't set value for '$section.$key': $_"; }
+            }
         }
     }
     if (!$UserConfig) { Set-DCConfig $config }

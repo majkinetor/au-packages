@@ -21,6 +21,16 @@ function Get-TCInstallPath {
     if ( check $res ) { return $res }
 }
 
+function Set-TCOptions([Parameter(ValueFromPipeline=$true)][HashTable]$Options) {
+    $configPath = Get-TCConfig -Path
+    if (!$configPath) { throw 'Total Commander config file not found' }
+    foreach ($section in $Options.Keys) {        
+        foreach ( $key in $Options.$section.Keys ) { 
+            Set-IniKey $configPath $section $key $Options.$section.$key | Out-Null
+        }
+    }
+}
+
 function Get-TCConfig( [switch] $Path ) {
     function ini_path {
         # $res = $Env:COMMANDER_INI
