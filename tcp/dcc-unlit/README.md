@@ -1,4 +1,4 @@
-# [![](https://img.shields.io/chocolatey/v/tcp-cloud.svg?color=red&label=tcp-cloud)](https://chocolatey.org/packages/tcp-cloud)
+# [![](https://img.shields.io/chocolatey/v/tcc-unlit.svg?color=red&label=tcc-unlit)](https://chocolatey.org/packages/tcc-unlit)
 
 Double Commander dark and minimal configuration settings.
 
