@@ -9,18 +9,24 @@ Both TC and DC are automatically detected if present on the system.
 
 Use the following tags to browse for TC plugins on Chocolatey Community Gallery:
 
-- [Any TC Plugin](https://chocolatey.org/packages?q=tag%3Atcplugin)
-- [File System](https://chocolatey.org/packages?q=tag%3Atcpfilesystem)
-- [Lister](https://chocolatey.org/packages?q=tag%3Atcplister)
-- [Content](https://chocolatey.org/packages?q=tag%3Atcpcontent)
-- [Packer](https://chocolatey.org/packages?q=tag%3Atcppacker)
+- [Any TC Plugin (tcplugin)](https://chocolatey.org/packages?q=tag%3Atcplugin)
+- [File System (tcpfilesystem)](https://chocolatey.org/packages?q=tag%3Atcpfilesystem)
+- [Lister (tcplister)](https://chocolatey.org/packages?q=tag%3Atcplister)
+- [Content (tcpcontent)](https://chocolatey.org/packages?q=tag%3Atcpcontent)
+- [Packer (tcppacker](https://chocolatey.org/packages?q=tag%3Atcppacker)
+
+Use the following tags to browse custom DC/TC configuration settings:
+
+- [Double Commander Configs (dcconfig)](https://chocolatey.org/packages?q=tag%3Adcconfig)
+- [Total Commander Configs (tcconfig)](https://chocolatey.org/packages?q=tag%3Atcconfig)
 
 ## Features
 
 - Supports all plugin types
 - Unpacks the plugin
-- Installs and remove plugin for Total Commander
-- Installs and remove plugin for Double Commander
+- Installs and removes plugin for Total Commander
+- Installs and removes plugin for Double Commander
+- Set Double Commander options
 
 ## Notes
 
