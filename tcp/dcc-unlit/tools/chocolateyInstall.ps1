@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
-. $Env:ChocolateyInstall\lib\tcps\tools\tcps.ps1
+. $Env:ChocolateyInstall\lib\tcps\tools\doublecmd.ps1
 
 $pp = Get-PackageParameters
 if (!$pp.IconSize) { $pp.IconSize = 16 }
