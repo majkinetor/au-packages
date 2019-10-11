@@ -47,6 +47,33 @@ function Set-DCConfig( $xml ) {
     $xml.Save($cfg_path)
 }
 
+function Set-DCOptions([Parameter(ValueFromPipeline=$true)][HashTable]$Options, $UserConfig) {
+    $config = if ($UserConfig) { $UserConfig } else { Close-DC; Get-DCConfig}
+    
+    foreach ($section in $Options.Keys) {        
+        foreach ($key in $Options.$section.Keys) {
+            $prefix = ''; $xmlkey = $key
+            if ($key.IndexOf('.') -ne -1) { 
+                $prefix = $key -replace '\.[^.]+$'
+                $xmlkey = $key.Replace("$prefix.",'')
+                $prefix = ".$prefix"
+            }
+
+            $xml_path = "`$config.doublecmd.${section}${prefix}['$xmlkey']"
+            $node = try { iex $xml_path } catch { Write-Warning "Can't set value for '$section.$key': $_" }
+            $val = $Options.$section.$key
+
+            if ( $val -is [HashTable]) {
+                foreach( $a in $val.Keys) {
+                    $node.Attributes.Append( $config.CreateAttribute( $a ) ) | Out-Null
+                    $node.$a = $val.$a.ToString()
+                }
+            } else { $node.InnerText = $val.ToString() }
+        }
+    }
+    if (!$UserConfig) { Set-DCConfig $config }
+}
+
 function Set-DCPlugin {
     param(
         # Full path to the one of the supported TC plugins to add to settings file
