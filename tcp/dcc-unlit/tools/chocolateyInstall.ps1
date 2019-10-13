@@ -63,3 +63,12 @@ Write-Host "  Icon size: $($pp.IconSize)"
         MatchEnding     = $false
     }
 } | Set-DCOptions
+
+
+Set-DCHotkey @(
+    @{ 
+        Shortcut = 'Ctrl+F'
+        Command = 'cm_Search'
+    }
+)
+

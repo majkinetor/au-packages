@@ -6,6 +6,26 @@ function Close-DC() {
     $doublecmd | % { $_.CloseMainWindow() | Out-Null }
 }
 
+function Set-DCHotkey([Parameter(ValueFromPipeline=$true)][HashTable[]]$Hotkeys){
+    $xml_path = "$Env:AppData\doublecmd\shortcuts.scf"
+    [xml] $xml = gc $xml_path
+
+    foreach ($hkey in $Hotkeys) {
+        $form = if ($hkey.Form) { $hkey.Form } else { 'Main' }
+
+        $formKeys = $xml.doublecmd.Hotkeys.Form | ? Name -eq $form
+        $e = $formKeys.Hotkey | ? {$_.Shortcut -eq $hkey.Shortcut}
+        $formKeys.RemoveChild($e) | Out-Null
+
+        $e = $formKeys.AppendChild($xml.CreateElement('Hotkey'))
+        foreach ($k in $hkey.Keys) { 
+            $e.AppendChild( $xml.CreateElement($k) )  | Out-Null
+            $e.$k = $hkey.$k
+        }
+    }
+    $xml.Save($xml_path)
+}
+
 function Get-DCConfig ([switch] $Path) { 
     function xml_path {
         $res = "$Env:AppData\doublecmd\doublecmd.xml"
