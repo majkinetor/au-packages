@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'http://mpesch3.de1.cc/index.html'
+$releases = 'http://mpesch3.de/index.html'
 $download = "http://www.winsoftware.de/Startedownload39417"
 
 function global:au_SearchReplace {
