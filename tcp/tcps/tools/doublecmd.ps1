@@ -6,23 +6,61 @@ function Close-DC() {
     $doublecmd | % { $_.CloseMainWindow() | Out-Null }
 }
 
-function Set-DCHotkey([Parameter(ValueFromPipeline=$true)][HashTable[]]$Hotkeys){
-    $xml_path = "$Env:AppData\doublecmd\shortcuts.scf"
-    [xml] $xml = gc $xml_path
+# Set a XML element via HashTable
+# - Use keys ending with _ as unique id - existing elements with unique id will be removed
+#
+# Set-HashTable($xml, 'doublecmd.SearchTemplates', 'Template', @{Name_ = 'Executables'; FileMasks='*.exe;*.bat'} )
+function Set-HashTable($Xml, [string] $Parent, [string]$Name, [HashTable[]] $Hashes ) {
+    $Parent = $Parent -replace '([^.]+)\.?',"['`$1']"
+    $xmlParent = iex "`$Xml$Parent"
+    if (!$xmlParent) { throw 'Non existent parent' }
 
-    foreach ($hkey in $Hotkeys) {
-        $form = if ($hkey.Form) { $hkey.Form } else { 'Main' }
+    foreach ($hash in $Hashes) {
+        $idKey = ($hash.Keys | ? { $_.EndsWith('_')}) -replace '_$'    
+        if ($idKey) {
+            $e = $xmlParent.$Name | ? { $_.$idKey -eq $hash["${idKey}_"] }
+            if ($e) { $xmlParent.RemoveChild($e) | Out-Null }
+        }
 
-        $formKeys = $xml.doublecmd.Hotkeys.Form | ? Name -eq $form
-        $e = $formKeys.Hotkey | ? {$_.Shortcut -eq $hkey.Shortcut}
-        $formKeys.RemoveChild($e) | Out-Null
-
-        $e = $formKeys.AppendChild($xml.CreateElement('Hotkey'))
-        foreach ($k in $hkey.Keys) { 
-            $e.AppendChild( $xml.CreateElement($k) )  | Out-Null
-            $e.$k = $hkey.$k
+        $e = $xmlParent.AppendChild($Xml.CreateElement($Name))
+        foreach ($k in $hash.Keys) {
+            $xk = if ($k.EndsWith('_')) { $k -replace '_$' } else { $k }
+            $e.AppendChild( $Xml.CreateElement($xk) ) | Out-Null
+            $e.$xk = $hash.$k.ToString()
         }
     }
+}
+
+# Provide HashTable array with any legit Template element
+#  plus 'Color' attribute if needed
+function Set-DCTemplates( [HashTable[]] $Templates ) {
+    Close-DC
+    $config = Get-DCConfig
+
+    if (!$config) { Write-Warning "Can't find Double Commander config, doing nothing"; return } # This prevent Gallery verifyer to fail as it runs as a user SYSTEM which has different profile path
+    
+    $t = $Templates | % { $x = $_.Clone(); $x.Remove('Color'); $x }
+    Set-HashTable $config -Parent 'doublecmd.SearchTemplates' -Name 'Template' -Hashes $t
+    
+    $t = foreach($t in $Templates) {
+        if ($t.Color) { @{  
+            Name_     = $t.Name_
+            FileMasks = ">" + $t.Name_
+            Color     = $t.Color
+            Attributes = ''
+        }}
+    }
+    Set-HashTable $config -Parent 'doublecmd.Colors.FileFilters' -Name 'Filter' -Hashes $t
+
+    Set-DCConfig $config
+}
+
+# Provide HashTable array with any legit Hotkey element
+function Set-DCHotkey([HashTable[]]$Hotkeys){
+    $xml_path = "$Env:AppData\doublecmd\shortcuts.scf"
+    [xml] $xml = Get-Content $xml_path
+    foreach ($hkey in $Hotkeys) { if (!$hkey.Form) { $hkey.Form = 'Main' } }
+    Set-HashTable $xml -Parent 'doublecmd.Hotkeys.Form' -Name 'Hotkey' -Hashes $Hotkeys
     $xml.Save($xml_path)
 }
 
@@ -155,6 +193,7 @@ function Set-DCPlugin {
 
     Set-DCConfig $config
 }
+
 
 # Close-DC
 #Set-DCPlugin "C:\tools\TCPlugins\DiskDirExtended\DiskDirExtended.wcx64" -ArchiveExt 'list ls'
