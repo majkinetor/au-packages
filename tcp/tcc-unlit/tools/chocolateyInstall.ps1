@@ -9,7 +9,8 @@ if (!$pp.FontSize) { $pp.FontSize = 10 }
 Write-Host "Setting Total Commander Configuration: $Env:ChocolateyPackageName"
 Write-Host "Configurable parameters:"
 Write-Host "  Font size: $($pp.FontSize)"
-@{
+
+Set-TCOptions @{
     AllResolutions = @{
         FontSize   = $pp.FontSize
         FontWeight = 400
@@ -40,4 +41,35 @@ Write-Host "  Font size: $($pp.FontSize)"
         F2    = 'cm_RenameSingleFile'
         'C+F' = 'cm_SearchFor'
     }
-} | Set-TCOptions
+}
+
+Set-TCTemplates @(
+    @{
+        Name       = 'Executables'
+        FilesMasks = '*.exe;*.bat;*.cmd;*.com;*.ps1'
+        Color      = 11599871
+    },
+    @{
+        Name       = 'Documents'
+        FilesMasks = '*.rtf;*.tex;*.wps;*.txt;*.doc;*.docx;*.pdf;*.epub;*.md;README'
+        Color      = 12639424
+    },
+    @{  
+        Name       = 'Archives'
+        FilesMasks = '*.zip;*.7z;*.rar;*.tar;*.pkg;*.cbr;*.deb'
+        Color      = 4227327
+    },
+    @{  
+        Name        = 'Images'
+        FilesMasks  = '*.gif;*.jpg;*.png;*.bmp;*.tiff;*.webp;*.psd;*.tga;*.tif;*.yuv;*.ico'
+        Color       = 15780518
+    },
+    @{  
+        Name        = 'Audio'
+        FilesMasks  = '*.mid;*.mpa;*.mp3;*.flac;*.ogg;*.cda;*.wma;*.m4a;*.aac;*.aif;*.aiff;*.wav;'
+    },
+    @{  
+        Name        = 'Video'
+        FilesMasks  = '*.mkv;*.avi;*.m3u;*.mpg;*.mpeg;*.mov;*.m2ts;*.rm;*.vob;*.mp4;*.flv;*.3gp'
+    }
+)

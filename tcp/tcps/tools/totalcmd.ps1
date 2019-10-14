@@ -8,6 +8,34 @@ function Close-TC() {
     $totalcmd | % { $_.CloseMainWindow() | Out-Null }
 }
 
+function Set-TCTemplates( [HashTable[]] $Templates ) {
+    $o = @{ searches = @{}; colors = @{} }
+    foreach($template in $Templates) {
+        $name = $template.Name
+        $o.searches."${name}_SearchFor"   = $template.FilesMasks
+        $o.searches."${name}_SearchIn"    = $template.StartPath
+        $o.searches."${name}_SearchText"  = ''
+        $o.searches."${name}_SearchFlags" = ''
+    }
+    Set-TCOptions $o
+
+    # Clear ALL existing colors
+    $configPath = Get-TCConfig -Path
+    $iniSection = Get-IniSection $configPath 'Colors'
+    [array] $filters = $iniSection | ? { $_ -match "ColorFilter\d+=" }
+    for ($i=1; $i -le $filters.Count; $i++)  { 
+        Set-IniKey $configPath 'Colors' "ColorFilter${i}" | Out-Null
+        Set-IniKey $configPath 'Colors' "ColorFilter${i}Color" | Out-Null
+    }
+
+    foreach($template in $Templates){
+        if (!$template.Color) { continue }
+        $j++
+        Set-IniKey $configPath 'Colors' "ColorFilter${j}" (">" + $template.Name) | Out-Null
+        Set-IniKey $configPath 'Colors' "ColorFilter${j}Color" $template.Color   | Out-Null
+    }
+}
+
 function Get-TCInstallPath {
     function check($path) { (gi $path\totalcmd.exe -ea 0).VersionInfo.InternalName -eq 'TOTALCMD' }
     
