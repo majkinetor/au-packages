@@ -36,6 +36,7 @@ Set-TCOptions @{
         BackColor2    = 0
         ForeColor     = 16777215
         CursorColor   = 14120448
+        CursorText    = 16777215
     }
     Shortcuts = @{
         F2    = 'cm_RenameSingleFile'
