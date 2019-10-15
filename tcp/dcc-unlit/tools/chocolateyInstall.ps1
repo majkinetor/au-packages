@@ -22,6 +22,11 @@ Set-DCOptions @{
         Foreground  = 16777215
         Background  = 0
         Background2 = 0
+        Cursor      = 12639424        
+        Mark        = 255
+
+        UseInvertedSelection = $true
+        UseFrameCursor       = $true
     }
     'Fonts.Main' = @{  
         Size = $pp.FontSize      

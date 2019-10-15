@@ -30,13 +30,16 @@ Set-TCOptions @{
         DriveBar2  = 1
         DriveCombo = 0
     }
-    Colors = @{
-        InverseCursor = 1
+    Colors = @{        
+        ForeColor     = 16777215
         BackColor     = 0
         BackColor2    = 0
-        ForeColor     = 16777215
+        MarkColor     = 255        
         CursorColor   = 14120448
-        CursorText    = 16777215
+        CursorText    = 0
+
+        InverseCursor    = 0
+        InverseSelection = 1
     }
     Shortcuts = @{
         F2    = 'cm_RenameSingleFile'
