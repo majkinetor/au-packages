@@ -39,9 +39,10 @@ function Install-PumlDesktopShortcuts {
     $params.ShortcutFilePath = "$Env:USERPROFILE\Desktop\Plantuml.lnk"
     Install-ChocolateyShortcut @params 
 
+    $pdfFile = gi $toolsPath\*.pdf
     $params = @{
         ShortcutFilePath = "$Env:USERPROFILE\Desktop\Plantuml Reference.lnk"
-        TargetPath       = "$toolsPath\PlantUML_Language_Reference_Guide.pdf"
+        TargetPath       = $pdfFile
     }
     Install-ChocolateyShortcut @params
 }
