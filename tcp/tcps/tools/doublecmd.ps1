@@ -1,5 +1,20 @@
 function Test-DC() { $null -ne (Get-DCConfig -Path) }
 
+function Set-DCAsDefaultFM($DCPath) {
+    Write-Verbose "Setting Total Commander as default file manager"
+
+    New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT -ea 0 | Out-Null
+
+    Set-ItemProperty HKCR:\Drive\shell -name "(Default)" -Value "open"
+    mkdir HKCR:\Drive\shell\open\command -force | Out-Null
+    Set-ItemProperty HKCR:\Drive\shell\open\command  -name "(Default)" -Value "$DCPath /O ""%1"""
+
+    Set-ItemProperty HKCR:\Directory\shell -name "(Default)" -Value "open"
+    mkdir HKCR:\Directory\shell\open\command -force | Out-Null
+    Set-ItemProperty HKCR:\Directory\shell\open\command  -name "(Default)" -Value "$DCPath /O ""%1"""
+}
+
+
 function Close-DC() {
     $doublecmd = Get-Process doublecmd -ea 0
     if (!$doublecmd) { return }
