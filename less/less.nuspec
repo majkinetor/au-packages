@@ -23,6 +23,9 @@
     <docsUrl>http://man7.org/linux/man-pages/man1/less.1.html</docsUrl>
     <projectSourceUrl>http://www.greenwoodsoftware.com/less/download.html#source</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/less</packageSourceUrl>
+    <dependencies>
+      <dependency id="chocolatey" version="0.10.8" /> <!-- Get-PackageParameters -->
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
