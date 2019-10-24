@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>less</id>
-    <version>5.51</version>
+    <version>5.51.0.20191024</version>
     <title>Less</title>
     <authors>Mark Nudelman</authors>
     <owners>Miodrag Milić</owners>
@@ -11,6 +11,11 @@
     <projectUrl>http://www.greenwoodsoftware.com/less/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description><![CDATA[Less is a CLI pager, a program that displays text files. Other pagers commonly in use are `more` and `pg`. Less is similar to `more`, but allows backward movement in the file as well as forward movement. Also, less does not have to read the entire input file before starting, so with large input files it starts up faster than text editors like vi.
+
+
+## Package Parameters
+
+- `/DefaultPager` - Set `$Env:PAGER` environment variable to `less`.
 
 ## Notes
   
