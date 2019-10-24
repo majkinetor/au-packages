@@ -25,7 +25,7 @@ function global:au_BeforeUpdate {
     7z x $PSScriptRoot\less.7z
     $Latest.Checksum32 = Get-FileHash $PSScriptRoot\less.7z | % Hash
 
-    rm $PSScriptRoot\tools -Recurse -Force -ea 0
+    rm $PSScriptRoot\tools -Exclude *.ps1 -Recurse -Force -ea 0
     mkdir $PSScriptRoot\tools | Out-Null
     mv $lessdir\* $PSScriptRoot\tools -Force
     rm $lessdir -Recurse -Force -ea ignore
