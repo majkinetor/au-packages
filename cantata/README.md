@@ -32,3 +32,7 @@ views and tooltips, and also to help with copying songs to/from devices.
 
 ![screenshot](https://rawgit.com/majkinetor/au-packages/master/cantata/screenshot.png)
 
+
+## Notes
+
+- Windows binaries for Cantata are no longer produced. See [cantata#1534](https://github.com/CDrummond/cantata/issues/1534), hence, this package is no longer automatic and will have no new versions.
