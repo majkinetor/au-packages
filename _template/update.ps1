@@ -13,6 +13,10 @@ function global:au_SearchReplace {
             "(?i)(^\s*packageName\s*=\s*)('.*')"  = "`$1'$($Latest.PackageName)'"
             "(?i)(^\s*softwareName\s*=\s*)('.*')" = "`$1'$($Latest.PackageName)*'"
             "(?i)(^\s*fileType\s*=\s*)('.*')"     = "`$1'$($Latest.FileType)'"
+
+            '(?i)(^\s*file\s*=\s*)(".*")'   = "`$1`"`$toolsPath\$($Latest.FileName32)`""
+            '(?i)(^\s*file64\s*=\s*)(".*")' = "`$1`"`$toolsPath\$($Latest.FileName64)`""
+            }
         }
 
         "$($Latest.PackageName).nuspec" = @{
