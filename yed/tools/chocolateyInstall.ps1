@@ -29,7 +29,7 @@ $sparams = @{
     ShortcutFilePath = "$toolsDir\yed.lnk"
     TargetPath       = $javaw_path
     Arguments        = "-jar ""$yedDir\yed.jar"""
-    IconLocation     = "$yedDir\icons\yIcon.ico"
+    IconLocation     = "$yedDir\icons\yed.ico"
 }
 Install-ChocolateyShortcut @sparams
 
