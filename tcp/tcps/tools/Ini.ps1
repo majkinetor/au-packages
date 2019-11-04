@@ -6,7 +6,8 @@ function Set-IniSection([string]$Path, [string]$SectionName, [string]$Value) {
 }
 function Get-IniKey([string]$Path, [string]$SectionName, [string]$Key, [string]$Value, [string]$DefaultValue) {
     $sb = New-Object System.Text.StringBuilder(256)
-    [ProfileApi]::GetPrivateProfileString($SectionName, $Key, $DefaultValue, $sb, $sb.Capacity, $Path) 
+    [ProfileApi]::GetPrivateProfileString($SectionName, $Key, $DefaultValue, $sb, $sb.Capacity, $Path) | Out-Null
+    $sb.ToString()
 }
 function Set-IniKey([string]$Path, [string]$SectionName, $Key, $Value) {
     if ($null -eq $Value) { $Value = [NullString]::Value }
