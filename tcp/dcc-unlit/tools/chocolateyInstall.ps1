@@ -80,7 +80,7 @@ Set-DCHotkey @(
 Set-DCTemplates @(
     @{
         Name_      = 'Executables'
-        FilesMasks = '.exe;*.bat;*.cmd;*.com;*.ps1'
+        FilesMasks = '*.exe;*.bat;*.cmd;*.com;*.ps1'
         Color      = 11599871
     },
     @{
