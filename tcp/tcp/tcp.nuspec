@@ -4,17 +4,17 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp</id>
-    <title>Total Commander with plugins</title>
-    <version>0.3</version>
+    <title>Total Commander Plugins</title>
+    <version>1.0</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
-    <summary>Total Commander with plugins</summary>
-    <description>Metapackage containing all [Totall Commander plugins](https://chocolatey.org/packages?q=tag%3Atcplugin).
+    <summary>Total Commander plugins</summary>
+    <description>Metapackage containing selection of [Total and Double Commander plugins](https://chocolatey.org/packages?q=tag%3Atcplugin).
     
 See the package section *Dependencies* to find out which plugins are included.
     </description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</projectUrl>
-    <tags>totalcmd tcplugin files</tags>
+    <tags>totalcmd doublecmd tcplugin files</tags>
     <copyright>Miodrg Milic 2018</copyright>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -22,9 +22,6 @@ See the package section *Dependencies* to find out which plugins are included.
     <projectSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</packageSourceUrl>
     <dependencies>
-      <dependency id="totalcommander" />
-      <dependency id="tcc-unlit" />
-
       <dependency id="tcp-cloud"/>
       <dependency id="tcp-csvview"/>
       <dependency id="tcp-diskdirextended"/>
@@ -41,7 +38,4 @@ See the package section *Dependencies* to find out which plugins are included.
       <dependency id="tcp-virtualpanel"/>
     </dependencies>
   </metadata>
-    <files>
-
-  </files>
 </package>
