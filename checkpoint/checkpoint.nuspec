@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>checkpoint</id>
-    <title>Provide users with secure, seamless remote access to corporate networks and resources when traveling or working remotely</title>
+    <title>Check Point Endpoint Security</title>
     <version>5.82.00</version>
     <authors>Check Point Software</authors>
     <owners>Miodrag Milic</owners>
