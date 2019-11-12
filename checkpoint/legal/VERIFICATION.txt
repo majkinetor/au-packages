@@ -1,0 +1,3 @@
+LICENSE taken from download page:
+
+https://supportcenter.checkpoint.com/supportcenter/portal/role/supportcenterUser/page/default.psml/media-type/html?action=portlets.DCFileAction&eventSubmit_doGetdcdetails=&fileid=100238

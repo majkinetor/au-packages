@@ -32,7 +32,13 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
+function global:au_BeforeUpdate {
+     Get-RemoteFiles -Purge -NoSuffix 
+
+    Set-Alias 7z $Env:chocolateyInstall\tools\7z.exe
+    7z e tools\*.zip -otools *.exe -r -y
+    rm tools\*.zip -ea 0
+}
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
