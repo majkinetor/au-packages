@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>signal</id>
     <title>Signal (Desktop)</title>
-    <version>1.27.4</version>
+    <version>1.27.4.20191112</version>
     <authors>Open Whisper Systems</authors>
     <owners>Miodrag Milic</owners>
     <summary>Fast, simple, secure. Privacy that fits in your pocket</summary>
@@ -21,10 +21,10 @@
 
 ## Package parameters
 
-* `/NoProxy`    - Do not set system proxy
-* `/NoTray`     - Do not use tray icon
-* `/NoShortcut` - Do not create shortcut icon on the desktop
-
+* `/NoAutoUpdate` - Block `updates.signal.org` via hosts file to prevent automatic update
+* `/NoProxy`      - Do not set system proxy
+* `/NoTray`       - Do not use tray icon
+* `/NoShortcut`   - Do not create shortcut icon on the desktop
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/signal/screenshot.png)
 ]]></description>
