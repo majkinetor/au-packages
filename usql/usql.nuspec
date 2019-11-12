@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>usql</id>
+    <title>usql</title>
+    <version>0.7.5</version>
+    <authors>Kenshaw</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Universal command-line interface for SQL databases</summary>
+    <description><![CDATA[A universal command-line interface for PostgreSQL, MySQL, Oracle Database, SQLite3, Microsoft SQL Server, and many other databases including NoSQL and non-relational databases!
+]]></description>
+    <projectUrl>https://github.com/xo/usql</projectUrl>
+    <tags>cli foss cross-platform database sql</tags>
+    <copyright>xo 2017</copyright>
+    <licenseUrl>https://github.com/xo/usql/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/usql/icon.png</iconUrl>
+    <bugTrackerUrl>https://github.com/xo/usql/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/xo/usql</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/usql</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="legal\**" target="legal" />
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
