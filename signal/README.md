@@ -12,9 +12,9 @@ Signal is an encrypted communications application. It uses the Internet to send 
 
 ## Package parameters
 
-* `/NoProxy`    - Do not set system proxy
-* `/NoTray`     - Do not use tray icon
-* `/NoShortcut` - Do not create shortcut icon on the desktop
-
+* `/NoAutoUpdate` - Block `updates.signal.org` via hosts file to prevent automatic update
+* `/NoProxy`      - Do not set system proxy
+* `/NoTray`       - Do not use tray icon
+* `/NoShortcut`   - Do not create shortcut icon on the desktop
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/signal/screenshot.png)

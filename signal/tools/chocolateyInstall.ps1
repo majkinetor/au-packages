@@ -5,6 +5,8 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $pp = Get-PackageParameters
 
+if ($pp.NoAutoUpdate) { Set-AutoUpdate -Enable }
+
 $packageArgs = @{
   packageName            = 'signal'
   fileType               = 'EXE'
@@ -23,3 +25,4 @@ Set-SignalOptions
 Register-Application "$toolsPath\signal.bat" signal
 Write-Host "Application registered as signal"
 
+if ($pp.NoAutoUpdate) { Write-Host "Disabling auto update";  Set-AutoUpdate -Disable }
