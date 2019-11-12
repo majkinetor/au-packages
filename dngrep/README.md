@@ -17,4 +17,3 @@ dnGrep allows you to search across files with easy-to-read results. Search throu
 * Much more
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/dngrep/screenshot.jpg)
-

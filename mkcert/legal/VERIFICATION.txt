@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com//FiloSottile/mkcert/releases/download/v1.4.0/mkcert-v1.4.0-windows-amd64.exe
+   x64: https://github.com//FiloSottile/mkcert/releases/download/v1.4.1/mkcert-v1.4.1-windows-amd64.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: CAD9EA757779C4874266FE61D163762A591C4C9A6D82E0C4458430735F79A144
+   checksum64: 1BE92F598145F61CA67DD9F5C687DFEC17953548D013715FF54067B34D7C3246
 
 
 File 'license.txt' is obtained from:
