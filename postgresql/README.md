@@ -10,7 +10,7 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
 
 ## Package parameters
 
-- `/Password` - Password to be assigned to the `postgres` user. If ommited, it will be generated and shown in install output.
+- `/Password` - Password to be assigned to the `postgres` user. If omitted, it will be generated and shown in the install output.
 - `/NoPath` - Do not add postgresql bin directory to the PATH.
 
 ## Notes
