@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>postgresql12</id>
-    <version>12.0</version>
+    <version>12.1</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
@@ -20,13 +20,58 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
 
 ## Package parameters
 
-- `/Password` - Password to be assigned to the `postgres` user. If ommited, it will be generated and shown in install output.
+- `/Password` - Password to be assigned to the `postgres` user. If omitted, it will be generated and shown in the install output.
+- `/NoPath` - Do not add postgresql bin directory to the PATH.
 
 ## Notes
 
-- This package will install PostgreSQL to `$Env:ProgramFiles\PostgreSQL\[MajorVersion]`
-- [Silent install options](https://www.enterprisedb.com/edb-docs/d/postgresql/installation-getting-started/installation-guide-installers/10/PostgreSQL_Installation_Guide.1.16.html)
-- If you have problems during installation see [troubleshooting page](https://wiki.postgresql.org/wiki/Troubleshooting_Installation)
+- Test installation (specify your password):  
+`$Env:PGPASSWORD='test'; '\conninfo' | psql -Upostgres`  
+This should output:  
+`You are connected to database "postgres" as user "postgres" on host "localhost" at port "5432"`
+- This package will install PostgreSQL to `$Env:ProgramFiles\PostgreSQL\[MajorVersion]`.
+- [Silent install options](https://www.enterprisedb.com/edb-docs/d/postgresql/installation-getting-started/installation-guide-installers/10/PostgreSQL_Installation_Guide.1.16.html).
+- If you have problems during installation see [troubleshooting page](https://wiki.postgresql.org/wiki/Troubleshooting_Installation).
+
+### Virtual package
+
+Each major version has its own package: [postgresql12](https://chocolatey.org/packages/postgresql12), [postgresql11](https://chocolatey.org/packages/postgresql11), [postgresql10](https://chocolatey.org/packages/postgresql10), [postgresql9](https://chocolatey.org/packages/postgresql9). 
+
+**Virtual package** [postgresql](https://chocolatey.org/packages/postgresql) also contains all versions that depend on adequate major version, but using it without problems require some special choco parameters.
+
+To propagate package parameters to dependencies use `--params-global` choco install parameter with virtual package `postgresql`. Assuming latest version is 12, to provide password the following two examples result in identical installation:
+
+```
+cinst postgresql --params '/Password:test' --params-global
+cinst postgresql12 --params '/Password:test'
+```
+
+To uninstall dependent package use `--force-dependencies`:
+
+```
+# The following two examples are identical
+cuninst postgresql --force-dependencies
+cuninst postgresql12 postgresql
+
+# This example uninstalls only postgresql virtual package and not postgresql12 
+cuninst postgresql
+```
+
+To force reinstallation via virtual package use `--force-dependencies`:
+
+```
+# The following two examples are identical
+cinst postgresql --force --force-dependencies
+cinst postgresql12 --force --force-dependencies
+
+# This will reinstall only postgresql virtual package and not its dependency postgresql12 
+cinst postgresql -force
+
+# This one is different then the first one as vcredist140 dependency is not reinstalled
+cinst postgresql12 --force
+```
+
+
 ]]></description>
     <summary>PostgreSQL is an object-relational database management system</summary>
     <releaseNotes>https://www.postgresql.org/docs/12/static/release.html</releaseNotes>
