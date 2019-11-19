@@ -23,6 +23,7 @@ Set-TCOptions @{
         RenameSelOnlyName = 1
         FirstTimeIconLib  = 0
         QuickSearchAutoFilter = 1
+        SortDirsByName = 0
     }
     Layout = @{
         ButtonBar  = 0
