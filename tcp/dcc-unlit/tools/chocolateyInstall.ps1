@@ -34,6 +34,7 @@ Set-DCOptions @{
     }
     FilesViews = @{
         'BriefView.FileExtAligned' = $true
+        'Sorting.SortFolderMode'   = 1
     }
     FileOperations = @{
         RenameSelOnlyName = $true
