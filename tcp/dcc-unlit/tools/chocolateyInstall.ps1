@@ -56,6 +56,7 @@ Set-DCOptions @{
         DrivesListButton     = @{ Enabled = $false }
         DriveFreeSpace       = $false
         ShortFormatDriveInfo = $false
+        PanelOfOperationsInBackground = $true
     }
     Miscellaneous = @{
         SpaceMovesDown   = $true
