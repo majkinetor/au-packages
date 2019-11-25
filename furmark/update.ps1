@@ -24,12 +24,16 @@ function global:au_GetLatest {
     $url = $download_page.links | ? href -like '/dl/show/*'  | select -first 1 | % { 'https://geeks3d.com' + $_.href }
     $internal_id = Split-Path -Leaf $Url
 
+    $url32 = (iwr "https://geeks3d.com/dl/get/${internal_id}" -MaximumRedirection 0 -ea 0).Headers.Location
+
     @{
         Version      = $version
-        URL32        = "https://geeks3d.com/dl/get/${internal_id}" 
+        URL32        = $url32
         FileType     = 'exe'
-        FileNameBase = "Furmark_${version}_setup"
+        # FileNameBase = "Furmark_${version}_setup"
+        Options      = @{ Headers = @{Referer = $url}}
     }
 }
 
 update -ChecksumFor none
+
