@@ -12,7 +12,7 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge -FileNameBase $Latest.FileNameBase -NoSuffix }
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
     [System.Net.ServicePointManager]::SecurityProtocol = 3072 -bor 768 -bor [System.Net.SecurityProtocolType]::Tls -bor [System.Net.SecurityProtocolType]::Ssl3
@@ -30,7 +30,6 @@ function global:au_GetLatest {
         Version      = $version
         URL32        = $url32
         FileType     = 'exe'
-        # FileNameBase = "Furmark_${version}_setup"
         Options      = @{ Headers = @{Referer = $url}}
     }
 }
