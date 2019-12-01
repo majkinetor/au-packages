@@ -16,7 +16,6 @@
     <copyright>xo 2017</copyright>
     <licenseUrl>https://github.com/xo/usql/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/usql/icon.png</iconUrl>
     <bugTrackerUrl>https://github.com/xo/usql/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/xo/usql</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/usql</packageSourceUrl>
