@@ -1,7 +1,7 @@
 import-module au
 
 $releases = 'http://mpesch3.de/index.html'
-$download = "http://www.winsoftware.de/Startedownload39417"
+$download = "https://www.filecroco.com/download-mp3directcut/download/"
 
 function global:au_SearchReplace {
    @{
@@ -32,9 +32,11 @@ function global:au_GetLatest {
     $re  = 'Version ([.\d]+)'
     if ($download_page.Content -match $re) {  $version = $Matches[1] } else { throw "Can't find version by parsing the page" }
 
+    $download_page = Invoke-WebRequest -Uri $download -UseBasicParsing
+    $url = $download_page.Links | ? href -match 'download-mp3directcut/.+' | % href
     @{
         Version = $version
-        URL32   = $download
+        URL32   = $url
     }
 }
 
