@@ -24,7 +24,7 @@ function global:au_GetLatest {
     $url   =  $download_page.links | ? href -match $re | % href | select -First 1
 
     $release_notes = $download_page.links | ? class -eq 'rd_releasenotes' | select -First 1 | % href
-    $version  = $release_notes -split '/' | select -Last 1 -skip 1
+    $version  = $release_notes -split '/' | select -First 1 -skip 3
 
     @{
         Version = $version -replace 'v'
