@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com//lordmulder/LameXP/releases/download/Release_417/LameXP.2018-11-10.Release-Static.Build-2188.exe
+   x32: https://github.com//lordmulder/LameXP/releases/download/Release_418/LameXP.2019-12-18.Release-Static.Build-2240.exe
    x64:
 
    to download the installer.
@@ -16,7 +16,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 6452F3D27497B17590DE9A889430B7F3A267AD48F1F8A34EA99D39447F8CC72F
+   checksum32: 484FE601419D348ABE542C3772B631B6DA888BB632F1F5B22F1A2E98D408F3AC
    checksum64:
 
 Using AU:
