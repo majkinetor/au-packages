@@ -14,6 +14,7 @@ $Options = [ordered]@{
     PushAll       = $true                                   #Allow to push multiple packages at once
     PluginPath    = ''                                      #Path to user plugins
     IgnoreOn      = @(                                      #Error message parts to set the package ignore status
+      'Origin Time-out'
       'Could not create SSL/TLS secure channel'
       'Could not establish trust relationship'
       'The operation has timed out'
