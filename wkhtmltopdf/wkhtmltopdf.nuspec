@@ -24,7 +24,7 @@ There is also a C library, if you're into that kind of thing.
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/wkhtmltopdf</packageSourceUrl>
     <releaseNotes>https://github.com/wkhtmltopdf/wkhtmltopdf/blob/master/CHANGELOG.md</releaseNotes>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.2" />
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>
   </metadata>
   <files>

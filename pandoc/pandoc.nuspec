@@ -39,7 +39,7 @@
     <projectSourceUrl>https://github.com/jgm/pandoc</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/pandoc</packageSourceUrl>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.0.4" />
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>
   </metadata>
   <files>
