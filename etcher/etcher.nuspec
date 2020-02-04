@@ -26,7 +26,7 @@ Made with JS, HTML, node.js and Electron. Dive in and contribute!
 Works for everyone, no more complicated install instructions.
 ]]></description>
     <projectUrl>https://etcher.io</projectUrl>
-    <tags>admin usb format boot cross-platform foss</tags>
+    <tags>admin usb format boot cross-platform foss balena etcher balenaetcher img flasher dd write sd</tags>
     <copyright>Resin.io</copyright>
     <licenseUrl>https://raw.githubusercontent.com/resin-io/etcher/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
