@@ -61,7 +61,6 @@
       <dependency id="autohotkey.portable" />
     </dependencies>
     <releaseNotes>See http://www.exactaudiocopy.de/en/index.php/resources/whats-new/whats-new</releaseNotes>
-    <mailingListUrl>http://www.digital-inn.de/forums/exact-audio-copy-english.14</mailingListUrl>
     <docsUrl>http://www.exactaudiocopy.de/en/index.php/support/faq</docsUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/eac</packageSourceUrl>
   </metadata>
