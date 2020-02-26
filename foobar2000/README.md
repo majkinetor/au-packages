@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/foobar2000/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/foobar2000.svg?color=red&label=copyq)](https://chocolatey.org/packages/foobar2000)
+# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/foobar2000/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/foobar2000.svg?color=red&label=foobar2000)](https://chocolatey.org/packages/foobar2000)
 
 foobar2000 is an advanced freeware audio player for the Windows platform. Some of the basic features include full unicode support, ReplayGain support and native support for several popular audio formats.
 
