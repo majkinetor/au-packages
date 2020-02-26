@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>freeencoderpack</id>
+    <version>2019.12.23.20200226</version>
+    <title>foobar2000 Free Encoder Pack</title>
+    <authors>Peter Pawlowski</authors>
+    <owners>Rob Reynolds</owners>
+    <licenseUrl>https://www.foobar2000.org/?page=License</licenseUrl>
+    <projectUrl>https://www.foobar2000.org</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description><![CDATA[This pack includes every natively supported free encoder binary for use with the Converter foobar2000 component. The binaries are conveniently installed into a subfolder of the foobar2000 installation folder.
+
+Current versions of foobar2000 will automatically recognize these encoders and no longer ask you for encoder binary location.
+
+## Features
+
+Included encoders:
+
+- FLAC
+- Ogg Vorbis
+- Opus
+- Musepack
+- WavPack
+- AAC + Apple Lossless (qaac) - requires iTunes to be installed (read more...)
+- AAC (fhgaacenc) - requires Winamp to be installed (read more...)
+- Apple Lossless (refalac)
+- MP3 (LAME)
+
+## Notes
+
+- Included AAC encoders require external applications providing actual encoding functionality
+]]></description>
+    <summary>Encoder binaries for the foobar2000 Converter component</summary>
+    <tags>foobar2000 encoder audio mp3 flac ogg converter admin</tags>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/freeencoderpack</packageSourceUrl>
+    <dependencies>
+      <dependency id="foobar2000" version="1.5.2 " />
+    </dependencies>
+  </metadata>
+</package>
