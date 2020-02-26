@@ -17,7 +17,7 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-csvview/screenshot.png)
     </description>
     <projectUrl>http://totalcmd.net/plugring/Startups.html</projectUrl>
-    <tags>doublecmd totalcmd plugin tcplister tcpfilesystem freeware</tags>  
+    <tags>doublecmd totalcmd plugin tcplister freeware</tags>  
     <copyright>Progman13, 2017</copyright>
     <licenseUrl>http://totalcmd.net/plugring/csvview.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
