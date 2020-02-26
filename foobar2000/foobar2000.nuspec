@@ -8,7 +8,7 @@
     <owners>Miodrag Milic</owners>
     <licenseUrl>https://www.foobar2000.org/?page=License</licenseUrl>
     <projectUrl>https://www.foobar2000.org</projectUrl>
-    <iconUrl>https://github.com/majkinetor/au-packages/blob/f24528888103cdacdd420a3a348565b061ad81e7/foobar2000/icon.png?raw=true</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/majkinetor/au-packages/f24528888103cdacdd420a3a348565b061ad81e7/foobar2000/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description><![CDATA[foobar2000 is an advanced freeware audio player for the Windows platform. Some of the basic features include full unicode support, ReplayGain support and native support for several popular audio formats.
 
