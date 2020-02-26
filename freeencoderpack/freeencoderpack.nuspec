@@ -38,4 +38,8 @@ Included encoders:
       <dependency id="foobar2000" version="1.5.2 " />
     </dependencies>
   </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
 </package>
