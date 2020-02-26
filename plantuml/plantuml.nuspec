@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>plantuml</id>
-    <version>1.2020.1</version>
+    <version>1.2020.1.20200226</version>
     <title>PlantUML</title>
     <authors>Arnaud Roques</authors>
     <owners>Yoshimov, Miodrag Milic</owners>
@@ -13,27 +13,27 @@
     <summary>PlantUML is a component that allows to quickly write UML diagrams using simple and intuitive language.</summary>
     <description><![CDATA[PlantUML is an open-source tool allowing users to create UML and other diagrams from a plain text language. Diagrams are defined using a simple and intuitive language. This can be used within many other tools. Images can be generated in PNG, in SVG or LaTeX format. It is also possible to generate ASCII art diagrams (only for sequence diagrams).
 
-Try it online using [plantuml online server](http://www.plantuml.com/plantuml).
+Try it online using [plantuml online server](https://www.plantuml.com/plantuml).
 
 ## Features
 
-- [Sequence diagram](http://plantuml.com/sequence.html)
-- [Use case diagram](http://plantuml.com/usecase.html)
-- [Class diagram](http://plantuml.com/classes.html)
-- [Activity diagram](http://plantuml.com/activity2.html)
-- [Component diagram](http://plantuml.com/component.html)
-- [State diagram](http://plantuml.com/state.html)
-- [Object diagram](http://plantuml.com/objects.html)
-- [Deployment diagram](http://plantuml.com/deployment.html)
-- [Timing diagram](http://plantuml.com/timing-diagram)
-- [Mindmap diagram](http://plantuml.com/mindmap-diagram)
-- [Wireframe graphical interface](http://plantuml.com/salt.html)
-- [Archimate diagram](http://plantuml.com/timing-diagram)
-- [Specification and Description Language (SDL)](http://plantuml.com/activity-diagram-beta#sdl)
-- [Ditaa diagram](http://plantuml.com/ditaa)
-- [Gantt diagram](http://plantuml.com/gantt-diagram)
-- [Work Breakdown Structure diagram](http://plantuml.com/wbs-diagram)
-- [Mathematic with AsciiMath or JLaTeXMath notation](http://plantuml.com/ascii-math)
+- [Sequence diagram](https://plantuml.com/sequence.html)
+- [Use case diagram](https://plantuml.com/usecase.html)
+- [Class diagram](https://plantuml.com/classes.html)
+- [Activity diagram](https://plantuml.com/activity2.html)
+- [Component diagram](https://plantuml.com/component.html)
+- [State diagram](https://plantuml.com/state.html)
+- [Object diagram](https://plantuml.com/objects.html)
+- [Deployment diagram](https://plantuml.com/deployment.html)
+- [Timing diagram](https://plantuml.com/timing-diagram)
+- [Mindmap diagram](https://plantuml.com/mindmap-diagram)
+- [Wireframe graphical interface](https://plantuml.com/salt.html)
+- [Archimate diagram](https://plantuml.com/timing-diagram)
+- [Specification and Description Language (SDL)](https://plantuml.com/activity-diagram-beta#sdl)
+- [Ditaa diagram](https://plantuml.com/ditaa)
+- [Gantt diagram](https://plantuml.com/gantt-diagram)
+- [Work Breakdown Structure diagram](https://plantuml.com/wbs-diagram)
+- [Mathematic with AsciiMath or JLaTeXMath notation](https://plantuml.com/ascii-math)
 
 ## Package parameters
 
