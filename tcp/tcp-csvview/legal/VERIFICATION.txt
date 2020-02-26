@@ -14,6 +14,6 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   plugin: DBB5DFAECFA04FE0D0C87B3F4838A19B32C81F8E377D5F3D59678672615BD676
+   plugin: EEE4A66FC459B412FC87CF3E5CAFE82F40B1066D9306CE5B94638B46D1C26C60
 
 File 'license.txt' is obtained from the ReadMe.txt in the archive

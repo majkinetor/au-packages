@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp-csvview</id>
     <title>TC Plugin: CSV View</title>
-    <version>0.9.5.1</version>
+    <version>0.9.5.3</version>
     <authors>Progman13</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander lister plugin that can view CSV files</summary>
