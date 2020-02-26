@@ -13,8 +13,8 @@ Included encoders:
 - Opus
 - Musepack
 - WavPack
-- AAC + Apple Lossless (qaac) - requires iTunes to be installed (read more...)
-- AAC (fhgaacenc) - requires Winamp to be installed (read more...)
+- AAC + Apple Lossless (qaac) - requires iTunes to be installed 
+- AAC (fhgaacenc) - requires Winamp to be installed 
 - Apple Lossless (refalac)
 - MP3 (LAME)
 
