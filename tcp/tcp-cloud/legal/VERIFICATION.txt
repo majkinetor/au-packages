@@ -13,7 +13,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   plugin: 8E1E6EBAC9351C916920537813AB8554DA8F99EB4C93FF064E4C3DEC67584F4E
+   plugin: B47694B9DA8339B93D05E5CAD9C1A043B50AD28DD3C7D53797884D03960E2EF4
 
 
 File 'license.txt' is extracted from the archive Readme.txt
