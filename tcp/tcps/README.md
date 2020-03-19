@@ -26,7 +26,7 @@ Use the following tags to browse custom DC/TC configuration settings:
 - Unpacks the plugin
 - Installs and removes plugin for Total Commander
 - Installs and removes plugin for Double Commander
-- Set Double Commander options
+- Set TC & DC options
 
 ## Notes
 
