@@ -5,9 +5,12 @@ Total Commander dark and minimal configuration settings.
 ## Features
 
 - Dark colors
+- Dark mode enabled
 - Filter files by typing
 - Configurable font size
 - Minimal interface
+- No splash screen
+- Colors and file associations
 - Some defaults changed (see package code for complete list)
 
 ## Package Parameters

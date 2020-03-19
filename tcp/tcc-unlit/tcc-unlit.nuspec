@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcc-unlit</id>
     <title>TC Config: Unlit</title>
-    <version>1.1</version>
+    <version>1.2</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander dark and minimal configuration settings</summary>

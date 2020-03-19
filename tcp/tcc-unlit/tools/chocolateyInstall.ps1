@@ -24,6 +24,8 @@ Set-TCOptions @{
         FirstTimeIconLib  = 0
         QuickSearchAutoFilter = 1
         SortDirsByName = 0
+        StartupScreen = 0
+        DarkMode = 1
     }
     Layout = @{
         ButtonBar  = 0
