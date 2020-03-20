@@ -26,7 +26,7 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-iclview/screenshot.png)
     </description>
-    <projectUrl>http://totalcmd.net/plugring/Startups.html</projectUrl>
+    <projectUrl>https://totalcmd.net/plugring/iclview.html</projectUrl>
     <tags>doublecmd totalcmd plugin tcplugin tcplister freeware</tags>  
     <copyright>Progman13, 2013</copyright>
     <licenseUrl>https://creativecommons.org/licenses/by/3.0/</licenseUrl>
