@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>dnsjumper</id>
     <title>Dns Jumper</title>
-    <version>2.1</version>
+    <version>2.2</version>
     <authors>Velociraptor</authors>
     <owners>Miodrag Milic</owners>
     <summary>DNS Jumper is a portable freeware App which makes changing your DNS settings as easy as clicking a button</summary>
