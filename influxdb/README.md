@@ -21,5 +21,3 @@ InfluxDB is a time series database designed to handle high write and query loads
 
 - The open source edition of InfluxDB runs on a single node. If you require high availability to eliminate a single point of failure, consider the [InfluxDB Enterprise Edition](https://www.influxdata.com/products/influxdb-enterprise).
 - InfluxDB v1.x package: [influxdb1](https://chocolatey.org/packages/influxdb1)
-- InfluxDB v2.x package: [influxdb2](https://chocolatey.org/packages/influxdb2) [future]
-
