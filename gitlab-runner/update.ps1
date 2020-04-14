@@ -16,8 +16,8 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $version = ($download_page.Content -split "`n") -match '^v([0-9.]+) ' | select -first 1
-    $version = ($version.Substring(1) -replace '\(.+').Trim()
+    $version = ($download_page.Content -split "`n") -match '^## v([0-9.]+) ' | select -first 1
+    $version = ($version.Substring(4) -replace '\(.+').Trim()
 
     $cversion = $version
     if ($version -match '-.+') { $cversion = ($cversion -replace '-.+') + $Matches[0].Replace('.', '')}
