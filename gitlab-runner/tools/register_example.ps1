@@ -6,7 +6,7 @@
     be set in that file. Gitlab-Runner automatically picks up config.toml changes while executing.
 #>
 
-$Env:RUNNER_NAME                = ''
+$Env:RUNNER_NAME                = $env:COMPUTERNAME
 $Env:REGISTRATION_TOKEN         = ''
 $Env:CI_SERVER_URL              = ''
 $Env:RUNNER_TAG_LIST            = ''        #comma separated list of tags
