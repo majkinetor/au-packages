@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'cpu-z.portable'
-$url32       = 'http://download.cpuid.com/cpu-z/cpu-z_1.91-en.zip'
+$url32       = 'http://download.cpuid.com/cpu-z/cpu-z_1.92-en.zip'
 $url64       = $url32
-$checksum32  = 'a535efc8014993a7b94edb6014de59905e3234d35198f6bf34b217bfa0a7d276'
+$checksum32  = 'ee5525dce7bcffafb3727e11ef47e01be0c50dd9c60ff0f1684ed5fb61f72849'
 $checksum64  = $checksum32
 
 $toolsPath   = Split-Path $MyInvocation.MyCommand.Definition
