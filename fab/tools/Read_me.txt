@@ -1,6 +1,17 @@
 Author: BlueLife , Velociraptor
 www.sordum.org
 
+[010101010101010101]--Firewall App Blocker (Fab) v1.7--[010101010101010101]
+
+(Thursday, 16 April 2020)
+------------
+Changelog:
+01. FIXED - Program closes when accidentally pressing ESC key (This Feature has been removed)
+02. ADDED - Adding folder content by Drag & Drop or Copy Paste
+03. ADDED - Value to ini file for svchost.exe (This file is not added to the list by default)
+04. ADDED - Netsh commands under File menu (Allow local subnet , Export - Import Firewall config)
+05. FIXED - Some Minor Bugs and code weaknesses (code improvements)
+
 [010101010101010101]--Firewall App Blocker (Fab) v1.6--[010101010101010101]
 
 (Friday , 21. April 2017)
