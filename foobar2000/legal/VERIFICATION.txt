@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://www.foobar2000.org/files/ac448e9e4e71ed87322ee95f7871bcf8/foobar2000_v1.5.2.exe
+   x32: https://www.foobar2000.org/files/c282f54ec45951251b2a0670df95e64b/foobar2000_v1.5.4.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 95EFE043207EC0A5486B9CE2BDC4CFA5D4B019C6DD3730E0012C75624E329CDD
+   checksum32: 838ADC84C9D36312F82E333C8876CE9B653436F33912A00F879E52F99A1C8654
 
 
 File 'license.txt' is obtained from:
