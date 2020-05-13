@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>shutup10</id>
     <title>ShutUp10</title>
-    <version>1.8.1409</version>
+    <version>1.8.1410</version>
     <authors>O&amp;OSoftware</authors>
     <owners>Miodrag Milic</owners>
     <summary>Free antispy tool for Windows 10</summary>
@@ -13,6 +13,10 @@
 
 Using a very simple interface, you decide how Windows 10 should respect your privacy by deciding which unwanted functions should be deactivated.
 O&amp;O ShutUp10 is entirely free and does not have to be installed – it can be simply run directly and immediately on your PC. And it will not install or download retrospectively unwanted or unnecessary software, like so many other programs do these days!
+
+## Notes
+
+- To run the program use Win+R and type `OOSU10`. This is embedded binary file that does't have any powershell installer and hence doesn't create Desktop or Start Menu shortcuts and is simply coppied to Chocolatey binary folder.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/shutup10/screenshot.png)
 
