@@ -23,15 +23,14 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $domain  = $releases -split '(?<=//.+)/' | select -First 1
 
-    $re  = '\.exe$'
-    $url = $download_page.links | ? href -match $re | % href
-    $version =  ($url[0] -split '/'| select -last 1 -Skip 1) -replace 'less-v' -replace '\.1'
+    $re  = 'less\.exe$'
+    $url = $download_page.links | ? href -match $re | % href | select -first 1
+    $version =  ($url -split '/'| select -last 1 -Skip 1) -replace 'less-v' -replace '\.1'
     $version = "$($version / 100)"  # using string interpolation here to force the invariant rather than the current culture
     if ($version.Length -eq 3) { $version += "0" }
 
     @{
-       URL32 = $domain + $url[0]
-       URL64 = $domain + $url[1]
+       URL32 = $domain + $url
        Version = $version
        ReleaseNotes = "http://www.greenwoodsoftware.com/less/news.$version.html"
     }
