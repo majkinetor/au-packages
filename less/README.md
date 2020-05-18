@@ -10,3 +10,4 @@ Less is a CLI pager, a program that displays text files. Other pagers commonly i
 ## Notes
   
 - If you are using [PSCX](https://chocolatey.org/packages/pscx), you must override its internally distributed less version using the following in your `$PROFILE`: `($Pscx:Preferences).PageHelpUsingLess = $false`
+- This package is based on automatic less for Windows [build](https://github.com/jftuga/less-Windows) by John Taylor
