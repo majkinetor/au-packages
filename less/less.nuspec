@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>less</id>
-    <version>0.0</version>
+    <version>5.61</version>
     <title>Less</title>
     <authors>Mark Nudelman</authors>
     <owners>Miodrag Milić</owners>
