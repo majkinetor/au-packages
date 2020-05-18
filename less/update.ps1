@@ -20,20 +20,6 @@ function global:au_BeforeUpdate {
  }
 
 function global:au_GetLatest {
-
-#     add-type @"
-#     using System.Net;
-#     using System.Security.Cryptography.X509Certificates;
-#     public class TrustAllCertsPolicy : ICertificatePolicy {
-#         public bool CheckValidationResult(
-#             ServicePoint srvPoint, X509Certificate certificate,
-#             WebRequest request, int certificateProblem) {
-#             return true;
-#         }
-#     }
-# "@
-# [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
-
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $domain  = $releases -split '(?<=//.+)/' | select -First 1
 
@@ -51,9 +37,5 @@ function global:au_GetLatest {
     }
 }
 
-try {
-    update -ChecksumFor none
-} catch {
-    $ignore = 'Unable to connect to the remote server'
-    if ($_ -match $ignore) { Write-Host $ignore; 'ignore' }  else { throw $_ }
-}
+
+update -ChecksumFor none
