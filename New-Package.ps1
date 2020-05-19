@@ -60,7 +60,7 @@ function New-Package{
 
     Write-Verbose 'Fixing chocolateyInstall.ps1'
     $installer = gc "$Name\tools\chocolateyInstall.ps1"
-    $installer -replace "(^[$]packageName\s*=\s*)('.*')", "`$1'$($Name)'" | sc "$Name\tools\chocolateyInstall.ps1"
+    $installer -replace "(^[$]packageName\s*=\s*)('.*')", "`$1'$($Name)'" | Set-Content "$Name\tools\chocolateyInstall.ps1"
 }
 
 New-Package $Name $Type -GithubRepository majkinetor/chocolatey -Verbose
