@@ -1,6 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
+. $toolsPath\helpers.ps1
 
 $pp = Get-PackageParameters
 if (!$pp.InstallRoot) { $pp.InstallRoot = 'C:\influxdata' }
@@ -14,3 +15,5 @@ $packageArgs = @{
 ls $toolsPath\* | ? { $_.PSISContainer } | rm -Recurse -Force #remove older package dirs
 Get-ChocolateyUnzip @packageArgs
 rm $toolsPath\*.zip -ea 0
+
+if ($pp.Service) { Install-InfluxDbService }

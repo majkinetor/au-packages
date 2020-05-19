@@ -15,9 +15,10 @@ InfluxDB is a time series database designed to handle high write and query loads
 
 ## Package parameters
 
--  `/InstallRoot` - Installation directory root, by default `c:\influxdata`
+- `/InstallRoot` - Installation directory root, by default `c:\influxdata`
+- `/Service` - Install as Windows service. If value `0` is specified, service will be created but not started (`/Service:0`). Note that any existing service will not be removed so before updating, you should first uninstall existing package (this will not remove existing data). 
 
 ## Notes
 
-- The open source edition of InfluxDB runs on a single node. If you require high availability to eliminate a single point of failure, consider the [InfluxDB Enterprise Edition](https://www.influxdata.com/products/influxdb-enterprise).
+- The open source edition of InfluxDB runs on a single node. If you require high availability to eliminate a single point of failure, consider the [InfluxDB Enterprise Edition](https://www.influxdata.com/products/influxdb-enterprise)
 

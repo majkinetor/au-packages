@@ -24,7 +24,8 @@
 
 ## Package parameters
 
--  `/InstallRoot` - Installation directory root, by default `c:\influxdata`
+- `/InstallRoot` - Installation directory root, by default `c:\influxdata`
+- `/Service` - Install as Windows service. If value `0` is specified, service will be created but not started (`/Service:0`)
 
 ## Notes
 
@@ -41,6 +42,9 @@
     <bugTrackerUrl>https://github.com/influxdata/influxdb/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/influxdata/influxdb</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/influxdb1</packageSourceUrl>
+    <dependencies>
+      <dependency id="nssm" version="2.24.101" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
