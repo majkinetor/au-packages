@@ -1,10 +1,9 @@
 function Get-WebRequestTable {
     param(
-        [Microsoft.PowerShell.Commands.HtmlWebResponseObject] $WebRequest,
-        [string] $TableClass
+        [Microsoft.PowerShell.Commands.HtmlWebResponseObject] $WebRequest
     )
 
-    $table  = @($WebRequest.ParsedHtml.getElementsByClassName($TableClass))
+    $table  = @($WebRequest.ParsedHtml.getElementsByTagName('table'))
     $titles = @()
     $rows   = @($table.Rows)
 
@@ -28,11 +27,11 @@ function Get-WebRequestTable {
 }
 
 function Resolve-PostgreUrl($url) {
-    if ($URL -eq 'N/A') { return }
+    if ($url -eq 'N/A') { return }
 
     $url -match '(?<=href=").+?(?=")' | Out-Null
-    $url = $domain + $Matches[0]
-    $p = iwr $url -UseBasicParsing
+    $url = $Matches[0]
+    $p = Invoke-WebRequest $url -UseBasicParsing
     $p.Content -match 'download_link":"(https:\\.+?getfile.jsp\?fileid=\d+)' | Out-Null
     if (!$Matches[1]) { return }
     $url = $Matches[1].Replace("\/","/")
