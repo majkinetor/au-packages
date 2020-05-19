@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>loki</id>
+    <title>Loki</title>
+    <version>1.4.1.20200519</version>
+    <authors>Grafana team</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus</summary>
+    <description><![CDATA[## Features
+
+## Package parameters
+
+## Notes
+
+
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
+]]></description>
+    <projectUrl>https://grafana.com/oss/loki</projectUrl>
+    <tags>admin server logs grafana foss cross-platform</tags>
+    <copyright>GrafanaLabs</copyright>
+    <licenseUrl>https://github.com/grafana/loki/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/loki/icon.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <docsUrl>https://github.com/grafana/loki/blob/master/docs/README.md</docsUrl>
+    <mailingListUrl>https://community.grafana.com/</mailingListUrl>
+    <bugTrackerUrl>https://github.com/grafana/loki/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/grafana/loki</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/loki</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
