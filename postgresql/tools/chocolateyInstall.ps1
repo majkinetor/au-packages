@@ -19,15 +19,15 @@ $silentArgs = @{
 $packageArgs = @{
     packageName     = $Env:ChocolateyPackageName
     fileType        = 'exe'    
-    url64           = 'https://get.enterprisedb.com/postgresql/postgresql-9.4.26-1-windows-x64.exe'
-    checksum64      = '028F48ACB0AC5AEC5B6C4B87BA827030932427A3511BEB6BE2784BFCB51E8F20'
+    url64           = 'https://get.enterprisedb.com/postgresql/postgresql-12.3-1-windows-x64.exe'
+    checksum64      = '1555EAF89DEF457B87637CA2B82F8CACF81B3DA6A0862F5D2BCEE0B1091F4D5C'
     checksumType64  = 'sha256'
-    url             = 'https://get.enterprisedb.com/postgresql/postgresql-9.4.26-1-windows.exe'
-    checksum        = '19AE10CD609DE09BD0D1890076AF3D429B5FEC0FEDD22F65CF158AC0773FBD4C'
+    url             = ''
+    checksum        = ''
     checksumType32  = 'sha256'
     silentArgs      =  ($silentArgs.Keys | % { "--{0} {1}" -f $_.Tolower(), $silentArgs.$_}) -join ' '
     validExitCodes  = @(0)
-    softwareName    = 'PostgreSQL 9*'  
+    softwareName    = 'PostgreSQL 12*'  
 }
 Install-ChocolateyPackage @packageArgs
 Write-Host "Installation log: $Env:TEMP\install-postgresql.log"
