@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>less</id>
-    <version>5.61</version>
+    <version>5.62</version>
     <title>Less</title>
     <authors>Mark Nudelman</authors>
     <owners>Miodrag Milić</owners>
@@ -12,6 +12,14 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description><![CDATA[Less is a CLI pager, a program that displays text files. Other pagers commonly in use are `more` and `pg`. Less is similar to `more`, but allows backward movement in the file as well as forward movement. Also, less does not have to read the entire input file before starting, so with large input files it starts up faster than text editors like vi.
 
+## Features
+
+- Backward and forward movement
+- Searching, filtering and highlighting, multifile search, regular expressions
+- Multiple files, remembering position in each file
+- Font styles: bold and underline
+- Advanced features: key bindings, tab stops, prompt customization, line numbers, tag, options in environment variable, file preprocessor
+- Cross platform
 
 ## Package Parameters
 
@@ -24,7 +32,7 @@
 ]]></description>
     <summary>Less is a free, open-source file pager</summary>
     <tags>pager viewer cli foss cross-platform</tags>
-    <releaseNotes>http://www.greenwoodsoftware.com/less/news.5.61.html</releaseNotes>
+    <releaseNotes>http://www.greenwoodsoftware.com/less/news.5.62.html</releaseNotes>
     <mailingListUrl>http://www.greenwoodsoftware.com/less/less-announce.html</mailingListUrl>
     <docsUrl>http://man7.org/linux/man-pages/man1/less.1.html</docsUrl>
     <projectSourceUrl>http://www.greenwoodsoftware.com/less/download.html#source</projectSourceUrl>

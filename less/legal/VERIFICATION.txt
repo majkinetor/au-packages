@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/jftuga/less-Windows/releases/download/less-v561.1/less.exe
+   x32: https://github.com/jftuga/less-Windows/releases/download/less-v562.0/less.exe
 
    to download the zip package.
 
@@ -15,4 +15,4 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: A1D778F5F82A2399B0DF279B3C182BECAE5F5474FF6F507F61E78AF1DD41A7CD
+   checksum32: 61044F632F5FCE2DED86F23DB0154D0E87256F840C2930BCEEFF04DB9EE75830
