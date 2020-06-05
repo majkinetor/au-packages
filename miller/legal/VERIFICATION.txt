@@ -1,0 +1,24 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Package can be verified like this:
+
+1. Go to
+
+   x32: https://github.com/johnkerl/miller/releases/download/v5.7.0/mlr.exe
+   x64: https://github.com/johnkerl/miller/releases/download/v5.7.0/msys-2.0.dll
+
+   to download the installer.
+
+2. You can use one of the following methods to obtain the SHA256 checksum:
+   - Use powershell function 'Get-FileHash'
+   - Use Chocolatey utility 'checksum.exe'
+
+   checksum32: 32503F4D45B0A7D81B44A1EAFB10A6F0F0651BF5359F5A1D58D45979F6D2936B
+   checksum64: DC641636D5D782B31D29CE823E951D1A2164C86EE06BF2F65A841360FB7AF356
+
+
+File 'license.txt' is obtained from:
+   https://raw.githubusercontent.com/johnkerl/miller/master/LICENSE.txt
