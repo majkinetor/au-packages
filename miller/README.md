@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/miller/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/miller.svg?color=red&label=miller)](https://chocolatey.org/packages/miller)
+# [![](https://img.shields.io/chocolatey/v/miller.svg?color=red&label=miller)](https://chocolatey.org/packages/miller)
 
 Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON. You get to work with your data using named fields, without needing to count positional column indices.
 
