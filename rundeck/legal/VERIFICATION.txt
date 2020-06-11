@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://dl.bintray.com/rundeck/rundeck-maven/rundeck-3.2.7-20200515.war
+   x32: https://dl.bintray.com/rundeck/rundeck-maven/rundeck-3.2.8-20200608.war
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 730E11A2FAD28FAEC4DA5345AB176A1644259CE87B93DCD200400C7EA8FF7A48
+   checksum32: 07A07D677D5BD6D26EA27EE4F7972F0D33F7A219BE595CA749D09AF10AD99254
 
 File 'license.txt' is obtained from:
    https://raw.githubusercontent.com/rundeck/rundeck/master/LICENSE
