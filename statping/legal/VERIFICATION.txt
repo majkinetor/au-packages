@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com//statping/statping/releases/download/v0.90.46/statping-windows-386.zip
+   x64: https://github.com//statping/statping/releases/download/v0.90.48/statping-windows-386.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: DAF81F24A77C9D33D9A81E62BB9008645961BFDCD84C6F2D6D05F5087B9A7144
+   checksum64: 70DB480EE0275FD99931877011E12E54A4F7B0E473E657BC5CAF60660BB797A4
 
 File 'license.txt' is obtained from:
    https://github.com/hunterlong/statping/blob/master/LICENSE
