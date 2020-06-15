@@ -33,4 +33,4 @@ See more at [features page](https://lucene.apache.org/solr/features.html)
 
 ## Package Parameters
 
-- `/Path` - Install/unpack to a custom location. Chocolatey will **NOT** remove any files from this custom location on uninstall of the package.  Nor will it upgrade files in this custom location without using the `/path` parameter again.
+- `/InstallDir` - Install/unpack to a custom location. Chocolatey will **NOT** remove any files from this custom location on uninstall of the package.  Nor will it upgrade files in this custom location without using the `/InstallDir` parameter again.
