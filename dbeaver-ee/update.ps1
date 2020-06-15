@@ -1,30 +1,32 @@
 import-module au
 
-$releases = 'https://dbeaver.com/files/dbeaver-ee-latest-x86-setup.exe'
+$releases = 'https://dbeaver.com/files/dbeaver-ee-latest-x86_64-setup.exe'
 
 function global:au_SearchReplace {
    @{
-        ".\tools\chocolateyInstall.ps1" = @{
-            "(?i)(^\s*url\s*=\s*)('.*')"          = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*url64bit\s*=\s*)('.*')"     = "`$1'$($Latest.URL64)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksum64\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum64)'"
-        }
+    ".\legal\VERIFICATION.txt" = @{
+        "(?i)(\s+x64:).*"      = "`${1} $($Latest.URL64)"
+        "(?i)(checksum64:).*"  = "`${1} $($Latest.Checksum64)"
+      }
    }
 }
 
 
+function global:au_BeforeUpdate {
+    Get-RemoteFiles -Purge -NoSuffix
+}
 
 function global:au_GetLatest {
     $request = [System.Net.WebRequest]::Create($releases)
     $request.AllowAutoRedirect=$false
     $response=$request.GetResponse()
-    $url32 = $response.GetResponseHeader('Location')
-    $url64 = $url32 -replace '-x86-', '-x86_64-'
+    $url64 = $response.GetResponseHeader('Location')
 
-    $version = $url32 -split '-' | select -Last 1 -Skip 2
-    @{ URL64 = $url64; URL32 = $url32; Version = $version }
+    $version = $url64 -split '-' | select -Last 1 -Skip 2
+    @{
+        Version = $version
+        URL64 = $url64
+    }
 }
 
-
-update -NoCheckUrl
+update -ChecksumFor none
