@@ -10,8 +10,8 @@ if ($pp.NoAutoUpdate) { Set-AutoUpdate -Enable }
 $packageArgs = @{
   packageName            = 'signal'
   fileType               = 'EXE'
-  url                    = 'https://updates.signal.org/desktop/signal-desktop-win-1.34.1.exe'
-  checksum               = '09b2dae14f1a36567728eb15f0870d3489bee3cc043ab41aaa93d638f5d989ec'
+  url                    = 'https://updates.signal.org/desktop/signal-desktop-win-1.34.2.exe'
+  checksum               = '3d8df32e524334a592b0ebee6b98b58934069a51edf935dca654b19ac981ffca'
   checksumType           = 'sha256'
   silentArgs             = '/S'
   validExitCodes         = @(0)
