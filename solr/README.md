@@ -30,3 +30,7 @@ Solr is a standalone enterprise search server with a REST-like API. You put docu
 - Multiple search indices
 
 See more at [features page](https://lucene.apache.org/solr/features.html)
+
+## Package Parameters
+
+- `/InstallDir` - Install/unpack to a custom location. Chocolatey will **NOT** remove any files from this custom location on uninstall of the package.  Nor will it upgrade files in this custom location without using the `/InstallDir` parameter again.
