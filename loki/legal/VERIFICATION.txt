@@ -8,7 +8,7 @@ Package can be verified like this:
 1. Go to
 
    x32:
-   x64: https://github.com/grafana/loki/releases/download/v1.4.1/loki-windows-amd64.exe.zip
+   x64: https://github.com/grafana/loki/releases/download/v1.5.0/loki-windows-amd64.exe.zip
 
    to download the installer.
 
@@ -17,7 +17,7 @@ Package can be verified like this:
    - Use Chocolatey utility 'checksum.exe'
 
    checksum32:
-   checksum64: B545035A39FF95F53F7D413537315F3947AA89E79A38209EFC49A9D824F47378
+   checksum64: EB734690F1FFB3F44B39E9EAA9F8C4BA01988AD9889650160F6FE8906C347470
 
 Using AU:
 

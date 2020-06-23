@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>loki</id>
     <title>Loki</title>
-    <version>1.4.1.20200519</version>
+    <version>0.0</version>
     <authors>Grafana team</authors>
     <owners>Miodrag Milic</owners>
     <summary>Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus</summary>
