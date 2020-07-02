@@ -48,7 +48,12 @@ function global:au_GetLatest {
 
     $streams = [ordered]@{}
     foreach ($item in $table) {
-        $v = [version]($item.version -replace '[^\d.]')
+        $url = Resolve-PostgreUrl $item."Windows x86-64"
+        if (!$url) { continue }
+        $version = $url -split 'postgresql-|-windows-x64\.exe' | select -Last 1 -Skip 1
+        $version = $version -replace '-', '.'
+
+        $v = [version]$version
         $major = $v.ToString(1)
 
         $s1 = @{
