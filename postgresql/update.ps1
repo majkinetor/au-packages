@@ -34,7 +34,7 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate() { 
+function global:au_BeforeUpdate() {
     if ($Latest.PackageName -eq 'postgresql') {return}
 
     # Generate checksum this way
@@ -48,8 +48,7 @@ function global:au_GetLatest {
 
     $streams = [ordered]@{}
     foreach ($item in $table) {
-        $version = $item."PostgreSql Version" -replace '\s*\(.+'
-        $v = [version]$version
+        $v = [version]$item.version
         $major = $v.ToString(1)
 
         $s1 = @{
@@ -69,12 +68,12 @@ function global:au_GetLatest {
         if (!$s1.Url64 -and !$s1.Url32) { continue }
         if (!$s1.Url64) { $s1.Remove("Url64") }
         if (!$s1.Url32) { $s1.Remove("Url32") }
-        
+
         $s = $v.ToString(2);   $streams.$s = $s1
         $s = "postgresql-$s";  $streams.$s = $s2
     }
-    
-    $streams.postgresql = @{ 
+
+    $streams.postgresql = @{
         Version     = $streams[0].Version
         Dependency  = $streams[0].PackageName
         PackageName = 'postgresql'
