@@ -48,7 +48,7 @@ function global:au_GetLatest {
 
     $streams = [ordered]@{}
     foreach ($item in $table) {
-        $v = [version]$item.version
+        $v = [version]($item.version -replace '[^\d.]')
         $major = $v.ToString(1)
 
         $s1 = @{
