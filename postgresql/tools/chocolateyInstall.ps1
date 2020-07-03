@@ -25,7 +25,7 @@ $packageArgs = @{
     url             = ''
     checksum        = ''
     checksumType32  = 'sha256'
-    silentArgs      =  ($silentArgs.Keys | % { "--{0} '{1}'" -f $_.Tolower(), $silentArgs.$_}) -join ' '
+    silentArgs      =  ($silentArgs.Keys | % { "--{0} {1}" -f $_.Tolower(), $silentArgs.$_}) -join ' '
     validExitCodes  = @(0)
     softwareName    = 'PostgreSQL 12*'
 }

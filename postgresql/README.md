@@ -9,23 +9,27 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
 - [Feature Matrix](https://www.postgresql.org/about/featurematrix)
 
 ## Package parameters
-
-- `/Password` - Password to be assigned to the `postgres` user. If omitted, it will be generated and shown in the install output.
+- `/Password` - Password to be assigned to the `postgres` user. If omitted, it will be generated and shown in the install output. PostgreSql installer ignores this parameter if there is existing installation.
 - `/NoPath` - Do not add postgresql bin directory to the PATH.
 
 ## Notes
 
-- Test installation (specify your password):  
-`$Env:PGPASSWORD='test'; '\conninfo' | psql -Upostgres`  
-This should output:  
+- Test installation (specify your password):
+`$Env:PGPASSWORD='test'; '\conninfo' | psql -Upostgres`
+This should output:
 `You are connected to database "postgres" as user "postgres" on host "localhost" at port "5432"`
 - This package will install PostgreSQL to `$Env:ProgramFiles\PostgreSQL\[MajorVersion]`.
 - [Silent install options](https://www.enterprisedb.com/edb-docs/d/postgresql/installation-getting-started/installation-guide-installers/10/PostgreSQL_Installation_Guide.1.16.html).
 - If you have problems during installation see [troubleshooting page](https://wiki.postgresql.org/wiki/Troubleshooting_Installation).
+- If you didn't specify password during setup and didn't record the generated one, you need manually reset it using the following steps:
+    - Open file `data\pg_hba.conf` in PostgreSql installation directory
+    - Change `METHOD` to `trust` and restart service with `Restart-Service postgresql-x64-12`
+    - Execute `"alter user postgres with password '<my password>';" | psql -Upostgres`
+    - Revert back `data\pg_hba.conf` to METHOD `md5` and restart service
 
 ### Virtual package
 
-Each major version has its own package: [postgresql12](https://chocolatey.org/packages/postgresql12), [postgresql11](https://chocolatey.org/packages/postgresql11), [postgresql10](https://chocolatey.org/packages/postgresql10), [postgresql9](https://chocolatey.org/packages/postgresql9). 
+Each major version has its own package: [postgresql12](https://chocolatey.org/packages/postgresql12), [postgresql11](https://chocolatey.org/packages/postgresql11), [postgresql10](https://chocolatey.org/packages/postgresql10), [postgresql9](https://chocolatey.org/packages/postgresql9).
 
 **Virtual package** [postgresql](https://chocolatey.org/packages/postgresql) also contains all versions that depend on adequate major version, but using it without problems require some special choco parameters.
 
@@ -43,7 +47,7 @@ To uninstall dependent package use `--force-dependencies`:
 cuninst postgresql --force-dependencies
 cuninst postgresql12 postgresql
 
-# This example uninstalls only postgresql virtual package and not postgresql12 
+# This example uninstalls only postgresql virtual package and not postgresql12
 cuninst postgresql
 ```
 
@@ -54,11 +58,9 @@ To force reinstallation via virtual package use `--force-dependencies`:
 cinst postgresql --force --force-dependencies
 cinst postgresql12 --force --force-dependencies
 
-# This will reinstall only postgresql virtual package and not its dependency postgresql12 
+# This will reinstall only postgresql virtual package and not its dependency postgresql12
 cinst postgresql -force
 
 # This one is different then the first one as vcredist140 dependency is not reinstalled
 cinst postgresql12 --force
 ```
-
-
