@@ -23,8 +23,8 @@ This should output:
 - If you have problems during installation see [troubleshooting page](https://wiki.postgresql.org/wiki/Troubleshooting_Installation).
 - If you didn't specify password during setup and didn't record the generated one, you need manually reset it using the following steps:
     - Open file `data\pg_hba.conf` in PostgreSql installation directory
-    - Change `METHOD` to `trust` and restart service with `Restart-Service postgresql-x64-12`
-    - Execute `"alter user postgres with password '<my password>';" | psql -Upostgres`
+    - Change `METHOD` to `trust` and restart service with `Restart-Service postgresql*`
+    - Execute `"alter user postgres with password '[my password]';" | psql -Upostgres`
     - Revert back `data\pg_hba.conf` to METHOD `md5` and restart service
 
 ### Virtual package
