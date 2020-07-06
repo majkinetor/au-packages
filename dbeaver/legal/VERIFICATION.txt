@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/dbeaver/dbeaver/releases/download/7.1.1/dbeaver-ce-7.1.1-x86_64-setup.exe
+   x64: https://github.com/dbeaver/dbeaver/releases/download/7.1.2/dbeaver-ce-7.1.2-x86_64-setup.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: 9C1F7FC1FC0BBB6ABA790BE0D5F92619552290769FCA3715FBB935ECBD97D9B5
+   checksum64: 4B51D9EA592D43EC92F94089186F17CA2C7F62E2B2983655A6920DDE19AE91EA
 
 
 File 'LICENSE.md' is obtained from:
