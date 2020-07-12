@@ -18,8 +18,6 @@ Unlike other logging systems, Loki is built around the idea of only indexing met
     <copyright>GrafanaLabs</copyright>
     <licenseUrl>https://github.com/grafana/loki/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/loki/icon.png</iconUrl>
-    <releaseNotes></releaseNotes>
     <docsUrl>https://github.com/grafana/loki/blob/master/docs/README.md</docsUrl>
     <mailingListUrl>https://community.grafana.com/</mailingListUrl>
     <bugTrackerUrl>https://github.com/grafana/loki/issues</bugTrackerUrl>
