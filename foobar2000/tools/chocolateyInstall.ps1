@@ -15,7 +15,7 @@ Install-ChocolateyInstallPackage @packageArgs
 rm $installerPath -ea 0; if (Test-Path $installerPath) { Set-Content "$installerPath.ignore" "" }
 
 $pp = Get-PackageParameters
-if (!$pp.NoShortcut ) {
+if ($pp.NoShortcut ) {
     Write-Host "Removing desktop shortcut"
     $shortcutPath = Join-Path ([Environment]::GetFolderPath("CommonDesktopDirectory")) 'foobar2000.lnk'
     Remove-Item $shortcutPath -ea 0
