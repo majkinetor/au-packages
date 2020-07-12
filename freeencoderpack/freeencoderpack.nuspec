@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>freeencoderpack</id>
-    <version>2019.12.23.20200226</version>
+    <version>2020.07.11</version>
     <title>foobar2000 Free Encoder Pack</title>
     <authors>Peter Pawlowski</authors>
     <owners>Rob Reynolds</owners>
@@ -22,8 +22,8 @@ Included encoders:
 - Opus
 - Musepack
 - WavPack
-- AAC + Apple Lossless (qaac) - requires iTunes to be installed (read more...)
-- AAC (fhgaacenc) - requires Winamp to be installed (read more...)
+- AAC + Apple Lossless (qaac) - requires iTunes to be installed 
+- AAC (fhgaacenc) - requires Winamp to be installed 
 - Apple Lossless (refalac)
 - MP3 (LAME)
 
