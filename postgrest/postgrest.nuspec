@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>postgrest</id>
+    <title>PostgREST</title>
+    <version>0.0</version>
+    <authors>Joe Nelson</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>REST API for any Postgres database
+    </summary>
+    <description><![CDATA[PostgREST serves a fully RESTful API from any existing PostgreSQL database. It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
+
+## Features
+
+- Tables and Views
+- Unicode Support
+- Resource Embedding
+- Custom Queries
+- Stored Procedures
+- Insertions / Updates
+- Deletions
+- OpenAPI Support
+- HTTP Status Codes
+- Authentication
+- Schema Isolation
+]]></description>
+    <projectUrl>http://postgrest.org/</projectUrl>
+    <tags>api rest postgresql cross-platform foss database server</tags>
+    <copyright>Joe Nelson</copyright>
+    <licenseUrl>https://github.com/PostgREST/postgrest/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/postgrest/icon.png</iconUrl>
+    <releaseNotes>https://github.com/PostgREST/postgrest/releases/tag/v7.0.1</releaseNotes>
+    <docsUrl>http://postgrest.org/en</docsUrl>
+    <mailingListUrl>https://gitter.im/begriffs/postgrest</mailingListUrl>
+    <bugTrackerUrl>https://github.com/PostgREST/postgrest/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/PostgREST/postgrest</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/postgrest</packageSourceUrl>
+    <dependencies>
+      <dependency id="postgresql12" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
