@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>postgrest</id>
     <title>PostgREST</title>
-    <version>0.0</version>
+    <version>7.0.1</version>
     <authors>Joe Nelson</authors>
     <owners>Miodrag Milic</owners>
     <summary>REST API for any Postgres database
@@ -25,6 +25,10 @@
 - HTTP Status Codes
 - Authentication
 - Schema Isolation
+
+## Package parameters
+
+- `/InstallDir` - Installation directory, by default `c:\postgrest`.
 ]]></description>
     <projectUrl>http://postgrest.org/</projectUrl>
     <tags>api rest postgresql cross-platform foss database server</tags>
