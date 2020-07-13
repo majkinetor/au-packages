@@ -35,6 +35,7 @@ function global:au_GetLatest {
     @{
         Version = $version.Substring(1)
         URL64   = $domain + $url
+        ReleaseNotes = "https://github.com/grafana/loki/releases/tag/$version"
     }
 }
 
