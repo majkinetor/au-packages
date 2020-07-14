@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: http://www.andre-simon.de/zip/ansifilter-2.16.zip
-   x64: http://www.andre-simon.de/zip/ansifilter-2.16-x64.zip
+   x32: http://www.andre-simon.de/zip/ansifilter-2.16.1.zip
+   x64: http://www.andre-simon.de/zip/ansifilter-2.16.1-x64.zip
 
    to download the installer.
 
@@ -16,8 +16,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 92FD61E47D3D3C370128A8D31F27E0145C6147DD0CB5937663D15E21D5F86415
-   checksum64: B5270915E51A43CF6A5FB564012C5E23FFD79D10D35D8E178F30AB999C0E24AB
+   checksum32: D0A85246FFD12D9973E1D65CBAE06747B338A858A993A448B93DAA9914928BB1
+   checksum64: 036D505FA4CA1C0A80A2EDF9BFD980031D430F518F765A1B5EA7ADD7034F064E
 
 File 'license.txt' is obtained from:
    https://gitlab.com/saalen/ansifilter/blob/master/COPYING
