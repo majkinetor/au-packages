@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'http://rundeck.org/downloads.html'
+$releases = 'https://docs.rundeck.com/downloads.html'
 
 function global:au_SearchReplace {
    @{
