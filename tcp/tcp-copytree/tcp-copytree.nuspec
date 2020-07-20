@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-copytree</id>
+    <title>TC Plugin: CopyTree</title>
+    <version>1.3.0.328</version>
+    <authors>MVV</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Packer plugin for copying files with folder structure</summary>
+    <description>Total Commander packer plugin for copying files with folder structure.
+
+      Plugin allows you to keep directory structure when you copy/move files from branch view (Ctrl+[Shift+]B by default, or "Branch View" command) or search results panel ('Feed to listbox' button in search results dialog). TC copies files in theese modes w/o keeping directory structure, into single directory (TC 8.50+ allow keeping directory structure relative to current directory in case of branch view).
+      
+      See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+      
+      ## Features
+      
+      - copies/moves folder trees from branch view/search result
+      - 'choose number of levels to copy' dialog that allows observing relative paths for all cases
+      - allows setting up include/exclude masks for files to be processed
+      - allows displaying choose dialog once or if Win key is down or every time
+      - multi-threading support (background operations in TC 7.55 and later)
+      - allows copying directory timestamps
+      - reports if some files weren't processed
+      - full Unicode support      
+</description>
+    <projectUrl>http://totalcmd.net/plugring/CopyTree.html</projectUrl>
+    <tags>totalcmd doublecmd plugin tcplugin tcppacker files freeware</tags>  
+    <copyright>MVV 2019</copyright>
+    <licenseUrl>https://www.ghisler.com/plugins.htm</licenseUrl>
+    <mailingListUrl>https://www.ghisler.ch/board/viewtopic.php?t=35053</mailingListUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-copytree</packageSourceUrl>
+    <dependencies>
+        <dependency id="tcps" version="0.3"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
