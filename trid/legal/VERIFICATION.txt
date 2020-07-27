@@ -17,6 +17,6 @@ Package can be verified like this:
    - Use Chocolatey utility 'checksum.exe'
 
    checksum_trid: EA7F82363912F5B3C79217BA8716425EC3F2514887F788DCD5A2821D0B1FC83F
-   checksum_triddefs: DAD9B95A7B7CE7C9B8B0651EC2EAFE11BFDBBDE065342DB29EC48BF2C78E3289
+   checksum_triddefs: 2742A4CC93BBE1A57123CCC7594B21999B2CBEF0BEC8AED310BF6BAAF7172654
 
 File 'readme.txt' with license is obtained from the trid_w32.zip file.
