@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>postgresql</id>
-    <version>12.3.1.20200703</version>
+    <id>postgresql11</id>
+    <version>11.8.2</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
@@ -33,8 +33,8 @@ This should output:
 - If you have problems during installation see [troubleshooting page](https://wiki.postgresql.org/wiki/Troubleshooting_Installation).
 - If you didn't specify password during setup and didn't record the generated one, you need manually reset it using the following steps:
     - Open file `data\pg_hba.conf` in PostgreSql installation directory
-    - Change `METHOD` to `trust` and restart service with `Restart-Service postgresql-x64-12`
-    - Execute `"alter user postgres with password '<my password>';" | psql -Upostgres`
+    - Change `METHOD` to `trust` and restart service with `Restart-Service postgresql*`
+    - Execute `"alter user postgres with password '[my password]';" | psql -Upostgres`
     - Revert back `data\pg_hba.conf` to METHOD `md5` and restart service
 
 ### Virtual package
@@ -76,7 +76,7 @@ cinst postgresql12 --force
 ```
 ]]></description>
     <summary>PostgreSQL is an object-relational database management system</summary>
-    <releaseNotes>https://www.postgresql.org/docs/12/static/release.html</releaseNotes>
+    <releaseNotes>https://www.postgresql.org/docs/11/static/release.html</releaseNotes>
     <copyright>Copyright © 1996-2019 The PostgreSQL Global Development Group</copyright>
     <tags>foss cross-platform postgres postgresql sql relational database admin</tags>
     <projectSourceUrl>https://github.com/postgres/postgres</projectSourceUrl>
@@ -84,10 +84,10 @@ cinst postgresql12 --force
     <docsUrl>https://www.postgresql.org/docs/10/static/index.html</docsUrl>
     <mailingListUrl>https://www.postgresql.org/list</mailingListUrl>
     <bugTrackerUrl>https://www.postgresql.org/account/submitbug</bugTrackerUrl>
-    <dependencies><dependency id="postgresql12" version="[12.3.1.20200703]" /></dependencies>
+    <dependencies><dependency id="chocolatey-core.extension" version="1.3.3" /><dependency id="vcredist140" version="14.23.27820" /></dependencies>
   </metadata>
   
   <files>
-    <file src="tools\*.dummy" target="tools" />
+    <file src="tools\**" target="tools" />
   </files>
 </package>
