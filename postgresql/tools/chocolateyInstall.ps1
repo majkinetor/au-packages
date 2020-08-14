@@ -19,15 +19,15 @@ $silentArgs = @{
 $packageArgs = @{
     packageName     = $Env:ChocolateyPackageName
     fileType        = 'exe'
-    url64           = 'https://get.enterprisedb.com/postgresql/postgresql-11.8-2-windows-x64.exe'
-    checksum64      = '1F288F19591B26AB99F33B1C699663EDA0886B270A383EC512C95DD129E59085'
+    url64           = 'https://get.enterprisedb.com/postgresql/postgresql-13.0-beta3-windows-x64.exe'
+    checksum64      = 'F5070E4AF19E6BDB2F80437BA7D5630AA5B672429F174803B4BE19F4A7D218B4'
     checksumType64  = 'sha256'
     url             = ''
     checksum        = ''
     checksumType32  = 'sha256'
     silentArgs      =  ($silentArgs.Keys | % { "--{0} {1}" -f $_.Tolower(), $silentArgs.$_}) -join ' '
     validExitCodes  = @(0)
-    softwareName    = 'PostgreSQL 11*'
+    softwareName    = 'PostgreSQL 13*'
 }
 Install-ChocolateyPackage @packageArgs
 Write-Host "Installation log: $Env:TEMP\install-postgresql.log"
