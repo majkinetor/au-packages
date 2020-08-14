@@ -51,10 +51,9 @@ function global:au_GetLatest {
         $url = Resolve-PostgreUrl $item."Windows x86-64"
         if (!$url) { continue }
         $version = $url -split 'postgresql-|-windows-x64\.exe' | select -Last 1 -Skip 1
-        $version = $version -replace '-', '.'
+        $version = $version -replace '-(\d)', '.$1'
 
-        $v = [version]$version
-        $major = $v.ToString(1)
+        $major, $minor = $version -split '\.|-' | select -First 2
 
         $s1 = @{
             Version      = $version
@@ -74,7 +73,7 @@ function global:au_GetLatest {
         if (!$s1.Url64) { $s1.Remove("Url64") }
         if (!$s1.Url32) { $s1.Remove("Url32") }
 
-        $s = $v.ToString(2);   $streams.$s = $s1
+        $s = "$major.$minor";  $streams.$s = $s1
         $s = "postgresql-$s";  $streams.$s = $s2
     }
 
