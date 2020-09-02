@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>less</id>
-    <version>5.62</version>
+    <version>5.63</version>
     <title>Less</title>
     <authors>Mark Nudelman</authors>
     <owners>Miodrag Milić</owners>
@@ -32,7 +32,7 @@
 ]]></description>
     <summary>Less is a free, open-source file pager</summary>
     <tags>pager viewer cli foss cross-platform</tags>
-    <releaseNotes>http://www.greenwoodsoftware.com/less/news.5.62.html</releaseNotes>
+    <releaseNotes>http://www.greenwoodsoftware.com/less/news.5.63.html</releaseNotes>
     <mailingListUrl>http://www.greenwoodsoftware.com/less/less-announce.html</mailingListUrl>
     <docsUrl>http://man7.org/linux/man-pages/man1/less.1.html</docsUrl>
     <projectSourceUrl>http://www.greenwoodsoftware.com/less/download.html#source</projectSourceUrl>
