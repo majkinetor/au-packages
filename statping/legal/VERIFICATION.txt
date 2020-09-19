@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com//statping/statping/releases/download/v0.90.67/statping-windows-amd64.zip
+   x64: https://github.com//statping/statping/releases/download/v0.90.69/statping-windows-amd64.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: 55A1045F5D815154A684D0239AE3ADD1B61D91924FB11DF89CFB8E1ED6B5C55C
+   checksum64: AE8E079307FA716007DDDA1650DED1DE78A3CECD6B3D8A57EFD0FEDEBC2C28A8
 
 File 'license.txt' is obtained from:
    https://github.com/hunterlong/statping/blob/master/LICENSE
