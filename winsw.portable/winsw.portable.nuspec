@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>winsw.portable</id>
+    <title>Windows Service Wrapper</title>
+    <version>3.0.0-alpha4</version>
+    <authors>WinSW contributors</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>A wrapper executable that can run any executable as a Windows service</summary>
+    <description><![CDATA[## Features
+
+## Package parameters
+
+## Notes
+
+
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
+]]></description>
+    <projectUrl>https://github.com/winsw/winsw</projectUrl>
+    <tags>foss cli service</tags>
+    <copyright>Copyright (c) 2008-2020 Kohsuke Kawaguchi, Sun Microsystems, Inc., CloudBees, Inc., Oleg Nenashev and other contributors</copyright>
+    <licenseUrl>https://github.com/winsw/winsw/blob/v3/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>https://github.com/winsw/winsw/releases/tag/v3.0.0-alpha.4</releaseNotes>
+    <docsUrl>https://github.com/winsw/winsw/blob/v3/docs/installation.md</docsUrl>
+    <bugTrackerUrl>https://github.com/winsw/winsw/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/winsw/winsw</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/winsw.portable</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
