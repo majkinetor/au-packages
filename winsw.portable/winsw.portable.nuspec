@@ -5,19 +5,11 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>winsw.portable</id>
     <title>Windows Service Wrapper</title>
-    <version>0.0</version>
+    <version>3.0.0-alpha4</version>
     <authors>WinSW contributors</authors>
     <owners>Miodrag Milic</owners>
     <summary>A wrapper executable that can run any executable as a Windows service</summary>
-    <description><![CDATA[## Features
-
-## Package parameters
-
-## Notes
-
-
-
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
+    <description><![CDATA[WinSW wraps and manages any application as a Windows service.
 ]]></description>
     <projectUrl>https://github.com/winsw/winsw</projectUrl>
     <tags>foss cli service</tags>
