@@ -19,9 +19,5 @@ Package can be verified like this:
    checksum32:
    checksum64:
 
-Using AU:
-
-   Get-RemoteChecksum
-
 File 'license.txt' is obtained from:
    https://github.com/AutoHotkey/AutoHotkey/blob/26daaddf714135a6fcc730fe250bd1d41a9d3c53/license.txt
