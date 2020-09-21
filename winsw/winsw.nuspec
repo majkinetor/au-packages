@@ -3,9 +3,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
-    <id>winsw.portable</id>
+    <id>winsw</id>
     <title>Windows Service Wrapper</title>
-    <version>3.0.0-alpha4</version>
+    <version>0.0</version>
     <authors>WinSW contributors</authors>
     <owners>Miodrag Milic</owners>
     <summary>A wrapper executable that can run any executable as a Windows service</summary>
@@ -21,10 +21,8 @@
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/*****/icon.png</iconUrl>
     <bugTrackerUrl>https://github.com/winsw/winsw/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/winsw/winsw</projectSourceUrl>
-    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/winsw.portable</packageSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/winsw</packageSourceUrl>
+    <dependencies><dependency id='winsw.portable' version='[3.0.0-alpha4]'/></dependencies>
   </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-    <file src="legal\**" target="legal" />
-  </files>
+  <files></files>
 </package>
