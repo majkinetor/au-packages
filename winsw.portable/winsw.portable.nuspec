@@ -26,6 +26,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>https://github.com/winsw/winsw/releases/tag/v3.0.0-alpha.4</releaseNotes>
     <docsUrl>https://github.com/winsw/winsw/blob/v3/docs/installation.md</docsUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/*****/icon.png</iconUrl>
     <bugTrackerUrl>https://github.com/winsw/winsw/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/winsw/winsw</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/winsw.portable</packageSourceUrl>
