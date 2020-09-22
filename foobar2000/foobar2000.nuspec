@@ -39,7 +39,6 @@
     <summary>foobar2000 is an advanced freeware audio player.</summary>
     <tags>foobar2000 media mp3 flac audio player freeware admin</tags>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/foobar2000</packageSourceUrl>
-    <mailingListUrl>https://hydrogenaud.io/index.php/board,28.0.html</mailingListUrl>
     <docsUrl>http://wiki.hydrogenaud.io/index.php?title=Foobar2000:Foobar2000</docsUrl>
     <releaseNotes>https://www.foobar2000.org/?page=News</releaseNotes>
     <dependencies>
