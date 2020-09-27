@@ -5,7 +5,7 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $pp = Get-PackageParameters
 
-if ($pp.NoAutoUpdate) { Set-AutoUpdate -Enable }
+Set-AutoUpdate -Enable
 
 $packageArgs = @{
   packageName            = 'signal'
