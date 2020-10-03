@@ -39,5 +39,6 @@ Works for everyone, no more complicated install instructions.
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
