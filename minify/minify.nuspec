@@ -16,7 +16,6 @@
     <copyright>Taco de Wolff and contributors</copyright>
     <licenseUrl>https://github.com/tdewolff/minify/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/minify/icon.png</iconUrl>
     <releaseNotes>https://github.com/tdewolff/minify/releases/tag/v2.9.7</releaseNotes>
     <docsUrl>https://github.com/tdewolff/minify#table-of-contents</docsUrl>
     <bugTrackerUrl>https://github.com/tdewolff/minify/issues</bugTrackerUrl>
