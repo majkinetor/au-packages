@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>eraser</id>
     <title>Eraser</title>
-    <version>6.2.0.2990</version>
+    <version>6.2.0.2991</version>
     <authors>Dennis van Lith, Joel Low, Garrett Trant</authors>
     <owners>Miodrag Milić</owners>
     <summary>Eraser is an advanced security tool for Windows which allows you to completely remove sensitive data from your hard drive by overwriting it several times with carefully selected patterns.</summary>
