@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>minify</id>
+    <title>Minify</title>
+    <version>0.0</version>
+    <authors>Taco de Wolff</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>&gt;Minify provides HTML5, CSS3, JS, JSON, SVG and XML minification</summary>
+    <description>dummy</description>
+    <projectUrl>https://go.tacodewolff.nl/minify</projectUrl>
+    <tags>html css js xml svg json cross-platform cli foss</tags>
+    <copyright>Taco de Wolff and contributors</copyright>
+    <licenseUrl>https://github.com/tdewolff/minify/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/minify/icon.png</iconUrl>
+    <releaseNotes>https://github.com/tdewolff/minify/releases/tag/v2.9.7</releaseNotes>
+    <docsUrl>https://github.com/tdewolff/minify#table-of-contents</docsUrl>
+    <bugTrackerUrl>https://github.com/tdewolff/minify/issues</bugTrackerUrl>
+    <projectSourceUrl>https://go.tacodewolff.nl/minify</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/minify</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
