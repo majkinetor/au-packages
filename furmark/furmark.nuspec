@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>furmark</id>
     <title>Furmark</title>
-    <version>1.20.9.0</version>
+    <version>1.22.0.0</version>
     <authors>jeGX</authors>
     <owners>Miodrag Milic</owners>
     <summary>GPU Stress Test OpenGL Benchmark</summary>

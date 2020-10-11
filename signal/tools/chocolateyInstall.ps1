@@ -5,13 +5,13 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $pp = Get-PackageParameters
 
-if ($pp.NoAutoUpdate) { Set-AutoUpdate -Enable }
+Set-AutoUpdate -Enable
 
 $packageArgs = @{
   packageName            = 'signal'
   fileType               = 'EXE'
-  url                    = 'https://updates.signal.org/desktop/signal-desktop-win-1.36.1.exe'
-  checksum               = 'c6331dc57676a1598ba49c1a3ebcd3070607597e5d4ae98414c000812eb6acb3'
+  url                    = 'https://updates.signal.org/desktop/signal-desktop-win-1.36.3.exe'
+  checksum               = '772b29e890341feb1510fae4daefc22df0741c08d4b9075d6fd265e8cbe3d37c'
   checksumType           = 'sha256'
   silentArgs             = '/S'
   validExitCodes         = @(0)

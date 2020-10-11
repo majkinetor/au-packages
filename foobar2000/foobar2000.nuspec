@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>foobar2000</id>
-    <version>1.6</version>
+    <version>1.6.1</version>
     <title>foobar2000</title>
     <authors>Peter Pawlowski</authors>
     <owners>Miodrag Milic</owners>
@@ -39,7 +39,6 @@
     <summary>foobar2000 is an advanced freeware audio player.</summary>
     <tags>foobar2000 media mp3 flac audio player freeware admin</tags>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/foobar2000</packageSourceUrl>
-    <mailingListUrl>https://hydrogenaud.io/index.php/board,28.0.html</mailingListUrl>
     <docsUrl>http://wiki.hydrogenaud.io/index.php?title=Foobar2000:Foobar2000</docsUrl>
     <releaseNotes>https://www.foobar2000.org/?page=News</releaseNotes>
     <dependencies>
