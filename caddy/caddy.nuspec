@@ -5,18 +5,39 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>caddy</id>
     <title>Caddy</title>
-    <version>0.0</version>
+    <version>2.2.0</version>
     <authors>apilayer</authors>
     <owners>Miodrag Milic</owners>
     <summary>Fast, multi-platform web server with automatic HTTPS</summary>
-    <description>dummy</description>
+    <description><![CDATA[Caddy is a powerful, extensible platform to serve your sites, services, and apps, written in Go.
+
+## Features
+
+- **Easy configuration** with the [Caddyfile](https://caddyserver.com/docs/caddyfile)
+- **Powerful configuration** with its [native JSON config](https://caddyserver.com/docs/json/)
+- **Dynamic configuration** with the [JSON API](https://caddyserver.com/docs/api)
+- [**Config adapters**](https://caddyserver.com/docs/config-adapters) if you don't like JSON
+- **Automatic HTTPS** by default
+	- [Let's Encrypt](https://letsencrypt.org) for public sites
+	- Fully-managed local CA for internal names & IPs
+	- Can coordinate with other Caddy instances in a cluster
+- **Stays up when other servers go down** due to TLS/OCSP/certificate-related issues
+- **HTTP/1.1, HTTP/2, and experimental HTTP/3** support
+- **Highly extensible** [modular architecture](https://caddyserver.com/docs/architecture) lets Caddy do anything without bloat
+- **Runs anywhere** with **no external dependencies** (not even libc)
+- Written in Go, a language with higher **memory safety guarantees** than other servers
+
+## Notes
+
+- This packages installs caddy with standard [modules](https://caddyserver.com/docs/modules) only. If you need to install caddy with additional packages you need to build it with those packages included. You can use official caddy [download](https://caddyserver.com/download) page to select and build custom caddy version. Its not possible at this moment to do this via package unless it reimplements custom build.
+]]></description>
     <projectUrl>https://caddyserver.com/</projectUrl>
     <tags>admin cross-platform foss web server html https</tags>
     <copyright>© 2020 apilayer</copyright>
     <licenseUrl>https://github.com/caddyserver/caddy/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/caddy/icon.png</iconUrl>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>https://github.com/caddyserver/caddy/releases/tag/v2.2.0</releaseNotes>
     <docsUrl>https://caddyserver.com/docs</docsUrl>
     <bugTrackerUrl>https://github.com/caddyserver/caddy/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/caddyserver/caddy</projectSourceUrl>
