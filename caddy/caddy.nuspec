@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>caddy</id>
+    <title>Caddy</title>
+    <version>0.0</version>
+    <authors>apilayer</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Fast, multi-platform web server with automatic HTTPS</summary>
+    <description>dummy</description>
+    <projectUrl>https://caddyserver.com/</projectUrl>
+    <tags>admin cross-platform foss web server html https</tags>
+    <copyright>© 2020 apilayer</copyright>
+    <licenseUrl>https://github.com/caddyserver/caddy/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/caddy/icon.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <docsUrl>https://caddyserver.com/docs</docsUrl>
+    <bugTrackerUrl>https://github.com/caddyserver/caddy/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/caddyserver/caddy</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/caddy</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
