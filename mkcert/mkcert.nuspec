@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mkcert</id>
-    <version>1.4.1</version>
+    <version>1.4.2</version>
     <title>mkcert</title>
     <authors>Filippo Valsorda</authors>
     <owners>majkinetor, Stefan Scherer</owners>
@@ -39,7 +39,7 @@ The certificate is at "./example.com+5.pem" and the key at "./example.com+5-key.
     <licenseUrl>https://github.com/FiloSottile/mkcert/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/mkcert</packageSourceUrl>
-    <releaseNotes>https://github.com/FiloSottile/mkcert/releases/tag/v1.4.1</releaseNotes>
+    <releaseNotes>https://github.com/FiloSottile/mkcert/releases/tag/v1.4.2</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
