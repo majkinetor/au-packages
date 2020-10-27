@@ -10,7 +10,7 @@ if(!$pp.Password) {
 $silentArgs = @{
     Mode                = "unattended"
     UnattendedModeUI    = "none"
-    ServerPort          = 5432
+    # ServerPort          = 5432
     SuperPassword       = $pp.Password
     Enable_ACLedit      = 1
     Install_Runtimes    = 0
