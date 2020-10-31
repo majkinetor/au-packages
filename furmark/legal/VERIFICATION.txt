@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://geeks3d.com/downloads/2020p/FurMark_1.22.0.0_Setup.exe
+   x32: https://geeks3d.com/downloads/2020p/FurMark_1.22.1.0_Setup.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 7FC38000712817B7B8415082520D22D8125B22918B185B2C0D93A7AFDB7CE8A0
+   checksum32: A27AB5C4DE5DA8C966310ECCC6CCC37CD967958569D12958A47DC4CAC77B26B4
 
 Using AU:
 
