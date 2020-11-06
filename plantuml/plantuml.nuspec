@@ -52,7 +52,7 @@ Try it online using [plantuml online server](https://www.plantuml.com/plantuml).
     <tags>plantuml uml diagram graph foss cross-platform documentation</tags>
     <dependencies>
        <dependency id="adoptopenjdkjre" version="12.0.0.33" />
-       <dependency id="graphviz" version="2.38.0.1" />
+       <dependency id="graphviz" version="2.38.0.20190211" />
        <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>
     <projectSourceUrl>https://sourceforge.net/p/plantuml/code/</projectSourceUrl>
