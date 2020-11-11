@@ -28,7 +28,7 @@ if (Get-ProcessorBits 64) {
     Move-Item -force $toolsPath\cpuz_x32.exe $toolsPath\cpuz.exe
 }
 # create empty sidecar so shimgen creates shim for GUI rather than console
-Set-Content -Path (Join-Path -Path $toolsDir -ChildPath "cpuz.exe.gui") `
+Set-Content -Path (Join-Path -Path $toolsPath -ChildPath "cpuz.exe.gui") `
             -Value $null
 
 Write-Host "$packageName installed to $toolsPath"
