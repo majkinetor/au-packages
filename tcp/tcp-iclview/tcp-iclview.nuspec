@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp-iclview</id>
     <title>TC Plugin: ICLView</title>
-    <version>5.7.2019</version>
+    <version>2020.7.27</version>
     <authors>Progman13</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander lister plugin to show icon files.</summary>

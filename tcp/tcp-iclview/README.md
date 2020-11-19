@@ -10,9 +10,9 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
 - View all available icon dimensions
 - Add and extract selected icons
 - Renaming icons in libraries
-- Rearranging icons in libraries dragging by mouse 
+- Rearranging icons in libraries dragging by mouse
 - Localization to multiple languages (Danish, German, English, Russian, Dutch, Polish)
 - Unicode filename support
 - Customize plugin options
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-iclview/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/majkinetor/chocolatey/master/tcp/tcp-iclview/screenshot.png)
