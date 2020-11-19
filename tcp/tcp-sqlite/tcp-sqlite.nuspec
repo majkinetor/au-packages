@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>tcp-sqlite</id>
+    <title>TC Plugin: SQLite Viewer</title>
+    <version>2.10.1</version>
+    <authors>Progman13</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Total Commander lister plugin that can view SQLite files</summary>
+    <description>
+Total Commander lister plugin that can view SQLite3 database files. Supports *.db, *.db3, *.sqlite, *.sqlite3 and *.fossil extensions.
+
+- Supports up to 2TB files, no sqlite3.dll needed.
+- Supports data types described in this document: http://www.sqlite.org/datatype3.html
+
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.      
+    </description>
+    <projectUrl>https://totalcmd.net/plugring/sqliteviewer.html</projectUrl>
+    <tags>doublecmd totalcmd plugin tcplister freeware sqlite</tags>  
+    <copyright>Progman13, 2020</copyright>
+    <licenseUrl>https://totalcmd.net/plugring/sqliteviewer.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-sqlite</packageSourceUrl>
+    <dependencies>
+        <dependency id="tcps" version="0.3"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
