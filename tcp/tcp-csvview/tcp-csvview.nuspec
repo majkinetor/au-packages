@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp-csvview</id>
     <title>TC Plugin: CSV View</title>
-    <version>0.9.5.3</version>
+    <version>0.9.5.5</version>
     <authors>Progman13</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander lister plugin that can view CSV files</summary>
@@ -16,12 +16,12 @@ See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters a
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-csvview/screenshot.png)
     </description>
-    <projectUrl>http://totalcmd.net/plugring/Startups.html</projectUrl>
+    <projectUrl>hhttps://totalcmd.net/plugring/iclview.html</projectUrl>
     <tags>doublecmd totalcmd plugin tcplister freeware</tags>  
     <copyright>Progman13, 2017</copyright>
-    <licenseUrl>http://totalcmd.net/plugring/csvview.html</licenseUrl>
+    <licenseUrl>https://totalcmd.net/plugring/iclview.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-csvview</packageSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-iclview</packageSourceUrl>
     <dependencies>
         <dependency id="tcps" version="0.3"/>
     </dependencies>
