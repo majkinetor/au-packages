@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>soulseek</id>
     <title>Soulseek</title>
-    <version>2018.11.16</version>
+    <version>2019.7.22</version>
     <authors>Soulseek</authors>
     <owners>Miodrag Milić</owners>
     <summary>File sharing network</summary>
