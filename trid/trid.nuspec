@@ -4,7 +4,7 @@
   <metadata>
     <id>trid</id>
     <title>TrID - File Identifier</title>
-    <version>2.24.20201121</version>
+    <version>2.24.20201124</version>
     <authors>Marco Pontello</authors>
     <owners>Miodrag Milić</owners>
     <summary>TrID is an utility designed to identify file types from their binary signatures</summary>
@@ -29,7 +29,7 @@ Because TrID uses an expandable database it will never be out of date. As new fi
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/trid/icon.jpg</iconUrl>
     <!--<dependencies>-->
     <!--</dependencies>-->
-    <releaseNotes>https://mark0.net/forum/index.php/topic,739.msg3150.html#msg3150</releaseNotes>
+    <releaseNotes>https://mark0.net/forum/index.php/topic,739.msg3155.html#msg3155</releaseNotes>
     <mailingListUrl>http://mark0.net/forum/index.php?board=6.0</mailingListUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/trid</packageSourceUrl>
   </metadata>
