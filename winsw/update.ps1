@@ -1,3 +1,5 @@
+param([string]$IncludeStream, [switch]$Force)
+
 import-module au
 
 $releases = 'https://github.com/winsw/winsw/releases'
@@ -61,4 +63,4 @@ function global:au_GetLatest {
     }}
 }
 
-update -ChecksumFor none
+update -ChecksumFor none -IncludeStream $IncludeStream -Force:$Force
