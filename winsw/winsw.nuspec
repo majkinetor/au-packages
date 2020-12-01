@@ -24,8 +24,5 @@
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/winsw</packageSourceUrl>
     <dependencies><dependency id='winsw.portable' version='[3.0.0-alpha6]'/></dependencies>
   </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-    <file src="legal\**" target="legal" />
-  </files>
+  <files></files>
 </package>
