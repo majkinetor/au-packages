@@ -10,7 +10,6 @@ function global:au_SearchReplace {
         @{
             "$($Latest.PackageName).nuspec" = @{
                 "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
-                "(\<files\>).*?(\</files\>)"               = "<files></files>"
                 "(\<dependencies\>).*?(\</dependencies\>)" = "<dependencies><dependency id='winsw.portable' version='[$($Latest.Version)]'/></dependencies>"
             }
         }
@@ -19,7 +18,6 @@ function global:au_SearchReplace {
             "$($Latest.PackageName).nuspec" = @{
                 "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
                 "(\<dependencies\>).*?(\</dependencies\>)" = "<dependencies></dependencies>"
-                "(\<files\>).*?(\</files\>)"               = '<file src="tools\**" target="tools" /><file src="legal\**" target="legal" />'
             }
 
             ".\legal\VERIFICATION.txt" = @{

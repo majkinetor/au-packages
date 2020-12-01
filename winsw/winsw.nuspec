@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>winsw</id>
     <title>Windows Service Wrapper</title>
-    <version>3.0.0-alpha4</version>
+    <version>3.0.0.20201201-alpha6</version>
     <authors>WinSW contributors</authors>
     <owners>Miodrag Milic</owners>
     <summary>A wrapper executable that can run any executable as a Windows service</summary>
@@ -16,13 +16,16 @@
     <copyright>Copyright (c) 2008-2020 Kohsuke Kawaguchi, Sun Microsystems, Inc., CloudBees, Inc., Oleg Nenashev and other contributors</copyright>
     <licenseUrl>https://github.com/winsw/winsw/blob/v3/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>https://github.com/winsw/winsw/releases/tag/v3.0.0-alpha.4</releaseNotes>
+    <releaseNotes>https://github.com/winsw/winsw/releases/tag/v3.0.0-alpha.6</releaseNotes>
     <docsUrl>https://github.com/winsw/winsw/blob/v3/docs/installation.md</docsUrl>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/winsw/icon.png</iconUrl>
     <bugTrackerUrl>https://github.com/winsw/winsw/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/winsw/winsw</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/winsw</packageSourceUrl>
-    <dependencies><dependency id='winsw.portable' version='[3.0.0-alpha4]'/></dependencies>
+    <dependencies><dependency id='winsw.portable' version='[3.0.0.20201201-alpha6]'/></dependencies>
   </metadata>
-  <files></files>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
 </package>
