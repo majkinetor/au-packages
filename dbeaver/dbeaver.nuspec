@@ -6,8 +6,8 @@
     <version>7.3.0</version>
     <title>DBeaver - Community Edition</title>
     <authors>Serge Rieder</authors>
-    <owners>Paul Davies, Miodrag Milic</owners>
-    <licenseUrl>http://dbeaver.jkiss.org/files/dbeaver_license.txt</licenseUrl>
+    <owners>majkinetor</owners>
+    <licenseUrl>https://github.com/dbeaver/dbeaver/blob/devel/LICENSE.md</licenseUrl>
     <projectUrl>http://dbeaver.jkiss.org/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/dbeaver/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
