@@ -8,14 +8,14 @@ function global:au_SearchReplace {
 
     if ($Latest.Stream -eq 'winsw') {
         @{
-            "$($Latest.PackageName).nuspec" = @{
+            ".\winsw.nuspec" = @{
                 "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
                 "(\<dependencies\>).*?(\</dependencies\>)" = "<dependencies><dependency id='winsw.portable' version='[$($Latest.Version)]'/></dependencies>"
             }
         }
     } else {
         @{
-            "$($Latest.PackageName).nuspec" = @{
+            ".\winsw.nuspec" = @{
                 "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
                 "(\<dependencies\>).*?(\</dependencies\>)" = "<dependencies></dependencies>"
             }
