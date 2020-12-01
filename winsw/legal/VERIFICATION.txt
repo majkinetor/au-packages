@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/winsw/winsw/releases/download/v3.0.0-alpha.4/WinSW.NETCore.x86.zip
-   x64: https://github.com/winsw/winsw/releases/download/v3.0.0-alpha.4/WinSW.NETCore.x64.zip
+   x32: https://github.com/winsw/winsw/releases/download/v3.0.0-alpha.6/WinSW.NETCore.x86.zip
+   x64: https://github.com/winsw/winsw/releases/download/v3.0.0-alpha.6/WinSW.NETCore.x64.zip
 
    to download the installer.
 
@@ -16,8 +16,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: FE81D86A9AAAFE3F580CEDB963C61BFB92D49DF0BDC53A432A2B52612AB631DB
-   checksum64: D0FBCDF8495C0C79396AAABD4F197C7AF0A1F4089F2DF10947CEE774D2E6901E
+   checksum32: 04EB840A40FA0B91D055307888D3C70F1A9DD8D144858990227E516CBF5773C2
+   checksum64: CF312AF467618A46377AC61A20C093744EAC5D4A9DFFED2B36C2095FEE8AE277
 
 File 'license.txt' is obtained from:
    https://github.com/winsw/winsw/blob/v3/LICENSE.txt

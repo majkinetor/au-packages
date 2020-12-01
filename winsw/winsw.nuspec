@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>winsw</id>
     <title>Windows Service Wrapper</title>
-    <version>3.0.0.20201201-alpha6</version>
+    <version>3.0.0-alpha6</version>
     <authors>WinSW contributors</authors>
     <owners>Miodrag Milic</owners>
     <summary>A wrapper executable that can run any executable as a Windows service</summary>
@@ -22,7 +22,7 @@
     <bugTrackerUrl>https://github.com/winsw/winsw/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/winsw/winsw</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/winsw</packageSourceUrl>
-    <dependencies><dependency id='winsw.portable' version='[3.0.0.20201201-alpha6]'/></dependencies>
+    <dependencies><dependency id='winsw.portable' version='[3.0.0-alpha6]'/></dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
