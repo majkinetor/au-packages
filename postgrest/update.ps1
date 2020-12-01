@@ -27,6 +27,7 @@ function global:au_GetLatest {
     $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
     $domain  = $releases -split '(?<=//.+)/' | select -First 1
     $version = $url -split '/' | select -Last 1 -Skip 1
+    if ($version -eq 'nightly') { Write-Host "Nightly release is the latest"; return 'ignore' }
 
     @{
         Version      = $version.SubString(1)
