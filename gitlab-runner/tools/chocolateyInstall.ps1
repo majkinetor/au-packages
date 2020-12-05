@@ -16,12 +16,18 @@ if ($current_dir) {
 $installDir = $pp.InstallDir
 
 $is64 = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
-$runner_embedded = if ($is64) { Write-Host "Installing x64 bit version"; gi $toolsPath\*_x64.exe } else { Write-Host "Installing x32 bit version"; gi $toolsPath\*_x32.exe }
+$runner_embedded = if ($is64) { Write-Host "Installing x64 bit version"; Get-Item $toolsPath\*_x64.exe } else { Write-Host "Installing x32 bit version"; Get-Item $toolsPath\*_x32.exe }
 
-mkdir $installDir -ea 0 | Out-Null
-mv $runner_embedded, $toolsPath\register_example.ps1 $installDir -force
-ls $toolsPath\*.exe | % { rm $_ -ea 0; if (Test-Path $_) { touch "$_.ignore" }}
-mv $installDir\gitlab*.exe $installDir\gitlab-runner.exe -Force
+Write-Host "Stopping executing runner"
+Get-Service gitlab-runner -ea 0 | Stop-Service
+Get-Process gitlab-runner -ea 0 | Stop-Process
+Start-Sleep 2
+
+Write-Host "Copying files to $installDir"
+New-Item -ItemType Directory $installDir -ea 0 | Out-Null
+Move-Item $runner_embedded, $toolsPath\register_example.ps1 $installDir -Force
+ls $toolsPath\*.exe | % { Remove-Item $_ -ea 0; if (Test-Path $_) { touch "$_.ignore" }}
+Move-Item $installDir\gitlab*.exe $installDir\gitlab-runner.exe -Force
 
 $runner_path = Join-Path $installDir 'gitlab-runner.exe'
 Install-BinFile gitlab-runner $runner_path
@@ -29,35 +35,41 @@ Install-BinFile gitlab-runner $runner_path
 if ($pp.Service) {
     if ($pp.Autologon) { throw 'Autologon and Service parameters are mutually exclusive' }
 
-    if ($pp.Service -is [string]) { 
+    if ($pp.Service -is [string]) {
         $Username, $Password = $pp.Service -split ':'
-        if (!$Password) { throw 'When specifying service user, password is required' } 
+        if (!$Password) { throw 'When specifying service user, password is required' }
     }
 
-    Write-Host "Installing gitlab-runner service"
-    $cmd = "$runner_path install"
-    if ($Username) {
-        Add-User $Username $Password
-        Add-ServiceLogonRight $Username
-        $cmd += " --user $Env:COMPUTERNAME\$Username --password $Password" 
-    }
-    iex $cmd
+    if (!(Get-Service gitlab-runner -ea 0)) {
+        Write-Host "Installing gitlab-runner service"
+        $cmd = @("install")
+        if ($Username) {
+            Add-User $Username $Password
+            Add-ServiceLogonRight $Username
+            $cmd += " --user", "$Env:COMPUTERNAME\$Username", "--password", $Password
+        }
+
+        $ErrorActionPreference = 'Continue'
+        & $runner_path $cmd
+        $ErrorActionPreference = 'Stop'
+    } else { Write-Host "Service gitlab-runner already installed" }
 
     Write-Host "Starting service"
-    iex "$runner_path start"
+    Start-Service gitlab-runner
+    Get-Service gitlab-runner
 }
 
-if ($pp.Autologon) { 
+if ($pp.Autologon) {
     if ($pp.Service) { throw 'Autologon and Service parameters are mutually exclusive' }
-    
+
     $Username, $Password = $pp.Autologon -split ':'
-    if (!$Password) { throw 'When specifying autologon user, password is required' } 
-    
+    if (!$Password) { throw 'When specifying autologon user, password is required' }
+
     Add-User $Username $Password
 
     Write-Host "Setting autologon for $Username"
-    Set-AutoLogon $Username $Password 
-    
+    Set-AutoLogon $Username $Password
+
     Write-Host "Creating logon script: $installDir\autologon.bat"
     "cd ""$installDir""`n" +
     """$installDir\gitlab-runner.exe"" run" | Out-File $installDir\autologon.bat -Encoding ascii

@@ -1,7 +1,7 @@
 ﻿$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 . $toolsPath\helpers.ps1
 
-if (gsv gitlab-runner -ea 0) {
+if (Get-Service gitlab-runner -ea 0) {
     gitlab-runner.exe stop
     gitlab-runner.exe uninstall
 }
