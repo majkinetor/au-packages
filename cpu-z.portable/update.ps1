@@ -11,7 +11,6 @@ function global:au_SearchReplace {
     }
 }
 
-
 function global:au_GetLatest {
     $re  = 'cpu-z.+\.zip'
 
@@ -21,7 +20,7 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri "http://www.cpuid.com/$url" -UseBasicParsing
     $url = $download_page.links | ? href -match $re | select -First 1 -Expand href
 
-    $current_checksum = (gi $PSScriptRoot\tools\chocolateyInstall.ps1 | sls '^[$]checksum32\b') -split "=|'" | Select -Last 1 -Skip 1
+    $current_checksum = (gi $PSScriptRoot\tools\chocolateyInstall.ps1 | sls '\bchecksum\b') -split "=|'" | Select -Last 1 -Skip 1
     if ($current_checksum.Length -ne 64) { $current_checksum = '0' }
     $remote_checksum  = Get-RemoteChecksum $url
     if ($current_checksum -ne $remote_checksum) {
