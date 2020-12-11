@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>premotem</id>
+    <title>PRemoteM</title>
+    <version>0.5.5.2012112228</version>
+    <authors>VShawn</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Personal Remote Manager</summary>
+    <description><![CDATA[PRemoteM is a modern remote session manager and launcher, which allows you to open a remote session at any time and anywhere. Fornow PRemoteM supports multiple protocols such as RDP, VNC, SSH, Telnet, sFtp.
+
+## Features
+
+- Connection types: RDP, VNC, SSH, Telnet, sFTP
+- Multiple monitor support
+- Connection groups
+- Quick connection launcher
+- AES encryption of secrets
+- Theme support
+
+## Package parameters
+
+- `/InstallDir` - Installation directory, by default `Get-ToolsDirectory`
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/premotem/screenshot.gif)
+]]></description>
+    <projectUrl>https://github.com/VShawn/PRemoteM</projectUrl>
+    <tags>remote rdp vlc ssh telnet ftp foss</tags>
+    <copyright>VShawn 2020</copyright>
+    <licenseUrl>https://github.com/VShawn/PRemoteM/blob/dev/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/premotem/icon.png</iconUrl>
+    <releaseNotes>https://github.com/VShawn/PRemoteM/releases/tag/0.5.5.2012112228</releaseNotes>
+    <bugTrackerUrl>https://github.com/VShawn/PRemoteM/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/VShawn/PRemoteM</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/premotem</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
