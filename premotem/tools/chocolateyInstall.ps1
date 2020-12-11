@@ -23,6 +23,16 @@ $packageArgs = @{
 Get-ChocolateyUnzip @packageArgs
 rm $toolsPath\*.zip -ea 0
 
+if (!$pp.NoDesktopIcon) {
+    Write-Host "Creating desktop icon"
+    $params = @{
+      ShortcutFilePath = "$Env:Public\Desktop\PRemoteM.lnk"
+      TargetPath       = "$($pp.InstallDir)\PRemoteM.exe"
+      IconLocation     = "$($pp.InstallDir)\PRemoteM.exe"
+  }
+  Install-ChocolateyShortcut @params
+}
+
 if ($process) {
     Write-Host "Restarting $Env:ChocolateyPackageName process"
     Start-Process $process
