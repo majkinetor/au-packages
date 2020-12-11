@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>premotem</id>
     <title>PRemoteM</title>
-    <version>0.0</version>
+    <version>0.5.5.2012112228</version>
     <authors>VShawn</authors>
     <owners>Miodrag Milic</owners>
     <summary>Personal Remote Manager</summary>
