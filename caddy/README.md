@@ -1,4 +1,4 @@
-# <img src="https://github.com/majkinetor/chocolatey/tree/master/caddy/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/caddy.svg?color=red&label=caddy)](https://chocolatey.org/packages/caddy)
+# <img src="https://github.com/majkinetor/au-packages/blob/master/caddy/icon.png?raw=true" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/caddy.svg?color=red&label=caddy)](https://chocolatey.org/packages/caddy)
 
 Caddy is a powerful, extensible platform to serve your sites, services, and apps, written in Go.
 
