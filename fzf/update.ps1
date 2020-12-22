@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://github.com/junegunn/fzf-bin/releases'
+$releases = 'https://github.com/junegunn/fzf/releases/latest'
 
 function global:au_SearchReplace {
    @{
@@ -27,8 +27,8 @@ function global:au_GetLatest {
 
     @{
         Version      = $version
-        URL64        = $url -match    'amd64' | select -First 1
-        ReleaseNotes = "https://github.com/junegunn/fzf-bin/releases/tag/${version}"
+        URL64        = $url
+        ReleaseNotes = "https://github.com/junegunn/fzf/releases/tag/${version}"
     }
 }
 
