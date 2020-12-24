@@ -47,6 +47,7 @@ if ($pp.Service) {
             Add-User $Username $Password
             Add-ServiceLogonRight $Username
             $cmd += " --user", "$Env:COMPUTERNAME\$Username", "--password", $Password
+            $cmd += " --working-directory", $installDir, --config, "$installDir\config.toml"
         }
 
         $ErrorActionPreference = 'Continue'
