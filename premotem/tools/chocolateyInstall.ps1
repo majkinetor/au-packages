@@ -29,6 +29,7 @@ if (!$pp.NoDesktopIcon) {
       ShortcutFilePath = "$Env:Public\Desktop\PRemoteM.lnk"
       TargetPath       = "$($pp.InstallDir)\PRemoteM.exe"
       IconLocation     = "$($pp.InstallDir)\PRemoteM.exe"
+      WorkingDirectory = $pp.InstallDir
   }
   Install-ChocolateyShortcut @params
 }
