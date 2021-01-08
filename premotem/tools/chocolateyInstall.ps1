@@ -36,5 +36,5 @@ if (!$pp.NoDesktopIcon) {
 
 if ($process) {
     Write-Host "Restarting $Env:ChocolateyPackageName process"
-    Start-Process $process
+    Start-Process $process -WorkingDirectory $pp.InstallDir
 }
