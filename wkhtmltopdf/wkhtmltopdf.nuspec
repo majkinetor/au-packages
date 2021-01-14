@@ -5,14 +5,14 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>wkhtmltopdf</id>
     <title>wkhtmltopdf</title>
-    <version>0.12.6</version>
+    <version>0.12.6.20210114</version>
     <authors>Jakob Truelsen, Ashish Kulkarni</authors>
     <owners>Miodrag Milic</owners>
     <summary>Convert HTML to PDF using Webkit</summary>
-    <description>wkhtmltopdf and wkhtmltoimage are open source (LGPLv3) cross platform command line tools to render HTML into PDF and various image formats using the Qt WebKit rendering engine. These run entirely "headless" and do not require a display or display service.
+    <description><![CDATA[wkhtmltopdf and wkhtmltoimage are open source (LGPLv3) cross platform command line tools to render HTML into PDF and various image formats using the Qt WebKit rendering engine. These run entirely "headless" and do not require a display or display service.
 
 There is also a C library, if you're into that kind of thing.
-</description>
+]]></description>
     <projectUrl>http://wkhtmltopdf.org/</projectUrl>
     <tags>html pdf webkit cli foss cross-platform</tags>
     <copyright></copyright>
