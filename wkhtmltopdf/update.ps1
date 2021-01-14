@@ -14,17 +14,21 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -UseBasicParsing -Uri $releases
 
     $re      = 'wkhtmltox-.*\.exe'
     $url     = $download_page.links | ? href -match $re | select -First 2 -expand href
-    $url32   = $url[0]; $url64 = $url[1]
-    $version = $url32 -split  '[-_]' | select -Last 1 -Skip 2
 
-    return @{ URL64 = $url64; URL32 = $url32; Version = $version }
+    $version = $url[0] -split  '[-_]' | select -Last 1 -Skip 2
+
+    @{
+        Version = $version
+        URL32 = $url | ? { $_ -match '-win32' } | select -First 1
+        URL64 = $url | ? { $_ -match '-win64' } | select -First 1
+    }
 }
 
 update -ChecksumFor none
