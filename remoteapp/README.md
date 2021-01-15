@@ -1,4 +1,4 @@
-# <img src="https://github.com/majkinetor/chocolatey/tree/master/remoteapp/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/remoteapp.svg?color=red&label=remoteapp)](https://chocolatey.org/packages/remoteapp)
+# <img src="https://raw.githubusercontent.com/majkinetor/au-packages/master/remoteapp/icon.jpg" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/remoteapp.svg?color=red&label=remoteapp)](https://chocolatey.org/packages/remoteapp)
 
 RemoteApp Tool is a utility that allows you to create/manage RemoteApps hosted on Windows (7, 8, 10, XP and Server) as well as generate RDP and MSI files for clients.
 
