@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/clangen/musikcube/releases/download/0.96.3/musikcube_win32_with_milkdrop2_0.96.3.zip
+   x32: https://github.com/clangen/musikcube/releases/download/0.96.4/musikcube_win32_with_milkdrop2_0.96.4.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 237B4B12595899CAB59F1BE371890AD9E9B0161318711C6A9EA47A578B133902
+   checksum32: 4ECF25C11C9BF013DD27D02F57BC57CFF61720B413705FB1C9445991F6BA252E
 
 File 'license.txt' is obtained from:
    https://github.com/clangen/musikcube/blob/master/LICENSE.txt
