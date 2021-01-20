@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/rapidloop/pgmetrics/releases/download/v1.10.4/pgmetrics_1.10.4_windows_amd64.zip
+   x32: https://github.com/rapidloop/pgmetrics/releases/download/v1.10.5/pgmetrics_1.10.5_windows_amd64.zip
 
    to download the archive from which is the executable extracted
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: FA7F7AB896BB5AC7A6A76C20B155EF8C25C64BEE351F690CAE86FEB25ACAFF8F
+   checksum32: 4E2A7E0BF86FDBA9016438B2EB76737BECCFC693E12DF4BE6EB0C0A406A64B7D
 
 
 File 'license.txt' is obtained from:
