@@ -15,13 +15,13 @@ Write-Host "Setting up machine environment variable RDECK_BASE"
 Install-ChocolateyEnvironmentVariable 'RDECK_BASE' $pp.InstallDir 'Machine'
 
 Write-Host "Copying files"
-mv -Force $toolsDir\*.war "$($pp.InstallDir)\rundeck.war" 
+mv -Force $toolsDir\*.war "$($pp.InstallDir)\rundeck.war"
 mv -Force $toolsDir\start_rundeck.bat $pp.InstallDir
 cd $pp.InstallDir
 
 Invoke-FirstRun
 
-if ($pp.CliOpts -or $pp.SslOpts) { Set-RundeckOpts }
+if ($pp.CliOpts -or $pp.SslOpts -or $pp.TimeZone) { Set-RundeckOpts }
 if ($pp.AdminPwd)      { Set-RundeckAdminPass }
 if ($pp.DateFormat)    { Set-RundeckDateFormat }
 if ($pp.TokenDuration) { Set-RundeckTokenDuration }

@@ -4,9 +4,9 @@ function Invoke-FirstRun() {
     $job = Start-Job { cd $using:pwd; java -jar rundeck.war > rundeck.log }
     for ($i=0; $i -le 300; $i++) {
         if ($i -eq 300) { throw "Error starting rundeck" }
-        
-        if (gc .\rundeck.log -ea 0 | sls "Rundeck startup finished") { 
-            rjb $job -force; break 
+
+        if (gc .\rundeck.log -ea 0 | sls "Rundeck startup finished") {
+            rjb $job -force; break
         }
         sleep 1
     }
@@ -20,7 +20,7 @@ function Enable-RundeckSsl() {
     $keytool_path = "$jdk_home\bin\keytool.exe"
     if (!(Test-Path $keytool_path)) { throw "Can't find keytool" }
     sal keytool $keytool_path
-    
+
     $ErrorActionPreference = 'Continue'
     'Venkman.local','devops','my org','my city','my state','us','yes' | keytool -keystore etc\truststore -alias rundeck -genkey -keyalg RSA -keypass adminadmin -storepass adminadmin 2>$null
     $ErrorActionPreference = 'Stop'
@@ -46,13 +46,17 @@ function Set-RundeckOpts() {
     $path = "start_rundeck.bat"
 
     $bat = gc $path
-    if ($pp.CliOpts) { 
+    if ($pp.CliOpts) {
         Write-Host "Setting RDECK_CLI_OPTS to" $pp.CliOpts
         $bat = $bat -replace '^(set RDECK_CLI_OPTS=).+',"`$1$($pp.CliOpts)"
     }
-    if ($pp.SslOpts) { 
+    if ($pp.SslOpts) {
         Write-Host "Setting RDECK_SSL_OPTS to" $pp.SslOpts
         $bat = $bat -replace '^::(set RDECK_SSL_OPTS=).+',"`$1$($pp.SslOpts)"
+    }
+    if ($pp.TimeZone) {
+        Write-Host "Setting TIMEZONE to" $pp.TimeZone
+        $bat = $bat -replace '^(set TIMEZONE=).*',"`$1-Duser.timezone=$($pp.TimeZone)"
     }
     $bat | sc $path
 }
@@ -60,7 +64,7 @@ function Set-RundeckAdminPass() {
     $path = "server\config\realm.properties"
 
     Write-Host "Setting up admin password"
-    
+
     $realm = gc $path
     $realm -replace 'admin:admin', "admin:$($pp.AdminPwd)" | sc $path
 }
@@ -73,7 +77,7 @@ function Set-RundeckDateFormat() {
     @(
         "jobslist.date.format=" + $pp.DateFormat
         'jobslist.date.format.ko=' + $pp.DateFormatKo
-        'jobslist.running.format.ko=' + $pp.RunningFormatKo 
+        'jobslist.running.format.ko=' + $pp.RunningFormatKo
     ) | Set-Content $path
 }
 
@@ -83,5 +87,5 @@ function Set-RundeckTokenDuration() {
     Write-Host "Setting token duration to" $pp.TokenDuration
 
     $config = Get-Content $path
-    $config + "rundeck.api.tokens.duration.max=$($pp.TokenDuration)" | Set-Content $path 
+    $config + "rundeck.api.tokens.duration.max=$($pp.TokenDuration)" | Set-Content $path
 }

@@ -29,11 +29,25 @@ Rundeck allows you to run tasks on any number of nodes from a web-based or comma
 * `/RunningFormatKo` - Dates in _running_ executions are in [moment.js](https://momentjs.com) format.
 * `/TokenDuration` - API token duration. Format: `##{ydhms}` (years, days, hours, minutes, seconds).
 * `/EnableSsl` - Use self signed SSL as described in SSL configuration.
+* `/TimeZone`  - Specify default time zone (affects cron jobs). See [list of timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 For example:
 
-```
-cinst rundeck --params "/InstallDir:c:\rundeck2 /AdminPwd:test123 /CliOpts:'-Xms2048m -Xmx4096m' /TokenDuration:10y /DateFormat:'yy-MM-dd HH:mm' /Service /EnableSsl"
+```ps1
+$params = [ordered]@{
+    InstallDir      = 'c:\rundeck'
+    AdminPwd        = 'test123'
+    CliOpts         = '-Xms2048m -Xmx4096m'
+    TokenDuration   = '10y'
+    DateFormat      = 'yyyy-MM-dd HH:mm'
+    DateFormatKo    = 'YYYY-MM-DD HH:mm'
+    RunningFormatKo = 'HH:mm'
+    Service         = $true
+    EnableSsl       = $true
+    TimeZone        = 'Europe/Belgrade'
+}
+$params = $params.GetEnumerator() | % { if ($_.Value -is [bool]) { if ($_.Value) { "/{0}" -f $_.Key}} else { "/{0}:'{1}'" -f $_.Key, $_.Value } }
+cinst rundeck --params $params
 ```
 
 ## Notes
