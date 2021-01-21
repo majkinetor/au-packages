@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/loadimpact/k6/releases/download/v0.29.0/k6-v0.29.0-win32.zip
-   x64: https://github.com/loadimpact/k6/releases/download/v0.29.0/k6-v0.29.0-win64.zip
+   x32: https://github.com/loadimpact/k6/releases/download/v0.30.0/k6-v0.30.0-win32.zip
+   x64: https://github.com/loadimpact/k6/releases/download/v0.30.0/k6-v0.30.0-win64.zip
 
    to download the installer.
 
@@ -16,8 +16,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 7CBBAC49C9E824AAE1FBCCD3820FC6B1AD1505CB9227EA35936C8F35489D5DA3
-   checksum64: A5384E07C4EE9E8CC86532BE1EB2613A59F4488B76EE43D018C02BC05D6CA9A6
+   checksum32: 9A3B0A500FF370F7DB88C7E91EF895DBF050D79374E400DDA1DC048D6C6D58A0
+   checksum64: 680F0CDA64DCAE71B511C6F148408128D7F1EB0D4C58EB9687892B923AFD1374
 
 File 'license.txt' is obtained from:
    https://github.com/loadimpact/k6/blob/master/LICENSE.md
