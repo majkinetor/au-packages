@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>freeencoderpack</id>
-    <version>2020.07.11</version>
+    <version>2021.01.22</version>
     <title>foobar2000 Free Encoder Pack</title>
     <authors>Peter Pawlowski</authors>
     <owners>Rob Reynolds</owners>
