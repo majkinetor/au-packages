@@ -15,6 +15,8 @@ foobar2000 is an advanced freeware audio player for the Windows platform. Some o
 
 ## Package parameters
 
+* `/InstallDir` - Installation directory
+* `/Portable` - Install in portable mode
 * `/NoShortcut` - Do not install the desktop shortcut
 
 ## Notes

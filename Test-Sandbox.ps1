@@ -1,7 +1,4 @@
-﻿Param(
-  [ScriptBlock] $Script = { cinst $(ls -Recurse *.nupkg | sort LastWriteTime | Select -Last 1) },
-  [string[]] $MapFolder = $pwd
-)
+﻿param( $ChocoParameters )
 
 # Check if Windows Sandbox is enabled
 if (-Not (Test-Path "$env:windir\System32\WindowsSandbox.exe")) {
@@ -19,6 +16,9 @@ Enable-WindowsOptionalFeature -Online -FeatureName 'Containers-DisposableClientV
 $tempFolder = Join-Path -Path $PSScriptRoot -ChildPath 'Test-Sandbox_Temp'
 New-Item $tempFolder -ItemType Directory -ea 0 | Out-Null
 
+$packageName = Split-Path -Leaf $pwd
+$version = ([xml] (Get-Content "$packageName.nuspec")).package.metadata.version
+
 # Create Bootstrap script
 $bootstrapPs1Content = @"
 cd ~\Desktop
@@ -26,22 +26,19 @@ Write-Host 'Installing Chocolatey'
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco feature enable -n=allowGlobalConfirmation
 
-$Script
+choco install -vd $packageName --version $version --source ".;chocolatey" $ChocoParameters
 "@
 
 $bootstrapPs1FileName = 'Bootstrap.ps1'
 $bootstrapPs1Content | Out-File (Join-Path -Path $tempFolder -ChildPath $bootstrapPs1FileName)
 
-# Create Wsb file
-
+# Create wsb file
 $tempFolderInSandbox = Join-Path -Path 'C:\Users\WDAGUtilityAccount\Desktop' -ChildPath (Split-Path $tempFolder -Leaf)
-
-$mapFolders = foreach ($f in $MapFolder) { "<MappedFolder><HostFolder>$f</HostFolder></MappedFolder>" }
 $sandboxTestWsbContent = @"
 <Configuration>
   <MappedFolders>
     <MappedFolder><HostFolder>$tempFolder</HostFolder></MappedFolder>
-    $mapfolders
+    <MappedFolder><HostFolder>$pwd</HostFolder></MappedFolder>
   </MappedFolders>
   <LogonCommand>
   <Command>PowerShell Start-Process PowerShell -WorkingDirectory '$tempFolderInSandbox' -ArgumentList '-ExecutionPolicy Bypass -NoExit -File $bootstrapPs1FileName'</Command>
