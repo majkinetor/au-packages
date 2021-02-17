@@ -41,7 +41,7 @@ RemoteApp Tool is a utility that allows you to create/manage RemoteApps hosted o
     <projectSourceUrl>https://github.com/kimmknight/remoteapptool</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/remoteapp</packageSourceUrl>
     <dependencies>
-      <dependency id="dotnetfx" />
+      <dependency id="dotnetfx" /> 
     </dependencies>
   </metadata>
   <files>
