@@ -35,7 +35,7 @@ RemoteApp Tool is a utility that allows you to create/manage RemoteApps hosted o
     <copyright>Kim Knight</copyright>
     <licenseUrl>https://github.com/kimmknight/remoteapptool/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://raw.githubusercontent.com/majkinetor/chocolatey/master/remoteapp/icon.jpg</iconUrl>
+    <iconUrl>https://gitcdn.link/repo/majkinetor/chocolatey/master/remoteapp/icon.jpg</iconUrl>
     <docsUrl>https://github.com/kimmknight/remoteapptool/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/kimmknight/remoteapptool/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/kimmknight/remoteapptool</projectSourceUrl>
