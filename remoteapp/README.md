@@ -16,6 +16,6 @@ RemoteApp Tool is a utility that allows you to create/manage RemoteApps hosted o
 
 - If you want to create MSIs, you also need [WiX Toolset](https://chocolatey.org/packages/wixtoolset)
 - Notes about [Windows compatibility](https://github.com/kimmknight/remoteapptool/wiki/Windows-Compatibility)
-- Packages includes [RaWeb](http://www.kimknight.net/raweb) binaries that you must install on your own
+- Packages includes [RaWeb](http://www.kimknight.net/raweb) web site that you must install on your own
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/remoteapp/screenshot.png)

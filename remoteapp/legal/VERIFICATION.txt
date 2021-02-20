@@ -5,11 +5,13 @@ in verifying that this package's contents are trustworthy.
 
 Package can be verified like this:
 
-1. Go to http://www.kimknight.net/remoteapptool/remoteapptool5300.zip
+1.1 http://www.kimknight.net/remoteapptool/remoteapptool5300.zip
 
    x32: F609DA16E4680A7F55D400E602AE9F58625E3F2A3AB1B228368F4271D4105FB9
 
-   to download the installer.
+1.2 http://www.kimknight.net/raweb/raweb0051.zip
+
+   x32: 45CDC606948D3A82634C6DE80211F577700A5FF9E9F07A2ABB1343C317A3E88B
 
 2. You can use one of the following methods to obtain the SHA256 checksum:
    - Use powershell function 'Get-FileHash'
