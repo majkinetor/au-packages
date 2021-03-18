@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>yed</id>
     <title>yEd</title>
-    <version>3.21</version>
+    <version>3.21.1</version>
     <authors>yWorks</authors>
     <owners>Miodrag Milic</owners>
     <summary>yEd Graph Editor: High-quality diagrams made easy</summary>
