@@ -20,7 +20,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate {
     Get-RemoteFiles -NoSuffix
 
-    set-alias 7z $Env:chocolateyInstall\tools\7z.exe 
+    set-alias 7z $Env:chocolateyInstall\tools\7z.exe
 
     $filePath = gi $PSScriptRoot\tools\statping*.zip
     7z x $filePath -otools -aoa
@@ -33,7 +33,7 @@ function global:au_GetLatest {
     $re    = '\.zip$'
     $url   = $download_page.links | ? href -match $re | select -First 1 -expand href
 
-    $version  = $url -split '/' | select -Last 1 -Skip 1
+    $version  = $url -split '/|\.zip' | select -Last 1 -Skip 1
 
     @{
         Version      = $version.Substring(1)
