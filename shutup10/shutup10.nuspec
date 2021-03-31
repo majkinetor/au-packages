@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>shutup10</id>
     <title>ShutUp10</title>
-    <version>1.8.1419</version>
+    <version>1.8.1420</version>
     <authors>O&amp;OSoftware</authors>
     <owners>Miodrag Milic</owners>
     <summary>Free antispy tool for Windows 10</summary>
