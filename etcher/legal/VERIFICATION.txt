@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/balena-io/etcher/releases/download/v1.5.116/balenaEtcher-Setup-1.5.116.exe
+   x32: https://github.com/balena-io/etcher/releases/download/v1.5.117/balenaEtcher-Setup-1.5.117.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 86C9BB1DBD1CC80BFBA99631E9BA1E711A4DD7D2BD01FC8A9BBD18829E304693
+   checksum32: 030370D59CD8BC67CCF923F7BEAD374385C35B753029FB0A017C4235AC350640
 
 File 'license.txt' is obtained from:
    https://raw.githubusercontent.com/resin-io/etcher/master/LICENSE
