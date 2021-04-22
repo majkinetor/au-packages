@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to https://www.xdlab.ru/en/download.htm
 
-   x32: https://www.xdlab.ru/files/tagscan-6.1.7-setup.exe
-   x64: https://www.xdlab.ru/files/tagscan-6.1.7_x64-setup.exe
+   x32: https://www.xdlab.ru/files/tagscan-6.1.8-setup.exe
+   x64: https://www.xdlab.ru/files/tagscan-6.1.8_x64-setup.exe
 
    to download the installer.
 
@@ -16,8 +16,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: A31F1E7C724B8DD6467C1898A4A50EADC33B433C5772C412F8466BF7DBA0FBA7
-   checksum64: 8A74D82D207C2401620FE234AA9E93EFBC152095782C1865D22B126167E876EE
+   checksum32: 6F145F0DEA2CB7DA351FAF161E2971FEB506A1FFD7D4CC96FEE8606DA06B9510
+   checksum64: A64AE85952AB20093F329C5D93B1FC275EB94EFFEB57A13BBFE48DE70791DC6B
 
 File 'license.txt' is obtained from local installation and converted to txt file:
    C:\Program Files (x86)\TagScanner\help\lic.html
