@@ -10,9 +10,7 @@ function global:au_SearchReplace {
         }
 
         ".\legal\VERIFICATION.txt" = @{
-          "(?i)(\s+x32:).*"            = "`${1} $($Latest.URL32)"
           "(?i)(\s+x64:).*"            = "`${1} $($Latest.URL64)"
-          "(?i)(checksum32:).*"        = "`${1} $($Latest.Checksum32)"
           "(?i)(checksum64:).*"        = "`${1} $($Latest.Checksum64)"
         }
     }
@@ -23,15 +21,14 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re    = 'win\d\d\.zip$'
-    $url   = $download_page.links | ? href -match $re | select -First 2 -expand href | % { 'https://github.com' + $_}
+    $re    = 'windows-amd64.zip$'
+    $url   = $download_page.links | ? href -match $re | select -First 1 -expand href | % { 'https://github.com' + $_}
 
     $version  = $url -split '/' | select -Last 1 -Skip 1
 
     @{
         Version      = $version.Substring(1)
-        URL32        = $url -match 'win32' | select -First 1
-        URL64        = $url -match 'win64' | select -First 1
+        URL64        = $url
         ReleaseNotes = "https://github.com/k6io/k6/releases/tag/${version}"
     }
 }
