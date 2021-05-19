@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://github.com/loadimpact/k6/releases'
+$releases = 'https://github.com/k6io/k6/releases'
 
 function global:au_SearchReplace {
    @{
@@ -32,7 +32,7 @@ function global:au_GetLatest {
         Version      = $version.Substring(1)
         URL32        = $url -match 'win32' | select -First 1
         URL64        = $url -match 'win64' | select -First 1
-        ReleaseNotes = "https://github.com/loadimpact/k6/releases/tag/${version}"
+        ReleaseNotes = "https://github.com/k6io/k6/releases/tag/${version}"
     }
 }
 
