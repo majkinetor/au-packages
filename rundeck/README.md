@@ -55,7 +55,7 @@ cinst rundeck --params $params
 * The package performs installation that is described in official [documentation](https://rundeck.org/docs/administration/install/windows.html). After installation, you can access the service via URL http://localhost:4440 or https://localhost:4443 if `EnableSsl` parameter is used.
 * To setup mail notifications edit `$RDECK_BASE/server/config/rundeck-config.properties` and edit all `grails.mail.*` settings.
 * You generally shouldn't use `choco update` with this package because each release may have its own migration procedure.
-* Related package: [rundeck-cli](https://chocolatey.org/packages/rundeck-cli)
-
+* Related package: [rundeck-cli](https://chocolatey.org/packages/rundeck-cli).
+* With `EnableSsl` server name must be FDQN or installation will fail.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/rundeck/screenshot.png)
