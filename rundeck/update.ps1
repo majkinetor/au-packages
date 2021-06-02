@@ -20,13 +20,13 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re    = 'rundeck-([\d.]+)-.+\.war'
+    $re    = 'rundeck-([\d.]+)-[^/]+\.war\b'
     $download_page.content -match $re | Out-Null
     $name = $Matches[0];  $version = $Matches[1]
     $release_notes = $download_page.links | ? class -eq 'rd_releasenotes' | select -First 1 | % href
     @{
         Version = $version
-        URL32   = "https://dl.bintray.com/rundeck/rundeck-maven/org/rundeck/rundeck/$name"
+        URL32   = "https://download.rundeck.org/war/$name"
         ReleaseNotes = $release_notes
     }
 }
