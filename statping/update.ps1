@@ -1,7 +1,7 @@
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/hunterlong/statping/releases/latest'
+$releases = 'https://github.com/hunterlong/statping/releases'
 
 function global:au_SearchReplace {
    @{
@@ -18,7 +18,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate {
-    Get-RemoteFiles -NoSuffix
+    Get-RemoteFiles -NoSuffix -Purge
 
     set-alias 7z $Env:chocolateyInstall\tools\7z.exe
 
@@ -30,10 +30,11 @@ function global:au_BeforeUpdate {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re    = '\.zip$'
+    $re    = 'windows.+\.zip$'
     $url   = $download_page.links | ? href -match $re | select -First 1 -expand href
+    if (!$url) { Write-Host "No windows file found"; return 'ignore' }
 
-    $version  = $url -split '/|\.zip' | select -Last 1 -Skip 1
+    $version  = $url -split '/' | select -Last 1 -Skip 1
 
     @{
         Version      = $version.Substring(1)
