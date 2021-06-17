@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://docs.rundeck.com/downloads.html'
+$releases = 'https://www.rundeck.com/community-downloads'
 
 function global:au_SearchReplace {
    @{
@@ -15,19 +15,21 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix -FileNameBase "rundeck-$($Latest.Version)" }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $versionUrl = $download_page.Content -split "`n" | sls "https://www.rundeck.com/community-downloads/[.0-9]+" | select -First 1
+    $versionUrl = $versionUrl -split "'" | select -Last 1 -Skip 1
 
-    $re    = 'rundeck-([\d.]+)-[^/]+\.war\b'
-    $download_page.content -match $re | Out-Null
-    $name = $Matches[0];  $version = $Matches[1]
-    $release_notes = $download_page.links | ? class -eq 'rd_releasenotes' | select -First 1 | % href
+    $download_page = Invoke-WebRequest -Uri $versionUrl -UseBasicParsing
+    $url = $download_page.Content -split "`n" | sls "\.war/download" | select -First 1
+    $url = $url -split "'" | select -Last 1 -Skip 1
     @{
-        Version = $version
-        URL32   = "https://download.rundeck.org/war/$name"
-        ReleaseNotes = $release_notes
+        Version      = $url -split '-'  | select -First 1 -Skip 1
+        URL32        = $url
+        ReleaseNotes = $versionUrl
+        FileType     = 'war'
     }
 }
 
