@@ -24,7 +24,7 @@ environment:
 
   github_username: majkinetor
   github_password:
-    secure: MLLwE43J/DaZdfFcWWugSw==
+    secure: IzjgcYA7JSk9e2tBUYZ1BQ==
 
   # Mail credentials - for error notifications
   mail_user: majkinetor@gmail.com
