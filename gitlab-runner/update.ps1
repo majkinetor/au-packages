@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://gitlab.com/gitlab-org/gitlab-runner/raw/master/CHANGELOG.md'
+$releases = 'https://gitlab.com/gitlab-org/gitlab-runner/-/raw/main/CHANGELOG.md'
 
 function global:au_SearchReplace {
    @{
