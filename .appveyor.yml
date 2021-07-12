@@ -20,7 +20,7 @@ environment:
   # Github token to commit pushed packages to repository
   github_user_repo: majkinetor/au-packages
   github_api_key:
-    secure: BUwbO/MNiohBpVnhMghfO9q74SZard0Yfdx15bNLIE+Zkua1Nj8OelcEitUGgdKF
+    secure: 1TThadtr7VRpFqDWGlOAYos9KqeyhC0wQAJ/Y4tvhOmdFRJIxB+L7xxzaZvD2t0N
 
   github_username: majkinetor
   github_password:
