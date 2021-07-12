@@ -20,7 +20,7 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re      = '\.7z$'
+    $re      = '\.7z|\.zip$'
     $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
     $domain  = $releases -split '(?<=//.+)/' | select -First 1
     $version = $url -split '/' | select -Last 1 -Skip 1

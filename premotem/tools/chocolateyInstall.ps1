@@ -17,7 +17,7 @@ New-Item -Type Directory $pp.InstallDir -ea 0 | Out-Null
 
 $packageArgs = @{
     PackageName    = $Env:ChocolateyPackageName
-    FileFullPath   = Get-Item $toolsPath\*.7z
+    FileFullPath   = Get-Item $toolsPath\* -Include *.zip, *.7z
     Destination    = $pp.InstallDir
 }
 Get-ChocolateyUnzip @packageArgs
