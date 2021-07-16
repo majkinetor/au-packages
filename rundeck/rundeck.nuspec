@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>rundeck</id>
     <title>Rundeck</title>
-    <version>3.3.10</version>
+    <version>3.4.1</version>
     <authors>Rundeck, Inc.</authors>
     <owners>Miodrag Milic</owners>
     <summary>Job scheduler and runbook automation. Enable self-service access to existing scripts and tools.</summary>
@@ -64,8 +64,8 @@ cinst rundeck --params $params
 * The package performs installation that is described in official [documentation](https://rundeck.org/docs/administration/install/windows.html). After installation, you can access the service via URL http://localhost:4440 or https://localhost:4443 if `EnableSsl` parameter is used.
 * To setup mail notifications edit `$RDECK_BASE/server/config/rundeck-config.properties` and edit all `grails.mail.*` settings.
 * You generally shouldn't use `choco update` with this package because each release may have its own migration procedure.
-* Related package: [rundeck-cli](https://chocolatey.org/packages/rundeck-cli)
-
+* Related package: [rundeck-cli](https://chocolatey.org/packages/rundeck-cli).
+* With `EnableSsl` server name must be FDQN or installation will fail.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/rundeck/screenshot.png)
 ]]></description>
@@ -75,7 +75,7 @@ cinst rundeck --params $params
     <licenseUrl>https://github.com/rundeck/rundeck/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/rundeck/icon.png</iconUrl>
-    <releaseNotes>https://docs.rundeck.com/3.3.x/history/3_3_x/version-3.3.10.html#overview</releaseNotes>
+    <releaseNotes>https://www.rundeck.com/community-downloads/3.4.1</releaseNotes>
     <docsUrl>http://rundeck.org/docs.html</docsUrl>
     <bugTrackerUrl>https://github.com/rundeck/rundeck/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/rundeck/rundeck</projectSourceUrl>
