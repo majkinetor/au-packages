@@ -15,8 +15,8 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate {   
-    Get-RemoteFiles -Purge -NoSuffix 
+function global:au_BeforeUpdate {
+    Get-RemoteFiles -Purge -NoSuffix
  }
 
 function global:au_GetLatest {
@@ -25,8 +25,9 @@ function global:au_GetLatest {
 
     $re  = 'less\.exe$'
     $url = $download_page.links | ? href -match $re | % href | select -first 1
-    $version =  ($url -split '/'| select -last 1 -Skip 1) -replace 'less-v' -replace '\.0'
-    $version = "$($version / 100)"  # using string interpolation here to force the invariant rather than the current culture
+    $version =  ($url -split '/'| select -last 1 -Skip 1) -replace 'less-v'
+    $x = ''
+    if ([int]::TryParse($version, [ref] $x)) { $version = "$version.0" }
     if ($version.Length -eq 3) { $version += "0" }
 
     @{
