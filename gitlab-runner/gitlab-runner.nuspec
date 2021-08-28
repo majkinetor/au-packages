@@ -47,7 +47,7 @@
     <projectUrl>https://docs.gitlab.com/runner</projectUrl>
     <tags>admin cli foss git cross-platform build docker shell gitlab</tags>
     <copyright>GitLab</copyright>
-    <licenseUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/raw/master/LICENSE</licenseUrl>
+    <licenseUrl>https://gitlab.com/gitlab-org/gitlab-runner/-/blob/2a956c92d14ea7cbd8a4e50cee401b1b9cfacbb1/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/gitlab-runner/icon.png</iconUrl>
     <releaseNotes>https://gitlab.com/gitlab-org/gitlab-runner/blob/master/CHANGELOG.md</releaseNotes>
