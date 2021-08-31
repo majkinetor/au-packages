@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/caddyserver/caddy/releases/download/v2.4.1/caddy_2.4.1_windows_amd64.zip
+   x64: https://github.com/caddyserver/caddy/releases/download/v2.4.4/caddy_2.4.4_windows_amd64.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: E7FDBE30E08492BBACF1CFAD67A84864FA3A25F123BA20E5C7BEBFD4479C109A
+   checksum64: 35494CB994F15BEC99AF4B83D353CE34A6BC62E9E1877C1B7A99E15D427EC26B
 
 File 'license.txt' is obtained from:
    https://raw.githubusercontent.com/caddyserver/caddy/master/LICENSE
