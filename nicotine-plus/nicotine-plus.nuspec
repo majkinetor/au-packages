@@ -5,19 +5,18 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>nicotine-plus</id>
     <title>Nicotine+</title>
-    <version>0.0</version>
+    <version>3.1.1</version>
     <authors>mathiascode</authors>
     <owners>Miodrag Milic</owners>
     <summary>Nicotine+ is a graphical client for the Soulseek peer-to-peer network</summary>
-    <description><![CDATA[## Features
+    <description><![CDATA[Nicotine+ is a graphical client for the Soulseek peer-to-peer network.
 
-## Package parameters
+Nicotine+ aims to be a pleasant, free and open source (FOSS) alternative to the official Soulseek client, providing additional functionality while keeping current with the Soulseek protocol.
 
-## Notes
+Nicotine+ uses GTK for its graphical user interface, and is written in Python.
 
 
-
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/nicotine-plus/screenshot.png)
 ]]></description>
     <projectUrl>https://nicotine-plus.github.io/nicotine-plus</projectUrl>
     <tags>foss cross-platform admin audio mp3 flac soulseek</tags>
