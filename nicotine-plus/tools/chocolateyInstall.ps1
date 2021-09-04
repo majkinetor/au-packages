@@ -12,7 +12,7 @@ $packageArgs = @{
   softwareName   = 'Nicotine+ *'
 }
 Install-ChocolateyInstallPackage @packageArgs
-ls $toolsPath\*\*.exe | % { rm $_ -ea 0; if (Test-Path $_) { sc "$_.ignore" "" }}
+ls $toolsPath\*\*.exe | % { rm $_ -ea 0; if (Test-Path $_) { Set-Content "$_.ignore" "" }}
 
 $packageName = 'Nicotine+'
 $installLocation = Get-AppInstallLocation "$packageName*"
