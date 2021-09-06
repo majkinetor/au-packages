@@ -1,4 +1,4 @@
-# <img src="https://github.com/majkinetor/chocolatey/tree/master/nicotine-plus/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/nicotine-plus.svg?color=red&label=nicotine-plus)](https://chocolatey.org/packages/nicotine-plus)
+# <img src="https://github.com/majkinetor/chocolatey/tree/master/nicotine-plus/icon.svg" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/nicotine-plus.svg?color=red&label=nicotine-plus)](https://chocolatey.org/packages/nicotine-plus)
 
 Nicotine+ is a graphical client for the Soulseek peer-to-peer network.
 
