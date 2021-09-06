@@ -15,6 +15,10 @@ Nicotine+ aims to be a pleasant, free and open source (FOSS) alternative to the 
 
 Nicotine+ uses GTK for its graphical user interface, and is written in Python.
 
+## Notes
+
+- Related package: [soulseek](https://community.chocolatey.org/packages/soulseek]
+
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/nicotine-plus/screenshot.png)
 ]]></description>
