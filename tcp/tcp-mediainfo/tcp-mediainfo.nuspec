@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp-mediainfo</id>
     <title>TC Plugin: TCMediaInfo</title>
-    <version>1.0.3</version>
+    <version>1.0.5</version>
     <authors>Loopback</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander content and lister plugin to retrieve an info from the video and audio files.</summary>
@@ -14,7 +14,7 @@
 See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
 
 Plugin uses [MediaInfo](http://mediainfo.sourceforge.net) library and support all formats that library support.
-Since MediaInfo library can retreive a LOT information from file, plugin is fully customizable and allow to wrap any MediaInfo library's field. By default some most useful fields are already configured and you can instantly start to use plugin. 
+Since MediaInfo library can retreive a LOT information from file, plugin is fully customizable and allow to wrap any MediaInfo library's field. By default some most useful fields are already configured and you can instantly start to use plugin.
 
 ## Features
 
@@ -25,7 +25,7 @@ Since MediaInfo library can retreive a LOT information from file, plugin is full
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-mediainfo/screenshot.png)
 </description>
     <projectUrl>https://www.ghisler.com/plugins.htm</projectUrl>
-    <tags>totalcmd doublecmd plugin tcplugin tcpcontent tcplister multimedia audio vide mp3 freeware</tags>  
+    <tags>totalcmd doublecmd plugin tcplugin tcpcontent tcplister multimedia audio vide mp3 freeware</tags>
     <copyright>Copyright 2009-2019, Dmitry Yudin</copyright>
     <licenseUrl>http://totalcmd.net/plugring/tcmediainfo.html</licenseUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp-mediainfo</packageSourceUrl>
