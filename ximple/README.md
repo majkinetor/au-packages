@@ -1,5 +1,7 @@
 # <img src="https://raw.githubusercontent.com/majkinetor/au-packages/master/ximple/icon.ico" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/ximple.svg?color=red&label=ximple)](https://chocolatey.org/packages/ximple)
 
+XiMpLe is an xml and json editor based on a table grid view (the same nodes are arranged in tables).
+
 ## Features
 
 - No installation is required - just download one file and run it
