@@ -1,4 +1,4 @@
-# <img src="https://github.com/majkinetor/chocolatey/tree/master/copyq/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/copyq.svg?color=red&label=copyq)](https://chocolatey.org/packages/copyq)
+# <img src="https://raw.githubusercontent.com/majkinetor/au-packages/master/copyq/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/copyq.svg?color=red&label=copyq)](https://chocolatey.org/packages/copyq)
 
 ## Features
 
