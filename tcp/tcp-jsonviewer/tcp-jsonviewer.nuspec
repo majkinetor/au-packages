@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp-jsonviewer</id>
     <title>TC Plugin: JSON Viewer</title>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <authors>Progman13</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander lister plugin that can view JSON files</summary>
@@ -13,12 +13,12 @@
 
       Total Commander lister plugin that can view JSON files.
 
-      See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.  
-      
-      ![screenshot](https://raw.githubusercontent.com/majkinetor/chocolatey/master/tcp/tcp-jsonviewer/screenshot.png)        
+      See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
+
+      ![screenshot](https://raw.githubusercontent.com/majkinetor/chocolatey/master/tcp/tcp-jsonviewer/screenshot.png)
     </description>
     <projectUrl>http://totalcmd.net/plugring/jsonviewer.html</projectUrl>
-    <tags>doublecmd totalcmd plugin tcplister freeware sqlite</tags>  
+    <tags>doublecmd totalcmd plugin tcplister freeware sqlite</tags>
     <copyright>Progman13, 2020</copyright>
     <licenseUrl>http://totalcmd.net/plugring/jsonviewer.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
