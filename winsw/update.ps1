@@ -41,7 +41,7 @@ function global:au_BeforeUpdate {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re        = 'WinSW\..+\.zip$'
+    $re        = 'WinSW-.+\.zip$'
     $domain    = $releases -split '(?<=//.+)/' | select -First 1
     $url       = $download_page.links | ? href -match $re | select -expand href -First 2 | % { $domain + $_ }
     $version   = $url[0] -split '/' | select -Last 1 -Skip 1
@@ -55,8 +55,8 @@ function global:au_GetLatest {
         }
         'winsw.portable' = @{
             Version      = $nuversion
-            URL32        = $url -like '*.x86.*' | select -First 1
-            URL64        = $url -notlike '*.x86.*' | select -First 1
+            URL32        = $url -like '*x86*' | select -First 1
+            URL64        = $url -notlike '*x86*' | select -First 1
             ReleaseNotes = "https://github.com/winsw/winsw/releases/tag/$version"
             PackageName  = 'winsw.portable'
         }
