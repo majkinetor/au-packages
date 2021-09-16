@@ -1,4 +1,4 @@
-# <img src=https://raw.githubusercontent.com/majkinetor/au-packages/master/flameshot/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/flameshot.svg?color=red&label=flameshot)](https://chocolatey.org/packages/flameshot)
+# <img src="https://raw.githubusercontent.com/majkinetor/au-packages/master/flameshot/icon.svg" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/flameshot.svg?color=red&label=flameshot)](https://chocolatey.org/packages/flameshot)
 
 Powerful yet simple to use screenshot software.
 
