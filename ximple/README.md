@@ -4,7 +4,6 @@ XiMpLe is an xml and json editor based on a table grid view (the same nodes are 
 
 ## Features
 
-- No installation is required - just download one file and run it
 - Xml data are presented in well-arranged tables
 - Simple and intuitive control even for a beginner
 - No need to know xml rules or syntax
@@ -21,7 +20,6 @@ XiMpLe is an xml and json editor based on a table grid view (the same nodes are 
 - Name and value suggestion according XSD schema
 - XSD generation
 - Text comparator supports long lines and longer files
-- User's guide available for free in a download section
 
 ## Notes
 
