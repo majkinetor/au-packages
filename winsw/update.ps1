@@ -19,7 +19,7 @@ function global:au_SearchReplace {
             ".\winsw.nuspec" = @{
                 "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
                 "(\<dependencies\>).*?(\</dependencies\>)" = "<dependencies></dependencies>"
-                "(\<files\>).*?(\</files\>)"               = '<file src="tools\**" target="tools" /><file src="legal\**" target="legal" />'
+                "(\<files\>).*?(\</files\>)"               = '<files><file src="tools\**" target="tools" /><file src="legal\**" target="legal" /></files>'
             }
 
             ".\legal\VERIFICATION.txt" = @{
