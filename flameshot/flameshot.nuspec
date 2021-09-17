@@ -26,7 +26,7 @@
     <copyright>Flameshot Team 2021</copyright>
     <licenseUrl>https://github.com/flameshot-org/flameshot/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/flameshot/icon.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/flameshot/icon.svg</iconUrl>
     <releaseNotes>https://github.com/flameshot-org/flameshot/releases/tag/v0.10.1</releaseNotes>
     <docsUrl>https://flameshot.org/</docsUrl>
     <bugTrackerUrl>https://github.com/flameshot-org/flameshot/issues</bugTrackerUrl>
