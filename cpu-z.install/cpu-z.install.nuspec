@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>cpu-z.install</id>
     <title>CPU-Z (Install)</title>
-    <version>1.97.0.20210916</version>
+    <version>1.97.0.20210919</version>
     <authors>CPUID</authors>
     <owners>majkinetor</owners>
     <summary>System information software</summary>
