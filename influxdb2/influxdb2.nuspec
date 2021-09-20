@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>influxdb2</id>
+    <title>InfluxDB</title>
+    <version>0.0</version>
+    <authors>InfluxData</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Scalable datastore for metrics, events, and real-time analytics</summary>
+    <description><![CDATA[InfluxDB is a time series database designed to handle high write and query loads. It is an integral component of the TICK stack. InfluxDB is meant to be used as a backing store for any use case involving large amounts of timestamped data, including DevOps monitoring, application metrics, IoT sensor data, and real-time analytics.
+
+## Features
+
+- Custom high performance datastore written specifically for time series data. The TSM engine allows for high ingest speed and data compression
+- Written entirely in Go. It compiles into a single binary with no external dependencies.
+- Simple, high performing write and query HTTP APIs.
+- Plugins support for other data ingestion protocols such as Graphite, collectd, and OpenTSDB.
+- Expressive SQL-like query language tailored to easily query aggregated data.
+- Tags allow series to be indexed for fast and efficient queries.
+- Retention policies efficiently auto-expire stale data.
+- Continuous queries automatically compute aggregate data to make frequent queries more efficient.
+
+## Package parameters
+
+- `/InstallRoot` - Installation directory root, by default `c:\influxdata`
+- `/Service` - Install as Windows service. If value `0` is specified, service will be created but not started (`/Service:0`). Note that any existing service will not be removed so before updating, you should first uninstall existing package (this will not remove existing data).
+
+## Notes
+
+- The open source edition of InfluxDB runs on a single node. If you require high availability to eliminate a single point of failure, consider the [InfluxDB Enterprise Edition](https://www.influxdata.com/products/influxdb-enterprise)
+]]></description>
+    <projectUrl>https://www.influxdata.com/products/influxdb-overview/</projectUrl>
+    <tags>foss cross-platform cli database metrics influxdata</tags>
+    <copyright>© 2019 InfluxData, Inc.</copyright>
+    <licenseUrl>https://github.com/influxdata/influxdb/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/influxdb1/icon.png</iconUrl>
+    <docsUrl>https://docs.influxdata.com/influxdb</docsUrl>
+    <bugTrackerUrl>https://github.com/influxdata/influxdb/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/influxdata/influxdb</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/influxdb1</packageSourceUrl>
+    <dependencies>
+      <dependency id="nssm" version="2.24.101" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
