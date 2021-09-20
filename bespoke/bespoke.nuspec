@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>bespoke</id>
+    <title>Bespoke Synth</title>
+    <version>0.0</version>
+    <authors>Ryan Challinor</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>A cross platform software modular synth python</summary>
+    <description><![CDATA[A cross platform software modular synth
+
+## Features
+
+- live-patchable environment, so you can build while the music is playing
+- VST hosting
+- Python livecoding
+- MIDI controller mapping
+- Works on Windows, Mac, and Linux
+
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
+]]></description>
+    <projectUrl>https://www.bespokesynth.com/</projectUrl>
+    <tags>admin aduio vst synth cross-platform foss synthesis</tags>
+    <copyright>Ryan Challinor 2021</copyright>
+    <licenseUrl>https://github.com/awwbees/BespokeSynth/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/bespoke/icon.png</iconUrl>
+    <releaseNotes>https://github.com/awwbees/BespokeSynth/releases/tag/v1.0.0</releaseNotes>
+    <docsUrl>https://www.bespokesynth.com/docs/index.html</docsUrl>
+    <bugTrackerUrl>https://github.com/awwbees/BespokeSynth/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/awwbees/BespokeSynth/</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/bespoke</packageSourceUrl>
+    <dependencies>
+      <dependency id="vcredist140" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
