@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>bespoke</id>
     <title>Bespoke Synth</title>
-    <version>0.0</version>
+    <version>1.0.0</version>
     <authors>Ryan Challinor</authors>
     <owners>Miodrag Milic</owners>
     <summary>A cross platform software modular synth python</summary>
@@ -20,7 +20,7 @@
 - Works on Windows, Mac, and Linux
 
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/bespoke/screenshot.png)
 ]]></description>
     <projectUrl>https://www.bespokesynth.com/</projectUrl>
     <tags>admin aduio vst synth cross-platform foss synthesis</tags>
