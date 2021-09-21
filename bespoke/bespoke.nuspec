@@ -23,11 +23,11 @@
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/bespoke/screenshot.png)
 ]]></description>
     <projectUrl>https://www.bespokesynth.com/</projectUrl>
-    <tags>admin aduio vst synth cross-platform foss synthesis</tags>
+    <tags>admin audio vst synth cross-platform foss synthesis</tags>
     <copyright>Ryan Challinor 2021</copyright>
     <licenseUrl>https://github.com/awwbees/BespokeSynth/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/bespoke/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey@master/bespoke/icon.png</iconUrl>
     <releaseNotes>https://github.com/awwbees/BespokeSynth/releases/tag/v1.0.0</releaseNotes>
     <docsUrl>https://www.bespokesynth.com/docs/index.html</docsUrl>
     <bugTrackerUrl>https://github.com/awwbees/BespokeSynth/issues</bugTrackerUrl>
