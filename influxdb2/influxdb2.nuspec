@@ -36,11 +36,11 @@
     <copyright>© 2019 InfluxData, Inc.</copyright>
     <licenseUrl>https://github.com/influxdata/influxdb/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/influxdb1/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey@master/influxdb2/icon.png</iconUrl>
     <docsUrl>https://docs.influxdata.com/influxdb</docsUrl>
     <bugTrackerUrl>https://github.com/influxdata/influxdb/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/influxdata/influxdb</projectSourceUrl>
-    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/influxdb1</packageSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/influxdb2</packageSourceUrl>
     <dependencies>
       <dependency id="nssm" version="2.24.101" />
     </dependencies>
