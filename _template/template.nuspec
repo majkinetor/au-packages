@@ -15,7 +15,7 @@
     <copyright></copyright>
     <licenseUrl></licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/*****/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey@master/*****/icon.png</iconUrl>
     <releaseNotes></releaseNotes>
     <docsUrl></docsUrl>
     <mailingListUrl></mailingListUrl>
