@@ -5,13 +5,14 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>ximple</id>
     <title>XiMpLe</title>
-    <version>1.5.2108.62518</version>
+    <version>1.5.2109.43118</version>
     <authors>Petr Novak</authors>
     <owners>Miodrag Milic</owners>
     <summary></summary>
-    <description><![CDATA[## Features
+    <description><![CDATA[XiMpLe is an xml and json editor based on a table grid view (the same nodes are arranged in tables).
 
-- No installation is required - just download one file and run it
+## Features
+
 - Xml data are presented in well-arranged tables
 - Simple and intuitive control even for a beginner
 - No need to know xml rules or syntax
@@ -28,7 +29,6 @@
 - Name and value suggestion according XSD schema
 - XSD generation
 - Text comparator supports long lines and longer files
-- User's guide available for free in a download section
 
 ## Notes
 
