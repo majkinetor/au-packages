@@ -4,8 +4,8 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
     PackageName    = $Env:ChocolateyPackageName
-    FileFullPath   = gi $toolsPath\*.x32.zip
-    FileFullPath64 = gi $toolsPath\*.x64.zip
+    FileFullPath   = gi $toolsPath\*-x32.zip
+    FileFullPath64 = gi $toolsPath\*-x64.zip
     Destination    = $toolsPath
 }
 
