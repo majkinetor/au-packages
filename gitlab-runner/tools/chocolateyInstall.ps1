@@ -43,11 +43,11 @@ if ($pp.Service) {
     if (!(Get-Service gitlab-runner -ea 0)) {
         Write-Host "Installing gitlab-runner service"
         $cmd = @("install")
+        $cmd += "--working-directory", $installDir, "--config", "$installDir\config.toml"
         if ($Username) {
             Add-User $Username $Password
             Add-ServiceLogonRight $Username
-            $cmd += " --user", "$Env:COMPUTERNAME\$Username", "--password", $Password
-            $cmd += " --working-directory", $installDir, "--config", "$installDir\config.toml"
+            $cmd += "--user", "$Env:COMPUTERNAME\$Username", "--password", $Password
         }
 
         $ErrorActionPreference = 'Continue'
