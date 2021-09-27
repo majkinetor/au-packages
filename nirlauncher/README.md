@@ -17,4 +17,9 @@ NirLauncher is a package of more than 180 portable freeware utilities for Window
 
 - `/Sysinternals` - Add sysinternals tools to the launcher if chocolatey package [sysinternals](https://chocolatey.org/packages/sysinternals) is already installed.
 
+## Notes
+
+- Many Antivirus programs display false alerts, saying that the password-recovery utilities of NirSoft are infected with Trojan/Virus/Malware. For more information about false positive problems, read [this](http://blog.nirsoft.net/2009/05/17/antivirus-companies-cause-a-big-headache-to-small-developers). If your Antivirus software shows a false alert, you can use the following article that explains how to send a report about a false positive issue to your Antivirus company:
+[How to Report Malware or False Positives to Multiple Antivirus Vendors](https://www.techsupportalert.com/how-to-report-malware-or-false-positives-to-multiple-antivirus-vendors/)
+
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/nirlauncher/screenshot.png)
