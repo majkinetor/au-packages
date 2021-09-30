@@ -10,8 +10,8 @@ Set-AutoUpdate -Enable
 $packageArgs = @{
   packageName            = 'signal'
   fileType               = 'EXE'
-  url                    = 'https://updates.signal.org/desktop/signal-desktop-win-5.17.2.exe'
-  checksum               = '23778da27d97792d28dc799cc82ded9db978d594035bfb047fb79c883b0d9c27'
+  url                    = 'https://updates.signal.org/desktop/signal-desktop-win-5.18.0.exe'
+  checksum               = '6290fe3e5d36b40f0efeb67e748bda01f3934e31a4f14cfad0a9e323262a8f7d'
   checksumType           = 'sha256'
   silentArgs             = '/S'
   validExitCodes         = @(0)
