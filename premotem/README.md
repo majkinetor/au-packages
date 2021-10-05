@@ -16,4 +16,4 @@ PRemoteM is a modern remote session manager and launcher, which allows you to op
 - `/InstallDir` - Installation directory, by default `Get-ToolsDirectory`
 - `/NoDesktopIcon`  - Do not create desktop icon
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/premotem/screenshot.gif)
+![screenshot](https://github.com/majkinetor/au-packages/blob/master/premotem/screenshot.gif?raw=true)
