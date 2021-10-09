@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://sourceforge.net/projects/eraser/files/Eraser%206/6.2/Eraser%206.2.0.2992.exe/download
+   x32: https://sourceforge.net/projects/eraser/files/Eraser%206/6.2/Eraser%206.2.0.2993.exe/download
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: AC33F037FC548BAE5B287668A625009E5B11F6424BABF742A2532458B55380F6
+   checksum32: 062CCB4E9E6F90D3E5B0DF23A4C85C65690A1B527A70015C914E17468FC74BBC
 
 File 'license.txt' is obtained from:
    http://www.fsf.org/licensing/licenses/gpl.html
