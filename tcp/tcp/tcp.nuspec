@@ -33,12 +33,11 @@ See the package section *Dependencies* to find out which plugins are included.
       <dependency id="tcp-linkinfo"/>
       <dependency id="tcp-mediainfo"/>
       <dependency id="tcp-peviewer"/>
-      <dependency id="tcp-services2"/>
       <dependency id="tcp-registry"/>
       <dependency id="tcp-services2"/>
-      <dependency id="tcp-sqlite"/>
       <dependency id="tcp-sftp"/>
       <dependency id="tcp-shelldetails"/>
+      <dependency id="tcp-sqlite"/>
       <dependency id="tcp-startups"/>
       <dependency id="tcp-uninstaller"/>
       <dependency id="tcp-virtualpanel"/>
