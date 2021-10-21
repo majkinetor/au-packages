@@ -1,0 +1,21 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Package can be verified like this:
+
+1. Go to https://www.ghisler.com/plugins.htm to download plugin
+
+   plugin: https://www.totalcommander.ch/win/fs/sftpplug.zip
+
+   which is renamed to davplug.zip inside the package.
+
+2. You can use one of the following methods to obtain the SHA256 checksum:
+   - Use powershell function 'Get-FileHash'
+   - Use Chocolatey utility 'checksum.exe'
+
+   plugin: 7C2525BBDED14C4E75445CEC39CA843DC3A8F09DC57B59CBEBA637D53940E7E4
+
+File 'license.txt' is extracted from the archive:
+   sftpplug.zip -> README.txt
