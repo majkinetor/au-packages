@@ -1,0 +1,8 @@
+
+License (everybody has it, why not me? ;-)
+--------------------------------------------
+This software is a Freeware and is distributed "as is". You can use it
+however you want, yet without changing the distribution's contents.
+Author doesn't guarantee you fulfillment of all your best wishes.
+Also, he doesn't bear responsibility of any damages, caused by the
+software. Yet, he will try his best to react to each bug report. :-)
