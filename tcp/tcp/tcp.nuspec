@@ -5,17 +5,17 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp</id>
     <title>Total Commander Plugins</title>
-    <version>1.0</version>
+    <version>2.0</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander plugins</summary>
     <description>Metapackage containing selection of [Total and Double Commander plugins](https://chocolatey.org/packages?q=tag%3Atcplugin).
-    
+
 See the package section *Dependencies* to find out which plugins are included.
     </description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/tcp</projectUrl>
     <tags>totalcmd doublecmd tcplugin files</tags>
-    <copyright>Miodrg Milic 2018</copyright>
+    <copyright>Miodrg Milic 2021</copyright>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/icon.png</iconUrl>
@@ -28,10 +28,16 @@ See the package section *Dependencies* to find out which plugins are included.
       <dependency id="tcp-envvars"/>
       <dependency id="tcp-fileinfo"/>
       <dependency id="tcp-iclview"/>
+      <dependency id="tcp-inied"/>
+      <dependency id="tcp-jsonviewer"/>
       <dependency id="tcp-linkinfo"/>
-      <dependency id="tcp-peviewer"/>
       <dependency id="tcp-mediainfo"/>
+      <dependency id="tcp-peviewer"/>
       <dependency id="tcp-services2"/>
+      <dependency id="tcp-registry"/>
+      <dependency id="tcp-services2"/>
+      <dependency id="tcp-sqlite"/>
+      <dependency id="tcp-sftp"/>
       <dependency id="tcp-shelldetails"/>
       <dependency id="tcp-startups"/>
       <dependency id="tcp-uninstaller"/>
