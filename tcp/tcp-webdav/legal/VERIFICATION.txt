@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   plugin: DACDAB0A3958C7CFB963BD60278F57E18D1BCF77F251663E3292245222F1EB9A
+   plugin: 5BE185389E46D727DD03A272F01A8ED3C90E781C0EBA8138D74AD8DED32D3A6B
 
 File 'license.txt' is extracted from the archive:
    davplug.zip -> README.txt

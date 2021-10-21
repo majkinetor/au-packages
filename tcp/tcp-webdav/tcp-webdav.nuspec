@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp-webdav</id>
     <title>TC Plugin: WebDAV</title>
-    <version>3.0</version>
+    <version>3.1</version>
     <authors>Christian Ghisler</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander file system plugin to access WebDAV protocol over HTTP and HTTPS</summary>
@@ -14,7 +14,7 @@
 See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
 </description>
     <projectUrl>https://www.ghisler.com/plugins.htm</projectUrl>
-    <tags>totalcmd doublecmd plugin tcplugin tcpfilesystem files foss</tags>  
+    <tags>totalcmd doublecmd plugin tcplugin tcpfilesystem files foss</tags>
     <copyright>Christian Ghisler 2004-2014</copyright>
     <licenseUrl>https://www.ghisler.com/plugins.htm</licenseUrl>
     <projectSourceUrl>http://ghisler.fileburst.com/fsplugins/webdav_src.zip</projectSourceUrl>
