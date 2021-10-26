@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://github.com/awwbees/BespokeSynth/releases'
+$releases = 'https://github.com/BespokeSynth/BespokeSynth/releases'
 
 function global:au_SearchReplace {
     @{

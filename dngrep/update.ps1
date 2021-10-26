@@ -8,7 +8,7 @@ function global:au_SearchReplace {
           "(?i)(\s+x64:).*"            = "`${1} $($Latest.URL64)"
           "(?i)(checksum32:).*"        = "`${1} $($Latest.Checksum32)"
           "(?i)(checksum64:).*"        = "`${1} $($Latest.Checksum64)"
-        },
+        }
 
         "$($Latest.PackageName).nuspec" = @{
             "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
