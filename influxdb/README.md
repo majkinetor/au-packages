@@ -1,6 +1,6 @@
 # <img src="https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/influxdb/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/influxdb.svg?color=red&label=influxdb)](https://chocolatey.org/packages/influxdb)
 
-InfluxDB is a time series database designed to handle high write and query loads. It is an integral component of the TICK stack. InfluxDB is meant to be used as a backing store for any use case involving large amounts of timestamped data, including DevOps monitoring, application metrics, IoT sensor data, and real-time analytics. 
+InfluxDB is a time series database designed to handle high write and query loads. It is an integral component of the TICK stack. InfluxDB is meant to be used as a backing store for any use case involving large amounts of timestamped data, including DevOps monitoring, application metrics, IoT sensor data, and real-time analytics.
 
 ## Features
 
@@ -19,5 +19,5 @@ InfluxDB is a time series database designed to handle high write and query loads
 
 ## Notes
 
+- Related packages: [influxdb1](https://chocolatey.org/packages/influxdb1), [influxdb2](https://chocolatey.org/packages/influxdb2)
 - The open source edition of InfluxDB runs on a single node. If you require high availability to eliminate a single point of failure, consider the [InfluxDB Enterprise Edition](https://www.influxdata.com/products/influxdb-enterprise).
-- InfluxDB v1.x package: [influxdb1](https://chocolatey.org/packages/influxdb1)
