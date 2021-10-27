@@ -19,7 +19,5 @@ yEd is a powerful desktop application that can be used to quickly and effectivel
 ## Notes
 
 - Only the last version works.
-- Since version `3.19.0.20191001`, this package depends on [AdoptOpenJDKJRE](https://chocolatey.org/packages/AdoptOpenJDKJRE) package instead of the [javaruntime](https://chocolatey.org/packages/javaruntime) that it previously used; later requires a license for commercial use since 2019.
 
 ![yed screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/screenshot.png)
-
