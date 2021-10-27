@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>postgresql14</id>
-    <version>14.0.1</version>
+    <version>14.0.1.20211027</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
@@ -19,13 +19,17 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
 - [Feature Matrix](https://www.postgresql.org/about/featurematrix)
 
 ## Package parameters
-- `/Password` - Password to be assigned to the `postgres` user. If omitted, it will be generated and shown in the install output. PostgreSql installer ignores this parameter if there is existing installation.
-- `/NoPath` - Do not add postgresql bin directory to the PATH.
 
-Other parameters could be set via `--ia` argument, for example, to set custom port:
+- `/AllowRemote` - Allow remote connections with username and password from all hosts by adding appropriate lines in the `pg_hba.conf`
+- `/Password` - Password to be assigned to the `postgres` user. If omitted, it will be generated and shown in the install output. PostgreSql installer ignores this parameter if there is existing installation.
+- `/Port` - Server port, if not set it defaults to `5432` or the first available port after it.
+- `/NoPath` - Do not add PostgreSql bin directory to the PATH.
+
+
+Other parameters could be set via `--ia` argument, for example, to set custom components:
 
 ```sh
-choco install postgresql13 --params '/Password:test' --ia '--serverport 5433'
+choco install postgresql13 --params '/Password:test /Port:5433' --ia '--enable-components server'
 ```
 
 See [Silent install options](https://www.enterprisedb.com/edb-docs/d/postgresql/installation-getting-started/installation-guide-installers/10/PostgreSQL_Installation_Guide.1.16.html) for details.
