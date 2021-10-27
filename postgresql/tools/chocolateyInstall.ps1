@@ -10,11 +10,11 @@ if(!$pp.Password) {
 $silentArgs = @{
     Mode                = "unattended"
     UnattendedModeUI    = "none"
-    # ServerPort          = 5432
     SuperPassword       = $pp.Password
     Enable_ACLedit      = 1
     Install_Runtimes    = 0
 }
+if ($pp.Port) { Write-Host "Using port: $($pp.Port)"; $silentArgs.ServerPort = $pp.Port }
 
 $packageArgs = @{
     packageName     = $Env:ChocolateyPackageName
@@ -37,3 +37,12 @@ if (!$installLocation)  { Write-Warning "Can't find install location"; return }
 Write-Host "Installed to '$installLocation'"
 
 if (!$pp.NoPath) { Install-ChocolateyPath "$installLocation\bin" -PathType 'Machine' }
+
+if ($pp.AllowRemote) {
+    Write-Host "Allowing remote connections"
+"
+# Added by Chocolatey package
+host    all             all             0.0.0.0/0               md5
+host    all             all             ::0/0                   md5
+" | Out-File -Append "$installLocation\data\pg_hba.conf" -Encoding ascii
+}

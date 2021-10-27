@@ -57,6 +57,7 @@ To update all packages run `./update_all.ps1`. It accepts few options:
 ./update_all.ps1 -Name a*                         # Update all packages which name start with letter 'a'
 ./update_all.ps1 -ForcedPackages 'cpu-z copyq'    # Update all packages and force cpu-z and copyq
 ./update_all.ps1 -ForcedPackages 'copyq:1.2.3'    # Update all packages but force copyq with explicit version
+./update_all.ps1 -ForcedPackages 'libreoffice-streams\fresh:6.1.0]'    # Update all packages but force libreoffice-streams package to update stream `fresh` with explicit version `6.1.0`.
 ./update_all.ps1 -Root 'c:\packages'              # Update all packages in the c:\packages folder
 ```
 
