@@ -40,7 +40,7 @@ This should output:
 
 ### Virtual package
 
-Each major version has its own package: [postgresql13](https://chocolatey.org/packages/postgresql13), [postgresql12](https://chocolatey.org/packages/postgresql12), [postgresql11](https://chocolatey.org/packages/postgresql11), [postgresql10](https://chocolatey.org/packages/postgresql10), [postgresql9](https://chocolatey.org/packages/postgresql9).
+Each major version has its own package: [postgresql14](https://chocolatey.org/packages/postgresql14), [postgresql13](https://chocolatey.org/packages/postgresql13), [postgresql12](https://chocolatey.org/packages/postgresql12), [postgresql11](https://chocolatey.org/packages/postgresql11), [postgresql10](https://chocolatey.org/packages/postgresql10), [postgresql9](https://chocolatey.org/packages/postgresql9).
 
 **Virtual package** [postgresql](https://chocolatey.org/packages/postgresql) also contains all versions that depend on adequate major version, but using it without problems require some special choco parameters.
 
