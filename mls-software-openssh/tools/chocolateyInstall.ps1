@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'mls-software-openssh'
-$url         = 'https://www.mls-software.com/files/setupssh-8.7p1-1.exe'
-$checksum    = '18e27a94901c2482165b3ef28b7e935da942afea90279b07d4b03b0aa71e7215'
+$url         = 'https://www.mls-software.com/files/setupssh-8.8p1-1.exe'
+$checksum    = '1aa086c172cdbfd71652f6d71c33549ef8a3ba1931dac643d6432f5b6f2c6e61'
 
 $pp = Get-PackageParameters
 $params = @()
