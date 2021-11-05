@@ -1,7 +1,6 @@
 import-module au
 
-$releases = 'http://mpesch3.de/index.html'
-$download = "https://www.filecroco.com/download-mp3directcut/download/"
+$releases = "https://www.filecroco.com/download-mp3directcut/download/"
 
 function global:au_SearchReplace {
    @{
@@ -13,7 +12,7 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate {    
+function global:au_BeforeUpdate {
     set-alias 7z $Env:chocolateyInstall\tools\7z.exe
     $archivePath = "$PSScriptRoot\mp3DC.exe"
 
@@ -29,10 +28,9 @@ function global:au_BeforeUpdate {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re  = 'Version ([.\d]+)'
-    if ($download_page.Content -match $re) {  $version = $Matches[1] } else { throw "Can't find version by parsing the page" }
+    $re  = 'MP3DirectCut ([0-9.]+)'
+    if ($download_page.Content -match $re) { $version = $Matches[1] } else { throw "Can't find version by parsing the page" }
 
-    $download_page = Invoke-WebRequest -Uri $download -UseBasicParsing
     $url = $download_page.Links | ? href -match 'download-mp3directcut/.+' | % href
     @{
         Version = $version
