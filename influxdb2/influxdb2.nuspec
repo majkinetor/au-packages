@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>influxdb2</id>
     <title>InfluxDB</title>
-    <version>2.0.9</version>
+    <version>2.1.0</version>
     <authors>InfluxData</authors>
     <owners>Miodrag Milic</owners>
     <summary>Scalable datastore for metrics, events, and real-time analytics</summary>
@@ -29,6 +29,7 @@
 
 ## Notes
 
+- Related packages: [influxdb](https://chocolatey.org/packages/influxdb), [influxdb1](https://chocolatey.org/packages/influxdb1)
 - The open source edition of InfluxDB runs on a single node. If you require high availability to eliminate a single point of failure, consider the [InfluxDB Enterprise Edition](https://www.influxdata.com/products/influxdb-enterprise)
 ]]></description>
     <projectUrl>https://www.influxdata.com/products/influxdb-overview/</projectUrl>
