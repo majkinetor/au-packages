@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://dl.influxdata.com/influxdb/releases/influxdb2-2.1.0-windows-amd64.zip
+   x64: https://dl.influxdata.com/influxdb/releases/influxdb2-2.1.1-windows-amd64.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: F9FAED2F433139042AE90AB6DFAEDA8BF24D04C7BB946F0848964A94D906C26C
+   checksum64: 912FF645A20EA7623F453B76AF32D26B6A2160E6AC7FA0AC60E67C8D80C8A0DF
 
 
 File 'license.txt' is obtained from:
