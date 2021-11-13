@@ -39,7 +39,7 @@ function Resolve-PostgreUrl($p) {
         Uri = $url
         ErrorAction = 'ignore'
     }
-    if ($host.Version.Major -gt 5) { $params.SkipHttpErrorCheck = $true }
+    #if ($host.Version.Major -gt 5) { $params.SkipHttpErrorCheck = $true }
 
     $url = Invoke-WebRequest @params | % Headers | % Location
     $url
