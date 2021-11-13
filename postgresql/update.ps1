@@ -60,8 +60,7 @@ function global:au_GetLatest {
 
         $s1 = @{
             Version      = $version
-            Url64        = Resolve-PostgreUrl $item."Windows x86-64"
-            Url32        = Resolve-PostgreUrl $item."Windows x86-32"
+            Url64        = $url
             PackageName  = "postgresql$major"
             ReleaseNotes = "https://www.postgresql.org/docs/$major/static/release.html"
             SoftwareName = "PostgreSQL $major*"
@@ -85,7 +84,6 @@ function global:au_GetLatest {
         Dependency  = $streams[0].PackageName
         PackageName = 'postgresql'
     }
-
     @{ streams = $streams }
 }
 
