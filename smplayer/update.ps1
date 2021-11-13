@@ -25,24 +25,24 @@ function global:au_GetLatest {
     $url = $download_page.links | ? {
         if (!$_.href) { return }
         $v = $_.href.split('/', [System.StringSplitOptions]::RemoveEmptyEntries)[-1]
-        [version]::TryParse($v, [ref]($__)) } | select -First 1 -Expand href   
+        [version]::TryParse($v, [ref]($__)) } | select -First 1 -Expand href
 
     $version = $url.split('/', [System.StringSplitOptions]::RemoveEmptyEntries)[-1]
-    
+
     $releases = 'https://sourceforge.net' + $url
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $url32 = $download_page.links | ? href -match '-win32\.exe/download' | % href
+    $url32 = $download_page.links | ? href -match '-win32-qt5.6.exe/download' | % href
     $url64 = $download_page.links | ? href -match '-x64\.exe/download' | % href
     if (!$url32 -and !$url64) {
         Write-Host 'No Windows binaries found'
         return 'ignore'
     }
 
-    @{ 
+    @{
         Version = $version
         URL32   = $url32
         URL64   = $url64
-        FileType = 'exe' 
+        FileType = 'exe'
     }
 }
 
