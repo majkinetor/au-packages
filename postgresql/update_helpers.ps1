@@ -34,6 +34,13 @@ function Resolve-PostgreUrl($p) {
     $url = $json.props.pageProps.downloadUrl
 
 
-    $url = iwr -MaximumRedirection 0 $url -SkipHttpErrorCheck -ea 0 | % Headers | % Location
+    $params = @{
+        MaximumRedirection = 0
+        Uri = $url
+        ErrorAction = 'ignore'
+    }
+    if ($host.Version.Major -gt 5) { $params.SkipHttpErrorCheck = $true }
+
+    $url = Invoke-WebRequest @params | % Headers | % Location
     $url
 }
