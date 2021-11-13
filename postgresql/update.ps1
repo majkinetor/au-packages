@@ -44,11 +44,14 @@ function global:au_BeforeUpdate() {
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
-    $table = Get-WebRequestTable $download_page
+    $download_page.Content -match '__NEXT_DATA__.+?>(.+?)</script>' | Out-Null
+    $json = $Matches[1] | ConvertFrom-Json
 
+    $downloads = $json.props.pageProps.postgreSQLDownloads
     $streams = [ordered]@{}
-    foreach ($item in $table) {
-        $url = Resolve-PostgreUrl $item."Windows x86-64"
+    foreach ($item in $downloads) {
+        $p = $item.products | ? { $_.field_os -eq 'Windows x86-64' }
+        $url = Resolve-PostgreUrl $p
         if (!$url) { continue }
         $version = $url -split 'postgresql-|-windows-x64\.exe' | select -Last 1 -Skip 1
         $version = $version -replace '-(\d)', '.$1'

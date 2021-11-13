@@ -26,15 +26,14 @@ function Get-WebRequestTable {
     }
 }
 
-function Resolve-PostgreUrl($url) {
-    if ($url -eq 'N/A') { return }
+function Resolve-PostgreUrl($p) {
+    $url = "https://www.enterprisedb.com/postgresql-tutorial-resources-training?uuid={0}&campaignId={1}" -f $p.uuid, $p.field_campaign_id
+    $download_page = Invoke-WebRequest -Uri $url
+    $download_page.Content -match '__NEXT_DATA__.+?>(.+?)</script>' | Out-Null
+    $json = $Matches[1] | ConvertFrom-Json
+    $url = $json.props.pageProps.downloadUrl
 
-    $url -match '(?<=href=").+?(?=")' | Out-Null
-    $url = $Matches[0]
-    $p = Invoke-WebRequest $url -UseBasicParsing
-    $p.Content -match 'download_link":"(https:\\.+?getfile.jsp\?fileid=\d+)' | Out-Null
-    if (!$Matches[1]) { return }
-    $url = $Matches[1].Replace("\/","/")
 
-    iwr -MaximumRedirection 0 $url -ea 0 | % Headers | % Location
+    $url = iwr -MaximumRedirection 0 $url -SkipHttpErrorCheck -ea 0 | % Headers | % Location
+    $url
 }
