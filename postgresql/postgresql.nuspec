@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>postgresql14</id>
-    <version>14.0.1.20211027</version>
+    <version>14.1.1</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
@@ -50,7 +50,7 @@ This should output:
 
 ### Virtual package
 
-Each major version has its own package: [postgresql13](https://chocolatey.org/packages/postgresql13), [postgresql12](https://chocolatey.org/packages/postgresql12), [postgresql11](https://chocolatey.org/packages/postgresql11), [postgresql10](https://chocolatey.org/packages/postgresql10), [postgresql9](https://chocolatey.org/packages/postgresql9).
+Each major version has its own package: `postgresql<Version>`
 
 **Virtual package** [postgresql](https://chocolatey.org/packages/postgresql) also contains all versions that depend on adequate major version, but using it without problems require some special choco parameters.
 
