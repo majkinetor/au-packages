@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>flameshot</id>
     <title>Flameshot</title>
-    <version>0.10.1</version>
+    <version>0.10.2</version>
     <authors>Flameshot Team</authors>
     <owners>Miodrag Milic</owners>
     <summary>Powerful yet simple to use screenshot software</summary>
@@ -27,7 +27,7 @@
     <licenseUrl>https://github.com/flameshot-org/flameshot/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/flameshot/icon.svg</iconUrl>
-    <releaseNotes>https://github.com/flameshot-org/flameshot/releases/tag/v0.10.1</releaseNotes>
+    <releaseNotes>https://github.com/flameshot-org/flameshot/releases/tag/v0.10.2</releaseNotes>
     <docsUrl>https://flameshot.org/</docsUrl>
     <bugTrackerUrl>https://github.com/flameshot-org/flameshot/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/flameshot-org/flameshot</projectSourceUrl>
