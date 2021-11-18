@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>dngrep</id>
     <title>dnGrep</title>
-    <version>2.9.428.0</version>
+    <version>0.0</version>
     <authors>Denis Stankovski, John Burak</authors>
     <owners>Miodrag Milic</owners>
     <summary>Powerful search for Windows</summary>
