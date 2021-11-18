@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/dnGrep/dnGrep/releases/download/v2.9.400.0/dnGREP.2.9.400.x86.msi
-   x64: https://github.com/dnGrep/dnGrep/releases/download/v2.9.400.0/dnGREP.2.9.400.x64.msi
+   x32: https://github.com/dnGrep/dnGrep/releases/download/v2.9.428.0/dnGREP.2.9.428.x86.msi
+   x64: https://github.com/dnGrep/dnGrep/releases/download/v2.9.428.0/dnGREP.2.9.428.x64.msi
 
    to download the installer.
 
@@ -16,8 +16,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 33DD573FDEEA0B9C87735FAA74066DE554D10714C79B8812109FD767D9A8D215
-   checksum64: E8602D63A908392BAB0B95CC0736AD588533ECCD2755AD9F7F7EE5403EFDE7A4
+   checksum32: 84AF5F3B8AA784E9A0D1D6D99BCC9BC606BFF326D7979F95A1D06747F6334383
+   checksum64: 4546F7726D70396A2322D31E349CB01A9C043C0BE292BCCF4F742C0593260004
 
 
 File 'license.txt' is obtained from:
