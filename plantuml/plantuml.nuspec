@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>plantuml</id>
-    <version>1.2021.14</version>
+    <version>1.2021.15</version>
     <title>PlantUML</title>
     <authors>Arnaud Roques</authors>
     <owners>Yoshimov, Miodrag Milic</owners>
