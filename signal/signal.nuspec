@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>signal</id>
     <title>Signal (Desktop)</title>
-    <version>5.25.0</version>
+    <version>5.25.1</version>
     <authors>Open Whisper Systems</authors>
     <owners>Miodrag Milic</owners>
     <summary>Fast, simple, secure. Privacy that fits in your pocket</summary>
@@ -34,7 +34,7 @@
     <licenseUrl>http://www.gnu.org/licenses/gpl-3.0.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/signal/icon.png</iconUrl>
-    <releaseNotes>https://github.com/WhisperSystems/Signal-Desktop/releases/tag/v5.25.0</releaseNotes>
+    <releaseNotes>https://github.com/WhisperSystems/Signal-Desktop/releases/tag/v5.25.1</releaseNotes>
     <docsUrl>https://www.signal.org/docs</docsUrl>
     <bugTrackerUrl>https://github.com/WhisperSystems/Signal-Desktop/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/WhisperSystems/Signal-Desktop</projectSourceUrl>
