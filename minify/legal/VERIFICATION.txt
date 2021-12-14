@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/tdewolff/minify/releases/download/v2.9.22/minify_windows_amd64.zip
+   x64: https://github.com/tdewolff/minify/releases/download/v2.9.23/minify_windows_amd64.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: 0630EDE6307C18683E23BF6F59DDAC4DCD5CE6C3F7C4414E7D0C92F13075FCB2
+   checksum64: 9A5A055EF88E430470F2414E2FC88CCE31D5606B9175609F03827AC6A90A6B23
 
 File 'license.txt' is obtained from:
    https://github.com/tdewolff/minify/blob/master/LICENSE
