@@ -7,17 +7,15 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/johnkerl/miller/releases/download/v5.10.0/mlr.exe
-   x64: https://github.com/johnkerl/miller/releases/download/v5.10.0/msys-2.0.dll
+   x64: https://github.com/johnkerl/miller/releases/download/v6.0.0/mlr-windows-latest.zip
 
-   to download the installer.
+   to download the archive containing portable executable.
 
 2. You can use one of the following methods to obtain the SHA256 checksum:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 6F8C3F6F579712378E3D2E6C4FC175F4C2E39489CB75ECE0D75AB89B1285B187
-   checksum64: 32A7407CE3302C9A4FDE00ECB6137C7B2B23CAACFF28B2CD3AF7096494286B1B
+   checksum64: 6DAC1BDA12CCEE5B2137F2C94206912134B0D6E7DF8455D6F17ADEE22F262EB8
 
 
 File 'license.txt' is obtained from:

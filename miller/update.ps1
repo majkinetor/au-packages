@@ -10,9 +10,7 @@ function global:au_SearchReplace {
         }
 
         ".\legal\VERIFICATION.txt" = @{
-          "(?i)(\s+x32:).*"            = "`${1} $($Latest.URL32)"
           "(?i)(\s+x64:).*"            = "`${1} $($Latest.URL64)"
-          "(?i)(checksum32:).*"        = "`${1} $($Latest.Checksum32)"
           "(?i)(checksum64:).*"        = "`${1} $($Latest.Checksum64)"
         }
     }
@@ -20,23 +18,23 @@ function global:au_SearchReplace {
 
 function global:au_BeforeUpdate {
     Get-RemoteFiles -Purge -NoSuffix
-    $dllName = (Split-Path -Leaf $Latest.URL64).Replace('.dll', '')
-    Move-Item tools\$dllName.exe tools\$dllName.dll
+    Set-Alias 7z $Env:chocolateyInstall\tools\7z.exe
+    7z e tools\*.zip -otools *.exe -r -y
+    rm tools\*.zip -ea 0
 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re      = '\.(exe|dll)$'
+    $re      = 'mlr-windows-latest.zip$'
     $domain  = $releases -split '(?<=//.+)/' | select -First 1
     $url     = $download_page.links | ? href -match $re | select -First 2 -expand href | % { $domain + $_}
-    if (!$url) { Write-Host "Can't find windows release"; return 'ignore'}
+    # if (!$url) { Write-Host "Can't find windows release"; return 'ignore'}
     $version = $url -split '/' | select -Last 1 -Skip 1
 
     @{
         Version      = $version.SubString(1)
-        URL32        = $url | ? { $_ -like '*.exe' } | select -First 1
-        URL64        = $url | ? { $_ -like '*.dll' } | select -First 1
+        URL64        = $url
         ReleaseNotes = "https://github.com/johnkerl/miller/releases/tag/$version"
     }
 }
