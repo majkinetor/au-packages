@@ -9,7 +9,8 @@
     <authors>HTACG</authors>
     <owners>Miodrag Milic</owners>
     <summary>Tidy is a console application for Mac OS X, Linux, Windows, UNIX, and more. It corrects and cleans up HTML and XML documents by fixing markup errors and upgrading legacy code to modern standards</summary>
-    <description><![CDATA[Tidy is a console application for Mac OS X, Linux, Windows, UNIX, and more. It corrects and cleans up HTML and XML documents by fixing markup errors and upgrading legacy code to modern standards.
+    <description><![CDATA[
+Tidy is a console application for Mac OS X, Linux, Windows, UNIX, and more. It corrects and cleans up HTML and XML documents by fixing markup errors and upgrading legacy code to modern standards.
 
 `libtidy` is a C static and dynamic library that developers can integrate into their applications in order to bring all of Tidy’s power to your favorite tools. `libtidy` is used today in desktop applications, web servers, and more.
 
@@ -20,13 +21,13 @@ The HTML Tidy library, libtidy, is used and incorporated into many applications 
     <copyright>HTACG</copyright>
     <licenseUrl>https://github.com/htacg/tidy-html5/blob/master/README/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>http://binaries.html-tidy.org/release_notes/5.6.0.html</releaseNotes>
+    <releaseNotes>http://binaries.html-tidy.org/release_notes/5.9.14.html</releaseNotes>
     <docsUrl>http://www.html-tidy.org/documentation</docsUrl>
     <bugTrackerUrl>https://github.com/htacg/tidy-html5/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/htacg/tidy-html5</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/html-tidy</packageSourceUrl>
     <dependencies>
-      <dependency id="vcredist140" version="14.12.25810" />
+      <dependency id="vcredist140" version="14.30.30704" />
       <dependency id="chocolatey" version="0.10.8" />
     </dependencies>
   </metadata>

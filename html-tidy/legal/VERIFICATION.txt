@@ -7,8 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/htacg/tidy-html5/releases/download/5.6.0/tidy-5.6.0-vc14-32b.zip
-   x64: https://github.com/htacg/tidy-html5/releases/download/5.6.0/tidy-5.6.0-vc14-64b.zip
+   x64: https://github.com/htacg/tidy-html5/releases/download/5.9.14-next/tidy-5.9.14-win64.zip
 
    to download the installer.
 
@@ -16,12 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 03C8AE9359290A3523D9FD5131456E670D2BC2564FB20AED7C6456F86B8433E2
-   checksum64: 59AC22427A3D759C72108814F6A8F0E98511B12F87744CA19E0A500A00687BE8
-
-Using AU:
-
-   Get-RemoteChecksum https://github.com/htacg/tidy-html5/releases/download/5.6.0/tidy-5.6.0-vc14-64b.zip
+   checksum64: D8444D7559E57CD512E6B2A138BDBE6C5C82319D636F1BA570F2BAE44CECDCEE
 
 File 'license.md' is obtained from:
    https://raw.githubusercontent.com/htacg/tidy-html5/master/README/LICENSE.md

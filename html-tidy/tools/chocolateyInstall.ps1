@@ -4,8 +4,7 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
     PackageName    = 'html-tidy'
-    FileFullPath   = gi $toolsPath\*-32b.zip
-    FileFullPath64 = gi $toolsPath\*-64b.zip
+    FileFullPath64 = gi $toolsPath\*-win64.zip
     Destination    = $toolsPath
 }
 ls $toolsPath\* | ? { $_.PSISContainer } | rm -Recurse -Force #remove older package dirs
