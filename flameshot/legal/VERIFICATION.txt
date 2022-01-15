@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/flameshot-org/flameshot/releases/download/v0.10.2/Flameshot-0.10.2-win64.msi
+   x64: https://github.com/flameshot-org/flameshot/releases/download/v11.0.0/Flameshot-11.0.0-win64.msi
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: B2705F19078BF515151CA1AAA2F71D2AE1316CC74CCEEB6BF197AA2650AB4170
+   checksum64: EE24A8E3E68D7D03539244C5EC0CC900BC5AAA745AF8FE149EAD3DE8C422194B
 
 File 'license.txt' is obtained from:
    https://github.com/flameshot-org/flameshot/blob/master/LICENSE
