@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tcp-sqlite</id>
     <title>TC Plugin: SQLite Viewer</title>
-    <version>2.11.1</version>
+    <version>2.14.1</version>
     <authors>Progman13</authors>
     <owners>Miodrag Milic</owners>
     <summary>Total Commander lister plugin that can view SQLite files</summary>
@@ -15,10 +15,10 @@ Total Commander lister plugin that can view SQLite3 database files. Supports *.d
 - Supports up to 2TB files, no sqlite3.dll needed.
 - Supports data types described in this document: http://www.sqlite.org/datatype3.html
 
-See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.      
+See [TCP Scripts](https://chocolatey.org/packages/tcps) for package parameters and other notes.
     </description>
     <projectUrl>https://totalcmd.net/plugring/sqliteviewer.html</projectUrl>
-    <tags>doublecmd totalcmd plugin tcplister freeware sqlite</tags>  
+    <tags>doublecmd totalcmd plugin tcplister freeware sqlite</tags>
     <copyright>Progman13, 2020</copyright>
     <licenseUrl>https://totalcmd.net/plugring/sqliteviewer.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
