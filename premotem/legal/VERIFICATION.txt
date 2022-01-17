@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/VShawn/PRemoteM/releases/download/0.6.1/PRemoteM-0.6.1.zip
+   x32: https://github.com/VShawn/PRemoteM/releases/download/0.6.1.1/PRemoteM-0.6.1.1.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 8A775F015F4D7B61DD6860CEF7A4D6EFF749C0983AFCA85B47CF66C6FFA77EEF
+   checksum32: 29EDDF44E36AFC74C70FDEF74A77BF4E8D1D8A09B3B9A0AB05085FE041511150
 
 File 'license.txt' is obtained from:
    https://github.com/VShawn/PRemoteM/blob/dev/LICENSE
