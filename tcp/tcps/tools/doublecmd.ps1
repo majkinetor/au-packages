@@ -34,7 +34,7 @@ function Set-HashTable($Xml, [string] $Parent, [string]$Name, [HashTable[]] $Has
     if (!$xmlParent) { throw 'Non existent parent' }
 
     foreach ($hash in $Hashes) {
-        $idKey = ($hash.Keys | ? { $_.EndsWith('_')}) -replace '_$'    
+        $idKey = ($hash.Keys | ? { $_.EndsWith('_')}) -replace '_$'
         if ($idKey) {
             $e = $xmlParent.$Name | ? { $_.$idKey -eq $hash["${idKey}_"] }
             if ($e) { $xmlParent.RemoveChild($e) | Out-Null }
@@ -56,12 +56,12 @@ function Set-DCTemplates( [HashTable[]] $Templates ) {
     $config = Get-DCConfig
 
     if (!$config) { Write-Warning "Can't find Double Commander config, doing nothing"; return } # This prevent Gallery verifyer to fail as it runs as a user SYSTEM which has different profile path
-    
+
     $t = $Templates | % { $x = $_.Clone(); $x.Remove('Color'); $x }
     Set-HashTable $config -Parent 'doublecmd.SearchTemplates' -Name 'Template' -Hashes $t
-    
+
     $t = foreach($t in $Templates) {
-        if ($t.Color) { @{  
+        if ($t.Color) { @{
             Name_     = $t.Name_
             FileMasks = ">" + $t.Name_
             Color     = $t.Color
@@ -82,7 +82,7 @@ function Set-DCHotkey([HashTable[]]$Hotkeys){
     $xml.Save($xml_path)
 }
 
-function Get-DCConfig ([switch] $Path) { 
+function Get-DCConfig ([switch] $Path) {
     function xml_path {
         $res = "$Env:AppData\doublecmd\doublecmd.xml"
         if (Test-Path $res) {return $res}
@@ -93,11 +93,13 @@ function Get-DCConfig ([switch] $Path) {
 
     $cfg_path = xml_path
     if (!$cfg_path) {
-        $exePath = "$Env:ProgramFiles\Double Commander\doublecmd.exe"
-        if (!(Test-Path $exePath)) {
-            $exePath = "$Env:COMMANDER_PATH\doublecmd.exe"
-            if (!(Test-Path $exePath)) { return }
+        $paths = "$Env:ProgramFiles\Double Commander", "$Env:COMMANDER_PATH", "$Env:DCOMMANDER_PATH"
+        foreach ($dcInstallPath in $paths) {
+            if (!$dcInstallPath) { continue }
+            $exePath = Join-Path $dcInstallPath doublecmd.exe
+            if (Test-Path $exePath) { break }
         }
+        if (!$exePath) { return }
 
         Write-Host "Double Commander config file is not found while its executable exists"
         Write-Host "It will now be run and closed for the first time to generate config file"
@@ -126,11 +128,11 @@ function Set-DCConfig( $xml ) {
 function Set-DCOptions([Parameter(ValueFromPipeline=$true)][HashTable]$Options, $UserConfig) {
     $config = if ($UserConfig) { $UserConfig } else { Close-DC; Get-DCConfig }
     if (!$config) { Write-Warning "Can't find Double Commander config, doing nothing"; return } # This prevent Gallery verifyer to fail as it runs as a user SYSTEM which has different profile path
-    
-    foreach ($section in $Options.Keys) {        
+
+    foreach ($section in $Options.Keys) {
         foreach ($key in $Options.$section.Keys) {
             $prefix = ''; $xmlkey = $key
-            if ($key.IndexOf('.') -ne -1) { 
+            if ($key.IndexOf('.') -ne -1) {
                 $prefix = $key -replace '\.[^.]+$'
                 $xmlkey = $key.Replace("$prefix.",'')
                 $prefix = ".$prefix"
@@ -145,7 +147,7 @@ function Set-DCOptions([Parameter(ValueFromPipeline=$true)][HashTable]$Options, 
                     $node.Attributes.Append( $config.CreateAttribute( $a ) ) | Out-Null
                     $node.$a = $val.$a.ToString()
                 }
-            } else { 
+            } else {
                 try { $node.InnerText = $val.ToString() } catch { Write-Warning "Can't set value for '$section.$key': $_"; }
             }
         }
@@ -157,35 +159,35 @@ function Set-DCPlugin {
     param(
         # Full path to the one of the supported TC plugins to add to settings file
         [string] $PluginPath,
-        
+
         # Lister and Content plugins: A string which determines whether plugin can handle the file or not
         # For semantics see http://java.totalcmd.net/V1.7/javadoc/plugins/wlx/WLXPluginInterface.html#listGetDetectString(int)
         [string] $DetectString,
-        
+
         # Packer plugins: Space separated list of extensions to associate with this plugin
         [string] $ArchiveExt,
 
         # Force specific plugin type
         [string] $ForceType,
-        
+
         # Set to remove plugin from settings file
         # Packer plugins: all instances will be removed
         [switch] $Uninstall
-    )  
+    )
     function Capitalize($s) { $s.Substring(0,1).ToUpper() + $s.Substring(1) }
-    
+
     $pFile = Get-Item $PluginPath
     $pName = Capitalize $pFile.BaseName.ToString()
     $pType = if ($ForceType) { $ForceType } else { Capitalize $pFile.Extension.Substring(1).Replace('64','') }
     $archiveExts = $archiveExt -split ' '
-    
+
     $config = Get-DCConfig
 
-    $all_plugins = $config.doublecmd.Plugins."${pType}Plugins"."${pType}Plugin" 
+    $all_plugins = $config.doublecmd.Plugins."${pType}Plugins"."${pType}Plugin"
     $plugins = $all_plugins | ? { if ($pType -eq 'Wcx') { $_.Path -eq $PluginPath } else { $_.Name -eq $pName } }
     $plugins | % { $config.doublecmd.Plugins."${pType}Plugins".RemoveChild( $_ ) | Out-Null }
     if ($Uninstall)  { return Set-DCConfig $config }
-    
+
     # Create XML node for plugin
     $elements = @{
         Wfx = 'Name', 'Path'
@@ -193,7 +195,7 @@ function Set-DCPlugin {
         Wlx = 'Name', 'Path', 'DetectString'
         Wdx = 'Name', 'Path', 'DetectString'
     }
-    $plugin = $config.CreateElement("${pType}Plugin") 
+    $plugin = $config.CreateElement("${pType}Plugin")
     $elements.$pType | % { $plugin.AppendChild($config.CreateElement($_)) } | Out-Null
     $plugin.Attributes.Append( $config.CreateAttribute('Enabled') ) | Out-Null
 
@@ -204,7 +206,7 @@ function Set-DCPlugin {
     try { $plugin.DetectString = $DetectString } catch {}
     try { $plugin.Flags        = '31' }          catch {}
 
-    $plugins = if ($pType -eq 'Wcx') { 
+    $plugins = if ($pType -eq 'Wcx') {
         foreach ($ext in $archiveExts) { $p = $plugin.Clone(); $p.ArchiveExt = $ext; $p }
     } else { $plugin }
     $plugins | % { $config.doublecmd.Plugins["${pType}Plugins"].AppendChild( $_ ) | Out-Null }
