@@ -40,6 +40,7 @@
 ]]></description>
     <projectUrl>https://doublecmd.sourceforge.io/</projectUrl>
     <tags>doublecmd file cross-platform foss</tags>
+    <docsUrl>https://doublecmd.github.io/doc/en/index.html</docsUrl>
     <copyright>Double Commander</copyright>
     <licenseUrl>https://sourceforge.net/p/doublecmd/code/HEAD/tree/trunk/doc/COPYING.txt?format=raw</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
