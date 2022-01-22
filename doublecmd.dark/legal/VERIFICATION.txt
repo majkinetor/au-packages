@@ -1,0 +1,22 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Package can be verified like this:
+
+1. Go to
+
+   x32: https://github.com/doublecmd/doublecmd/releases/download/v1.0.3/doublecmd-1.0.3.x86_64-win64-qt5.dark.7z
+
+   to download the installer.
+
+2. You can use one of the following methods to obtain the SHA256 checksum:
+   - Use powershell function 'Get-FileHash'
+   - Use Chocolatey utility 'checksum.exe'
+
+   checksum32: 0CC04C4388D12C458EBCB06ED457B9043714DCD2774F561B6D4C01E3F5AAB70C
+
+
+File 'license.txt' is obtained from:
+   https://sourceforge.net/p/doublecmd/code/HEAD/tree/trunk/doc/COPYING.txt?format=raw

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>doublecmd.dark</id>
+    <title>Double Commander Dark</title>
+    <version>0.0</version>
+    <authors>Alexander Koblov, Przemyslaw Nagay</authors>
+    <owners>Miodrag Milic</owners>
+    <summary>Double Commander for Windows Dark Theme</summary>
+    <description><![CDATA[## Features
+
+- Unicode support.
+- Tabbed interface.
+- Multi-rename tool.
+- Custom columns.
+- Built in file viewer (F3) to view files of in hex, binary or text format.
+- Internal text editor (F4) with syntax highlighting.
+- Archives are handled like subdirectories. You can easily copy files to and from archives. Supported archive types: ZIP, TAR GZ, TGZ, LZMA and - also BZ2, RPM, CPIO, DEB, RAR.
+- All operations working in background.
+- Extended search function with full text search in any files.
+- Configurable button bar to start external programs or internal menu commands.
+- Total Commander WCX, WDX and WLX plug-ins support.
+
+## Notes
+
+- Related packages: [doublecmd](https://community.chocolatey.org/packages/doublecmd), [dcc-unlit](https://community.chocolatey.org/packages/dcc-unlit), [tcps](https://community.chocolatey.org/packages/tcps)
+
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/doublecmd.dark/screenshot.png)
+]]></description>
+    <projectUrl>https://doublecmd.sourceforge.io/</projectUrl>
+    <tags>doublecmd file cross-platform foss</tags>
+    <copyright>Double Commander</copyright>
+    <licenseUrl>https://sourceforge.net/p/doublecmd/code/HEAD/tree/trunk/doc/COPYING.txt?format=raw</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/doublecmd.dark/icon.png</iconUrl>
+    <releaseNotes>https://github.com/doublecmd/doublecmd/releases/tag/v1.0.3</releaseNotes>
+    <mailingListUrl>https://doublecmd.h1n.ru</mailingListUrl>
+    <bugTrackerUrl>https://github.com/doublecmd/doublecmd/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/doublecmd/doublecmd/commits/master</projectSourceUrl>
+    <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/doublecmd.dark</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
