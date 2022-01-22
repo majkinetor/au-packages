@@ -21,7 +21,7 @@ Write-Host "Installing to" $pp.InstallDir
 Get-ChocolateyUnzip @packageArgs
 Remove-Item $toolsPath\*.7z -ErrorAction 0
 
-Write-Host 'Setting system environment DC_COMMANDER_PATH'
+Write-Host 'Setting system environment DCOMMANDER_PATH'
 Set-EnvironmentVariable 'DCOMMANDER_PATH' $pp.InstallDir Machine
 
 # Shortcut parameters
