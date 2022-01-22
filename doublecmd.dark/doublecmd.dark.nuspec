@@ -5,23 +5,31 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>doublecmd.dark</id>
     <title>Double Commander Dark</title>
-    <version>0.0</version>
+    <version>1.0.3</version>
     <authors>Alexander Koblov, Przemyslaw Nagay</authors>
     <owners>Miodrag Milic</owners>
     <summary>Double Commander for Windows Dark Theme</summary>
     <description><![CDATA[## Features
 
-- Unicode support.
-- Tabbed interface.
-- Multi-rename tool.
-- Custom columns.
-- Built in file viewer (F3) to view files of in hex, binary or text format.
-- Internal text editor (F4) with syntax highlighting.
-- Archives are handled like subdirectories. You can easily copy files to and from archives. Supported archive types: ZIP, TAR GZ, TGZ, LZMA and - also BZ2, RPM, CPIO, DEB, RAR.
-- All operations working in background.
-- Extended search function with full text search in any files.
-- Configurable button bar to start external programs or internal menu commands.
-- Total Commander WCX, WDX and WLX plug-ins support.
+- Unicode support
+- Tabbed interface
+- Multi-rename tool
+- Custom columns
+- Built in file viewer (F3) to view files of in hex, binary or text format
+- Internal text editor (F4) with syntax highlighting
+- Archives are handled like subdirectories
+    - You can easily copy files to and from archives
+    - Supported archive types: ZIP, TAR GZ, TGZ, LZMA and - also BZ2, RPM, CPIO, DEB, RAR
+- All operations working in background
+- Extended search function with full text search in any files
+- Configurable button bar to start external programs or internal menu commands
+- Total Commander WCX, WDX and WLX plug-ins support
+- Cross platform
+
+## Package parameters
+
+- `/InstallDir` - Installation directory, by default `Get-ToolsDirectory`
+- `/NoDesktopIcon`  - Do not create desktop icon
 
 ## Notes
 
