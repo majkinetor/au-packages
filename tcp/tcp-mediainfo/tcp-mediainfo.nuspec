@@ -24,7 +24,7 @@ Since MediaInfo library can retreive a LOT information from file, plugin is full
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/tcp-mediainfo/screenshot.png)
 </description>
-    <projectUrl>https://www.ghisler.com/plugins.htm</projectUrl>
+    <projectUrl>http://totalcmd.net/plugring/tcmediainfo.html</projectUrl>
     <tags>totalcmd doublecmd plugin tcplugin tcpcontent tcplister multimedia audio vide mp3 freeware</tags>
     <copyright>Copyright 2009-2019, Dmitry Yudin</copyright>
     <licenseUrl>http://totalcmd.net/plugring/tcmediainfo.html</licenseUrl>
