@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/junegunn/fzf/releases/download/0.29.0/fzf-0.29.0-windows_amd64.zip
+   x64: https://github.com/junegunn/fzf/releases/download/0.30.0/fzf-0.30.0-windows_amd64.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: F0797CEEE089017108C80B09086C71B8EEC43D4AF11CE939B78B1D5CFD202540
+   checksum64: AB0ED3255564DF1A6643FF492EBC728C25F3DF9EAA5C11AC7A28CF661667412F
 
 File 'LICENSE' is obtained from:
    https://raw.githubusercontent.com/junegunn/fzf-bin/master/LICENSE
