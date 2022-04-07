@@ -38,7 +38,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/yed/icon.png</iconUrl>
     <dependencies>
-       <dependency id="jre8" version="8.0.301" />
+       <dependency id="jre8" version="8.0.321" />
        <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>
     <releaseNotes>See https://www.yworks.com/products/yed/download#ReleaseNotes</releaseNotes>
