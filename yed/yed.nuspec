@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>yed</id>
     <title>yEd</title>
-    <version>3.21.1.20210914</version>
+    <version>3.22</version>
     <authors>yWorks</authors>
     <owners>Miodrag Milic</owners>
     <summary>yEd Graph Editor: High-quality diagrams made easy</summary>
@@ -28,10 +28,8 @@
 ## Notes
 
 - Only the last version works.
-- Since version `3.19.0.20191001`, this package depends on [AdoptOpenJDKJRE](https://chocolatey.org/packages/AdoptOpenJDKJRE) package instead of the [javaruntime](https://chocolatey.org/packages/javaruntime) that it previously used; later requires a license for commercial use since 2019.
 
 ![yed screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/yed/screenshot.png)
-
 ]]></description>
     <projectUrl>http://www.yworks.com/en/products/yfiles/yed</projectUrl>
     <tags>admin graph chart uml bpmn freeware cross-platform office</tags>
