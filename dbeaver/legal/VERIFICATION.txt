@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/dbeaver/dbeaver/releases/download/22.0.2/dbeaver-ce-22.0.2-x86_64-setup.exe
+   x64: https://github.com/dbeaver/dbeaver/releases/download/22.0.3/dbeaver-ce-22.0.3-x86_64-setup.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: 8B85FA25FDADB4996922A313B50428BFACE72CE9FEC3C53ECC8682AA3949C1A0
+   checksum64: 3F3A82ECAA5101C8D3CD2689CFCB547DD1EB785A111861E1304E71AD06E6AF89
 
 
 File 'LICENSE.md' is obtained from:
