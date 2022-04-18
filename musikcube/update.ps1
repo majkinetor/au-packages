@@ -27,7 +27,7 @@ function global:au_GetLatest {
 
     @{
         Version      = $version
-        URL32        = $domain + $url
+        URL32        = $url
         ReleaseNotes = "https://github.com/clangen/musikcube/releases/tag/$version"
     }
 }

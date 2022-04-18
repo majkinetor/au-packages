@@ -4,15 +4,15 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 . $Env:ChocolateyInstall\lib\tcps\tools\doublecmd.ps1
 
 $pp = Get-PackageParameters
-if (!$pp.IconSize) { $pp.IconSize = 20 }
-if (!$pp.FontSize) { $pp.FontSize = 10 }
+if (!$pp.IconSize) { $pp.IconSize = 24 }
+if (!$pp.FontSize) { $pp.FontSize = 12 }
 
 Write-Host "Setting Double Commander Configuration: $Env:ChocolateyPackageName"
 Write-Host "Configurable parameters:"
 Write-Host "  Font size: $($pp.FontSize)"
 Write-Host "  Icon size: $($pp.IconSize)"
 
-Set-DCOptions @{ 
+Set-DCOptions @{
     Behaviours = @{
         OnlyOneAppInstance       = $true
         'Mouse.Selection.Button' = 1
@@ -22,14 +22,14 @@ Set-DCOptions @{
         Foreground  = 16777215
         Background  = 0
         Background2 = 0
-        Cursor      = 12639424        
+        Cursor      = 12639424
         Mark        = 255
 
         UseInvertedSelection = $true
         UseFrameCursor       = $true
     }
-    'Fonts.Main' = @{  
-        Size = $pp.FontSize      
+    'Fonts.Main' = @{
+        Size = $pp.FontSize
         Style = 0
     }
     FilesViews = @{
@@ -41,13 +41,13 @@ Set-DCOptions @{
     }
     Icons = @{
         Size = $pp.IconSize
-        ShowInMenus = @{ Enabled = $true } 
+        ShowInMenus = @{ Enabled = $true }
     }
     'Keyboard.Typing.Actions'= @{
         NoModifier = 3
         Alt        = 1
         CtrlAlt    = 0
-    }    
+    }
     Language = @{
         POFileName = "doublecmd.po"
     }
@@ -73,7 +73,7 @@ Set-DCOptions @{
 }
 
 Set-DCHotkey @(
-    @{ 
+    @{
         Shortcut_ = 'Ctrl+F'
         Command = 'cm_Search'
     }
@@ -90,21 +90,21 @@ Set-DCTemplates @(
         FilesMasks = '*.rtf;*.tex;*.wps;*.txt;*.doc;*.docx;*.pdf;*.epub;*.md;README'
         Color      = 12639424
     },
-    @{  
+    @{
         Name_      = 'Archives'
         FilesMasks = '*.zip;*.7z;*.rar;*.tar;*.pkg;*.cbr;*.deb'
         Color      = 4227327
     },
-    @{  
+    @{
         Name_       = 'Images'
         FilesMasks  = '*.gif;*.jpg;*.png;*.bmp;*.tiff;*.webp;*.psd;*.tga;*.tif;*.yuv;*.ico'
         Color       = 15780518
     },
-    @{  
+    @{
         Name_       = 'Audio'
         FilesMasks  = '*.mid;*.mpa;*.mp3;*.flac;*.ogg;*.cda;*.wma;*.m4a;*.aac;*.aif;*.aiff;*.wav;'
     }
-    @{  
+    @{
         Name_       = 'Video'
         FilesMasks  = '*.mkv;*.avi;*.m3u;*.mpg;*.mpeg;*.mov;*.m2ts;*.rm;*.vob;*.mp4;*.flv;*.3gp'
     }
