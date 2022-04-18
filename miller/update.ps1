@@ -26,7 +26,7 @@ function global:au_BeforeUpdate {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re      = 'mlr-windows-latest.zip$'
+    $re      = 'windows-amd64.zip$'
     $domain  = $releases -split '(?<=//.+)/' | select -First 1
     $url     = $download_page.links | ? href -match $re | select -First 2 -expand href | % { $domain + $_}
     # if (!$url) { Write-Host "Can't find windows release"; return 'ignore'}
