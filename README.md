@@ -33,7 +33,7 @@ In a package directory run: `Test-Package`.
 To test in Windows Sandbox use Test-Sandbox.ps1 in the package directory like this:
 
 ```
-cpack; ps *sandboxClient* | kill; sleep 1; ..\Test-Sandbox.ps1
+choco pack; ps *sandboxClient* | kill; sleep 1; ..\Test-Sandbox.ps1
 ```
 
 ## Automatic package update
