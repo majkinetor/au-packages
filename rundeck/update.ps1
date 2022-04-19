@@ -12,10 +12,14 @@ function global:au_SearchReplace {
             "(?i)(\s+x32:).*"     = "`${1} $($Latest.URL32)"
             "(?i)(checksum32:).*" = "`${1} $($Latest.Checksum32)"
         }
+
+        ".\tools\chocolateyInstall.ps1" = @{
+            "(?i)([$]url\s*=\s*').*'" = "`${1}$($Latest.URL32)'"
+        }
     }
 }
 
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix -FileNameBase "rundeck-$($Latest.Version)" }
+function global:au_BeforeUpdate { $Latest.Checksum32 = Get-RemoteChecksum $Latest.URL32 }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing

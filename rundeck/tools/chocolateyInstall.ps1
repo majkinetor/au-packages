@@ -1,21 +1,22 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 . $toolsDir\helpers.ps1
 
 Update-SessionEnvironment   # Java might have been installed as dependency
 
-$pp = Get-PackageParameters
+$pp = Get-PackageParameters rundeck
 if (!$pp.InstallDir) { $pp.InstallDir = 'C:\rundeck' }
 
 Write-Host "Installing to" $pp.InstallDir
 mkdir $pp.InstallDir -ea 0 | Out-Null
 
+$url = 'https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/rundeck-4.0.1-20220404.war/artifacts/rundeck-4.0.1-20220404.war/download'
+Get-ChocolateyWebFile rundeck "$($pp.InstallDir)\rundeck.war" $url
+
 Write-Host "Setting up machine environment variable RDECK_BASE"
 Install-ChocolateyEnvironmentVariable 'RDECK_BASE' $pp.InstallDir 'Machine'
 
-Write-Host "Copying files"
-mv -Force $toolsDir\*.war "$($pp.InstallDir)\rundeck.war"
 mv -Force $toolsDir\start_rundeck.bat $pp.InstallDir
 cd $pp.InstallDir
 
