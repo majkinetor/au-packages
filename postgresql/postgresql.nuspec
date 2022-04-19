@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>postgresql14</id>
-    <version>14.2.1</version>
+    <version>14.2.2</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
@@ -29,10 +29,10 @@ PostgreSQL can be used, modified, and distributed by anyone free of charge for a
 Other parameters could be set via `--ia` argument, for example, to set custom components:
 
 ```sh
-choco install postgresql13 --params '/Password:test /Port:5433' --ia '--enable-components server'
+choco install postgresql13 --params '/Password:test /Port:5433' --ia '--enable-components server,commandlinetools'
 ```
 
-See [Silent install options](https://www.enterprisedb.com/edb-docs/d/postgresql/installation-getting-started/installation-guide-installers/10/PostgreSQL_Installation_Guide.1.16.html) for details.
+Check all [installer](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) options by adding `--help` as command line argument.
 
 ## Notes
 
