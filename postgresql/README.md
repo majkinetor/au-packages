@@ -37,6 +37,7 @@ This should output:
     - Change `METHOD` to `trust` and restart service with `Restart-Service postgresql*`
     - Execute `"alter user postgres with password '[my password]';" | psql -Upostgres`
     - Revert back `data\pg_hba.conf` to METHOD `md5` and restart service
+- If you have trouble selecting specific install components see [this issue](https://github.com/majkinetor/au-packages/issues/212)
 
 ### Virtual package
 
