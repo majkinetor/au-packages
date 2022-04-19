@@ -51,7 +51,8 @@ function global:au_GetLatest {
     $streams = [ordered]@{}
     foreach ($item in $downloads) {
         $p = $item.products | ? { $_.field_os -eq 'Windows x86-64' }
-        $url = Resolve-PostgreUrl $p
+        $url = try { Resolve-PostgreUrl $p } catch { Write-Host "Error resolving URL" $p.field_installer_version $p.field_sub_version; continue }
+
         if (!$url) { continue }
         $version = $url -split 'postgresql-|-windows-x64\.exe' | select -Last 1 -Skip 1
         $version = $version -replace '-(\d)', '.$1'
