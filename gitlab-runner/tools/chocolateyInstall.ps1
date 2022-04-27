@@ -18,8 +18,15 @@ $installDir = $pp.InstallDir
 $is64 = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
 $runner_embedded = if ($is64) { Write-Host "Installing x64 bit version"; Get-Item $toolsPath\*_x64.exe } else { Write-Host "Installing x32 bit version"; Get-Item $toolsPath\*_x32.exe }
 
+
+# Save to variable if it is running to start it later
+$glrService = Get-Service gitlab-runner -ea 0 | Where-Object {$_.Status -eq "Running"}
+if($glrService){
+    Write-Host "Stopping service"
+    $glrService | Stop-Service
+}
+
 Write-Host "Stopping executing runner"
-Get-Service gitlab-runner -ea 0 | Stop-Service
 Get-Process gitlab-runner -ea 0 | Stop-Process
 Start-Sleep 2
 
@@ -53,11 +60,18 @@ if ($pp.Service) {
         $ErrorActionPreference = 'Continue'
         & $runner_path $cmd
         $ErrorActionPreference = 'Stop'
-    } else { Write-Host "Service gitlab-runner already installed" }
+        # Start if installed correctly
+        $glrService = Get-Service gitlab-runner
+    } else {
+        #Do not start service, if it wasn't running before
+        Write-Host "Service gitlab-runner already installed"
+    }
+}
 
+# Start Service
+if ($glrService) {
     Write-Host "Starting service"
-    Start-Service gitlab-runner
-    Get-Service gitlab-runner
+    $glrService | Start-Service
 }
 
 if ($pp.Autologon) {
