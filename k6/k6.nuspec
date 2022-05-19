@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>k6</id>
     <title>k6</title>
-    <version>0.38.2</version>
+    <version>0.38.3</version>
     <authors>https://github.com/k6io/k6/graphs/contributors</authors>
     <owners>Miodrag Milic</owners>
     <summary>A modern load testing tool for developers and testers in the DevOps era</summary>
@@ -36,7 +36,7 @@ k6 is a developer centric open source load and performance regression testing to
     <licenseUrl>https://github.com/k6io/k6/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/k6/icon.png</iconUrl>
-    <releaseNotes>https://github.com/k6io/k6/releases/tag/v0.38.2</releaseNotes>
+    <releaseNotes>https://github.com/k6io/k6/releases/tag/v0.38.3</releaseNotes>
     <docsUrl>https://docs.k6.io/docs</docsUrl>
     <mailingListUrl>https://community.k6.io</mailingListUrl>
     <bugTrackerUrl>https://github.com/k6io/k6/issues</bugTrackerUrl>
