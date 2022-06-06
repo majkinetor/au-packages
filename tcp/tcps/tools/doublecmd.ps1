@@ -97,7 +97,7 @@ function Get-DCConfig ([switch] $Path) {
         foreach ($dcInstallPath in $paths) {
             if (!$dcInstallPath) { continue }
             $exePath = Join-Path $dcInstallPath doublecmd.exe
-            if (Test-Path $exePath) { break }
+            if (Test-Path $exePath) { break } else { $exePath = $null }
         }
         if (!$exePath) { return }
 
