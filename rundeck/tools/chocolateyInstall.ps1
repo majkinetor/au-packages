@@ -11,7 +11,7 @@ if (!$pp.InstallDir) { $pp.InstallDir = 'C:\rundeck' }
 Write-Host "Installing to" $pp.InstallDir
 mkdir $pp.InstallDir -ea 0 | Out-Null
 
-$url = 'https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/rundeck-4.3.0-20220602.war/artifacts/rundeck-4.3.0-20220602.war/download'
+$url = 'https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/rundeck-4.3.1-20220615.war/artifacts/rundeck-4.3.1-20220615.war/download'
 Get-ChocolateyWebFile rundeck "$($pp.InstallDir)\rundeck.war" $url
 
 Write-Host "Setting up machine environment variable RDECK_BASE"
