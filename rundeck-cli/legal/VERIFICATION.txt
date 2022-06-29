@@ -7,13 +7,13 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/rundeck/rundeck-cli/releases/download/v2.0.0/rd-2.0.0.zip
+   x32: https://github.com/rundeck/rundeck-cli/releases/download/v2.0.1/rd-2.0.1.zip
 
 2. You can use one of the following methods to obtain the SHA256 checksum:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 8515C8FD20037299DF89385293CF445A08C7C2E7002690FA888631FE94668163
+   checksum32: 779F27F561840BB0D2EFA0C82070A4C09D42EABE4DCA5E08885728B36881EE75
 
 File 'license.txt' is obtained from:
    https://raw.githubusercontent.com/rundeck/rundeck-cli/master/LICENSE
