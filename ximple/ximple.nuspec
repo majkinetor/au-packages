@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>ximple</id>
     <title>XiMpLe</title>
-    <version>1.5.2206.31123</version>
+    <version>1.5.2207.12466</version>
     <authors>Petr Novak</authors>
     <owners>Miodrag Milic</owners>
     <summary></summary>
