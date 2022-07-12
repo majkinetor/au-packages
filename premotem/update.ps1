@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://github.com/VShawn/PRemoteM/releases'
+$releases = 'https://github.com/1Remote/PRemoteM/releases'
 
 function global:au_SearchReplace {
    @{
