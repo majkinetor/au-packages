@@ -37,6 +37,9 @@
     <bugTrackerUrl>https://github.com/VShawn/PRemoteM/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/VShawn/PRemoteM</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/premotem</packageSourceUrl>
+    <dependencies>
+        <dependency id="dotnet-6.0-desktopruntime" version="6.0.6" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
