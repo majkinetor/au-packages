@@ -27,15 +27,15 @@
 
 ![screenshot](https://github.com/majkinetor/au-packages/blob/master/premotem/screenshot.gif?raw=true)
 ]]></description>
-    <projectUrl>https://github.com/VShawn/PRemoteM</projectUrl>
+    <projectUrl>https://github.com/1Remote/PRemoteM</projectUrl>
     <tags>remote rdp vlc ssh telnet ftp foss</tags>
     <copyright>VShawn 2020</copyright>
-    <licenseUrl>https://github.com/VShawn/PRemoteM/blob/dev/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/1Remote/PRemoteM/blob/dev_net6/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/premotem/icon.png</iconUrl>
     <releaseNotes>https://github.com/1Remote/PRemoteM/releases/tag/0.7.0</releaseNotes>
     <bugTrackerUrl>https://github.com/VShawn/PRemoteM/issues</bugTrackerUrl>
-    <projectSourceUrl>https://github.com/VShawn/PRemoteM</projectSourceUrl>
+    <projectSourceUrl>https://github.com/1Remote/PRemoteM</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/premotem</packageSourceUrl>
     <dependencies>
         <dependency id="dotnet-6.0-desktopruntime" version="6.0.6" />
