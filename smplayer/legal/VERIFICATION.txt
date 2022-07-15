@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://sourceforge.net/projects/smplayer/files/SMPlayer/22.2.0/smplayer-22.2.0-win32-qt5.6.exe/download
-   x64: https://sourceforge.net/projects/smplayer/files/SMPlayer/22.2.0/smplayer-22.2.0-x64.exe/download
+   x32: https://sourceforge.net/projects/smplayer/files/SMPlayer/22.7.0/smplayer-22.7.0-win32-qt5.6.exe/download
+   x64: https://sourceforge.net/projects/smplayer/files/SMPlayer/22.7.0/smplayer-22.7.0-x64.exe/download
 
    to download the installer.
 
@@ -16,8 +16,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 58086FDFFFDC6D721FDA3CF8B8FC0E40588AF2A33DFFB06ACFDCB97E3CC54363
-   checksum64: 4BD7FB03055114FCF9AA9D7D6E4684429B21DA1F3C9D1A334B6A9549CC1677A8
+   checksum32: 8B63EEB3D250B92FCD0E07515D41AE7A98D95F82E7809A5829C67AB0BABA9EB8
+   checksum64: 20DF4ACA2EE706CD1CD34CD0EF82DB4310FE967702181B2236F0BC630B7BD29E
 
 File 'Copying.txt' is obtained from:
    https://app.assembla.com/spaces/smplayer/subversion/source/HEAD/smplayer/trunk/Copying.txt?_format=raw
