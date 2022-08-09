@@ -21,7 +21,7 @@
   - locally
   - using Docker containers
   - using Docker containers and executing job over SSH
-  - using Docker containers with autoscaling on different clouds and virtualization hypervisors
+  - using Docker containers with autoscaling on different clouds and virtualization hypervisors 
   - connecting to remote SSH server
 - Is written in Go and distributed as single binary without any other requirements
 - Supports Bash, Windows Batch and Windows PowerShell
