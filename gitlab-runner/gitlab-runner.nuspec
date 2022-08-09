@@ -21,7 +21,7 @@
   - locally
   - using Docker containers
   - using Docker containers and executing job over SSH
-  - using Docker containers with autoscaling on different clouds and virtualization hypervisors 
+  - using Docker containers with autoscaling on different clouds and virtualization hypervisors
   - connecting to remote SSH server
 - Is written in Go and distributed as single binary without any other requirements
 - Supports Bash, Windows Batch and Windows PowerShell
@@ -50,10 +50,10 @@
     <licenseUrl>https://gitlab.com/gitlab-org/gitlab-runner/-/blob/2a956c92d14ea7cbd8a4e50cee401b1b9cfacbb1/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/gitlab-runner/icon.png</iconUrl>
-    <releaseNotes>https://gitlab.com/gitlab-org/gitlab-runner/blob/master/CHANGELOG.md</releaseNotes>
-    <docsUrl>https://docs.gitlab.com/runner/commands/README.html</docsUrl>
-    <bugTrackerUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues</bugTrackerUrl>
-    <projectSourceUrl>https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/tree/master</projectSourceUrl>
+    <releaseNotes>https://gitlab.com/gitlab-org/gitlab-runner/-/blob/main/CHANGELOG.md</releaseNotes>
+    <docsUrl>https://docs.gitlab.com/runner</docsUrl>
+    <bugTrackerUrl>https://gitlab.com/gitlab-org/gitlab-runner/-/issues</bugTrackerUrl>
+    <projectSourceUrl>https://gitlab.com/gitlab-org/gitlab-runner/-/tree/main</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/gitlab-runner</packageSourceUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.3.5.1" />
