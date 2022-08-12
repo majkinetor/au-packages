@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/rundeck-4.4.0-20220714.war/artifacts/rundeck-4.4.0-20220714.war/download
+   x32: https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/rundeck-4.5.0-20220811.war/artifacts/rundeck-4.5.0-20220811.war/download
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 8134097018a30332e12d9edebb9911ebb1e445bc3e114112a93fa38b29645f26
+   checksum32: cc997f0eacb4945d772890a2a686492f5c16a3e03785e07318ed4e86e54b794f
 
 File 'license.txt' is obtained from:
    https://raw.githubusercontent.com/rundeck/rundeck/master/LICENSE
