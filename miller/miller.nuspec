@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>miller</id>
     <title>Miller</title>
-    <version>6.3.0</version>
+    <version>6.4.0</version>
     <authors>John Kerl</authors>
     <owners>Miodrag Milic</owners>
     <summary>Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON</summary>
@@ -33,7 +33,7 @@ Miller’s processing is format-aware: e.g. CSV sort and tac keep header lines f
     <copyright>Copyright (c) 2015- John Kerl</copyright>
     <licenseUrl>https://raw.githubusercontent.com/johnkerl/miller/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>https://github.com/johnkerl/miller/releases/tag/v6.3.0</releaseNotes>
+    <releaseNotes>https://github.com/johnkerl/miller/releases/tag/v6.4.0</releaseNotes>
     <docsUrl>http://johnkerl.org/miller/doc/</docsUrl>
     <bugTrackerUrl>https://github.com/johnkerl/miller/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/johnkerl/miller/</projectSourceUrl>
