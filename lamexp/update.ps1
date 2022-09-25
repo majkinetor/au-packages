@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://github.com/lordmulder/LameXP/releases'
+$GitHubRepositoryUrl = 'https://github.com/lordmulder/LameXP'
 
 function global:au_SearchReplace {
    @{
@@ -18,18 +18,16 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-    $re    = '\.exe$'
-    $url   = $download_page.links | ? href -match $re | select -First 1 -expand href
-
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl
     $release = $url -split '/' | select -last 1 -skip 1
     $version = $release.Replace('Release_','') -replace '^.', '$0.'
-    @{
+
+    return @{
         Version      = $version
-        URL32        = 'https://github.com/' + $url
-        ReleaseNotes = "https://github.com/lordmulder/LameXP/releases/tag/$release"
+        URL32        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$release"
     }
 }
+
 
 update -ChecksumFor none
