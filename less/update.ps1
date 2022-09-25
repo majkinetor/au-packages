@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/jftuga/less-Windows/releases/latest'
+$GitHubRepositoryUrl = 'https://github.com/jftuga/less-Windows'
 
 function global:au_SearchReplace {
     @{
@@ -15,27 +16,20 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate {
-    Get-RemoteFiles -Purge -NoSuffix
- }
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $domain  = $releases -split '(?<=//.+)/' | select -First 1
-
-    $re  = 'less\.exe$'
-    $url = $download_page.links | ? href -match $re | % href | select -first 1
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'less\.exe$'
     $version =  ($url -split '/'| select -last 1 -Skip 1) -replace 'less-v'
     $x = ''
     if ([int]::TryParse($version, [ref] $x)) { $version = "$version.0" }
     if ($version.Length -eq 3) { $version += "0" }
 
-    @{
-       URL32 = $domain + $url
-       Version = $version
-       ReleaseNotes = "http://www.greenwoodsoftware.com/less/news.$version.html"
+    return @{
+        Version      = $version -replace '^v'
+        URL64        = $url
+        ReleaseNotes = "http://www.greenwoodsoftware.com/less/news.$version.html"
     }
 }
-
 
 update -ChecksumFor none
