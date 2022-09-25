@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://github.com/PostgREST/postgrest/releases/latest'
+$GitHubRepositoryUrl = 'https://github.com/PostgREST/postgrest'
 
 function global:au_SearchReplace {
    @{
@@ -16,23 +16,17 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate {
-    Get-RemoteFiles -Purge -NoSuffix
-}
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-    $re      = 'windows-x64\.zip$'
-    $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $domain  = $releases -split '(?<=//.+)/' | select -First 1
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'windows-x64\.zip$'
     $version = $url -split '/' | select -Last 1 -Skip 1
     if ($version -eq 'nightly') { Write-Host "Nightly release is the latest"; return 'ignore' }
 
-    @{
-        Version      = $version.SubString(1)
-        URL64        = $domain + $url
-        ReleaseNotes = "https://github.com/PostgREST/postgrest/releases/tag/$version"
+    return @{
+        Version      = $version -replace '^v'
+        URL64        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
