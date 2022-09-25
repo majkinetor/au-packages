@@ -24,7 +24,6 @@ function global:au_BeforeUpdate {
     7z e tools\*.zip -otools *.exe -r -y
     rm tools\*.zip -ea 0
 }
-
 function global:au_GetLatest {
     $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'loki-windows.+\.zip$'
     $version = $url -split '/' | select -Last 1 -Skip 1
