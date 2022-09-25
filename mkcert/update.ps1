@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/FiloSottile/mkcert/releases/latest'
+$GitHubRepositoryUrl = 'https://github.com/FiloSottile/mkcert'
 
 function global:au_SearchReplace {
    @{
@@ -15,23 +16,19 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate { 
-    Get-RemoteFiles -Purge 
+function global:au_BeforeUpdate {
+    Get-RemoteFiles -Purge
     mv tools\mkcert*.exe tools\mkcert.exe
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-    $re    = '\.exe$'
-    $url   = $download_page.links | ? href -match $re | select -First 1 -expand href
-
-    $version  = $url -split '-|.exe' | select -Last 1 -Skip 3
+    $url = (Get-GitHubReleaseUrl $GitHubRepositoryUrl) -match 'amd64'
+    $version = $url -split '/' | select -Last 1 -Skip 1
 
     @{
         Version      = $version.Substring(1)
-        URL64        = 'https://github.com/' + $url
-        ReleaseNotes = "https://github.com/FiloSottile/mkcert/releases/tag/$version"
+        URL64        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
