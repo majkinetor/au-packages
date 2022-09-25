@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://portal.influxdata.com/downloads'
+$releases  = 'https://github.com/influxdata/influxdb/releases'
 
 function global:au_SearchReplace {
    @{
@@ -15,19 +16,17 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $re      = 'influxdb2-.+?-windows-amd64.zip$'
+    $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
+    $version = $url -split '-|_' | select -Last 1 -Skip 2
 
-    $re      = '(?<=wget )https://.+?/influxdb2-[0-9.]+-windows-amd64\.zip'
-    $download_page.Content -match $re | Out-Null
-    $url = $Matches[0]
-    $version = $url -split '[-_]' | select -First 1 -Skip 1
-
-    @{
-        Version = $version
-        URL64   = $url
+    return @{
+        Version      = $version
+        URL64        = $url
+        ReleaseNotes = "$releases/tag/v$version"
     }
 }
-
-
-if ($MyInvocation.InvocationName -ne '.') { # run the update only if script is not sourced
+update -ChecksumFor none
+if ($MyInvocation.InvocationName -notin '.') { # run the update only if script is not sourced
     update -ChecksumFor none
 }
