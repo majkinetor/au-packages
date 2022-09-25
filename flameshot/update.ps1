@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/flameshot-org/flameshot/releases'
+$GitHubRepositoryUrl = 'https://github.com/flameshot-org/flameshot'
 
 function global:au_SearchReplace {
    @{
@@ -24,18 +25,13 @@ function global:au_BeforeUpdate {
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-    $re      = '\.msi$'
-    $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $domain  = $releases -split '(?<=//.+)/' | select -First 1
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl '\.msi$'
     $version = $url -split '/' | select -Last 1 -Skip 1
-    $version = $version.Substring(1)
 
-    @{
-        Version      = $version
-        URL64        = $domain + $url
-        ReleaseNotes = "https://github.com/flameshot-org/flameshot/releases/tag/v${version}"
+    return @{
+        Version      = $version.Substring(1)
+        URL32        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
