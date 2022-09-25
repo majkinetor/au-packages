@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/Baggykiin/pass-winmenu/releases'
+$GitHubRepositoryUrl = 'https://github.com/Baggykiin/pass-winmenu'
 
 function global:au_SearchReplace {
    @{
@@ -22,19 +23,13 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-    $re  = 'nogpg\.zip$'
-    $url = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $url = "https://github.com" + $url
-
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'nogpg\.zip$'
     $version = $url -split '/' | select -Last 1 -Skip 1
-    $version = $version.SubString(1)
 
-    @{
-        Version      = $version
-        URL32        = $url
-        ReleaseNotes = "https://github.com/Baggykiin/pass-winmenu/releases/tag/v$version"
+    return @{
+        Version      = $version -replace '^v'
+        URL64        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
