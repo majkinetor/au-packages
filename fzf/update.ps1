@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/junegunn/fzf/releases/latest'
+$GitHubRepositoryUrl = 'https://github.com/junegunn/fzf'
 
 function global:au_SearchReplace {
    @{
@@ -16,19 +17,14 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
-
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'windows_amd64.*\.zip$'
+    $version = $url -split '/' | select -Last 1 -Skip 1
 
-    $re    = 'windows_amd64.*\.zip$'
-    $url   = $download_page.links | ? href -match $re | select -First 2 -expand href | % { 'https://github.com' + $_ }
-
-    $version  = $url -split '/' | select -Last 1 -Skip 1
-
-    @{
+    return @{
         Version      = $version
-        URL64        = $url
-        ReleaseNotes = "https://github.com/junegunn/fzf/releases/tag/${version}"
+        URL32        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
