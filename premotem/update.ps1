@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://github.com/1Remote/PRemoteM/releases'
+$GitHubRepositoryUrl = 'https://github.com/1Remote/PRemoteM'
 
 function global:au_SearchReplace {
    @{
@@ -17,18 +17,15 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
+
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl '\.7z|\.zip$'
+    $version = $url[0] -split '/' | select -Last 1 -Skip 1
 
-    $re      = '\.7z|\.zip$'
-    $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $domain  = $releases -split '(?<=//.+)/' | select -First 1
-    $version = $url -split '/' | select -Last 1 -Skip 1
-
-    @{
-        Version      = $version
-        URL32        = $domain + $url
-        ReleaseNotes = "$releases/tag/${version}"
+    return @{
+        Version      = $version -replace '^v'
+        URL64        = $url -match 'x86' | Select-Object -First 1
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
