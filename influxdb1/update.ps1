@@ -14,6 +14,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
+    [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
     $re      = '(?<=wget )https://.+?/influxdb-[0-9.]+_windows_amd64\.zip'
