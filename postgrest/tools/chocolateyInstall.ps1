@@ -13,3 +13,6 @@ $packageArgs = @{
 
 Get-ChocolateyUnzip @packageArgs
 Remove-Item $toolsPath\*.zip -ea 0
+
+$pgr = Get-ChildItem -Recurse "$($pp.InstallDir)/*/*" -Filter postgrest.exe
+if ($pgr) { Move-Item $pgr $pp.InstallDir -Force }
