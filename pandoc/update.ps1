@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/jgm/pandoc/releases/latest'
+$GitHubRepositoryUrl = 'https://github.com/jgm/pandoc'
 
 function global:au_SearchReplace() {
     @{
@@ -24,17 +25,15 @@ function global:au_SearchReplace() {
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
-function global:au_GetLatest() {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re      = '/pandoc-(.+?)-windows-.*.msi'
-    [array] $url  = $download_page.links | ? href -match $re | select -First 2 -expand href
-    $version = $url[0] -split '/' | select -last 1 -skip 1
-    @{
-        #URL32        = 'https://github.com' + ($url -match 'i386' | select -first 1)
-        URL64        = 'https://github.com' + ($url -notmatch 'i386' | select -first 1)
-        Version      = $version
-        ReleaseNotes = "https://github.com/jgm/pandoc/releases/tag/${version}"
+function global:au_GetLatest {
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl '/pandoc-(.+?)-windows-.*.msi'
+    $version = $url -split '/' | select -Last 1 -Skip 1
+
+    return @{
+        Version      = $version -replace '^v'
+        URL64        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
