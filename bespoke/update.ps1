@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/BespokeSynth/BespokeSynth/releases'
+$GitHubRepositoryUrl = 'https://github.com/BespokeSynth/BespokeSynth'
 
 function global:au_SearchReplace {
     @{
@@ -18,19 +19,14 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate {
      Get-RemoteFiles -Purge -NoSuffix
 }
-
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-    $re      = '\.msi$'
-    $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $domain  = $releases -split '(?<=//.+)/' | select -First 1
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl '\.msi$'
     $version = $url -split '/' | select -Last 1 -Skip 1
 
-    @{
-        Version      = $version.Substring(1)
-        URL32        = $domain + $url
-        ReleaseNotes = "https://github.com/awwbees/BespokeSynth/releases/tag/${version}"
+    return @{
+        Version      = $version -replace '^v'
+        URL64        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
