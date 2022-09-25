@@ -1,4 +1,5 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
 $GitHubRepositoryUrl = 'https://github.com/lordmulder/LameXP'
 
