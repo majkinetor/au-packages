@@ -5,7 +5,7 @@ function Get-GitHubReleaseUrl( $GitHubRepositoryUrl, $Pattern='\.exe$') {
     $assetsUrl = $Matches[0]
     if (!$assetsUrl) { throw "Can't find assets URL" }
 
-    $domain  = $GitHubRepositoryUrl -split '(?<=//.+)/' | select -First 1
+    $domain  = $GitHubRepositoryUrl -split '(?<=//.+)/' | Select-Object -First 1
     $assetsPage = Invoke-WebRequest -Uri $assetsUrl -UseBasicParsing
     $assetsPage.links | ? href -match $Pattern | Select-Object -expand href | % { $domain + $_ }
 }
