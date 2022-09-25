@@ -1,6 +1,8 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/dnGrep/dnGrep/releases'
+$GitHubRepositoryUrl = 'https://github.com/dnGrep/dnGrep'
+
 function global:au_SearchReplace {
     @{
        ".\legal\VERIFICATION.txt" = @{
@@ -17,20 +19,16 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
-function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re      = 'dnGREP.*.msi'
-    $url     = $download_page.links | ? href -match $re | select -First 2 -expand href
-    $url64   = 'https://github.com' + $url[0]
-    $url32   = 'https://github.com' + $url[1]
-    $version = $url[0] -split '\/' | select -Index 5
+function global:au_GetLatest {
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'dnGREP.*.msi'
+    $version = $url[0] -split '/' | select -Last 1 -Skip 1
 
     return @{
-        Version = $version.Substring(1)
-        URL32 = $url32
-        URL64 = $url64
-        ReleaseNotes = "https://github.com/dnGrep/dnGrep/releases/tag/$version"
+        Version      = $version.Substring(1)
+        URL32        = $url -match 'x86' | Select-Object -First 1
+        URL64        = $url -match 'x64' | Select-Object -First 1
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
