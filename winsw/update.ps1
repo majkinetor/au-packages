@@ -1,8 +1,9 @@
 param([string]$IncludeStream, [switch]$Force)
 
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/winsw/winsw/releases'
+$GitHubRepositoryUrl = 'https://github.com/winsw/winsw'
 
 function global:au_SearchReplace {
 
@@ -39,28 +40,26 @@ function global:au_BeforeUpdate {
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-    $re        = 'WinSW-.+\.zip$'
-    $domain    = $releases -split '(?<=//.+)/' | select -First 1
-    $url       = $download_page.links | ? href -match $re | select -expand href -First 2 | % { $domain + $_ }
-    $version   = $url[0] -split '/' | select -Last 1 -Skip 1
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'WinSW-.+\.exe$'
+    $version = $url[0] -split '/' | select -Last 1 -Skip 1
     $nuversion = $version.Substring(1) -replace '(?<=-.+)\.'
 
     @{ streams = [ordered]@{
         'winsw' = @{
             Version      = $nuversion
-            ReleaseNotes = "https://github.com/winsw/winsw/releases/tag/$version"
+            ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
             PackageName  = 'winsw'
         }
         'winsw.portable' = @{
             Version      = $nuversion
-            URL32        = $url -like '*x86*' | select -First 1
-            URL64        = $url -notlike '*x86*' | select -First 1
-            ReleaseNotes = "https://github.com/winsw/winsw/releases/tag/$version"
+            URL32        = $url -like '*x86*' | Select-Object -First 1
+            URL64        = $url -like '*x64*' | Select-Object -First 1
+            ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
             PackageName  = 'winsw.portable'
         }
     }}
 }
+
+
 
 update -ChecksumFor none -IncludeStream $IncludeStream -Force:$Force
