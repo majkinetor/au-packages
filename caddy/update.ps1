@@ -1,6 +1,10 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/caddyserver/caddy/releases/latest'
+$GitHubRepositoryUrl = 'https://github.com/FiloSottile/mkcert'
+
+
+$GitHubRepositoryUrl = 'https://github.com/caddyserver/caddy'
 
 function global:au_SearchReplace {
    @{
@@ -19,17 +23,13 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-    $re      = '_windows_.+\.zip$'
-    $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $domain  = $releases -split '(?<=//.+)/' | select -First 1
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl '_windows_amd64\.zip$'
     $version = $url -split '/' | select -Last 1 -Skip 1
 
-    @{
+    return @{
         Version      = $version.Substring(1)
-        URL64        = $domain + $url
-        ReleaseNotes = "https://github.com/caddyserver/caddy/releases/tag/${version}"
+        URL32        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
