@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/dbeaver/dbeaver/releases/latest'
+$GitHubRepositoryUrl = 'https://github.com/dbeaver/dbeaver'
 
 function global:au_SearchReplace {
    @{
@@ -17,18 +18,14 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
-
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl
+    $version = $url -split '/' | select -Last 1 -Skip 1
 
-    $re    = '\.exe$'
-    $url   = $download_page.links | ? href -match $re | select -Expand href -First 1 | % { 'https://github.com' + $_ }
-    $version  = $url -split '/' | select -Last 1 -Skip 1
-
-    @{
-        Version      = $version
-        URL64        = $url 
-        ReleaseNotes = "https://github.com/serge-rider/dbeaver/releases/tag/${version}"
+    return @{
+        Version      = $version -replace '^v'
+        URL64        = $url
+        ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
 
