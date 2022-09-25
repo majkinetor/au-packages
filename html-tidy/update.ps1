@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/htacg/tidy-html5/releases'
+$GitHubRepositoryUrl = 'https://github.com/htacg/tidy-html5'
 
 function global:au_SearchReplace {
    @{
@@ -20,16 +21,13 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
-
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $domain  = $releases -split '(?<=//.+)/' | select -First 1
-    $re  = "tidy-([^/]+)-win64.zip$"
-    $url = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $version = $Matches[1]
-    @{
-        Version      = $version
-        URL64        = $domain + $url
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl "tidy-([^/]+)-win64.zip$"
+    $version = $url -split '/' | select -Last 1 -Skip 1
+
+    return @{
+        Version      = $version -replace '^v'
+        URL64        = $url
         ReleaseNotes = "http://binaries.html-tidy.org/release_notes/$version.html"
     }
 }
