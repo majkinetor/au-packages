@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>minify</id>
     <title>Minify</title>
-    <version>2.12.2</version>
+    <version>2.12.4</version>
     <authors>Taco de Wolff</authors>
     <owners>Miodrag Milic</owners>
     <summary>&gt;Minify provides HTML5, CSS3, JS, JSON, SVG and XML minification</summary>
@@ -16,7 +16,7 @@
     <copyright>Taco de Wolff and contributors</copyright>
     <licenseUrl>https://github.com/tdewolff/minify/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>https://github.com/tdewolff/minify/releases/tag/v2.12.2</releaseNotes>
+    <releaseNotes>https://github.com/tdewolff/minify/releases/tag/v2.12.4</releaseNotes>
     <docsUrl>https://github.com/tdewolff/minify#table-of-contents</docsUrl>
     <bugTrackerUrl>https://github.com/tdewolff/minify/issues</bugTrackerUrl>
     <projectSourceUrl>https://go.tacodewolff.nl/minify</projectSourceUrl>
