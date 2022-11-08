@@ -20,6 +20,7 @@
     <bugTrackerUrl>https://github.com/FreeRDP/FreeRDP/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/FreeRDP/FreeRDP</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/freerdp.portable</packageSourceUrl>
+    <releaseNotes>https://github.com/FreeRDP/FreeRDP/releases/tag/2.8.1</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

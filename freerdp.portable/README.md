@@ -5,4 +5,5 @@ FreeRDP is a free implementation of the Remote Desktop Protocol (RDP), released 
 
 ## Notes
 
-- To get current CLI options run `cmd.exe /C wfreerdp /help >help.txt 2>&1`
+- This is package contains [nightly release](https://ci.freerdp.com/job/freerdp-nightly-windows) of FreeRDP packaged on the date of the official GitHub [release](https://github.com/FreeRDP/FreeRDP/releases)
+- To get list of CLI options run `cmd.exe /C wfreerdp /help >help.txt 2>&1`
