@@ -5,12 +5,18 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>freerdp.portable</id>
     <title>FreeRDP Portable</title>
-    <version>2.8.0</version>
+    <version>2.8.1</version>
     <authors>FreeRDP Team</authors>
     <owners>Miodrag Milic</owners>
     <summary>A Remote Desktop Protocol Implementation</summary>
-    <description>FreeRDP is a free implementation of the Remote Desktop Protocol (RDP), released under the Apache license. Enjoy the freedom of using your software wherever you want, the way you want it, in a world where interoperability can finally liberate your computing experience.
-    </description>
+    <description><![CDATA[FreeRDP is a free implementation of the Remote Desktop Protocol (RDP), released under the Apache license. Enjoy the freedom of using your software wherever you want, the way you want it, in a world where interoperability can finally liberate your computing experience.
+
+
+## Notes
+
+- This is package contains [nightly release](https://ci.freerdp.com/job/freerdp-nightly-windows) of FreeRDP packaged on the date of the official GitHub [release](https://github.com/FreeRDP/FreeRDP/releases)
+- To get list of CLI options run `cmd.exe /C wfreerdp /help >help.txt 2>&1`
+]]></description>
     <projectUrl>https://www.freerdp.com/</projectUrl>
     <tags>remote cross-platform foss</tags>
     <copyright>FreeRDP Team</copyright>

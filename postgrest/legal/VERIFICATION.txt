@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/PostgREST/postgrest/releases/download/v10.1.0/postgrest-v10.1.0-windows-x64.zip
+   x64: https://github.com/PostgREST/postgrest/releases/download/v10.1.1/postgrest-v10.1.1-windows-x64.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: 34DC3CE05B33F89765A22729FF314DB481CE10B58D5DC1300A45681ED5B92AC0
+   checksum64: FE6CBEE5CB76E356BE3B12715884C4653F8C409358FF490E5C4D31A4DF41685B
 
 File 'license.txt' is obtained from:
    https://raw.githubusercontent.com/PostgREST/postgrest/master/LICENSE
