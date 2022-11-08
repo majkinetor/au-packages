@@ -21,6 +21,7 @@
     <projectSourceUrl>https://github.com/FreeRDP/FreeRDP</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/freerdp.portable</packageSourceUrl>
     <releaseNotes>https://github.com/FreeRDP/FreeRDP/releases/tag/2.8.1</releaseNotes>
+    <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/freerdp.portable/icon.png</iconUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
