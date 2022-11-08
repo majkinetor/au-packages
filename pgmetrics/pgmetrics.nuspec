@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>pgmetrics</id>
     <title>pgmetrics</title>
-    <version>1.13.1</version>
+    <version>1.14.0</version>
     <authors>RapidLoop</authors>
     <owners>Miodrag Milic</owners>
     <summary>Collect and display information and stats from a running PostgreSQL server</summary>
@@ -41,7 +41,7 @@
     <copyright>© RapidLoop, Inc. 2019</copyright>
     <licenseUrl>https://raw.githubusercontent.com/rapidloop/pgmetrics/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>https://github.com/rapidloop/pgmetrics/releases/tag/v1.13.1</releaseNotes>
+    <releaseNotes>https://github.com/rapidloop/pgmetrics/releases/tag/v1.14.0</releaseNotes>
     <docsUrl>https://pgmetrics.io/docs</docsUrl>
     <bugTrackerUrl>https://github.com/rapidloop/pgmetrics/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/rapidloop/pgmetrics</projectSourceUrl>
