@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>postgresql15</id>
-    <version>15.0.2</version>
+    <version>15.1.1</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
