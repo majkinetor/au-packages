@@ -20,12 +20,12 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl '\.7z|\.zip$'
-    $version = $url[0] -split '/' | select -Last 1 -Skip 1
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'PRemoteM[^/]+\.zip$'
+    $version = $url -split '/' | select -Last 1 -Skip 1
 
     return @{
         Version      = $version -replace '^v'
-        URL64        = $url -match 'x86' | Select-Object -First 1
+        URL64        = $url
         ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
