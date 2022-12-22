@@ -1,5 +1,9 @@
 # <img src="https://raw.githubusercontent.com/majkinetor/au-packages/master/doublecmd.dark/icon.png" width="48" height="48"/> [![](https://img.shields.io/chocolatey/v/doublecmd.dark.svg?color=red&label=doublecmd.dark)](https://chocolatey.org/packages/doublecmd.dark)
 
+---
+THIS PACKAGE IS DEPRECATED. USE DOUBLE COMMANDER 1.1 INSTEAD.
+---
+
 ## Features
 
 - Unicode support
