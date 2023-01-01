@@ -4,7 +4,7 @@
 
 **DISABLED**<br>
 - **Reason**:  Package became too large to push
-- **Reason2**: Stolen by chocolatey member [Pauby](https://github.com/pauby/chocopackages/tree/master/automatic/solr)
+- **Reason2**: Stolen by chocolatey member [Pauby](https://github.com/pauby/chocopackages/tree/master/automatic/solr), clearly violeting the LICENSE.
 
 ---
 
