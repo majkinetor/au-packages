@@ -3,8 +3,8 @@
 ---
 
 **DISABLED**<br>
-**Reason**:  Package became too large to push
-**Reason2**:  Stolen by chocolatey member [Pauby](https://github.com/pauby/chocopackages/tree/master/automatic/solr)
+- **Reason**:  Package became too large to push
+- **Reason2**: Stolen by chocolatey member [Pauby](https://github.com/pauby/chocopackages/tree/master/automatic/solr)
 
 ---
 
