@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/nicotine-plus/nicotine-plus/releases/download/3.2.7/windows-i686-installer.zip
-   x64: https://github.com/nicotine-plus/nicotine-plus/releases/download/3.2.7/windows-x86_64-installer.zip
+   x32: https://github.com/nicotine-plus/nicotine-plus/releases/download/3.2.8/windows-i686-installer.zip
+   x64: https://github.com/nicotine-plus/nicotine-plus/releases/download/3.2.8/windows-x86_64-installer.zip
 
    to download the installer.
 
@@ -16,8 +16,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 2A6F7DCA7A1121D8234A324DD8D01A3C9FEE5540B9FF73A92F6AF02419E3AB79
-   checksum64: AA487240795A3BA453C19F747C2342BB58ADCE6E4EF30E3776FBB1FC6AB7A437
+   checksum32: B4FCA12B2F9A1908F58F1856CB43E1319A85CBFC8B685CA43465567E76AF3AC0
+   checksum64: 1C20324906D24F517EEF6355B9D15AFD6F4E69D39E67C15EBC8FFC042D1435F3
 
 File 'license.txt' is obtained from:
    https://www.gnu.org/licenses/gpl-3.0-standalone.html
