@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: 
+   x64: https://github.com/1Remote/PRemoteM/releases/download/0.7.2.1/PRemoteM-0.7.2.1.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 
+   checksum64: 0F8B3AC431C6B4187E35E88F016F0008CCED5537C1714B3ECA779D0D98D91C88
 
 File 'license.txt' is obtained from:
    https://github.com/VShawn/PRemoteM/blob/dev/LICENSE

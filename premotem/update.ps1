@@ -11,8 +11,8 @@ function global:au_SearchReplace {
         }
 
         ".\legal\VERIFICATION.txt" = @{
-          "(?i)(\s+x32:).*"            = "`${1} $($Latest.URL32)"
-          "(?i)(checksum32:).*"        = "`${1} $($Latest.Checksum32)"
+          "(?i)(\s+x64:).*"            = "`${1} $($Latest.URL64)"
+          "(?i)(checksum64:).*"        = "`${1} $($Latest.Checksum64)"
         }
     }
 }
