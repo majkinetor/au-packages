@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>rundeck</id>
     <title>Rundeck</title>
-    <version>4.8.0</version>
+    <version>4.9.0</version>
     <authors>Rundeck, Inc.</authors>
     <owners>Miodrag Milic</owners>
     <summary>Job scheduler and runbook automation. Enable self-service access to existing scripts and tools.</summary>
@@ -75,7 +75,7 @@ cinst rundeck --params $params
     <licenseUrl>https://github.com/rundeck/rundeck/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/rundeck/icon.png</iconUrl>
-    <releaseNotes>https://www.rundeck.com/community-downloads/4.8.0</releaseNotes>
+    <releaseNotes>https://www.rundeck.com/community-downloads/4.9.0-0</releaseNotes>
     <docsUrl>http://rundeck.org/docs.html</docsUrl>
     <bugTrackerUrl>https://github.com/rundeck/rundeck/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/rundeck/rundeck</projectSourceUrl>
