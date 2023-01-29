@@ -6,8 +6,8 @@ $GitHubRepositoryUrl = 'https://github.com/jftuga/less-Windows'
 function global:au_SearchReplace {
     @{
         ".\legal\VERIFICATION.txt" = @{
-          "(?i)(\s+x32:).*"      = "`${1} $($Latest.URL32)"
-          "(?i)(checksum32:).*"  = "`${1} $($Latest.Checksum32)"
+          "(?i)(\s+x64:).*"      = "`${1} $($Latest.URL64)"
+          "(?i)(checksum64:).*"  = "`${1} $($Latest.Checksum64)"
         }
 
         "$($Latest.PackageName).nuspec" = @{
@@ -16,10 +16,17 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
+function global:au_BeforeUpdate {
+    Get-RemoteFiles -Purge -NoSuffix
+
+   Set-Alias 7z $Env:chocolateyInstall\tools\7z.exe
+   7z e tools\*.zip -otools *.exe -r -y
+   rm tools\*.zip -ea 0
+}
+
 
 function global:au_GetLatest {
-    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'less\.exe$'
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'less-x64\.zip$'
     $version =  ($url -split '/'| select -last 1 -Skip 1) -replace 'less-v'
     $x = ''
     if ([int]::TryParse($version, [ref] $x)) { $version = "$version.0" }
