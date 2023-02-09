@@ -22,9 +22,9 @@ Nicotine+ uses GTK for its graphical user interface, and is written in Python.
 
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/nicotine-plus/screenshot.png)
 ]]></description>
-    <projectUrl>https://nicotine-plus.github.io/nicotine-plus</projectUrl>
+    <projectUrl>https://nicotine-plus.org</projectUrl>
     <tags>foss cross-platform admin audio mp3 flac soulseek</tags>
-    <copyright>2004-2021 Nicotine+ Team</copyright>
+    <copyright>Nicotine+ Contributors</copyright>
     <licenseUrl>https://github.com/nicotine-plus/nicotine-plus/blob/master/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/nicotine-plus/icon.svg</iconUrl>
