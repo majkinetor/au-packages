@@ -50,6 +50,7 @@ function global:au_GetLatest {
         $tds = $tr -split '</td>'
 
         $version = $tds[0] -split '>' | select -Last 1
+        $version = $version.Replace('*', '')
 
         $tds[4] -match "href='(.+?)'" | Out-Null
         $href = $Matches[1]
@@ -75,7 +76,10 @@ function global:au_GetLatest {
             PackageName = 'postgresql'
         }
 
-        $s = "$major.$minor";  $streams.$s = $s1
+        $s = "$major.$minor"
+        if ($s -eq '.') { continue }
+
+        $streams.$s = $s1
         $s = "postgresql-$s";  $streams.$s = $s2
     }
 

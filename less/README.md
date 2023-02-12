@@ -16,6 +16,6 @@ Less is a CLI pager, a program that displays text files. Other pagers commonly i
 - `/DefaultPager` - Set `$Env:PAGER` environment variable to `less`.
 
 ## Notes
-  
+
 - If you are using [PSCX](https://chocolatey.org/packages/pscx), you must override its internally distributed less version using the following in your `$PROFILE`: `($Pscx:Preferences).PageHelpUsingLess = $false`
-- This package is based on automatic less for Windows [build](https://github.com/jftuga/less-Windows) by John Taylor
+- This package uses x64 bit version of John Taylor's automatic [build](https://github.com/jftuga/less-Windows)
