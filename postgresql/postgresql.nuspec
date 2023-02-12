@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>postgresql14</id>
-    <version>14.6.2</version>
+    <id>postgresql15</id>
+    <version>15.2</version>
     <title>PostgreSQL</title>
     <authors>PostgreSQL Global Development Group</authors>
     <owners>majkinetor, cole.mike</owners>
@@ -88,7 +88,7 @@ cinst postgresql12 --force
 ```
 ]]></description>
     <summary>PostgreSQL is an object-relational database management system</summary>
-    <releaseNotes>https://www.postgresql.org/docs/14/static/release.html</releaseNotes>
+    <releaseNotes>https://www.postgresql.org/docs/15/static/release.html</releaseNotes>
     <copyright>Copyright © 1996-2019 The PostgreSQL Global Development Group</copyright>
     <tags>foss cross-platform postgres postgresql sql relational database admin</tags>
     <projectSourceUrl>https://github.com/postgres/postgres</projectSourceUrl>
