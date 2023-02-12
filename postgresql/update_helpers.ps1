@@ -26,22 +26,14 @@ function Get-WebRequestTable {
     }
 }
 
-function Resolve-PostgreUrl($p) {
-    $url = "https://www.enterprisedb.com/postgresql-tutorial-resources-training?uuid={0}&campaignId={1}" -f $p.uuid, $p.field_campaign_id
-    $download_page = Invoke-WebRequest -Uri $url
-    $download_page.Content -match '__NEXT_DATA__.+?>(.+?)</script>' | Out-Null
-    $json = $Matches[1] | ConvertFrom-Json
-    $url = $json.props.pageProps.downloadUrl
-
+function Resolve-PostgreUrl([string] $url) {
+    if ($url.EndsWith('.exe')) { return $url }
 
     $params = @{
         MaximumRedirection = 0
         Uri = $url
         ErrorAction = 'ignore'
     }
-    #if ($host.Version.Major -gt 5) { $params.SkipHttpErrorCheck = $true }
-
-
     $url = try { Invoke-WebRequest @params | % Headers | % Location } catch { $_.Exception.Response.Headers.Location.OriginalString }
     $url
 }

@@ -44,37 +44,36 @@ function global:au_BeforeUpdate() {
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
-    $download_page.Content -match '__NEXT_DATA__.+?>(.+?)</script>' | Out-Null
-    $json = $Matches[1] | ConvertFrom-Json
+    $download_page.Content -match '<tr .+</tr>' | Out-Null
+    $trs = $Matches[0] -split '</tr>'
+    $downloads = foreach ($tr in $trs) {
+        $tds = $tr -split '</td>'
 
-    $downloads = $json.props.pageProps.postgreSQLDownloads
+        $version = $tds[0] -split '>' | select -Last 1
+
+        $tds[4] -match "href='(.+?)'" | Out-Null
+        $href = $Matches[1]
+
+        [PSCUstomObject]@{ version = $version; href = $href }
+    }
+
     $streams = [ordered]@{}
     foreach ($item in $downloads) {
-        $p = $item.products | ? { $_.field_os -eq 'Windows x86-64' }
-        $url = try { Resolve-PostgreUrl $p } catch { Write-Host "Error resolving URL" $p.field_installer_version $p.field_sub_version; continue }
-
-        if (!$url) { continue }
-        $version = $url -split 'postgresql-|-windows-x64\.exe' | select -Last 1 -Skip 1
-        $version = $version -replace '-(\d)', '.$1'
-
-        $major, $minor = $version -split '\.|-' | select -First 2
+        $major, $minor = $item.version -split '\.|-' | select -First 2
 
         $s1 = @{
-            Version      = $version
-            Url64        = $url
+            Version      = $item.version
+            Url64        = Resolve-PostgreUrl $item.href
             PackageName  = "postgresql$major"
             ReleaseNotes = "https://www.postgresql.org/docs/$major/static/release.html"
             SoftwareName = "PostgreSQL $major*"
         }
 
         $s2 = @{
-            Version     = $version
+            Version     = $item.version
             Dependency  = $s1.PackageName
             PackageName = 'postgresql'
         }
-        if (!$s1.Url64 -and !$s1.Url32) { continue }
-        if (!$s1.Url64) { $s1.Remove("Url64") }
-        if (!$s1.Url32) { $s1.Remove("Url32") }
 
         $s = "$major.$minor";  $streams.$s = $s1
         $s = "postgresql-$s";  $streams.$s = $s2
