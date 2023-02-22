@@ -4,7 +4,7 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 . $Env:ChocolateyInstall\lib\tcps\tools\doublecmd.ps1
 
 $pp = Get-PackageParameters
-if (!$pp.IconSize) { $pp.IconSize = 24 }
+if (!$pp.IconSize) { $pp.IconSize = 16 }
 if (!$pp.FontSize) { $pp.FontSize = 12 }
 
 Write-Host "Setting Double Commander Configuration: $Env:ChocolateyPackageName"
@@ -57,6 +57,7 @@ Set-DCOptions @{
         DriveFreeSpace       = $false
         ShortFormatDriveInfo = $false
         PanelOfOperationsInBackground = $true
+        CmdLine              = $false
     }
     Miscellaneous = @{
         SpaceMovesDown   = $true

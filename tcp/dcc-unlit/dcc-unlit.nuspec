@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>dcc-unlit</id>
     <title>DC Config: Unlit</title>
-    <version>1.1</version>
+    <version>1.2</version>
     <authors>Miodrag Milic</authors>
     <owners>Miodrag Milic</owners>
     <summary>Double Commander dark and minimal configuration settings</summary>
@@ -22,7 +22,7 @@
 
 ## Package Parameters
 
-- `/IconSize` - Set file list icon size, by default 20
+- `/IconSize` - Set file list icon size, by default 16
 - `/FontSize` - Set file list font size, by default 10
 
 ## Notes
@@ -32,14 +32,14 @@
 ![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/tcp/dcc-unlit/screenshot.png)
 </description>
     <projectUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/dcc-unlit</projectUrl>
-    <tags>doublecmd dcconfig settings dark minimal</tags>  
+    <tags>doublecmd dcconfig settings dark minimal</tags>
     <copyright>Miodrag Milic, 2019</copyright>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/tcp/dcc-unlit</packageSourceUrl>
     <dependencies>
-        <dependency id="doublecmd" version="0.9.6"/>
-        <dependency id="tcps"      version="0.3" />
+        <dependency id="doublecmd" version="1.0.10"/>
+        <dependency id="tcps"      version="0.3.2" />
     </dependencies>
   </metadata>
   <files>
