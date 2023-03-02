@@ -4,7 +4,7 @@
   <metadata>
     <id>cpu-z</id>
     <title>CPU-Z</title>
-    <version>2.04</version>
+    <version>2.05</version>
     <authors>CPUID</authors>
     <owners>Miodrag MiliÃ„â€¡</owners>
     <summary>System information software</summary>
@@ -25,7 +25,7 @@
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey/cpu-z.install/icon.png</iconUrl>
     <docsUrl>http://www.cpuid.com/softwares/cpu-z.html#install</docsUrl>
     <dependencies>
-        <dependency id="cpu-z.install" version="2.04" />
+        <dependency id="cpu-z.install" version="2.05" />
     </dependencies>
     <releaseNotes>http://www.cpuid.com/softwares/cpu-z.html#version-history</releaseNotes>
     <bugTrackerUrl>http://www.cpuid.com/bug-report.html</bugTrackerUrl>
