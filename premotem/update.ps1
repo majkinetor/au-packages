@@ -20,7 +20,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'PRemoteM[^/]+\.zip$'
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'PRemoteM[^/]*\.zip$'
     $version = $url -split '/' | select -Last 1 -Skip 1
 
     return @{
