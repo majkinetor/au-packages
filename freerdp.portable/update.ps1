@@ -22,9 +22,9 @@ function global:au_BeforeUpdate {
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 function global:au_GetLatest {
-    $page = Invoke-WebRequest $GitHubRepositoryUrl/releases/latest
-    $page.Content -match '/releases/tag/([^"]+)'
-    $version = $Matches[1]
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'freerdp[^/]*\.zip$'
+    $version = $url -split '/' | select -Last 1 -Skip 1
+
 
     return @{
         Version      = $version
