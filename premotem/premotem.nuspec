@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>premotem</id>
     <title>PRemoteM</title>
-    <version>0.7.2.7</version>
+    <version>0.7.2.8</version>
     <authors>VShawn</authors>
     <owners>Miodrag Milic</owners>
     <summary>Personal Remote Manager</summary>
@@ -33,7 +33,7 @@
     <licenseUrl>https://github.com/1Remote/PRemoteM/blob/dev_net6/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/premotem/icon.png</iconUrl>
-    <releaseNotes>https://github.com/1Remote/PRemoteM/releases/tag/0.7.2.7</releaseNotes>
+    <releaseNotes>https://github.com/1Remote/PRemoteM/releases/tag/0.7.2.8</releaseNotes>
     <bugTrackerUrl>https://github.com/VShawn/PRemoteM/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/1Remote/PRemoteM</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/premotem</packageSourceUrl>
