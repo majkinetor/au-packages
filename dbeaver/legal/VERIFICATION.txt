@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/dbeaver/dbeaver/releases/download/23.0.1/dbeaver-ce-23.0.1-x86_64-setup.exe
+   x64: https://github.com/dbeaver/dbeaver/releases/download/23.0.2/dbeaver-ce-23.0.2-x86_64-setup.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: A7D1DEE4D378243BAB529F261D9C7D1426DFADC42B73F2253BB60B7E91A64BAD
+   checksum64: EE506171789F862F7B5ABA5F117F2C035177EFA22BBA4A920BE4E6AFFCF6F5CB
 
 
 File 'LICENSE.md' is obtained from:
