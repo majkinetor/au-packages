@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>musikcube</id>
     <title>musikcube</title>
-    <version>0.99.5</version>
+    <version>0.99.8</version>
     <authors>Casey Langen</authors>
     <owners>Miodrag Milic</owners>
     <summary>A cross-platform, terminal-based music player, audio engine, metadata indexer, and server in c++</summary>
@@ -37,7 +37,7 @@ musikdroid is a native Android app that connects to musikcube servers. it can be
     <copyright>(c) casey langen, 2017</copyright>
     <licenseUrl>https://github.com/clangen/musikcube/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>https://github.com/clangen/musikcube/releases/tag/0.99.5</releaseNotes>
+    <releaseNotes>https://github.com/clangen/musikcube/releases/tag/0.99.8</releaseNotes>
     <docsUrl>https://github.com/clangen/musikcube/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/clangen/musikcube/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/clangen/musikcube</projectSourceUrl>
