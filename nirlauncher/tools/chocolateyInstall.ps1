@@ -33,13 +33,13 @@ if ($pp.SysInternals) {
     $sysinternals_dir = gcm autoruns.exe -ea 0 | select -Expand Source | Split-Path
     if (!$sysinternals_dir) { Write-Warning 'Sysinternals tools are not on the PATH'; return }
 
-    mv $toolsDir\sysinternals2.nlp $sysinternals_dir -Force
+    mv $toolsDir\sysinternals6.nlp $sysinternals_dir -Force
 
     #Configure nirlauncher
     $nircfg = gc $install_path\NirLauncher.cfg -Raw
     if ($nircfg -notmatch '\[Package1\]') {
         $nircfg = $nircfg.Replace("PackageCount=1", "PackageCount=2")
-        $nircfg += "[Package1]`nfilename=$sysinternals_dir\sysinternals2.nlp"
+        $nircfg += "[Package1]`nfilename=$sysinternals_dir\sysinternals6.nlp"
         $nircfg | Out-File $install_path\NirLauncher.cfg -Encoding ascii
     }
 }
