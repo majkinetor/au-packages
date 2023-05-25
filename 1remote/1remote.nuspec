@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>1remote</id>
     <title>1Remote</title>
-    <version>0.0</version>
+    <version>1.0.0.20230523</version>
     <authors>VShawn</authors>
     <owners>Miodrag Milic</owners>
     <summary>Remote Access Session Manager</summary>
@@ -27,19 +27,15 @@
 - `/InstallDir` - Installation directory, by default `Get-ToolsDirectory`
 - `/NoDesktopIcon`  - Do not create desktop icon
 
-## Notes
-
-- 1Remote replaces [premotem](https://community.chocolatey.org/packages/premotem) which will soon become deprecated.
-
 ![screenshot](https://github.com/majkinetor/au-packages/blob/master/1remote/screenshot.png)
 ]]></description>
     <projectUrl>https://1remote.org/</projectUrl>
-    <tags>remote rdp vlc ssh telnet ftp foss</tags>
+    <tags>admin remote rdp vlc ssh telnet ftp foss</tags>
     <copyright>VShawn 2020</copyright>
-    <licenseUrl>https://github.com/1Remote/1Remote/blob/1Remote_dev/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/1Remote/1Remote/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/1remote/icon.png</iconUrl>
-    <releaseNotes>https://github.com/1Remote/PRemoteM/releases/tag/0.7.2.2</releaseNotes>
+    <releaseNotes>https://github.com/1Remote/1remote/releases/tag/Nightly</releaseNotes>
     <bugTrackerUrl>https://github.com/1Remote/1Remote/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/1Remote/1Remote</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/1remote</packageSourceUrl>
