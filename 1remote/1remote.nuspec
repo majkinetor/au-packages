@@ -27,7 +27,11 @@
 - `/InstallDir` - Installation directory, by default `Get-ToolsDirectory`
 - `/NoDesktopIcon`  - Do not create desktop icon
 
-![screenshot](https://github.com/majkinetor/au-packages/blob/master/1remote/screenshot.png
+## Notes
+
+- 1Remote replaces [premotem](https://community.chocolatey.org/packages/premotem) which will soon become deprecated.
+
+![screenshot](https://github.com/majkinetor/au-packages/blob/master/1remote/screenshot.png)
 ]]></description>
     <projectUrl>https://1remote.org/</projectUrl>
     <tags>remote rdp vlc ssh telnet ftp foss</tags>
