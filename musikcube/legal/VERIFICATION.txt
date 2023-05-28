@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/clangen/musikcube/releases/download/3.0.0/musikcube_win32_3.0.0.zip
+   x32: https://github.com/clangen/musikcube/releases/download/3.0.1/musikcube_win32_3.0.1.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 1F0F49025F343D1E6B2CFBF08EF180A0FD291EA15C691B1DC0FDF5EECDB41E16
+   checksum32: EED9EC0A27FCF51520E14FE0957990448ACF5B6986844662D1E37DE57D78949E
 
 File 'license.txt' is obtained from:
    https://github.com/clangen/musikcube/blob/master/LICENSE.txt
