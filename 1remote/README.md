@@ -18,4 +18,4 @@
 - `/InstallDir` - Installation directory, by default `Get-ToolsDirectory`
 - `/NoDesktopIcon`  - Do not create desktop icon
 
-![screenshot](https://github.com/majkinetor/au-packages/blob/master/1remote/screenshot.png)
+![screenshot](https://github.com/majkinetor/au-packages/blob/master/1remote/screenshot.png?raw=true)
