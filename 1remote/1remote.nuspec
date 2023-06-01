@@ -6,7 +6,7 @@
     <id>1remote</id>
     <title>1Remote</title>
     <version>1.0.0.20230523</version>
-    <authors>VShawn</authors>
+    <authors>1Remote Team</authors>
     <owners>Miodrag Milic</owners>
     <summary>Remote Access Session Manager</summary>
     <description><![CDATA[1Remote is a modern personal remote session manager and launcher. It is a single place to manage all your remote sessions supporting number of different protocols.
@@ -31,7 +31,7 @@
 ]]></description>
     <projectUrl>https://1remote.org/</projectUrl>
     <tags>admin remote rdp vlc ssh telnet ftp foss</tags>
-    <copyright>VShawn 2020</copyright>
+    <copyright>1Remote Team 2023</copyright>
     <licenseUrl>https://github.com/1Remote/1Remote/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/1remote/icon.png</iconUrl>
