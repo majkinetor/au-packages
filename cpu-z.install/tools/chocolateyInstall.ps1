@@ -3,8 +3,8 @@
 $packageArgs = @{
   packageName    = 'cpu-z.install'
   fileType       = 'exe'
-  url            = 'https://download.cpuid.com/cpu-z/cpu-z_2.05-en.exe'
-  checksum       = '566194645fc1906d1febbe81cb2b2483e05a5f69fb811abacab94096eb14002d'
+  url            = 'https://download.cpuid.com/cpu-z/cpu-z_2.06-en.exe'
+  checksum       = '9e7a5f3ed96f9f6ae1069dd1f873320697dcc2ffd67eeee869e3eb685c7b709a'
   checksumType   = 'sha256'
   silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
   validExitCodes = @(0)
