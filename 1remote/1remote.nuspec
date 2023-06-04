@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>1remote</id>
     <title>1Remote</title>
-    <version>1.0.0.20230523</version>
+    <version>1.0.0.20230604</version>
     <authors>1Remote Team</authors>
     <owners>Miodrag Milic</owners>
     <summary>Remote Access Session Manager</summary>
@@ -27,7 +27,7 @@
 - `/InstallDir` - Installation directory, by default `Get-ToolsDirectory`
 - `/NoDesktopIcon`  - Do not create desktop icon
 
-![screenshot](https://github.com/majkinetor/au-packages/blob/master/1remote/screenshot.png)
+![screenshot](https://github.com/majkinetor/au-packages/blob/master/1remote/screenshot.png?raw=true)
 ]]></description>
     <projectUrl>https://1remote.org/</projectUrl>
     <tags>admin remote rdp vlc ssh telnet ftp foss</tags>
