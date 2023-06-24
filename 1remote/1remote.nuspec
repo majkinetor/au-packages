@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>1remote</id>
     <title>1Remote</title>
-    <version>1.0.0.20230622</version>
+    <version>1.0.0.20230623</version>
     <authors>1Remote Team</authors>
     <owners>Miodrag Milic</owners>
     <summary>Remote Access Session Manager</summary>
