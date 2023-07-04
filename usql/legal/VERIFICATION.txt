@@ -7,13 +7,13 @@ Package can be verified like this:
 
 1. Go to https://github.com/xo/usql/releases  to download the zip archive
 
-   x64: https://github.com/xo/usql/releases/download/v0.14.8/usql-0.14.8-windows-amd64.zip
+   x64: https://github.com/xo/usql/releases/download/v0.14.10/usql-0.14.10-windows-amd64.zip
 
 2. You can use one of the following methods to obtain the SHA256 checksum:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: 699E4D09CB2BFC35E3F989541A18882D0116B90BD17E335AB04B37E4117E6A52
+   checksum64: 547C4D689344EDDD7AE9840820BFC6C581D061DDDAD76167EF263166999AA3A2
 
 File 'license.txt' is obtained from:
    https://github.com/xo/usql/blob/master/LICENSE
