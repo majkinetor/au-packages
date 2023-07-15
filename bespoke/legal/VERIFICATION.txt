@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/BespokeSynth/BespokeSynth/releases/download/v1.1.0/Bespoke-Windows.msi
+   x32: 
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: C291D6D9FF78FC5A6A29F846864F4A801D85FE3492F6401CCBCB52559387A7BC
+   checksum32: 
 
 File 'license.txt' is obtained from:
    https://github.com/awwbees/BespokeSynth/blob/main/LICENSE
