@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/PostgREST/postgrest/releases/download/v11.1.0/postgrest-v11.1.0-windows-x64.zip
+   x64: https://github.com/PostgREST/postgrest/releases/download/v11.2.0/postgrest-v11.2.0-windows-x64.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: 190CBF4A9AAD4EA454DAC125169DB42A7B5E8984C1A461B05D10A91EE235580A
+   checksum64: B428A87BA93ABFCBD40D8B3FE20E0ED9C367149E999E84F27EE65D97ADBC8699
 
 File 'license.txt' is obtained from:
    https://raw.githubusercontent.com/PostgREST/postgrest/master/LICENSE
