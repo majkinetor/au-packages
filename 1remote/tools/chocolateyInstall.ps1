@@ -7,6 +7,7 @@ if ($process) {
   Write-Host "Stopping running $Env:ChocolateyPackageName process"
   Stop-Process $process
   $process = $process.path
+  Start-Sleep 5
 }
 
 $pp = Get-PackageParameters
