@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://gpumagick.com/downloads/files/2023/abba3e5ee274a0a5a8755e83accae5e2f36671e967ea36d0f445151a0b7cc1fe/FurMark_1.35.0.0_Setup.exe
+   x32: https://gpumagick.com/downloads/files/2023/740b80cad6fc18f11b8c675cea9a5a46681237baf5c57c7ae157490485b1be37/FurMark_1.36.0.0_Setup.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: ABBA3E5EE274A0A5A8755E83ACCAE5E2F36671E967EA36D0F445151A0B7CC1FE
+   checksum32: 740B80CAD6FC18F11B8C675CEA9A5A46681237BAF5C57C7AE157490485B1BE37
 
 Using AU:
 
