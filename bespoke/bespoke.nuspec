@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>bespoke</id>
     <title>Bespoke Synth</title>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <authors>Ryan Challinor</authors>
     <owners>Miodrag Milic</owners>
     <summary>A cross platform software modular synth python</summary>
@@ -28,7 +28,7 @@
     <licenseUrl>https://github.com/awwbees/BespokeSynth/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/majkinetor/chocolatey@master/bespoke/icon.png</iconUrl>
-    <releaseNotes>https://github.com/BespokeSynth/BespokeSynth/releases/tag/v1.2.0</releaseNotes>
+    <releaseNotes>https://github.com/BespokeSynth/BespokeSynth/releases/tag/v1.2.1</releaseNotes>
     <docsUrl>https://www.bespokesynth.com/docs/index.html</docsUrl>
     <bugTrackerUrl>https://github.com/awwbees/BespokeSynth/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/awwbees/BespokeSynth/</projectSourceUrl>
