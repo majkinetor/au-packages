@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'http://plantuml.com/changes'
+$GitHubRepositoryUrl = 'https://github.com/plantuml/plantuml'
 
 function global:au_SearchReplace {
    @{
@@ -26,13 +27,8 @@ function global:au_BeforeUpdate {
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases
-    if ($download_page.Content -match 'V\d\.\d{4,4}\.\d+')
-    {
-        $version = $Matches[0].Substring(1)
-        $url = "https://sourceforge.net/projects/plantuml/files/plantuml." + $version + '.jar/download'
-    }
-    else { throw "Can't match version 'V\d{4,4}'" }
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'plantuml-[0-9.]+\.jar$' | select -Last 1
+    $version = $url -split '-|.jar' | select -First 1 -Skip 1
 
     @{
         Version      = $version
