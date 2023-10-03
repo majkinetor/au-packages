@@ -61,6 +61,9 @@ function global:au_GetLatest {
     $streams = [ordered]@{}
     foreach ($item in $downloads) {
         $major, $minor = $item.version -split '\.|-' | select -First 2
+        if (!$major) { continue }
+        if (!$minor) { $minor = '0'; $item.version += '.0' }
+
 
         $s1 = @{
             Version      = $item.version
