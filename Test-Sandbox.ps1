@@ -1,4 +1,4 @@
-﻿param( )
+﻿param( $ChocoParameters )
 
 # Check if Windows Sandbox is enabled
 if (-Not (Test-Path "$env:windir\System32\WindowsSandbox.exe")) {
@@ -16,14 +16,17 @@ Enable-WindowsOptionalFeature -Online -FeatureName 'Containers-DisposableClientV
 $tempFolder = Join-Path -Path $PSScriptRoot -ChildPath 'Test-Sandbox_Temp'
 New-Item $tempFolder -ItemType Directory -ea 0 | Out-Null
 
+$packageName = Split-Path -Leaf $pwd
+$version = ([xml] (Get-Content "$packageName.nuspec")).package.metadata.version
+
 # Create Bootstrap script
 $bootstrapPs1Content = @"
 cd ~\Desktop
 Write-Host 'Installing Chocolatey'
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco feature enable -n=allowGlobalConfirmation
-Set-Alias ib (Resolve-Path Invoke-Build.ps1)
-ib SetupMachine
+
+choco install -vd $packageName --version $version --source ".;chocolatey" $ChocoParameters
 "@
 
 $bootstrapPs1FileName = 'Bootstrap.ps1'
