@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://www.rundeck.com/community-downloads'
+$releases = 'https://packagecloud.io/pagerduty/rundeck'
 
 function global:au_SearchReplace {
    @{
@@ -22,17 +22,19 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { $Latest.Checksum32 = Get-RemoteChecksum $Latest.URL32 }
 
 function global:au_GetLatest {
+    $domain  = $releases -split '(?<=//.+)/' | select -First 1
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $versionUrl = $download_page.Content -split "`n" | sls "https://www.rundeck.com/community-downloads/[.0-9]+" | select -First 1
-    $versionUrl = $versionUrl -split "'" | select -Last 1 -Skip 1
+    # https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/rundeck-4.17.0-20230925.war/artifacts/rundeck-4.17.0-20230925.war
+    $versionUrl = $download_page.Links | ? title -like '*.war' | select -First 1 | % href
+    $versionUrl = $domain + $versionUrl
 
     $download_page = Invoke-WebRequest -Uri $versionUrl -UseBasicParsing
-    $url = $download_page.Content -split "`n" | sls "\.war/download" | select -First 1
-    $url = $url -split "'" | select -Last 1 -Skip 1
+    $url = $download_page.Links | ? href -like "*.war/download" | select -First 1 | % href
+
+    $version = $url -split '.+rundeck-|-' | select -Last 1 -Skip 1
     @{
-        Version      = $url -split '-'  | select -First 1 -Skip 1
+        Version      = $version
         URL32        = $url
-        ReleaseNotes = $versionUrl
         FileType     = 'war'
     }
 }
