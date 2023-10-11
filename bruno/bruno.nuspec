@@ -5,19 +5,20 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>bruno</id>
     <title>Bruno</title>
-    <version>0.0</version>
+    <version>0.23.0</version>
     <authors>Anoop M D</authors>
     <owners>Miodrag Milic</owners>
     <summary>Opensource IDE For Exploring and Testing Api's</summary>
-    <description><![CDATA[## Features
+    <description><![CDATA[Bruno is a new and innovative API client, aimed at revolutionizing the status quo represented by Postman and similar tools out there.
 
-## Package parameters
+Bruno stores your collections directly in a folder on your filesystem. We use a plain text markup language, Bru, to save information about API requests.
 
-## Notes
+You can use git or any version control of your choice to collaborate over your API collections.
+
+Bruno is offline-only. There are no plans to add cloud-sync to Bruno, ever. We value your data privacy and believe it should stay on your device. Read our long-term vision here
 
 
-
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/copyq/screenshot.png)
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/bruno/screenshot.png)
 ]]></description>
     <projectUrl>https://github.com/helloanoop</projectUrl>
     <tags>admin api development cross-platform foss</tags>
