@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName         = $Env:ChocolateyPackageName
-$softwareNamePattern = ''
+$softwareNamePattern = 'bruno'
 
 [array] $key = Get-UninstallRegistryKey $softwareNamePattern
 if ($key.Count -eq 1) {
@@ -25,4 +25,3 @@ elseif ($key.Count -gt 1) {
     Write-Warning "Please alert package maintainer the following keys were matched:"
     $key | % {Write-Warning "- $($_.DisplayName)"}
 }
-
