@@ -7,7 +7,7 @@ if (Get-Service gitlab-runner -ea 0) {
 }
 
 $installDir = Get-RunnerInstallDir
-Uninstall-BinFile gitlab-runner.exe
+Uninstall-BinFile gitlab-runner
 
 Write-Warning 'If a gitlab-runner user is created during the installation, it is not removed as a safety measure'
 Write-Warning '  to remove it execute: net user gitlab-runner /delete'
