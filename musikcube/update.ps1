@@ -1,6 +1,7 @@
 import-module au
+. $PSScriptRoot\..\_scripts\all.ps1
 
-$releases = 'https://github.com/clangen/musikcube/releases'
+$GitHubRepositoryUrl = 'https://github.com/clangen/musikcube'
 
 function global:au_SearchReplace {
    @{
@@ -18,16 +19,13 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re      = 'musikcube_win32_.+zip$'
-    $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $domain  = $releases -split '(?<=//.+)/' | select -First 1
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'musikcube_.+_win32\.zip$' | select -Last 1
     $version = $url -split '/' | select -Last 1 -Skip 1
 
     @{
         Version      = $version
-        URL32        = $domain + $url
+        URL32        = $url
         ReleaseNotes = "https://github.com/clangen/musikcube/releases/tag/$version"
     }
 }
