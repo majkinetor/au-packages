@@ -137,7 +137,7 @@ Sections 1 and 2 above provided that you also do one of the following:
 
     a) Accompany it with the complete corresponding machine-readable
     source code, which must be distributed under the terms of Sections
-    1 and 2 above on a medium customarily used for software interchange; or, 
+    1 and 2 above on a medium customarily used for software interchange; or,
 
     b) Accompany it with a written offer, valid for at least three
     years, to give any third party, for a charge no more than your
