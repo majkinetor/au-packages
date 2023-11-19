@@ -1,6 +1,29 @@
 Author: BlueLife , Velociraptor
 www.sordum.org
 
+[010101010101010101]--Firewall App Blocker (Fab) v1.9--[010101010101010101]
+
+(Wednesday, 28 September 2022)
+------------
+Changelog:
+01. FIXED - If you change GUI language, Enable WhiteList box disappears
+02. FIXED - A minor bug in command prompt
+03. FIXED - Entries can't be sorted that the most recently added ones are at the top
+04. ADDED - Partial language support for "File -> Netsh Commands"
+
+
+[010101010101010101]--Firewall App Blocker (Fab) v1.8--[010101010101010101]
+
+(Monday, 26 September 2022)
+------------
+Changelog:
+01. ADDED - Cmd parameters (Add/delete folder contents, inbound/Outbound rules...)
+02. ADDED - Add folders button has been added to main GUI
+03. FIXED - GUI buttons are small (All buttons have been redesigned)
+04. FIXED - Doesn't remember column order (Refresh/restart the App disorder the column order)
+05. FIXED - Some Minor Bugs and code weaknesses
+
+
 [010101010101010101]--Firewall App Blocker (Fab) v1.7--[010101010101010101]
 
 (Thursday, 16 April 2020)
@@ -14,7 +37,7 @@ Changelog:
 
 [010101010101010101]--Firewall App Blocker (Fab) v1.6--[010101010101010101]
 
-(Friday , 21. April 2017)
+(Friday, 21 April 2017)
 ------------
 Changelog:
 01. FIXED - Add a folder feature doesn't support shortcuts 
@@ -25,7 +48,7 @@ Changelog:
 
 [010101010101010101]--Firewall App Blocker (Fab) v1.5--[010101010101010101]
 
-(07.02.2017)
+(Tuesday, 07 February 2017)
 ------------
 Changelog:
 01. FIXED - Fab Add a block rule unnecessarily Outbound and Inbound sections together 
@@ -47,7 +70,7 @@ Changelog:
 
 [010101010101010101]--Firewall App Blocker (Fab) v1.4--[010101010101010101]   
 
-(29.08.2014)
+(Friday, 29 August 2014)
 ------------
 Changelog:
 1. ADDED - Language support
@@ -57,7 +80,7 @@ Changelog:
 
 [010101010101010101]--Firewall App Blocker (Fab) v1.3--[010101010101010101]
 
-(23.07.2013)
+(Tuesday, 23 July 2013)
 ------------
 Changelog:
 1. FIXED – Drag and Drop doesn't work properly
@@ -73,7 +96,7 @@ Changelog:
 
 [010101010101010101]--Firewall App Blocker (Fab) v1.2 Beta--[010101010101010101]
 
-(15.05.2012)
+(Tuesday, 15 May 2012)
 ------------
 Changelog:
 1. FÝXED - Shortcut drag and drop problem
@@ -81,9 +104,15 @@ Changelog:
 
 [010101010101010101]--Firewall App Blocker (Fab) v1.1 Beta--[010101010101010101]
 
-(14.05.2012)
+(Monday 14. May 2012)
 -------------
 Changelog:
 1. FÝXED - If you have ESET security product on your system , Firewall App Blocker does not working properly
 2. FÝXED - A small bug fixed
 3. ADDED - Auto Language selection (Only English and Turkish)
+
+[010101010101010101]--Firewall App Blocker (Fab) v1.0 Beta--[010101010101010101]
+
+(Tuesday, 8 May 2012)
+-------------
+Firewall Application blocker (FAB) is a portable freeware to simplify the usage of windows firewall

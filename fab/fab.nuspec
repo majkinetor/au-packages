@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>fab</id>
     <title>Firewall App Blocker</title>
-    <version>1.7</version>
+    <version>1.9</version>
     <authors>Velociraptor</authors>
     <owners>Miodrag Milić</owners>
     <summary>Quickly block apps using Windows Firewall</summary>
