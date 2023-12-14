@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/johnkerl/miller/releases/download/v6.9.0/miller-6.9.0-windows-amd64.zip
+   x64: https://github.com/johnkerl/miller/releases/download/v6.10.0/miller-6.10.0-windows-amd64.zip
 
    to download the archive containing portable executable.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: B28CBB2517BE4CBF57A3D3AA69A6E643157091561924E6C0382A62A03C89FB80
+   checksum64: 82F0204B3E54AB0D201CAEB6B78186710BC03941373C55272082DA473130685B
 
 
 File 'license.txt' is obtained from:
