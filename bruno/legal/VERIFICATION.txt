@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/usebruno/bruno/releases/download/v1.6.0/bruno_1.6.0_x64_win.exe
+   x64: https://github.com/usebruno/bruno/releases/download/v1.6.1/bruno_1.6.1_x64_win.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: AC1FABC8AEB32DE4A0A28D50D4A8ED956B3729E18B0B44EDB56A1E931E8A1213
+   checksum64: 6571643727EC4940BBE418392673610C9B51A6CA2BE419AA5BD12C85CF32606B
 
 File 'license.md' is obtained from:
    https://github.com/usebruno/bruno/blob/main/license.md
