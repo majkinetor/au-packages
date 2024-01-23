@@ -6,7 +6,7 @@ $is64      = (Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true'
 $packageArgs = @{
   packageName   = $Env:ChocolateyPackageName
   url           = 'https://download.cpuid.com/cpu-z/cpu-z_2.09-en.zip'
-  checksum      = 'a6a7524ee5e4206d3c9f5d2a1425eca04d85f64105fd0a1cc2d9515fdd2e86e1'
+  checksum      = 'a771dc7496501a02cf7cb22f375bab97e2530b61d7db4d0ea5c7e9464a6cc075'
   checksumType  = 'sha256'
   unzipLocation = $toolsPath
 }
