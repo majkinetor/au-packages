@@ -80,33 +80,4 @@ Set-DCHotkey @(
     }
 )
 
-Set-DCTemplates @(
-    @{
-        Name_      = 'Executables'
-        FilesMasks = '*.exe;*.bat;*.cmd;*.com;*.ps1'
-        Color      = 11599871
-    },
-    @{
-        Name_      = 'Documents'
-        FilesMasks = '*.rtf;*.tex;*.wps;*.txt;*.doc;*.docx;*.pdf;*.epub;*.md;README'
-        Color      = 12639424
-    },
-    @{
-        Name_      = 'Archives'
-        FilesMasks = '*.zip;*.7z;*.rar;*.tar;*.pkg;*.cbr;*.deb'
-        Color      = 4227327
-    },
-    @{
-        Name_       = 'Images'
-        FilesMasks  = '*.gif;*.jpg;*.png;*.bmp;*.tiff;*.webp;*.psd;*.tga;*.tif;*.yuv;*.ico'
-        Color       = 15780518
-    },
-    @{
-        Name_       = 'Audio'
-        FilesMasks  = '*.mid;*.mpa;*.mp3;*.flac;*.ogg;*.cda;*.wma;*.m4a;*.aac;*.aif;*.aiff;*.wav;'
-    }
-    @{
-        Name_       = 'Video'
-        FilesMasks  = '*.mkv;*.avi;*.m3u;*.mpg;*.mpeg;*.mov;*.m2ts;*.rm;*.vob;*.mp4;*.flv;*.3gp'
-    }
-)
+Set-DCCfg -DarkMode enabled -SplashForm hide
