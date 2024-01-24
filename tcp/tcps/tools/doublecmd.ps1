@@ -1,3 +1,31 @@
+# version: 1.1.9
+
+function Set-DCCfg  {
+    param(
+        [ValidateSet('show', 'hide')]
+        [string] $SplashForm = "hide",
+        [ValidateSet('auto', 'enabled', 'disabled')]
+        [string] $DarkMode = "auto"
+    )
+
+    $rootPath = Split-Path (Get-DCConfig -Path)
+    $cfgPath = Join-Path $rootPath "doublecmd.cfg"
+
+    $mapSplashForm = @{
+        hide = 0
+        show = -1
+    }
+    $mapDarkMode = @{
+        auto = 1
+        enabled = 2
+        disabled = 3
+    }
+
+    "
+SplashForm=$($mapSplashForm.$SplashForm)
+DarkMode=$($mapDarkMode.$DarkMode)" | Out-File $cfgPath
+}
+
 function Test-DC() { $null -ne (Get-DCConfig -Path) }
 
 function Set-DCAsDefaultFM($DCPath) {
@@ -31,7 +59,8 @@ function Close-DC() {
 function Set-HashTable($Xml, [string] $Parent, [string]$Name, [HashTable[]] $Hashes ) {
     $Parent = $Parent -replace '([^.]+)\.?',"['`$1']"
     $xmlParent = iex "`$Xml$Parent"
-    if (!$xmlParent) { throw 'Non existent parent' }
+    if (!$xmlParent) {
+        throw "Non existent parent: $Parent" }
 
     foreach ($hash in $Hashes) {
         $idKey = ($hash.Keys | ? { $_.EndsWith('_')}) -replace '_$'
@@ -47,30 +76,6 @@ function Set-HashTable($Xml, [string] $Parent, [string]$Name, [HashTable[]] $Has
             $e.$xk = $hash.$k.ToString()
         }
     }
-}
-
-# Provide HashTable array with any legit Template element
-#  plus 'Color' attribute if needed
-function Set-DCTemplates( [HashTable[]] $Templates ) {
-    Close-DC
-    $config = Get-DCConfig
-
-    if (!$config) { Write-Warning "Can't find Double Commander config, doing nothing"; return } # This prevent Gallery verifyer to fail as it runs as a user SYSTEM which has different profile path
-
-    $t = $Templates | % { $x = $_.Clone(); $x.Remove('Color'); $x }
-    Set-HashTable $config -Parent 'doublecmd.SearchTemplates' -Name 'Template' -Hashes $t
-
-    $t = foreach($t in $Templates) {
-        if ($t.Color) { @{
-            Name_     = $t.Name_
-            FileMasks = ">" + $t.Name_
-            Color     = $t.Color
-            Attributes = ''
-        }}
-    }
-    Set-HashTable $config -Parent 'doublecmd.Colors.FileFilters' -Name 'Filter' -Hashes $t
-
-    Set-DCConfig $config
 }
 
 # Provide HashTable array with any legit Hotkey element
