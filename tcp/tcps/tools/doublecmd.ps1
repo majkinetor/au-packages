@@ -113,7 +113,9 @@ function Get-DCConfig ([switch] $Path) {
         for ($i=0; $i -lt 5; $i++) {
             $doublecmd = Get-Process doublecmd -ea 0
             if (!$doublecmd) { Start-Sleep 1; continue }
-            while (!$doublecmd.CloseMainWindow()) { sleep -M 500 }
+
+            Start-Sleep 5
+            $doublecmd.CloseMainWindow() | Out-Null
             Start-Sleep 1
             break
         }
