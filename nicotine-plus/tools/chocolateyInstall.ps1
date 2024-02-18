@@ -5,7 +5,6 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 $packageArgs = @{
   packageName    = $Env:ChocolateyPackageName
   fileType       = 'msi'
-  file           = gi $toolsPath\windows-i686-installer\*.msi
   file64         = gi $toolsPath\windows-x86_64-installer\*.msi
   silentArgs     = '/q'
   validExitCodes = @(0)
