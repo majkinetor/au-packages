@@ -16,13 +16,13 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix -FileNameBase
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $re      = '\.exe/download$'
+    $re      = '\.exe/download'
     $url     = $download_page.links | ? href -match $re | select -First 1 -expand href
     $version = $url -split '%20|.exe' | select -Last 1 -Skip 1
 
     @{
         Version      = $version
-        URL32        = $url
+        URL32        = $url -replace '\?.+'
         FileType     = 'exe'
     }
 }
