@@ -28,7 +28,7 @@ function global:au_GetLatest {
 
     return @{
         Version      = $version
-        URL64        = 'https://ci.freerdp.com/job/freerdp-nightly-windows/arch=win64,label=vs2013/lastSuccessfulBuild/artifact/install/bin/wfreerdp.exe'
+        URL64        = 'https://ci.freerdp.com/job/freerdp-nightly-windows/lastBuild/arch=win64,label=vs2017/artifact/install/bin/wfreerdp.exe'
         ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
 }
