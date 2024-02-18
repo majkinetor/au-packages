@@ -5,14 +5,18 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>soulseek</id>
     <title>Soulseek</title>
-    <version>2019.7.22</version>
+    <version>2024.2.1</version>
     <authors>Soulseek</authors>
     <owners>Miodrag Milić</owners>
     <summary>File sharing network</summary>
     <description><![CDATA[Soulseek is an ad-free, spyware free, just plain free file sharing network for Windows, Mac and Linux. Our rooms, search engine and search correlation system make it easy for you to find people with similar interests, and make new discoveries!
 
-![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/soulseek/screenshot.png)
+## Notes
 
+- Related package: [nicotine-plus](https://community.chocolatey.org/packages/nicotine-plus]
+
+
+![screenshot](https://cdn.rawgit.com/majkinetor/chocolatey/master/soulseek/screenshot.png)
 ]]></description>
     <projectUrl>http://www.soulseekqt.net</projectUrl>
     <tags>admin share multimedia music audio video music mp3 freeware cross-platform</tags>
