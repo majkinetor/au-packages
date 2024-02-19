@@ -22,4 +22,4 @@ function global:au_GetLatest {
     return @{ URL = $url; Version = $version }
 }
 
-update -NoCheckUrl -ChecksumFor 64 -Force
+update -NoCheckUrl -ChecksumFor 64
