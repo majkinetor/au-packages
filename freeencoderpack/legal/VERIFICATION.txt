@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: http://www.foobar2000.org/files/Free_Encoder_Pack-2023-07-05.exe
+   x32: http://www.foobar2000.org/files/Free_Encoder_Pack-2024-03-03.exe
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: FBFA19DE37CD5619BAD57E44F12A9FF1E53C582EDDAD886B472923C8289ACAEF
+   checksum32: A64E67EC304979E831EFA2BFE6925042A773200C7D6153EEEC71FCCE1CE0BF10
 
 
 File 'license.txt' is obtained from:
