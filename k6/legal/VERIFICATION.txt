@@ -8,7 +8,7 @@ Package can be verified like this:
 1. Go to
 
    x32: https://github.com/loadimpact/k6/releases/download/v0.31.1/k6-v0.31.1-win32.zip
-   x64: https://github.com/grafana/k6/releases/download/v0.49.0/k6-v0.49.0-windows-amd64.zip
+   x64: https://github.com/grafana/k6/releases/download/v0.50.0/k6-v0.50.0-windows-amd64.zip
 
    to download the installer.
 
@@ -17,7 +17,7 @@ Package can be verified like this:
    - Use Chocolatey utility 'checksum.exe'
 
    checksum32: 6EEEF30F5A53E16F9CCC8B99552C4715FD395A9BFD06C10F55D7DB6C06B39F52
-   checksum64: E01C5D43821EB15DB41189FDE8B9AA9B2CEA5D4078609A5CE228322DE8FA11C5
+   checksum64: 4650A3682123AF99761196CC326BF1F1093B10CA718CC6F487D99258CE3F9C54
 
 File 'license.txt' is obtained from:
    https://github.com/loadimpact/k6/blob/master/LICENSE.md
