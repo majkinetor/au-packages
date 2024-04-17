@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: 61BA5F60A2B9F1B398F166B7F46B363E792CFFED3385EC51854B4CB5131D45A6
+   checksum64: 3B1189392D17DD8684A45970FAFE1CE522E53CA330597BB14378EAF9A8832DA0
 
 File 'license.txt' is obtained from:
    https://github.com/FreeRDP/FreeRDP/blob/master/LICENSE
