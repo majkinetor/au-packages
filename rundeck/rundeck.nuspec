@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>rundeck</id>
     <title>Rundeck</title>
-    <version>5.3.0</version>
+    <version>5.4.0</version>
     <authors>Rundeck, Inc.</authors>
     <owners>Miodrag Milic</owners>
     <summary>Job scheduler and runbook automation. Enable self-service access to existing scripts and tools.</summary>
