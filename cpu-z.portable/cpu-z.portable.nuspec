@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>cpu-z.portable</id>
     <title>CPU-Z (Portable)</title>
-    <version>2.9.0.20240123</version>
+    <version>2.10</version>
     <authors>CPUID</authors>
     <owners>majkinetor</owners>
     <summary>System information software</summary>
