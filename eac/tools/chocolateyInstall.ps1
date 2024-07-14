@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'eac'
-$url32       = 'http://www.exactaudiocopy.de/eac-1.6.exe'
-$checksum32  = '8291d33104ebab2619ba8d85744083e241330a286f5bd7d54c7b0eb08f2b84c1'
+$url32       = 'http://www.exactaudiocopy.de/eac-1.7.exe'
+$checksum32  = '233f96a4d11f1c87256567d5295cf6ba73322af9880f1829c5f31b719cf19fa8'
 
 $packageArgs = @{
   packageName            = $packageName

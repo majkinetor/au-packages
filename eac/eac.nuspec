@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>eac</id>
     <title>Exact Audio Copy</title>
-    <version>1.6</version>
+    <version>1.7</version>
     <authors>Andre Wiethoff</authors>
     <owners>Miodrag Milić</owners>
     <summary>Exact Audio Copy is a audio grabber for audio CDs using standard CD and DVD-ROM drives</summary>
