@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>postgrest</id>
     <title>PostgREST</title>
-    <version>12.2.2</version>
+    <version>12.2.3</version>
     <authors>Joe Nelson</authors>
     <owners>Miodrag Milic</owners>
     <summary>REST API for any Postgres database
@@ -36,7 +36,7 @@
     <licenseUrl>https://github.com/PostgREST/postgrest/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://raw.githubusercontent.com/majkinetor/au-packages/master/postgrest/icon.jpg</iconUrl>
-    <releaseNotes>https://github.com/PostgREST/postgrest/releases/tag/v12.2.2</releaseNotes>
+    <releaseNotes>https://github.com/PostgREST/postgrest/releases/tag/v12.2.3</releaseNotes>
     <docsUrl>http://postgrest.org</docsUrl>
     <mailingListUrl>https://gitter.im/begriffs/postgrest</mailingListUrl>
     <bugTrackerUrl>https://github.com/PostgREST/postgrest/issues</bugTrackerUrl>
