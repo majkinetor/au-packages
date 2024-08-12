@@ -56,7 +56,7 @@ $params = [ordered]@{
     TimeZone        = 'Europe/Belgrade'
 }
 $params = $params.GetEnumerator() | % { if ($_.Value -is [bool]) { if ($_.Value) { "/{0}" -f $_.Key}} else { "/{0}:'{1}'" -f $_.Key, $_.Value } }
-cinst rundeck --params $params
+choco install rundeck --params $params
 ```
 
 ## Notes
