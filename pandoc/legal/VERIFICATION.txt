@@ -8,7 +8,7 @@ Package can be verified like this:
 1. Go to
 
    x32: 
-   x64: https://github.com/jgm/pandoc/releases/download/3.3/pandoc-3.3-windows-x86_64.msi
+   x64: https://github.com/jgm/pandoc/releases/download/3.4/pandoc-3.4-windows-x86_64.msi
    to download the installer.
 
 2. You can use one of the following methods to obtain the SHA256 checksum:
@@ -16,7 +16,7 @@ Package can be verified like this:
    - Use Chocolatey utility 'checksum.exe'
 
    checksum32: 
-   checksum64: BFF3B8859E4AD933E9D143AFA26A4B886C0996D0BD6244F48B36344BA3235D2D
+   checksum64: 6E8B998C2F859501E62ECBB2540E6CE85907430CFF3C68C7A83720C4B671BA65
 
 File License.txt is saved from:
     https://raw.githubusercontent.com/jgm/pandoc/master/COPYRIGHT
