@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>nicotine-plus</id>
     <title>Nicotine+</title>
-    <version>3.3.4</version>
+    <version>3.3.5</version>
     <authors>Nicotine+ Team</authors>
     <owners>Miodrag Milic</owners>
     <summary>Nicotine+ is a graphical client for the Soulseek peer-to-peer network</summary>
@@ -28,7 +28,7 @@ Nicotine+ uses GTK for its graphical user interface, and is written in Python.
     <licenseUrl>https://github.com/nicotine-plus/nicotine-plus/blob/master/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/majkinetor/chocolatey/master/nicotine-plus/icon.svg</iconUrl>
-    <releaseNotes>https://github.com/nicotine-plus/nicotine-plus/releases/tag/3.3.4</releaseNotes>
+    <releaseNotes>https://github.com/nicotine-plus/nicotine-plus/releases/tag/3.3.5</releaseNotes>
     <bugTrackerUrl>https://github.com/nicotine-plus/nicotine-plus/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/nicotine-plus/nicotine-plus</projectSourceUrl>
     <packageSourceUrl>https://github.com/majkinetor/chocolatey/tree/master/nicotine-plus</packageSourceUrl>
