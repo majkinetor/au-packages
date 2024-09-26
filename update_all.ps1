@@ -115,9 +115,7 @@ $Options = [ordered]@{
 # Add some output regarding the SecurityProtocols
 Write-Host "Enabled SecurityProtocols: "
 [Net.ServicePointManager]::SecurityProtocol
-# Add and configure the SecurityProtocols
-Write-Host "Ensuring we run with compatible settings"
-[System.Net.ServicePointManager]::SecurityProtocol = 3072 -bor 768 -bor [System.Net.SecurityProtocolType]::Tls -bor [System.Net.SecurityProtocolType]::Ssl3;
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 if ($ForcedPackages) { Write-Host "FORCED PACKAGES: $ForcedPackages" }
 $global:au_Root = $Root                                    #Path to the AU packages
