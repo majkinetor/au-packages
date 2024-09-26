@@ -93,7 +93,7 @@ build_script:
             }
         }
     }
-    [System.Net.ServicePointManager]::SecurityProtocol = 3072 -bor 768 -bor [System.Net.SecurityProtocolType]::Tls -bor [System.Net.SecurityProtocolType]::Ssl3
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     ./update_all.ps1 -ForcedPackages $forced
     7z a au_temp.zip $Env:TEMP\chocolatey\au\*
 
