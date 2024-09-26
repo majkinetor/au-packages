@@ -23,7 +23,7 @@ $version = ([xml] (Get-Content "$packageName.nuspec")).package.metadata.version
 $bootstrapPs1Content = @"
 cd ~\Desktop\$packageName
 Write-Host 'Installing Chocolatey'
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = 3072 -bor 768 -bor [System.Net.SecurityProtocolType]::Tls -bor [System.Net.SecurityProtocolType]::Ssl3; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco feature enable -n=allowGlobalConfirmation
 
 choco install -vd $packageName --version $version --source ".;chocolatey" $ChocoParameters
