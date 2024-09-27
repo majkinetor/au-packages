@@ -55,6 +55,8 @@ function global:au_GetLatest {
         $tds[4] -match 'href="(.+?)"' | Out-Null
         $href = $Matches[1]
 
+        if (!$href) { Write-Host 'No href for' $version; continue }
+
         [PSCUstomObject]@{ version = $version; href = $href }
     }
 
