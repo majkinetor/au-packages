@@ -22,7 +22,7 @@ function global:au_GetLatest {
     $version = $url -split '/' | select -Last 1 -Skip 1
 
     return @{
-        Version      = $version
+        Version      = $version.Substring(1)
         URL32        = $url
         ReleaseNotes = "$GitHubRepositoryUrl/releases/tag/$version"
     }
