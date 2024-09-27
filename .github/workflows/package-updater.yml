@@ -1,0 +1,88 @@
+name: Package Updater
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: "What is the packages (optionally version) you wish to force update on?"
+        required: false
+  schedule:
+    - cron: "30 1-19/6 * * *"
+
+jobs:
+  updater:
+    runs-on: windows-2019
+    env:
+      au_version: master
+      au_push: true
+      github_user_repo: ${{ github.repository }}
+      github_api_key: ${{ secrets.GIST_API_KEY }}
+      gist_id: a700c70b8847b29ebb1c918d47ee4eb1
+      nupkg_cache_path: C:\nupkg_cache
+      mail_user: ${{ secrets.MAIL_USER }}
+      mail_pass: ${{ secrets.MAIL_PASSWORD }}
+      mail_server: smtp.gmail.com
+      mail_port: 587
+      mail_enablessl: true
+      api_key: ${{ secrets.CHOCO_API_KEY }}
+      nuget_artifacts: ${{ github.runner.temp }}/artifacts
+
+    steps:
+      - name: Configure git client
+        run: |
+          git config --global user.email "chocolatey@realdimensions.net"
+          git config --global user.name "Chocolatey"
+          git config --global core.safecrlf false
+      - name: Install Dependencies
+        run: |
+          Set-Service wuauserv -StartupType Manual
+          git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
+          . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
+        shell: powershell
+      - name: System information
+        run: |
+          Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version
+          $PSVersionTable
+          git --version
+          choco --version
+          "Build info"
+          '  {0,-20} {1}' -f 'SCHEDULED BUILD:', ("${{ github.event_name }}" -eq 'schedule')
+          '  {0,-20} {1}' -f 'FORCED BUILD:'   , ("${{ github.event_name }}" -eq 'workflow_dispatch')
+        shell: powershell
+      - uses: actions/checkout@v3.5.0
+        with:
+          fetch-depth: 0
+      - name: Run package updater
+        env:
+          FORCED_PACKAGES: ${{ github.event.inputs.packages }}
+        run: |
+          . ./.github/EventLogs.ps1
+          Clear-EventLogs
+          Remove-Item "$Env:ChocolateyInstall\logs\*.log"
+
+          ./update_all.ps1 -ForcedPackages $env:FORCED_PACKAGES
+          Get-EventLogs * | ? Source -eq 'Schannel' | Format-List * | Out-File eventlogs.txt
+        shell: powershell
+      - name: Create diff file
+        run: |
+          git add automatic extension manual templates
+          git diff --cached > unsaved_changes.patch
+      - name: Create au temporary directory
+        run: |
+          if (Test-Path $Env:TEMP\chocolatey\au) { 7z a -mx9 au_temp.7z $Env:TEMP\chocolatey\au\* }
+        shell: powershell
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: |
+            unsaved_changes.patch
+            au_temp.7z
+            update_info.xml
+            Update-AUPackages.md
+            eventlogs.txt
+            **/*.nupkg
+          retention-days: 5
