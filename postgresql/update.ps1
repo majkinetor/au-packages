@@ -53,7 +53,7 @@ function global:au_GetLatest {
         $version = $version.Replace('*', '')
 
         $tds[4] -match 'href="(.+?)"' | Out-Null
-        $href = $Matches[1]
+        $href = $Matches[1].Trim()
 
         if (!$href) { Write-Host 'No href for' $version; continue }
 
