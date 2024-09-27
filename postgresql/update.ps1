@@ -52,7 +52,7 @@ function global:au_GetLatest {
         $version = $tds[0] -split '>' | select -Last 1
         $version = $version.Replace('*', '')
 
-        $tds[4] -match "href='(.+?)'" | Out-Null
+        $tds[4] -match 'href="(.+?)"' | Out-Null
         $href = $Matches[1]
 
         [PSCUstomObject]@{ version = $version; href = $href }
@@ -61,10 +61,8 @@ function global:au_GetLatest {
     $streams = [ordered]@{}
     foreach ($item in $downloads) {
         $major, $minor = $item.version -split '\.|-' | select -First 2
-        if ($major -le 12) { continue }
         if (!$major) { continue }
         if (!$minor) { $minor = '0'; $item.version += '.0' }
-
 
         $s1 = @{
             Version      = $item.version
