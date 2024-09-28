@@ -1,6 +1,6 @@
 import-module au
 
-$changelog = 'http://www.soulseekqt.net/news/node/1'
+$changelog = 'https://www.slsknet.org/news/node/1'
 
 function global:au_SearchReplace {
     @{
