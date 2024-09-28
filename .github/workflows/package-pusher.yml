@@ -1,0 +1,72 @@
+name: Package Pusher
+
+on:
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: "What is the packages you wish to push?"
+        required: true
+
+jobs:
+  pusher:
+    runs-on: windows-2019
+    env:
+      au_version: master
+      github_user_repo: ${{ github.repository }}
+      api_key: ${{ secrets.CHOCO_API_KEY }}
+
+    steps:
+      - name: Install Dependencies
+        run: |
+          Set-Service wuauserv -StartupType Manual
+          choco install wormies-au-helpers vt-cli -y
+          Install-Module Pester -RequiredVersion 4.10.1 -Scope CurrentUser -Force -SkipPublisherCheck
+          git clone -q https://github.com/chocolatey-community/chocolatey-au.git $Env:TEMP/au
+          . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
+        shell: powershell
+      - name: System information
+        run: |
+          Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version
+          $PSVersionTable
+          git --version
+          choco --version
+          "Build info"
+          '  {0,-20} {1}' -f 'SCHEDULED BUILD:', ("${{ github.event_name }}" -eq 'schedule')
+          '  {0,-20} {1}' -f 'FORCED BUILD:'   , ("${{ github.event_name }}" -eq 'workflow_dispatch')
+        shell: powershell
+      - uses: actions/checkout@v3.5.0
+        with:
+          fetch-depth: 0
+      - name: Run package pushing
+        env:
+          PACKAGES_PUSHES: ${{ github.event.inputs.packages }}
+        run: |
+          $packages = $env:PACKAGES_PUSHES -split ' '
+          Write-Host "PUSHING PACKAGES: $packages"
+          foreach ($package in $packages) {
+            Write-Host ("{0}`n{1}`n" -f ('-'*60), "PACKAGE: $package")
+            $package_dir = ls -recurse | ? { $_.Name -eq "$package.nuspec" } | select -First 1 | % Directory
+
+            if (!$package_dir) { Write-Warning "Can't find package '$package'"; continue }
+            pushd $package_dir
+            if (Test-Path update.ps1 -ea 0) { ./update.ps1 }
+            choco pack
+            Push-Package
+            popd
+          }
+        shell: powershell
+      - name: Create diff file
+        run: |
+          git add automatic extension manual templates
+          git diff --cached > unsaved_changes.patch
+        shell: powershell
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: |
+            unsaved_changes.patch
+            eventlogs.txt
+            **/*.nupkg
+          retention-days: 5

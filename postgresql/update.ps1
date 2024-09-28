@@ -52,8 +52,10 @@ function global:au_GetLatest {
         $version = $tds[0] -split '>' | select -Last 1
         $version = $version.Replace('*', '')
 
-        $tds[4] -match "href='(.+?)'" | Out-Null
+        $tds[4] -match 'href="(.+?)"' | Out-Null
         $href = $Matches[1]
+
+        if (!$href) { Write-Host 'No href for' $version; continue }
 
         [PSCUstomObject]@{ version = $version; href = $href }
     }
@@ -64,7 +66,6 @@ function global:au_GetLatest {
         if (!$major) { continue }
         if (!$minor) { $minor = '0'; $item.version += '.0' }
 
-
         $s1 = @{
             Version      = $item.version
             Url64        = Resolve-PostgreUrl $item.href
@@ -72,6 +73,7 @@ function global:au_GetLatest {
             ReleaseNotes = "https://www.postgresql.org/docs/$major/static/release.html"
             SoftwareName = "PostgreSQL $major*"
         }
+        if ($s1.Url64.Trim() -eq '') { Write-Host "no URL for" $item.version; continue }
 
         $s2 = @{
             Version     = $item.version
