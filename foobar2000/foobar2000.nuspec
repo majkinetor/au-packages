@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>foobar2000</id>
-    <version>2.1.6</version>
+    <version>2.24</version>
     <title>foobar2000</title>
     <authors>Peter Pawlowski</authors>
     <owners>Miodrag Milic</owners>
