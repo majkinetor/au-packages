@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/plantuml/plantuml/releases/download/v1.2024.8/plantuml-1.2024.8.jar
+   x32: https://github.com/plantuml/plantuml/releases/download/v1.2025.0/plantuml-1.2025.0.jar
 
    to download the installer.
 
@@ -15,11 +15,11 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: B88519D2F37C089A470EE7044EC011A72D130E70A61F7FCAA424179F1C1F4641
+   checksum32: 6F38F70455D08438979451C2257CD5D58647C6460094BB829BC2A12878D47331
 
 Using AU:
 
-   Get-RemoteChecksum https://github.com/plantuml/plantuml/releases/download/v1.2024.8/plantuml-1.2024.8.jar
+   Get-RemoteChecksum https://github.com/plantuml/plantuml/releases/download/v1.2025.0/plantuml-1.2025.0.jar
 
 Information about license can be seen at:
     http://plantuml.com/download
