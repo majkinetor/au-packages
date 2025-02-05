@@ -19,7 +19,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
 
 function global:au_GetLatest {
-    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'bruno_.+_x64_win\.exe'
+    $url = Get-GitHubReleaseUrl $GitHubRepositoryUrl 'bruno_.+_x64_win\.exe$'
     $version = $url -split '/' | select -Last 1 -Skip 1
 
     @{
