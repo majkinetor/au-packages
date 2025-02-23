@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   x64: https://github.com/1Remote/1Remote/releases/download/Nightly/1Remote-1.1.1-net6-x64-nightly-20250222-e87a35.zip
+   x64: https://github.com/1Remote/1Remote/releases/download/Nightly/1Remote-1.1.1-net6-x64-nightly-20250223-76c001.zip
 
    to download the installer.
 
@@ -15,7 +15,7 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum64: D95CD013E3BEC6D83F6C85EC446E55DC1B6F119A556EA074ED9CC226F08D3564
+   checksum64: 81028028E49BD4D00CA39FFDEAEE64D02B5B4C34E1924399D65DFEF3F0AB9F7C
 
 File 'license.txt' is obtained from:
    https://github.com/VShawn/PRemoteM/blob/dev/LICENSE
